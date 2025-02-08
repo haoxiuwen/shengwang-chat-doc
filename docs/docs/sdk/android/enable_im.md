@@ -63,9 +63,12 @@
 
 对于鉴权机制为安全模式的项目，在后续调用 API 进行聊天等操作时，你还需要传入 App ID 和 Token 对用户进行鉴权。
 
-为方便体验和测试，在 App 调试阶段你可以先从声网控制台获取临时 Token（有效期为 24 小时），无需自行部署 Token 服务器。但在 App 正式上线前，你必须在自己的服务端部署并生成 Token。
+为方便体验和测试，在 App 调试阶段你可以先从[声网控制台](https://console.shengwang.cn/overview)获取临时 Token（有效期为 24 小时），无需自行部署 Token 服务器。但在 App 正式上线前，你必须在自己的服务端部署并生成 Token。
 
-在控制台左上角的下拉框，切换到你想要获取临时 Token 的项目，然后按如下步骤获取临时 Token：
+- 临时 App Token：用于进行管理操作，例如，调用 RESTful API 删除用户和封禁用户等。
+- 临时用户 Token：用于登录即时通讯 IM 客户端进行聊天等操作，例如，跑通快速开始时进行登录，在客户端发送和接收一对一单聊文本消息。
+
+在控制台左上角的下拉框，切换到你想要获取临时 Token 的项目，然后按如下步骤获取临时 App Token：
 
 1. 在**总览**页面的**项目信息**栏，点击**临时 Token 生成器**。
 2. 在**生成临时 Token** 页面，点击**添加产品**。
@@ -74,6 +77,12 @@
 5. 成功生成临时 Token 后，点击 Token 右侧的复制按钮，保存好复制的 Token。
 
 ![img](/images/product/enable_im/console_enable_im_token_generation.png)
+
+此外，对于用户 token，你还可以[声网控制台](https://console.shengwang.cn/overview)[创建用户](product_user_registration_login.html#创建用户)后，在用户列表点击对应的用户的**操作**一栏中的**更多**，选择**查看Token**。
+
+在弹出的对话框中，可以查看用户 Token，也可以点击**重新生成**，生成用户 token。
+
+![img](/images/android/user_token.png)
 
 ## 5. 获取 App 证书
 
