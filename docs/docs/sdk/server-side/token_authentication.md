@@ -4,48 +4,18 @@
 
 为了保证即时通讯连接的安全性，声网提供以下两种场景的 Token 用于用户鉴权。
 
-| 应用场景         | Token 权限 | Token 构成                                                                                                                                             | Token 最长有效期           |
-| :--------------- | :--------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| 应用场景         | Token 权限 | Token 构成        | Token 最长有效期           |
+| :--------------- | :--------- | :------------------- | :------------------------- |
 | RESTful API 调用 | App 权限   | <br/> - 你的即时通讯 IM 项目的 App ID。<br/> - 你的即时通讯 IM 项目的 App 证书。<br/> - 你设置的即时通讯 Token 的有效期。                              | 24 小时（以 UTC 时区为准） |
 | SDK API 调用     | 用户权限   | <br/> - 你的即时通讯 IM 项目的 App ID。<br/> - 你的即时通讯 IM 项目的 App 证书。<br/> - 你的即时通讯 IM 项目的 Token 有效期。<br/> - 待鉴权用户的 ID。 | 24 小时（以 UTC 时区为准） |
 
 ## 体验 Token 生成
 
-出于测试目的，声网控制台支持为即时通讯 IM 生成临时 Token，而在生产环境中，Token 需由你的 App Server 使用 AgoraTools 生成。
+出于测试目的，声网控制台支持为即时通讯 IM 生成临时 Token。在生产环境中，为了安全考虑，Token 需由你的 App Server 使用 AgoraTools 生成。
 
-### 生成用户权限 Token
+关于如何生成和获取临时的 App 权限 Token 和用户权限 Token，详见[获取临时 Token](enable_im.html#_4-获取临时-token)。
 
-在测试环境中，用户权限 Token 基于用户 ID 生成。若尚未创建用户，需要首先注册即时通讯 IM 用户。
-
-#### 注册用户
-
-参考以下步骤注册用户：
-
-1. 登录[声网控制台](https://console.shengwang.cn/overview)。
-
-2. 在左上角下拉框中选择想要开通消息回调服务的项目，然后点击左侧导航栏的**全部产品**，点击**基础能力**分组下的**即时通讯 IM**，进入**运营管理**标签页。
-
-3. 在**用户**页签下，点击**创建IM用户**。
-
-4. 在**添加IM用户**对话框中，填写用户信息并点击**保存**，创建用户。
-
-![img](/images/server-side/token_authentication_user_register.png)
-
-#### 生成 Token
-
-创建用户后，在**用户管理**列表中，你可以点击该用户的**操作**一栏中的**查看Token**。在弹出的**查看IM用户Token**对话框中，查看该用户的 Token 或点击**重新生成**生成新的用户权限 Token。
-
-![img](/images/server-side/token_authentication_user_token_generate.png)
-
-### 生成 App 权限 Token
-
-1. 在[声网控制台](https://console.shengwang.cn/overview)左上角下拉框中选择想要开通消息回调服务的项目，然后点击左侧导航栏的**全部产品**，点击**基础能力**分组下的**即时通讯 IM**，进入**基础信息**标签页。
-
-2. 在**数据中心**区域，点击 **ChatAppTempToken** 旁边的 **生成**，生成临时 App 权限 Token。
-
-![img](/images/server-side/token_authentication_app_token_generate.png)
-
-为了安全考虑，在生产环境中 Token 由你的 App Server 使用 AgoraTools 生成。本文介绍如何从你的 App Server 中获取 Token 实现用户鉴权。
+本文介绍如何从你的 App Server 中获取 Token 实现用户鉴权。
 
 ## 技术原理
 
