@@ -167,6 +167,6 @@ UIKit 提供封装的 `ChatUIKitSearchActivity` 搜索页面，用户根据 `Cha
 示例代码如下：
 
 ```kotlin
-    ChatUIKitClient.getConfig()?.chatConfig?.enableMention == false
+    ChatUIKitClient.getConfig()?.chatConfig?.enableMention = false
 ```
 
