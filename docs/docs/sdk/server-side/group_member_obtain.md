@@ -129,7 +129,7 @@ curl -X GET HTTP://XXXX/app-id/XXXX/chatgroups/10XXXX85/users?pagesize=1000&page
   ],
   "timestamp": 1489074511416,
   "duration": 0,
-  "count": 1
+  "count": 3
 }
 ```
 
