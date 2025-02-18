@@ -10,7 +10,7 @@ title: 计费策略
 
 <el-row :gutter="16" :style="{rowGap:'16px'}">
   <el-col :xs="24" :md="12" :lg="8">
-  <Card height="260px" >
+  <Card height="480px" >
   <Text color="rgb(0, 136, 71)">
 
   **免费版**
@@ -23,6 +23,8 @@ title: 计费策略
 - 聊天室成员数 100 <br/>
 - 消息存储时长 3天 <br/>
 
+<br/>
+
 ✅ 全球接入 <br/>
 ✅ 用户管理 <br/>
 ✅ 消息功能 <br/>
@@ -33,8 +35,8 @@ title: 计费策略
   </el-col>
 
   <el-col :xs="24" :md="12" :lg="8">
-  <Card height="260px" >
-  <Text color="rgb(52, 109, 219)">
+  <Card height="480px" >
+  <Text color="rgb(4, 4, 4)">
 
   **尊享版**
 
@@ -45,7 +47,8 @@ title: 计费策略
 - 注册用户数 无限制 <br/>
 - 群成员数 6000 <br/>
 - 聊天室成员数 50000 <br/>
-- 消息存储时长 90天 <br/>
+- 消息存储时长 90 天 <br/>
+
 
 ✅ 包含免费版所有功能 <br/>
 ✅ 全球加速网络 <br/>
@@ -58,10 +61,8 @@ title: 计费策略
   </el-col>
 
   <el-col :xs="24" :md="12" :lg="8">
-  <Card height="260px" >
+  <Card height="480px" >
   <Text color="rgb(52, 109, 219)">
-
-
 
   **企业版**
 
@@ -154,7 +155,7 @@ title: 计费策略
 ## 套餐配额与价格
 
 | 配额/套餐类型    | 免费版套餐   | 尊享版套餐 | 企业版套餐 |
-| :-------: | :--------: | :-------: |  :-------: | 
+| :------- | :-------- | :------- |  :------- | 
 | 免费峰值日活数      | 100      | 10000      |  按需定制 |
 | 注册用户数     | 100      | 无限制     |  无限制 |
 | 好友人数      | 100      | 10000      |  默认10000（可调整） |
@@ -166,426 +167,589 @@ title: 计费策略
 
 ## 套餐服务对比
 
-<table width>
+<table width="100%">
 <tbody>
 <tr>
-<td width="153">
+<td width="10%">
 <p>特性</p>
 </td>
-<td width="662">
+<td width="10%">
 <p>功能描述</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>免费版</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>尊享版</p>
+</td>
+<td width="14%">
 <p>企业版</p>
 </td>
 </tr>
 <tr>
-<td rowspan="4" width="153">
+<td rowspan="4" width="10%">
 <p>用户</p>
 </td>
-<td width="662">
+<td width="59%">
 <p>好友人数</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>100</p>
 </td>
-<td width="153">
+<td width="7%">
 <p>10000</p>
 </td>
+<td width="14%">
+<p>默认10000（可调整）</p>
+</td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>注册用户数</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>100</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>无上限</p>
+</td>
+<td width="14%">
 <p>无上限</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>用户属性（提供用户头像、昵称、邮箱等数据存储服务）</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
 <p>✓</p>
 </td>
-</tr>
-<tr>
-<td width="662">
-<p>用户在线状态订阅</p>
-</td>
-<td width="220">
-<p>✓</p>
-</td>
-<td width="153">
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td rowspan="9" width="153">
+<td width="59%">
+<p>用户在线状态订阅（Presence）</p>
+</td>
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
+<p>✓</p>
+</td>
+</tr>
+<tr>
+<td rowspan="9" width="10%">
 <p>消息</p>
 </td>
-<td width="662">
-<p>消息云存储（提供消息的存储服务，支持历史消息、漫游消息、离线消息）【拆开了离线消息】</p>
+<td width="59%">
+<p>消息云存储（提供消息的存储服务，支持历史消息、漫游消息、离线消息）</p>
 </td>
-<td width="220">
-<p>3 天</p>
+<td width="7%">
+<p>3天</p>
 </td>
-<td width="153">
-<p>按需定制</p>
+<td width="7%">
+<p>90天</p>
+</td>
+<td width="14%">
+<p>默认180天 （可调整）</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>全消息类型（包括：文本、表情、语音、视频、图片、位置、透传、自定义等消息）</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>自定义消息（根据业务需求灵活定制消息内容和功能）</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>透传消息（作为控制指令）</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>离线消息（支持单聊/群聊离线消息，上线后可拉取离线消息）</p>
 </td>
-<td width="220">
-<p>✓【3 天】</p>
+<td width="7%">
+<p>✓【3天】</p>
 </td>
-<td width="153">
-<p>✓</p>
+<td width="7%">
+<p>✓【7天】</p>
+</td>
+<td width="14%">
+<p>默认7天（可调整）</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>附件消息</p>
 </td>
-<td width="220">
-<p>✓【3 天】</p>
+<td width="7%">
+<p>✓【3天】</p>
 </td>
-<td width="153">
-<p>✓</p>
+<td width="7%">
+<p>✓【7天】</p>
+</td>
+<td width="14%">
+<p>默认7天（可调整）</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>消息已读回执（接收方消息已读后发送方消息已读状态及时变更）</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>消息撤回（支持客户端/服务端调用）</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
 <p>✓</p>
 </td>
-</tr>
-<tr>
-<td width="662">
-<p>消息表情回复</p>
-</td>
-<td width="220">
-<p>✓</p>
-</td>
-<td width="153">
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td rowspan="5" width="153">
+<td width="59%">
+<p>消息表情回复（Reaction）</p>
+</td>
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
+<p>✓</p>
+</td>
+</tr>
+<tr>
+<td rowspan="5" width="10%">
 <p>群组</p>
 </td>
-<td width="662">
+<td width="59%">
 <p>群组总数</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>100</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>无上限</p>
+</td>
+<td width="14%">
 <p>无上限</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>群成员数</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>100</p>
 </td>
-<td width="153">
-<p>默认 3000（可调整）</p>
+<td width="7%">
+<p>6,000</p>
+</td>
+<td width="14%">
+<p>默认6000（可调整）</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>单个用户可加入群组数</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>100</p>
 </td>
-<td width="153">
-<p>默认 10000（可调整）</p>
+<td width="7%">
+<p>10000</p>
+</td>
+<td width="14%">
+<p>默认10000（可调整）</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>群公告</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>群共享文件</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td rowspan="6" width="153">
+<td rowspan="7" width="10%">
 <p>聊天室</p>
 </td>
-<td width="662">
+<td width="59%">
 <p>聊天室总数</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>100</p>
 </td>
-<td width="153">
-<p>按需定制</p>
+<td width="7%">
+<p>无上限</p>
+</td>
+<td width="14%">
+<p>无上限</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>聊天室成员数</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>100</p>
 </td>
-<td width="153">
-<p>默认 10000（可调整）</p>
+<td width="7%">
+<p>50000</p>
+</td>
+<td width="14%">
+<p>默认50000（可调整）</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>聊天室公告</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>聊天室全局禁言</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
 <p>✓</p>
 </td>
-</tr>
-<tr>
-<td width="662">
-<p>成员白名单（只允许选定用户发送消息）</p>
-</td>
-<td width="220">
-<p>✓</p>
-</td>
-<td width="153">
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td width="662">
-<p>聊天室历史消息</p>
+<td width="59%">
+<p>聊天室成员白名单（只允许选定用户发送消息）</p>
 </td>
-<td width="220">
-<p>3 天</p>
+<td width="7%">
+<p>✓</p>
 </td>
-<td width="153">
-<p>可调整</p>
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
+<p>✓</p>
 </td>
 </tr>
 <tr>
-<td rowspan="2" width="153">
+<td width="59%">
+<p>聊天室获取漫游消息</p>
+</td>
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="7%">
+<p>X</p>
+</td>
+<td width="14%">
+<p>✓</p>
+</td>
+</tr>
+<tr>
+<td width="59%">
+<p>聊天室广播消息</p>
+</td>
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
+<p>✓</p>
+</td>
+</tr>
+<tr>
+<td rowspan="2" width="10%">
 <p>离线推送</p>
 </td>
-<td width="662">
-<p>离线推送通知（支持苹果 （APNs）、谷歌（FCM）、华为、荣耀、小米、OPPO、VIVO、魅族等推送服务）</p>
+<td width="59%">
+<p>离线推送通知（支持苹果 （APNs）、谷歌（FCM）、华为、小米、OPPO、VIVO、魅族，自定义铃声和扩展）</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>消息免打扰（在设定时间内不会收到厂商离线推送通知）</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td width="153">
+<td width="10%">
 <p>子区</p>
 </td>
-<td width="662">
+<td width="59%">
 <p>消息子区</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td rowspan="3" width="153">
+<td rowspan="4" width="10%">
 <p>回调</p>
 </td>
-<td width="662">
+<td width="59%">
 <p>消息&amp;事件回调（提供全量消息路由转发，支持消息和多种事件类型）</p>
 </td>
-<td width="220">
+<td width="7%">
+<p>X</p>
+</td>
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>用户状态回调（通过回调方式同步用户离在线状态）</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>X</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td width="662">
+<td width="59%">
 <p>发送前回调（用于服务端对接第三方服务扩展）</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>X</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td width="153">
+<td width="59%">
+<p>回调消息&amp;事件存储（回调接收服务不可用时，存储所有回调内容用于恢复）</p>
+</td>
+<td width="7%">
+<p>X</p>
+</td>
+<td width="7%">
+<p>X</p>
+</td>
+<td width="14%">
+<p>✓</p>
+</td>
+</tr>
+<tr>
+<td width="10%">
 <p>服务端会话列表</p>
 </td>
-<td width="662">
+<td width="59%">
 <p>从服务端获取会话列表</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td width="153">
+<td width="10%">
 <p>多设备登录</p>
 </td>
-<td width="662">
+<td width="59%">
 <p>相同账号多设备登录且保持信息同步</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
-
 <tr>
-<td width="153">
+<td rowspan="3" width="10%">
 <p>安全</p>
 </td>
-<td width="662">
+<td width="59%">
 <p>TLS/SSL 传输加密</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 <tr>
-<td>
+<td width="59%">
 <p>AES256 存储加密</p>
 </td>
-<td width="220">
+<td width="7%">
 <p>✓</p>
 </td>
-<td width="153">
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
+<p>✓</p>
+</td>
+</tr>
+<tr>
+<td width="59%">
+<p>用户信息删除 API</p>
+</td>
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
+<p>✓</p>
+</td>
+</tr>
+<tr>
+<td width="10%">
+<p>网络</p>
+</td>
+<td width="59%">
+<p>全球网络加速</p>
+</td>
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="7%">
+<p>✓</p>
+</td>
+<td width="14%">
 <p>✓</p>
 </td>
 </tr>
 </tbody>
-</table> 
+</table>
