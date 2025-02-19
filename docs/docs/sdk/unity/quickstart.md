@@ -130,6 +130,8 @@ SDKClient.Instance.InitWithOptions(options);
 
 ![img](/images/android/user_token.png)
 
+在生产环境中，为了安全考虑，你需要部署 App Server 生成 Token，详见 [Token 鉴权文档](/server-side/token_authentication.html#搭建-app-server-生成-token)。
+
 ### 5. 登录账号
 
 在 `SignInAction` 方法尾部添加以下代码，使用账号登录即时通讯系统，示例代码如下：
