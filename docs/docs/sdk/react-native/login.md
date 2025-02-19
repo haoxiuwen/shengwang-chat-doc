@@ -34,6 +34,8 @@
 
 ![img](/images/android/user_token.png)
 
+在生产环境中，为了安全考虑，你需要部署 App Server 生成 Token，详见 [Token 鉴权文档](/server-side/token_authentication.html#搭建-app-server-生成-token)。
+
 ## 主动登录
 
 通过用户 ID 和 token 进行登录。使用 token 登录时需要处理 token 过期的问题，比如在每次登录时更新 token 等机制。

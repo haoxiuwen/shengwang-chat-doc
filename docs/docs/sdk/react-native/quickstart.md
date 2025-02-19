@@ -94,6 +94,8 @@ cd ios && pod install && cd ..
 
 ![img](/images/android/user_token.png)
 
+在生产环境中，为了安全考虑，你需要部署 App Server 生成 Token，详见 [Token 鉴权文档](/server-side/token_authentication.html#搭建-app-server-生成-token)。
+
 ## 实现发送和接收单聊消息
 
 建议使用 `visual studio code` 打开文件夹 `quick_start_demo`，打开文件 `App.js`，删除全部内容，并添加如下内容:
