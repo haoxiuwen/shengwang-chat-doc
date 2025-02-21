@@ -10,9 +10,9 @@
 
 - `ChatManager#asyncDeleteAllMsgsAndConversations`：清空当前用户的聊天记录，包括单聊、群聊和聊天室的消息和会话，同时可以选择是否单向清除服务端的聊天记录。
 - `Conversation#removeMessagesFromServer`：按消息时间或消息 ID 单向删除服务端的历史消息。
-- `ChatManager#clearAllMessages`：删除本地指定会话的所有消息。
-- `ChatManager#removeMessages(startTime, endTime)`：删除指定时间段的本地消息。
-- `ChatManager#removeMessage(targetMessageId)`：删除本地单个会话的指定消息。
+- `Conversation#clearAllMessages`：删除本地指定会话的所有消息。
+- `Conversation#removeMessages(startTime, endTime)`：删除指定会话一段时间内的本地消息。
+- `Conversation#removeMessage(targetMessageId)`：删除本地会话的指定消息。
 
 ## 前提条件
 
@@ -87,7 +87,7 @@ if(conversation != null) {
 }
 ```
 
-### 删除单个本地会话指定时间段的消息
+### 删除本地会话指定时间段的消息
 
 你可以删除本地指定会话在一段时间内的本地消息，示例代码如下：
 
@@ -98,9 +98,9 @@ if(conversation != null) {
 }
 ```
 
-### 删除本地单个会话的指定消息
+### 删除本地会话的指定消息
 
-你可以删除本地单个会话的指定消息，示例代码如下：
+你可以删除本地会话的指定消息，示例代码如下：
 
 ```java
 Conversation conversation = ChatClient.getInstance().chatManager().getConversation(conversationId);

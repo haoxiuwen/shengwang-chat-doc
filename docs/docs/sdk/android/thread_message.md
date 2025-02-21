@@ -39,7 +39,7 @@
 
 ```java
 // 创建一条文本消息，`content` 为消息文字内容，`chatThreadId` 为子区 ID。
-ChatMessage message = ChatMessage.createTxtSendMessage(content, chatThreadId); 
+ChatMessage message = ChatMessage.createTextSendMessage(content, chatThreadId); 
 // 设置消息类型，子区消息需要将 `ChatType` 设置为 `GroupChat`。
 message.setChatType(ChatType.GroupChat); 
 // 设置消息标记 `isChatThreadMessage` 为 `true`。

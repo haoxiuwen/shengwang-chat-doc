@@ -12,7 +12,7 @@
 - `ChatManager#RemoveMessagesFromServer`：单向删除服务端的历史消息。
 - `Conversation#DeleteAllMessages`：删除本地指定会话的所有消息。
 - `Conversation#DeleteMessages (long startTime, long endTime)`：删除本地单个会话在指定时间段的消息。
-- `Conversation#DeleteMessage (string messageId)`：删除本地单个会话的指定消息。
+- `Conversation#DeleteMessage (string messageId)`：删除本地会话的指定消息。
 
 ## 前提条件
 
@@ -96,9 +96,9 @@ else {
 }
 ```
 
-### 删除本地单个会话的指定消息
+### 删除本地会话的指定消息
 
-你可以删除本地单个会话的指定消息，示例代码如下：
+你可以删除本地会话的指定消息，示例代码如下：
 
 ```csharp
 Conversation conv = SDKClient.Instance.ChatManager.GetConversation(conversionId, conversationType);

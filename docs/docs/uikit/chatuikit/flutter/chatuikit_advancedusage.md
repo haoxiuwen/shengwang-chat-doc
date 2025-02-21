@@ -161,7 +161,7 @@ ChatUIKitAlphabetSortHelper.instance.sortHandler = (showName) {
 
 单群聊提供了两类事件回调，以便于你在使用时可以及时得到操作结果。
 
-当实现 `ChatSDKEventsObserver` 后，即时通讯 IM SDK（`im_flutter_sdk`）方法调用开始时会通过 `void onChatSDKEventBegin(ChatSDKEvent event)` 回调通知你调用开始，当结束时会通过 `void onChatSDKEventEnd(ChatSDKEvent event, ChatError? error)` 方法告知你调用结束，同时是否报错也会通过这里的 `error` 告知。
+当实现 `ChatSDKEventsObserver` 后，即时通讯 IM SDK（`shengwang_chat_sdk`）方法调用开始时会通过 `void onChatSDKEventBegin(ChatSDKEvent event)` 回调通知你调用开始，当结束时会通过 `void onChatSDKEventEnd(ChatSDKEvent event, ChatError? error)` 方法告知你调用结束，同时是否报错也会通过这里的 `error` 告知。
 
 当实现 `ChatUIKitEventsObservers` 后，单群聊 UIKit 相关的事件会通过 `void onChatUIKitEventsReceived(ChatUIKitEvent event)` 回调通知你。
 

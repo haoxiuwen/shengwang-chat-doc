@@ -194,7 +194,7 @@ options.setRequireAck(true);
 与单聊消息的 app 层级设置已读回执功能不同，群聊消息是在发送消息时设置指定消息是否需要已读回执。
 
 ```java
-ChatMessage message = ChatMessage.createTxtSendMessage(content, to);
+ChatMessage message = ChatMessage.createTextSendMessage(content, to);
 message.setIsNeedGroupAck(true);
 ```
 
@@ -275,14 +275,14 @@ public void asyncFetchGroupReadAcks(
 
 | 字段       | 描述   | 
 | :--------- | :----- | 
-| `ChatMessage#isUnread` | 用户是否已读了该消息。如果是自己发送的消息，该字段的值固定为 `true`。| 
+| `ChatMessage#isUnread` | 用户是否已读了该消息。如果是自己发送的消息，该字段的值固定为 `false`，表示该消息已读。| 
 | `ChatMessage#isAcked`      | 是否（消息接收方）已发送或（消息发送方）已收到消息已读回执。如果是自己发送的消息，记录的是对方是否已读。如果是对方的消息，则记录的是自己是否发送过已读回执。 | 
 
 对于群聊消息，本地数据库通过以下字段存储消息已读状态：
 
 | 字段       | 描述   | 
 | :--------- | :----- | 
-| `ChatMessage#isUnread` | 用户是否已读了该消息。如果是自己发送的消息，该字段的值固定为 `true`。| 
+| `ChatMessage#isUnread` | 用户是否已读了该消息。如果是自己发送的消息，该字段的值固定为 `false`，表示该消息已读。| 
 | `ChatMessage#groupAckCount`  | 已阅读消息的群成员数量。  | 
 
 ### 已读回执与未读消息数

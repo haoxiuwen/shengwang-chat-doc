@@ -12,7 +12,7 @@
 - `ChatManager#removeMessagesFromServerWithTimestamp`/`removeMessagesFromServerWithMsgIds` ：单向删除服务端的历史消息；
 - `ChatManager#deleteAllMessages`：删除本地指定会话的所有消息；
 - `ChatManager#deleteMessagesWithTimestamp`：删除本地单个会话在指定时间段的消息；
-- `ChatManager#deleteMessage`：删除本地单个会话的指定消息；
+- `ChatManager#deleteMessage`：删除本地会话的指定消息；
 
 ## 前提条件
 
@@ -96,7 +96,7 @@ ChatClient.getInstance()
 // startTs: 开始点的时间戳
 // endTs: 结束点的时间戳
 ChatClient.getInstance()
-  .chatManager.deleteMessagesWithTimestamp({ startTs, endTs })
+  .chatManager.deleteMessagesWithTimestamp({ convId, convType, startTs, endTs })
   .then(() => {
     console.log("delete message success");
   })
@@ -105,9 +105,9 @@ ChatClient.getInstance()
   });
 ```
 
-### 删除本地单个会话的指定消息
+### 删除本地会话的指定消息
 
-你可以调用 `deleteMessage` 方法删除本地单个会话的指定消息。
+你可以调用 `deleteMessage` 方法删除本地会话的指定消息。
 
 ```typescript
 // convId：会话 ID

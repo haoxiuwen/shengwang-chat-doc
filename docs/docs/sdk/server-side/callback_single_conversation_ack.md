@@ -12,7 +12,7 @@
 | `security`  | String   | 签名，格式如下: `MD5（callId+secret+timestamp）`。关于 `Secret`，详见[配置声网控制台回调规则](callback_postsending.html#发送后回调规则)。 |
 | `payload`   | object   | 会话已读回执详情。 |
 | `payload.ack_message_id` | String     | 会话中消息的消息 ID。                  |
-| `payload.type` | 会话已读回执类型。       |                |
+| `payload.type` | String | 会话已读回执类型。 |
 | `host`      | String   | 服务器名称。                                                 |
 | `from` | String          | 发送已读回执的用户。|
 | `to` | String    |  接收已读回执的用户。                 |
