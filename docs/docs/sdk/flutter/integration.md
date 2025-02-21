@@ -49,6 +49,6 @@ iOS 需要 iOS 11.0 以上版本。
 
 ```shell
 cd quick_start
-flutter pub add im_flutter_sdk
+flutter pub add shengwang_chat_sdk
 flutter pub get
 ```

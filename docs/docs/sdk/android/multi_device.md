@@ -63,7 +63,7 @@ List<String> ids = ChatClient.getInstance().contactManager().getSelfIdsOnOtherPl
 // 选择一个登录 ID 作为消息接收方。
 String toChatUsername = ids.get(0);
 // 创建一条文本消息，content 为消息文字内容，toChatUsername 传入登录 ID 作为消息接收方。
-ChatMessage message = ChatMessage.createTxtSendMessage(content, toChatUsername); 
+ChatMessage message = ChatMessage.createTextSendMessage(content, toChatUsername); 
 // 发送消息。
 ChatClient.getInstance().chatManager().sendMessage(message); 
 ```

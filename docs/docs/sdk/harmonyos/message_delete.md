@@ -10,7 +10,7 @@
 
 - `ChatManager#removeMessagesFromServer`：按消息时间或消息 ID 单向删除服务端的历史消息。
 - `Conversation#clearAllMessages`：删除本地指定会话的所有消息。
-- `Conversation#removeMessage(targetMessageId)`：删除本地单个会话的指定消息。
+- `Conversation#removeMessage(targetMessageId)`：删除本地会话的指定消息。
 
 ## 前提条件
 
@@ -50,9 +50,9 @@ if(conversation) {
 }
 ```
 
-### 删除本地单个会话的指定消息
+### 删除本地会话的指定消息
 
-你可以删除本地单个会话的指定消息，示例代码如下：
+你可以删除本地会话的指定消息，示例代码如下：
 
 ```typescript
 let conversation = ChatClient.getInstance().chatManager()?.getConversation(conversationId);

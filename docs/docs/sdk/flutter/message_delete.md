@@ -10,9 +10,9 @@
 
 - `ChatManager#deleteAllMessageAndConversation`：清空当前用户的聊天记录，包括单聊、群聊和聊天室的消息和会话，同时可以选择是否单向清除服务端的聊天记录。
 - `ChatManager#deleteRemoteMessagesBefore`/`ChatManager#deleteRemoteMessagesWithIds`：根据消息时间或消息 ID 单向删除服务端的历史消息。
-- `ChatManager#deleteAllMessages`：删除本地指定会话的所有消息。
-- `ChatManager#deleteMessagesWithTs`：删除指定时间段的本地消息。
-- `ChatManager#deleteMessage`：删除本地单个会话的指定消息。
+- `Conversation#deleteAllMessages`：删除本地指定会话的所有消息。
+- `Conversation#deleteMessagesWithTs`：删除指定时间段的本地消息。
+- `Conversation#deleteMessage`：删除本地会话的指定消息。
 
 ## 前提条件
 
@@ -69,7 +69,7 @@ ChatConversation? conversation = await ChatClient.getInstance.chatManager
 await conversation?.deleteAllMessages();
 ```
 
-### 删除单个本地会话指定时间段的消息
+### 删除本地会话指定时间段的消息
 
 你可以删除本地指定会话在一段时间内的本地消息，示例代码如下：
 
@@ -79,9 +79,9 @@ ChatConversation? conversation = await ChatClient.getInstance.chatManager
 await conversation?.deleteMessagesWithTs(startTs, endTs);
 ```
 
-### 删除本地单个会话的指定消息
+### 删除本地会话的指定消息
 
-你可以删除本地单个会话的指定消息，示例代码如下：
+你可以删除本地会话的指定消息，示例代码如下：
 
 ```dart
 ChatConversation? conversation = await ChatClient.getInstance.chatManager
