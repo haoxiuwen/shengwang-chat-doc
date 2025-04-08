@@ -104,7 +104,7 @@ import {
 } from "shengwang-chat-uikit";
 import "shengwang-chat-uikit/style.css";
 
-// 注意：在使用 UIKit 前，请先设置好userId， accessToken 和 appId。
+// 注意：在使用 UIKit 前，请先设置 userId， accessToken 和 appId。
 const userId = "userId";
 const accessToken = "accessToken";
 const appId = "your appId";
