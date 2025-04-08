@@ -8,9 +8,9 @@
 
 开启单群聊 UIKit 服务前，需确保已经具备以下条件：
 
-- React 16.8.0 或以上版本；
+- React 16.8.0 或以上版本（暂不支持 React 19）；
 - React DOM 16.8.0 或以上版本；
-- 已在[声网控制台](https://console.shengwnag.com/user/login)[创建了有效的即时通讯 IM 开发者账号](/docs/sdk/web/enable_im.html#_1-登录声网控制台)，并[获取了 App ID](/docs/sdk/web/enable_im.html#_3-获取-app-id)。
+- 已在[声网控制台](https://console.shengwang.com/user/login)[创建了有效的即时通讯 IM 开发者账号](/docs/sdk/web/enable_im.html#_1-登录声网控制台)，并[获取了 App ID](/docs/sdk/web/enable_im.html#_3-获取-app-id)。
 
 ## 支持的浏览器
 
@@ -52,23 +52,23 @@ cd my-app
 └── yarn.lock
 ```
 
-### 第二步 集成 shengwnag-chat-uikit
+### 第二步 集成 shengwang-chat-uikit
 
-#### 安装 shengwnag-chat-uikit
+#### 安装 shengwang-chat-uikit
 
 - 若通过 npm 安装，运行以下命令：
 
 ```bash
-npm install shengwnag-chat-uikit
+npm install shengwang-chat-uikit
 ```
 
 - 若通过 yarn 安装，运行以下命令：
 
 ```bash
-yarn add shengwnag-chat-uikit
+yarn add shengwang-chat-uikit
 ```
 
-#### 使用 shengwnag-chat-uikit 组件构建应用
+#### 使用 shengwang-chat-uikit 组件构建应用
 
 在[声网控制台](https://console.shengwang.cn/overview)按照如下步骤创建用户：
 
@@ -90,19 +90,24 @@ yarn add shengwnag-chat-uikit
 
 在开发环境中，你需要从你的 App Server 获取用户 token，详见[使用 Token 鉴权](/docs/sdk/server-side/token_authentication.html)。
 
-将 `shengwnag-chat-uikit` 库导入你的代码中：
+将 `shengwang-chat-uikit` 库导入你的代码中：
 
 ```javascript
 // App.js
 import React, { Component, useEffect } from "react";
 import {
-  Provider,
+  UIKitProvider,
   Chat,
   ConversationList,
   useClient,
   rootStore,
-} from "shengwnag-chat-uikit";
-import "shengwnag-chat-uikit/style.css";
+} from "shengwang-chat-uikit";
+import "shengwang-chat-uikit/style.css";
+
+// 注意：在使用 UIKit 前，请先设置 userId， accessToken 和 appId。
+const userId = "userId";
+const accessToken = "accessToken";
+const appId = "your appId";
 
 const ChatApp = () => {
   const client = useClient();
@@ -110,8 +115,8 @@ const ChatApp = () => {
     client &&
       client
         .open({
-          user: "",
-          accessToken: "",
+          user: userId,
+          accessToken: accessToken,
         })
         .then((res) => {
           // 创建会话
@@ -121,12 +126,15 @@ const ChatApp = () => {
             name: "用户1", // 单聊为对端用户昵称，群聊为群组名称。
             lastMessage: {},
           });
+        })
+        .catch((err) => {
+          console.log("登录失败", err);
         });
   }, [client]);
 
   return (
     <div style={{ display: "flex", height: "100vh" }}>
-      <div style={{ width: "350px" }}>
+      <div style={{ width: "350px", borderRight: "1px solid #ddd" }}>
         <ConversationList />
       </div>
       <div style={{ flex: "1" }}>
@@ -135,17 +143,16 @@ const ChatApp = () => {
     </div>
   );
 };
-
 class App extends Component {
   render() {
     return (
-      <Provider
+      <UIKitProvider
         initConfig={{
-          appId: "your appId",
+          appId: appId,
         }}
       >
         <ChatApp />
-      </Provider>
+      </UIKitProvider>
     );
   }
 }

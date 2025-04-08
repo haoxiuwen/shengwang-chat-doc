@@ -8,7 +8,7 @@
 
 开始前，确保你的开发环境满足如下条件：
 
-- React 16.8.0 或以上版本；
+- React 16.8.0 或以上版本（暂不支持 React 19）；
 - React DOM 16.8.0 或以上版本；
 - [已创建项目并获取 App ID](https://im.shengwang.cn/docs/sdk/web/enable_im.html)。
 
