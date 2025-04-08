@@ -6,7 +6,7 @@
 
 ## 会话列表
 
-会话列表呈现了用户所有正在进行的对话，帮助用户快速找到所需联系人并查看消息进展。
+会话列表呈现了用户所有正在进行的对话，帮助用户快速找到所需联系人并查看消息进展。 
 
 <ImageGallery>
   <ImageItem src="/images/uikit/chatuikit/web/page_conversation.png" title="会话列表" />
