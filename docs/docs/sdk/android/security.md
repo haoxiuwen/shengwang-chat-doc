@@ -15,11 +15,11 @@
 - App 隐私政策应显著标识个人敏感信息类型（如：字体加粗等）。
 - App 隐私政策应逐项说明调用的第三方 SDK，包括明示 SDK 名称、SDK 开发者名称；SDK 收集和处理的个人信息类型、目的、方式、范围；SDK 隐私政策链接。
 
-## **二、App 使用 IM SDK 时的合规指引**
+## **二、App 使用即时通讯 IM SDK 时的合规指引**
 
-### **1. SDK 所需的系统权限的说明**
+### **1. 即时通讯 IM SDK 所需的系统权限的说明**
 
-即时通讯 SDK 功能所需的权限，您可以参考如下表格，了解相关权限功能和时机。SDK 只会检查 App 是否获得相应授权，不会主动向最终用户申请权限。
+即时通讯 IM SDK 功能所需的权限，您可以参考如下表格，了解相关权限功能和时机。即时通讯 IM SDK 只会检查 App 是否获得相应授权，不会主动向最终用户申请权限。
 
 权限配置，请查阅相关配置文档：
 
@@ -32,13 +32,13 @@
 | 权限    | 权限功能说明      | 必选或可选          | 申请时机       |
 | :-------------- | :----- | :------- | --------------------------------- |
 | 网络连接状态（ACCESS_NETWORK_STATE） | 用户查看网络连接状态。 | 必选 | 需要接入网络时。 |
-| Wi-Fi网络状态（ACCESS_Wi-Fi_STATE和CHANGE_Wi-Fi_STATE） | 用户查看网络连接状态。 | 必选 |需要接入网络时。  |
+| Wi-Fi网络状态（ACCESS_Wi-Fi_STATE 和 CHANGE_Wi-Fi_STATE） | 用户查看网络连接状态。 | 必选 |需要接入网络时。  |
 | 访问网络权限（INTERNET） | 用于在登录时接入网络。 | 必选 | 需要接入网络时。 |
-| 设备存储（WRITE_EXTERNAL_STORAGE） | 用于消息和日志文件写入设备的外部存储。 | 必选 | <br/> - 当用户收发消息时进行消息的本地存储。<br/> - 当 SDK 在运行过程中，将日志写入设备外部存储，并且用户同意开启权限时。 |
-| 设备存储（READ_EXTERNAL_STORAGE） | 用于读取本地消息内容和日志文件上传 | 必选 | <br/> - 当用户查看本地消息记录时进行消息的本地读取。 <br/> - 当 SDK 在运行过程中，读取设备的日志文件用于故障排查，并且用户同意开启权限时。 |
+| 设备存储（WRITE_EXTERNAL_STORAGE） | 用于消息和日志文件写入设备的外部存储。 | 必选 | <br/> - 当用户收发消息时进行消息的本地存储。<br/> - 当即时通讯 IM  SDK 在运行过程中，将日志写入设备外部存储，并且用户同意开启权限时。 |
+| 设备存储（READ_EXTERNAL_STORAGE） | 用于读取本地消息内容和日志文件上传 | 必选 | <br/> - 当用户查看本地消息记录时进行消息的本地读取。 <br/> - 当即时通讯 IM SDK 在运行过程中，读取设备的日志文件用于故障排查，并且用户同意开启权限时。 |
 | 摄像头（CAMERA） | 用于发送图片消息时进行拍照 | 可选 | 当用户发送图片消息进行拍照时。 |
 | 麦克风（RECORD_AUDIO） | 用于发送语音消息时进行录音 | 可选 | 当用户发送语音消息进行录音时 |
-| 保持后台运行（WAKE_LOCK） | 用于维持长链接发送心跳包 | 可选 | 当 SDK 发送心跳包时，申请 WakeLock 锁提高心跳发送成功率。发送成功后，即刻释放 WakeLock 锁。 |
+| 保持后台运行（WAKE_LOCK） | 用于维持长链接发送心跳包 | 可选 | 当即时通讯 IM SDK 发送心跳包时，申请 WakeLock 锁提高心跳发送成功率。发送成功后，即刻释放 WakeLock 锁。 |
 
 #### iOS 操作系统应用权限列表
 
@@ -78,23 +78,23 @@ Android 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
 | :-------------- | :----- | :------- | :------- | :------- |
-| Android   | 登录 IM  | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(mAccount, mToken, new CallBack() {//登录成功回调 @Override public void onSuccess() { } //登录失败回调，包含错误信息 @Override public void onError(int code, String error) {  } });` <br/>2. 配置关闭示例：<br/>`ChatClient.getInstance().logout(true);`   | 用户登录 IM   |
+| Android   | 登录即时通讯 IM   | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(mAccount, mToken, new CallBack() {//登录成功回调 @Override public void onSuccess() { } //登录失败回调，包含错误信息 @Override public void onError(int code, String error) {  } });` <br/>2. 配置关闭示例：<br/>`ChatClient.getInstance().logout(true);`   | 用户登录即时通讯 IM   |
 
 iOS 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
 | :-------------- | :----- | :------- | :------- | :------- |
-| iOS   | 登录 IM  | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `EMClient.shared().login(withUsername: "userId", token: "token")` <br/>2. 配置关闭示例：<br/> `ChatClient.getInstance().logout(true);`| 用户登录 IM   |
+| iOS   | 登录即时通讯 IM   | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `EMClient.shared().login(withUsername: "userId", token: "token")` <br/>2. 配置关闭示例：<br/> `ChatClient.getInstance().logout(true);`| 用户登录即时通讯 IM    |
 
 HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
 | :-------------- | :----- | :------- | :------- | :------- |
-| Harmony OS   | 登录 IM  | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(userId, token).then(() => {//登录成功回调}).catch((e: ChatError) => {//登录失败回调，包含错误信息});` <br/>2. 配置关闭示例：<br/> `ChatClient.getInstance().logout().then(()=> {//success logic})`   | 用户登录 IM   |
+| Harmony OS   | 登录即时通讯 IM   | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(userId, token).then(() => {//登录成功回调}).catch((e: ChatError) => {//登录失败回调，包含错误信息});` <br/>2. 配置关闭示例：<br/> `ChatClient.getInstance().logout().then(()=> {//success logic})`   | 用户登录即时通讯 IM   |
 
 ### **3. SDK 隐私政策披露要求与示例说明**
 
-请您根据集成 IM SDK 的实际情况，在您的 App 隐私政策中披露：第三方 SDK 名称、SDK 公司名称、SDK 使用目的和功能场景、SDK 涉及个人信息类型、实现 SDK 功能所需的权限、SDK 隐私政策链接。
+请您根据集成即时通讯 IM  SDK 的实际情况，在您的 App 隐私政策中披露：第三方 SDK 名称、SDK 公司名称、SDK 使用目的和功能场景、SDK 涉及个人信息类型、实现 SDK 功能所需的权限、SDK 隐私政策链接。
 
 请在您的 App 隐私政策中，以文字或列表的方式向公众披露第三方SDK的相关信息。
 
@@ -136,11 +136,11 @@ App 取得敏感权限前，应通过隐私弹窗获得用户单独授权同意�
 
 ### **5. 最终用户行使权利的配置说明**
 
-开发者在其 App 中集成IM SDK 后，SDK 的正常运行会收集和处理必要的最终用户的个人信息用于提供语音通话目的。
+开发者在其 App 中集成即时通讯 IM  SDK 后，SDK 的正常运行会收集和处理必要的最终用户的个人信息用于提供语音通话目的。
 
 SDK 提供以下接口配置，以便您帮助最终用户实现其个人信息权利的请求。在最终用户撤销同意处理其个人信息的授权时，您可以通过调用接口，停止和关闭 SDK 功能，并停止收集相应的用户数据。
 
-App 开发者应根据相关法律法规为最终用户提供行使个人信息主体权利的路径功能，需要IM SDK 配合的，请与 SDK 及时进行联系。
+App 开发者应根据相关法律法规为最终用户提供行使个人信息主体权利的路径功能，需要即时通讯 IM  SDK 配合的，请与 SDK 及时进行联系。
 
 相关配置操作，请查阅相关配置文档：
 
