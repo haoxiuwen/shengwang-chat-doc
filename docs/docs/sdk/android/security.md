@@ -19,7 +19,7 @@
 
 ### **1. SDK 所需的系统权限的说明**
 
-IM SDK 功能所需的权限，您可以参考如下表格，了解相关权限功能和时机。SDK 只会检查 App 是否获得相应授权，不会主动向最终用户申请权限。
+即时通讯 SDK 功能所需的权限，您可以参考如下表格，了解相关权限功能和时机。SDK 只会检查 App 是否获得相应授权，不会主动向最终用户申请权限。
 
 权限配置，请查阅相关配置文档：
 
@@ -27,29 +27,40 @@ IM SDK 功能所需的权限，您可以参考如下表格，了解相关权限�
 - iOS: [快速开始](https://im.shengwang.cn/docs/sdk/ios/quickstart.html)
 - HarmonyOS：[快速开始](https://im.shengwang.cn/docs/sdk/harmonyos/quickstart.html#_3-添加项目权限) 
 
-Android 操作系统 SDK 功能、接口配置方式及示例说明：
+#### Android 操作系统应用权限列表
 
-| 系统    | 业务功能 | 相关个人信息      | 配置方式及示例           | 时机       |
-| ------- | -------- | ------------------------ | ----------------- | ---------- |
-| Android | 登录 IM   | 设备品牌、设备型号、操作系统版本、IP地址、网络接入方式和类型； | 配置开启示例：`ChatClient.getInstance().loginWithToken(mAccount, mToken, new CallBack() {``  *//* *登录成功回调*``  @Override``  public void onSuccess() {`` ``  }`` ``  *//* *登录失败回调，包含错误信息*``  @Override``  public void onError(int code, String error) {`` ``  }``});``配置关闭示例：ChatClient.getInstance().logout(true);` | 用户登录 IM |
+| 权限    | 权限功能说明      | 必选或可选          | 申请时机       |
+| :-------------- | :----- | :------- | --------------------------------- |
+| 网络连接状态（ACCESS_NETWORK_STATE） | 用户查看网络连接状态。 | 必选 | 需要接入网络时。 |
+| Wi-Fi网络状态（ACCESS_Wi-Fi_STATE和CHANGE_Wi-Fi_STATE） | 用户查看网络连接状态。 | 必选 |需要接入网络时。  |
+| 访问网络权限（INTERNET） | 用于在登录时接入网络。 | 必选 | 需要接入网络时。 |
+| 设备存储（WRITE_EXTERNAL_STORAGE） | 用于消息和日志文件写入设备的外部存储。 | 必选 | <br/> - 当用户收发消息时进行消息的本地存储。<br/> - 当 SDK 在运行过程中，将日志写入设备外部存储，并且用户同意开启权限时。 |
+| 设备存储（READ_EXTERNAL_STORAGE） | 用于读取本地消息内容和日志文件上传 | 必选 | <br/> - 当用户查看本地消息记录时进行消息的本地读取。 <br/> - 当 SDK 在运行过程中，读取设备的日志文件用于故障排查，并且用户同意开启权限时。 |
+| 摄像头（CAMERA） | 用于发送图片消息时进行拍照 | 可选 | 当用户发送图片消息进行拍照时。 |
+| 麦克风（RECORD_AUDIO） | 用于发送语音消息时进行录音 | 可选 | 当用户发送语音消息进行录音时 |
+| 保持后台运行（WAKE_LOCK） | 用于维持长链接发送心跳包 | 可选 | 当 SDK 发送心跳包时，申请 WakeLock 锁提高心跳发送成功率。发送成功后，即刻释放 WakeLock 锁。 |
 
-iOS 操作系统SDK 功能、接口配置方式及示例说明：
+#### iOS 操作系统应用权限列表
 
-| 系统 | 业务功能 | 相关个人信息        | 配置方式及示例          | 时机       |
-| ---- | -------- | ------------------ | ------------------------------------------------------------ | ---------- |
-| iOS  | 登录 IM   | 设备品牌、设备型号、操作系统版本、IP地址、网络接入方式和类型 | <br/> - `配置开启示例：EMClient.shared().login(withUsername: "userId", token: "token")` <br/> - `配置关闭示例：EMClient.shared().logout(true) ` | 用户登录 IM |
+| 权限    | 权限功能说明      | 必选或可选          | 申请时机       |
+| :-------------- | :----- | :------- | :------- |
+| Camera Usage Description 摄像头权限  | 用于发送图片消息时进行拍照  | 可选  | 当用户发送图片消息进行拍照时    |
+| Microphone Usage Description 麦克风权限 | 用于发送语音消息时进行录音  | 可选  | 当用户发送语音消息进行录音时    |
+| Photo Library Usage Description 相册权限 | 用于发送图片和视频消息时选择图片和视频  | 可选  | 当用户发送图片或视频消息时选择图片或视频   |
 
-HarmonyOS 操作系统SDK 功能、接口配置方式及示例说明：
+#### HarmonyOS 操作系统应用权限列表
 
-| 系统       | 业务功能 | 相关个人信息    | 配置方式及示例       | 时机       |
-| ---------- | -------- | ----------- | ---------------- | ---------- |
-| Harmony OS | 登录 IM   | 设备品牌、设备型号、操作系统版本、IP地址、网络接入方式和类型 | <br/> - `配置开启示例：hatClient.getInstance().loginWithToken(userId, token).then(() => {``  *//* *登录成功回调*``}).catch((e: ChatError) => {``  *//* *登录失败回调，包含错误信息*``});` <br/> -  `配置关闭示例：  ChatClient.getInstance().logout().then(()=> {``  *// success logic*    ``})` | 用户登录 IM |
+| 权限    | 权限功能说明      | 必选或可选          | 申请时机       |
+| :-------------- | :----- | :------- | :------- |
+| 访问网络权限（INTERNET）  | 用户查看网络连接状态  | 必选  | 当需要接入网络时    |
+| 获取网络信息（GET_NETWORK_INFO） | 用户查看网络连接状态  | 必选  | 当需要接入网络时    |
+| 麦克风（MICROPHONE） | 用于发送语音消息时进行录音  | 必选  | 当用户发送语音消息进行录音时   |
 
 ### **2. SDK 初始化及业务功能调用时机说明**
 
 您应确保在登录注册页面及 App 首次运行时，通过简洁、明显且易于访问方式向最终用户告知涵盖个人信息处理主体、处理目的、处理方式、处理类型、保存期限等内容的 App 个人信息处理规则（App 隐私政策）。
 
-您应确保在最终用户同意 App 隐私政策后，再进行IM SDK 的初始化。并且，在用户同意隐私政策前，您应避免动态申请涉及用户个人信息的敏感设备权限；也应避免私自采集和上报个人信息。如果最终用户不同意 App 隐私政策，则不能初始化IM SDK，无法使用 SDK 功能。
+您应确保在最终用户同意 App 隐私政策后，再进行即时通讯 SDK 的初始化。并且，在用户同意隐私政策前，您应避免动态申请涉及用户个人信息的敏感设备权限；也应避免私自采集和上报个人信息。如果最终用户不同意 App 隐私政策，则不能初始化即时通讯SDK，无法使用 SDK 功能。
 
 SDK 初始化和相关功能配置，请查阅相关配置文档：
 
@@ -58,6 +69,28 @@ SDK 初始化和相关功能配置，请查阅相关配置文档：
 - HarmonyOS：[初始化](https://im.shengwang.cn/docs/sdk/harmonyos/initialization.html) 
 
 SDK 功能、接口配置方式及示例说明：
+
+- Android：[接口集成](https://im.shengwang.cn/docs/sdk/android/message_send_receive.html) 
+- iOS：[接口集成](https://im.shengwang.cn/docs/sdk/ios/message_send_receive.html) 
+- HarmonyOS：[接口集成](https://im.shengwang.cn/docs/sdk/harmonyos/message_send_receive.html) 
+
+Android 操作系统 SDK 功能、接口配置方式及示例说明：
+
+| 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
+| :-------------- | :----- | :------- | :------- | :------- |
+| Android   | 登录 IM  | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(mAccount, mToken, new CallBack() {//登录成功回调 @Override public void onSuccess() { } //登录失败回调，包含错误信息 @Override public void onError(int code, String error) {  } });` <br/>2. 配置关闭示例：<br/>`ChatClient.getInstance().logout(true);`   | 用户登录 IM   |
+
+iOS 操作系统 SDK 功能、接口配置方式及示例说明：
+
+| 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
+| :-------------- | :----- | :------- | :------- | :------- |
+| iOS   | 登录 IM  | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `EMClient.shared().login(withUsername: "userId", token: "token")` <br/>2. 配置关闭示例：<br/> `ChatClient.getInstance().logout(true);`| 用户登录 IM   |
+
+HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
+
+| 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
+| :-------------- | :----- | :------- | :------- | :------- |
+| Harmony OS   | 登录 IM  | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(userId, token).then(() => {//登录成功回调}).catch((e: ChatError) => {//登录失败回调，包含错误信息});` <br/>2. 配置关闭示例：<br/> `ChatClient.getInstance().logout().then(()=> {//success logic})`   | 用户登录 IM   |
 
 ### **3. SDK 隐私政策披露要求与示例说明**
 
