@@ -54,7 +54,7 @@
 | :-------------- | :----- | :------- | :------- |
 | 访问网络权限（INTERNET）  | 用户查看网络连接状态  | 必选  | 当需要接入网络时    |
 | 获取网络信息（GET_NETWORK_INFO） | 用户查看网络连接状态  | 必选  | 当需要接入网络时    |
-| 麦克风（MICROPHONE） | 用于发送语音消息时进行录音  | 必选  | 当用户发送语音消息进行录音时   |
+| 麦克风（MICROPHONE） | 用于发送语音消息时进行录音  |  可选  | 当用户发送语音消息进行录音时   |
 
 ### **2. SDK 初始化及业务功能调用时机说明**
 
@@ -84,7 +84,7 @@ iOS 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
 | :-------------- | :----- | :------- | :------- | :------- |
-| iOS   | 登录即时通讯 IM   | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `EMClient.shared().login(withUsername: "userId", token: "token")` <br/>2. 配置关闭示例：<br/> `ChatClient.getInstance().logout(true);`| 用户登录即时通讯 IM    |
+| iOS   | 登录即时通讯 IM   | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `AgoraChatClient.shared().login(withUsername: "userId", token: "token")` <br/>2. 配置关闭示例：<br/> `AgoraChatClient.shared().logout(true)`| 用户登录即时通讯 IM  ƒ  |
 
 HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 
