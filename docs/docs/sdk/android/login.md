@@ -34,8 +34,7 @@
 
 ![img](/images/android/user_token.png)
 
-在生产环境中，为了安全考虑，你需要部署 App Server 生成 Token，详见 [Token 鉴权文档](/server-side/token_authentication.html#搭建-app-server-生成-token)。
-
+在生产环境中，为了安全考虑，你需要部署 App Server 生成 Token，详见 [Token 鉴权文档](/docs/sdk/server-side/token_authentication.html#搭建-app-server-生成-token)。
 ## 主动登录
 
 1. **用户 ID + token** 是更加安全的登录方式。
