@@ -2,7 +2,7 @@
 
 根据中国法律法规和监管部门规章要求，App 开发运营者（以下简称“开发者”或“您”）在提供网络产品服务时应尊重和保护最终用户个人信息，不得违法违规收集使用个人信息，保证和承诺个人信息处理行为获得最终用户的授权同意，遵循最小必要原则，并且应当采取有效的技术措施和组织措施，确保个人信息安全。
 
-为帮助开发者在使用 SDK 的过程中更好地落实用户个人信息保护相关要求，避免出现侵害用户个人信息权益情形，上海声网科技有限公司（以下简称“我们”）特制定本 **IM SDK** 合规使用说明文档（以下简称“文档”）。
+为帮助开发者在使用 SDK 的过程中更好地落实用户个人信息保护相关要求，避免出现侵害用户个人信息权益情形，上海声网科技有限公司（以下简称“我们”）特制定本**即时通讯 SDK** 合规使用说明文档（以下简称“文档”）。
 
 ## **一、App 个人信息保护的合规要求**
 
@@ -78,19 +78,19 @@ Android 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
 | :-------------- | :----- | :------- | :------- | :------- |
-| Android   | 登录即时通讯 IM   | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(mAccount, mToken, new CallBack() {//登录成功回调 @Override public void onSuccess() { } //登录失败回调，包含错误信息 @Override public void onError(int code, String error) {  } });` <br/>2. 配置关闭示例：<br/>`ChatClient.getInstance().logout(true);`   | 用户登录即时通讯 IM   |
+| Android   | 登录即时通讯 IM   | 应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP地址；会话内容（历史消息、漫游消息、消息附件）（可选）  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(mAccount, mToken, new CallBack() {//登录成功回调 @Override public void onSuccess() { } //登录失败回调，包含错误信息 @Override public void onError(int code, String error) {  } });` <br/>2. 配置关闭示例：<br/>`ChatClient.getInstance().logout(true);`   | 用户登录即时通讯 IM   |
 
 iOS 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
 | :-------------- | :----- | :------- | :------- | :------- |
-| iOS   | 登录即时通讯 IM   | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `AgoraChatClient.shared().login(withUsername: "userId", token: "token")` <br/>2. 配置关闭示例：<br/> `AgoraChatClient.shared().logout(true)`| 用户登录即时通讯 IM  ƒ  |
+| iOS   | 登录即时通讯 IM   | Bundle ID、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP地址；设备识别码（APNS Token）（可选）、会话内容（历史消息、漫游消息、消息附件）（可选）  | 1. 配置开启示例：<br/> `AgoraChatClient.shared().login(withUsername: "userId", token: "token")` <br/>2. 配置关闭示例：<br/> `AgoraChatClient.shared().logout(true)`| 用户登录即时通讯 IM |
 
 HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
 | :-------------- | :----- | :------- | :------- | :------- |
-| Harmony OS   | 登录即时通讯 IM   | 设备品牌、设备型号、操作系统版本、IP 地址、网络接入方式和类型  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(userId, token).then(() => {//登录成功回调}).catch((e: ChatError) => {//登录失败回调，包含错误信息});` <br/>2. 配置关闭示例：<br/> `ChatClient.getInstance().logout().then(()=> {//success logic})`   | 用户登录即时通讯 IM   |
+| Harmony OS   | 登录即时通讯 IM   | 应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP地址；会话内容（历史消息、漫游消息、消息附件）（可选）  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(userId, token).then(() => {//登录成功回调}).catch((e: ChatError) => {//登录失败回调，包含错误信息});` <br/>2. 配置关闭示例：<br/> `ChatClient.getInstance().logout().then(()=> {//success logic})`   | 用户登录即时通讯 IM   |
 
 ### **3. SDK 隐私政策披露要求与示例说明**
 
@@ -105,7 +105,7 @@ HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 - SDK 名称：即时通讯 SDK
 - SDK 公司名称：上海声网科技有限公司
 - SDK 使用目的和功能场景：提供即时通讯服务功能和服务
-- SDK 涉及的个人信息类型：设备类型、设备名称及型号、操作系统版本、网络类型及状态、IP 地址
+- SDK 涉及的个人信息类型：应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP地址；会话内容（历史消息、漫游消息、消息附件）（可选）
 - 实现 SDK 功能所需权限：网络相关权限、存储权限、地理位置（可选）、摄像头（可选）、麦克风（可选）
 - SDK 隐私政策链接：[https://www.shengwang.cn/SDK-privacy-policy/](https://www.shengwang.cn/SDK-privacy-policy/)
 
@@ -114,8 +114,7 @@ HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 - SDK 名称：即时通讯 SDK
 - SDK 公司名称：上海声网科技有限公司
 - SDK 使用目的和功能场景： 提供即时通讯服务功能和服务
-- SDK 涉及的个人信息类型：设备类型、设备名称及型号、操作系统版本、网络类型及状态、IP 地址
-
+- SDK 涉及的个人信息类型：Bundle ID、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP地址；设备识别码（APNS Token）（可选）、会话内容（历史消息、漫游消息、消息附件）（可选）
 - 实现 SDK 功能所需权限： 网络相关权限、存储权限、地理位置（可选）、摄像头（可选）、麦克风（可选）
 - SDK 隐私政策链接：[https://www.shengwang.cn/SDK-privacy-policy/](https://www.shengwang.cn/SDK-privacy-policy/)
 
@@ -124,7 +123,7 @@ HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 - SDK 名称：即时通讯 SDK
 - SDK 公司名称：上海声网科技有限公司
 - SDK 使用目的和功能场景： 提供即时通讯服务功能和服务
-- SDK 涉及的个人信息类型：设备类型、设备名称及型号、操作系统版本、网络类型及状态、IP 地址
+- SDK 涉及的个人信息类型：应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP地址；会话内容（历史消息、漫游消息、消息附件）（可选）
 - 实现 SDK 功能所需权限：网络相关权限、存储权限、地理位置（可选）、摄像头（可选）、麦克风（可选）
 - SDK 隐私政策链接：[https://www.shengwang.cn/SDK-privacy-policy/](https://www.shengwang.cn/SDK-privacy-policy/)
 
@@ -134,7 +133,15 @@ App 首次运行时应当有隐私弹窗，隐私弹窗中应公示隐私政策�
 
 App 取得敏感权限前，应通过隐私弹窗获得用户单独授权同意（如：麦克风权限）。
 
-### **5. 最终用户行使权利的配置说明**
+### **5. 最终用户同意方式的建议方式说明**
+
+App 首次运行时应当有隐私弹窗，隐私弹窗中应公示隐私政策内容并附完整隐私政策链接，并明确提示最终用户阅读并选择是否同意隐私政策；隐私弹窗应提供同意按钮和拒绝同意的按钮，并由最终用户主动选择。
+
+![img](/images/android/security_compliance_end_user.png)
+
+App 取得敏感权限前，应通过隐私弹窗获得用户单独授权同意（如：麦克风权限）。
+
+### **6. 最终用户行使权利的配置说明**
 
 开发者在其 App 中集成即时通讯 SDK 后，SDK 的正常运行会收集和处理必要的最终用户的个人信息用于提供语音通话目的。
 
