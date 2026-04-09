@@ -78,19 +78,19 @@ Android 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
 | :-------------- | :----- | :------- | :------- | :------- |
-| Android   | 登录即时通讯 IM   | 应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP地址；会话内容（历史消息、漫游消息、消息附件）（可选）  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(mAccount, mToken, new CallBack() {//登录成功回调 @Override public void onSuccess() { } //登录失败回调，包含错误信息 @Override public void onError(int code, String error) {  } });` <br/>2. 配置关闭示例：<br/>`ChatClient.getInstance().logout(true);`   | 用户登录即时通讯 IM   |
+| Android   | 登录即时通讯 IM   | 应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP 地址；会话内容（历史消息、漫游消息、消息附件）（可选）  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(mAccount, mToken, new CallBack() {//登录成功回调 @Override public void onSuccess() { } //登录失败回调，包含错误信息 @Override public void onError(int code, String error) {  } });` <br/>2. 配置关闭示例：<br/>`ChatClient.getInstance().logout(true);`   | 用户登录即时通讯 IM   |
 
 iOS 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
 | :-------------- | :----- | :------- | :------- | :------- |
-| iOS   | 登录即时通讯 IM   | Bundle ID、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP地址；设备识别码（APNS Token）（可选）、会话内容（历史消息、漫游消息、消息附件）（可选）  | 1. 配置开启示例：<br/> `AgoraChatClient.shared().login(withUsername: "userId", token: "token")` <br/>2. 配置关闭示例：<br/> `AgoraChatClient.shared().logout(true)`| 用户登录即时通讯 IM |
+| iOS   | 登录即时通讯 IM   | Bundle ID、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP 地址；设备识别码（APNs Token）（可选）、会话内容（历史消息、漫游消息、消息附件）（可选）  | 1. 配置开启示例：<br/> `AgoraChatClient.shared().login(withUsername: "userId", token: "token")` <br/>2. 配置关闭示例：<br/> `AgoraChatClient.shared().logout(true)`| 用户登录即时通讯 IM |
 
 HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
 | :-------------- | :----- | :------- | :------- | :------- |
-| Harmony OS   | 登录即时通讯 IM   | 应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP地址；会话内容（历史消息、漫游消息、消息附件）（可选）  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(userId, token).then(() => {//登录成功回调}).catch((e: ChatError) => {//登录失败回调，包含错误信息});` <br/>2. 配置关闭示例：<br/> `ChatClient.getInstance().logout().then(()=> {//success logic})`   | 用户登录即时通讯 IM   |
+| Harmony OS   | 登录即时通讯 IM   | 应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP 地址；会话内容（历史消息、漫游消息、消息附件）（可选）  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(userId, token).then(() => {//登录成功回调}).catch((e: ChatError) => {//登录失败回调，包含错误信息});` <br/>2. 配置关闭示例：<br/> `ChatClient.getInstance().logout().then(()=> {//success logic})`   | 用户登录即时通讯 IM   |
 
 ### **3. SDK 隐私政策披露要求与示例说明**
 
@@ -105,7 +105,7 @@ HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 - SDK 名称：即时通讯 SDK
 - SDK 公司名称：上海声网科技有限公司
 - SDK 使用目的和功能场景：提供即时通讯服务功能和服务
-- SDK 涉及的个人信息类型：应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP地址；会话内容（历史消息、漫游消息、消息附件）（可选）
+- SDK 涉及的个人信息类型：应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP 地址；会话内容（历史消息、漫游消息、消息附件）（可选）
 - 实现 SDK 功能所需权限：网络相关权限、存储权限、地理位置（可选）、摄像头（可选）、麦克风（可选）
 - SDK 隐私政策链接：[https://www.shengwang.cn/SDK-privacy-policy/](https://www.shengwang.cn/SDK-privacy-policy/)
 
@@ -114,7 +114,7 @@ HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 - SDK 名称：即时通讯 SDK
 - SDK 公司名称：上海声网科技有限公司
 - SDK 使用目的和功能场景： 提供即时通讯服务功能和服务
-- SDK 涉及的个人信息类型：Bundle ID、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP地址；设备识别码（APNS Token）（可选）、会话内容（历史消息、漫游消息、消息附件）（可选）
+- SDK 涉及的个人信息类型：Bundle ID、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP 地址；设备识别码（APNs Token）（可选）、会话内容（历史消息、漫游消息、消息附件）（可选）
 - 实现 SDK 功能所需权限： 网络相关权限、存储权限、地理位置（可选）、摄像头（可选）、麦克风（可选）
 - SDK 隐私政策链接：[https://www.shengwang.cn/SDK-privacy-policy/](https://www.shengwang.cn/SDK-privacy-policy/)
 
@@ -123,7 +123,7 @@ HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 - SDK 名称：即时通讯 SDK
 - SDK 公司名称：上海声网科技有限公司
 - SDK 使用目的和功能场景： 提供即时通讯服务功能和服务
-- SDK 涉及的个人信息类型：应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP地址；会话内容（历史消息、漫游消息、消息附件）（可选）
+- SDK 涉及的个人信息类型：应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP 地址；会话内容（历史消息、漫游消息、消息附件）（可选）
 - 实现 SDK 功能所需权限：网络相关权限、存储权限、地理位置（可选）、摄像头（可选）、麦克风（可选）
 - SDK 隐私政策链接：[https://www.shengwang.cn/SDK-privacy-policy/](https://www.shengwang.cn/SDK-privacy-policy/)
 
