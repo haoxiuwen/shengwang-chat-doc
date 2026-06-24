@@ -31,30 +31,36 @@
 
 | 权限    | 权限功能说明      | 必选或可选          | 申请时机       |
 | :-------------- | :----- | :------- | --------------------------------- |
-| 网络连接状态（ACCESS_NETWORK_STATE） | 用户查看网络连接状态。 | 必选 | 需要接入网络时。 |
-| Wi-Fi网络状态（ACCESS_Wi-Fi_STATE 和 CHANGE_Wi-Fi_STATE） | 用户查看网络连接状态。 | 必选 |需要接入网络时。  |
-| 访问网络权限（INTERNET） | 用于在登录时接入网络。 | 必选 | 需要接入网络时。 |
-| 设备存储（WRITE_EXTERNAL_STORAGE） | 用于消息和日志文件写入设备的外部存储。 | 必选 | <br/> - 当用户收发消息时进行消息的本地存储。<br/> - 当即时通讯 SDK 在运行过程中，将日志写入设备外部存储，并且用户同意开启权限时。 |
-| 设备存储（READ_EXTERNAL_STORAGE） | 用于读取本地消息内容和日志文件上传 | 必选 | <br/> - 当用户查看本地消息记录时进行消息的本地读取。 <br/> - 当即时通讯 SDK 在运行过程中，读取设备的日志文件用于故障排查，并且用户同意开启权限时。 |
-| 摄像头（CAMERA） | 用于发送图片消息时进行拍照 | 可选 | 当用户发送图片消息进行拍照时。 |
-| 麦克风（RECORD_AUDIO） | 用于发送语音消息时进行录音 | 可选 | 当用户发送语音消息进行录音时 |
-| 保持后台运行（WAKE_LOCK） | 用于维持长链接发送心跳包 | 可选 | 当即时通讯 SDK 发送心跳包时，申请 WakeLock 锁提高心跳发送成功率。发送成功后，即刻释放 WakeLock 锁。 |
+| 网络连接状态（ACCESS_NETWORK_STATE） | 判断网络连接状态及网络是否可用。| 必选 | 需要接入网络时。 |
+| Wi-Fi网络状态（ACCESS_Wi-Fi_STATE 和 CHANGE_Wi-Fi_STATE） | 判断网络连接状态及网络是否可用。 | 必选 |需要接入网络时。  |
+| 访问网络权限（INTERNET） | 判断是否能联网，以实现SDK 功能正常运行。 | 必选 | 需要接入网络时。 |
+| 设备存储（WRITE_EXTERNAL_STORAGE） | 提供发送本地文件消息功能。 | 必选 | <br/> - 当用户收发消息时进行消息的本地存储。<br/> - 当即时通讯 SDK 在运行过程中，将日志写入设备外部存储，并且用户同意开启权限时。 |
+| 设备存储（READ_EXTERNAL_STORAGE） | 提供发送本地文件消息功能。 | 必选 | <br/> - 当用户查看本地消息记录时进行消息的本地读取。 <br/> - 当即时通讯 SDK 在运行过程中，读取设备的日志文件用于故障排查，并且用户同意开启权限时。 |
+| 摄像头（CAMERA） | 提供拍照并发送图片消息功能。 | 可选 | 当用户发送图片消息进行拍照时。 |
+| 麦克风（RECORD_AUDIO） | 提供发送音频消息功能。 | 可选 | 当用户发送语音消息进行录音时 |
+| 保持后台运行（WAKE_LOCK） | 最大程度保证长链接心跳投递。 | 可选 | 当即时通讯 SDK 发送心跳包时，申请 WakeLock 锁提高心跳发送成功率。发送成功后，即刻释放 WakeLock 锁。 |
+| 精确地理位置（ACCESS_FINE_LOCATION）| 提供发送地理位置消息的功能。 | 可选 | 需要发送位置消息时。 |
+| 粗略地理位置（ACCESS_COARSE_LOCATION）| 提供发送地理位置消息的功能。 | 可选 | 需要发送位置消息时。 |
 
 #### iOS 操作系统应用权限列表
 
 | 权限    | 权限功能说明      | 必选或可选          | 申请时机       |
 | :-------------- | :----- | :------- | :------- |
-| Camera Usage Description 摄像头权限  | 用于发送图片消息时进行拍照  | 可选  | 当用户发送图片消息进行拍照时    |
-| Microphone Usage Description 麦克风权限 | 用于发送语音消息时进行录音  | 可选  | 当用户发送语音消息进行录音时    |
-| Photo Library Usage Description 相册权限 | 用于发送图片和视频消息时选择图片和视频  | 可选  | 当用户发送图片或视频消息时选择图片或视频   |
+| Camera Usage Description 摄像头权限  | 提供拍照并发送图片消息功能。  | 可选  | 当用户发送图片消息进行拍照时    |
+| Microphone Usage Description 麦克风权限 | 提供发送音频消息功能。  | 可选  | 当用户发送语音消息进行录音时    |
+| 地理位置 - 使用期间（NSLocationWhenInUseUsageDescription）| 提供发送地理位置消息的功能  | 可选  | 需要发送位置消息时   |
+| 地理位置 – 始终（NSLocationAlwaysAndWhenInUseUsageDescription）| 提供发送地理位置消息的功能  | 可选  | 需要发送位置消息时   |
 
 #### HarmonyOS 操作系统应用权限列表
 
 | 权限    | 权限功能说明      | 必选或可选          | 申请时机       |
 | :-------------- | :----- | :------- | :------- |
-| 访问网络权限（INTERNET）  | 用户查看网络连接状态  | 必选  | 当需要接入网络时    |
-| 获取网络信息（GET_NETWORK_INFO） | 用户查看网络连接状态  | 必选  | 当需要接入网络时    |
-| 麦克风（MICROPHONE） | 用于发送语音消息时进行录音  |  可选  | 当用户发送语音消息进行录音时   |
+| 访问网络权限（INTERNET）  | 判断是否能联网，以实现SDK 功能正常运行。  | 必选  | 当需要接入网络时    |
+| 获取网络信息（GET_NETWORK_INFO） | 判断网络连接状态及网络是否可用。  | 必选  | 当需要接入网络时    |
+| 麦克风（MICROPHONE） | 提供发送音频消息功能。  |  可选  | 需要录制音频消息时   |
+| 地理位置 – 前台 （ohos.permission.LOCATION）               | 提供发送地理位置消息的功能。 | 可选     | 需要发送位置消息时 |
+| 地理位置 – 后台 （ohos.permission.LOCATION_IN_BACKGROUND） | 提供发送地理位置消息的功能。 | 可选     | 需要发送位置消息时 |
+| 地理位置 – 模糊位置（ohos.permission.APPROXIMATELY_LOCATION） | 提供发送地理位置消息的功能。 | 可选     | 需要发送位置消息时 |
 
 ### **2. SDK 初始化及业务功能调用时机说明**
 
@@ -78,21 +84,30 @@ Android 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
 | :-------------- | :----- | :------- | :------- | :------- |
-| Android   | 登录即时通讯 IM   | 应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP 地址；会话内容（历史消息、漫游消息、消息附件）（可选）  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(mAccount, mToken, new CallBack() {//登录成功回调 @Override public void onSuccess() { } //登录失败回调，包含错误信息 @Override public void onError(int code, String error) {  } });` <br/>2. 配置关闭示例：<br/>`ChatClient.getInstance().logout(true);`   | 用户登录即时通讯 IM   |
+| Android   | 登录即时通讯 IM   | 必要：应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态；<br/>可选：通讯内容信息  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(mAccount, mToken, new CallBack() {//登录成功回调 @Override public void onSuccess() { } //登录失败回调，包含错误信息 @Override public void onError(int code, String error) {  } });` <br/>2. 配置关闭示例：<br/>`ChatClient.getInstance().logout(true);`   | 用户登录即时通讯 IM   |
 
 iOS 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
 | :-------------- | :----- | :------- | :------- | :------- |
-| iOS   | 登录即时通讯 IM   | Bundle ID、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP 地址；设备识别码（APNs Token）（可选）、会话内容（历史消息、漫游消息、消息附件）（可选）  | 1. 配置开启示例：<br/> `AgoraChatClient.shared().login(withUsername: "userId", token: "token")` <br/>2. 配置关闭示例：<br/> `AgoraChatClient.shared().logout(true)`| 用户登录即时通讯 IM |
+| iOS   | 登录即时通讯 IM   | 必要：Bundle ID、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP地址；<br/>可选：设备识别码（APNS Token）、通讯内容信息  | 1. 配置开启示例：<br/> `AgoraChatClient.shared().login(withUsername: "userId", token: "token")` <br/>2. 配置关闭示例：<br/> `AgoraChatClient.shared().logout(true)`| 用户登录即时通讯 IM |
 
 HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 系统    | 业务功能      | 相关个人信息         | 配置方式及示例      | 时机       |
 | :-------------- | :----- | :------- | :------- | :------- |
-| Harmony OS   | 登录即时通讯 IM   | 应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP 地址；会话内容（历史消息、漫游消息、消息附件）（可选）  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(userId, token).then(() => {//登录成功回调}).catch((e: ChatError) => {//登录失败回调，包含错误信息});` <br/>2. 配置关闭示例：<br/> `ChatClient.getInstance().logout().then(()=> {//success logic})`   | 用户登录即时通讯 IM   |
+| Harmony OS   | 登录即时通讯 IM   | 必要：应用的应用包名、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态；<br/>可选：通讯内容信息  | 1. 配置开启示例：<br/> `ChatClient.getInstance().loginWithToken(userId, token).then(() => {//登录成功回调}).catch((e: ChatError) => {//登录失败回调，包含错误信息});` <br/>2. 配置关闭示例：<br/> `ChatClient.getInstance().logout().then(()=> {//success logic})`   | 用户登录即时通讯 IM   |
 
-### **3. SDK 隐私政策披露要求与示例说明**
+### **3. 可选个人信息的配置说明**
+
+对于即时通讯 SDK 可选收集的个人信息的控制，您可以参考相关接入文档的相关内容，详细了解因相关信息的不收集将会对其对应的功能造成影响，您可以结合业务实际需要进行合理配置。具体配置说明文档链接，
+
+| 收集信息的具体内容  | 收集目的    | 必要或可选 | 平台 | 配置说明   |
+| :-------- | :------------ | :--------- | :------------ | :--------- |
+| 设备识别码（APNS Token） | 为提供消息投递、多端消息同步、消息漫游功能，同时为了预防安全风险，准确识别违反法律法规的情况 | 可选       | iOS    |   |
+| 通讯内容信息  | 用于传输文字、图片、语音、视频、文件、地理位置等消息 | 可选 | Android、iOS、HarmonyOS | 调用相应的 API 才会触发对应类型消息的传输；不调用不会触发。 各消息类型的说明与代码示例详见链接文档： [即时通讯 SDK-Android 发送和接收信息](message_send_receive.html) [即时通讯 SDK-iOS 发送和接收信息](/docs/sdk/ios/message_send_receive.html) [即时通讯 SDK-HarmonyOS 发送和接收信息](/docs/sdk/harmonyos/message_send_receive.html) |
+
+### **4. SDK 隐私政策披露要求与示例说明**
 
 请您根据集成即时通讯 SDK 的实际情况，在您的 App 隐私政策中披露：第三方 SDK 名称、SDK 公司名称、SDK 使用目的和功能场景、SDK 涉及个人信息类型、实现 SDK 功能所需的权限、SDK 隐私政策链接。
 
@@ -105,8 +120,8 @@ HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 - SDK 名称：即时通讯 SDK
 - SDK 公司名称：上海声网科技有限公司
 - SDK 使用目的和功能场景：提供即时通讯服务功能和服务
-- SDK 涉及的个人信息类型：应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP 地址；会话内容（历史消息、漫游消息、消息附件）（可选）
-- 实现 SDK 功能所需权限：网络相关权限、存储权限、地理位置（可选）、摄像头（可选）、麦克风（可选）
+- SDK 涉及的个人信息类型：设备类型、设备名称及型号、操作系统版本、网络类型及状态、应用的应用包名、安装运行路径；通讯内容信息（可选）
+- 实现 SDK 功能所需权限：网络连接状态、Wi-Fi 网络状态、访问网络权限、设备存储、地理位置信息（可选）、摄像头（可选）、麦克风（可选）、保持后台运行（可选）
 - SDK 隐私政策链接：[https://www.shengwang.cn/SDK-privacy-policy/](https://www.shengwang.cn/SDK-privacy-policy/)
 
 **iOS 示例**
@@ -114,8 +129,8 @@ HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 - SDK 名称：即时通讯 SDK
 - SDK 公司名称：上海声网科技有限公司
 - SDK 使用目的和功能场景： 提供即时通讯服务功能和服务
-- SDK 涉及的个人信息类型：Bundle ID、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP 地址；设备识别码（APNs Token）（可选）、会话内容（历史消息、漫游消息、消息附件）（可选）
-- 实现 SDK 功能所需权限： 网络相关权限、存储权限、地理位置（可选）、摄像头（可选）、麦克风（可选）
+- SDK 涉及的个人信息类型：设备类型、设备名称及型号、操作系统版本、网络类型及状态、Bundle ID、设备识别码（APNS Token）（可选）、通讯内容信息（可选）
+- 实现 SDK 功能所需权限： 地理位置信息（可选）、摄像头（可选）、麦克风（可选）
 - SDK 隐私政策链接：[https://www.shengwang.cn/SDK-privacy-policy/](https://www.shengwang.cn/SDK-privacy-policy/)
 
 **HarmonyOS 示例**
@@ -123,8 +138,8 @@ HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 - SDK 名称：即时通讯 SDK
 - SDK 公司名称：上海声网科技有限公司
 - SDK 使用目的和功能场景： 提供即时通讯服务功能和服务
-- SDK 涉及的个人信息类型：应用的应用包名、应用版本号、安装运行路径、设备类型、设备名称及型号、操作系统（版本信息）、网络连接类型及状态、IP 地址；会话内容（历史消息、漫游消息、消息附件）（可选）
-- 实现 SDK 功能所需权限：网络相关权限、存储权限、地理位置（可选）、摄像头（可选）、麦克风（可选）
+- SDK 涉及的个人信息类型：设备类型、设备名称及型号、操作系统版本、网络类型及状态、应用的应用包名、安装运行路径、通讯内容信息（可选）
+- 实现 SDK 功能所需权限：访问网络权限、获取网络信息、地理位置信息（可选）、麦克风（可选）
 - SDK 隐私政策链接：[https://www.shengwang.cn/SDK-privacy-policy/](https://www.shengwang.cn/SDK-privacy-policy/)
 
 ### **4. 最终用户同意方式的建议方式说明**
