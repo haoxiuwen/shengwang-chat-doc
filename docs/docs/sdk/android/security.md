@@ -41,6 +41,7 @@
 | 保持后台运行（WAKE_LOCK） | 最大程度保证长链接心跳投递。 | 可选 | 当即时通讯 SDK 发送心跳包时，申请 WakeLock 锁提高心跳发送成功率。发送成功后，即刻释放 WakeLock 锁。 |
 | 精确地理位置（ACCESS_FINE_LOCATION）| 提供发送地理位置消息的功能。 | 可选 | 需要发送位置消息时。 |
 | 粗略地理位置（ACCESS_COARSE_LOCATION）| 提供发送地理位置消息的功能。 | 可选 | 需要发送位置消息时。 |
+| 粗略地理位置（ACCESS_COARSE_LOCATION）| 提供发送地理位置消息的功能。 | 可选 | 需要发送位置消息时。 |
 
 #### iOS 操作系统应用权限列表
 
@@ -60,6 +61,7 @@
 | 麦克风（MICROPHONE） | 提供发送音频消息功能。  |  可选  | 需要录制音频消息时   |
 | 地理位置 – 前台 （ohos.permission.LOCATION）               | 提供发送地理位置消息的功能。 | 可选     | 需要发送位置消息时 |
 | 地理位置 – 后台 （ohos.permission.LOCATION_IN_BACKGROUND） | 提供发送地理位置消息的功能。 | 可选     | 需要发送位置消息时 |
+| 地理位置 – 模糊位置（ohos.permission.APPROXIMATELY_LOCATION） | 提供发送地理位置消息的功能。 | 可选     | 需要发送位置消息时 |
 
 ### **2. SDK 初始化及业务功能调用时机说明**
 
