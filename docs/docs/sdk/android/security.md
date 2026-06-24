@@ -104,8 +104,8 @@ HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 收集信息的具体内容  | 收集目的    | 必要或可选 | 平台 | 配置说明   |
 | :-------- | :------------ | :--------- | :------------ | :--------- |
-| 设备识别码（APNS Token） | 为提供消息投递、多端消息同步、消息漫游功能，同时为了预防安全风险，准确识别违反法律法规的情况 | 可选       | iOS    |   |
-| 通讯内容信息  | 用于传输文字、图片、语音、视频、文件、地理位置等消息 | 可选 | Android、iOS、HarmonyOS | 调用相应的 API 才会触发对应类型消息的传输；不调用不会触发。 各消息类型的说明与代码示例详见链接文档： [即时通讯 SDK-Android 发送和接收信息](message_send_receive.html) [即时通讯 SDK-iOS 发送和接收信息](/docs/sdk/ios/message_send_receive.html) [即时通讯 SDK-HarmonyOS 发送和接收信息](/docs/sdk/harmonyos/message_send_receive.html) |
+| 设备识别码（APNS Token） | 为提供消息投递、多端消息同步、消息漫游功能，同时为了预防安全风险，准确识别违反法律法规的情况 | 可选       | iOS    |  [APNs 推送](/docs/sdk/ios/push/push_overview.html#技术原理) |
+| 通讯内容信息  | 用于传输文字、图片、语音、视频、文件、地理位置等消息 | 可选 | Android、iOS、HarmonyOS | 调用相应的 API 才会触发对应类型消息的传输；不调用不会触发。 各消息类型的说明与代码示例详见链接文档： <br/> - [即时通讯 SDK-Android 发送和接收信息](message_send_receive.html) <br/> - [即时通讯 SDK-iOS 发送和接收信息](/docs/sdk/ios/message_send_receive.html) <br/> - [即时通讯 SDK-HarmonyOS 发送和接收信息](/docs/sdk/harmonyos/message_send_receive.html) |
 
 ### **4. SDK 隐私政策披露要求与示例说明**
 
