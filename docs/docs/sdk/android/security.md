@@ -104,8 +104,8 @@ HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 
 | 收集信息的具体内容  | 收集目的    | 必要或可选 | 平台 | 配置说明   |
 | :-------- | :------------ | :--------- | :------------ | :--------- |
-| 设备识别码（APNS Token） | 为提供消息投递、多端消息同步、消息漫游功能，同时为了预防安全风险，准确识别违反法律法规的情况 | 可选       | iOS    |   |
-| 通讯内容信息  | 用于传输文字、图片、语音、视频、文件、地理位置等消息 | 可选 | Android、iOS、HarmonyOS | 调用相应的 API 才会触发对应类型消息的传输；不调用不会触发。 各消息类型的说明与代码示例详见链接文档： [即时通讯 SDK-Android 发送和接收信息](message_send_receive.html) [即时通讯 SDK-iOS 发送和接收信息](/docs/sdk/ios/message_send_receive.html) [即时通讯 SDK-HarmonyOS 发送和接收信息](/docs/sdk/harmonyos/message_send_receive.html) |
+| 设备识别码（APNS Token） | 为提供消息投递、多端消息同步、消息漫游功能，同时为了预防安全风险，准确识别违反法律法规的情况 | 可选       | iOS    |  [APNs 推送](/docs/sdk/ios/push/push_overview.html#技术原理) |
+| 通讯内容信息  | 用于传输文字、图片、语音、视频、文件、地理位置等消息 | 可选 | Android、iOS、HarmonyOS | 调用相应的 API 才会触发对应类型消息的传输；不调用不会触发。 各消息类型的说明与代码示例详见链接文档： <br/> - [即时通讯 SDK-Android 发送和接收信息](message_send_receive.html) <br/> - [即时通讯 SDK-iOS 发送和接收信息](/docs/sdk/ios/message_send_receive.html) <br/> - [即时通讯 SDK-HarmonyOS 发送和接收信息](/docs/sdk/harmonyos/message_send_receive.html) |
 
 ### **4. SDK 隐私政策披露要求与示例说明**
 
@@ -142,7 +142,7 @@ HarmonyOS 操作系统 SDK 功能、接口配置方式及示例说明：
 - 实现 SDK 功能所需权限：访问网络权限、获取网络信息、地理位置信息（可选）、麦克风（可选）
 - SDK 隐私政策链接：[https://www.shengwang.cn/SDK-privacy-policy/](https://www.shengwang.cn/SDK-privacy-policy/)
 
-### **4. 最终用户同意方式的建议方式说明**
+### **5. 最终用户同意方式的建议方式说明**
 
 App 首次运行时应当有隐私弹窗，隐私弹窗中应公示隐私政策内容并附完整隐私政策链接，并明确提示最终用户阅读并选择是否同意隐私政策；隐私弹窗应提供同意按钮和拒绝同意的按钮，并由最终用户主动选择。
 
@@ -150,7 +150,7 @@ App 首次运行时应当有隐私弹窗，隐私弹窗中应公示隐私政策�
 
 App 取得敏感权限前，应通过隐私弹窗获得用户单独授权同意（如：麦克风权限）。
 
-### **5. 最终用户行使权利的配置说明**
+### **6. 最终用户行使权利的配置说明**
 
 开发者在其 App 中集成即时通讯 SDK 后，SDK 的正常运行会收集和处理必要的最终用户的个人信息用于提供语音通话目的。
 
