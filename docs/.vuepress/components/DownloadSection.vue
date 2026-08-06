@@ -88,12 +88,14 @@ import { clientSDKDownloadInfo } from "../data/download.js";
 }
 
 .table-wrapper {
+  width: 100%;
   overflow-x: auto;
 }
 
 table {
   width: 100%;
-  min-width: 900px;
+  min-width: 100%;
+  box-sizing: border-box;
   border-collapse: collapse;
   background: #fff;
 }

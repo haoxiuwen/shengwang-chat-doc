@@ -189,7 +189,10 @@ const handleRegister = () => {
 
 <style scoped>
 .shengwang-nav-link {
+  display: inline-flex;
+  align-items: center;
   color: #000;
+  font-family: "PingFang SC", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
@@ -206,8 +209,13 @@ const handleRegister = () => {
 }
 
 .shengwang-nav-separator {
+  display: inline-flex;
+  align-items: center;
   margin: 0 10px;
   color: #505e72;
+  font-family: "PingFang SC", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 22px;
 }
 
