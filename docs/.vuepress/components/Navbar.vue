@@ -115,22 +115,17 @@ const handleRegister = () => {
   window.location.href = "https://console.easemob.com/user/register";
 };
 
-const goToShengwangHome = () => {
-  window.open("https://www.shengwang.cn", "_blank");
-};
 </script>
 
 <template>
   <Navbar>
-    <template #startAfter>
-      <div
-        class="shengwang-logo hide-on-phone"
-        role="link"
-        tabindex="0"
-        aria-label="声网官网"
-        @click="goToShengwangHome"
-        @keydown.enter="goToShengwangHome"
-      ></div>
+    <template #startBefore>
+      <a
+        class="shengwang-nav-link shengwang-brand-link"
+        href="https://www.shengwang.cn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >声网</a>
       <a
         class="shengwang-nav-link"
         href="https://doc.shengwang.cn/"
@@ -140,9 +135,7 @@ const goToShengwangHome = () => {
       <span class="shengwang-nav-separator">|</span>
       <a
         class="shengwang-nav-link shengwang-im-link"
-        href="https://im.shengwang.cn/"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/"
       >即时通讯 IM</a>
     </template>
     <template #endBefore>
@@ -195,14 +188,6 @@ const goToShengwangHome = () => {
 </template>
 
 <style scoped>
-.shengwang-logo {
-  width: 43px;
-  height: 22px;
-  margin-right: 16px;
-  cursor: pointer;
-  background: url('/logo.svg') center / cover no-repeat;
-}
-
 .shengwang-nav-link {
   color: #000;
   font-size: 18px;
@@ -210,6 +195,10 @@ const goToShengwangHome = () => {
   line-height: 22px;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.shengwang-brand-link {
+  margin-right: 1rem;
 }
 
 .shengwang-nav-link:hover {

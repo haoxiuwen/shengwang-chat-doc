@@ -10,7 +10,6 @@ export default hopeTheme(<ThemeOptions & CustomConfig>{
   hostname: 'https://im.shengwang.cn/',
   home: '/',
   iconAssets: 'iconfont',
-  logo: '/logo.svg',
   repo: 'easemob/shengwang-chat-doc',
   docsBranch: 'doc-v5',
   docsDir: 'docs',
@@ -20,7 +19,7 @@ export default hopeTheme(<ThemeOptions & CustomConfig>{
   // navbar
   navbar: zhNavbar,
   navbarLayout: {
-    start: ['Brand','Links'],
+    start: ['Links'],
     center: [],
     end: ['Language', 'Repo', 'Outlook']
   },
