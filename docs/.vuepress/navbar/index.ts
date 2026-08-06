@@ -3,81 +3,6 @@ import { navbar } from 'vuepress-theme-hope'
 export const zhNavbar = navbar([
   { text: '产品介绍', link: '/product/introduction.html' },
   {
-    text: 'UIKit',
-    children: [
-      {
-        text: '单群聊 UIKit',
-        children: [
-          {
-            text: 'Android',
-            icon: '/icon-Android.svg',
-            link: '/uikit/chatuikit/android/beginner_guide.html'
-          },
-          {
-            text: 'iOS',
-            icon: '/icon-iOS.svg',
-            link: '/uikit/chatuikit/ios/beginner_guide.html'
-          },
-          {
-            text: 'Web',
-            icon: '/icon-web.svg',
-            link: '/uikit/chatuikit/web/beginner_guide.html'
-          },
-          {
-            text: 'HarmonyOS',
-            icon: '/icon-harmonyos.svg',
-            link: '/uikit/chatuikit/harmonyos/beginner_guide.html'
-          },
-          {
-            text: 'Uniapp',
-            icon: '/icon-uni-app.svg',
-            link: '/uikit/chatuikit/uniapp/beginner_guide.html'
-          },
-          {
-            text: 'React Native',
-            icon: '/icon-ReactNative.svg',
-            link: '/uikit/chatuikit/react-native/beginner_guide.html'
-          },
-          {
-            text: 'Flutter',
-            icon: '/icon-flutter.svg',
-            link: '/uikit/chatuikit/flutter/beginner_guide.html'
-          }
-        ]
-      },
-      {
-        text: '聊天室 UIKit',
-        children: [
-          {
-            text: 'Android',
-            icon: '/icon-Android.svg',
-            link: '/uikit/chatroomuikit/android/easemob_mcp_server.html'
-          },
-          {
-            text: 'iOS',
-            icon: '/icon-iOS.svg',
-            link: '/uikit/chatroomuikit/ios/easemob_mcp_server.html'
-          },
-          {
-            text: 'Web',
-            icon: '/icon-web.svg',
-            link: '/uikit/chatroomuikit/web/easemob_mcp_server.html'
-          },
-          {
-            text: 'React Native',
-            icon: '/icon-ReactNative.svg',
-            link: '/uikit/chatroomuikit/react-native/easemob_mcp_server.html'
-          },
-          {
-            text: 'Flutter',
-            icon: '/icon-flutter.svg',
-            link: '/uikit/chatroomuikit/flutter/easemob_mcp_server.html'
-          }
-        ]
-      }
-    ]
-  },
-  {
     text: 'CallKit',
     children: [
       {
@@ -253,12 +178,8 @@ export const zhNavbar = navbar([
   {
     text: '增值服务',
       children: [
-        { text: '内容审核', link: '/value-added/moderation/moderation_overview.html'},
-        { text: '实时音视频', link: '/callkit/android/beginner_guide.html'},
         { text: '即时推送', link: '/value-added/push/push_overview.html'},
-        { text: '消息翻译', link: '/value-added/translation/message_translation_android.html'},
-        { text: '搜索服务端消息', link: '/value-added/search/message_search_android.html'},
-        { text: '语音转文字', link: '/value-added/stt/speech_to_text_billing.html'}
+        { text: '消息翻译', link: '/value-added/translation/message_translation_android.html'}
       ]
   },
   // {

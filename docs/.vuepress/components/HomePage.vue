@@ -101,6 +101,7 @@
                 </div>
               </div>
             </section>
+            <DownloadSection />
           </div>
         </main>
       </div>
@@ -114,6 +115,7 @@ import { useRouter } from "vue-router";
 import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 import HeroSection from "./CustomHero.vue";
 import CardMenu from "./CardMenu.vue";
+import DownloadSection from "./DownloadSection.vue";
 import { usePageFrontmatter } from "@vuepress/client";
 const frontmatter = usePageFrontmatter();
 const router = useRouter();

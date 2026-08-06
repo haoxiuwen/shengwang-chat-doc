@@ -114,10 +114,37 @@ const handleLogin = () => {
 const handleRegister = () => {
   window.location.href = "https://console.easemob.com/user/register";
 };
+
+const goToShengwangHome = () => {
+  window.open("https://www.shengwang.cn", "_blank");
+};
 </script>
 
 <template>
   <Navbar>
+    <template #startAfter>
+      <div
+        class="shengwang-logo hide-on-phone"
+        role="link"
+        tabindex="0"
+        aria-label="声网官网"
+        @click="goToShengwangHome"
+        @keydown.enter="goToShengwangHome"
+      ></div>
+      <a
+        class="shengwang-nav-link"
+        href="https://doc.shengwang.cn/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >文档中心</a>
+      <span class="shengwang-nav-separator">|</span>
+      <a
+        class="shengwang-nav-link shengwang-im-link"
+        href="https://im.shengwang.cn/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >即时通讯 IM</a>
+    </template>
     <template #endBefore>
       <div class="search-box" @click="handleSearch">
         <div class="search-input-wrapper">
@@ -168,6 +195,37 @@ const handleRegister = () => {
 </template>
 
 <style scoped>
+.shengwang-logo {
+  width: 43px;
+  height: 22px;
+  margin-right: 16px;
+  cursor: pointer;
+  background: url('/logo.svg') center / cover no-repeat;
+}
+
+.shengwang-nav-link {
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.shengwang-nav-link:hover {
+  color: var(--theme-color);
+}
+
+.shengwang-nav-separator {
+  margin: 0 10px;
+  color: #505e72;
+  line-height: 22px;
+}
+
+.shengwang-im-link {
+  font-size: 14px;
+}
+
 .search-box {
   display: flex;
   align-items: center;
