@@ -121,22 +121,22 @@ const handleRegister = () => {
   <Navbar>
     <template #startBefore>
       <a
-        class="shengwang-nav-link shengwang-brand-link"
+        class="cursor-pointer shengwang-nav-text shengwang-brand-text"
         href="https://www.shengwang.cn"
         target="_blank"
         rel="noopener noreferrer"
       >声网</a>
       <a
-        class="shengwang-nav-link"
+        class="color-black cursor-pointer shengwang-nav-text"
         href="https://doc.shengwang.cn/"
         target="_blank"
         rel="noopener noreferrer"
       >文档中心</a>
-      <span class="shengwang-nav-separator">|</span>
+      <span class="color-#505E72 shengwang-nav-separator">|</span>
       <a
-        class="shengwang-nav-link shengwang-im-link"
+        class="color-black cursor-pointer shengwang-nav-text shengwang-im-link"
         href="/"
-      >即时通讯 IM</a>
+      ><span class="text-14px color-black shengwang-im-text">即时通讯 IM</span></a>
     </template>
     <template #endBefore>
       <div class="search-box" @click="handleSearch">
@@ -188,39 +188,49 @@ const handleRegister = () => {
 </template>
 
 <style scoped>
-.shengwang-nav-link {
-  display: inline-flex;
-  align-items: center;
-  color: #000;
-  font-family: "PingFang SC", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 22px;
-  text-decoration: none;
+.shengwang-nav-text {
+  color: #000 !important;
+  font-family: "PingFang SC", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  text-decoration: none !important;
+  cursor: pointer;
   white-space: nowrap;
 }
 
-.shengwang-brand-link {
-  margin-right: 1rem;
+.shengwang-nav-text:hover {
+  color: #000 !important;
 }
 
-.shengwang-nav-link:hover {
-  color: var(--theme-color);
+.shengwang-brand-text {
+  color: #2d85e9 !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+}
+
+.shengwang-brand-text:hover {
+  color: #2d85e9 !important;
 }
 
 .shengwang-nav-separator {
-  display: inline-flex;
-  align-items: center;
-  margin: 0 10px;
-  color: #505e72;
-  font-family: "PingFang SC", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
+  color: #505e72 !important;
+  font-family: "PingFang SC", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+}
+
+.shengwang-im-text {
+  color: #000 !important;
+  font-family: "PingFang SC", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
 }
 
 .shengwang-im-link {
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 .search-box {
