@@ -114,8 +114,8 @@ import {
 const App = () => {
   // Defines the variable.
   const title = 'ChatQuickstart';
-  // Replaces <your appKey> with your app key.
-  const appKey = '<your appKey>';
+  // Replaces <your appId> with your App ID.
+  const appId = '<your appId>';
   // Replaces <your userId> with your user ID.
   const [username, setUsername] = React.useState('<your userId>');
   // Replaces <your token> with your token.
@@ -180,9 +180,9 @@ const App = () => {
     // Initializes the SDK.
     // Initializes any interface before calling it.
     const init = () => {
-      let o = ChatOptions.withAppKey({
+      let o = ChatOptions.withAppId({
         autoLogin: false,
-        appKey: appKey,
+        appId: appId,
       });
       chatClient.removeAllConnectionListener();
       chatClient
@@ -215,7 +215,7 @@ const App = () => {
     };
 
     init();
-  }, [chatClient, chatManager, appKey]);
+  }, [chatClient, chatManager, appId]);
 
   // Logs in with an account ID and a token.
   const login = () => {

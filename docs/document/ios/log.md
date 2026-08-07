@@ -19,7 +19,7 @@ SDK 将最新日志写入 `easemob.log`。该文件写满后会被重命名为�
 开发阶段如需在 Xcode Console 中输出 SDK 日志，可在初始化 SDK 前设置 `enableConsoleLog`：
 
 ```objectivec
-EMOptions *options = [EMOptions optionsWithAppkey:@"<#appkey#>"];
+EMOptions *options = [EMOptions optionswithAppId:@"<#appId#>"];
 
 // 输出 SDK 日志到 Xcode Console。
 options.enableConsoleLog = YES;

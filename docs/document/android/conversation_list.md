@@ -27,7 +27,7 @@
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your-org#your-app");
+options.setAppId("your app ID");
 options.setDataSyncType(EnumSet.of(
         EMOptions.EMDataSyncType.CONVERSATIONS
 ));
@@ -209,7 +209,7 @@ EMClient.getInstance()
 ```java
 // 步骤 1：初始化 SDK 前关闭自动加载全部会话。
 EMOptions options = new EMOptions();
-options.setAppKey("your-org#your-app");
+options.setAppId("your app ID");
 options.setAutoLoadAllConversations(false);
 
 EMClient.getInstance().init(getApplicationContext(), options);

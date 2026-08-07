@@ -75,7 +75,7 @@ import { GroupManager } from "easemob-websdk/managers/group";
 ```typescript
 // 方式一：初始化时注册。
 const client = ChatClient.init({
-  appKey: "your appKey",
+  appId: "your appId",
   managers: [ChatManager, ContactManager, GroupManager],
 });
 ```
@@ -83,7 +83,7 @@ const client = ChatClient.init({
 ```typescript
 // 方式二：通过链式 use 方法注册。
 const client = ChatClient.init({
-  appKey: "your appKey",
+  appId: "your appId",
 })
   .use(ChatManager)
   .use(ContactManager)
@@ -136,7 +136,7 @@ const contacts = await client.contactManager.getContacts();
   const { ChatClient, ChatManager } = window.IMSDK;
 
   const client = ChatClient.init({
-    appKey: "your appKey",
+    appId: "your appId",
     managers: [ChatManager],
   });
 </script>
@@ -157,7 +157,7 @@ export default {
   mounted() {
     import("easemob-websdk").then(({ ChatClient, ChatManager }) => {
       const client = ChatClient.init({
-        appKey: "your appKey",
+        appId: "your appId",
         managers: [ChatManager],
       });
 
@@ -178,7 +178,7 @@ export default function Home() {
   useEffect(() => {
     import("easemob-websdk").then(({ ChatClient, ChatManager }) => {
       const client = ChatClient.init({
-        appKey: "your appKey",
+        appId: "your appId",
         managers: [ChatManager],
       });
 

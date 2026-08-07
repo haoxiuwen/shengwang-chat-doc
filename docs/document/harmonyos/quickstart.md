@@ -115,7 +115,7 @@
 import { ChatClient, ChatOptions } from '@easemob/chatsdk';
 
 let options = new ChatOptions({
-  appKey: "你的 AppKey"
+  appId: "你的 appId"
 });
 ......// 其他 ChatOptions 配置。
 // 初始化时传入上下文以及options

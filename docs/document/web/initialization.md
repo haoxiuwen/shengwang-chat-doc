@@ -90,7 +90,7 @@ import {
 } from 'easemob-websdk';
 
 const client = ChatClient.init({
-  appKey: 'your-org#your-app',
+  appId: 'your app ID',
   managers: [ChatManager, ContactManager, GroupManager, UserInfoManager],
   enableSyncData: ['conversation', 'contact', 'group'],
 });
@@ -100,7 +100,7 @@ const client = ChatClient.init({
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'your-org#your-app',
+  appId: 'your app ID',
   managers: [ChatManager],
 });
 ```
@@ -109,7 +109,7 @@ const client = ChatClient.init({
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'your-org#your-app',
+  appId: 'your app ID',
   managers: [ChatManager],
   enableSyncData: [],
 });

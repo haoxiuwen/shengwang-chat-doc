@@ -31,7 +31,7 @@ SDK 的连接生命周期通常包括以下阶段：
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'easemob-demo#chatdemoui',
+  appId: 'easemob-demo#chatdemoui',
   managers: [ChatManager],
 });
 

@@ -44,7 +44,7 @@
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'your-org#your-app',
+  appId: 'your app ID',
   enableUserInfoSync: true,
   managers: [UserInfoManager, GroupManager],
 });

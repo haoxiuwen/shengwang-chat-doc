@@ -226,7 +226,7 @@ Android SDK 可以通过以下 `EMOptions` 接口配置当前登录设备的信�
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your-org#your-app");
+options.setAppId("your appID");
 
 // 以下两项需要在初始化 SDK 前设置。
 options.setCustomOSPlatform(10);

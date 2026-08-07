@@ -72,7 +72,7 @@ import EasemobChat from "../sdk/Easemob-chat-4.x.x.js"; // 4.0 版本 SDK
 ```javascript
 const WebIM = (wx.WebIM = EasemobChat);
 WebIM.conn = new WebIM.connection({
-  appKey: "your appKey",
+  appId: "your appId",
   url: "wss://im-api-alipay.easemob.com/websocket", // socket server (3.0 SDK)
   apiUrl: "https://a1.easemob.com", // rest server
   useOwnUploadFun: false, // 是否使用自己的上传方式（如将图片文件等上传到自己的服务器，构建消息时只传 URL）

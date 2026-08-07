@@ -60,7 +60,7 @@
 
 ```javascript
 const conn = new websdk.connection({
-  appKey: "your appKey",
+  appId: "your appId",
   delivery: true,
 });
 ```

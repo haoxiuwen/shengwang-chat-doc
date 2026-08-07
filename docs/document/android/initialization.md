@@ -107,7 +107,7 @@ SDK 支持在初始化前通过 `EMOptions.setDataSyncType` 配置登录后自�
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your-org#your-app");
+options.setAppId("your app ID");
 options.setDataSyncType(EnumSet.of(
         EMOptions.EMDataSyncType.CONVERSATIONS,
         EMOptions.EMDataSyncType.CONTACTS,

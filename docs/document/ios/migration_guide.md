@@ -77,7 +77,7 @@ iOS SDK 5.0.0 新增登录后自动数据同步机制。应用应在初始化 SD
 典型配置如下：
 
 ```objective-c
-EMOptions *options = [EMOptions optionsWithAppkey:@"your-appkey"];
+EMOptions *options = [EMOptions optionswithAppId:@"your-appId"];
 options.dataSyncType = EMDataSyncTypeConversations |
                        EMDataSyncTypeContacts |
                        EMDataSyncTypeJoinedGroups;

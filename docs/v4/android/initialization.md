@@ -18,7 +18,7 @@
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("Your appkey");
+options.setAppId("Your appId");
 ......// 其他 EMOptions 配置。
 EMClient.getInstance().init(context, options);
 ```

@@ -70,7 +70,7 @@ try {
 
 ```dart
 EMOptions options = EMOptions(
-      appKey: APPKEY,
+      appId: appId,
       deleteMessagesAsExitChatRoom: false,
     );
 ```

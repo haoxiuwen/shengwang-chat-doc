@@ -7,7 +7,7 @@
 SDK 默认指向公有云地址，在部署私有云后，需要将地址重新指向到新的地址，以下是地址修改方法：
 
 ```objectivec
-EMOptions *options = [EMOptions optionsWithAppkey:appkey];
+EMOptions *options = [EMOptions optionswithAppId:appId];
 options.enableDnsConfig = NO;
 options.chatPort = 8080;//设置端口号
 options.chatServer = "xxx.xxx.xxx.xxx";//设置 IP 地址

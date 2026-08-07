@@ -109,7 +109,7 @@ iOS SDK 支持在初始化前通过 `EMOptions.dataSyncType` 配置登录后自�
 以下示例在登录成功后自动同步会话、好友和已加入群组：
 
 ```swift
-let options = EMOptions(appkey: "your-org#your-app")
+let options = EMOptions(appId: "your app ID")
 options.dataSyncType = [.conversations, .contacts, .joinedGroups]
 
 if let error = EMClient.shared().initializeSDK(with: options) {

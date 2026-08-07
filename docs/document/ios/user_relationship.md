@@ -168,7 +168,7 @@ iOS SDK 通过登录后的数据同步获取最新好友数据。初始化 SDK �
 在初始化 SDK 前配置 `EMDataSyncTypeContacts`。若还需要同步其他类型的数据，可按位组合对应枚举值。
 
 ```objectivec
-EMOptions *options = [EMOptions optionsWithAppkey:@"your-org#your-app"];
+EMOptions *options = [EMOptions optionswithAppId:@"your app ID"];
 options.dataSyncType = EMDataSyncTypeContacts;
 
 // 使用 options 初始化 SDK 后，再调用异步 Token 登录接口。

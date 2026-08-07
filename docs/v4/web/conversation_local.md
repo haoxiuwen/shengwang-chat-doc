@@ -57,7 +57,7 @@ import * as contactPlugin from "easemob-websdk/contact/contact";
 import * as localCachePlugin from "easemob-websdk/localCache/localCache";
 
 const miniCore = new MiniCore({
-  appKey: "your appKey",
+  appId: "your appId",
 });
 // 使用好友插件, "contact" 为固定值。
 miniCore.usePlugin(contactPlugin, "contact");

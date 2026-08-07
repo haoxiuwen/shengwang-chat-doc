@@ -121,7 +121,7 @@ ChatClient.getInstance()
 ChatClient.getInstance()
   .init(
     new ChatOptions({
-      appKey: appKey,
+      appId: appId,
       customDeviceName: customDeviceName,
     })
   )
@@ -156,7 +156,7 @@ ChatClient.getInstance()
 ChatClient.getInstance()
   .init(
     new ChatOptions({
-      appKey: appKey,
+      appId: appId,
       customOSType: customOSType,
     })
   )
@@ -183,7 +183,7 @@ ChatClient.getInstance()
 ChatClient.getInstance()
   .init(
     new ChatOptions({
-      appKey: "foo",
+      appId: "foo",
       loginExtraInfo: "test",
     })
   )

@@ -8,7 +8,7 @@ SDK 默认连接公有云服务。使用私有云时，应在初始化 SDK 前�
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your-org#your-app");
+options.setAppId("your app ID");
 // REST 服务地址。根据私有云部署配置填写域名或 IP 及端口。
 options.setRestServer("https://rest.example.com:443");
 // IM 服务地址和 TCP 端口。
@@ -26,7 +26,7 @@ EMClient.getInstance().init(context, options);
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your-org#your-app");
+options.setAppId("your app ID");
 // REST 服务地址。使用 HTTPS 时需包含 https:// 前缀。
 options.setRestServer("https://rest.example.com:443");
 // WebSocket 服务地址和端口。
@@ -54,7 +54,7 @@ options.setRestServer("https://10.10.10.10:443");
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your-org#your-app");
+options.setAppId("your app ID");
 // 配置用于下发服务地址的 DNS 服务地址。
 options.setDnsUrl("https://dns.example.com");
 EMClient.getInstance().init(context, options);

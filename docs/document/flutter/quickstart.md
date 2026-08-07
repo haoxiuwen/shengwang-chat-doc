@@ -232,8 +232,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ```dart
 void _initSDK() async {
-    EMOptions options = EMOptions.withAppKey(
-      "<#Your AppKey#>",
+    EMOptions options = EMOptions.withAppId(
+      "<#Your appId#>",
       autoLogin: false,
     );
     await EMClient.getInstance.init(options);

@@ -181,7 +181,7 @@ import SDK from "easemob-websdk/uniApp/Easemob-chat";
 const WebIM = uni.WebIM = SDK;
 
 const conn = new WebIM.connection({
-  appKey: "your appKey", //注意这里的 "K" 需大写
+  appId: "your appId", 
   url: "wss://im-api-wechat.easemob.com/websocket",
   apiUrl: "https://a1.easemob.com",
   useOwnUploadFun: true,
@@ -207,7 +207,7 @@ const conn = new WebIM.connection({
 
 ```javascript
 const conn = new WebIM.connection({
-  appKey: "your appKey",
+  appId: "your appId",
   isAutoLogin: true,
 });
 ```

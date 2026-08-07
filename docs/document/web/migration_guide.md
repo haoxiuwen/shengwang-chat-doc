@@ -61,7 +61,7 @@
 import SDK from 'easemob-websdk';
 
 const conn = new SDK.connection({
-  appKey: 'org#app',
+  appId: 'org#app',
   isHttpDNS: true,
   delivery: true,
   isFixedDeviceId: true,
@@ -81,7 +81,7 @@ import {
 } from 'easemob-websdk';
 
 const client = ChatClient.init({
-  appKey: 'org#app',
+  appId: 'org#app',
   useFixedDeviceId: true,
   enableDeliveryReceipt: true,
   managers: [ChatManager, ContactManager, GroupManager],
@@ -93,7 +93,7 @@ client.addEventHandler('handler', { onConnected: () => {} });
 也可以通过 `.use()` 按需注册 Manager：
 
 ```typescript
-const client = ChatClient.init({ appKey: 'org#app' })
+const client = ChatClient.init({ appId: 'org#app' })
   .use(ChatManager)
   .use(ContactManager)
   .use(GroupManager);

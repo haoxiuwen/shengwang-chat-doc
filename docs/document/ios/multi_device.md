@@ -97,7 +97,7 @@ iOS 客户端接口返回完整的 `userId/resource` 登录 ID；服务端相关
 初始化 SDK 时，你可以调用 `EMOptions#customDeviceName` 设置当前设备的自定义名称。设置设备名称后，若登录设备时因达到了登录设备数量限制而导致在已登录的设备上强制退出时，被踢设备收到的 `userAccountDidLoginFromOtherDeviceWithInfo` 回调里会包含导致该设备被踢下线的自定义设备名称。
 
 ```objectivec
-EMOptions *options = [EMOptions optionsWithAppkey:@"your-org#your-app"];
+EMOptions *options = [EMOptions optionswithAppId:@"your app ID"];
 options.customDeviceName = @"Alice 的 iPad";
 
 // 使用 options 初始化 SDK 后，再通过异步 Token 登录接口登录。
@@ -120,7 +120,7 @@ options.customDeviceName = @"Alice 的 iPad";
 :::
 
 ```objectivec
-EMOptions *options = [EMOptions optionsWithAppkey:@"your-org#your-app"];
+EMOptions *options = [EMOptions optionswithAppId:@"your app ID"];
 options.customOSType = 60;
 
 // 使用 options 初始化 SDK 后，再通过异步 Token 登录接口登录。
@@ -137,7 +137,7 @@ options.customOSType = 60;
 :::
 
 ```objectivec
-EMOptions *options = [EMOptions optionsWithAppkey:@"your-org#your-app"];
+EMOptions *options = [EMOptions optionswithAppId:@"your app ID"];
 options.loginExtensionInfo = @"{\"source\":\"iPad\"}";
 
 // 使用 options 初始化 SDK 后，再通过异步 Token 登录接口登录。

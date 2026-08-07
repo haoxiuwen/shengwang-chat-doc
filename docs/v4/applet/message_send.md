@@ -67,7 +67,7 @@ function sendTextMessage() {
  * @param {Object} duration - 语音时长，单位为秒。
  */
 function sendPrivateAudio(tempFilePath, duration) {
-  var str = WebIM.config.appkey.split("#");
+  var str = WebIM.config.appId.split("#");
   var token = WebIM.conn.context.accessToken;
   var domain = WebIM.conn.apiUrl;
   wx.uploadFile({
@@ -228,7 +228,7 @@ function sendPrivateVideo(){
 				camera: "back",
 				success(res){
 					var tempFilePaths = res.tempFilePath;
-					var str = WebIM.config.appkey.split("#");
+					var str = WebIM.config.appId.split("#");
 					var domain = wx.WebIM.conn.apiUrl + '/'
 					wx.uploadFile({
 						url: domain + str[0] + "/" + str[1] + "/chatfiles",
@@ -290,7 +290,7 @@ function sendFileMessage() {
         count: 1,
         success(res) {
           const domain = wx.WebIM.conn.apiUrl + "/";
-          const [orgName, appName] = WebIM.config.appkey.split("#");
+          const [orgName, appName] = WebIM.config.appId.split("#");
           const token = WebIM.conn.context.accessToken;
           const tempFiles = res.tempFiles[0];
           const fileName = tempFiles.name;

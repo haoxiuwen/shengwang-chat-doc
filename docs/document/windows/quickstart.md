@@ -82,7 +82,7 @@ using AgoraChat.MessageBody;
 在 `InitSDK` 函数中添加以下代码完成 SDK 初始化：
 
 ```csharp
-var options = new Options("appkey"); //此处填入你的appkey
+var options = new Options("appId"); //此处填入你的appId
 options.UsingHttpsOnly = true;
 SDKClient.Instance.InitWithOptions(options);
 ```

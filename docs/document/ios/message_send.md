@@ -568,7 +568,7 @@ EMClient.shared().chatManager?.send(
 
 ```swift
 // 1. 初始化 SDK 前关闭附件自动上传和下载。
-let options = EMOptions.options(withAppkey: "your-org#your-app")
+let options = EMOptions.options(withAppId: "your app ID")
 options.isAutoTransferMessageAttachments = false
 
 if let error = EMClient.shared().initializeSDK(with: options) {

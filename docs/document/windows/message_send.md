@@ -323,7 +323,7 @@ using AgoraChat;
 using UnityEngine;
 
 // 1. SDK 初始化时关闭"自动上传附件到环信服务器"
-Options options = Options.InitOptionsWithAppKey("Your_AppKey");
+Options options = Options.InitOptionswithAppId("Your_appId");
 options.ServerTransfer = false;  // 关闭自动上传附件
 SDKClient.Instance.InitWithOptions(options);
 

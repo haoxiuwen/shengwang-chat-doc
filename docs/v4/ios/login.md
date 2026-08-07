@@ -36,7 +36,7 @@ EMClient.shared().login(withUsername: "userId", token: "token") { userId, err in
 
 ```swift
     //SDK 初始化 `EMOptions` 时可以传入 `loginExtensionInfo` 属性投递给被踢下线的设备。该属性需要开启多设备登录的情况下才能生效。
-    let options = EMOptions(appkey: <#Appkey#>)
+    let options = EMOptions(appId: <#appId#>)
     options.loginExtensionInfo = "you was kicked out by other device"
     EMClient.shared().initializeSDK(with: options)
     EMClient.shared.login(withUsername: "userId", password: "your password") { userId, e in

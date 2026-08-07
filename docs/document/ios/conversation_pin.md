@@ -71,7 +71,7 @@ if let conversation {
 初始化 SDK 前，将 `EMOptions#dataSyncType` 配置为包含 `.conversations`：
 
 ```swift
-let options = EMOptions(appkey: "your-org#your-app")
+let options = EMOptions(appId: "your app ID")
 options.dataSyncType = [.conversations]
 
 if let error = EMClient.shared().initializeSDK(with: options) {

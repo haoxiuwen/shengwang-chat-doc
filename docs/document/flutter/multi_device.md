@@ -101,7 +101,7 @@ try {
 :::
 
 ```dart
-final options = EMOptions(appKey: appKey, deviceName: '你自定义的设备名称');
+final options = EMOptions(appId: appId, deviceName: '你自定义的设备名称');
 EMClient.getInstance.init(options);
 
 EMClient.getInstance.addConnectionEventHandler(
@@ -133,7 +133,7 @@ EMClient.getInstance.addConnectionEventHandler(
 :::
 
 ```dart
-final options = EMOptions(appKey: appKey, osType: 1);
+final options = EMOptions(appId: appId, osType: 1);
 EMClient.getInstance.init(options);
 ```
 
@@ -149,7 +149,7 @@ EMClient.getInstance.init(options);
 
 ```dart
 // 设置登录设备的扩展信息
-final options = EMOptions(appKey: appKey, loginExtension: "extension");
+final options = EMOptions(appId: appId, loginExtension: "extension");
 
 // 添加连接事件监听   
 EMClient.getInstance.addConnectionEventHandler(

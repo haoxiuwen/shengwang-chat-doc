@@ -124,7 +124,7 @@ Easemob_quickstart<br>
 ```typescript
 import { ChatClient, ChatManager } from 'easemob-websdk';
 
-const appKey = '<Your app key>';
+const appId = '<Your App ID>';
 let userId;
 let token;
 
@@ -137,7 +137,7 @@ const appendLog = (text) => {
 
 // 初始化 SDK，并注册 ChatManager。相关参数配置详见初始化文档。
 const client = ChatClient.init({
-    appKey,
+    appId,
     managers: [ChatManager],
 });
 

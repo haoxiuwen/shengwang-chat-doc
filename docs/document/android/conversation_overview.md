@@ -78,7 +78,7 @@ EMConversation conversation = EMClient.getInstance()
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your-org#your-app");
+options.setAppId("your app ID");
 options.setDataSyncType(EnumSet.of(
         EMOptions.EMDataSyncType.CONVERSATIONS));
 
@@ -103,7 +103,7 @@ SDK 提供以下本地会话列表读取方式：
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your-org#your-app");
+options.setAppId("your app ID");
 options.setLoadEmptyConversations(true);
 
 EMClient.getInstance().init(getApplicationContext(), options);

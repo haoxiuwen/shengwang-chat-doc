@@ -184,7 +184,7 @@ SDK 通过自动同步获取最新好友数据。你需要在初始化 SDK 前�
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your-org#your-app");
+options.setAppId("your app ID");
 options.setDataSyncType(EnumSet.of(
         EMOptions.EMDataSyncType.CONTACTS
 ));

@@ -99,7 +99,7 @@ EMClient.shared().chatManager?.removeConversationMark(
 初始化 SDK 前配置会话同步：
 
 ```swift
-let options = EMOptions(appkey: "your-org#your-app")
+let options = EMOptions(appId: "your app ID")
 options.dataSyncType = [.conversations]
 
 if let error = EMClient.shared().initializeSDK(with: options) {

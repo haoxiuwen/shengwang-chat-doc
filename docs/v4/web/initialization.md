@@ -13,7 +13,7 @@
 ```javascript
 import WebIM from "easemob-websdk";
 const conn = new WebIM.connection({
-  appKey: "Your appKey",
+  appId: "Your appId",
 });
 ```
 
