@@ -12,7 +12,7 @@
 ## 请求 URL
 
 ```http
-DELETE https://{host}/{org_name}/{app_name}/users/{username}/disconnect/{resourceId}
+DELETE https://{host}/app-id/{app_id}/users/{username}/disconnect/{resourceId}
 ```
 
 | 参数       | 类型     | 描述               |

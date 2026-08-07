@@ -22,7 +22,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/messages/chatrooms/broadcast
+POST https://{host}/app-id/{app_id}/messages/chatrooms/broadcast
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -34,7 +34,7 @@ POST https://{host}/{org_name}/{app_name}/messages/chatrooms/broadcast
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
+curl -X POST 'https://XXXX/app-id/{app_id}/messages/chatrooms/broadcast' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{
@@ -55,7 +55,7 @@ curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
+curl -X POST 'https://XXXX/app-id/{app_id}/messages/chatrooms/broadcast' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{
@@ -63,7 +63,7 @@ curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
         "type": "img",
         "filename":"testimg.jpg",
         "secret":"VfXXXXNb_",
-        "url":"https://XXXX/XXXX/XXXX/chatfiles/55f12940-XXXX-XXXX-8a5b-ff2336f03252",
+        "url":"https://XXXX/app-id/{app_id}/chatfiles/55f12940-XXXX-XXXX-8a5b-ff2336f03252",
         "size":{
            "width":480,
            "height":720
@@ -82,13 +82,13 @@ curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
+curl -X POST 'https://XXXX/app-id/{app_id}/messages/chatrooms/broadcast' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{
     "msg": {
         "type": "audio",
-        "url": "https://XXXX/XXXX/XXXX/chatfiles/1dfc7f50-XXXX-XXXX-8a07-7d75b8fb3d42",
+        "url": "https://XXXX/app-id/{app_id}/chatfiles/1dfc7f50-XXXX-XXXX-8a07-7d75b8fb3d42",
         "filename": "testaudio.amr",
         "length": 10,
         "secret": "HfXXXXCjM"
@@ -106,18 +106,18 @@ curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
+curl -X POST 'https://XXXX/app-id/{app_id}/messages/chatrooms/broadcast' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{
     "msg": {
         "type": "video",
-        "thumb" : "https://XXXX/XXXX/XXXX/chatfiles/67279b20-7f69-11e4-8eee-21d3334b3a97",
+        "thumb" : "https://XXXX/app-id/{app_id}/chatfiles/67279b20-7f69-11e4-8eee-21d3334b3a97",
         "length" : 0,
         "secret":"VfXXXXNb_",
         "file_length" : 58103,
         "thumb_secret" : "ZyXXXX2I",
-        "url" : "https://XXXX/XXXX/XXXX/chatfiles/671dfe30-XXXX-XXXX-ba67-8fef0d502f46"
+        "url" : "https://XXXX/app-id/{app_id}/chatfiles/671dfe30-XXXX-XXXX-ba67-8fef0d502f46"
     },
     "from": "admin",
     "ext": {
@@ -132,7 +132,7 @@ curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
+curl -X POST 'https://XXXX/app-id/{app_id}/messages/chatrooms/broadcast' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{
@@ -140,7 +140,7 @@ curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
         "type": "file",
         "filename":"test.txt",
         "secret":"1-g0XXXXua",
-        "url":"https://XXXX/XXXX/XXXX/chatfiles/d7eXXXX7444"
+        "url":"https://XXXX/app-id/{app_id}/chatfiles/d7eXXXX7444"
     },
     "from": "admin",
     "ext": {
@@ -155,7 +155,7 @@ curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
+curl -X POST 'https://XXXX/app-id/{app_id}/messages/chatrooms/broadcast' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{
@@ -178,7 +178,7 @@ curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
+curl -X POST 'https://XXXX/app-id/{app_id}/messages/chatrooms/broadcast' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{
@@ -199,7 +199,7 @@ curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST 'https://XXXX/XXXX/XXXX/messages/chatrooms/broadcast' \
+curl -X POST 'https://XXXX/app-id/{app_id}/messages/chatrooms/broadcast' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{

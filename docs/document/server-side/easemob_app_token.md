@@ -17,7 +17,7 @@
 ### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/token
+POST https://{host}/app-id/{app_id}/token
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -25,7 +25,7 @@ POST https://{host}/{org_name}/{app_name}/token
 ### 请求示例
 
 ```shell
-curl -X POST 'https://XXXX/XXXX/XXXX/token'    \
+curl -X POST 'https://XXXX/app-id/{app_id}/token'    \
 -H 'Content-Type: application/json'    \
 -H 'Accept: application/json'     \
 -d '{

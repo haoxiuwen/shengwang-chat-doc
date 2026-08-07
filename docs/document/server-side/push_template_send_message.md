@@ -28,7 +28,7 @@
 关于推送标题和推送内容参数的填充，即 `title_pattern` 和 `content_pattern`，详见 [创建离线推送模板](push_template_create.html)。
 
 ```shell
-curl -X POST 'https://XXXX/XXXX/XXXX/messages/users' \
+curl -X POST 'https://XXXX/app-id/{app_id}/messages/users' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{
@@ -78,7 +78,7 @@ curl -X POST 'https://XXXX/XXXX/XXXX/messages/users' \
 
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' 
+curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' 
 -H 'Content-Type: application/json' 
 -H 'Accept: application/json' 
 -H 'Authorization: Bearer <YourAppToken>' 

@@ -25,7 +25,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/moderation/txt/check
+POST https://{host}/app-id/{app_id}/moderation/txt/check
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。

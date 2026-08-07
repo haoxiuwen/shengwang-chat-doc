@@ -14,7 +14,7 @@
 ## 请求 URL
 
 ```http
-DELETE https://{host}/{org_name}/{app_name}/users/{username}/collections
+DELETE https://{host}/app-id/{app_id}/users/{username}/collections
 ```
 
 | 参数       | 类型   | 是否必需 | 描述                     |

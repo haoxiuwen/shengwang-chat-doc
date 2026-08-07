@@ -12,7 +12,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/users/{username}/contacts/import
+POST https://{host}/app-id/{app_id}/users/{username}/contacts/import
 ```
 
 | 参数              | 类型   | 是否必需 | 描述           |
@@ -24,7 +24,7 @@ POST https://{host}/{org_name}/{app_name}/users/{username}/contacts/import
 ## 请求示例
 
 ```shell
-curl --location 'https://XXXX/XXXX/XXXX/users/{username}/contacts/import' \
+curl --location 'https://XXXX/app-id/{app_id}/users/{username}/contacts/import' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -H 'Content-Type: application/json' \
 -d '{

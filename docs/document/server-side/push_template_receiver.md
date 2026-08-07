@@ -11,7 +11,7 @@
 ## 请求 URL
 
 ```http
-PUT https://{host}/{org_name}/{app_name}/users/{userId}/notification/template
+PUT https://{host}/app-id/{app_id}/users/{userId}/notification/template
 ```
 
 | 参数       | 类型   | 描述          | 是否必需 |
@@ -23,7 +23,7 @@ PUT https://{host}/{org_name}/{app_name}/users/{userId}/notification/template
 ## 请求示例
 
 ```shell
-curl -X PUT 'https://XXXX/XXXX/XXXX/users/XXXX/notification/template' \
+curl -X PUT 'https://XXXX/app-id/{app_id}/users/XXXX/notification/template' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <YourUserToken>' \
 -d '{    

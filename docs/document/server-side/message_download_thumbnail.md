@@ -15,7 +15,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/chatfiles/{file_uuid}
+GET https://{host}/app-id/{app_id}/chatfiles/{file_uuid}
 ```
 
 | 参数        | 类型   | 是否必需 | 描述                            |
@@ -29,7 +29,7 @@ GET https://{host}/{org_name}/{app_name}/chatfiles/{file_uuid}
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X GET 'https://XXXX/XXXX/XXXX/chatfiles/7f456bf0-ecb2-11e8-b630-777db304f26c' \
+curl -X GET 'https://XXXX/app-id/{app_id}/chatfiles/7f456bf0-ecb2-11e8-b630-777db304f26c' \
 -H 'Accept: application/octet-stream'   \
 -H 'Authorization: Bearer <YourAppToken>'   \
 -H 'share-secret: f0Vr-uyyEeiHpHmsu53XXXXXXXXZYgyLkdfsZ4xo2Z0cSBnB'  \

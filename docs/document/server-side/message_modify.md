@@ -28,7 +28,7 @@
 ## 请求 URL
 
 ```http
-PUT https://{host}/{org_name}/{app_name}/messages/rewrite/{msg_id}
+PUT https://{host}/app-id/{app_id}/messages/rewrite/{msg_id}
 ```
 
 | 参数            | 类型   | 是否必需 | 描述            |
@@ -42,7 +42,7 @@ PUT https://{host}/{org_name}/{app_name}/messages/rewrite/{msg_id}
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X PUT -i 'https://XXXX/XXXX/XXXX/messages/rewrite/1235807318835202004' \
+curl -X PUT -i 'https://XXXX/app-id/{app_id}/messages/rewrite/1235807318835202004' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
@@ -65,7 +65,7 @@ curl -X PUT -i 'https://XXXX/XXXX/XXXX/messages/rewrite/1235807318835202004' \
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X PUT -i 'https://XXXX/XXXX/XXXX/messages/rewrite/1235807318835202004' \
+curl -X PUT -i 'https://XXXX/app-id/{app_id}/messages/rewrite/1235807318835202004' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
@@ -93,7 +93,7 @@ curl -X PUT -i 'https://XXXX/XXXX/XXXX/messages/rewrite/1235807318835202004' \
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X PUT -i 'https://XXXX/XXXX/XXXX/messages/rewrite/1235807318835202004' \
+curl -X PUT -i 'https://XXXX/app-id/{app_id}/messages/rewrite/1235807318835202004' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \

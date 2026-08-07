@@ -111,7 +111,7 @@
 #### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/messages/chatgroups
+POST https://{host}/app-id/{app_id}/messages/chatgroups
 ```
 
 关于请求 URL 中的其他参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -123,7 +123,7 @@ POST https://{host}/{org_name}/{app_name}/messages/chatgroups
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
+curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
@@ -144,7 +144,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' 
+curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' 
 -H 'Content-Type: application/json' 
 -H 'Accept: application/json' 
 -H 'Authorization: Bearer <YourAppToken>' 
@@ -249,7 +249,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups'
 #### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/messages/chatgroups
+POST https://{host}/app-id/{app_id}/messages/chatgroups
 ```
 
 关于请求 URL 中的其他参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -259,7 +259,7 @@ POST https://{host}/{org_name}/{app_name}/messages/chatgroups
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
+curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
@@ -270,7 +270,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
     "body": {
         "filename":"testimg.jpg",
         "secret":"VfXXXXNb_",
-        "url":"https://XXXX/XXXX/XXXX/chatfiles/55f12940-XXXX-XXXX-8a5b-ff2336f03252",
+        "url":"https://XXXX/app-id/{app_id}/chatfiles/55f12940-XXXX-XXXX-8a5b-ff2336f03252",
         "size":{
             "width":480,
             "height":720
@@ -295,7 +295,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
 | `filename` | String | 否       | 图片名称。建议传入该参数，否则客户端收到图片消息时无法显示图片名称。          |
 | `secret`   | String | 否       | 图片的访问密钥，即成功上传图片后，从 [文件上传](message_upload_file.html) 的响应 body 中获取的 `share-secret`。如果图片文件上传时设置了文件访问限制（`restrict-access`），则该字段为必填。 |
 | `size`     | JSON   | 否      | 图片尺寸，单位为像素，包含以下字段：<br/> - `height`：图片高度；<br/> - `width`：图片宽度。   |
-| `url`      | String | 是       | 图片 URL 地址：`https://{host}/{org_name}/{app_name}/chatfiles/{file_uuid}`。其中 `file_uuid` 为文件 ID，成功上传图片文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取。  |
+| `url`      | String | 是       | 图片 URL 地址：`https://{host}/app-id/{app_id}/chatfiles/{file_uuid}`。其中 `file_uuid` 为文件 ID，成功上传图片文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取。  |
 
 除上述必填和常规字段外，你还可以传入控制消息同步、是否返回已读回执、漫游可见性、投递范围以及扩展信息等可选参数，详见 [消息通用可选参数](#消息通用可选参数)。
 
@@ -347,7 +347,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
 #### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/messages/chatgroups
+POST https://{host}/app-id/{app_id}/messages/chatgroups
 ```
 
 关于请求 URL 中的其他参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -357,7 +357,7 @@ POST https://{host}/{org_name}/{app_name}/messages/chatgroups
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
+curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 -H 'Content-Type: application/json' -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{
@@ -365,7 +365,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
     "to": ["184524748161025"],
     "type": "audio",
     "body": {
-        "url": "https://XXXX/XXXX/XXXX/chatfiles/1dfc7f50-XXXX-XXXX-8a07-7d75b8fb3d42",
+        "url": "https://XXXX/app-id/{app_id}/chatfiles/1dfc7f50-XXXX-XXXX-8a07-7d75b8fb3d42",
         "filename": "testaudio.amr",
         "length": 10,
         "secret": "HfXXXXCjM"
@@ -388,7 +388,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
 | `filename` | String | 否       | 语音文件的名称。建议传入该参数，否则客户端收到语音消息时无法显示语音文件名称。    |
 | `secret`   | String | 否       | 语音文件访问密钥，即成功上传语音文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取的 `share-secret`。 如果语音文件上传时设置了文件访问限制（`restrict-access`），则该字段为必填。 |
 | `Length`   | Int    | 否      | 语音时长，单位为秒。         |
-| `url`      | String | 是       | 语音文件 URL 地址：`https://{host}/{org_name}/{app_name}/chatfiles/{file_uuid}`。`file_uuid` 为文件 ID，成功上传语音文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取。  |
+| `url`      | String | 是       | 语音文件 URL 地址：`https://{host}/app-id/{app_id}/chatfiles/{file_uuid}`。`file_uuid` 为文件 ID，成功上传语音文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取。  |
 
 除上述必填和常规字段外，你还可以传入控制消息同步、是否发送已读回执、漫游可见性、投递范围以及扩展信息等可选参数，详见 [消息通用可选参数](#消息通用可选参数)。
 
@@ -441,7 +441,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
 #### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/messages/chatgroups
+POST https://{host}/app-id/{app_id}/messages/chatgroups
 ```
 
 关于请求 URL 中的其他参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -451,7 +451,7 @@ POST https://{host}/{org_name}/{app_name}/messages/chatgroups
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
+curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
@@ -461,12 +461,12 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
     "type": "video",
     "body": {
         "filename" : "test.avi"
-        "thumb" : "https://XXXX/XXXX/XXXX/chatfiles/67279b20-7f69-11e4-8eee-21d3334b3a97",
+        "thumb" : "https://XXXX/app-id/{app_id}/chatfiles/67279b20-7f69-11e4-8eee-21d3334b3a97",
         "length" : 0,
         "secret":"VfXXXXNb_",
         "file_length" : 58103,
         "thumb_secret" : "ZyXXXX2I",
-        "url" : "https://XXXX/XXXX/XXXX/chatfiles/671dfe30-XXXX-XXXX-ba67-8fef0d502f46"
+        "url" : "https://XXXX/app-id/{app_id}/chatfiles/671dfe30-XXXX-XXXX-ba67-8fef0d502f46"
     }
 }'
 ```
@@ -480,12 +480,12 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
 | 参数           | 类型   | 是否必需 | 描述    |
 | :------------- | :----- | :------- | :---------------- |
 | `filename` | String | 否 | 视频文件名称。建议传入该参数，否则客户端收到视频消息时无法显示视频文件名称。 |
-| `thumb`        | String | 否       | 视频缩略图 URL 地址：`https://{host}/{org_name}/{app_name}/chatfiles/{file_uuid}`。`file_uuid` 为视频缩略图唯一标识，成功上传缩略图文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取。 |
+| `thumb`        | String | 否       | 视频缩略图 URL 地址：`https://{host}/app-id/{app_id}/chatfiles/{file_uuid}`。`file_uuid` 为视频缩略图唯一标识，成功上传缩略图文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取。 |
 | `length`       | Int    | 否      | 视频时长，单位为秒。  |
 | `secret`       | String | 否       | 视频文件访问密钥，即成功上传视频文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取的 `share-secret`。如果视频文件上传时设置了文件访问限制（`restrict-access`），则该字段为必填。        |
 | `file_length`  | Long   | 否      | 视频文件大小，单位为字节。  |
 | `thumb_secret` | String | 否       | 视频缩略图访问密钥，即成功上传视频文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取的 `share-secret`。如果缩略图文件上传时设置了文件访问限制（`restrict-access`），则该字段为必填。    |
-| `url`          | String | 是       | 视频文件 URL 地址：`https://{host}/{org_name}/{app_name}/chatfiles/{file_uuid}`。其中 `file_uuid` 为文件 ID，成功上传视频文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取。   |
+| `url`          | String | 是       | 视频文件 URL 地址：`https://{host}/app-id/{app_id}/chatfiles/{file_uuid}`。其中 `file_uuid` 为文件 ID，成功上传视频文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取。   |
 
 除上述必填和常规字段外，你还可以传入控制消息同步、是否发送已读回执、漫游可见性、投递范围以及扩展信息等可选参数，详见 [消息通用可选参数](#消息通用可选参数)。
 
@@ -537,7 +537,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
 #### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/messages/chatgroups
+POST https://{host}/app-id/{app_id}/messages/chatgroups
 ```
 
 关于请求 URL 中的其他参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。 
@@ -546,7 +546,7 @@ POST https://{host}/{org_name}/{app_name}/messages/chatgroups
 
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
+curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
@@ -557,7 +557,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
     "body": {
         "filename":"test.txt",
         "secret":"1-g0XXXXua",
-        "url":"https://XXXX/XXXX/XXXX/chatfiles/d7eXXXX7444"
+        "url":"https://XXXX/app-id/{app_id}/chatfiles/d7eXXXX7444"
     }
 }'
 ```
@@ -576,7 +576,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
 | :--------- | :----- | :------- | :------------ |
 | `filename` | String | 否       | 文件名称。 建议传入该参数，否则客户端收到文件消息时无法显示文件名称。  |
 | `secret`   | String | 否       | 文件访问密钥，即成功上传文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取的 `share-secret`。如果文件上传时设置了文件访问限制（`restrict-access`），则该字段为必填。      |
-| `url`      | String | 是       | 文件 URL 地址：`https://{host}/{org_name}/{app_name}/chatfiles/{file_uuid}`。其中 `file_uuid` 为文件 ID，成功上传视频文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取。 |
+| `url`      | String | 是       | 文件 URL 地址：`https://{host}/app-id/{app_id}/chatfiles/{file_uuid}`。其中 `file_uuid` 为文件 ID，成功上传视频文件后，从 [文件上传](message_upload_file.html) 的响应 body 中获取。 |
 
 除上述必填和常规字段外，你还可以传入控制消息同步、是否发送已读回执、漫游可见性、投递范围以及扩展信息等可选参数，详见 [消息通用可选参数](#消息通用可选参数)。
 
@@ -626,7 +626,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' \
 #### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/messages/chatgroups
+POST https://{host}/app-id/{app_id}/messages/chatgroups
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -636,7 +636,7 @@ POST https://{host}/{org_name}/{app_name}/messages/chatgroups
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups'  \
+curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups'  \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
@@ -716,7 +716,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups'  \
 #### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/messages/chatgroups
+POST https://{host}/app-id/{app_id}/messages/chatgroups
 ```
 
 关于请求 URL 中的其他参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -726,7 +726,7 @@ POST https://{host}/{org_name}/{app_name}/messages/chatgroups
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST -i "https://XXXX/XXXX/XXXX/messages/chatgroups" \
+curl -X POST -i "https://XXXX/app-id/{app_id}/messages/chatgroups" \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json'  \
 -H 'Authorization: Bearer <YourAppToken>'  \
@@ -802,7 +802,7 @@ curl -X POST -i "https://XXXX/XXXX/XXXX/messages/chatgroups" \
 #### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/messages/chatgroups
+POST https://{host}/app-id/{app_id}/messages/chatgroups
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。 
@@ -812,7 +812,7 @@ POST https://{host}/{org_name}/{app_name}/messages/chatgroups
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST -i "https://XXXX/XXXX/XXXX/messages/chatgroups" \
+curl -X POST -i "https://XXXX/app-id/{app_id}/messages/chatgroups" \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json'  \
 -H "Authorization:Bearer <YourAppToken>" \
@@ -900,7 +900,7 @@ curl -X POST -i "https://XXXX/XXXX/XXXX/messages/chatgroups" \
 #### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/messages/chatgroups/users
+POST https://{host}/app-id/{app_id}/messages/chatgroups/users
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -912,7 +912,7 @@ POST https://{host}/{org_name}/{app_name}/messages/chatgroups/users
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups/users' \
+curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups/users' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
@@ -1041,7 +1041,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups/users' \
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST -i 'https://XXXX/XXXX/XXXX/messages/chatgroups' 
+curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' 
 -H 'Content-Type: application/json' 
 -H 'Accept: application/json' 
 -H 'Authorization: Bearer <YourAppToken>' 

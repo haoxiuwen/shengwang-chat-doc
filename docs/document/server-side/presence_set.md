@@ -19,7 +19,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/users/{username}/presence/{resource}/{status}
+POST https://{host}/app-id/{app_id}/users/{username}/presence/{resource}/{status}
 ```
 
 | 参数       | 类型  | 是否必需 | 描述           | 
@@ -33,7 +33,7 @@ POST https://{host}/{org_name}/{app_name}/users/{username}/presence/{resource}/{
 ## 请求示例
 
 ```shell
-curl -X POST 'https://XXXX/XXXX/XXXX/users/c1/presence/android/0' \
+curl -X POST 'https://XXXX/app-id/{app_id}/users/c1/presence/android/0' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \

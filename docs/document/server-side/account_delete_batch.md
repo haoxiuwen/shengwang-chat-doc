@@ -14,7 +14,7 @@
 ## 请求 URL
 
 ```http
-DELETE https://{host}/{org_name}/{app_name}/users?limit={N}&cursor={cursor}
+DELETE https://{host}/app-id/{app_id}/users?limit={N}&cursor={cursor}
 ```
 
 | 参数     | 类型   | 是否必需 | 描述                                                         |
@@ -28,7 +28,7 @@ DELETE https://{host}/{org_name}/{app_name}/users?limit={N}&cursor={cursor}
 
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X DELETE 'https://XXXX/XXXX/XXXX/users?limit=2'  \
+curl -X DELETE 'https://XXXX/app-id/{app_id}/users?limit=2'  \
 -H 'Accept: application/json'     \
 -H 'Authorization: Bearer <YourAppToken>' 
 ```
@@ -44,7 +44,7 @@ curl -X DELETE 'https://XXXX/XXXX/XXXX/users?limit=2'  \
   "action": "delete",
   "application": "8be024f0-XXXX-XXXX-b697-5d598d5f8402",
   "path": "/users",
-  "uri": "https://XXXX/XXXX/testapp/users",
+  "uri": "https://XXXX/XXXX/XXXX/users",
   "entities": [
     {
       "uuid": "b2aade90-XXXX-XXXX-a974-f3368f82e4f1",

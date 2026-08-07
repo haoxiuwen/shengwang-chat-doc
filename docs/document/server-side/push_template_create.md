@@ -13,7 +13,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/notification/template
+POST https://{host}/app-id/{app_id}/notification/template
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -21,7 +21,7 @@ POST https://{host}/{org_name}/{app_name}/notification/template
 ## 请求示例
 
 ```bash
-curl -X POST 'https://XXXX/XXXX/XXXX/notification/template' \
+curl -X POST 'https://XXXX/app-id/{app_id}/notification/template' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{

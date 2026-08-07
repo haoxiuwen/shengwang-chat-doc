@@ -25,7 +25,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/messages/msg_recall
+POST https://{host}/app-id/{app_id}/messages/msg_recall
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -35,7 +35,7 @@ POST https://{host}/{org_name}/{app_name}/messages/msg_recall
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -i -X POST "https://XXXX/XXXX/XXXX/messages/msg_recall"   \
+curl -i -X POST "https://XXXX/app-id/{app_id}/messages/msg_recall"   \
 -H 'Content-Type: application/json'   \
 -H 'Accept: application/json'   \
 -H "Authorization: Bearer <YourAppToken>"  \

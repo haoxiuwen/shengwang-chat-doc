@@ -12,7 +12,7 @@
 ## 请求 URL
 
 ```http
-PUT https://{host}/{org_name}/{app_name}/push/nickname
+PUT https://{host}/app-id/{app_id}/push/nickname
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。

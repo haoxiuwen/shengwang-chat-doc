@@ -11,7 +11,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/users/{userId}/notification/{chattype}/{key}
+GET https://{host}/app-id/{app_id}/users/{userId}/notification/{chattype}/{key}
 ```
 
 | 参数       | 类型   | 描述          | 是否必需 |
@@ -30,7 +30,7 @@ GET https://{host}/{org_name}/{app_name}/users/{userId}/notification/{chattype}/
 
 ```bash
 // 请将 <YourUserToken> 替换为你的用户 Token
-curl -X GET 'https://XXXX/XXXX/XXXX/users/XXXX/notification/chatgroup/XXXX' \
+curl -X GET 'https://XXXX/app-id/{app_id}/users/XXXX/notification/chatgroup/XXXX' \
 -H 'Authorization: Bearer <YourUserToken>'
 ```
 

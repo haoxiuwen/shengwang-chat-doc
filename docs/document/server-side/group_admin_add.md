@@ -14,7 +14,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/chatgroups/{group_id}/admin
+POST https://{host}/app-id/{app_id}/chatgroups/{group_id}/admin
 ```
 
 | 参数            | 类型   | 是否必需 | 描述       |
@@ -28,7 +28,7 @@ POST https://{host}/{org_name}/{app_name}/chatgroups/{group_id}/admin
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST https://XXXX/XXXX/XXXX/chatgroups/10XXXX85/admin    \
+curl -X POST https://XXXX/app-id/{app_id}/chatgroups/10XXXX85/admin    \
 -H 'Authorization: Bearer <YourAppToken>'   \
 -d '{"newadmin":"user1"}' 
 ```

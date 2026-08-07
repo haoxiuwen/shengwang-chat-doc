@@ -15,7 +15,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/users/{owner_username}/blocks/users?pageSize={N}&cursor={cursor}
+GET https://{host}/app-id/{app_id}/users/{owner_username}/blocks/users?pageSize={N}&cursor={cursor}
 ```
 
 | 参数     | 类型   | 是否必需 | 描述                                  |
@@ -29,7 +29,7 @@ GET https://{host}/{org_name}/{app_name}/users/{owner_username}/blocks/users?pag
 ## 请求示例
 
 ```shell
-curl -X GET 'https://XXXX/XXXX/XXXX/users/user1/blocks/users?pageSize=2'  \
+curl -X GET 'https://XXXX/app-id/{app_id}/users/user1/blocks/users?pageSize=2'  \
 -H 'Accept: application/json'   \
 -H 'Authorization: Bearer <YourAppToken>' 
 ```

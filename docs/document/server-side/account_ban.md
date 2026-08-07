@@ -16,7 +16,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/users/{username}/deactivate
+POST https://{host}/app-id/{app_id}/users/{username}/deactivate
 ```
 
 | 参数            | 类型   | 是否必需 | 描述      |
@@ -29,7 +29,7 @@ POST https://{host}/{org_name}/{app_name}/users/{username}/deactivate
 
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X POST 'https://XXXX/XXXX/XXXX/users/user1/deactivate'   \
+curl -X POST 'https://XXXX/app-id/{app_id}/users/user1/deactivate'   \
 -H 'Accept: application/json'   \
 -H 'Authorization: Bearer <YourAppToken>' 
 ```

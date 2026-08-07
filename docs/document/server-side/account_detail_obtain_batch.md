@@ -13,7 +13,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/users?limit={N}&cursor={cursor}
+GET https://{host}/app-id/{app_id}/users?limit={N}&cursor={cursor}
 ```
 
 | 参数     | 类型   | 是否必需 | 描述  |
@@ -30,7 +30,7 @@ GET https://{host}/{org_name}/{app_name}/users?limit={N}&cursor={cursor}
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X GET 'https://XXXX/XXXX/XXXX/users?limit=2'   \
+curl -X GET 'https://XXXX/app-id/{app_id}/users?limit=2'   \
 -H 'Accept: application/json'    \
 -H 'Authorization: Bearer <YourAppToken>' 
 ```
@@ -39,7 +39,7 @@ curl -X GET 'https://XXXX/XXXX/XXXX/users?limit=2'   \
 
 ```shell
 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X GET 'https://XXXX/XXXX/XXXX/users?limit=2&cursor=LTgzXXXX2tB'    \
+curl -X GET 'https://XXXX/app-id/{app_id}/users?limit=2&cursor=LTgzXXXX2tB'    \
 -H 'Accept: application/json'   \ 
 -H 'Authorization: Bearer <YourAppToken>' 
 ```
@@ -86,7 +86,7 @@ curl -X GET 'https://XXXX/XXXX/XXXX/users?limit=2&cursor=LTgzXXXX2tB'    \
 
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X GET 'https://XXXX/XXXX/XXXX/users?limit=2&cursor=LTgzXXXX2tB'  \
+curl -X GET 'https://XXXX/app-id/{app_id}/users?limit=2&cursor=LTgzXXXX2tB'  \
 -H 'Accept: application/json'  \
 -H 'Authorization: Bearer <YourAppToken>' 
 ```

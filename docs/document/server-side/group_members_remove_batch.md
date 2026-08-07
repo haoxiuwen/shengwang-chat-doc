@@ -15,7 +15,7 @@
 ## 请求 URL
 
 ```http
-DELETE https://{host}/{org_name}/{app_name}/chatgroups/{group_id}/users/{members}?need_notify=false
+DELETE https://{host}/app-id/{app_id}/chatgroups/{group_id}/users/{members}?need_notify=false
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -33,7 +33,7 @@ DELETE https://{host}/{org_name}/{app_name}/chatgroups/{group_id}/users/{members
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X DELETE 'https://XXXX/XXXX/XXXX/chatgroups/66XXXX85/users/ttXXXX81,user2,user3?need_notify=false'  \
+curl -X DELETE 'https://XXXX/app-id/{app_id}/chatgroups/66XXXX85/users/ttXXXX81,user2,user3?need_notify=false'  \
 -H 'Accept: application/json'  \
 -H 'Authorization: Bearer <YourAppToken>' 
 ```

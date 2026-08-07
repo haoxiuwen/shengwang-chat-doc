@@ -12,7 +12,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/moderation/text/list/search
+POST https://{host}/app-id/{app_id}/moderation/text/list/search
 ```
 
 关于请求 URL 中的其他参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -24,7 +24,7 @@ POST https://{host}/{org_name}/{app_name}/moderation/text/list/search
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST 'https://XXXX/XXXX/XXXX/moderation/text/list/search' \
+curl -X POST 'https://XXXX/app-id/{app_id}/moderation/text/list/search' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
@@ -38,7 +38,7 @@ curl -X POST 'https://XXXX/XXXX/XXXX/moderation/text/list/search' \
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST 'https://XXXX/XXXX/XXXX/moderation/text/list/search' \
+curl -X POST 'https://XXXX/app-id/{app_id}/moderation/text/list/search' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
@@ -52,7 +52,7 @@ curl -X POST 'https://XXXX/XXXX/XXXX/moderation/text/list/search' \
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST 'https://XXXX/XXXX/XXXX/moderation/text/list/search' \
+curl -X POST 'https://XXXX/app-id/{app_id}/moderation/text/list/search' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \

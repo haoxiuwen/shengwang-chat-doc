@@ -13,7 +13,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/users/{username}/collections
+POST https://{host}/app-id/{app_id}/users/{username}/collections
 ```
 
 | 参数       | 类型   | 是否必需 | 描述                     |

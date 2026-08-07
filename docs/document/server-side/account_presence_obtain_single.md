@@ -16,7 +16,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/users/{username}/status
+GET https://{host}/app-id/{app_id}/users/{username}/status
 ```
 
 | 参数     | 类型   | 是否必需 | 描述  |
@@ -29,7 +29,7 @@ GET https://{host}/{org_name}/{app_name}/users/{username}/status
 
 ```shell
 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X GET 'https://XXXX/XXXX/XXXX/users/user1/status'   \
+curl -X GET 'https://XXXX/app-id/{app_id}/users/user1/status'   \
 -H 'Accept: application/json'   \
 -H 'Authorization: Bearer <YourAppToken>' 
 ```

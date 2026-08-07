@@ -13,7 +13,7 @@
 ## 请求 URL
 
 ```http
-DELETE https://{host}/{org_name}/{app_name}/chatrooms/{chatroom_id}/users/{username}
+DELETE https://{host}/app-id/{app_id}/chatrooms/{chatroom_id}/users/{username}
 ```
 
 | 参数           | 类型   | 是否必需 | 描述                                |
@@ -27,7 +27,7 @@ DELETE https://{host}/{org_name}/{app_name}/chatrooms/{chatroom_id}/users/{usern
 
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X DELETE 'https://XXXX/XXXX/XXXX/chatrooms/66XXXX33/users/user1'     \
+curl -X DELETE 'https://XXXX/app-id/{app_id}/chatrooms/66XXXX33/users/user1'     \
 -H 'Accept: application/json'   \
 -H 'Authorization: Bearer <YourAppToken>' 
 ```

@@ -27,7 +27,7 @@
 ### 请求 URL
 
 ```shell
-GET https://{host}/{org_name}/{app_name}/push/data/offline-push/begin/{startTime}/end/{endTime}?platform={ALL}
+GET https://{host}/app-id/{app_id}/push/data/offline-push/begin/{startTime}/end/{endTime}?platform={ALL}
 ```
 
 | 参数       | 类型   | 是否必需 | 描述         |
@@ -42,7 +42,7 @@ GET https://{host}/{org_name}/{app_name}/push/data/offline-push/begin/{startTime
 
 ```shell
 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -g -X GET 'https://XXXX/XXXX/XXXX/push/data/offline-push/begin/2024-04-01/end/2024-04-02?platform=ALL' \
+curl -g -X GET 'https://XXXX/app-id/{app_id}/push/data/offline-push/begin/2024-04-01/end/2024-04-02?platform=ALL' \
 -H 'Authorization: Bearer <YourAppToken>
 ```
 

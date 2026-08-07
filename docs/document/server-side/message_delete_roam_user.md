@@ -14,7 +14,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/rest/message/roaming/user/{userId}/delete/all
+POST https://{host}/app-id/{app_id}/rest/message/roaming/user/{userId}/delete/all
 ```
 
 | 参数     | 类型   | 是否必需 | 描述                         |
@@ -27,7 +27,7 @@ POST https://{host}/{org_name}/{app_name}/rest/message/roaming/user/{userId}/del
 
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X POST 'https://XXXX/XXXX/XXXX/rest/message/roaming/user/XXXX/delete/all' \
+curl -X POST 'https://XXXX/app-id/{app_id}/rest/message/roaming/user/XXXX/delete/all' \
 -H 'Content-Type: application/json'  \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \

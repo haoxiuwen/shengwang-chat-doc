@@ -16,7 +16,7 @@
 ## 请求 URL
 
 ```http
-PUT https://{host}/{org_name}/{app_name}/chatrooms/{chatroom_id}/users/{username}/tag 
+PUT https://{host}/app-id/{app_id}/chatrooms/{chatroom_id}/users/{username}/tag 
 ```
 
 | 参数            | 类型   | 描述                   | 是否必填 |
@@ -31,7 +31,7 @@ PUT https://{host}/{org_name}/{app_name}/chatrooms/{chatroom_id}/users/{username
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X PUT 'https://XXXX/XXXX/XXXX/chatrooms/12XXXX11/users/u10/tag'  \
+curl -X PUT 'https://XXXX/app-id/{app_id}/chatrooms/12XXXX11/users/u10/tag'  \
 -H 'Content-Type: application/json'  \
 -H 'Accept: application/json'  \
 -H 'Authorization: Bearer <YourAppToken>'  \

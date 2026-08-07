@@ -12,7 +12,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/metadata/chatgroup/{group_id}/get
+POST https://{host}/app-id/{app_id}/metadata/chatgroup/{group_id}/get
 ```
 
 | 参数            | 类型   | 是否必需 | 描述       |
@@ -25,7 +25,7 @@ POST https://{host}/{org_name}/{app_name}/metadata/chatgroup/{group_id}/get
 
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X POST 'https://XXXX/XXXX/XXXX/metadata/chatgroup/XXXX/get' \
+curl -X POST 'https://XXXX/app-id/{app_id}/metadata/chatgroup/XXXX/get' \
 -H 'Content-Type: application/json'\
 -H 'Accept: application/json'\
 -H 'Authorization: Bearer <YourAppToken>'\

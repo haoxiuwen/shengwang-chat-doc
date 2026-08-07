@@ -15,7 +15,7 @@
 ## 请求 URL
 
 ```http
-DELETE https://{host}/{org_name}/{app_name}/rest/message/roaming/chat/user/{userId}?userId={peer_userId}&msgIdList={msgIdList}&isNotify={isNotify}
+DELETE https://{host}/app-id/{app_id}/rest/message/roaming/chat/user/{userId}?userId={peer_userId}&msgIdList={msgIdList}&isNotify={isNotify}
 ```
 
 | 参数     | 类型   | 是否必需 | 描述                                |
@@ -31,7 +31,7 @@ DELETE https://{host}/{org_name}/{app_name}/rest/message/roaming/chat/user/{user
 
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X DELETE 'https://XXXX/XXXX/XXXX/rest/message/roaming/chat/user/XXXX?userId=XXXX&msgIdList=XXXX&isNotify=false' \
+curl -X DELETE 'https://XXXX/app-id/{app_id}/rest/message/roaming/chat/user/XXXX?userId=XXXX&msgIdList=XXXX&isNotify=false' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json'

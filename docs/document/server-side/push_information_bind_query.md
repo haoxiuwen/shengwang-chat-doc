@@ -11,7 +11,7 @@
 ## 请求 URL
 
 ```
-GET https://{host}/{org_name}/{app_name}/users/{userId}/push/binding
+GET https://{host}/app-id/{app_id}/users/{userId}/push/binding
 ```
 
 | 参数     | 类型   | 描述                           | 是否必需 |
@@ -23,7 +23,7 @@ GET https://{host}/{org_name}/{app_name}/users/{userId}/push/binding
 ## 请求示例
 
 ```shell
-curl -X GET 'https://XXXX/XXXX/XXXX/users/XXXX/push/binding' \
+curl -X GET 'https://XXXX/app-id/{app_id}/users/XXXX/push/binding' \
 -H 'Authorization: Bearer <YourAppToken>'
 ```
 

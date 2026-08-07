@@ -19,7 +19,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/users/{username}/presence/sublist?pageNum={pagenumber}&pageSize={pagesize}
+GET https://{host}/app-id/{app_id}/users/{username}/presence/sublist?pageNum={pagenumber}&pageSize={pagesize}
 ```
 
 | 参数       | 类型 |  是否必需 | 描述                       |
@@ -33,7 +33,7 @@ GET https://{host}/{org_name}/{app_name}/users/{username}/presence/sublist?pageN
 ## 请求示例
 
 ```shell
-curl -X GET 'https://XXXX/XXXX/XXXX/users/wzy/presence/sublist?pageNum=1&pageSize=100' \
+curl -X GET 'https://XXXX/app-id/{app_id}/users/wzy/presence/sublist?pageNum=1&pageSize=100' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json'

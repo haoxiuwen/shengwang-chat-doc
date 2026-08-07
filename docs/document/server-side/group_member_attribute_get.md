@@ -11,7 +11,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/metadata/chatgroup/{group_id}/user/{username}
+GET https://{host}/app-id/{app_id}/metadata/chatgroup/{group_id}/user/{username}
 ```
 
 | 参数            | 类型   | 是否必需 | 描述       |

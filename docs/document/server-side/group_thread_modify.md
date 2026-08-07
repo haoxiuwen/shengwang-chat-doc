@@ -12,7 +12,7 @@
 ## 请求 URL
 
 ```http
-PUT https://{host}/{org_name}/{app_name}/thread/{thread_id}
+PUT https://{host}/app-id/{app_id}/thread/{thread_id}
 ```
 
 | 参数        | 类型   | 是否必需 | 描述      |
@@ -26,7 +26,7 @@ PUT https://{host}/{org_name}/{app_name}/thread/{thread_id}
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X PUT https://XXXX/XXXX/XXXX/thread/1XXXX7   \
+curl -X PUT https://XXXX/app-id/{app_id}/thread/1XXXX7   \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{"name": "test4"}'
 ```

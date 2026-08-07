@@ -19,7 +19,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/chatrooms/{chatroom_id}/users?pagenum={N}&pagesize={N}
+GET https://{host}/app-id/{app_id}/chatrooms/{chatroom_id}/users?pagenum={N}&pagesize={N}
 ```
 
 | 参数       | 类型 | 是否必需 | 描述      |
@@ -35,7 +35,7 @@ GET https://{host}/{org_name}/{app_name}/chatrooms/{chatroom_id}/users?pagenum={
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X GET https://XXXX/XXXX/XXXX/chatrooms/12XXXX11/users?pagenum=2&pagesize=2     \
+curl -X GET https://XXXX/app-id/{app_id}/chatrooms/12XXXX11/users?pagenum=2&pagesize=2     \
 -H 'Authorization: Bearer <YourAppToken>'
 ```
 

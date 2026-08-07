@@ -12,7 +12,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/user/{username}/contacts?limit={N}&cursor={cursor}&needReturnRemark={true/false}
+GET https://{host}/app-id/{app_id}/user/{username}/contacts?limit={N}&cursor={cursor}&needReturnRemark={true/false}
 ```
 
 | 参数      | 类型      | 是否必需 | 描述                                               |
@@ -25,7 +25,7 @@ GET https://{host}/{org_name}/{app_name}/user/{username}/contacts?limit={N}&curs
 ## 请求示例
 
 ```shell
-curl -L -X GET 'https://XXXX/XXXX/XXXX/user/XXXX/contacts?limit=10&needReturnRemark=true' \
+curl -L -X GET 'https://XXXX/app-id/{app_id}/user/XXXX/contacts?limit=10&needReturnRemark=true' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer  <YourAppToken>'

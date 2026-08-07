@@ -13,7 +13,7 @@
 ## 请求 URL
 
 ```http
-PUT https://{host}/{org_name}/{app_name}/users/{username}/collections/{collectionId}
+PUT https://{host}/app-id/{app_id}/users/{username}/collections/{collectionId}
 ```
 
 | 参数           | 类型   | 是否必需 | 描述                             |

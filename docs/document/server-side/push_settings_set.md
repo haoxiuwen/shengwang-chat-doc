@@ -11,7 +11,7 @@
 ## 请求 URL
 
 ```http
-PUT https://{host}/{org_name}/{app_name}/users/{userId}/notification/{chattype}/{key}
+PUT https://{host}/app-id/{app_id}/users/{userId}/notification/{chattype}/{key}
 ```
 
 | 参数       | 类型   | 描述          | 是否必需 |
@@ -30,7 +30,7 @@ PUT https://{host}/{org_name}/{app_name}/users/{userId}/notification/{chattype}/
 
 ```bash
 // 你需要将 <YourUserToken> 替换为你的用户 Token
-curl -X PUT 'https://XXXX/XXXX/XXXX/users/XXXX/notification/user/XXXX' \
+curl -X PUT 'https://XXXX/app-id/{app_id}/users/XXXX/notification/user/XXXX' \
 -H 'Authorization: Bearer <YourUserToken>' \
 -H 'Content-Type: application/json' \
 -d '{

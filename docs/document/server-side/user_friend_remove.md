@@ -12,7 +12,7 @@
 ## 请求 URL
 
 ```http
-DELETE https://{host}/{org_name}/{app_name}/users/{owner_username}/contacts/users/{friend_username}
+DELETE https://{host}/app-id/{app_id}/users/{owner_username}/contacts/users/{friend_username}
 ```
 
 | 参数              | 类型   | 是否必需 | 描述                  |
@@ -25,7 +25,7 @@ DELETE https://{host}/{org_name}/{app_name}/users/{owner_username}/contacts/user
 ## 请求示例
 
 ```shell
-curl -X DELETE 'https://XXXX/XXXX/XXXX/users/user1/contacts/users/user2'  \
+curl -X DELETE 'https://XXXX/app-id/{app_id}/users/user1/contacts/users/user2'  \
 -H 'Accept: application/json'   \
 -H 'Authorization: Bearer <YourAppToken>' 
 ```

@@ -21,7 +21,7 @@
 ## 请求 URL
 
 ```
-PUT https://{host}/{org_name}/{app_name}/users/{userId}/push/binding
+PUT https://{host}/app-id/{app_id}/users/{userId}/push/binding
 ```
 
 | 参数       | 类型   | 描述   | 是否必需 | 
@@ -35,7 +35,7 @@ PUT https://{host}/{org_name}/{app_name}/users/{userId}/push/binding
 **绑定请求**
 
 ```shell
-curl -X PUT 'https://XXXX/XXXX/XXXX/users/XXXX/push/binding' \
+curl -X PUT 'https://XXXX/app-id/{app_id}/users/XXXX/push/binding' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{    
@@ -48,7 +48,7 @@ curl -X PUT 'https://XXXX/XXXX/XXXX/users/XXXX/push/binding' \
 **解除绑定**
 
 ```shell
-curl -X PUT 'https://XXXX/XXXX/XXXX/users/XXXX/push/binding' \
+curl -X PUT 'https://XXXX/app-id/{app_id}/users/XXXX/push/binding' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -d '{    

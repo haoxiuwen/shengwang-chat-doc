@@ -11,7 +11,7 @@
 ## 请求 URL
 
 ```http
-DELETE https://{host}/{org_name}/{app_name}/notification/template/{name}
+DELETE https://{host}/app-id/{app_id}/notification/template/{name}
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -19,7 +19,7 @@ DELETE https://{host}/{org_name}/{app_name}/notification/template/{name}
 ## 请求示例
 
 ```bash
-curl -X DELETE 'https://XXXX/XXXX/XXXX/notification/template/XXXX' \
+curl -X DELETE 'https://XXXX/app-id/{app_id}/notification/template/XXXX' \
 -H 'Authorization: Bearer {YourAppToken}'
 ```
 

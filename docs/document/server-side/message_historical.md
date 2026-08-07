@@ -20,7 +20,7 @@
 ### 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/chatmessages/{time}
+GET https://{host}/app-id/{app_id}/chatmessages/{time}
 ```
 
 | 参数   | 类型   | 是否必需 | 描述         |
@@ -34,7 +34,7 @@ GET https://{host}/{org_name}/{app_name}/chatmessages/{time}
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X GET 'https://XXXX/XXXX/XXXX/chatmessages/2018112717'    \
+curl -X GET 'https://XXXX/app-id/{app_id}/chatmessages/2018112717'    \
 -H 'Accept: application/json'    \
 -H 'Authorization: Bearer <YourAppToken>' 
 ```

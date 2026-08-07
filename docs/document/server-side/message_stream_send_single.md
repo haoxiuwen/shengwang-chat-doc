@@ -42,7 +42,7 @@
 ### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/stream_message/user
+POST https://{host}/app-id/{app_id}/stream_message/user
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -57,7 +57,7 @@ POST https://{host}/{org_name}/{app_name}/stream_message/user
 
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X POST -i 'https://XXXX/XXXX/XXXX/stream_message/user' \
+curl -X POST -i 'https://XXXX/app-id/{app_id}/stream_message/user' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>'  \
@@ -77,7 +77,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/stream_message/user' \
 - 发送第二个消息分片：
 
 ```bash
-curl -X POST -i 'https://XXXX/XXXX/XXXX/stream_message/user' \
+curl -X POST -i 'https://XXXX/app-id/{app_id}/stream_message/user' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>'  \
@@ -98,7 +98,7 @@ curl -X POST -i 'https://XXXX/XXXX/XXXX/stream_message/user' \
 - 发送最后一个消息分片：
   
 ```bash
-curl -X POST -i 'https://XXXX/XXXX/XXXX/stream_message/user' \
+curl -X POST -i 'https://XXXX/app-id/{app_id}/stream_message/user' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>'  \

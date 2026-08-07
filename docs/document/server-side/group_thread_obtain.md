@@ -13,7 +13,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/thread?limit={limit}&cursor={cursor}&sort={sort}
+GET https://{host}/app-id/{app_id}/thread?limit={limit}&cursor={cursor}&sort={sort}
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -31,7 +31,7 @@ GET https://{host}/{org_name}/{app_name}/thread?limit={limit}&cursor={cursor}&so
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X GET https://XXXX/XXXX/XXXX/thread   \
+curl -X GET https://XXXX/app-id/{app_id}/thread   \
 -H 'Authorization: Bearer <YourAppToken>'
 ```
 

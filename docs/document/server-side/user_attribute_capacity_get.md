@@ -15,7 +15,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/metadata/user/capacity
+GET https://{host}/app-id/{app_id}/metadata/user/capacity
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -25,7 +25,7 @@ GET https://{host}/{org_name}/{app_name}/metadata/user/capacity
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X GET 'https://XXXX/XXXX/XXXX/metadata/user/capacity'    \
+curl -X GET 'https://XXXX/app-id/{app_id}/metadata/user/capacity'    \
 -H 'Accept: application/json'     \
 -H 'Authorization: Bearer <YourAppToken>' 
 ```

@@ -19,7 +19,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/reaction/user/{userId}?msgIdList={N,M}&msgType={msgType}&groupId={groupId}
+GET https://{host}/app-id/{app_id}/reaction/user/{userId}?msgIdList={N,M}&msgType={msgType}&groupId={groupId}
 ```
 
 | 参数        | 类型   | 是否必需 | 描述                                                                                 |
@@ -36,14 +36,14 @@ GET https://{host}/{org_name}/{app_name}/reaction/user/{userId}?msgIdList={N,M}&
 - 获取单条消息的 Reaction：
 
 ```shell
-curl -g -X GET 'https://XXXX/XXXX/XXXX/reaction/user/XXXX?msgIdList=msgId1&msgType=chat'    \
+curl -g -X GET 'https://XXXX/app-id/{app_id}/reaction/user/XXXX?msgIdList=msgId1&msgType=chat'    \
 -H 'Authorization: Bearer <YourAppToken>'
 ```
 
 - 获取多条消息的 Reaction：
 
 ```shell
-curl -g -X GET 'https://XXXX/XXXX/XXXX/reaction/user/XXXX?msgIdList=msgId1,msgId2&msgType=chat'    \
+curl -g -X GET 'https://XXXX/app-id/{app_id}/reaction/user/XXXX?msgIdList=msgId1,msgId2&msgType=chat'    \
 -H 'Authorization: Bearer <YourAppToken>'
 ```
 

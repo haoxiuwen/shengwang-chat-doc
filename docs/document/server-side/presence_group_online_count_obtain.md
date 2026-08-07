@@ -23,7 +23,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/presence/online/{group_id}/type/{query_type}
+GET https://{host}/app-id/{app_id}/presence/online/{group_id}/type/{query_type}
 ```
 
 | 参数   | 类型   | 是否必需 | 描述                                    |

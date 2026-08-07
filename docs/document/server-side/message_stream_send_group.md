@@ -42,7 +42,7 @@
 ### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/stream_message/chatgroup
+POST https://{host}/app-id/{app_id}/stream_message/chatgroup
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -57,7 +57,7 @@ POST https://{host}/{org_name}/{app_name}/stream_message/chatgroup
 
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -L 'https://XXXX/XXXX/XXXX/stream_message/chatgroup' \
+curl -L 'https://XXXX/app-id/{app_id}/stream_message/chatgroup' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \
@@ -77,7 +77,7 @@ curl -L 'https://XXXX/XXXX/XXXX/stream_message/chatgroup' \
 - 发送第二个消息分片：
 
 ```bash
-curl -L 'https://XXXX/XXXX/XXXX/stream_message/chatgroup' \
+curl -L 'https://XXXX/app-id/{app_id}/stream_message/chatgroup' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \

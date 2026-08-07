@@ -24,7 +24,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/users/{username}/presence/{expiry}
+POST https://{host}/app-id/{app_id}/users/{username}/presence/{expiry}
 ```
 
 | 参数       | 类型   | 是否必需 | 描述                                                 |
@@ -37,7 +37,7 @@ POST https://{host}/{org_name}/{app_name}/users/{username}/presence/{expiry}
 ## 请求示例
 
 ```shell
-curl -X POST 'https://XXXX/XXXX/XXXX/users/wzy/presence/1000' \
+curl -X POST 'https://XXXX/app-id/{app_id}/users/wzy/presence/1000' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \

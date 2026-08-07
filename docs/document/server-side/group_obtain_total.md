@@ -12,7 +12,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/chatgroups?limit={N}&cursor={cursor}
+GET https://{host}/app-id/{app_id}/chatgroups?limit={N}&cursor={cursor}
 ```
 
 请求 URL 中的查询参数说明如下：
@@ -35,7 +35,7 @@ GET https://{host}/{org_name}/{app_name}/chatgroups?limit={N}&cursor={cursor}
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X GET 'https://XXXX/XXXX/XXXX/chatgroups?limit=2'   \
+curl -X GET 'https://XXXX/app-id/{app_id}/chatgroups?limit=2'   \
 -H 'Accept: application/json'   \
 -H 'Authorization: Bearer <YourAppToken>' 
 ```
@@ -45,7 +45,7 @@ curl -X GET 'https://XXXX/XXXX/XXXX/chatgroups?limit=2'   \
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X GET 'https://XXXX/XXXX/XXXX/chatgroups?limit=2&cursor=ZGNXXXX6Mg'  \
+curl -X GET 'https://XXXX/app-id/{app_id}/chatgroups?limit=2&cursor=ZGNXXXX6Mg'  \
 -H 'Accept: application/json'  \ 
 -H 'Authorization: Bearer <YourAppToken>' 
 ```

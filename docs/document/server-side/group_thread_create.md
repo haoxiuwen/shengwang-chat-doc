@@ -14,7 +14,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/thread
+POST https://{host}/app-id/{app_id}/thread
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -24,7 +24,7 @@ POST https://{host}/{org_name}/{app_name}/thread
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST https://XXXX/XXXX/XXXX/thread   \
+curl -X POST https://XXXX/app-id/{app_id}/thread   \
 -H 'Authorization: Bearer <YourAppToken>'   \
 -H 'Content-Type:application/json'   \
 -d '{

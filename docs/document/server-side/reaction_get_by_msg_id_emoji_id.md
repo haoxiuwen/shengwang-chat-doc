@@ -18,7 +18,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/reaction/user/{userId}/detail?msgId={msgId}&message={message}&limit={limit}&cursor={cursor}
+GET https://{host}/app-id/{app_id}/reaction/user/{userId}/detail?msgId={msgId}&message={message}&limit={limit}&cursor={cursor}
 ```
 
 | 参数      | 类型   | 是否必需 | 描述                                                           |
@@ -42,14 +42,14 @@ GET https://{host}/{org_name}/{app_name}/reaction/user/{userId}/detail?msgId={ms
 - 请求第一页
 
 ```shell
-curl -g -X GET 'https://XXXX/XXXX/XXXX/reaction/user/wz/detail?msgId=997627787730750008&message=emoji_40&limit=50'   \
+curl -g -X GET 'https://XXXX/app-id/{app_id}/reaction/user/wz/detail?msgId=997627787730750008&message=emoji_40&limit=50'   \
 -H 'Authorization: Bearer <YourAppToken>'
 ```
 
 - 请求第 N 页
 
 ```shell
-curl -g -X GET 'https://XXXX/XXXX/XXXX/reaction/user/wz/detail?msgId=997627787730750008&message=emoji_40&cursor=944330529971449164&limit=50'   \
+curl -g -X GET 'https://XXXX/app-id/{app_id}/reaction/user/wz/detail?msgId=997627787730750008&message=emoji_40&cursor=944330529971449164&limit=50'   \
 -H 'Authorization: Authorization: Bearer <YourAppToken>'
 ```
 

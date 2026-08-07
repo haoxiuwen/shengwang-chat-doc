@@ -15,7 +15,7 @@
 ## 请求 URL
 
 ```http
-DELETE https://{host}/{org_name}/{app_name}/chatgroups/{group_id}
+DELETE https://{host}/app-id/{app_id}/chatgroups/{group_id}
 ```
 
 | 参数     | 类型   | 是否必需 | 描述                                                        |

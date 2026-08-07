@@ -17,7 +17,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/users/batch/status
+POST https://{host}/app-id/{app_id}/users/batch/status
 ```
 
 关于请求 URL 中的参数的说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -26,7 +26,7 @@ POST https://{host}/{org_name}/{app_name}/users/batch/status
 
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X POST https://XXXX/XXXX/XXXX/users/batch/status \
+curl -X POST https://XXXX/app-id/{app_id}/users/batch/status \
 -H 'Accept: application/json'  \
 -H 'Authorization: Bearer <YourAppToken>'  \
 -H 'Content-Type: application/json'  \

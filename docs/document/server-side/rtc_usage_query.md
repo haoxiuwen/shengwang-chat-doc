@@ -26,7 +26,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/billing/rtc/usage-summary?appKey={org_name}%23{app_name}
+GET https://{host}/app-id/{app_id}/billing/rtc/usage-summary?appKey={org_name}%23{app_name}
 ```
 
 | 参数 | 类型 | 是否必需 | 描述 |
@@ -38,7 +38,7 @@ GET https://{host}/{org_name}/{app_name}/billing/rtc/usage-summary?appKey={org_n
 ## 请求示例
 
 ```shell
-curl -X GET 'https://XXXX/XXXX/XXXX/billing/rtc/usage-summary?appKey={org_name}%23{app_name}' \
+curl -X GET 'https://XXXX/app-id/{app_id}/billing/rtc/usage-summary?appKey={org_name}%23{app_name}' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>'
 ```

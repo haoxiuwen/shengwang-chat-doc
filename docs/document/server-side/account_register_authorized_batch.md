@@ -19,7 +19,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/users
+POST https://{host}/app-id/{app_id}/users
 ```
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -31,7 +31,7 @@ POST https://{host}/{org_name}/{app_name}/users
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST -H "Authorization: Bearer <YourAppToken>" -i  "https://XXXX/XXXX/XXXX/users" -d '[{"username":"user1", "password":"123"}, {"username":"user2", "password":"456"}]'
+curl -X POST -H "Authorization: Bearer <YourAppToken>" -i  "https://XXXX/app-id/{app_id}/users" -d '[{"username":"user1", "password":"123"}, {"username":"user2", "password":"456"}]'
 ```
 
 ## 响应示例一
@@ -75,7 +75,7 @@ curl -X POST -H "Authorization: Bearer <YourAppToken>" -i  "https://XXXX/XXXX/XX
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST -i  "https://XXXX/XXXX/XXXX/users"  \
+curl -X POST -i  "https://XXXX/app-id/{app_id}/users"  \
 -H "Authorization: Bearer <YourAppToken>"  \
 -d '[
       {"username":"user1", "password":"123"}, 

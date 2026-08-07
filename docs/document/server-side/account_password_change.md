@@ -16,7 +16,7 @@
 ## 请求 URL
 
 ```http
-PUT https://{host}/{org_name}/{app_name}/users/{username}/password
+PUT https://{host}/app-id/{app_id}/users/{username}/password
 ```
 
 | 参数            | 类型   | 是否必需 | 描述              |
@@ -30,7 +30,7 @@ PUT https://{host}/{org_name}/{app_name}/users/{username}/password
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X PUT 'https://XXXX/XXXX/XXXX/users/XXXX/password'   \
+curl -X PUT 'https://XXXX/app-id/{app_id}/users/XXXX/password'   \
 -H 'Accept: application/json'    \
 -H 'Content-Type: application/json'    \
 -H 'Authorization: Bearer <YourAppToken>'    \

@@ -12,7 +12,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/chatrooms/{chatroom_id}/users
+POST https://{host}/app-id/{app_id}/chatrooms/{chatroom_id}/users
 ```
 
 | 参数           | 类型   | 是否必需 | 描述                                |
@@ -25,7 +25,7 @@ POST https://{host}/{org_name}/{app_name}/chatrooms/{chatroom_id}/users
 
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
-curl -X POST 'https://XXXX/XXXX/XXXX/chatrooms/66XXXX33/users'  \
+curl -X POST 'https://XXXX/app-id/{app_id}/chatrooms/66XXXX33/users'  \
 -H 'Content-Type: application/json'   \
 -H 'Accept: application/json'   \
 -H 'Authorization: Bearer <YourAppToken>'   \

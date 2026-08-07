@@ -11,7 +11,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/users/{userId}/notification/language
+GET https://{host}/app-id/{app_id}/users/{userId}/notification/language
 ```
 
 | 参数       | 类型   | 描述          | 是否必需 |
@@ -23,7 +23,7 @@ GET https://{host}/{org_name}/{app_name}/users/{userId}/notification/language
 ## 请求示例
 
 ```bash
-curl -X GET 'https://XXXX/XXXX/XXXX/users/XXXX/notification/language' \
+curl -X GET 'https://XXXX/app-id/{app_id}/users/XXXX/notification/language' \
 -H 'Authorization: Bearer <YourAppToken>'
 ```
 

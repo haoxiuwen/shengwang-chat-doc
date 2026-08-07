@@ -14,7 +14,7 @@
 ## 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/chatgroups/{group_id}/share_files
+POST https://{host}/app-id/{app_id}/chatgroups/{group_id}/share_files
 ```
 
 关于请求 URL 中的其他参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -24,7 +24,7 @@ POST https://{host}/{org_name}/{app_name}/chatgroups/{group_id}/share_files
 ```shell
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
 
-curl -X POST 'https://XXXX/XXXX/XXXX/chatgroups/66021836783617/share_files'   \
+curl -X POST 'https://XXXX/app-id/{app_id}/chatgroups/66021836783617/share_files'   \
 -H 'Accept: application/json'  \
 -H 'Authorization: Bearer <YourAppToken>'  \
 -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'  \

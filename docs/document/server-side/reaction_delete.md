@@ -19,7 +19,7 @@
 ## 请求 URL
 
 ```http
-DELETE https://{host}/{org_name}/{app_name}/reaction/user/{userId}?msgId={msgId}&message={message}
+DELETE https://{host}/app-id/{app_id}/reaction/user/{userId}?msgId={msgId}&message={message}
 ```
 
 | 参数      | 类型   | 是否必需 | 描述                                                           |
@@ -33,7 +33,7 @@ DELETE https://{host}/{org_name}/{app_name}/reaction/user/{userId}?msgId={msgId}
 ## 请求示例
 
 ```shell
-curl -g -X DELETE 'https://XXXX/XXXX/XXXX/reaction/user/wz?msgId=997625372793113144&message=emoji_40'    \
+curl -g -X DELETE 'https://XXXX/app-id/{app_id}/reaction/user/wz?msgId=997625372793113144&message=emoji_40'    \
 -H 'Authorization: Bearer <YourAppToken>'
 ```
 
