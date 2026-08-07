@@ -21,11 +21,9 @@
           </li>
           <li>
             <a
-              href="https://docs-im.easemob.com/start/start"
-            >v2</a>
-            /
-            <a href="https://docs-im.easemob.com/ccim/intro">v3</a>
-            已停止维护：旧版本文档已归档，不再更新。
+              href="https://im.shengwang.cn/"
+            >老文档站</a>
+            已停止维护，不再更新。
           </li>
         </ul>
       </div>
