@@ -115,28 +115,34 @@ const handleRegister = () => {
   window.location.href = "https://console.easemob.com/user/register";
 };
 
+const goToShengwangHome = () => {
+  window.open("https://www.shengwang.cn", "_blank");
+};
+
 </script>
 
 <template>
   <Navbar>
     <template #startBefore>
+      <div
+        class="hide-on-phone w-43px h-22px bg-[url('/logo.svg')] bg-no-repeat bg-center bg-cover !mr-16px cursor-pointer shengwang-logo"
+        role="link"
+        tabindex="0"
+        aria-label="声网官网"
+        @click="goToShengwangHome"
+        @keydown.enter="goToShengwangHome"
+      ></div>
       <a
-        class="cursor-pointer shengwang-nav-text shengwang-brand-text"
-        href="https://www.shengwang.cn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >声网</a>
-      <a
-        class="color-black cursor-pointer shengwang-nav-text"
+        class="color-black text-18px font-500 cursor-pointer shengwang-doc-link"
         href="https://doc.shengwang.cn/"
         target="_blank"
         rel="noopener noreferrer"
-      >文档中心</a>
-      <span class="color-#505E72 shengwang-nav-separator">|</span>
+      ><span>文档中心</span></a>
+      <span class="color-#505E72 shengwang-separator">|</span>
       <a
-        class="color-black cursor-pointer shengwang-nav-text shengwang-im-link"
+        class="color-black text-18px font-500 cursor-pointer shengwang-im-link"
         href="/"
-      ><span class="text-14px color-black shengwang-im-text">即时通讯 IM</span></a>
+      ><span class="text-14px color-black font-500 shengwang-im-text">即时通讯 IM</span></a>
     </template>
     <template #endBefore>
       <div class="search-box" @click="handleSearch">
@@ -188,37 +194,30 @@ const handleRegister = () => {
 </template>
 
 <style scoped>
-.shengwang-nav-text {
+.shengwang-logo {
+  display: block;
+  width: 43px;
+  height: 22px;
+  flex: 0 0 43px;
+  margin-right: 16px;
+  background: url('/logo.svg') center / cover no-repeat;
+  cursor: pointer;
+}
+
+.shengwang-doc-link,
+.shengwang-im-link {
   color: #000 !important;
   font-family: "PingFang SC", sans-serif !important;
-  font-size: 16px !important;
+  font-size: 18px !important;
   font-weight: 400 !important;
   line-height: normal !important;
   text-decoration: none !important;
   cursor: pointer;
-  white-space: nowrap;
 }
 
-.shengwang-nav-text:hover {
-  color: #000 !important;
-}
-
-.shengwang-brand-text {
-  color: #2d85e9 !important;
-  font-size: 18px !important;
-  font-weight: 400 !important;
-}
-
-.shengwang-brand-text:hover {
-  color: #2d85e9 !important;
-}
-
-.shengwang-nav-separator {
+.shengwang-separator {
   color: #505e72 !important;
   font-family: "PingFang SC", sans-serif !important;
-  font-size: 16px !important;
-  font-weight: 400 !important;
-  line-height: normal !important;
 }
 
 .shengwang-im-text {
@@ -227,10 +226,6 @@ const handleRegister = () => {
   font-size: 14px !important;
   font-weight: 400 !important;
   line-height: normal !important;
-}
-
-.shengwang-im-link {
-  font-size: 14px !important;
 }
 
 .search-box {
