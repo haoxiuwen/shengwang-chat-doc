@@ -26,7 +26,7 @@ PUT https://{host}/{org_name}/{app_name}/user/{owner_username}/contacts/users/{f
 ## 请求示例
 
 ```shell
-curl -X PUT 'https://{host}/{org_name}/{app_name}/user/{owner_username}/contacts/users/{friend_username}' \
+curl -X PUT 'https://XXXX/XXXX/XXXX/user/{owner_username}/contacts/users/{friend_username}' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'Authorization: Bearer <YourAppToken>' \

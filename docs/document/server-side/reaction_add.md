@@ -32,7 +32,7 @@ POST https://{host}/{org_name}/{app_name}/reaction/user/{userId}
 ## 请求示例
 
 ```shell
-curl -g -X POST 'https://localhost:8089/easemob-demo/easeim/reaction/user/e1'    \
+curl -g -X POST 'https://XXXX/XXXX/XXXX/reaction/user/e1'    \
 -H 'Authorization: Bearer <YourAppToken>'   \
 -H 'Content-Type: application/json'   \
 -d '{

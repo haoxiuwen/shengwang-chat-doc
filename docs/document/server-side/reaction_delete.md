@@ -33,7 +33,7 @@ DELETE https://{host}/{org_name}/{app_name}/reaction/user/{userId}?msgId={msgId}
 ## 请求示例
 
 ```shell
-curl -g -X DELETE 'https://localhost:8089/easemob-demo/easeim/reaction/user/wz?msgId=997625372793113144&message=emoji_40'    \
+curl -g -X DELETE 'https://XXXX/XXXX/XXXX/reaction/user/wz?msgId=997625372793113144&message=emoji_40'    \
 -H 'Authorization: Bearer <YourAppToken>'
 ```
 

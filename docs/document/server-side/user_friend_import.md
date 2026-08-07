@@ -24,7 +24,7 @@ POST https://{host}/{org_name}/{app_name}/users/{username}/contacts/import
 ## 请求示例
 
 ```shell
-curl --location 'https://{host}/{org_name}/{app_name}/users/{username}/contacts/import' \
+curl --location 'https://XXXX/XXXX/XXXX/users/{username}/contacts/import' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -H 'Content-Type: application/json' \
 -d '{
