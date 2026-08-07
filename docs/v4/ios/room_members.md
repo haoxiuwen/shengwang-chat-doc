@@ -64,7 +64,7 @@ EMCursorResult<NSString*> * result = [[EMClient sharedClient].roomManager getCha
 示例代码如下：
 
 ```objectivec
-EMOptions *retOpt = [EMOptions optionsWithAppkey:@"appkey"];
+EMOptions *retOpt = [EMOptions optionswithAppId:@"appId"];
 retOpt.isDeleteMessagesWhenExitChatRoom = NO;
 ```
 

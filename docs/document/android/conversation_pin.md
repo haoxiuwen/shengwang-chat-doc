@@ -79,7 +79,7 @@ if (conversation != null) {
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your-org#your-app");
+options.setAppId("your app ID");
 options.setDataSyncType(EnumSet.of(
         EMOptions.EMDataSyncType.CONVERSATIONS));
 

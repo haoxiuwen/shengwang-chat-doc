@@ -12,7 +12,7 @@
 
 ```javascript
 const conn = new WebIM.connection({
-  appKey: "your appKey",
+  appId: "Your appId",
   url: "wss://im-api-wechat.easemob.com/websocket",
   apiUrl: "https://a1.easemob.com",
   isHttpDNS: false, // 在小程序上需设置为false
@@ -23,7 +23,7 @@ const conn = new WebIM.connection({
 
 | 参数       | 类型   | 是否必需 | 描述                               |
 | :--------- | :----- | :------- | :--------------------------------- |
-| `appKey`    | String     | 是      | 环信控制台为你的应用生成的唯一标识，由应用名称（`Appname`）和组织名称（`Orgname`）组成。                  |
+| `appId`    | String     | 是      | 应用的唯一标识。   |
 | `isHttpDNS`  | Bool  | 否 | 是否开启 DNS，防止 DNS 劫持。<br/> -（默认）`true`：开启 DNS；<br/> - `false`：关闭 DNS。        |
 | `delivery`         | Bool  | 否    | 是否开启送达回执：<br/> - `true`：开启；<br/> -（默认）`false`：关闭。      |
 | `deviceId`           | String  | 否  | 设备 ID，为默认随机值。               |

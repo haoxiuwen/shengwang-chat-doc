@@ -26,7 +26,7 @@
 在调用 `initializeSDK(with:)` 前，将 `EMOptions#dataSyncType` 配置为包含 `.conversations`。用户登录成功后，SDK 会自动同步服务端会话数据并写入本地。
 
 ```swift
-let options = EMOptions(appkey: "your-org#your-app")
+let options = EMOptions(appId: "your app ID")
 options.dataSyncType = [.conversations]
 
 if let error = EMClient.shared().initializeSDK(with: options) {
@@ -190,7 +190,7 @@ EMClient.shared().chatManager?.cleanConversationsMemoryCache()
 
 ```swift
 // 步骤 1：初始化 SDK 前关闭自动加载会话。
-let options = EMOptions(appkey: "your-org#your-app")
+let options = EMOptions(appId: "your app ID")
 options.autoLoadConversations = false
 options.dataSyncType = [.conversations]
 

@@ -283,8 +283,8 @@ ChatClient.getInstance().chatManager()?.sendMessage(message);
 
 ```ts
 // 1. SDK 初始化时关闭“自动上传附件到环信服务器”
-// 注意：ChatOptions 构造参数需要提供 AppKey/AppId（示例仅展示关键点）
-let options = new ChatOptions({ appKey: '<YourAppKey>' });
+// 注意：ChatOptions 构造参数需要提供 appId/AppId（示例仅展示关键点）
+let options = new ChatOptions({ appId: '<YourappId>' });
 options.setAutoTransferMessageAttachments(false);
 ChatClient.getInstance().init(context, options);
 

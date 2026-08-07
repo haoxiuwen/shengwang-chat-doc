@@ -52,7 +52,7 @@ import * as contactPlugin from "easemob-websdk/contact/contact";
 
 ```javascript
 const miniCore = new MiniCore({
-  appKey: "your appKey",
+  appId: "your appId",
 });
 
 // "contact" 为固定值

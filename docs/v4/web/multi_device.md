@@ -80,7 +80,7 @@ conn.getSelfIdsOnOtherPlatform().then((res) => {
 
 ```javascript
 const conn = new WebIM.connection({
-    appKey: 'you appKey',
+    appId: 'you appId',
     customOSPlatform: 1, // 设置自定义平台
     customDeviceName: '自定义平台1' // 设置平台名称
 })
@@ -201,7 +201,7 @@ A：对于使用 Uniapp 打包的移动端和小程序端，在环信侧多端�
 
 ```javascript
 const conn = new WebIM.connection({
-    appKey: 'you appKey',
+    appId: 'you appId',
     // 这里传入的自定义平台 ID 必须与控制台上设置的相同。
     customOSPlatform: 1, // 自定义平台 ID
     customDeviceName: 'Uniapp-mobile' // 自定义平台名称

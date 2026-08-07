@@ -17,7 +17,7 @@
 通过 App Key 创建 `EMOptions`，根据业务需要完成其他配置后，将其传入 `EMClient.initializeSDK(with:)`。
 
 ```swift
-let options = EMOptions(appkey: "your-org#your-app")
+let options = EMOptions(appId: "Your appId")
 
 // 根据业务需要继续设置其他 EMOptions 配置。
 options.enableConsoleLog = true
@@ -33,7 +33,7 @@ if let error = EMClient.shared().initializeSDK(with: options) {
 
 | 属性 | 描述 |
 | :--- | :--- |
-| `appkey` | 应用的唯一标识，通过 `EMOptions(appkey:)` 传入，通常格式为 `appName`。该属性只读。 |
+| `appId` | 应用的唯一标识，通过 `EMOptions(appId:)` 传入。该属性只读。 |
 | `enableConsoleLog` | 是否在控制台输出日志。<br/> - `true`：输出。<br/> -（默认）`false`：不输出。 |
 | `apnsCertName` | APNs 推送证书名称。必须在初始化前设置，运行期间不可修改。 |
 | `pushKitCertName` | PushKit 证书名称。必须在初始化前设置，运行期间不可修改。 |
@@ -109,7 +109,7 @@ iOS SDK 支持在初始化前通过 `EMOptions.dataSyncType` 配置登录后自�
 以下示例在登录成功后自动同步会话、好友和已加入群组：
 
 ```swift
-let options = EMOptions(appkey: "your-org#your-app")
+let options = EMOptions(appId: "your app ID")
 options.dataSyncType = [.conversations, .contacts, .joinedGroups]
 
 if let error = EMClient.shared().initializeSDK(with: options) {

@@ -33,7 +33,7 @@
 import { ChatClient, ChatManager } from 'easemob-websdk';
 
 const client = ChatClient.init({
-  appKey: 'your-org#your-app',
+  appId: 'your app ID',
   managers: [ChatManager],
   serviceConfig: {
     serverUrls: {

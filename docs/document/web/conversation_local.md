@@ -36,7 +36,7 @@ SDK 初始化时，`enableSyncData` 默认包含 `conversation`。用户登录�
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'your appKey',
+  appId: 'your appId',
   managers: [ChatManager],
   enableSyncData: ['conversation'],
 });
@@ -46,7 +46,7 @@ const client = ChatClient.init({
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'your appKey',
+  appId: 'your appId',
   managers: [ChatManager],
   enableSyncData: ['conversation'],
   syncConversationListConfig: {

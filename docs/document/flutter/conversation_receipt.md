@@ -32,7 +32,7 @@
  ```dart
 // 设置是否需要接收方已读确认,默认为 true
     final options = EMOptions(
-      appKey: appKey,
+      appId: appId,
       requireAck: true,
     );
  ```

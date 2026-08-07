@@ -217,7 +217,7 @@ iOS SDK 可以通过以下 `EMOptions` 属性配置当前登录设备的信息�
 示例代码如下：
 
 ```objectivec
-EMOptions *options = [EMOptions optionsWithAppkey:@"your-org#your-app"];
+EMOptions *options = [EMOptions optionswithAppId:@"your app ID"];
 
 // 以下属性应在 SDK 初始化前设置。
 options.customOSType = 10;

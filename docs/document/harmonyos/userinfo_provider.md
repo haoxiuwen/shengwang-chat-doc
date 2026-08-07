@@ -40,7 +40,7 @@
 
 ```typescript
 ChatClient.getInstance().init(context, {
-  appKey: "your_appkey",
+  appId: "your_appId",
   isEnableUserInfo: true
 });
 ```

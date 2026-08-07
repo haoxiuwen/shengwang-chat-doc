@@ -76,7 +76,7 @@ import { ChatClient, ChatManager } from 'easemob-websdk';
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'your-org#your-app',
+  appId: 'your app ID',
   managers: [ChatManager],
 });
 ```

@@ -79,7 +79,7 @@ Android SDK 使用 `EMChatManager#asyncSendMessageReadReceipts` 统一发送单�
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your-org#your-app");
+options.setAppId("your app ID");
 options.setRequireDeliveryAck(true);
 
 EMClient.getInstance().init(getApplicationContext(), options);

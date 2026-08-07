@@ -49,7 +49,7 @@
 ```dart
 // 设置是否需要接收方送达确认，默认 `false` 即不需要。
     final options = EMOptions(
-      appKey: appKey,
+      appId: appId,
       requireDeliveryAck: true,
     );
 ```
@@ -79,7 +79,7 @@
 
 ```dart
     final options = EMOptions(
-      appKey: appKey,
+      appId: appId,
       requireAck: true,
     );
 ```
@@ -142,7 +142,7 @@ EMClient.getInstance.chatManager.addEventHandler(
 
 ```dart
     final options = EMOptions(
-      appKey: appKey,
+      appId: appId,
       requireAck: true,
     );
 ```

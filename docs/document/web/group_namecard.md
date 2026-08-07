@@ -126,7 +126,7 @@ Object.entries(result.items).forEach(([userId, attributes]) => {
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'your_appkey',
+  appId: 'your_appId',
   enableUserInfoSync: true,
   managers: [GroupManager, UserInfoManager],
 });

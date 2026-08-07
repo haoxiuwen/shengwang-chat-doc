@@ -40,7 +40,7 @@
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your_appkey");
+options.setAppId("your_appId");
 options.setEnableUserInfo(true);
 EMClient.getInstance().init(context, options);
 ```

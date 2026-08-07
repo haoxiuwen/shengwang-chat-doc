@@ -145,8 +145,8 @@
   // 注册推送。
   [application registerForRemoteNotifications];
 
-  // 初始化 `Options`，设置 App Key。
-  EMOptions *options = [EMOptions optionsWithAppkey:@"easemob-demo#easeim"];
+  // 初始化 Options，设置 App ID。
+  EMOptions *options = [EMOptions optionsWithAppId:@"Your app ID"];
 
   // 填写上传证书时设置的名称。
   options.apnsCertName = @"PushCertName";

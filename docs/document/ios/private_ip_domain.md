@@ -9,7 +9,7 @@ SDK 默认指向公有云地址，在部署私有云后，需要将地址重新�
 ### 方式一：TCP 连接
 
 ```objectivec
-EMOptions *options = [EMOptions optionsWithAppkey:appkey];
+EMOptions *options = [EMOptions optionswithAppId:appId];
 options.enableDnsConfig = NO;
 options.chatPort = 8080;//设置端口号
 options.chatServer = @"xxx.xxx.xxx.xxx";//设置 IP 地址
@@ -20,7 +20,7 @@ options.enableTLSConnection = YES;// 是否使用加密连接。TCP 连接为 TL
 ### 方式二：WebSocket 连接
 
 ```objectivec
-EMOptions* options = [EMOptions optionsWithAppkey:@"Your appkey"];
+EMOptions* options = [EMOptions optionswithAppId:@"Your appId"];
 options.enableDnsConfig = NO;
 options.restServer = @"https://restaddress";
 options.webSocketServer = @"im-api-wechat.easemob.com";

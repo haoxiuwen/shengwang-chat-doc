@@ -72,8 +72,8 @@ SDK 支持 **CocoaPods 导入**和**手动导入**两种方式。
 ```objectivec
 (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
-    // appkey 替换成你在环信控制台注册应用中的 App Key
-    EMOptions *options = [EMOptions optionsWithAppkey:@"<#appkey#>"];
+    // appId 替换成你在环信控制台注册应用中的 App ID
+    EMOptions *options = [EMOptions optionswithAppId:@"<#appId#>"];
     // apnsCertName是证书名称，可以先传 nil，等后期配置 APNs 推送时在传入证书名称
     options.apnsCertName = nil;
     [[EMClient sharedClient] initializeSDKWithOptions:options];

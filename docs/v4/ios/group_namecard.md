@@ -106,7 +106,7 @@ print("群成员名片：\(namecard ?? "")")
 如果希望在发送消息时自动携带群成员名片信息，并在接收消息时自动更新本地内存，需要开启用户信息自动管理功能，即将 `EMOptions#enableUserInfo` 设置为 `true`。
 
 ```swift
-let options = EMOptions(appkey: "your_appkey")
+let options = EMOptions(appId: "your_appId")
 options.enableUserInfo = true
 EMClient.shared().initializeSDK(with: options)
 ```

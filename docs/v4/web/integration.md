@@ -71,7 +71,7 @@ import * as contactPlugin from "easemob-websdk/contact/contact";
 
 ```javascript
 const miniCore = new MiniCore({
-  appKey: "your appKey",
+  appId: "your appId",
 });
 
 // "contact" 为固定值
@@ -190,7 +190,7 @@ export default {
       const WebIM = res.default;
       console.log(WebIM, "easemob websdk");
       const conn = new WebIM.connection({
-        appKey: "your appkey"
+        appId: "your appId"
       });
     });
   }
@@ -210,7 +210,7 @@ export default function Home() {
       const WebIM = res.default;
       console.log(WebIM, "easemob websdk");
       const conn = new WebIM.connection({
-        appKey: "your appkey"
+        appId: "your appId"
       });
     }) 
   }, [])

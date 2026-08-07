@@ -317,7 +317,7 @@ EMClient.getInstance().chatManager().sendMessage(msg, callback).then().catch();
 ```typescript
 // 1) SDK 初始化时关闭“自动上传附件到环信服务器”
 ChatClient.getInstance()
-  .init(ChatOptions.withAppKey({ appKey: "test#test", serverTransfer: false }))
+  .init(ChatOptions.withAppId({ appId: "test#test", serverTransfer: false }))
   .then()
   .catch();
 

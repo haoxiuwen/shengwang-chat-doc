@@ -96,7 +96,7 @@ let conversation = EMClient.shared().chatManager?.getConversation(
 在调用 `initializeSDKWithOptions` 前，将 `EMOptions#dataSyncType` 配置为包含 `.conversations`。用户登录成功后，SDK 自动同步服务端会话数据并写入本地。
 
 ```swift
-let options = EMOptions(appkey: "your-org#your-app")
+let options = EMOptions(appId: "your app ID")
 options.dataSyncType = [.conversations]
 
 if let error = EMClient.shared().initializeSDK(with: options) {
@@ -154,7 +154,7 @@ let filteredConversations = EMClient.shared().chatManager?
 从本地数据库加载会话时，是否包含空会话由 `EMOptions#loadEmptyConversations` 控制。该属性默认值为 `false`；如需包含空会话，应在调用 `initializeSDKWithOptions` 前设置为 `true`。
 
 ```swift
-let options = EMOptions(appkey: "your-org#your-app")
+let options = EMOptions(appId: "your app ID")
 options.loadEmptyConversations = true
 
 if let error = EMClient.shared().initializeSDK(with: options) {

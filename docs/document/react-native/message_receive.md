@@ -57,7 +57,7 @@ ChatClient.getInstance().chatManager.removeAllMessageListener();
 ```typescript
 ChatClient.getInstance().init(
   new ChatOptions({
-    appKey,
+    appId,
     isAutoDownload: true,
   })
 );

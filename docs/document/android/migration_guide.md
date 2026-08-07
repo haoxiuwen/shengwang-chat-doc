@@ -71,7 +71,7 @@ Android SDK v5.0.0 新增登录后自动数据同步机制。应用可在初始�
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your-appkey");
+options.setAppId("your-appId");
 options.setDataSyncType(EnumSet.of(
         EMOptions.EMDataSyncType.CONVERSATIONS,
         EMOptions.EMDataSyncType.CONTACTS,

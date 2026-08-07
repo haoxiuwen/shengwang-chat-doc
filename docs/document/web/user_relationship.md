@@ -176,7 +176,7 @@ SDK 通过初始化参数 `enableSyncData: ['contact']` 控制登录后自动同
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'easemob-demo#chatdemoui',
+  appId: 'your app ID',
   enableSyncData: ['conversation', 'contact'],
   managers: [ContactManager, UserInfoManager],
 });

@@ -138,7 +138,7 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMOptions;
 
 EMOptions options = new EMOptions();
-options.setAppKey("Your appkey");
+options.setAppId("Your appId");
 ......// 其他 EMOptions 配置。
 // context 为上下文，在 Application 或者 Activity 中可以用 this 代替
 EMClient.getInstance().init(context, options);

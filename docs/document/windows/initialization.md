@@ -14,10 +14,10 @@
 
 ## 初始化 SDK 
 
-初始化时，你需要通过 `EMOptions` 中封装的 `appKey` 设置你的 App Key。
+初始化时，你需要通过 `EMOptions` 中封装的 `appKey` 设置你的 App ID。
 
 ```csharp
-var options = new Options("appkey"); //将该参数设置为你的 App Key
+var options = Options.InitOptionsWithAppId("YourAppId"); //将该参数设置为你的 App Id
 //其他 Options 配置。
 SDKClient.Instance.InitWithOptions(options);
 ```
@@ -26,7 +26,7 @@ SDKClient.Instance.InitWithOptions(options);
 
 | 属性           | 描述            |
 | :----------------- | :---------------- |
-| `appKey`     | `appkey` 参数为创建 app 时在环信控制台上注册的 app 唯一识别符。 |
+| `appId`     | 应用的唯一标识。 |
 | `AutoLogin`                            | 是否自动登录。<br/> -（默认）`true`：自动登录。**若使用默认设置，首次登录后，后续会自动登录。这种情况下，若再手动登录，则会提示用户已登录。**<br/> -  `false`：不自动登录。 |
 | `AutoAcceptGroupInvitation`         | 是否自动接受加群邀请。<br/> -（默认）`true`：自动接受加群申请； <br/> -  `false`: 不自动接受加群申请。 |
 | `AcceptInvitationAlways`                   | 是否自动接受加好友邀请。 <br/> -（默认）`true`：自动接受好友邀请。 <br/> -  `false`：不自动接收好友邀请。 |

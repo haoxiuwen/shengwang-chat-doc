@@ -62,7 +62,7 @@ ChatClient.getInstance().chatroomManager()?.leaveChatroom(chatRoomId).then(()=> 
 
 ```typescript
 let options = new ChatOptions({
-  appKey: "你的 AppKey"
+  appId: "你的 appId"
 });
 options.setDeleteMessagesOnLeaveChatroom(false);
 ```

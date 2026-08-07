@@ -100,7 +100,7 @@ function getGroupNamecard(groupId: string, userId: string): string {
 
 ```typescript
 ChatClient.getInstance().init(getContext(), {
-  appKey: "your_appkey",
+  appId: "your_appId",
   isEnableUserInfo: true
 });
 ```

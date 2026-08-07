@@ -124,14 +124,13 @@ Easemob_quickstart<br>
 
 ```javascript
 import WebIM from 'easemob-websdk'
-const appKey = "<Your app key>"
+const appId = "Your App ID"
 
 let username, accessToken
 
 // 初始化客户端。相关的参数配置，详见 API 参考中的 `Connection` 类。
 WebIM.conn = new WebIM.connection({
-    //注意这里的 "K" 需大写。
-    appKey: appKey,
+    appId: appId,
 })
 
 // 添加回调函数。

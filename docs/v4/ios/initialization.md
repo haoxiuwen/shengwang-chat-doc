@@ -13,7 +13,7 @@
 初始化时，你需要通过 `appKey` 参数设置你的 App Key。
 
 ```swift
-let options = EMOptions(appkey: "Your appkey")
+let options = EMOptions(appId: "Your appId")
 ......// 其他 EMOptions 配置。
 EMClient.shared().initializeSDK(with: options)
 ```
@@ -22,7 +22,7 @@ EMClient.shared().initializeSDK(with: options)
 
 | 属性           | 描述            |
 | :----------------- | :---------------- |
-| `appkey`                                   | `appkey` 属性为创建 app 时在环信控制台上注册的 app 唯一识别符。 |
+| `appId`                                   | 应用的唯一标识。 |
 | `isAutoLogin`   | 是否自动登录。<br/> -（默认）`YES`：自动登录。**若使用默认设置，首次登录后，后续会自动登录。这种情况下，若再手动登录，则会提示用户已登录。**<br/> -  `NO`：不自动登录。 |
 | `pushKitCertName`   | PushKit 的证书名称。 |
 | `setPushConfig(EMPushConfig pushConfig)`                     | 设置推送相关配置。<br/>`pushConfig` 参数为推送相关配置。         |

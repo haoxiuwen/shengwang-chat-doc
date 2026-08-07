@@ -83,7 +83,7 @@ ChatClient.getInstance().contactManager()?.getSelfIdsOnOtherPlatform().then(ids 
 
 ```typescript
 let options = new ChatOptions({
-  appKey: "您的AppKey"
+  appId: "您的appId"
 });
 options.setCustomDeviceName("您的自定义设备名称");
 ChatClient.getInstance().init(this.context, options);
@@ -124,7 +124,7 @@ ChatClient.getInstance().addConnectionListener({
 
 ```typescript
 let options = new ChatOptions({
-  appKey: "您的AppKey"
+  appId: "您的appId"
 });
 options.setCustomOSPlatform(1); // 取值范围为 [1,100]
 ChatClient.getInstance().init(this.context, options);
@@ -142,7 +142,7 @@ ChatClient.getInstance().init(this.context, options);
 
 ```typescript
 let options = new ChatOptions({
-  appKey: "你的 AppKey"
+  appId: "你的 appId"
 });
 options.setLoginCustomExt("您要设置的自定义扩展信息");
 ChatClient.getInstance().init(this.context, options);

@@ -30,7 +30,7 @@ SDK 初始化时，`enableSyncData` 默认包含 `conversation`。用户登录�
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'easemob-demo#chatdemoui',
+  appId: 'easemob-demo#chatdemoui',
   enableSyncData: ['conversation'],
   syncConversationListConfig: {
     includeEmpty: true,

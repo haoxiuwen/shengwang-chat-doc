@@ -102,7 +102,7 @@ iOS SDK 初始化时会生成登录 ID 用于在多设备登录和消息推送�
 :::
 
 ```objectivec
-EMOptions* option = [EMOptions optionsWithAppkey:Appkey];
+EMOptions* option = [EMOptions optionswithAppId:appId];
 option.customDeviceName = @"XXX的iPad";
 [EMClient.sharedClient initializeSDKWithOptions:option]; 
 
@@ -127,7 +127,7 @@ option.customDeviceName = @"XXX的iPad";
 :::
 
 ```objectivec
-EMOptions* option = [EMOptions optionsWithAppkey:Appkey];
+EMOptions* option = [EMOptions optionswithAppId:appId];
 option.customOSType = 60;
 [EMClient.sharedClient initializeSDKWithOptions:option];
 ```

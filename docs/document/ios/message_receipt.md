@@ -79,7 +79,7 @@ iOS SDK 使用 `sendMessageReadReceipts` 统一发送单聊和群聊消息的已
 
 ```objectivec
 // 创建 SDK 配置对象。
-EMOptions *options = [EMOptions optionsWithAppkey:@"your-org#your-app"];
+EMOptions *options = [EMOptions optionswithAppId:@"your app ID"];
 // 接收方开启后，收到单聊消息时 SDK 自动发送送达回执。
 options.enableDeliveryAck = YES;
 

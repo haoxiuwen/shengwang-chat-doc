@@ -63,7 +63,7 @@ SDK 使用 `sendMessageReadReceipts` 发送单聊和群聊消息已读回执，�
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'org#app',
+  appId: 'org#app',
   // 开启单聊消息送达回执。
   enableDeliveryReceipt: true,
   managers: [ChatManager],

@@ -84,7 +84,7 @@
 
 
 ```objectivec
-EMOptions *options = [EMOptions optionsWithAppkey:@"appkey"];
+EMOptions *options = [EMOptions optionswithAppId:@"appId"];
 options.deleteMessagesOnLeaveChatroom = NO;
 ```
 

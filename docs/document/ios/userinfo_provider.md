@@ -39,7 +39,7 @@
 在 SDK 初始化前，将 `EMOptions#enableUserInfo` 设置为 `true`：
 
 ```swift
-let options = EMOptions.options(withAppkey: "your_appkey")
+let options = EMOptions.options(withAppId: "your_appId")
 options.enableUserInfo = true
 EMClient.shared().initializeSDK(with: options)
 ```

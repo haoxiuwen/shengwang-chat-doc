@@ -72,9 +72,9 @@ demo 中的 SDK 文件夹为 **Hyphenate SDK**，将 SDK 文件夹拖入到工�
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //AppKey：注册的 AppKey，详细见下面注释。
+    //appId：应用的唯一标识。
     //apnsCertName：推送证书名（不需要加后缀），详细见下面注释。
-    EMOptions *options = [EMOptions optionsWithAppkey:@"easemob-demo#easeim"];
+    EMOptions *options = [EMOptions optionsWithAppId:@"Your app ID"];
     options.apnsCertName = @"EaseIM_APNS_Developer";
     [[EMClient sharedClient] initializeSDKWithOptions:options];
 
@@ -94,9 +94,8 @@ demo 中的 SDK 文件夹为 **Hyphenate SDK**，将 SDK 文件夹拖入到工�
 }
 ```
 
-调用的 SDK 接口参数解释如下：
-- App Key: 区别 APP 的标识，请参考 [环信控制台文档](/product/console/app_manage.html#获取应用凭证)。
-- apnsCertName: iOS 中推送证书名称，请参考 [创建推送证书](/document/ios/push/push_apns.html#创建推送证书) 和 [上传推送证书](/document/ios/push/push_apns.html#上传推送证书)。
+`apnsCertName` 的参数解释如下：
+`apnsCertName`: iOS 中推送证书名称，请参考 [创建推送证书](/document/ios/push/push_apns.html#创建推送证书) 和 [上传推送证书](/document/ios/push/push_apns.html#上传推送证书)。
 
 ### SDK 登录流程
 

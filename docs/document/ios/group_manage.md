@@ -301,7 +301,7 @@ EMClient.shared().groupManager?.removeMembers(
 为在登录后获取最新的已加入群组数据，应在初始化 SDK 前将 `EMOptions#dataSyncType` 配置为包含 `.joinedGroups`：
 
 ```swift
-let options = EMOptions.options(withAppkey: "your-org#your-app")
+let options = EMOptions.options(withAppId: "your app ID")
 options.dataSyncType = [.joinedGroups]
 
 if let error = EMClient.shared().initializeSDK(with: options) {

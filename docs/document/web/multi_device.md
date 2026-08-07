@@ -64,7 +64,7 @@ SDK 支持自定义设置登录设备的平台，例如，若要将小程序平�
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'your appKey',
+  appId: 'your appId',
   // 设置是否复用固定设备标识；默认值为 `true`。
   useFixedDeviceId: true,
   // 自定义设备标识基值；未传时默认使用 `webim`。
@@ -91,7 +91,7 @@ const client = ChatClient.init({
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'your appKey',
+  appId: 'your appId',
   // 登录设备自定义扩展信息。
   loginExtensionInfo: JSON.stringify({
     source: 'web',
@@ -169,7 +169,7 @@ A：对于使用 Uniapp 打包的移动端和小程序端，在环信侧多端�
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'your appKey',
+  appId: 'your appId',
   // 这里传入的自定义平台 ID 必须与控制台上设置的相同。
   customOSPlatform: 1,
   // 自定义设备名称。

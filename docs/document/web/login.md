@@ -40,7 +40,7 @@ SDK 通过用户 ID 和 IM Token 登录。调用 `client.login` 时，需传入 
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'easemob-demo#chatdemoui',
+  appId: 'easemob-demo#chatdemoui',
 });
 
 await client.login({
@@ -169,7 +169,7 @@ await client.logout();
 
 ```typescript
 const client = ChatClient.init({
-  appKey: 'easemob-demo#chatdemoui',
+  appId: 'easemob-demo#chatdemoui',
   useFixedDeviceId: true,
   customOSPlatform: 10,
   customDeviceName: 'web-custom-device',

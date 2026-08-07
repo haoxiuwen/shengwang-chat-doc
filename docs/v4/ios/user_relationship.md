@@ -276,7 +276,7 @@ NSArray *userlist = [[EMClient sharedClient].contactManager getContacts];
 你可以通过 `EMOptions#enableAutoSyncContacts` 配置该功能。该配置需要在初始化 SDK 时设置，示例代码如下：
 
 ```objectivec
-EMOptions *options = [EMOptions optionsWithAppkey:@"YourAppKey"];
+EMOptions *options = [EMOptions optionswithAppId:@"YourappId"];
 // 开启登录后自动同步好友列表及好友信息。
 options.enableAutoSyncContacts = YES;
 [[EMClient sharedClient] initializeSDKWithOptions:options];
