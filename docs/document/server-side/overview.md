@@ -37,7 +37,7 @@ POST https://{host}/{org_name}/{app_name}/users
 | 参数       | 类型   | 是否必需 | 描述         |
 | :--------- | :----- | :------- | :------------------------- |
 | `host`     | String | 是       | 环信即时通讯 IM 分配的用于访问 RESTful API 的域名。<br/> - 为满足不同客户的业务需求，环信在多地部署了数据中心。不同数据中心的 REST API 请求域名不同。请根据您所在数据中心选择请求域名。<br/> - 国内 VIP 区、客服专区客户请联系商务经理获得 REST API 请求地址。<br/> -  支持 HTTP 和 HTTPS。|
-| app_id    | String | 是 | 控制台为每个项目自动分配的 App ID，作为项目唯一标识。 |
+| `app_id`   | String | 是 | 控制台为每个项目分配的 App ID，作为项目唯一标识。 |
 
 ### 请求 header
 

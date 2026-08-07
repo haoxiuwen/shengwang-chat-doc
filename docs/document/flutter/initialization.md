@@ -14,10 +14,10 @@
 
 ## 初始化 SDK
 
-初始化时，你需要通过 `EMOptions` 中封装的 `appKey` 属性设置你的 App Key。
+初始化时，你需要通过 `EMOptions` 中封装的 `appKey` 属性设置你的 App ID。
 
 ```dart
-EMOptions options = EMOptions.withAppKey(appKey);
+EMOptions options = EMOptions.withAppId(appId);
 await EMClient.getInstance.init(options);
 ```
 
@@ -29,8 +29,8 @@ await EMClient.getInstance.init(options);
 该功能默认开启，若要关闭，可进行如下设置：
 
 ```dart
-EMOptions options = EMOptions.withAppKey(
-    appKey,
+EMOptions options = EMOptions.withAppId(
+    appId,
     extSettings: {ExtSettings.kDisableIosEnterBackground: true},
 );
 await EMClient.getInstance.init(options);
@@ -40,7 +40,7 @@ await EMClient.getInstance.init(options);
 
 | 属性           | 描述            |
 | :----------------- | :---------------- |
-| `appKey`                                   | `appkey` 为创建 app 时在环信控制台上注册的 app 唯一识别符。 |
+| `appId`                                   | 应用的唯一标识。 |
 | `autoLogin`                            | 是否自动登录。<br/> -（默认）`true`：自动登录。**若使用默认设置，首次登录后，后续会自动登录。这种情况下，若再手动登录，则会提示用户已登录。**<br/> -  `false`：不自动登录。 |
 | `autoAcceptGroupInvitation`         | 是否自动接受加群邀请。<br/> -（默认）`true`：自动接受加群申请； <br/> -  `false`: 不自动接受加群申请。 |
 | `acceptInvitationAlways`                   | 是否自动接受加好友邀请。 <br/> -（默认）`true`：自动接受好友邀请。 <br/> -  `false`：不自动接收好友邀请。 |

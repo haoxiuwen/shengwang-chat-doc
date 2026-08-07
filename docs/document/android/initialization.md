@@ -18,7 +18,7 @@
 
 ```java
 EMOptions options = new EMOptions();
-options.setAppKey("your-org#your-app");
+options.setAppId("Your appId");
 // 根据业务需要继续设置其他 EMOptions 配置。
 EMClient.getInstance().init(getApplicationContext(), options);
 ```
@@ -27,7 +27,7 @@ EMClient.getInstance().init(getApplicationContext(), options);
 
 | 方法名称 | 描述 |
 | :--- | :--- |
-| `setAppKey(String appkey)` | 设置 App Key。`appkey` 是在环信控制台创建应用后获得的唯一标识，格式通常为 `orgName#appName`。 |
+| `setAppId("Your appId")` | 设置 App ID，应用的唯一标识。 |
 | `setPushConfig(EMPushConfig pushConfig)` | 设置离线推送配置。应在 `init` 前传入已构建的 `EMPushConfig`；未设置时，SDK 会创建默认推送配置。 |
 | `setAutoAcceptGroupInvitation(boolean value)` | 设置是否自动接受群组邀请。<br/> -（默认）`true`：自动接受群组邀请。<br/> - `false`：不自动接受群组邀请。 |
 | `setAcceptInvitationAlways(boolean value)` | 设置是否自动接受好友邀请。<br/> -（默认）`true`：自动接受好友邀请。<br/> - `false`：不自动接受好友邀请。 |

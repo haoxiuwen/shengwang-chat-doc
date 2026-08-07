@@ -6,15 +6,15 @@
 
 ## 前提条件
 
-有效的环信即时通讯 IM 开发者账号和 App key，详见[环信控制台的相关文档](/product/console/app_create.html)。
+有效的环信即时通讯 IM 开发者账号和 App ID，详见[环信控制台的相关文档](/product/console/app_create.html)。
 
 ## 初始化 SDK 
 
-初始化时，你需要通过 `appKey` 参数设置你的 App Key。
+初始化时，你需要通过 `appId` 参数设置你的 App ID。
 
 ```typescript
 let options = new ChatOptions({
-  appKey: "你的 AppKey"
+  appId: "Your AppId"
 });
 ......// 其他 ChatOptions 配置。
 // 初始化时传入上下文以及 options
@@ -25,7 +25,7 @@ ChatClient.getInstance().init(context, options);
   
 ```typescript
 ChatClient.getInstance().init(this.context, {
-  appKey: "您的AppKey",
+  appId: "Your AppId",
   appIDForPush: "您在 AppGallery Connect 获取到的 ClientID。",
   // 关闭自动登录
   isAutoLogin: false,
@@ -37,7 +37,7 @@ ChatClient.getInstance().init(this.context, {
 
 | 方法名称           | 描述            |
 | :----------------- | :---------------- |
-| `setAppKey(appKey)`                                   | 设置 App Key。<br/>`appKey` 参数为创建 app 时在环信控制台上注册的 app 唯一识别符。 |
+| `setAppId(appId: string)`                                   | 设置 App ID，应用的唯一标识。 |
 | `setAutoLogin(boolean autoLogin)`                            | 开启/关闭自动登录。<br/>`autoLogin` 参数表示是否开启自动登录： <br/> -（默认）`true`：自动登录。**若使用默认设置，首次登录后，后续会自动登录。这种情况下，若再手动登录，则会提示用户已登录。**<br/> -  `false`：不自动登录。 |
 | `setAppIDForPush(appId)`                     | 设置用于推送的 app ID。         |
 | `setAutoAcceptGroupInvitations(isAutoAcceptGroups)`                | 设置是否自动接受加群邀请。<br/>`isAutoAcceptGroups` 参数表示是否自动接受加群邀请。 <br/> -（默认）`true`：自动接受加群申请； <br/> -  `false`: 不自动接受加群申请。 |

@@ -14,7 +14,7 @@
 import { ChatClient } from 'easemob-websdk';
 
 const client = ChatClient.init({
-  appKey: 'your-org#your-app',
+  appId: "Your appId",
 });
 ```
 
@@ -27,7 +27,7 @@ const client = ChatClient.init({
 
 | 参数 | 类型 | 是否必需 | 描述 |
 | :--- | :--- | :--- | :--- |
-| `appKey` | String | 是 | 应用唯一标识，格式为 `org#app`。 |
+| `appId` | String | 是 | 应用的唯一标识。 |
 | `enableDeliveryReceipt` | Boolean | 否 | 是否开启送达回执。开启后，收到单聊消息时 SDK 会自动向发送方回送达回执。默认 `false`。 |
 | `useFixedDeviceId` | Boolean | 否 | 是否在同一浏览器内复用固定设备标识。默认 `true`；设为 `false` 时，每个 SDK 实例使用随机设备 ID。 |
 | `deviceId` | String | 否 | 自定义设备标识；未传时使用 SDK 默认值。 |
