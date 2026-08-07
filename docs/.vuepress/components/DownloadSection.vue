@@ -68,6 +68,8 @@ import { clientSDKDownloadInfo } from "../data/download.js";
 }
 
 .compliance-card {
+  width: 100%;
+  box-sizing: border-box;
   margin: 1.5rem 0;
   padding: 1.25rem 1.5rem;
   border: 1px solid #dcecf7;
@@ -89,12 +91,16 @@ import { clientSDKDownloadInfo } from "../data/download.js";
 
 .table-wrapper {
   width: 100%;
+  max-width: none;
+  box-sizing: border-box;
   overflow-x: auto;
 }
 
 table {
-  width: 100%;
-  min-width: 100%;
+  display: table;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: none !important;
   box-sizing: border-box;
   border-collapse: collapse;
   background: #fff;
