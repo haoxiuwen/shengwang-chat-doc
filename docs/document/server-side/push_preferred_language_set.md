@@ -11,7 +11,7 @@
 ## 请求 URL
 
 ```http
-PUT https://{host}/{org}/{app}/users/{userId}/notification/language
+PUT https://{host}/{org_name}/{app_name}/users/{userId}/notification/language
 ```
 
 | 参数       | 类型   | 描述          | 是否必需 |

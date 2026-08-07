@@ -11,7 +11,7 @@
 ## 请求 URL
 
 ```http
-GET https://{host}/{org}/{app}/users/{userId}/notification/{chattype}/{key}
+GET https://{host}/{org_name}/{app_name}/users/{userId}/notification/{chattype}/{key}
 ```
 
 | 参数       | 类型   | 描述          | 是否必需 |
