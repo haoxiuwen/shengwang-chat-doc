@@ -6,11 +6,11 @@
 
 使用 SDK 之前，你需先创建应用，获取应用的唯一标识 App Key，请参见[创建应用](/product/console/app_create.html)。
 
-环信推送分为在线推送和远程推送，远程推送时通过 APNS 下发，所以你需要配置应用对应的证书，请参见[APNS 推送配置](/document/ios/push/push_apns.html#上传推送证书)。
+即时推送分为在线推送和远程推送，远程推送时通过 APNS 下发，所以你需要配置应用对应的证书，请参见[APNS 推送配置](/document/ios/push/push_apns.html#上传推送证书)。
 
 ## 集成 SDK
 
-环信 SDK 支持 pod 方式导入和手动导入两种方式，任选其一即可，下面分别介绍这两种导入方式。
+推送 SDK 支持 pod 方式导入和手动导入两种方式，任选其一即可，下面分别介绍这两种导入方式。
 
 **注意**
 
@@ -61,7 +61,7 @@ demo 中的 SDK 文件夹为 **Hyphenate SDK**，将 SDK 文件夹拖入到工�
 
 ## SDK 基础功能
 
-环信推送和环信 IM 使用相同的 SDK，使用功能都需要初始化 SDK 并进行登录操作。
+即时推送和即时通讯 IM 使用相同的 SDK，使用功能都需要初始化 SDK 并进行登录操作。
 
 ### 初始化 SDK
 
@@ -163,7 +163,7 @@ if (NSClassFromString(@"UNUserNotificationCenter")) {
 }
 ```
 
-3.开启环信推送处理
+3.开启即时推送处理
 
 ```objectivec
 [[EMLocalNotificationManager sharedManager] launchWithDelegate:self];
@@ -252,4 +252,4 @@ iOS 的本地通知管理模块 `UNUserNotificationCenter` 是单例，一个 Ap
 }
 ```
 
-环信推送和 IM 使用相同的 SDK，可以查看 IMSDK [更多推送功能](https://docs-im.easemob.com/im/ios/apns/offline)。
+即时推送和 IM 使用相同的 SDK，可以查看 IMSDK [更多推送功能](https://docs-im.easemob.com/im/ios/apns/offline)。

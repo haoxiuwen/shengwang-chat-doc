@@ -6,7 +6,7 @@
 
 支持 [服务端消息搜索](/value-added/search/message_search_ios.html)，可根据关键词组合、会话 ID、消息类型、时间范围及消息内容或扩展属性进行筛选。，详见 [开通说明](/product/console/purchase_value_added.html#消息搜索)。
 
-消息搜索默认不支持扩展字段 `ext`，如需支持该字段搜索，请联系环信商务。
+消息搜索默认不支持扩展字段 `ext`，如需支持该字段搜索，请联系商务经理。
 
 #### 修复
 
@@ -301,7 +301,7 @@ SDK 依赖的 AOSL Crash 检测库已更换为 `ShengwangInfra_iOS`。如使用�
 
 #### 新增特性
 
-- [IM SDK] 新增[拉取服务器漫游消息](message_retrieve.html#从服务器获取指定会话的消息)时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系环信商务开通。 
+- [IM SDK] 新增[拉取服务器漫游消息](message_retrieve.html#从服务器获取指定会话的消息)时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系商务经理开通。 
 - [IM SDK] 聊天室成员禁言回调：
   - 新增聊天室禁言回调 `EMChatroomManagerDelegate#chatroomMuteListDidUpdate:addedMutedMembers:`，在回调中使用 `(NSDictionary<NSString *,NSNumber*> *)aMutes` 参数表示禁言到期时间戳。
   - 废弃原来的回调 `EMChatroomManagerDelegate#chatroomMuteListDidUpdate:addedMutedMembers:muteExpire:`。

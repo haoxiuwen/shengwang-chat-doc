@@ -20,7 +20,7 @@
   - `GROUP_USER_IN_BLOCKLIST` (613)：该用户在群组黑名单中。例如，群组黑名单中的用户进行某些操作时，例如，加入群组，会提示该错误。
   - `CHATROOM_USER_IN_BLOCKLIST` (707)：该用户在聊天室黑名单中。聊天室黑名单中的用户进行某些操作时，例如，加入聊天室，会提示该错误。
 - 支持 AUT 协议，优化弱网环境下的服务连接成功率。
-- 新增[拉取服务器漫游消息](message_retrieve.html#从服务器获取指定会话的消息)时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系环信商务开通。
+- 新增[拉取服务器漫游消息](message_retrieve.html#从服务器获取指定会话的消息)时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系商务经理开通。
 - 新增聊天室禁言回调 `IRoomManagerDelegate#OnMuteListAddedFromRoom(string roomId, Dictionary<string, long> mutes)`:，在回调中使用`Dictionary<string, long> mutes` 参数表示禁言到期时间戳。
 - 新增 Crash 上报能力：当 SDK 发生 Crash 时，会在下次启动后上报 Crash 信息。
 - 用户加入聊天室后会收到如下信息，即调用 `JoinRoom` 方法后的成功回调中 Room 对象可以获取到如下信息：
@@ -323,7 +323,7 @@
 
 ## v1.0.2.1 2022-06-22
 
-这是环信即时通讯 IM Windows SDK 第一个正式发布的版本，包含以下功能：
+这是即时通讯 IM Windows SDK 第一个正式发布的版本，包含以下功能：
 
 - 在单聊、群聊、聊天室中发送和接收消息；
 - 管理会话和消息；
@@ -333,7 +333,7 @@
 具体集成请参考以下文档：
 
 - 在 [环信控制台](https://console.easemob.com/user/login) [注册账号](/product/console/account_register.html)，[创建应用](/product/console/app_create.html)。
-- [环信即时通讯 IM Windows 快速入门](quickstart.html)
+- [即时通讯 IM Windows 快速入门](quickstart.html)
 - [消息管理 Windows](message_send.html)
 - [群组 Windows](group_manage.html)
 - [聊天室 Windows](room_manage.html)

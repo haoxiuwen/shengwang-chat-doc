@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-环信即时通讯 IM 支持在服务端编辑单聊、群组聊天和聊天室中发送成功的消息：
+即时通讯 IM 支持在服务端编辑单聊、群组聊天和聊天室中发送成功的消息：
 
  - 文本消息：支持编辑消息内容字段 `msg` 和扩展字段 `ext`。
  - 自定义消息：支持编辑 `customEvent` 、`customExts` 和扩展字段 `ext`。
@@ -19,7 +19,7 @@
 
 ## 功能开通
 
-若使用该功能，需要 **联系环信商务开通**。
+若使用该功能，需要 **联系商务经理开通**。
 
 ## 调用频率上限
 
@@ -159,7 +159,7 @@ curl -X PUT -i 'https://XXXX/app-id/{app_id}/messages/rewrite/123580731883520200
 | `path`            | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。      |
 | `uri`             | String | 请求 URL。     |
 | `timestamp`       | Long   | HTTP 响应的 Unix 时间戳，单位为毫秒。  |
-| `organization`    | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
+| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。     |
 | `duration`        | Int    | 从发送 HTTP 请求到响应的时长，单位为毫秒。 |

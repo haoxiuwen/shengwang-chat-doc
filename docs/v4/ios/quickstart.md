@@ -1,8 +1,8 @@
-# 环信即时通讯 IM iOS 快速开始
+# 即时通讯 IM iOS 快速开始
 
 <Toc />
 
-本文介绍如何快速集成环信即时通讯 IM iOS SDK 实现单聊。
+本文介绍如何快速集成即时通讯 IM iOS SDK 实现单聊。
 
 ## 实现原理
 
@@ -15,7 +15,7 @@
 - Xcode (推荐最新版本)。
 - 安装 iOS 10.0 或以上版本的 iOS 模拟器或 Apple 设备。
 - CocoaPods [1.10.1 或以上版本](https://cocoapods.org/)。
-- 有效的环信即时通讯 IM 开发者账号和 App Key，详见 [环信控制台文档](/product/console/app_manage.html#管理应用)。
+- 有效的即时通讯 IM 开发者账号和 App Key，详见 [环信控制台文档](/product/console/app_manage.html#管理应用)。
 - 如果你的网络环境部署了防火墙，请联系环信技术支持设置白名单。
 
 ## 1. 准备开发环境
@@ -53,7 +53,7 @@ SDK 支持 **CocoaPods 导入**和**手动导入**两种方式。
 
 ### 方法二：手动导入 SDK
 
-1. 打开 [SDK 下载页面](https://www.easemob.com/download/im#IOS)，获取最新版的环信即时通讯 IM SDK，然后解压。
+1. 打开 [SDK 下载页面](https://www.easemob.com/download/im#IOS)，获取最新版的即时通讯 IM SDK，然后解压。
 2. 将 SDK 包内的 `HyphenateChat.xcframework`和 `aosl.xcframework` 拖入到你的工程中。
 3. 打开 Xcode，进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**菜单。
 4. 点击 **+ > Add Other… > Add Files** 添加对应动态库，并确保添加的动态库 **Embed** 属性设置为 **Embed & Sign**。
@@ -89,7 +89,7 @@ SDK 支持 **CocoaPods 导入**和**手动导入**两种方式。
 
 ## 5. 登录账号
 
-利用创建的用户名和token登录环信 IM。
+利用创建的用户名和token登录即时通讯 IM。
 
 ```objectivec
 [[EMClient sharedClient] loginWithUsername:@"username"
@@ -101,7 +101,7 @@ SDK 支持 **CocoaPods 导入**和**手动导入**两种方式。
 
 ## 6. 发送消息
 
-利用创建的用户名和密码登录环信 IM，向对端用户发送消息。在下面示例中，向 user 2 发送文本消息。
+利用创建的用户名和密码登录即时通讯 IM，向对端用户发送消息。在下面示例中，向 user 2 发送文本消息。
 
 ```objectivec
 // 创建消息

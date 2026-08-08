@@ -14,7 +14,7 @@
 
 调用 [全量推送](#全量推送) 和 [按标签推送](#按标签推送用户群)  接口以及在 [环信控制台创建推送任务](/value-added/push/push_task_create.html) 时，均会创建推送任务，受以下限制：
 
-同一统计周期（5 分钟）内，推送任务的并发运行数为 **3** 个，超出则接口报错。如需提升上限，请联系环信商务。
+同一统计周期（5 分钟）内，推送任务的并发运行数为 **3** 个，超出则接口报错。如需提升上限，请联系商务经理。
 
 不同任务类型对并发运行数的占用时长不同，具体规则如下：
 
@@ -31,8 +31,8 @@
 
 | 参数       | 类型   | 是否必需 | 描述                                                |
 | :--------- | :----- | :------- | :-------------------------------------------------- |
-| `host`     | String | 是       | 环信即时通讯 IM 分配的用于访问 RESTful API 的域名。 |
-| `org_name` | String | 是       | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识。  |
+| `host`     | String | 是       | 即时通讯 IM 分配的用于访问 RESTful API 的域名。 |
+| `org_name` | String | 是       | 即时通讯 IM 为每个公司（组织）分配的唯一标识。  |
 | `app_name` | String | 是       | 你在环信控制台创建应用时填入的应用名称。  |
 | `username` | String | 是       | 用户 ID。                                           |
 
@@ -45,15 +45,15 @@
 
 ## 认证方式
 
-环信即时通讯 RESTful API 要求 Bearer HTTP 认证。每次发送 HTTP 请求时，都必须在请求头部填入如下 Authorization 字段：
+即时通讯 RESTful API 要求 Bearer HTTP 认证。每次发送 HTTP 请求时，都必须在请求头部填入如下 Authorization 字段：
 
 Authorization：`Bearer ${YourAppToken}`
 
-为提高项目的安全性，环信使用 Token（动态密钥）对即将登录即时通讯系统的用户进行鉴权。即时通讯 RESTful API 推荐使用 app token 的鉴权方式，详见 [使用 app token 鉴权](/document/server-side/easemob_app_token.html)。
+为提高项目的安全性，IM 使用 Token（动态密钥）对即将登录即时通讯系统的用户进行鉴权。即时通讯 RESTful API 推荐使用 app token 的鉴权方式，详见 [使用 app token 鉴权](/document/server-side/easemob_app_token.html)。
 
 ## 同步推送单用户
 
-调用该接口以同步方式推送消息时，环信或第三方推送厂商在推送消息后，会将推送结果发送给环信服务器。服务器根据收到的推送结果判断推送状态。
+调用该接口以同步方式推送消息时，环信或第三方推送厂商在推送消息后，会将推送结果发送给IM 服务器。服务器根据收到的推送结果判断推送状态。
 
 该接口调用频率默认为 1 次/秒。
 
@@ -114,8 +114,8 @@ curl -X POST 'http://XXXX/XXXX/XXXX/push/sync/test1' \
 -d '{
     "strategy": 3,
     "pushMessage": {
-        "title": "环信推送",
-        "content": "你好，欢迎使用环信推送服务",
+        "title": "即时推送",
+        "content": "你好，欢迎使用即时推送服务",
         "sub_title": "环信"
       }
 }'
@@ -239,8 +239,8 @@ curl -X POST 'http://XXXX/XXXX/XXXX/push/async/test1' \
 -d '{
     "strategy": 3,
     "pushMessage": {
-        "title": "环信推送",
-        "content": "你好，欢迎使用环信推送服务",
+        "title": "即时推送",
+        "content": "你好，欢迎使用即时推送服务",
         "sub_title": "环信"
      }
 }'

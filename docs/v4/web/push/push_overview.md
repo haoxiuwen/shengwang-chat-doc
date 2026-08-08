@@ -2,7 +2,7 @@
 
 <Toc />
 
-即时通讯 IM 支持集成第三方消息推送服务，为开发者提供低延时、高送达、高并发、不侵犯用户个人数据的离线消息推送服务。**环信 IM Web SDK 本身不支持离线推送，只支持对移动端离线推送进行配置。**
+即时通讯 IM 支持集成第三方消息推送服务，为开发者提供低延时、高送达、高并发、不侵犯用户个人数据的离线消息推送服务。**即时通讯 IM Web SDK 本身不支持离线推送，只支持对移动端离线推送进行配置。**
 
 ## 离线推送过程
 
@@ -18,7 +18,7 @@
 
 除了满足用户离线条件外，要使用第三方离线推送，用户还需在[环信控制台](https://console.easemob.com/user/login)配置推送证书信息，详见 [Android 推送](/v4/android/push/push_fcm.html)和 [APNs 推送](/v4/ios/push/push_apns.html)文档中各厂商证书配置描述。
 
-例如，对于华为推送，需配置**证书名称**和**推送密钥**，并调用客户端 Web SDK 提供的 `uploadPushToken` 方法向环信服务器上传 device token（Android 或 iOS 平台使用 Web SDK）。
+例如，对于华为推送，需配置**证书名称**和**推送密钥**，并调用客户端 Web SDK 提供的 `uploadPushToken` 方法向IM 服务器上传 device token（Android 或 iOS 平台使用 Web SDK）。
 
 ```javascript
 const params = {
@@ -85,7 +85,7 @@ WebIM.conn.uploadPushToken(params);
 
 ## Web 端可设置的功能
 
-环信 IM Web SDK 支持对移动端离线推送进行如下配置：
+即时通讯 IM Web SDK 支持对移动端离线推送进行如下配置：
 
 - 设置推送通知，包括推送通知方式和免打扰模式：
   - 设置 app 的推送通知；

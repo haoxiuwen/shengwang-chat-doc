@@ -7,7 +7,7 @@
 ## 前提条件
 
 1. 在 [环信控制台](https://console.easemob.com/user/login) [注册账号](/product/console/account_register.html)，[创建应用](/product/console/app_create.html)。
-2. 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+2. 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 3. 若使用推送模板，你需要在 [环信控制台](https://console.easemob.com/user/login)的 **即时通讯 > 基础功能 > 消息** 页面激活。**激活后，如需关闭推送模板功能，必须联系商务，因为该操作会删除推送模板相关的所有配置。**
 4. 各推送使用的条件：
     - 小米推送：在小米设备上可用；
@@ -19,7 +19,7 @@
     - APNS 推送：在苹果设备上可用；
     - FCM 推送：在安装了 Google Play 服务的设备上可用。
 
-插件内部会按照以上顺序检测设备的推送支持情况。如果未设置第三方推送或者不满足使用第三方推送的条件，环信 IM SDK 会通过一些保活手段尽可能的保持与环信服务器的长连接，以确保消息及时送达。
+插件内部会按照以上顺序检测设备的推送支持情况。如果未设置第三方推送或者不满足使用第三方推送的条件，即时通讯 IM SDK 会通过一些保活手段尽可能的保持与IM 服务器的长连接，以确保消息及时送达。
 
 ## 实现流程
 
@@ -27,7 +27,7 @@
 
 1. 在第三方推送服务后台注册应用，获取应用信息，开启推送服务。
    
-2. 在[环信控制台](https://console.easemob.com/user/login)配置获取到的应用信息，上传推送证书，实现第三方推送服务与环信即时通讯 IM 的通信。
+2. 在[环信控制台](https://console.easemob.com/user/login)配置获取到的应用信息，上传推送证书，实现第三方推送服务与即时通讯 IM 的通信。
 
 :::tip
 更多详情，参见 [Android 离线推送](/document/android/push/push_fcm.html)和 [APNs 离线推送](/document/ios/push/push_apns.html)。

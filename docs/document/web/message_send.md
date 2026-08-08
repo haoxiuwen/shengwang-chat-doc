@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-环信即时通讯 IM SDK 支持发送文本、图片、语音、视频、文件、位置、透传、自定义和合并消息。
+即时通讯 IM SDK 支持发送文本、图片、语音、视频、文件、位置、透传、自定义和合并消息。
 
 - 发送消息的功能统一由 `ChatManager` 提供，标准流程为先创建消息对象，再调用 `sendMessage` 发送。
 - 单聊默认支持陌生人之间发送消息，无需先添加好友即可聊天。若你的应用只允许好友之间互发单聊消息，你需要在环信控制台 [开启好友关系检查](/product/console/basic_user.html#好友关系检查)。
@@ -12,7 +12,7 @@
 
 - 完成 SDK 初始化，详见 [初始化文档](initialization.html)。
 - 初始化 SDK 时已注册 `ChatManager`，能够通过 `client.chatManager` 调用会话与消息相关接口。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 发送消息统一流程
 
@@ -924,11 +924,11 @@ await client.chatManager.sendMessage(message);
 
 ### 上传消息附件至自有服务器
 
-若消息附件需上传至你自己的服务器或 CDN，而非环信服务器，建议由业务侧先完成附件上传，再在创建消息时传入附件的远程地址。该方式适用于以下场景：
+若消息附件需上传至你自己的服务器或 CDN，而非IM 服务器，建议由业务侧先完成附件上传，再在创建消息时传入附件的远程地址。该方式适用于以下场景：
 
 - 业务侧已有统一的附件上传服务；
 - 附件需经过业务侧鉴权、转码、压缩或 CDN 分发；
-- 不希望由 SDK 直接上传本地附件到环信服务器。
+- 不希望由 SDK 直接上传本地附件到IM 服务器。
 
 发送消息的具体流程如下：
 
@@ -1261,7 +1261,7 @@ await client.chatManager.sendMessage(message, {
 
 #### 聊天室消息优先级与消息丢弃逻辑
 
-对于聊天室消息，环信即时通讯 IM 支持高、普通和低三种消息优先级。Web SDK 可在创建消息时通过 `priority` 设置单条聊天室消息的优先级。
+对于聊天室消息，即时通讯 IM 支持高、普通和低三种消息优先级。Web SDK 可在创建消息时通过 `priority` 设置单条聊天室消息的优先级。
 
 - `high`：高优先级。
 - `normal`：普通优先级，默认值。
@@ -1427,7 +1427,7 @@ await client.chatManager.sendMessage(message, {
 
 回调路由用于在同一 App Key 下，按消息携带的回调环境值，将不同消息分别投递到不同的回调地址。
 
-发送消息时，你可以在创建消息时设置 `webhookEnv` 字段，例如 `dev`、`test`、`prod`。消息发送后，环信服务器会根据该字段匹配控制台中配置的[回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息路由到对应的[发送前回调](/document/server-side/callback_presending.html)或[发送后回调](/document/server-side/callback_postsending.html)地址。
+发送消息时，你可以在创建消息时设置 `webhookEnv` 字段，例如 `dev`、`test`、`prod`。消息发送后，IM 服务器会根据该字段匹配控制台中配置的[回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息路由到对应的[发送前回调](/document/server-side/callback_presending.html)或[发送后回调](/document/server-side/callback_postsending.html)地址。
 
 **适用场景**
 
@@ -1456,7 +1456,7 @@ await client.chatManager.sendMessage(message, {
 3. 发送消息。
    调用 `client.chatManager.sendMessage()` 发送消息。
 4. 服务端按环境值匹配路由。
-   环信服务器根据消息中的 `webhookEnv`，将当前消息回调到对应的目标地址。
+   IM 服务器根据消息中的 `webhookEnv`，将当前消息回调到对应的目标地址。
 
 **示例代码**
 

@@ -1,7 +1,7 @@
-# 环信即时通讯 IM Web 快速开始
+# 即时通讯 IM Web 快速开始
 
 
-本页面介绍如何快速集成环信即时通讯 IM Web SDK，并基于 SDK 实现单聊文本消息的发送和接收。
+本页面介绍如何快速集成即时通讯 IM Web SDK，并基于 SDK 实现单聊文本消息的发送和接收。
 
 ## 实现原理
 
@@ -26,14 +26,14 @@ Easemob_quickstart<br>
 
 ## 前提条件
 
-- 有效的 [环信即时通讯 IM 开发者账号](/product/console/account_register.html#注册账号)；
+- 有效的 [即时通讯 IM 开发者账号](/product/console/account_register.html#注册账号)；
 - 在环信控制台[创建应用](/product/console/app_create.html) 并 [获取 App Key](/product/console/app_manage.html#管理应用)；
 - 已安装 [npm](https://www.npmjs.com/get-npm)；
 - SDK 支持 IE 9+、Firefox 10+、Chrome 54+ 和 Safari 6+。
 
 ## 实现流程
 
-本节介绍如何将环信即时通讯 IM Web SDK 集成到项目中。
+本节介绍如何将即时通讯 IM Web SDK 集成到项目中。
 
 ### 步骤 1：集成 SDK
 

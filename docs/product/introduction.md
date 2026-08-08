@@ -1,6 +1,6 @@
 # 产品介绍
 
-环信即时通讯 IM 为开发者提供高可靠、低时延、高并发、安全、全球化的通信云服务，帮助开发者快速构建端到端通信的场景。环信提供 SDK 和 RESTful API，支持同时在线人数无上限，聊天室亿级消息并发，全球平均延时小于 200 毫秒，相同区域平均延时小于 100 毫秒。
+即时通讯 IM 为开发者提供高可靠、低时延、高并发、安全、全球化的通信云服务，帮助开发者快速构建端到端通信的场景。IM 提供 SDK 和 RESTful API，支持同时在线人数无上限，聊天室亿级消息并发，全球平均延时小于 200 毫秒，相同区域平均延时小于 100 毫秒。
 
 - 支持单聊、群聊、聊天室服务；
 - 提供服务端 RESTful API 和 [回调服务](/document/server-side/callback_overview.html)；
@@ -9,7 +9,7 @@
 
 ## 产品架构
 
-环信即时通讯 IM 提供单聊、群聊、聊天室、离线推送、账号鉴权、用户属性和用户关系等服务，以及完善的 SDK API 和 RESTful API。
+即时通讯 IM 提供单聊、群聊、聊天室、离线推送、账号鉴权、用户属性和用户关系等服务，以及完善的 SDK API 和 RESTful API。
 
 ![环信架构](/images/product/framework.png)
 
@@ -44,7 +44,7 @@
 
 ### 用户属性和用户关系
 
-环信支持设置用户属性和用户关系，详情可参见 [用户属性](/product/product_user_attribute.html) 和 [用户关系](/product/product_user_relationship.html) 文档。
+IM 支持设置用户属性和用户关系，详情可参见 [用户属性](/product/product_user_attribute.html) 和 [用户关系](/product/product_user_relationship.html) 文档。
 
 - 用户属性：例如，用户昵称、头像、邮箱、电话、性别、签名、生日等。
 - 用户关系：好友列表和黑名单等。
@@ -61,17 +61,17 @@
 
 ### RESTful API
 
-环信即时通讯通过 REST 平台提供如下 RESTful API，你可以通过你的业务服务器向环信 REST 服务器发送 HTTP 请求，在服务端实现实时通信。RESTful API 可实现消息发送、获取、撤回、修改、导入、表情回复以及群组管理、聊天室管理、用户账号和用户关系管理等功能。相对于环信控制台，RESTful API 可实现更为强大的管理能力。详情请参见 [RESTful API](/document/server-side/overview.html) 文档。
+即时通讯通过 REST 平台提供如下 RESTful API，你可以通过你的业务服务器向 IM 的 REST 服务器发送 HTTP 请求，在服务端实现实时通信。RESTful API 可实现消息发送、获取、撤回、修改、导入、表情回复以及群组管理、聊天室管理、用户账号和用户关系管理等功能。相对于环信控制台，RESTful API 可实现更为强大的管理能力。详情请参见 [RESTful API](/document/server-side/overview.html) 文档。
 
 某些功能只能通过 RESTful API 提供，例如，封禁和解禁账号、全局禁言、发送 app/聊天室 全局广播消息等。
 
 ### 消息回调
 
-环信即时通讯 IM 提供[消息回调](/document/server-side/callback_overview.html)功能，在事件发生之前或之后，环信 IM 服务器会以 HTTP POST 请求的形式向你的应用服务器发送通知，让 app 后台干预该事件的处理逻辑或者实现必要的数据同步。
+即时通讯 IM 提供[消息回调](/document/server-side/callback_overview.html)功能，在事件发生之前或之后，即时通讯 IM 服务器会以 HTTP POST 请求的形式向你的应用服务器发送通知，让 app 后台干预该事件的处理逻辑或者实现必要的数据同步。
 
 ## 私有化
 
-环信即时通讯私有化服务是基于 IM 核心技术实现的可私有化部署解决方案。该方案可适配内网物理服务器集群、公有云以及私有云等任意部署环境，提供功能完备、安全可靠、易于扩展的即时通讯平台。更多详情，请参见[私有化服务文档](https://docs-im-privatization-v3.easemob.com)。
+即时通讯私有化服务是基于 IM 核心技术实现的可私有化部署解决方案。该方案可适配内网物理服务器集群、公有云以及私有云等任意部署环境，提供功能完备、安全可靠、易于扩展的即时通讯平台。更多详情，请参见[私有化服务文档](https://docs-im-privatization-v3.easemob.com)。
 
 
 

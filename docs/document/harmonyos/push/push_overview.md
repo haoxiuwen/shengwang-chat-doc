@@ -10,7 +10,7 @@
 
 客户端断开连接或应用进程被关闭等原因导致用户离线时，即时通讯 IM 会通过第三方消息推送服务向该离线用户的设备推送消息通知。当用户再次上线时，服务器会将离线期间的消息发送给用户（这里角标表示的是离线消息数，并不是实际的未读消息数）。例如，当你离线时，有用户向你发送了消息，你的手机的通知中心会弹出消息通知，当你再次打开 app 并登录成功，即时通讯 IM SDK 会主动拉取你不在线时的消息。
 
-除了满足用户离线条件外，要使用 HarmonyOS 离线推送，用户还需在[环信控制台](https://console.easemob.com/user/login)配置推送证书信息，并调用客户端 SDK 提供的 API 向环信服务器上传 device token。
+除了满足用户离线条件外，要使用 HarmonyOS 离线推送，用户还需在[环信控制台](https://console.easemob.com/user/login)配置推送证书信息，并调用客户端 SDK 提供的 API 向IM 服务器上传 device token。
 
 **以下两种情况，即时通讯 IM 不会发送离线推送通知：**
 
@@ -25,11 +25,11 @@
 消息推送流程如下：
 
 1. 用户 B 在 SDK 中配置应用的 Client ID。
-2. 用户 B 使用 SDK 向环信服务器绑定推送 token。
+2. 用户 B 使用 SDK 向IM 服务器绑定推送 token。
 3. 用户 A 向 用户 B 发送消息。
-4. 环信服务器检查用户 B 是否在线。若在线，环信服务器直接将消息发送给用户 B。
-5. 若用户 B 离线，环信服务器判断该用户的设备使用的推送服务类型。
-6. 环信服务器将将消息发送给华为 Auth 服务端。
+4. IM 服务器检查用户 B 是否在线。若在线，IM 服务器直接将消息发送给用户 B。
+5. 若用户 B 离线，IM 服务器判断该用户的设备使用的推送服务类型。
+6. IM 服务器将将消息发送给华为 Auth 服务端。
 7. 华为 Auth 服务端将消息发送给用户 B。
 
 ## 推送高级功能
@@ -87,8 +87,8 @@
 
 ## 前提条件
 
-- 已开启环信即时通讯服务，详见 [开启和配置即时通讯服务](/product/console/app_create.html)。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 已开启即时通讯服务，详见 [开启和配置即时通讯服务](/product/console/app_create.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 - 确保已经在 [AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) 网站开通开通推送服务。
 - 检查并提醒用户允许接收通知消息，并将设备的推送证书上传到[环信控制台](https://console.easemob.com/user/login)。
 - 若使用[推送模板](#推送模板)，需在[环信控制台](https://console.easemob.com/user/login)上激活。

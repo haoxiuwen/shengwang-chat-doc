@@ -2,14 +2,14 @@
 
 ## 功能概述
 
-Server SDK 2.0 是对环信 IM [REST API](overview.html) 的封装，这样做是为了节省服务器端开发者对接环信 API 的时间，只需要配置自己的 App Key 相关信息即可使用。
+Server SDK 2.0 是对即时通讯 IM [REST API](overview.html) 的封装，这样做是为了节省服务器端开发者对接环信 API 的时间，只需要配置自己的 App Key 相关信息即可使用。
 
 Server SDK 2.0 提供了用户、消息、群组、聊天室等资源的操作管理能力。
 
 ## 前提条件
 
 - Java 1.8
-- 有效的环信即时通讯 IM 开发者账号和 App Key、Client ID、ClientSecret、BasePath (对应的 RESTful API 域名。详见环信控制台的 **应用概览**页面下的 **开发配置信息** 区域的 RESTful API 的服务器域名)。
+- 有效的即时通讯 IM 开发者账号和 App Key、Client ID、ClientSecret、BasePath (对应的 RESTful API 域名。详见环信控制台的 **应用概览**页面下的 **开发配置信息** 区域的 RESTful API 的服务器域名)。
 
 ## 实现方法
 

@@ -1,6 +1,6 @@
 # 导入 SDK
 
-本文介绍如何将环信即时通讯 IM SDK 集成到你的 iOS 项目。
+本文介绍如何将即时通讯 IM SDK 集成到你的 iOS 项目。
 
 ## 开发环境要求
 
@@ -10,7 +10,7 @@
 
 ## 导入 SDK
 
-选择如下任意一种方式将环信即时通讯 IM SDK 导入到你的项目中。
+选择如下任意一种方式将即时通讯 IM SDK 导入到你的项目中。
 
 :::tip
 
@@ -37,7 +37,7 @@
 
 ### 方法二：手动复制 SDK 文件
 
-打开 [SDK 下载页面](https://www.easemob.com/download/im#IOS)，获取最新版的环信即时通讯 IM SDK，然后解压。
+打开 [SDK 下载页面](https://www.easemob.com/download/im#IOS)，获取最新版的即时通讯 IM SDK，然后解压。
 
 将 SDK 包内的 `HyphenateChat.xcframework` 拖入到你的工程中。
 

@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-成功屏蔽/解除屏蔽群组后，环信服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看群组屏蔽/解除屏蔽的信息，进行数据同步。
+成功屏蔽/解除屏蔽群组后，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看群组屏蔽/解除屏蔽的信息，进行数据同步。
 
 ## 前提条件
 

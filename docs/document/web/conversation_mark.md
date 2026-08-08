@@ -19,7 +19,7 @@
 - 完成 SDK 初始化，并连接到服务器，详见 [快速开始](quickstart.html)。
 - SDK 初始化时需注册 `ChatManager`，可以通过 `client.chatManager` 调用会话相关接口。
 - 已开通 [服务端会话列表功能](/product/console/basic_conversation_group_chatroom.html#服务端会话列表)。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 添加会话标记
 

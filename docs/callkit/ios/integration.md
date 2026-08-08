@@ -1,6 +1,6 @@
 # CallKit 集成指南
 
-环信 CallKit 是一套基于环信即时通讯 IM（基于 IM 4.16.0 及以上）和声网 RTC 结合开发的音视频 UI 库。使用环信 CallKit 之前，你需要将其集成到你的应用中。如果用户要使用系统的 LiveCommunicationKit，建议设置环信即时通讯 IM 为自动登录。
+CallKit 是一套基于即时通讯 IM（基于 IM 4.16.0 及以上）和声网 RTC 结合开发的音视频 UI 库。使用CallKit 之前，你需要将其集成到你的应用中。如果用户要使用系统的 LiveCommunicationKit，建议设置即时通讯 IM 为自动登录。
 
 <ImageGallery>
   <ImageItem src="/images/callkit/ios/1v1_video_caller_invitation.png" title="一对一通话邀请" />
@@ -27,7 +27,7 @@
 
 ### 步骤 1： 添加依赖
 
-你可以使用 CocoaPods 安装环信 CallKit 作为 Xcode 项目的依赖项。
+你可以使用 CocoaPods 安装CallKit 作为 Xcode 项目的依赖项。
 
 CocoaPods 是 iOS 和 macOS 项目的依赖管理工具。它允许你轻松地将第三方库集成到您的项目中，并自动处理依赖关系。安装方法请自行询问 AI 或者搜索引擎。
 
@@ -89,10 +89,10 @@ pod 'EaseCallUIKit', :path => '../../easemob-callkit-iOS/'
 
 CallKit 初始化包括如下步骤：
 
-1. 初始化环信环信即时通讯 IM SDK。CallKit 基于即时通讯 IM 作为信令通道，因此需先初始化 IM SDK。
+1. 初始化环信即时通讯 IM SDK。CallKit 基于即时通讯 IM 作为信令通道，因此需先初始化 IM SDK。
    - 填入你的应用的 App Key。
    - 设置即时通讯 IM SDK 的 `EMOptions`/`ChatSDKOptions` 类中的一些选项。
-   - 如果用户要使用系统的 LiveCommunicationKit，建议设置环信即时通讯 IM 为自动登录 `isAutoLogin` 为 `true`。
+   - 如果用户要使用系统的 LiveCommunicationKit，建议设置即时通讯 IM 为自动登录 `isAutoLogin` 为 `true`。
 2. 初始化 CallKit。
    （可选）开启 VoIP 和画中画功能。
      - 开启 VoIP 功能后会自动开启 LiveCommunicationKit。关于上传 VoIP 服务证书，详见 [APNs 推送文档](/document/ios/push/push_apns.html#上传推送证书)。 
@@ -103,7 +103,7 @@ CallKit 初始化包括如下步骤：
 - 已集成 IM SDK，初始化 CallKit 的代码示例如下： 
   
 ```swift
-    //已经集成了环信 IM SDK 即已经 import HyphenateChat
+    //已经集成了即时通讯 IM SDK 即已经 import HyphenateChat
     private func setupCallKit() {
         let options = EMOptions(appkey: appKey)
         #if DEBUG
@@ -114,7 +114,7 @@ CallKit 初始化包括如下步骤：
         options.pushKitCertName = "YourVoipPro"
         #endif
         EMClient.shared().initializeSDK(with: options)
-        //初始化环信CallKit
+        //初始化CallKit
         let config = EaseCallUIKit.CallKitConfig()
         config.enableVOIP = true//开启voip功能后会自动开启LiveCommunicationKit，需要在develop.apple.com申请证书时勾选。
         config.enablePIPOn1V1VideoScene = true//开启画中画，同时需要开启应用后台摄像头采集权限。。
@@ -125,7 +125,7 @@ CallKit 初始化包括如下步骤：
 - 未集成 IM SDK，初始化 CallKit 的代码示例如下：
 
 ```swift
-    //没有集成环信 IM SDK，只想使用 CallKit
+    //没有集成即时通讯 IM SDK，只想使用 CallKit
     private func setupCallKit() {
         let options = ChatSDKOptions(appkey: appKey)
         #if DEBUG
@@ -136,7 +136,7 @@ CallKit 初始化包括如下步骤：
         options.pushKitCertName = "YourVoipPro"
         #endif
         ChatClient.shared().initializeSDK(with: options)
-        //初始化环信 CallKit
+        //初始化CallKit
         let config = EaseCallUIKit.CallKitConfig()
         config.enableVOIP = true//开启voip功能后会自动开启LiveCommunicationKit，需要在develop.apple.com申请证书时勾选
         config.enablePIPOn1V1VideoScene = true//开启画中画，同时需要开启应用后台摄像头采集权限，详见[PictureInPicture.md](./PictureInPicture.md)。
@@ -437,7 +437,7 @@ extension ViewController: CallUserProfileProvider {
 
 ### 自定义视频分辨率
 
-环信 CallKit 中默认设置的分辨率为 1280x720。网络连接不稳定时，声网 RTC SDK 会主动降低分辨率或帧率。
+CallKit 中默认设置的分辨率为 1280x720。网络连接不稳定时，声网 RTC SDK 会主动降低分辨率或帧率。
 
 若要修改远端视频在本地显示的分辨率，可以在创建声网 RTC 引擎时在 `onRtcEngineCreated` 中进行配置：
 

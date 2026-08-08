@@ -1,6 +1,6 @@
 # 下载文件
 
-本文介绍如何调用 RESTful API 从环信服务器下载图片、语音、视频或其他类型的文件。
+本文介绍如何调用 RESTful API 从IM 服务器下载图片、语音、视频或其他类型的文件。
 
 ## 功能说明
 
@@ -38,7 +38,7 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatfiles/7f456bf0-XXXX-XXXX-b630-777d
 ```
 
 :::tip
-上述请求示例中，`/Users/test/easemob/image/image.JPG` 为环信即时通讯 IM 的本地文件路径，使用时请替换为自己的文件路径，否则会请求失败。
+上述请求示例中，`/Users/test/easemob/image/image.JPG` 为即时通讯 IM 的本地文件路径，使用时请替换为自己的文件路径，否则会请求失败。
 :::
 
 ## 请求 header 参数

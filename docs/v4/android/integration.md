@@ -1,6 +1,6 @@
 # 导入 SDK
 
-本文介绍如何将环信即时通讯 IM SDK 集成到你的 Android 项目。
+本文介绍如何将即时通讯 IM SDK 集成到你的 Android 项目。
 
 ## 开发环境要求
 
@@ -12,7 +12,7 @@
 
 ## 导入 SDK
 
-选择如下任意一种方式将环信即时通讯 IM SDK 导入到你的项目中。
+选择如下任意一种方式将即时通讯 IM SDK 导入到你的项目中。
 
 :::tip
 
@@ -56,7 +56,7 @@ dependencies {
 
 ### 方法二：手动复制 SDK 文件
 
-打开 [SDK 下载页面](https://www.easemob.com/download/im#Android)，获取最新版的环信即时通讯 IM Android SDK，然后解压。
+打开 [SDK 下载页面](https://www.easemob.com/download/im#Android)，获取最新版的即时通讯 IM Android SDK，然后解压。
 
 ![img](@static/images/android/sdk-files.png)
 

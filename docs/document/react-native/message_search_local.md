@@ -2,11 +2,11 @@
 
 <Toc />
 
-本文介绍环信即时通讯 IM React Native SDK 如何搜索本地消息。
+本文介绍即时通讯 IM React Native SDK 如何搜索本地消息。
 
 ## 技术原理
 
-环信即时通讯 IM React Native SDK 通过 `ChatManager` 类支持搜索用户设备上存储的消息数据，其中包含如下主要方法：
+即时通讯 IM React Native SDK 通过 `ChatManager` 类支持搜索用户设备上存储的消息数据，其中包含如下主要方法：
 
 - `ChatManager#getMsgsWithKeyword`: 根据搜索范围搜索所有会话中的消息。
 - `ChatConversation#getMsgsWithKeyword`: 根据搜索范围搜索当前会话中的消息。
@@ -18,7 +18,7 @@
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，并连接到服务器，详见 [初始化](initialization.html)及[连接](connection.html)文档。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 实现方法
 

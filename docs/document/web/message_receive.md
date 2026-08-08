@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-环信即时通讯 IM SDK 可以实现文本、图片、音频、视频和文件等类型的消息的接收。
+即时通讯 IM SDK 可以实现文本、图片、音频、视频和文件等类型的消息的接收。
 
 ## 前提条件
 
@@ -10,7 +10,7 @@
 
 - 完成 SDK 初始化，详见 [初始化文档](initialization.html)。
 - 初始化 SDK 时已注册 `ChatManager`，能够通过 `client.chatManager` 调用会话与消息相关接口。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 监听消息事件
 

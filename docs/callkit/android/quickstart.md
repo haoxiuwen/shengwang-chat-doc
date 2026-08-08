@@ -1,6 +1,6 @@
 # 快速开始
 
-利用环信 CallKit（基于 IM 4.16.0 或以上版本），你可以轻松实现一对一通话和群组通话功能。本文介绍如何快速实现发起音视频通话。
+利用CallKit（基于 IM 4.16.0 或以上版本），你可以轻松实现一对一通话和群组通话功能。本文介绍如何快速实现发起音视频通话。
 
 ## 推荐环境
 
@@ -22,7 +22,7 @@
 
 ### 步骤 1： 创建项目
 
-本节介绍将环信 CallKit 引入项目中的必要环境配置。
+本节介绍将CallKit 引入项目中的必要环境配置。
 
 本示例使用 `Android Studio Narwhal | 2025.1.1`、`gradle version : 8.13` 和 `gradle plugin version:8.11.1`。你也可以直接参考 Android Studio 官网文档 [创建应用](https://developer.android.com/studio/projects/create-project)。
 
@@ -387,7 +387,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        // 初始化环信IM SDK
+        // 初始化即时通讯 IM  SDK
         val options = ChatOptions().apply {
             this.appKey = appkey
             autoLogin = false

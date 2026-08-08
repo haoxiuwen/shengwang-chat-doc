@@ -4,11 +4,11 @@
 
 ## 用户注册
 
-登录 SDK 前，你需要先创建环信 IM 用户。创建用户前，需先在 [环信控制台](https://console.easemob.com/user/login) 的 **即时通讯 > 基础功能** > **用户** 页面设置用户注册模式。
+登录 SDK 前，你需要先创建即时通讯 IM 用户。创建用户前，需先在 [环信控制台](https://console.easemob.com/user/login) 的 **即时通讯 > 基础功能** > **用户** 页面设置用户注册模式。
 
 用户注册模式分为以下两种：
 
- - **授权注册**：通过环信提供的 REST API 注册用户。该方式适用于正式生产环境，注册成功后，你可以将用户账号保存到你的应用服务器或返回给客户端。
+ - **授权注册**：通过 REST API 注册用户。该方式适用于正式生产环境，注册成功后，你可以将用户账号保存到你的应用服务器或返回给客户端。
  - **开放注册**：允许客户端或 REST API 直接注册用户。该方式一般用于体验 Demo 和测试环境，正式环境不推荐使用。
 
 设置注册模式后，你可以通过以下方式创建用户：
@@ -30,7 +30,7 @@ iOS SDK V5 不再提供客户端注册用户、通过用户名和密码获取 To
 
 SDK 通过用户 ID 和 IM Token 登录。调用 `loginWithUsername` 时，需传入用户 ID 和 Token。登录成功后，SDK 会建立到消息服务的长连接。
 
-测试环境下，你在 [环信控制台](https://console.easemob.com/user/login) 创建用户后，环信服务器会自动为这些用户分配用户 Token，详见 [创建用户](/product/console/operation_user.html#创建用户)。
+测试环境下，你在 [环信控制台](https://console.easemob.com/user/login) 创建用户后，IM 服务器会自动为这些用户分配用户 Token，详见 [创建用户](/product/console/operation_user.html#创建用户)。
 
 生产环境中，建议在你的应用服务器集成 [获取 App Token API](/document/server-side/easemob_app_token.html) 和 [获取用户 Token API](/document/server-side/easemob_user_token.html)，由客户端从你的应用服务器获取用户 Token 后再登录 SDK。
 

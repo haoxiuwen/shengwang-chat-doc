@@ -4,14 +4,14 @@
 
 消息话题是群组成员的子集，是支持多人沟通的即时通讯系统。使用消息话题功能前，你需要联系商务开通。
 
-本文介绍如何使用环信即时通讯 IM Android SDK 在实时互动 app 中创建和管理消息话题，并实现消息话题相关功能。如需查看消息相关内容，参见 [消息话题中的消息管理](thread_message.html)。
+本文介绍如何使用即时通讯 IM Android SDK 在实时互动 app 中创建和管理消息话题，并实现消息话题相关功能。如需查看消息相关内容，参见 [消息话题中的消息管理](thread_message.html)。
 
 ## 前提条件
 
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，详见 [快速开始](quickstart.html)。
-- 了解环信即时通讯 IM API 的 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的 [使用限制](/product/limitation.html)。
 - 了解消息话题和消息话题成员数量限制，详见 [使用限制](/product/limitation.html)。
 - 已联系商务开通消息话题功能。
 

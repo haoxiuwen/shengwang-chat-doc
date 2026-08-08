@@ -2,13 +2,13 @@
 
 ## 2026-08
 
-#### 环信 Android/iOS SDK v5.0.0 发版
+#### IM Android/iOS SDK v5.0.0 发版
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
 | Android/iOS SDK 5.0.0 开发版发布   | - 提供统一的数据同步配置和状态回调。应用可 [配置登录后自动同步会话](/document/android/initialization.html#设置登录后自动同步数据)、[好友](/document/android/user_relationship.html#登录后自动同步好友列表)和 [已加入群组](/document/android/group_manage.html#获取当前用户加入的群组列表) 数据，并在本地数据库打开后提前读取本地数据。<br/> - [群组配置](/document/android/group_manage.html#创建群组) 拆分为多个独立属性，并支持创建群组后按需更新指定配置。<br/> - 原有的单条消息回执、会话回执和全局回执开关已调整为批量消息回执和未读数清理接口，覆盖单聊和群聊场景。 <br/> - 支持 [批量删除会话](/document/android/conversation_delete.html#批量删除本地会话) 和 [会话展示信息](/document/android/conversation_list.html#获取会话名称和头像) 等常用管理能力。<br/> - 移除密码登录，不再支持自动登录。 <br/> - 移除客户端注册、公开群列表、聊天室创建和销毁、消息统计等低频 API。 <br/> - | 2026-8-15     | - [Android SDK 5.0.0 更新日志](/document/android/releasenote.html#v5-0-0-dev) <br/> - [iOS SDK 5.0.0 更新日志](/document/ios/releasenote.html#v5-0-0-dev)  |
 
-#### 环信 Web SDK v5.0.0 发版
+#### IM Web SDK v5.0.0 发版
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
@@ -20,14 +20,14 @@
 目前，服务端消息搜索仅面向国内 2 区开放。
 :::
 
-#### 环信 Android/iOS SDK v4.24.0 发版
+#### IM Android/iOS SDK v4.24.0 发版
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
 | Android/iOS SDK 4.24.0 开发版发布   | - Android 和 iOS SDK [支持服务端消息搜索](/value-added/search/message_search_android.html)。<br/> - Android 可通过异步方法 [更新群扩展字段](/document/android/group_attributes.html#更新群扩展字段)。<br/> - Android 可通过异步方法 [获取服务器端推送配置](/document/android/push/push_display_attribute.html#获取推送通知的显示属性)。   | 2026-7-10     | - [Android SDK 4.24.0 更新日志](/document/android/releasenote.html#v4-24-0-dev-2026-7-10-开发版) <br/> - [iOS SDK 4.24.0 更新日志](/document/ios/releasenote.html#v4-24-0-dev-2026-7-10-开发版)  |
 
 
-#### 环信 Web/小程序 SDK v4.24.1 发版
+#### IM Web/小程序 SDK v4.24.1 发版
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
@@ -49,20 +49,20 @@
 目前，[发消息时设置回调路由功能](/document/android/message_send.html#发消息时设置回调路由) 仅面向国内 1 区和国内 2 区开放。
 :::
 
-#### 环信 HarmonyOS SDK v1.13.0 发版
+#### IM HarmonyOS SDK v1.13.0 发版
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
 | HarmonyOS SDK 1.13.0 开发版发布   | - [支持用户信息自动管理](/document/harmonyos/userinfo_provider.html)。<br/> - [群成员名片](/document/harmonyos/group_namecard.html)。<br/> - [支持语言转文字](/value-added/stt/voice_to_text_harmonyos.html)。   | 2026-6-24     | [HarmonyOS SDK 1.13.0 更新日志](/document/harmonyos/releasenote.html#v1-13-0-dev-2026-6-24-开发版)   |
 
-#### 环信 Android/iOS/Web/小程序 SDK v4.23.0 发版
+#### IM Android/iOS/Web/小程序 SDK v4.23.0 发版
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
 | Android/iOS SDK 4.23.0 开发版发布   | - 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](/document/android/message_send.html#发消息时设置回调路由)。<br/> - 新增 [登录失败相关的连接超时错误码](/document/android/error.html)。 | 2026-6-18     | - [Android SDK 4.23.0 更新日志](/document/android/releasenote.html#v4-23-0-dev-2026-6-10-开发版) <br/> - [iOS SDK 4.23.0 更新日志](/document/ios/releasenote.html#v4-23-0-dev-2026-6-10-开发版) <br/>       |
 | Web/小程序 SDK 4.23.0 开发版发布   | 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](/document/android/message_send.html#发消息时设置回调路由)。  | 2026-6-18    | - [Web SDK 4.23.0 更新日志](/document/web/releasenote.html#v4-23-0-dev-2026-6-10-开发版)<br/> - [小程序 SDK 4.23.0 更新日志](/document/applet/releasenote.html#v4-23-0-dev-2026-6-10-开发版) |
 
-#### 环信客户端 SDK v4.22.0 发版
+#### IM 客户端 SDK v4.22.0 发版
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
@@ -96,9 +96,9 @@
 
 ## 2026-05
 
-#### 环信 Server SDK 2.0 发版
+#### IM Server SDK 2.0 发版
 
-环信 Server SDK 2.0 的 v1.0.18 于 2026 年 5 月 22 日发版。
+IM Server SDK 2.0 的 v1.0.18 于 2026 年 5 月 22 日发版。
 
 | 新增功能                     | 描述                                                    |
 | :--------------------------- | :----------------------------------------------------------- |
@@ -108,16 +108,16 @@
 
 ## 2026-04
 
-#### 环信客户端 SDK v4.21.0 发版
+#### IM 客户端 SDK v4.21.0 发版
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
 | Android/iOS/Web/小程序 SDK 4.21.0 开发版发布   | [支持语言转文字](/value-added/stt/voice_to_text_android.html)。  | 2026-4-28     | - [Android SDK 4.21.0 更新日志](/document/android/releasenote.html#v4-21-0-dev-2026-4-28-开发版) <br/> - [iOS SDK 4.21.0 更新日志](/document/ios/releasenote.html#v4-21-0-dev-2026-4-28-开发版) <br/> - [Web SDK 4.21.0 更新日志](/document/web/releasenote.html#v4-21-0-dev-2026-4-28-开发版)<br/> - [小程序 SDK 4.21.0 更新日志](/document/applet/releasenote.html#v4-21-0-dev-2026-4-28-开发版)      |
 | React Native SDK 1.15.0 开发版发布   | [支持接收服务端发送的流式消息](/document/harmonyos/message_stream_receive.html)。  | 2026-4-22     | [React Native 1.15.0 更新日志](/document/react-native/releasenote.html#v1-15-0-2026-04-22)  |
 
-#### 环信 Server SDK 2.0 发版
+#### IM Server SDK 2.0 发版
 
-环信 Server SDK 2.0 的 v1.0.17 于 2026 年 4 月 3 日发版。
+IM Server SDK 2.0 的 v1.0.17 于 2026 年 4 月 3 日发版。
 
 本次版本新增以下功能：
 
@@ -133,7 +133,7 @@
 
 #### 环信 MCP Server
 
-环信 MCP Server 基于 MCP（Model Context Protocol）实现，为支持 MCP 的 AI 编程工具提供环信 IM 相关文档查询和源码检索能力，可用于以下场景：
+环信 MCP Server 基于 MCP（Model Context Protocol）实现，为支持 MCP 的 AI 编程工具提供即时通讯 IM 相关文档查询和源码检索能力，可用于以下场景：
 
 - 查询 SDK、单群聊 UIKit、CallKit、聊天室 UIKit 文档。
 - 检索 Demo 或示例工程源码。
@@ -221,7 +221,7 @@
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
-| 新增主动文本审核 RESTful API   | 调用文本审核 API，业务服务器传入需审核的文本内容，环信服务器进行审核，返回审核结果。 | 2025-12-12  | [主动文本审核](/document/server-side/moderation_text_active.html)         |
+| 新增主动文本审核 RESTful API   | 调用文本审核 API，业务服务器传入需审核的文本内容，IM 服务器进行审核，返回审核结果。 | 2025-12-12  | [主动文本审核](/document/server-side/moderation_text_active.html)         |
 | - 基于自定义群组 ID 创建群组<br/> - 基于自定义聊天室 ID 创建聊天室  | 调用创建群组或聊天室的 RESTful API 时，你可以传入自定义的群组 ID 或聊天室 ID 创建群组或聊天室。若你不传入自定义群组 ID 或聊天室 ID，即时通讯 IM 创建时会自动生成。 | 2025-12-12       | [创建群组](/document/server-side/group_create.html#请求-body-参数) 或 [创建聊天室](/document/server-side/chatroom_create.html#请求-body-参数)          |
 
 #### SDK 发版
@@ -332,7 +332,7 @@
 
 #### Server SDK 2.0 发版
 
-环信 Server SDK 2.0 的 v1.0.15 发版。
+IM Server SDK 2.0 的 v1.0.15 发版。
 
 为帮助你在高并发请求场景下优化性能，`ApiClient` 新增以下两个参数，适用于 Server SDK 使用过程中出现请求延迟较大时的调优需求。
 
@@ -406,7 +406,7 @@
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
 | SDK 4.13.0 开发版发布   | **新增特性**：<br/><br/> - [发送后编辑消息接口支持修改各类消息](/document/android/message_modify.html)：<br/>1. 文本/自定义消息：支持编辑消息内容（body）和扩展；<br/>2. 文件/视频/音频/图片/位置/合并转发消息：只支持编辑消息扩展字段；<br/>4. 透传消息：不支持修改。<br/><br/> - 小程序 SDK 支持运行到微信小游戏平台。    | 2025-03-12     | <br/> - [Android 4.13.0 更新日志](/document/android/releasenote.html#v4-13-0-2025-3-12)<br/> - [iOS 4.13.0 更新日志](/document/ios/releasenote.html#v4-13-0-2025-3-12)<br/> - [Web 4.13.0 更新日志](/document/web/releasenote.html#v4-13-0-2025-3-12) <br/> - [小程序 4.13.0 更新日志](/document/applet/releasenote.html#v4-13-0-2025-3-12) <br/> - [Flutter 4.13.0 更新日志](/document/flutter/releasenote.html#v4-13-0-2025-3-28)|
-| HarmonyOS SDK 1.5.2 开发版发布   | **新增特性**：<br/> - 支持 [清空聊天记录](/document/harmonyos/message_delete.html#清空聊天记录)：清除当前用户的单聊、群聊和聊天室的消息和会话记录，可选择是否清除服务端的聊天记录。<br/> - 支持检查 SDK 是否连接到环信服务器：自动登录的场景下，登录状态变为已登录时，可能 SDK 未成功连接至服务端，这种情况下与服务器交互的操作会失败，比如发消息。此时，可调用 `isConnected()` 接口判断 SDK 与服务器的连接状态。    | 2025-03-10     | [HarmonyOS 1.5.2 更新日志](/document/harmonyos/releasenote.html#v1-5-2-dev-2025-3-10-开发版)      |
+| HarmonyOS SDK 1.5.2 开发版发布   | **新增特性**：<br/> - 支持 [清空聊天记录](/document/harmonyos/message_delete.html#清空聊天记录)：清除当前用户的单聊、群聊和聊天室的消息和会话记录，可选择是否清除服务端的聊天记录。<br/> - 支持检查 SDK 是否连接到IM 服务器：自动登录的场景下，登录状态变为已登录时，可能 SDK 未成功连接至服务端，这种情况下与服务器交互的操作会失败，比如发消息。此时，可调用 `isConnected()` 接口判断 SDK 与服务器的连接状态。    | 2025-03-10     | [HarmonyOS 1.5.2 更新日志](/document/harmonyos/releasenote.html#v1-5-2-dev-2025-3-10-开发版)      |
 | HarmonyOS SDK 1.5.3 开发版发布   | **新增特性**：<br/> - 支持[从本地获取单个好友的用户 ID 和好友备注](/document/harmonyos/user_relationship.html#从本地获取好友列表)。    | 2025-03-17     | [HarmonyOS 1.5.3 更新日志](/document/harmonyos/releasenote.html#v1-5-3-2025-3-17)      |
 
 #### 其他优化
@@ -421,7 +421,7 @@
 
 2. 新增发送后回调事件
 
-因解散群组或聊天室导致的用户退出，环信服务器向你的 App Server 发送的回调请求。详情请参见 [成员离开事件](/document/server-side/callback_group_room_leave.html#因解散群组-聊天室导致的用户退出) 。
+因解散群组或聊天室导致的用户退出，IM 服务器向你的 App Server 发送的回调请求。详情请参见 [成员离开事件](/document/server-side/callback_group_room_leave.html#因解散群组-聊天室导致的用户退出) 。
 
 ## 2025-01
 
@@ -429,7 +429,7 @@
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
-| SDK 4.12.0 开发版发布   | **新增特性**：<br/> - 移动端/Web/小程序/Windows/跨平台：用户加入聊天室可获取的信息新增聊天室当前人数、聊天室创建时间戳、当前用户是否在聊天室白名单中以及当前用户被禁言截止时间戳。<br/> - HarmonyOS [新增自定义设备的名称](/document/harmonyos/multi_device.html#设置登录设备的名称)：添加该功能后，在多设备场景下，若有设备被踢下线，被踢设备可知晓被哪个设备挤下线。 <br/> - HarmonyOS [新增自定义设备的平台](/document/harmonyos/multi_device.html#设置登录设备的平台)：例如，将手机和平板电脑设置为两个单独的平台，方便用户精细化控制同一平台的登录设备数量及平台间互踢等行为。 <br/> - HarmonyOS [新增两个错误码](/document/harmonyos/error.html)：`ChatError#GROUP_USER_IN_BLOCKLIST`（613）：该用户在群组黑名单中。群组黑名单中的用户进行某些操作时，例如，加入群组，会提示该错误。`ChatError#CHATROOM_USER_IN_BLOCKLIST`（707）：该用户在聊天室黑名单中。聊天室黑名单中的用户进行某些操作时，例如，加入聊天室，会提示该错误。 <br/> - HarmonyOS 新增拉取服务器漫游消息时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系环信商务开通。<br/> **优化：** <br/> - HarmonyOS 删除服务端会话时会同时删除本地会话。 |  2025-01-11    | <br/> - [Android 4.12.0 更新日志](/document/android/releasenote.html#v4-12-0-2025-1-10)<br/> - [iOS 4.12.0 更新日志](/document/ios/releasenote.html#v4-12-0-2025-1-10)<br/> - [Web 4.12.0 更新日志](/document/web/releasenote.html#v4-12-0-2025-1-10) <br/> - [小程序 4.12.0 更新日志](/document/applet/releasenote.html#v4-12-0-2025-1-10) <br/> - [鸿蒙 1.5.0 更新日志](/document/harmonyos/releasenote.html#v1-5-0-dev-2025-1-10-开发版) <br/> - [Flutter 4.12.0 更新日志](/document/flutter/releasenote.html#v4-12-0-2025-1-17) <br/> - [React Native 1.8.0 更新日志](/document/react-native/releasenote.html#v1-8-0-2025-1-17)<br/> - [Unit 1.3.2 更新日志](/document/unity/releasenote.html#v1-3-2-2025-1-17)<br/> - [Windows 1.3.2 更新日志](/document/windows/releasenote.html#v1-3-2-2025-1-17)|
+| SDK 4.12.0 开发版发布   | **新增特性**：<br/> - 移动端/Web/小程序/Windows/跨平台：用户加入聊天室可获取的信息新增聊天室当前人数、聊天室创建时间戳、当前用户是否在聊天室白名单中以及当前用户被禁言截止时间戳。<br/> - HarmonyOS [新增自定义设备的名称](/document/harmonyos/multi_device.html#设置登录设备的名称)：添加该功能后，在多设备场景下，若有设备被踢下线，被踢设备可知晓被哪个设备挤下线。 <br/> - HarmonyOS [新增自定义设备的平台](/document/harmonyos/multi_device.html#设置登录设备的平台)：例如，将手机和平板电脑设置为两个单独的平台，方便用户精细化控制同一平台的登录设备数量及平台间互踢等行为。 <br/> - HarmonyOS [新增两个错误码](/document/harmonyos/error.html)：`ChatError#GROUP_USER_IN_BLOCKLIST`（613）：该用户在群组黑名单中。群组黑名单中的用户进行某些操作时，例如，加入群组，会提示该错误。`ChatError#CHATROOM_USER_IN_BLOCKLIST`（707）：该用户在聊天室黑名单中。聊天室黑名单中的用户进行某些操作时，例如，加入聊天室，会提示该错误。 <br/> - HarmonyOS 新增拉取服务器漫游消息时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系商务经理开通。<br/> **优化：** <br/> - HarmonyOS 删除服务端会话时会同时删除本地会话。 |  2025-01-11    | <br/> - [Android 4.12.0 更新日志](/document/android/releasenote.html#v4-12-0-2025-1-10)<br/> - [iOS 4.12.0 更新日志](/document/ios/releasenote.html#v4-12-0-2025-1-10)<br/> - [Web 4.12.0 更新日志](/document/web/releasenote.html#v4-12-0-2025-1-10) <br/> - [小程序 4.12.0 更新日志](/document/applet/releasenote.html#v4-12-0-2025-1-10) <br/> - [鸿蒙 1.5.0 更新日志](/document/harmonyos/releasenote.html#v1-5-0-dev-2025-1-10-开发版) <br/> - [Flutter 4.12.0 更新日志](/document/flutter/releasenote.html#v4-12-0-2025-1-17) <br/> - [React Native 1.8.0 更新日志](/document/react-native/releasenote.html#v1-8-0-2025-1-17)<br/> - [Unit 1.3.2 更新日志](/document/unity/releasenote.html#v1-3-2-2025-1-17)<br/> - [Windows 1.3.2 更新日志](/document/windows/releasenote.html#v1-3-2-2025-1-17)|
 
 #### UIKit 发版
 
@@ -441,7 +441,7 @@
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
-| SDK 4.11.0 开发版发布   | **新增特性**：<br/> - 新增拉取服务器漫游消息时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系环信商务开通。<br/> - 聊天室成员被禁言后，该成员会收到禁言事件，可查看禁言过期时间。<br/> - Web 端与移动端对齐，群组/聊天室成员被禁言后，该成员可通过收到的禁言事件查看被禁言的成员。<br/> - uniapp SDK 支持鸿蒙系统。    |  2024-12-3     | <br/> - [Android 4.11.0 更新日志](/document/android/releasenote.html#v4-11-0-2024-12-3)<br/> - [iOS 4.11.0 更新日志](/document/ios/releasenote.html#v4-11-0-2024-12-3)<br/> - [Web 4.11.0 更新日志](/document/web/releasenote.html#v4-11-0-2024-12-3) <br/> - [小程序 4.11.0 更新日志](/document/applet/releasenote.html#v4-11-0-2024-12-3)          |
+| SDK 4.11.0 开发版发布   | **新增特性**：<br/> - 新增拉取服务器漫游消息时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系商务经理开通。<br/> - 聊天室成员被禁言后，该成员会收到禁言事件，可查看禁言过期时间。<br/> - Web 端与移动端对齐，群组/聊天室成员被禁言后，该成员可通过收到的禁言事件查看被禁言的成员。<br/> - uniapp SDK 支持鸿蒙系统。    |  2024-12-3     | <br/> - [Android 4.11.0 更新日志](/document/android/releasenote.html#v4-11-0-2024-12-3)<br/> - [iOS 4.11.0 更新日志](/document/ios/releasenote.html#v4-11-0-2024-12-3)<br/> - [Web 4.11.0 更新日志](/document/web/releasenote.html#v4-11-0-2024-12-3) <br/> - [小程序 4.11.0 更新日志](/document/applet/releasenote.html#v4-11-0-2024-12-3)          |
 
 ## 2024-09
 

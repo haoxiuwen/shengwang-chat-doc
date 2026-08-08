@@ -12,7 +12,7 @@ SDK 提供用户关系管理功能，包括好友管理和黑名单管理。
 开始前，请确保满足以下条件：
 
  - 完成 iOS SDK 初始化并登录，详见 [快速开始](quickstart.html)。
- - 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+ - 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
  - 已在 [环信控制台](https://console.easemob.com/user/login) 开通黑名单功能。详见 [环信控制台文档](/product/console/basic_user.html#用户黑名单)。
 
 ## 好友管理
@@ -250,7 +250,7 @@ options.dataSyncType = EMDataSyncTypeContacts;
 
 ### 设置仅给好友发消息
 
-环信即时通讯 IM 默认支持非好友用户之间发送单聊消息，即无需添加好友即可聊天。若仅允许好友之间发送单聊消息，你需要在 [环信控制台](https://console.easemob.com/user/login) [开启好友关系检查](/product/console/basic_user.html#好友关系检查)。开启后，SDK 会在用户发起单聊时检查好友关系；若用户向非好友用户发送单聊消息，SDK 会返回错误码 `221`，即 `EMErrorUserNotOnRoster`。
+即时通讯 IM 默认支持非好友用户之间发送单聊消息，即无需添加好友即可聊天。若仅允许好友之间发送单聊消息，你需要在 [环信控制台](https://console.easemob.com/user/login) [开启好友关系检查](/product/console/basic_user.html#好友关系检查)。开启后，SDK 会在用户发起单聊时检查好友关系；若用户向非好友用户发送单聊消息，SDK 会返回错误码 `221`，即 `EMErrorUserNotOnRoster`。
 
 ## 黑名单管理
 

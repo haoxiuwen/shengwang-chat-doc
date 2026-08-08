@@ -80,7 +80,7 @@ await client.pushManager.uploadPushToken({
 
 ## Web 端可设置的功能
 
-环信 IM Web SDK 主要支持对移动端离线推送进行如下配置：
+即时通讯 IM Web SDK 主要支持对移动端离线推送进行如下配置：
 
 - 上传推送 Token：
 - 设置推送通知，包括推送通知方式和免打扰模式：

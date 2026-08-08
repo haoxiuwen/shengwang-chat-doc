@@ -1,8 +1,8 @@
-# 环信即时通讯 IM Web 快速开始
+# 即时通讯 IM Web 快速开始
 
 <Toc />
 
-本页面介绍如何快速集成环信即时通讯 IM Web SDK 实现单聊。
+本页面介绍如何快速集成即时通讯 IM Web SDK 实现单聊。
 
 ## 实现原理
 
@@ -12,7 +12,7 @@
 
 ## 前提条件
 
-- 有效的 [环信即时通讯 IM 开发者账号](/product/console/account_register.html#注册账号)；
+- 有效的 [即时通讯 IM 开发者账号](/product/console/account_register.html#注册账号)；
 - 在环信控制台[创建应用](/product/console/app_create.html) 并 [获取 App Key](/product/console/app_manage.html#管理应用)；
 - [npm](https://www.npmjs.com/get-npm)；
 - SDK 支持 IE 9+、Firefox 10+、Chrome 54+ 和 Safari 6+。
@@ -21,7 +21,7 @@
 
 ### 1. 准备开发环境
 
-本节介绍如何创建项目，将环信即时通讯 IM Web SDK 集成到你的项目中。
+本节介绍如何创建项目，将即时通讯 IM Web SDK 集成到你的项目中。
 
 #### 新建 Web 项目
 

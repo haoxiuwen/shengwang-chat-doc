@@ -186,7 +186,7 @@ console.log('发送成功', sentMessage);
 
 ### 图片和文件消息
 
-uni-app 选择文件后，将临时路径及文件信息作为跨端文件对象传给 SDK。附件会在 `sendMessage()` 阶段由 SDK 自动上传，无需业务代码先上传到环信服务器。
+uni-app 选择文件后，将临时路径及文件信息作为跨端文件对象传给 SDK。附件会在 `sendMessage()` 阶段由 SDK 自动上传，无需业务代码先上传到IM 服务器。
 
 ```typescript
 uni.chooseImage({

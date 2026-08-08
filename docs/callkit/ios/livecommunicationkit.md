@@ -2,7 +2,7 @@
 
 ## 概述
 
-环信 CallKit 中的 `LiveCommunicationManager` 是一个用于管理 iOS VoIP 通话的单例管理器类，集成了 Apple 的 PushKit 和 LiveCommunicationKit 框架，提供完整的 VoIP 通话解决方案，包括来电推送、通话管理和音频会话控制。如果用户要使用系统的 LiveCommunicationKit，建议设置环信即时通讯 IM 为自动登录。
+CallKit 中的 `LiveCommunicationManager` 是一个用于管理 iOS VoIP 通话的单例管理器类，集成了 Apple 的 PushKit 和 LiveCommunicationKit 框架，提供完整的 VoIP 通话解决方案，包括来电推送、通话管理和音频会话控制。如果用户要使用系统的 LiveCommunicationKit，建议设置即时通讯 IM 为自动登录。
 
 <ImageGallery :columns="3">
   <ImageItem src="/images/callkit/ios/notification_lock.png" title="VoIP 通话来电通知" />
@@ -23,10 +23,10 @@
 
 ## 设置推送证书
 
-环信 CallKit 支持 APNs 推送和 VoIP 推送。若开启了 VoIP 功能，则使用 VoIP 推送。
+CallKit 支持 APNs 推送和 VoIP 推送。若开启了 VoIP 功能，则使用 VoIP 推送。
 
 - APNs 推送：VoIP 功能未开启时，使用 APNs 推送。详见 IM 的 [APNs 离线推送文档](/document/ios/push/push_apns.html)。
-- VoIP 推送：环信 CallKit 集成了 PushKit，你只需要在 IM SDK 初始化时设置 VoIP 推送证书，在 CallKit 初始化时启用 VoIP 功能。关于如何创建 VoIP 推送证书以及上传至 [环信控制台](https://console.easemob.com/user/login)，详见 IM 的 [APNs 离线推送文档](/document/ios/push/push_apns.html)。
+- VoIP 推送：CallKit 集成了 PushKit，你只需要在 IM SDK 初始化时设置 VoIP 推送证书，在 CallKit 初始化时启用 VoIP 功能。关于如何创建 VoIP 推送证书以及上传至 [环信控制台](https://console.easemob.com/user/login)，详见 IM 的 [APNs 离线推送文档](/document/ios/push/push_apns.html)。
 
 ```swift
     private func setupCallKit() {
@@ -39,7 +39,7 @@
         options.pushKitCertName = "yourVoipPro"
         #endif
         EMClient.shared().initializeSDK(with: options)
-        //初始化环信 CallKit。
+        //初始化CallKit。
         let config = EaseCallUIKit.CallKitConfig()
         config.enableVOIP = true//开启 VoIP 功能后会自动开启 LiveCommunicationKit，需要在 develop.apple.com 申请证书时勾选。
         config.enablePIPOn1V1VideoScene = true//开启画中画，同时需要开启应用后台摄像头采集权限。
@@ -49,7 +49,7 @@
 
 ## 通话管理
 
-环信 CallKit 通过 `ConversationManager` 进行通话管理，包括上报来电通知、管理通话生命周期，例如，接听、挂断、静音等，以及通话超时处理。 
+CallKit 通过 `ConversationManager` 进行通话管理，包括上报来电通知、管理通话生命周期，例如，接听、挂断、静音等，以及通话超时处理。 
 
 你可以创建 `ConversationManager`，进行如下配置：
 - 铃声: `notes_of_the_optimistic`。

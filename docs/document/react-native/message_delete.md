@@ -6,7 +6,7 @@
 
 ## 技术原理
 
-环信即时通讯 IM React Native SDK 通过 `ChatManager` 类实现单向删除服务端以及本地的历史消息，主要方法如下：
+即时通讯 IM React Native SDK 通过 `ChatManager` 类实现单向删除服务端以及本地的历史消息，主要方法如下：
 
 - `ChatManager#deleteAllMessageAndConversation`：清空聊天记录；
 - `ChatManager#removeMessagesFromServerWithTimestamp`/`removeMessagesFromServerWithMsgIds` ：单向删除服务端的历史消息；
@@ -19,7 +19,7 @@
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，并连接到服务器，详见 [初始化](initialization.html)及[连接](connection.html)文档。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 实现方法
 
@@ -54,7 +54,7 @@ ChatClient.getInstance()
 
 :::tip
 1. 若使用该功能，需将 SDK 升级至 V1.1.0 或以上版本。
-2. 聊天室漫游消息默认关闭。若要使用该功能需，需将 SDK 升级至 1.4.0 或以上版本并联系环信商务开通。 
+2. 聊天室漫游消息默认关闭。若要使用该功能需，需将 SDK 升级至 1.4.0 或以上版本并联系商务经理开通。 
 :::
 
 示例代码如下：

@@ -10,7 +10,7 @@
 
 ## 前提条件
 
-已注册有效的环信即时通讯 IM 开发者账号并创建应用，获取应用的 App Key。详见[环信控制台的相关文档](/product/console/app_create.html)。
+已注册有效的即时通讯 IM 开发者账号并创建应用，获取应用的 App Key。详见[环信控制台的相关文档](/product/console/app_create.html)。
 
 ## 初始化 SDK
 

@@ -2,7 +2,7 @@
 
 ## 功能概述
 
-环信 CallKit 是一套基于环信即时通讯 IM（基于 IM 4.16.0 及以上）和声网 RTC 结合开发的音视频 UI 库。使用环信 CallKit 之前，你需要将其集成到你的应用中。
+CallKit 是一套基于即时通讯 IM（基于 IM 4.16.0 及以上）和声网 RTC 结合开发的音视频 UI 库。使用CallKit 之前，你需要将其集成到你的应用中。
 
 <ImageGallery>
   <ImageItem src="/images/callkit/android/1v1_video_caller_invitation.png" title="一对一通话邀请" />
@@ -28,9 +28,9 @@
   - [创建群组](/product/console/operation_group.html#创建群组)，获取群组 ID。将用户加入群组。
   - [开通音视频服务](product_activation.html)。
 
-2. 集成环信即时通讯 IM SDK。 
+2. 集成即时通讯 IM SDK。 
    
-确保已集成环信 IM SDK 并完成登录。
+确保已集成即时通讯 IM SDK 并完成登录。
 
 ## 集成步骤
 
@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
     }
     
     private fun initCallKit() {
-        // 1. 初始化环信 IM SDK
+        // 1. 初始化即时通讯 IM SDK
         val options = ChatOptions().apply {
             appKey = "your_app_key"  // 替换为你的 App Key
             autoLogin = false
@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity() {
 
 ### 步骤 3 配置监听器
 
-环信 CallKit 提供 `CallKitListener` 监听通话过程。你可以在应用初始化时设置监听器用于处理通话相关的回调：
+CallKit 提供 `CallKitListener` 监听通话过程。你可以在应用初始化时设置监听器用于处理通话相关的回调：
 
 ```kotlin
 class MainActivity : AppCompatActivity() {
@@ -401,7 +401,7 @@ CallKitClient.callInfoProvider = MyCallInfoProvider()
 
 ### 自定义视频分辨率
 
-环信 CallKit 中默认设置的分辨率为 1280x720。网络连接不稳定时，声网 RTC SDK 会主动降低分辨率或帧率。
+CallKit 中默认设置的分辨率为 1280x720。网络连接不稳定时，声网 RTC SDK 会主动降低分辨率或帧率。
 
 若要修改本地摄像头视频采集的分辨率，可以在创建声网 RTC 引擎时进行配置。
 

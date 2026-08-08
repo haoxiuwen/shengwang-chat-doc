@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-- 授权注册模式指注册环信即时通讯 IM 账号时携带管理员身份认证信息，即 App Token。
+- 授权注册模式指注册即时通讯 IM 账号时携带管理员身份认证信息，即 App Token。
 - **推荐使用该模式，因为该模式较为安全**，可防止已获取了注册 URL 和了解注册流程的某些人恶意向服务器大量注册垃圾用户。
 - 注册用户时，需满足用户 ID 和密码的设置要求。
 
@@ -100,7 +100,7 @@ curl -X POST 'https://XXXX/app-id/{app_id}/users'    \
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `organization`    | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
+| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 ## 错误码

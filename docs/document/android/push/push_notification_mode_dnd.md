@@ -96,7 +96,7 @@ EMClient.getInstance().pushManager().clearRemindTypeForConversation(conversation
 
 ## 免打扰模式
 
-完成 SDK 初始化并成功登录后，你可以为 App 全局或指定单聊、群聊会话设置免打扰模式。免打扰模式生效期间，环信 IM 不会向对应范围内的离线用户发送推送通知。
+完成 SDK 初始化并成功登录后，你可以为 App 全局或指定单聊、群聊会话设置免打扰模式。免打扰模式生效期间，即时通讯 IM 不会向对应范围内的离线用户发送推送通知。
 
 Android SDK 通过 `EMSilentModeParam` 配置免打扰规则，支持以下两种模式：
 

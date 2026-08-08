@@ -2,9 +2,9 @@
 
 ## 功能说明
 
-环信即时通讯 IM iOS SDK 通过 `EMMessageBody` 的相应子类创建消息体，并使用 `EMChatMessage` 封装消息，最后通过 `IEMChatManager` 发送消息。SDK 支持文本、图片、GIF、语音、视频、文件、位置、透传、自定义和合并消息，可用于单聊、群聊和聊天室。
+即时通讯 IM iOS SDK 通过 `EMMessageBody` 的相应子类创建消息体，并使用 `EMChatMessage` 封装消息，最后通过 `IEMChatManager` 发送消息。SDK 支持文本、图片、GIF、语音、视频、文件、位置、透传、自定义和合并消息，可用于单聊、群聊和聊天室。
 
-- 对于单聊，环信即时通讯 IM 默认支持陌生人之间发送消息，即无需添加好友即可聊天。若仅允许好友之间发送单聊消息，你需要 [开启好友关系检查](/product/console/basic_user.html#好友关系检查)。
+- 对于单聊，即时通讯 IM 默认支持陌生人之间发送消息，即无需添加好友即可聊天。若仅允许好友之间发送单聊消息，你需要 [开启好友关系检查](/product/console/basic_user.html#好友关系检查)。
 - 对于群组和聊天室，用户每次只能向所属的单个群组或聊天室发送消息。
 - 关于消息发送控制，详见 [单聊](/product/message_single_chat.html#单聊消息发送控制)、[群组聊天](/product/message_group.html#群组消息发送控制) 和 [聊天室](/product/message_chatroom.html#聊天室消息发送控制) 的相关文档。
 
@@ -13,7 +13,7 @@
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，详见 [初始化文档](initialization.html)。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 发送消息统一流程
 
@@ -43,7 +43,7 @@ iOS SDK 通过不同的 `EMMessageBody` 子类创建各类消息体，再使用�
 
 ## 接口频率限制
 
-默认情况下，SDK 不限制单个用户发送消息的频率。如果已联系环信商务配置单用户发送频率限制，当用户在单聊、群聊或聊天室中的发送频率超过上限时，SDK 会返回错误码 `509`（`MESSAGE_CURRENT_LIMITING`）。
+默认情况下，SDK 不限制单个用户发送消息的频率。如果已联系商务经理配置单用户发送频率限制，当用户在单聊、群聊或聊天室中的发送频率超过上限时，SDK 会返回错误码 `509`（`MESSAGE_CURRENT_LIMITING`）。
 
 ## 发送文本消息
 
@@ -162,11 +162,11 @@ EMClient.shared().chatManager?.send(
 发送附件消息分为以下两步：
 
 1. 创建对应的附件消息体，并使用该消息体创建 `EMChatMessage`。
-2. 调用 `IEMChatManager#sendMessage:progress:completion:` 发送消息。SDK 将附件上传至环信服务器。另外，你也可以 [上传消息附件至自有服务器](#上传消息附件至自有服务器)。
+2. 调用 `IEMChatManager#sendMessage:progress:completion:` 发送消息。SDK 将附件上传至IM 服务器。另外，你也可以 [上传消息附件至自有服务器](#上传消息附件至自有服务器)。
 
 #### 资源处理说明
 
-默认情况下，调用 `IEMChatManager#sendMessage:progress:completion:` 后，SDK 会自动将本地附件上传至环信服务器。接收方也可由 SDK 自动下载附件。
+默认情况下，调用 `IEMChatManager#sendMessage:progress:completion:` 后，SDK 会自动将本地附件上传至IM 服务器。接收方也可由 SDK 自动下载附件。
 
 初始化 SDK 时，可以通过 `EMOptions#isAutoTransferMessageAttachments` 设置是否由 SDK 自动上传或下载消息附件。对于图片和视频缩略图以及语音消息，可以通过 `EMOptions#autoDownloadThumbnail` 控制是否自动下载。
 
@@ -274,7 +274,7 @@ GIF 图片消息是一种特殊的图片消息。与普通图片消息不同，G
 1. 获取 GIF 图片在本地文件系统中的路径。
 2. 调用 `EMImageMessageBody#initWithGifFilePath:displayName:` 创建 GIF 图片消息体。
 3. 使用 GIF 图片消息体和目标会话 ID 创建 `EMChatMessage`，并设置相应的会话类型。
-4. 调用 `IEMChatManager#sendMessage:progress:completion:` 发送 GIF 图片消息。SDK 会将 GIF 图片上传至环信服务器，服务器自动生成图片缩略图。
+4. 调用 `IEMChatManager#sendMessage:progress:completion:` 发送 GIF 图片消息。SDK 会将 GIF 图片上传至IM 服务器，服务器自动生成图片缩略图。
 
 创建和发送 GIF 图片消息的示例代码如下：
 
@@ -337,7 +337,7 @@ EMClient.shared().chatManager?.send(
 1. 在应用层录制语音，并将语音文件保存到应用可访问的本地路径。
 2. 调用 `EMVoiceMessageBody#initWithLocalPath:displayName:` 创建语音消息体，并通过 `duration` 设置语音时长。
 3. 使用语音消息体和目标会话 ID 创建 `EMChatMessage`。发送群聊或聊天室消息时，还需设置对应的 `chatType`。
-4. 调用 `IEMChatManager#sendMessage:progress:completion:` 发送消息。SDK 会将语音文件上传至环信服务器。
+4. 调用 `IEMChatManager#sendMessage:progress:completion:` 发送消息。SDK 会将语音文件上传至IM 服务器。
 
 通过 `progress` 回调可以获取附件上传进度，通过 `completion` 回调可以获取发送结果。
 
@@ -491,7 +491,7 @@ EMClient.shared().chatManager?.send(
 1. 获取文件在本地文件系统中的路径，并确保 SDK 可以读取该文件。
 2. 调用 `EMFileMessageBody#initWithLocalPath:displayName:` 创建文件消息体。
 3. 使用文件消息体和目标会话 ID 创建 `EMChatMessage`。发送群聊或聊天室消息时，还需设置相应的 `chatType`。
-4. 调用 `IEMChatManager#sendMessage:progress:completion:` 发送文件消息。SDK 会将文件上传至环信服务器。
+4. 调用 `IEMChatManager#sendMessage:progress:completion:` 发送文件消息。SDK 会将文件上传至IM 服务器。
 
 通过 `progress` 回调可以获取文件上传进度，通过 `completion` 回调可以获取发送结果。
 
@@ -555,7 +555,7 @@ EMClient.shared().chatManager?.send(
 
 ### 上传消息附件至自有服务器
 
-发送消息时，如果需要将附件上传至自有服务器，而不是环信服务器，需要关闭 SDK 的附件自动传输功能，并由应用自行负责附件的上传。
+发送消息时，如果需要将附件上传至自有服务器，而不是IM 服务器，需要关闭 SDK 的附件自动传输功能，并由应用自行负责附件的上传。
 
 具体步骤如下：
 
@@ -628,7 +628,7 @@ func sendPrivateImage(
 ```
 
 :::tip 
-对于图片消息，应将 `isOriginalImage` 设置为 `true`，确保 `remotePath` 表示设置的自有服务器地址。 <br/> - 关闭 `isAutoTransferMessageAttachments` 后，附件的上传、下载、缓存、失败重试和访问鉴权均需由应用自行实现。 <br/>  - 该配置会影响所有附件消息，而不只影响图片消息。 - 消息本身仍通过环信服务器发送。 
+对于图片消息，应将 `isOriginalImage` 设置为 `true`，确保 `remotePath` 表示设置的自有服务器地址。 <br/> - 关闭 `isAutoTransferMessageAttachments` 后，附件的上传、下载、缓存、失败重试和访问鉴权均需由应用自行实现。 <br/>  - 该配置会影响所有附件消息，而不只影响图片消息。 - 消息本身仍通过IM 服务器发送。 
 :::
 
 ## 发送位置消息
@@ -690,7 +690,7 @@ let body = EMLocationMessageBody(
     latitude: latitude,
     longitude: longitude,
     address: address,
-    buildingName: "环信大厦"
+    buildingName: "数码大厦"
 )
 ```
 
@@ -847,9 +847,9 @@ EMClient.shared().chatManager?.send(
 
 ## 发送合并消息
 
-环信即时通讯 IM iOS SDK 支持将多条消息合并为一条消息进行转发，适用于转发聊天记录等场景。
+即时通讯 IM iOS SDK 支持将多条消息合并为一条消息进行转发，适用于转发聊天记录等场景。
 
-合并消息属于附件消息。SDK 根据原始消息 ID 列表生成合并消息附件，将附件上传至环信服务器后发送消息。
+合并消息属于附件消息。SDK 根据原始消息 ID 列表生成合并消息附件，将附件上传至IM 服务器后发送消息。
 
 #### 发送流程
 
@@ -940,7 +940,7 @@ EMClient.shared().chatManager?.send(
 #### 逻辑说明
 
 :::tip 
-1. 按照产品限制，合并消息最多嵌套 10 层，每层最多包含 300 条消息。iOS SDK 构造方法不会主动校验这些限制，建议应用在发送前自行检查。<br/> 2. 合并消息属于附件消息。按照产品规则，无论 `EMOptions#isAutoTransferMessageAttachments` 设置为 `true` 还是 `false`，合并消息附件都会上传至环信服务器。 <br/>3. 如果需要再次转发已有的合并消息，可以将该合并消息的消息 ID 添加到新合并消息的 `messageIdList` 中。该操作会形成嵌套的合并消息，并计入嵌套层级限制。 
+1. 按照产品限制，合并消息最多嵌套 10 层，每层最多包含 300 条消息。iOS SDK 构造方法不会主动校验这些限制，建议应用在发送前自行检查。<br/> 2. 合并消息属于附件消息。按照产品规则，无论 `EMOptions#isAutoTransferMessageAttachments` 设置为 `true` 还是 `false`，合并消息附件都会上传至IM 服务器。 <br/>3. 如果需要再次转发已有的合并消息，可以将该合并消息的消息 ID 添加到新合并消息的 `messageIdList` 中。该操作会形成嵌套的合并消息，并计入嵌套层级限制。 
 :::
 
 #### 使用建议
@@ -1007,7 +1007,7 @@ EMClient.shared().chatManager?.send(
 
 #### 聊天室消息优先级与消息丢弃逻辑
 
-对于聊天室消息，环信即时通讯 IM 支持高、普通和低三种消息优先级。你可以通过 `EMChatMessage#priority` 设置单条聊天室消息的优先级。
+对于聊天室消息，即时通讯 IM 支持高、普通和低三种消息优先级。你可以通过 `EMChatMessage#priority` 设置单条聊天室消息的优先级。
 
 - `EMChatRoomMessagePriorityHigh`：高优先级。
 - `EMChatRoomMessagePriorityNormal`：普通优先级，默认值。
@@ -1116,7 +1116,7 @@ NSDictionary<NSString *, NSString *> *
 
 回调路由允许你在同一个 App Key 下，根据消息携带的回调环境标识，将不同消息分别回调至不同的服务地址。
 
-发送消息时，可以通过 `EMChatMessage#webhookEnv` 设置回调环境，例如 `dev`、`test` 或 `prod`。环信服务器收到消息后，会根据该环境标识匹配控制台中配置的回调路由，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
+发送消息时，可以通过 `EMChatMessage#webhookEnv` 设置回调环境，例如 `dev`、`test` 或 `prod`。IM 服务器收到消息后，会根据该环境标识匹配控制台中配置的回调路由，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
 
 :::tip 
 目前，该功能仅面向国内 1 区和国内 2 区开放。
@@ -1142,7 +1142,7 @@ NSDictionary<NSString *, NSString *> *
 
 1. 在控制台为发送前回调或发送后回调[配置回调路由](/product/console/basic_webhook.html#配置消息回调规则)。
 2. 客户端发送消息时，通过 `webhookEnv` 设置回调环境标识。
-3. 环信服务器根据回调环境标识匹配当前回调阶段的服务地址。
+3. IM 服务器根据回调环境标识匹配当前回调阶段的服务地址。
 4. 命中有效路由后，服务器将回调请求发送至对应地址。
 
 #### 参数说明

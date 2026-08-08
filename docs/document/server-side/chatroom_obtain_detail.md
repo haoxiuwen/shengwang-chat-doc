@@ -70,7 +70,7 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatrooms/662XXXX13' \
 | 字段                      | 类型   | 描述      |
 | :------------------------ | :----- | :----------------- |
 | `data`               | JSON | 实际获取的数据详情。    |
-| - `id`                 | String | 聊天室 ID，聊天室唯一标识符，由环信即时通讯 IM 服务器生成。    |
+| - `id`                 | String | 聊天室 ID，聊天室唯一标识符，由即时通讯 IM 服务器生成。    |
 | - `name`               | String | 聊天室名称。    |
 | - `description`        | String | 聊天室描述。    |
 | - `membersonly`        | Bool   | 加入聊天室是否需要聊天室所有者或者聊天室管理员审批：<br/> - `true`：是。<br/> - `false`：否。    |

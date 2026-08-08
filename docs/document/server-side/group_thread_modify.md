@@ -72,7 +72,7 @@ curl -X PUT https://XXXX/app-id/{app_id}/thread/1XXXX7   \
 | `action`          | String | 请求方法。                                                                     |
 | `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `organization`    | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
+| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 | `uri`             | String | 请求 URL。                                                                     |
 

@@ -30,7 +30,7 @@
 开始前，请确保满足以下条件：
 
  - 已完成 SDK 初始化并成功建立连接，详见 [快速开始](quickstart.html)。
- - 已了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+ - 已了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 撤回消息
 

@@ -48,7 +48,7 @@
 
 ## 监听方法
 
-环信 CallKit 提供 `CallKitListener` 监听通话过程。你可以设置监听器用于处理通话相关的回调。
+CallKit 提供 `CallKitListener` 监听通话过程。你可以设置监听器用于处理通话相关的回调。
 
 **所有回调方法都不在主线程执行，需要使用 `runOnUiThread` 来更新 UI。**
 
@@ -71,7 +71,7 @@
 | :--------- | :----- |
 | `business`  | 业务逻辑异常。 |
 | `rtc`  | 音视频异常，详见 [声网 RTC 错误码](https://doc.shengwang.cn/doc/rtc/ios/error-code)。 |
-| `im`  | 即时通讯 IM 异常，详见 [环信即时通讯 IM 错误码](/document/ios/error.html)  |
+| `im`  | 即时通讯 IM 异常，详见 [即时通讯 IM 错误码](/document/ios/error.html)  |
 | `unknown`  | 未知错误。 |
 
 ### 业务错误类型
@@ -87,7 +87,7 @@
 
 ### 获取日志
 
-- 日志中携带 `EaseCallKit Log:` 的所有内容均为 CallKit 日志。你可以通过查看日志进行代码问题排查。关于如何获取日志，详见 [环信即时通讯 IM 文档](/document/ios/log.html)。
+- 日志中携带 `EaseCallKit Log:` 的所有内容均为 CallKit 日志。你可以通过查看日志进行代码问题排查。关于如何获取日志，详见 [即时通讯 IM 文档](/document/ios/log.html)。
 - 线上获取 SDK 日志，需要设备在登录状态下联系环信技术支持。技术支持获取到线上设备的日志，排查线上用户的问题。
 
 

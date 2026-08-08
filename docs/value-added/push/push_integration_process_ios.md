@@ -1,6 +1,6 @@
 # 环信 EMPush iOS 集成
 
-本文介绍如何集成环信推送 EMPush iOS SDK。
+本文介绍如何集成即时推送 EMPush iOS SDK。
 
 ## 前提条件
 

@@ -1,6 +1,6 @@
 # 在即时通讯 IM 中集成荣耀推送
 
-环信即时通讯 IM SDK 4.0.3 版本中集成了荣耀推送。本节介绍如何集成荣耀厂商的离线推送通道，使消息通过荣耀推送服务推送至离线的用户。
+即时通讯 IM SDK 4.0.3 版本中集成了荣耀推送。本节介绍如何集成荣耀厂商的离线推送通道，使消息通过荣耀推送服务推送至离线的用户。
 
 ## **步骤一 在 [荣耀开发者服务平台](https://developer.hihonor.com/cn/) 创建应用并申请开通推送服务**
 
@@ -101,7 +101,7 @@ if (isSupport) {
 EMPushHelper.getInstance().setPushListener(new PushListener() {
     @Override
     public void onError(EMPushType pushType, long errorCode) {
-        // 返回的 errorCode 仅 9xx 为环信内部错误，可从 EMError 中查询，其他错误请根据 pushType 去相应第三方推送网站查询。
+        // 返回的 errorCode 仅 9xx 为 IM 内部错误，可从 EMError 中查询，其他错误请根据 pushType 去相应第三方推送网站查询。
         EMLog.e("PushClient", "Push client occur a error: " + pushType + " - " + errorCode);
     }
 
@@ -160,7 +160,7 @@ public class HONORPushService extends HonorMessageService {
 
 ## **步骤五 将 device token 与 IM 的登录账号绑定**
 
-打开应用，初始化环信 IM SDK 成功且成功登录后，获取一次 device token，将 token 上传至环信服务器，与 IM 的登录账号绑定。
+打开应用，初始化即时通讯 IM SDK 成功且成功登录后，获取一次 device token，将 token 上传至IM 服务器，与 IM 的登录账号绑定。
 
 如果当前 IM 的登录账号已经绑定了 device token，则 IM SDK 不会上传 token。
 
@@ -196,7 +196,7 @@ if (HonorPushClient.getInstance().checkSupportHonorPush(this)){
 
 若推送不同的消息时，接收方收到后点击推送通知栏打开不同应用自定义页面，你可以添加相应的消息扩展属性实现。
 
-以下为环信 IM 提供的通知栏消息点击动作的扩展字段：
+以下为即时通讯 IM 提供的通知栏消息点击动作的扩展字段：
 
 ```java
 {

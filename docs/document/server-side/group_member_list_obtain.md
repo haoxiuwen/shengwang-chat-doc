@@ -98,7 +98,7 @@ curl -X GET https://XXXX/app-id/{app_id}/chatgroups/10XXXX85/users?pagesize=1000
 | `entities`           | JSON   | 响应实体。  |
 | `timestamp`          | Long   | HTTP 响应的 Unix 时间戳，单位为毫秒。   |
 | `duration`           | Long   | 从发送 HTTP 请求到响应的时长，单位为毫秒。     |
-| `organization`       | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。      |
+| `organization`       | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。      |
 | `applicationName`    | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。   |
 | `count` | Int | 本次调用实际获取的群成员数量。 |
 

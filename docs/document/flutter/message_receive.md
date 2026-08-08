@@ -1,13 +1,13 @@
 # 接收消息
 
-环信即时通讯 IM Flutter SDK 通过 `EMChatEventHandler` 类实现文本、图片、音频、视频和文件等类型的消息的接收。
+即时通讯 IM Flutter SDK 通过 `EMChatEventHandler` 类实现文本、图片、音频、视频和文件等类型的消息的接收。
 
 ## 前提条件
 
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，详见 [初始化文档](initialization.html)。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 接收文本消息
 
@@ -281,4 +281,4 @@ try {
 
 ### 消息附件下载鉴权
 
-自 4.15.0 版本开始，即时通讯 IM 支持消息附件下载鉴权功能。该功能默认关闭，如要开通需联系环信商务。该功能开通后，用户必须调用 SDK 的 `downloadAttachment` 方法下载消息附件。
+自 4.15.0 版本开始，即时通讯 IM 支持消息附件下载鉴权功能。该功能默认关闭，如要开通需联系商务经理。该功能开通后，用户必须调用 SDK 的 `downloadAttachment` 方法下载消息附件。

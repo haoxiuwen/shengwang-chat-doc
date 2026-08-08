@@ -4,7 +4,7 @@
 
 ## 概述
 
-应用使用环信 SDK 提供的功能时，首先需完成用户登录。登录时，必须传入注册的环信即时通讯服务的用户 ID（下称 “userId”）和身份验证令牌（Token）。Token 是用户在即时通讯 IM 服务中的唯一身份标识，登录后使用即时通讯提供的 API 时，SDK 内部均需使用该 Token 与服务器交互。
+应用使用环信 SDK 提供的功能时，首先需完成用户登录。登录时，必须传入注册的即时通讯服务的用户 ID（下称 “userId”）和身份验证令牌（Token）。Token 是用户在即时通讯 IM 服务中的唯一身份标识，登录后使用即时通讯提供的 API 时，SDK 内部均需使用该 Token 与服务器交互。
 
 在生产环境中，通常先实现应用自身账号体系的登录，成功后再使用自身应用服务器（App Server）返回的 userId 和 token 进行即时通讯 IM 登录。也就是说，你需要在 App Server 将 Token 分发给客户端。
 
@@ -18,9 +18,9 @@
 
 ![img](/images/server-side/token_get_based_userid.png)
 
-- 在 App Server 基于 `AppKey`、`ClientSecret` 和用户 ID（注册用户时传入的 `username`）生成动态 Token。生成 Token 后，由你的 App Server 将 Token 分发给客户端。环信服务器校验该 Token 的有效性。
+- 在 App Server 基于 `AppKey`、`ClientSecret` 和用户 ID（注册用户时传入的 `username`）生成动态 Token。生成 Token 后，由你的 App Server 将 Token 分发给客户端。IM 服务器校验该 Token 的有效性。
 
-若在登录过程中减少与环信服务器的交互，提高登录速度，或者想自行控制 Token 的签发，则推荐使用动态 Token。Token 有效期由你自行设置，建议不要太长。
+若在登录过程中减少与IM 服务器的交互，提高登录速度，或者想自行控制 Token 的签发，则推荐使用动态 Token。Token 有效期由你自行设置，建议不要太长。
 
 ![img](/images/server-side/token_generate_dynamic.png)
 

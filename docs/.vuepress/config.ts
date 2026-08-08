@@ -25,17 +25,17 @@ import path from 'node:path'
 const HOME_PATH = '/'
 const HOME_TITLE = 'IM集成_IM开发文档_即时通讯接入_即时通信IM文档_环信'
 const HOME_KEYWORDS =
-  'IM集成,环信IM开发文档,即时通信IM开发文档,即时通讯接入,即时通信IM文档'
+  'IM集成,即时通讯 IM 开发文档,即时通信IM开发文档,即时通讯接入,即时通信IM文档'
 const HOME_DESCRIPTION =
-  '环信IM文档为您提供即时通讯IM集成全流程详解，涵盖从快速开始到深度功能开发，帮助开发者高效实现应用内即时通信IM需求。'
+  '即时通讯 IM 文档为您提供即时通讯IM集成全流程详解，涵盖从快速开始到深度功能开发，帮助开发者高效实现应用内即时通信IM需求。'
 const INNER_PAGE_TITLE_PREFIX = '即时通讯IM开发 '
-const INNER_PAGE_TITLE_SUFFIX = '｜环信IM文档'
+const INNER_PAGE_TITLE_SUFFIX = '｜即时通讯 IM 文档'
 const SEO_META_NAMES = new Set(['description', 'keywords'])
 
 const sanitizeTitle = (title: string): string =>
   title
     .replace(/^即时通讯IM开发\s*/u, '')
-    .replace(/\s*[|｜]\s*环信IM文档$/u, '')
+    .replace(/\s*[|｜]\s*即时通讯 IM 文档$/u, '')
     .trim()
 
 const createSeoHead = ({
@@ -80,7 +80,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: 'IM 文档',
   head: [['link', { rel: 'icon', href: '/logo.png' }]],
-  description: '环信 IM 文档',
+  description: '即时通讯 IM 文档',
   shouldPrefetch: false,
   bundler: viteBundler({
     viteOptions: {

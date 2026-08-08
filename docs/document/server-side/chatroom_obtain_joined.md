@@ -84,7 +84,7 @@ curl -X GET 'https://XXXX/app-id/{app_id}/users/user1/joined_chatrooms?pagenum=1
 | 字段        | 类型   | 描述                                                      |
 | :---------- | :----- | :-------------------------------------------------------- |
 | `data` | JSON Array | 聊天室详情。 |
-|  - `id`   | String | 聊天室 ID，聊天室唯一标识，由环信即时通讯 IM 服务器生成。 |
+|  - `id`   | String | 聊天室 ID，聊天室唯一标识，由即时通讯 IM 服务器生成。 |
 |  - `name` | String | 聊天室名称，最大长度为 128 字符。                         |
 
 响应体中的其他参数说明如下表所示：
@@ -97,7 +97,7 @@ curl -X GET 'https://XXXX/app-id/{app_id}/users/user1/joined_chatrooms?pagenum=1
 | `count` | String | 获取的聊天室数量。 |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
 | `entities`        | JSON Array   | 响应实体。      |
-| `organization`    | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
+| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `params`        | JSON | 查询参数。  |
 |  - `pagesize`        | Array | 每页期望返回的聊天室数量。  |
 |  - `pagenum`        | Array | 当前页码。  |

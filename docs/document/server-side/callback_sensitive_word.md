@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-消息内容命中敏感词（涉政词库）后，环信服务器将根据 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，你可以通过该回调获取消息处理动作的相关信息（如敏感词拦截或替换），便于进行数据同步和后续分析。
+消息内容命中敏感词（涉政词库）后，IM 服务器将根据 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，你可以通过该回调获取消息处理动作的相关信息（如敏感词拦截或替换），便于进行数据同步和后续分析。
 
 ## 前提条件
 
@@ -101,6 +101,6 @@
 | `host`  | String  | 服务器名称。  | 
 | `appkey`  | String  | 即时通讯服务分配给每个应用的唯一标识，由 `orgname` 和 `appname` 参数的值组成。  |  
 | `contentType`  |  String |  内容类型，目前为 `message`，表示为消息。 |  
-| `timestamp`  | Long   | 环信 IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒。 | 
+| `timestamp`  | Long   | 即时通讯 IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒。 | 
 | `chatType`  | String  | 会话类型，默认全选：<br/> - `chat`：单聊回调；<br/> - `groupchat`：群聊回调包含了群组和聊天室的消息回调；<br/> - `notify`：通知回调包含了 Thread 和 Reaction 的回调，需要结合 payload 中的 `type` 字段确定具体类型。  | 
 | `status`  | String  | 对敏感词或消息的处理动作。<br/> - `pass`：敏感词为合规内容，包含敏感词的消息通过审核。<br/> - `refuse`：敏感词为违规词，对包含敏感词的消息进行拦截，不下发。<br/> - `replace`：敏感词为违规词，由 `***` 替换。  | 

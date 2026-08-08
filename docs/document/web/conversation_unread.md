@@ -13,7 +13,7 @@
 - 已完成 SDK 初始化，并登录成功。
 - 初始化 SDK 时已注册 `ChatManager`，能够通过 `client.chatManager` 调用会话与消息相关接口。
 - 当前客户端已连接到服务器。清零动作需要通过连接通道发送到服务器。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 会话未读数清零流程
 

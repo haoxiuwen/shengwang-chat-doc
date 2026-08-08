@@ -1,4 +1,4 @@
-# 使用环信 App Token 鉴权
+# 使用 App Token 鉴权
 
 <Toc />
 

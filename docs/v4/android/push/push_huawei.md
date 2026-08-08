@@ -1,6 +1,6 @@
 # 在即时通讯 IM 中集成华为 HMS 推送
 
-环信即时通讯 IM SDK 中已集成华为 HMS 推送相关逻辑，你还需要完成以下步骤。
+即时通讯 IM SDK 中已集成华为 HMS 推送相关逻辑，你还需要完成以下步骤。
 
 ## **步骤一 在华为开发者后台创建应用**
 
@@ -47,7 +47,7 @@
 
 3. [获取 Token 及自动初始化](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-client-dev-0000001050042041)。
 
-打开应用，初始化环信 IM SDK 成功且成功登录后，获取一次华为推送 token，将 token 上传至环信服务器，与 IM 的登录账号绑定。
+打开应用，初始化即时通讯 IM SDK 成功且成功登录后，获取一次华为推送 token，将 token 上传至IM 服务器，与 IM 的登录账号绑定。
 
 ```java
 /**

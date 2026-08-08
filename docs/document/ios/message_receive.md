@@ -1,14 +1,14 @@
 # 接收消息
 
 ## 功能说明
-环信即时通讯 IM iOS SDK 通过 `EMChatManagerDelegate` 接收文本、图片、语音、视频、文件、位置、透传、自定义和合并等类型的消息。应用在消息代理回调中识别消息类型，读取对应消息体并根据业务需要展示或处理消息。
+即时通讯 IM iOS SDK 通过 `EMChatManagerDelegate` 接收文本、图片、语音、视频、文件、位置、透传、自定义和合并等类型的消息。应用在消息代理回调中识别消息类型，读取对应消息体并根据业务需要展示或处理消息。
 
 ## 前提条件
 
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，详见 [初始化文档](initialization.html)。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 监听消息事件
 
@@ -361,7 +361,7 @@ NSDictionary<NSString *, NSString *> *customExt = customBody.customExt;
 
 ### 消息附件下载鉴权
 
-支持消息附件下载鉴权功能。该功能默认关闭，如要开通需联系环信商务。该功能开通后，用户必须调用 SDK 的 API `downloadMessageAttachment` 下载消息附件。
+支持消息附件下载鉴权功能。该功能默认关闭，如要开通需联系商务经理。该功能开通后，用户必须调用 SDK 的 API `downloadMessageAttachment` 下载消息附件。
 
 ## 接口列表
 

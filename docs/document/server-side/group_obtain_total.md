@@ -23,7 +23,7 @@ GET https://{host}/app-id/{app_id}/chatgroups?limit={N}&cursor={cursor}
 | `cursor` | String | 否       | 数据查询的起始位置。首次调用该接口，不传 `cursor`，服务器按群组创建时间倒序返回 `limit` 指定的群组数量。后续接口调用时，需要从上次调用的响应中获取 `cursor` 参数的值传入请求中的该参数。   |
 
 :::tip
-若请求中均未设置 `limit` 和 `cursor` 参数，环信服务器按群组创建时间倒序返回前 10 个群组。
+若请求中均未设置 `limit` 和 `cursor` 参数，IM 服务器按群组创建时间倒序返回前 10 个群组。
 :::
 
 关于请求 URL 中的参数说明，详见 [请求结构介绍](overview.html#请求结构)。

@@ -4,7 +4,7 @@
 
 ## 1、Android SDK 集成
 
-环信推送与环信 IM 使用相同的 SDK，你可以参考 IM 文档导入和集成 SDK， 然后注册登录。
+即时推送与即时通讯 IM 使用相同的 SDK，你可以参考 IM 文档导入和集成 SDK， 然后注册登录。
 
 SDK 导入：[Android SDK 导入](/document/android/quickstart.html#_2-集成-sdk)
 
@@ -57,4 +57,4 @@ public void onNotificationClick(Context context, EMNotificationMessage notificat
 
 ## 3、离线推送集成
 
-离线推送需参考环信 IM 的[第三方推送集成](/document/harmonyos/push/push_overview.html)，集成各个厂商的推送（如不需要离线推送，可忽略）。
+离线推送需参考即时通讯 IM 的[第三方推送集成](/document/harmonyos/push/push_overview.html)，集成各个厂商的推送（如不需要离线推送，可忽略）。

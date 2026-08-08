@@ -1,6 +1,6 @@
 # 在环信控制台上传证书
 
-在第三方推送服务后台注册应用，获取应用信息，开启推送服务后，你需要在[环信控制台](https://console.easemob.com/user/login)上传推送证书，实现第三方推送服务与环信即时通讯 IM 的通信。
+在第三方推送服务后台注册应用，获取应用信息，开启推送服务后，你需要在[环信控制台](https://console.easemob.com/user/login)上传推送证书，实现第三方推送服务与即时通讯 IM 的通信。
 
 ![img](/images/react-native/push/push_add_certificate.png)
 

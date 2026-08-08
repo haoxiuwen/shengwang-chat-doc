@@ -1,6 +1,6 @@
 # 在即时通讯 IM 中集成小米推送
 
-环信即时通讯 IM SDK 中已经集成了小米推送（基于 ` MiPush_SDK_Client_6_0_1-C_3rd.aar`）相关逻辑，你还需要完成以下步骤。
+即时通讯 IM SDK 中已经集成了小米推送（基于 ` MiPush_SDK_Client_6_0_1-C_3rd.aar`）相关逻辑，你还需要完成以下步骤。
 
 ## 步骤一 在小米开放平台创建应用
 
@@ -96,7 +96,7 @@
    </receiver>
    ```
 
-3. 自定义一个继承自环信即时通讯 IM SDK 中 `EMMiMsgReceiver` 类的 `BroadcastReceiver`，并进行注册：
+3. 自定义一个继承自即时通讯 IM SDK 中 `EMMiMsgReceiver` 类的 `BroadcastReceiver`，并进行注册：
 
    ```xml
    <receiver android:name=".common.receiver.MiMsgReceiver">

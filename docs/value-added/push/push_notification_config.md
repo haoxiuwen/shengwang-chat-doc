@@ -6,9 +6,9 @@
 
 ```json
 {
-    "title": "环信推送服务",
-    "content": "你好，欢迎使用环信推送服务",
-    "subTitle": "环信",
+    "title": "即时推送服务",
+    "content": "你好，欢迎使用即时推送服务",
+    "subTitle": "推送",
     "config": {
         "clickAction": {
             "url": "https://www.easemob.com"
@@ -59,7 +59,7 @@
     },
     "harmonyOS":{
         "title":"鸿蒙推送",
-        "body":"欢迎测试环信鸿蒙推送",
+        "body":"欢迎测试鸿蒙推送",
         "image":"https://www.easemob.com/statics/common/images/logo.png?20211109"
     }
     
@@ -286,7 +286,7 @@ FCM 通道推送通知示例如下：
 | 字段      | 类型   | 描述                                                         |
 | :-------- | :----- | :----------------------------------------------------------- |
 | `headers` | Object | Apple 推送通知服务中定义的 HTTP 请求标头。详见 [APNs 请求标头](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns)了解支持的标头，例如，`{ "apns-push-type": "alert", "apns-priority": "10"}`。 |
-| `payload` | Object | 作为 JSON 对象的 APNs 负载，包括 `aps` 字典和自定义负载。详见[有效负载密钥参考](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)。例如，`{"aps":{"alert":{"title":"环信推送提醒","subtitle":"环信","body":"欢迎使用环信即时推送服务"}},"EPush":"{}"}`。 |
+| `payload` | Object | 作为 JSON 对象的 APNs 负载，包括 `aps` 字典和自定义负载。详见[有效负载密钥参考](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)。例如，`{"aps":{"alert":{"title":"推送提醒","subtitle":"声网","body":"欢迎使用即时推送服务"}},"EPush":"{}"}`。 |
 
 ### 小米推送说明
 
@@ -294,7 +294,7 @@ FCM 通道推送通知示例如下：
 
 ```json
 {
-    "title":"你好，欢迎使用环信",
+    "title":"你好，欢迎使用推送",
     "content":"你好",
     "channelId":"easemob-test",
     "notifyEffect":3,
@@ -386,7 +386,7 @@ FCM 通道推送通知示例如下：
 
 ```json
 {
-    "title":"你好，欢迎使用环信推送",
+    "title":"你好，欢迎使用即时推送",
     "subTitle":"你好",
     "content":"你好先生",
     "channelId":"easemob-channel",

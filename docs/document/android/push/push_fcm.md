@@ -1,6 +1,6 @@
 # 在即时通讯 IM 中集成 FCM
 
-环信即时通讯 IM SDK 中已集成 FCM 推送相关逻辑，你还需要完成以下步骤。
+即时通讯 IM SDK 中已集成 FCM 推送相关逻辑，你还需要完成以下步骤。
 
 ## FCM 推送集成
 
@@ -128,7 +128,7 @@ plugins {
 </service>
 ```
 
-3. 在环信即时通讯 IM SDK 中启用 FCM。
+3. 在即时通讯 IM SDK 中启用 FCM。
 
 ```java
 EMOptions options = new EMOptions();
@@ -163,9 +163,9 @@ EMPushHelper.getInstance().setPushListener(new PushListener() {
 });
 ```
 
-4. 环信即时通讯 IM SDK 登录成功后，上传 FCM 的 device token。
+4. 即时通讯 IM SDK 登录成功后，上传 FCM 的 device token。
 
-在应用初始化时，FCM SDK 会为用户的设备上的客户端应用生成唯一的注册 token。由于 FCM 使用该 token 确定要将推送消息发送给哪个设备，因此，环信服务器需要获得客户端应用的注册 token 才能将通知请求发送给 FCM，然后 FCM 验证注册 token，将通知消息发送给 Android 设备。建议该段代码放在成功登录即时通讯 IM 后的主页面。
+在应用初始化时，FCM SDK 会为用户的设备上的客户端应用生成唯一的注册 token。由于 FCM 使用该 token 确定要将推送消息发送给哪个设备，因此，IM 服务器需要获得客户端应用的注册 token 才能将通知请求发送给 FCM，然后 FCM 验证注册 token，将通知消息发送给 Android 设备。建议该段代码放在成功登录即时通讯 IM 后的主页面。
 
 ```java
 // 查看是否支持 FCM
@@ -189,7 +189,7 @@ FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteL
 
 5. 监控 device token 生成。
 
-重写 `FirebaseMessagingService` 中的 `onNewToken` 方法，device token 更新后及时更新到环信即时通讯 IM SDK。
+重写 `FirebaseMessagingService` 中的 `onNewToken` 方法，device token 更新后及时更新到即时通讯 IM SDK。
 
 ```java
 public class MyFCMMSGService extends FirebaseMessagingService {
@@ -209,7 +209,7 @@ public class MyFCMMSGService extends FirebaseMessagingService {
         Log.i("MessagingService", "onNewToken: " + token);
         // 先保存 Token，确保在 SDK 尚未登录时也不会丢失。
         EMPushHelper.getInstance().setFCMPushToken(token);
-        // 登录成功后上传 Token 至环信服务器。
+        // 登录成功后上传 Token 至IM 服务器。
         if (EMClient.getInstance().isSdkInited()
                 && EMClient.getInstance().isLoggedIn()) {
             EMClient.getInstance().sendFCMTokenToServer(token);
@@ -257,7 +257,7 @@ public class MyFCMMSGService extends FirebaseMessagingService {
 | [`enableFCM`](#步骤四-fcm-推送集成) | `EMPushConfig.Builder` | 启用 FCM 推送并设置 FCM Sender ID。 |
 | [`setPushConfig`](#步骤四-fcm-推送集成) | `EMOptions` | 设置 SDK 的推送配置。 |
 | [`init`](#步骤四-fcm-推送集成) | `EMClient` | 初始化 Android SDK。 |
-| [`sendFCMTokenToServer`](#步骤四-fcm-推送集成) | `EMClient` | 将 FCM Token 上传至环信服务器。 |
+| [`sendFCMTokenToServer`](#步骤四-fcm-推送集成) | `EMClient` | 将 FCM Token 上传至IM 服务器。 |
 | [`setFCMPushToken`](#步骤四-fcm-推送集成) | `EMPushHelper` | 保存当前设备的 FCM Token。 |
 | [`isSdkInited`](#步骤四-fcm-推送集成) | `EMClient` | 判断 SDK 是否已初始化。 |
 | [`isLoggedIn`](#步骤四-fcm-推送集成) | `EMClient` | 判断当前用户是否已登录。 |

@@ -1,8 +1,8 @@
-# 环信 IM Windows SDK 快速入门
+# 即时通讯 IM Windows SDK 快速入门
 
 <Toc />
 
-本文介绍如何快速集成环信 IM Windows SDK 实现发送和接收单聊文本消息。
+本文介绍如何快速集成即时通讯 IM Windows SDK 实现发送和接收单聊文本消息。
 
 ## 技术原理
 
@@ -13,9 +13,9 @@
 如上图所示，发送和接收单聊消息的步骤如下：
 
 1. 客户端向你的应用服务器请求 Token，你的应用服务器返回 Token。
-2. 客户端 A 和客户端 B 使用获得的 Token 登录环信即时通讯系统。
-3. 客户端 A 发送消息到环信即时通讯服务器。
-4. 环信即时通讯服务器将消息发送到客户端 B，客户端 B 接收消息。
+2. 客户端 A 和客户端 B 使用获得的 Token 登录即时通讯系统。
+3. 客户端 A 发送消息到即时通讯服务器。
+4. 即时通讯服务器将消息发送到客户端 B，客户端 B 接收消息。
 
 ## 前提条件
 
@@ -25,7 +25,7 @@
 - Visual Studio IDE 2019 或以上；
 - .Net Framework 4.5.2 或以上；
 - 目前 Windows SDK 仅支持 64 位运行模式；
-- 有效的环信即时通讯 IM 开发者账号和 App Key，详见 [环信控制台文档](/product/console/app_manage.html#管理应用)。
+- 有效的即时通讯 IM 开发者账号和 App Key，详见 [环信控制台文档](/product/console/app_manage.html#管理应用)。
 
 ## 项目设置
 
@@ -40,7 +40,7 @@
 3. 双击打开 `windows-example.sln` 打开 Visual Studio 开发工具；
 4. 在 Visual Studio 上部的下拉菜单中，选择解决方案配置为: `Debug`；解决方案平台为: x64;
 
-### 2. 集成环信即时通讯 SDK
+### 2. 集成即时通讯 SDK
 
 你可以参考以下步骤集成 SDK：
 

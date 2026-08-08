@@ -27,7 +27,7 @@ markMapping.put(EMConversation.EMMarkType.MARK_2, "customer");
 
 - 已完成 SDK 初始化并成功登录，详见[快速开始](quickstart.html)。
 - 已开通[服务端会话列表功能](/product/console/basic_conversation_group_chatroom.html#服务端会话列表)。
-- 已了解环信即时通讯 IM API 的使用限制，详见[使用限制](/product/limitation.html)。
+- 已了解即时通讯 IM API 的使用限制，详见[使用限制](/product/limitation.html)。
 
 ## 添加会话标记
 

@@ -12,7 +12,7 @@
 
 - 完成 SDK 初始化，并连接到服务器，详见 [快速开始](quickstart.html)。
 - SDK 初始化时需注册 `ChatManager`，能够通过 `client.chatManager` 调用消息和会话相关接口。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 删除单个会话
 

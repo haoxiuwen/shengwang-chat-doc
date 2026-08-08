@@ -32,7 +32,7 @@
 
 - 完成 SDK 初始化并登录，详见 [快速开始](quickstart.html)。
 - 已注册 `PresenceManager`，能够通过 `client.presenceManager` 调用在线状态相关接口。
-- 了解环信即时通讯 IM API 的 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的 [使用限制](/product/limitation.html)。
 - 已在 [环信控制台](https://console.easemob.com/user/login) 开通在线状态订阅功能。详见 [环信控制台文档](/product/console/basic_user.html#用户离在线状态实时同步)。
 
 ## 订阅指定用户的在线状态

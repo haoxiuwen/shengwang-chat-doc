@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-消息经 [内容审核服务](/value-added/moderation/moderation_overview.html) 审核后，环信服务器将依据 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看消息审核的详细信息，并实现数据同步。
+消息经 [内容审核服务](/value-added/moderation/moderation_overview.html) 审核后，IM 服务器将依据 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看消息审核的详细信息，并实现数据同步。
 
 ## 前提条件
 
@@ -16,7 +16,7 @@
 
 ## 回调请求
 
-完成消息审核后，环信 IM 服务器将审核结果以 POST 方式发送到你设置的 HTTP 回调通知地址。
+完成消息审核后，即时通讯 IM 服务器将审核结果以 POST 方式发送到你设置的 HTTP 回调通知地址。
 
 ### 请求示例
 
@@ -63,4 +63,4 @@
 | `to`      | String | 消息接收方：<br/> - 单聊为对端用户 ID；<br/> - 群聊时为群组 ID；<br/> - 聊天室聊天为聊天室 ID。  |
 | `msg`      | String | 文本消息的内容。该参数仅在 `messageType` 为 `txt` 时存在。|
 | `url`      | String | 音频消息、视频消息、图片消息中附件 URL。该参数仅在 `messageType` 为 `img`、`audio` 或 `video` 时存在。 |
-| `timestamp`      | Long | 环信 IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒。   |
+| `timestamp`      | Long | 即时通讯 IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒。   |

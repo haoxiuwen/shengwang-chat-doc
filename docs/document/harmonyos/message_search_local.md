@@ -2,11 +2,11 @@
 
 <Toc />
 
-本文介绍环信即时通讯 IM HarmonyOS SDK 如何搜索本地消息。调用本文中的消息搜索方法可以搜索本地数据库中除透传消息之外的所有类型的消息，因为透传消息不在本地数据库中存储。
+本文介绍即时通讯 IM HarmonyOS SDK 如何搜索本地消息。调用本文中的消息搜索方法可以搜索本地数据库中除透传消息之外的所有类型的消息，因为透传消息不在本地数据库中存储。
 
 ## 技术原理
 
-环信即时通讯 IM HarmonyOS SDK 通过 `ChatManager` 和 `Conversation` 类支持搜索用户设备上存储的消息数据，其中包含如下主要方法：
+即时通讯 IM HarmonyOS SDK 通过 `ChatManager` 和 `Conversation` 类支持搜索用户设备上存储的消息数据，其中包含如下主要方法：
 
 - `Conversation#loadMoreMessagesFromDB`：从指定消息 ID 开始分页加载数据库中的消息；
 - `ChatManager#searchMessagesFromDB(keywords: string, timestamp: number, maxCount: number, from?: string, direction?: SearchDirection)`：根据关键字搜索本地数据库中指定用户发送的消息；
@@ -23,7 +23,7 @@
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化并连接到服务器，详见 [快速开始](quickstart.html)。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 实现方法
 

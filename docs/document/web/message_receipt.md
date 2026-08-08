@@ -22,7 +22,7 @@
 - 已完成 [SDK 初始化](initialization.html)，并实现注册账号和登录功能。
 - 已注册并使用 `ChatManager`，通过 `client.chatManager` 调用本文中的消息、回执和事件监听接口。
 - 若需使用群聊消息已读回执，已在 [环信控制台开通该功能](/product/console/basic_message.html#群聊消息已读回执)。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 技术原理
 

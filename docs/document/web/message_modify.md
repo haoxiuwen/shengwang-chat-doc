@@ -33,7 +33,7 @@
 
 ## 功能开通
 
-若使用消息编辑功能，**需联系环信商务开通**。
+若使用消息编辑功能，**需联系商务经理开通**。
 
 ## 前提条件
 
@@ -41,8 +41,8 @@
 
 - 完成 SDK 初始化，并连接到服务器，详见 [快速开始](quickstart.html) 及 [初始化](initialization.html)文档。
 - 初始化 SDK 时已注册 `ChatManager`，能够通过 `client.chatManager` 调用消息相关接口。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
-- 联系环信商务开通消息编辑功能。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 联系商务经理开通消息编辑功能。
 
 ## 编辑消息
 

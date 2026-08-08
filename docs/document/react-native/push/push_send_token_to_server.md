@@ -1,6 +1,6 @@
-# 发送推送 Token 到环信服务器
+# 发送推送 Token 到IM 服务器
 
-环信即时通讯 IM SDK 通过 `react-native-push-collection` 获取推送 token。本文介绍如何将推送 token 发送到环信服务器。
+即时通讯 IM SDK 通过 `react-native-push-collection` 获取推送 token。本文介绍如何将推送 token 发送到IM 服务器。
 
 ## 实现流程
 

@@ -26,11 +26,11 @@
 修复下面两个方法未暴露在 `EMChatManager` 中的问题：
 
 - `loadConversationMessagesWithKeyword`：[根据关键字获取会话中的消息](message_retrieve.html#根据关键字获取会话中的消息)。
-- `getAllMessageCount`：[获取本地数据库中的消息总数](https://doc.easemob.com/apidoc/flutter/im_flutter_sdk/EMChatManager/getAllMessageCount.html) 。
+- `getAllMessageCount`：获取本地数据库中的消息总数 。
 
 ## v4.18.1 2026-3-5
 
-修复入群事件 [onMemberJoinedFromGroup](https://doc.easemob.com/apidoc/flutter/im_flutter_sdk/EMGroupEventHandler/onMemberJoinedFromGroup.html) 和退群事件 [onMemberExitedFromGroup](https://doc.easemob.com/apidoc/flutter/im_flutter_sdk/EMGroupEventHandler/onMemberExitedFromGroup.html) 触发了错误的回调的问题。
+修复入群事件 `onMemberJoinedFromGroup` 和退群事件 `onMemberExitedFromGroup` 触发了错误的回调的问题。
 
 ## v4.18.0 2026-3-4
 

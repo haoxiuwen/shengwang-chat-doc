@@ -1,6 +1,6 @@
 # 管理本地会话
 
-环信即时通讯 IM Web SDK 内部使用 IndexedDB 在本地数据库中保存单聊和群聊会话，通过 `LocalCache` 模块对本地会话数据进行管理。
+即时通讯 IM Web SDK 内部使用 IndexedDB 在本地数据库中保存单聊和群聊会话，通过 `LocalCache` 模块对本地会话数据进行管理。
 
 :::tip
 1. 若使用该特性，首先要[集成本地存储插件](#集成本地存储插件)。该插件只支持通过[按需导入 SDK](import_sdk_minicore.html)的方式集成。
@@ -9,7 +9,7 @@
 
 ## 技术原理
 
-环信即时通讯 IM SDK 支持你通过调用 API 在项目中实现如下功能：
+即时通讯 IM SDK 支持你通过调用 API 在项目中实现如下功能：
 
 - `getLocalConversations`：获取本地会话列表；
 - `getLocalConversation`：获取单个本地会话；
@@ -23,12 +23,12 @@
 开始前，请确保满足以下条件：
 
 - 完成 SDK 4.2.1 或以上版本初始化，详见 [初始化](initialization.html)文档；
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)；
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)；
 - [按需导入 SDK](import_sdk_minicore.html)，[集成本地存储插件](#集成本地存储插件)。
 
 ## 实现方法
 
-本节介绍如何使用环信即时通讯 IM Web SDK 提供的 API 实现上述功能。
+本节介绍如何使用即时通讯 IM Web SDK 提供的 API 实现上述功能。
 
 会话对象的结构如下所示:
 

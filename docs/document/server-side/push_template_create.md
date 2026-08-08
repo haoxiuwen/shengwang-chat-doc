@@ -58,7 +58,7 @@ curl -X POST 'https://XXXX/app-id/{app_id}/notification/template' \
       "ext":{
           "em_push_template":{
               "title_args":[
-                  "环信"
+                  "声网"
               ],
               "content_args":[
                   "欢迎使用im-push",
@@ -68,7 +68,7 @@ curl -X POST 'https://XXXX/app-id/{app_id}/notification/template' \
       }
   }
   
-  # title: {0} = "环信"
+  # title: {0} = "声网"
   # content: {0} = "欢迎使用im-push" {1} = "加油"
   ```
 
@@ -124,7 +124,7 @@ curl -X POST 'https://XXXX/app-id/{app_id}/notification/template' \
 | :------------- | :----- | :---------------------- |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
+| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
