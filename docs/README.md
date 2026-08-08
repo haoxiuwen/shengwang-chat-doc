@@ -190,9 +190,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/message_send.html
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/message.html#发送消息  
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/message_single.html
@@ -229,9 +226,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/message_receive.html
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/message.html#接收消息
           - text: 接收流式消息
             desc: 在单聊和群聊场景中，客户端可接收服务端发送的流式消息。
             sdks:
@@ -277,9 +271,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/message_retrieve.html
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/conversation.html  
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/message_historical.html
@@ -310,9 +301,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/message_recall.html
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/message.html#撤回消息  
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/message_recall_single.html
@@ -481,9 +469,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/message_import_insert.html
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/conversation.html#插入消息
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/message_import_single.html
@@ -511,9 +496,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/message_update.html
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/conversation.html  
           - text: 删除消息
             desc: 单向删除服务端以及本地的历史消息。
             sdks:
@@ -541,9 +523,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/message_delete.html
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/conversation.html  
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/message_delete_roam_single_msgid.html
@@ -706,9 +685,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/conversation_unread.html
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/conversation.html#获取会话中的未读消息计数   
           - text: 本地会话
             desc: Web SDK 内部使用 IndexedDB 在本地数据库中保存单聊和群聊会话，通过 LocalCache 模块对本地会话数据进行管理。
             sdks:
@@ -796,9 +772,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/conversation_delete.html  
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/conversation.html#删除会话
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/conversation_delete.html
@@ -862,9 +835,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/group_members.html  
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/group.html#群成员管理 
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/group_member_add_single.html
@@ -907,9 +877,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/group_attributes.html  
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/group.html#修改群组信息 
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/group_modify.html     
@@ -940,9 +907,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/room_manage.html  
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/chatroom.html
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/chatroom_create.html    
@@ -973,9 +937,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/room_members.html 
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/chatroom.html#加入聊天室
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/chatroom_member_add_single.html
@@ -1006,9 +967,6 @@ projects:
               - icon: /sdk/windows.svg
                 text: Windows
                 link: /document/windows/room_attributes.html 
-              - icon: /sdk/electron.svg
-                text: Electron
-                link: /document/electron/chatroom.html#修改聊天室信息
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/chatroom_announcement_get.html
