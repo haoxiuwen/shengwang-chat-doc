@@ -9,9 +9,6 @@ const platformList = getSubDirectories(DOC_PATH)
 const documentSidebar = [
   { text: "入门指引", link: "beginner_guide.html" },
   { text: "使用 MCP 集成", link: "easemob_mcp_server.html", except: ['unity', 'windows', 'server-side', 'applet']},
-  { text: 'React Demo 体验', link: 'demo_react.html', only: ['web'] },
-  { text: 'Vue Demo 体验', link: 'demo_vue.html', only: ['web'] },
-  { text: 'Demo 体验', link: 'demo.html', only: ['android', 'ios', 'react-native', 'flutter'] },
   { text: '快速开始', link: 'quickstart.html', except: ['windows', 'react-native', 'flutter', 'unity', 'server-side', 'applet'] },
   { text: '快速开始', link: 'quickstart.html', only: ['windows', 'react-native', 'flutter', 'unity'] },
   { type: "separator", except: ['server-side', 'applet'] } as any,
@@ -169,7 +166,6 @@ const documentSidebar = [
   },
   { text: '获取 SDK 日志', link: 'log.html', except: ['flutter', 'server-side', 'applet'] },
   { text: '常见问题', link: 'faq.html', only: ['react-native'] },
-  { text: '精简版 SDK', link: 'elite_sdk.html', only: ['android', 'ios']},
   { text: '私有云 SDK IP 地址/域名配置', link: 'private_ip_domain.html', only: ['android', 'ios', 'web', 'harmonyos']},
   { text: '合规指南', link: 'sdk_compliance.html', except: ['applet']},
   { text: '苹果隐私策略', link: 'privacy_policy.html', only: ['ios'] },
@@ -317,7 +313,6 @@ const documentSidebar = [
     ],
     only: ['applet']
   },
-  { text: '精简版 SDK', link: 'elite_sdk.html', only: ['applet']},
   { text: '合规指南', link: 'sdk_compliance.html', only: ['applet']},
   { text: '服务端 API 概述', link: 'overview.html', only: ['server-side'] },
   { text: 'API 调用频率限制', link: 'limitationapi.html', only: ['server-side'] },
@@ -933,7 +928,6 @@ const documentSidebar = [
     collapsible: true,
     children: [
       { text: 'Java Server SDK 2.0', link: 'java_server_sdk_2.0.html' },
-      { text: 'Java Server SDK 1.0', link: 'java_server_sdk.html' },
       { text: 'PHP Server SDK', link: 'php_server_sdk.html' }
     ],
     only: ['server-side']
@@ -953,7 +947,6 @@ const documentSidebar = [
     text: '已废弃内容',
     collapsible: true,
     children: [
-      { text: '通过用户 ID 和密码获取用户 token', link: 'easemob_user_token_password.html' }
     ],
     only: ['server-side']
   },

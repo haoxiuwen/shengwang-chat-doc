@@ -76,12 +76,6 @@ starter:
       - icon: /sdk/windows.svg
         link: /document/windows/quickstart.html
         text: Windows
-  - title: "Demo 体验" 
-    desc: "点击“Demo 体验”按钮立即体验环信 IM 即时通讯功能。"
-    platform:
-      - icon: /sdk/demo_list.svg
-        link: "/product/demo.html"
-        text: Demo 体验 
   - title: "服务端 API"
     desc: "可通过 RESTful API 构建即时通讯应用，点击“REST”按钮快速实现即时通讯消息收发等功能。"
     platform:
