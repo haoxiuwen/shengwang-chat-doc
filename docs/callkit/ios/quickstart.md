@@ -1,6 +1,6 @@
 # 快速开始
 
-利用环信 CallKit（基于环信即时通讯 IM SDK V4.16.0 或以上版本），你可以轻松实现一对一通话和群组通话功能。本文介绍如何快速实现发起音视频通话。
+利用CallKit（基于即时通讯 IM SDK V4.16.0 或以上版本），你可以轻松实现一对一通话和群组通话功能。本文介绍如何快速实现发起音视频通话。
 
 ## 开发环境要求
 
@@ -36,7 +36,7 @@ Privacy - Camera Usage Description //相机权限
 
 ### 步骤 2 安装 CallKit
 
-你可以使用 CocoaPods 安装环信 CallKit 作为 Xcode 项目的依赖项。
+你可以使用 CocoaPods 安装CallKit 作为 Xcode 项目的依赖项。
 
 1. 在 `podfile` 中添加如下依赖：
 

@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-环信 MCP Server 基于 MCP（Model Context Protocol）实现，为支持 MCP 的 AI 编程工具提供环信 IM 相关文档查询和源码检索能力，可用于以下场景：
+环信 MCP Server 基于 MCP（Model Context Protocol）实现，为支持 MCP 的 AI 编程工具提供即时通讯 IM 相关文档查询和源码检索能力，可用于以下场景：
 
 - 查询 SDK、单群聊 UIKit、CallKit、聊天室 UIKit 文档。
 - 检索 Demo 或示例工程源码。
@@ -115,21 +115,21 @@ MCP（Model Context Protocol，模型上下文协议）是 Anthropic 推出的�
 
 示例问题如下：
    - **SDK 集成** <br/>
-     环信 IM iOS SDK 如何集成？
+     即时通讯 IM iOS SDK 如何集成？
    - **SDK 功能使用**<br/>
-     环信 IM Android SDK 如何登录？<br/>
-     环信 IM iOS SDK 如何收发消息？<br/>
-     环信 IM Web SDK 收不到透传消息，应该如何排查？<br/>
-     环信 IM Flutter SDK 如何撤回消息？<br/>
+     即时通讯 IM Android SDK 如何登录？<br/>
+     即时通讯 IM iOS SDK 如何收发消息？<br/>
+     即时通讯 IM Web SDK 收不到透传消息，应该如何排查？<br/>
+     即时通讯 IM Flutter SDK 如何撤回消息？<br/>
    - **单群聊 UIKit 集成与自定义**<br/>
-     环信 IM iOS 单群聊 UIKit 如何集成？<br/>
-     环信 IM Android 单群聊 UIKit 如何自定义收发消息的文字大小与颜色？<br/>
-     环信 IM React Native 单群聊 UIKit 如何实现完整的自定义消息收发及布局样式？<br/>
+     即时通讯 IM iOS 单群聊 UIKit 如何集成？<br/>
+     即时通讯 IM Android 单群聊 UIKit 如何自定义收发消息的文字大小与颜色？<br/>
+     即时通讯 IM React Native 单群聊 UIKit 如何实现完整的自定义消息收发及布局样式？<br/>
    - **CallKit 集成与自定义**<br/>
-     环信 IM iOS CallKit 如何集成？<br/>
-     环信 IM Android CallKit 如何修改通话背景？<br/>
+     即时通讯 IM iOS CallKit 如何集成？<br/>
+     即时通讯 IM Android CallKit 如何修改通话背景？<br/>
    - **Demo 源码**<br/>
-    环信 IM Flutter Demo 中会话列表页面对应哪部分源码？
+    即时通讯 IM Flutter Demo 中会话列表页面对应哪部分源码？
 
 ## 问题反馈
 

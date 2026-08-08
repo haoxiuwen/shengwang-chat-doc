@@ -1,8 +1,8 @@
 # 发送消息
 
-环信即时通讯 IM Android SDK 通过 [EMChatManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_manager.html)、[EMMessage](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_message.html) 和 [EMOptions](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_options.html) 类实现文本、图片、音频、视频和文件等类型的消息的发送和接收。
+即时通讯 IM Android SDK 通过 [EMChatManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_manager.html)、[EMMessage](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_message.html) 和 [EMOptions](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_options.html) 类实现文本、图片、音频、视频和文件等类型的消息的发送和接收。
 
-- 对于单聊，环信即时通讯 IM 默认支持陌生人之间发送消息，即无需添加好友即可聊天。若仅允许好友之间发送单聊消息，你需要 [开启好友关系检查](/product/console/basic_user.html#好友关系检查)。
+- 对于单聊，即时通讯 IM 默认支持陌生人之间发送消息，即无需添加好友即可聊天。若仅允许好友之间发送单聊消息，你需要 [开启好友关系检查](/product/console/basic_user.html#好友关系检查)。
 - 对于群组和聊天室，用户每次只能向所属的单个群组和聊天室发送消息。
 - 关于消息发送控制，详见 [单聊](/product/message_single_chat.html#单聊消息发送控制)、[群组聊天](/product/message_group.html#群组消息发送控制) 和 [聊天室](/product/message_chatroom.html#聊天室消息发送控制) 的 相关文档。
 
@@ -11,13 +11,13 @@
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，详见 [初始化文档](initialization.html)。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 发送文本消息
 
 1. 发送方调用 [EMMessage#createTextSendMessage](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_message.html) 方法构造一条消息。
 
-默认情况下，SDK 对单个用户发送消息的频率未做限制。如果你联系了环信商务设置了该限制，一旦在单聊、群聊或聊天室中单个用户的消息发送频率超过设定的上限，SDK 会上报错误，即错误码 509 `MESSAGE_CURRENT_LIMITING`。
+默认情况下，SDK 对单个用户发送消息的频率未做限制。如果你联系了商务经理设置了该限制，一旦在单聊、群聊或聊天室中单个用户的消息发送频率超过设定的上限，SDK 会上报错误，即错误码 509 `MESSAGE_CURRENT_LIMITING`。
 
 ```java
 // 创建一条文本消息，`content` 为消息文字内容。
@@ -61,7 +61,7 @@ EMClient.getInstance().chatManager().sendMessage(message);
 发送附件消息分为以下两步：
 
 1. 创建和发送附件类型消息。
-2. SDK 将附件上传到环信服务器。另外，你也可以 [上传消息附件至自有服务器](#上传消息附件至自有服务器)。
+2. SDK 将附件上传到IM 服务器。另外，你也可以 [上传消息附件至自有服务器](#上传消息附件至自有服务器)。
 
 消息附件大小和存储限制，详见 [消息附件限制说明](limitation.html#消息存储)。
 
@@ -69,7 +69,7 @@ EMClient.getInstance().chatManager().sendMessage(message);
 
 1. 发送语音消息前，在应用层录制语音文件。
 2. 发送方调用 `EMMessage#createVoiceSendMessage` 方法传入语音文件的 URI、语音时长和接收方的用户 ID（群聊或聊天室分别为群组 ID 或聊天室 ID）创建语音消息。
-3. 发送方调用 `EMChatManager#sendMessage` 方法发送消息。SDK 会将语音文件上传至环信服务器。
+3. 发送方调用 `EMChatManager#sendMessage` 方法发送消息。SDK 会将语音文件上传至IM 服务器。
 
 ```java
 // `voiceUri` 为语音文件的本地资源标志符，`duration` 为语音时长（单位为秒）。
@@ -118,7 +118,7 @@ EMClient.getInstance().chatManager().sendMessage(message);
 发送 GIF 图片消息的过程如下：
 
 1. 发送方调用 `EMMessage#createGifImageMessage` 方法构造 GIF 图片消息体。
-2. 发送方调用 `EMChatManager#sendMessage` 发送 GIF 图片消息。SDK 会将图片上传至环信服务器，服务器自动生成图片缩略图。
+2. 发送方调用 `EMChatManager#sendMessage` 发送 GIF 图片消息。SDK 会将图片上传至IM 服务器，服务器自动生成图片缩略图。
 
 ```java
 // `imageUri` 为图片本地资源标志符
@@ -160,7 +160,7 @@ EMClient.getInstance().chatManager().sendMessage(message);
 ### 发送文件消息
 
 1. 发送方调用 `EMMessage#createFileSendMessage` 方法传入文件的本地资源标志符和接收方的用户 ID（群聊或聊天室分别为群组 ID 或聊天室 ID）创建文件消息。
-2. 发送方调用 `EMChatManager#sendMessage` 方法发送文件消息。SDK 将文件上传至环信服务器。
+2. 发送方调用 `EMChatManager#sendMessage` 方法发送文件消息。SDK 将文件上传至IM 服务器。
 
 ```java
 // `fileLocalUri` 为本地资源标志符。
@@ -266,7 +266,7 @@ EMClient.getInstance().chatManager().sendMessage(customMessage);
 
 :::tip
 1. 合并转发支持嵌套，最多支持 10 层嵌套，每层最多 300 条消息。
-2. 不论 `EMOptions#setAutoTransferMessageAttachments` 设置为 `false` 或 `true`，SDK 都会将合并消息附件上传到环信服务器。
+2. 不论 `EMOptions#setAutoTransferMessageAttachments` 设置为 `false` 或 `true`，SDK 都会将合并消息附件上传到IM 服务器。
 3. 合并消息不支持搜索。
 4. 对于转发合并消息，例如，用户 A 向用户 B 发送了合并消息，用户 B 将该合并消息转发给用户 C，需要调用转发单条合并消息的 API。详见 [转发单条消息](message_forward.html#转发单条消息)。
 :::
@@ -301,14 +301,14 @@ EMClient.getInstance().chatManager().sendMessage(message);
 
 ### 上传消息附件至自有服务器
 
-发消息时，若要将消息附件上传至你自己的服务器（而非环信服务器），需执行以下操作：
+发消息时，若要将消息附件上传至你自己的服务器（而非IM 服务器），需执行以下操作：
 
 1. 在 SDK 初始化时调用 `EMOptions#setAutoTransferMessageAttachments(false)`，使 SDK **不再自动上传或下载附件**。设置后，`EMChatManager#sendMessage()` 将不再处理图片、视频等附件的自动处理与上传逻辑。
 2. 图片上传到你的服务器后，将附件 URL 填入消息体，然后发送消息。
    以图片消息为例，上传后获取其 URL，通过 `EMImageMessageBody#setRemoteUrl(String)` 设置到消息体中，然后调用 `sendMessage()` 发送消息。
 
 ```java
-// 1) SDK 初始化时关闭“自动上传附件到环信服务器”
+// 1) SDK 初始化时关闭“自动上传附件到IM 服务器”
 EMOptions options = new EMOptions();
 options.setAutoTransferMessageAttachments(false);
 EMClient.getInstance().init(appContext, options);
@@ -350,7 +350,7 @@ public static void sendPrivateUrlImg(String toUserId,
 
 ### 聊天室消息优先级与消息丢弃逻辑
 
-- **消息优先级**：对于聊天室消息，环信即时通讯提供消息分级功能，支持高、普通和低三种优先级，高优先级的消息会优先送达。你可以在创建消息时对指定消息类型或指定成员的消息设置为高优先级，确保这些消息优先送达。这种方式可以确保在聊天室内消息并发量较大或消息发送频率过高的情况下，服务器首先丢弃低优先级消息，将资源留给高优先级消息，确保重要消息（如打赏、公告等）优先送达，以此提升重要消息的可靠性。请注意，该功能并不保证高优先级消息必达。在聊天室内消息并发量过大的情况下，为保证用户实时互动的流畅性，即使是高优先级消息仍然会被丢弃。
+- **消息优先级**：对于聊天室消息，即时通讯提供消息分级功能，支持高、普通和低三种优先级，高优先级的消息会优先送达。你可以在创建消息时对指定消息类型或指定成员的消息设置为高优先级，确保这些消息优先送达。这种方式可以确保在聊天室内消息并发量较大或消息发送频率过高的情况下，服务器首先丢弃低优先级消息，将资源留给高优先级消息，确保重要消息（如打赏、公告等）优先送达，以此提升重要消息的可靠性。请注意，该功能并不保证高优先级消息必达。在聊天室内消息并发量过大的情况下，为保证用户实时互动的流畅性，即使是高优先级消息仍然会被丢弃。
 
 - **消息丢弃逻辑**：对于单个聊天室，每秒发送的消息数量默认超过 20 条，则会触发消息丢弃逻辑，即首先丢弃低优先级的消息，优先保留高优先级的消息。若带有优先级的消息超过了 20 条/秒，则按照消息发送时间顺序处理，丢弃后发送的消息。
 
@@ -402,7 +402,7 @@ public static void sendPrivateUrlImg(String toUserId,
 
 - 设置发送方收到内容审核替换后的内容
 
-默认情况下，内容审核替换后的内容仅下发至接收方。发送方如需同步接收替换内容，需 **联系环信商务开通权限**，并在初始化 SDK 时将 `EMOptions#setUseReplacedMessageContents` 参数设为 `true`。开启后，发送方将在消息被审核替换时收到新内容；若开关关闭（默认状态），则发送方仍保留原始发送内容，不会感知替换结果。
+默认情况下，内容审核替换后的内容仅下发至接收方。发送方如需同步接收替换内容，需 **联系商务经理开通权限**，并在初始化 SDK 时将 `EMOptions#setUseReplacedMessageContents` 参数设为 `true`。开启后，发送方将在消息被审核替换时收到新内容；若开关关闭（默认状态），则发送方仍保留原始发送内容，不会感知替换结果。
 
 ### 消息大小和存储限制
 
@@ -410,7 +410,7 @@ public static void sendPrivateUrlImg(String toUserId,
 
 ### 发消息时设置回调路由
 
-回调路由允许你在同一个 App Key 下，将不同消息按回调环境维度分别投递到不同的回调地址。发送消息时，你可以在消息中携带回调环境字段（如 `dev`、`test`、`prod`），环信服务器收到消息后，根据该字段匹配控制台中配置的 [回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
+回调路由允许你在同一个 App Key 下，将不同消息按回调环境维度分别投递到不同的回调地址。发送消息时，你可以在消息中携带回调环境字段（如 `dev`、`test`、`prod`），IM 服务器收到消息后，根据该字段匹配控制台中配置的 [回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
 
 :::tip
 目前，该功能仅面向国内 1 区和国内 2 区开放。
@@ -436,7 +436,7 @@ public static void sendPrivateUrlImg(String toUserId,
 
 1. 在控制台为发送前回调或发送后回调 [配置回调路由](/product/console/basic_webhook.html#配置消息回调规则)。
 2. 客户端发送消息时，设置回调环境值。
-3. 环信服务器收到消息后，根据消息中的回调环境值匹配当前阶段的回调地址。
+3. IM 服务器收到消息后，根据消息中的回调环境值匹配当前阶段的回调地址。
 4. 命中有效路由后，服务器将回调请求发送到对应地址。
 
 **示例代码**

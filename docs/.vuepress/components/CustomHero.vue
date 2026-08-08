@@ -2,7 +2,7 @@
   <div class="hero-section">
     <div class="hero-content">
       <div class="hero-info">
-        <div class="hero-title">环信 IM 开发文档</div>
+        <div class="hero-title">即时通讯 IM 开发文档</div>
         <div class="hero-desc">
           提供完整 API 参考、多端 SDK 示例与最佳实践，快速集成消息、群组、聊天室、音视频等核心功能，助您轻松构建稳定可靠的 IM 应用。
         </div>

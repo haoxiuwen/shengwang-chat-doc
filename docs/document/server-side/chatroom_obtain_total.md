@@ -20,7 +20,7 @@ GET https://{host}/app-id/{app_id}/chatrooms?limit={N}&cursor={cursor}
 | `cursor` | String | 否       | 数据查询的起始位置。该参数仅在分页获取时为必需。   |
 
 :::tip
-若请求中均未设置 `limit` 和 `cursor`，环信服务器返回聊天室列表的第一页中前 10 个聊天室。
+若请求中均未设置 `limit` 和 `cursor`，IM 服务器返回聊天室列表的第一页中前 10 个聊天室。
 :::
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -58,7 +58,7 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatrooms?limit=10' \
 | 字段                      | 类型   | 描述                                                      |
 | :------------------------ | :----- | :-------------------------------------------------------- |
 | `data`                 | JSON | 实际获取的数据详情。 |
-| - `id`                 | String | 聊天室 ID，聊天室唯一标识，由环信即时通讯 IM 服务器生成。 |
+| - `id`                 | String | 聊天室 ID，聊天室唯一标识，由即时通讯 IM 服务器生成。 |
 | - `name`               | String | 聊天室名称。                                              |
 | - `owner`              | String | 聊天室创建者的用户 ID。例如：{"owner": "user1"}。         |
 | - `affiliations_count` | Int    | 聊天室现有成员总数（包含聊天室创建者）。                  |

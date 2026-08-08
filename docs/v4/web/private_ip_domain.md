@@ -7,7 +7,7 @@
 在 `src/IM/config/index.js` 文件中，修改环境配置：
 
 ```javascript
-//环信appId默认配置项
+//appId默认配置项
 export const DEFAULT_EASEMOB_appId = 'your app ID';// 私有化的 App ID
 export const DEFAULT_EASEMOB_SOCKET_URL = 'http://im-api-v2.easemob.com/ws';//私有化的 WebSocket 地址
 export const DEFAULT_EASEMOB_REST_URL = 'ws://a1.easemob.com';//私有化的 RESTful 服务器地址

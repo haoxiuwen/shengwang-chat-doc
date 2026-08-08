@@ -1,6 +1,6 @@
 # 在即时通讯 IM 中集成 VIVO 推送
 
-环信即时通讯 IM SDK 中已经集成了 VIVO 推送（基于 `vivo_push_v4.0.4.0_504.aar`）相关逻辑，你还需要完成以下步骤。
+即时通讯 IM SDK 中已经集成了 VIVO 推送（基于 `vivo_push_v4.0.4.0_504.aar`）相关逻辑，你还需要完成以下步骤。
 
 ## 步骤一 在 VIVO 开发者后台创建应用
 
@@ -34,7 +34,7 @@
  
 在 VIVO 推送官网下载推送 SDK 包，将 `jar` 包放到 libs 目录下并 sync 。
 
-此外，也可以直接使用环信 Android IM Demo 中集成的 VIVO 推送的 `jar` 包。
+此外，也可以直接使用 Android IM Demo 中集成的 VIVO 推送的 `jar` 包。
 
 2. 配置 `AndroidManifest.xml` 。
 

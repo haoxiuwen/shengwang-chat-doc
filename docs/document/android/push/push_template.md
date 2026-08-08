@@ -66,7 +66,7 @@
       "ext":{
           "em_push_template":{
               "title_args":[
-                  "环信"
+                  "声网"
               ],
               "content_args":[
                   "欢迎使用im-push",
@@ -76,7 +76,7 @@
       }
   }
   
-  # title: {0} = "环信"
+  # title: {0} = "声网"
   # content: {0} = "欢迎使用im-push" {1} = "加油"
   ```
 

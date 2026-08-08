@@ -1,6 +1,6 @@
 # 管理用户属性
 
-环信即时通讯 IM Web SDK 支持管理用户属性。
+即时通讯 IM Web SDK 支持管理用户属性。
 
 用户属性指实时消息互动用户的信息，如用户昵称、头像、邮箱、电话、性别、签名、生日等。例如，在招聘场景下，利用用户属性功能可以存储性别、邮箱、用户类型（面试者）、职位类型（Web 研发）等。
 
@@ -16,7 +16,7 @@
 
 - 完成 SDK 初始化，详见 [快速开始](quickstart.html)。
 - SDK 初始化时，已注册 `UserInfoManager`、`ContactManager` 和 `ChatManager`。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 使用限制
 

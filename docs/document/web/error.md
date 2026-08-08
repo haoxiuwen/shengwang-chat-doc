@@ -1,6 +1,6 @@
 # 错误码
 
-本文介绍环信即时通讯 IM Web SDK 中接口调用失败时可能返回的错误码。业务侧可根据错误对象中的 `code`、`message`，以及 `details` 中的服务端信息判断具体失败原因。
+本文介绍即时通讯 IM Web SDK 中接口调用失败时可能返回的错误码。业务侧可根据错误对象中的 `code`、`message`，以及 `details` 中的服务端信息判断具体失败原因。
 
 对于大多数 API，调用失败时 SDK 会抛出错误对象。建议在 `try...catch` 中优先根据 `error.code` 和 `error.message` 处理；若错误对象中包含 `details.serverCode` 或 `details.canonicalCode`，可用于排障。
 

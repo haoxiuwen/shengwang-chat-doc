@@ -4,7 +4,7 @@
 
 ## 介绍
 
-PHP SDK 是对环信 IM [REST API](overview.html) 的封装，旨在节省服务器端开发者对接环信 API 的时间，只需要配置自己的 App Key 相关信息即可使用。
+PHP SDK 是对即时通讯 IM [REST API](overview.html) 的封装，旨在节省服务器端开发者对接 IM API 的时间，只需要配置自己的 App Key 相关信息即可使用。
 
 ## 功能
 
@@ -31,11 +31,11 @@ https://github.com/easemob/im-php-server-sdk/tree/1.1.0
 
 ## 准备
 
-使用 PHP SDK 之前，需准备环信 App Key、Rest Api 服务器域名、 Client ID 和 Client Secret。
+使用 PHP SDK 之前，需准备 App Key、Rest Api 服务器域名、 Client ID 和 Client Secret。
 
-如果你有环信管理后台账号并创建过应用，请先登录环信管理后台，点击 [这里](https://console.easemob.com/user/login)，然后在 **应用列表** 中点击 **管理** 即可获取 appkey、Client ID 和 ClientSecret。在左侧导航栏选择 **即时通讯** > **服务概览**。在 **服务概览** 页面的 **域名配置** 区域中查看 **Rest api** 的服务器域名。
+如果你有环信控制台账号并创建过应用，请先登录环信控制台，点击 [这里](https://console.easemob.com/user/login)，然后在 **应用列表** 中点击 **管理** 即可获取 appkey、Client ID 和 ClientSecret。在左侧导航栏选择 **即时通讯** > **服务概览**。在 **服务概览** 页面的 **域名配置** 区域中查看 **Rest api** 的服务器域名。
 
-如果你没有环信管理后台账号，请先注册账号，点击 [这里](https://console.easemob.com/user/register)，注册成功后请登录，然后点击 **添加应用**，添加成功后点击 **管理** 即可获取 appkey、Client ID 和 ClientSecret。在左侧导航栏选择 **即时通讯** > **服务概览**。在 **服务概览** 页面的 **域名配置** 区域中查看 **Rest api** 的服务器域名。
+如果你没有环信控制台账号，请先注册账号，点击 [这里](https://console.easemob.com/user/register)，注册成功后请登录，然后点击 **添加应用**，添加成功后点击 **管理** 即可获取 appkey、Client ID 和 ClientSecret。在左侧导航栏选择 **即时通讯** > **服务概览**。在 **服务概览** 页面的 **域名配置** 区域中查看 **Rest api** 的服务器域名。
 
 ## 使用
 

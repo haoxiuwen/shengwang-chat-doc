@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-在群组或聊天室中的成员被加入或移出黑名单时，环信服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则)向你的 App Server 发送回调请求，App Server 可通过该回调查看加入/移出的成员，进行数据同步。
+在群组或聊天室中的成员被加入或移出黑名单时，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则)向你的 App Server 发送回调请求，App Server 可通过该回调查看加入/移出的成员，进行数据同步。
 
 ## 前提条件
 

@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-即时通讯 IM 通过第三方离线推送服务发送了离线推送通知后，环信服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看推送通知的相关信息以及推送是否成功，进行数据同步。
+即时通讯 IM 通过第三方离线推送服务发送了离线推送通知后，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看推送通知的相关信息以及推送是否成功，进行数据同步。
 
 ## 前提条件
 

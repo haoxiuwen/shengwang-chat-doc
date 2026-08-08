@@ -14,7 +14,7 @@
 
 发送 app 全局广播消息功能的开通取决于即时通讯 IM 的套餐版本：
 
-- **专业版**：此功能默认关闭，**若要使用，需联系环信商务开通**。
+- **专业版**：此功能默认关闭，**若要使用，需联系商务经理开通**。
 - **旗舰版**：此功能默认开启。
 
 开通后，你可以 [向 app 所有用户发送广播消息](broadcast_to_all_users.html)、向 app 在线用户发送广播消息。
@@ -265,7 +265,7 @@ curl -X POST 'https://XXXX/app-id/{app_id}/messages/users/broadcast' \
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
+| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |

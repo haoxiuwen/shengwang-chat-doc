@@ -155,7 +155,7 @@ curl -L 'https://XXXX/app-id/{app_id}/stream_message/chatgroup' \
 | `uri`             | String | 请求 URL。                                             |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                      |
 | `organization`    | String | 组织唯一标识，与请求参数 `org_name` 一致，由环信分配给每个组织。 |
-| `application`     | String | 应用在环信系统中的唯一标识，由系统自动生成，开发者无需处理。 |
+| `application`     | String | 应用在系统中的唯一标识，由系统自动生成，开发者无需处理。 |
 | `action`          | String | 请求对应的 HTTP 方法。                                       |
 | `duration`        | Int    | 请求从发起到响应的总耗时，单位为毫秒。                         |
 | `applicationName` | String | 应用名称，即环信控制台中创建应用时填写的名称，与请求参数 `app_name` 一致。 |

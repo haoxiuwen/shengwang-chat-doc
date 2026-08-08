@@ -44,7 +44,7 @@
 
 开始前，请确保满足以下要求：
 
-- 已经集成和初始化环信 IM SDK，并实现了注册账号和登录功能。详情请参见 [快速开始](quickstart.html)。
+- 已经集成和初始化即时通讯 IM SDK，并实现了注册账号和登录功能。详情请参见 [快速开始](quickstart.html)。
 - 了解 [使用限制](/product/limitation.html) 中的 API 调用频率限制。
 - 要使用群消息已读回执功能，需在 [环信控制台开通](/product/console/basic_message.html#群聊消息已读回执)，具体费用详见 [计费策略](/product/pricing_policy.html#增值服务费用)。
 

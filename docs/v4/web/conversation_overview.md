@@ -26,7 +26,7 @@
 
 ## 会话管理
 
-环信即时通讯 IM SDK 提供会话相关 API 进行会话和消息管理：
+即时通讯 IM SDK 提供会话相关 API 进行会话和消息管理：
 
 - 会话管理：[获取会话列表](conversation_list.html#从服务器分页获取会话列表)、[会话已读回执](conversation_receipt.html)、[会话未读数管理](conversation_receipt.html#会话已读回执和消息未读数)、[置顶会话](conversation_pin.html)、[添加会话标记](conversation_mark.html)、[删除会话](conversation_delete.html)。
 
@@ -34,7 +34,7 @@
 
 ## 会话 API
 
-环信即时通讯 IM 提供如下会话方法：
+即时通讯 IM 提供如下会话方法：
 
 | 方法  | 描述         |
 | :--------- | :------- | 

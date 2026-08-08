@@ -20,7 +20,7 @@
 
 1. **用户 ID + token** 是更加安全的登录方式。
 
-测试环境下，你在 [环信控制台](https://console.easemob.com/user/login) 创建用户后，环信服务器会自动为这些用户分配用户 Token，详见 [查看用户 Token](/product/console/operation_user.html#查看用户-token)。
+测试环境下，你在 [环信控制台](https://console.easemob.com/user/login) 创建用户后，IM 服务器会自动为这些用户分配用户 Token，详见 [查看用户 Token](/product/console/operation_user.html#查看用户-token)。
 
 在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [获取 App Token API](/document/server-side/easemob_app_token.html) 和 [获取用户 Token API](/document/server-side/easemob_user_token.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
@@ -121,7 +121,7 @@ SDKClient.Instance.Logout(false,
 
 ## 多设备登录
 
-除了单端单设备登录，环信即时通讯 IM 支持同一账号在多端的多个设备上登录。多设备登录时，若同端设备数量超过限制，新登录的设备会将之前登录的设备踢下线。
+除了单端单设备登录，即时通讯 IM 支持同一账号在多端的多个设备上登录。多设备登录时，若同端设备数量超过限制，新登录的设备会将之前登录的设备踢下线。
 
 关于多设备登录场景中的设备数量限制、互踢策略以及信息同步，详见[多设备登录文档](multi_device.html)。
 

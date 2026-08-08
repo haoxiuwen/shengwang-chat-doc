@@ -7,14 +7,14 @@
 
 |  文本审核类型     | 审核对象| 使用方式 |  服务开通 |
 | :-------------- | :----- | :------- | :----------------------------------------------------------- |
-| 主动文本审核 REST API  | 业务服务器传入的文本内容。   | 调用文本审核 API，业务服务器传入需审核的文本内容，环信服务器进行审核，返回审核结果。| 1. 在环信控制台 [开通文本审核服务](/value-added/moderation/moderation_enable.html)。<br/> 2. 联系环信商务开通该 API 的使用。 |                                                          |
+| 主动文本审核 REST API  | 业务服务器传入的文本内容。   | 调用文本审核 API，业务服务器传入需审核的文本内容，IM 服务器进行审核，返回审核结果。| 1. 在环信控制台 [开通文本审核服务](/value-added/moderation/moderation_enable.html)。<br/> 2. 联系商务经理开通该 API 的使用。 |                                                          |
 | 文本审核服务            | 即时通讯 IM 发送的文本类型消息。   | 文本审核服务开箱即用。你基于业务的审核规则，配置单聊、群组或聊天室会话的 [文本审核规则](/value-added/moderation/moderation_rule_config.html#添加文本审核规则)。  | 在环信控制台 [开通文本审核服务](/value-added/moderation/moderation_enable.html)。                                                         |
 
 ## 开通服务
 
 使用该 API 前，你需要：
  - 在环信控制台 [开通文本审核服务](/value-added/moderation/moderation_enable.html)。
- - **联系环信商务** 开通该 API 的使用。
+ - **联系商务经理** 开通该 API 的使用。
 
 ## 调用频率上限
 
@@ -103,5 +103,5 @@ curl -X POST 'https://XXXX/XXX/XXX/moderation/txt/check' \
 | 400         | Bad request  | 4000303  | orgName not found                | `org_name` 不正确。                      | 请传入正确的 `org_name`。   |
 | 400         | Bad request  | 4000303  | application not found            | `app_name` 不正确。                        | 请传入正确的 `app_name`。  |
 | 400         | Bad request  | 4000404  | text moderation not open         | 文本审核未开通。                        | 调用该接口前需在 [环信控制台](https://console.easemob.com/user/login)[开通文本审核服务](/value-added/moderation/moderation_enable.html#开通流程)。|
-| 400         | Bad request  | 4000303  | text rule moderation not exist   | 该接口对应的审核规则不存在，请联系环信商务。开通该接口服务后，[环信控制台](https://console.easemob.com/user/login) 会单独创建一条规则，用于该接口进行内容审核。请勿删除该规则。 | 联系环信商务在 [环信控制台](https://console.easemob.com/user/login) 创建该接口对应的文本审核规则。   |
+| 400         | Bad request  | 4000303  | text rule moderation not exist   | 该接口对应的审核规则不存在，请联系商务经理。开通该接口服务后，[环信控制台](https://console.easemob.com/user/login) 会单独创建一条规则，用于该接口进行内容审核。请勿删除该规则。 | 联系商务经理在 [环信控制台](https://console.easemob.com/user/login) 创建该接口对应的文本审核规则。   |
 | 400         | Bad request  | 4000404  | text rule moderation not active  | 开通该接口服务后，[环信控制台](https://console.easemob.com/user/login) 会单独创建一条规则，用于该接口进行内容审核。使用该接口前，需要开启该条规则，若关闭规则会上报该错误。        | 调用接口前，你应该在 [环信控制台](https://console.easemob.com/user/login) [开启该接口对应的文本审核规则](/value-added/moderation/moderation_rule_config.html)。   |

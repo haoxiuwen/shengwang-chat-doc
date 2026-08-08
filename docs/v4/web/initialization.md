@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-有效的环信即时通讯 IM 开发者账号和 App key，详见 [环信控制台的相关文档](/product/console/app_create.html)。
+有效的即时通讯 IM 开发者账号和 App key，详见 [环信控制台的相关文档](/product/console/app_create.html)。
 
 ## 初始化 SDK
 
@@ -18,11 +18,11 @@ const conn = new WebIM.connection({
 ```
 
 :::tip
-1. `WebIM` 表示环信即时通信 IM SDK。
-2. 对于特性或接口示例代码，`conn.方法名()` 中的 `conn` 为环信即时通信 IM SDK 实例。
+1. `WebIM` 表示即时通讯 IM SDK。
+2. 对于特性或接口示例代码，`conn.方法名()` 中的 `conn` 为即时通讯 IM SDK 实例。
 :::
 
-下表明确初始化 SDK 时的一些参数。全部参数详见 [API 参考](https://doc.easemob.com/apidoc/web/modules/Connection.html#ConnectionParameters)。
+下表明确初始化 SDK 时的一些参数。
 
 | 属性       | 类型 | 是否必需   | 描述            |
 | :----------------- | :---------------- | :------ | :-------- |

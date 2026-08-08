@@ -1,6 +1,6 @@
 # 导入 SDK
 
-本文介绍如何将环信即时通讯 IM SDK 集成到你的 Web 项目。
+本文介绍如何将即时通讯 IM SDK 集成到你的 Web 项目。
 
 ## 开发环境要求
 
@@ -152,7 +152,7 @@ import WebIM from "easemob-websdk";
 ```
 
 :::tip
-`WebIM` 表示环信即时通信 IM SDK。
+`WebIM` 表示即时通讯 IM SDK。
 :::
 
 ### 引入 TypeScript SDK
@@ -164,7 +164,7 @@ import WebIM, { EasemobChat } from "easemob-websdk";
 ```
 
 :::tip
-`WebIM` 表示环信即时通信 IM SDK。
+`WebIM` 表示即时通讯 IM SDK。
 :::
 
 ### 从官网获取并导入 SDK

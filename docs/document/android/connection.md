@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-应用客户端成功连接到环信服务器后，才能使用即时通讯 SDK 的消息收发及需要访问服务器的相关功能。
+应用客户端成功连接到IM 服务器后，才能使用即时通讯 SDK 的消息收发及需要访问服务器的相关功能。
 
 调用 `EMClient#loginWithToken` 登录后，SDK 会建立并维护长连接。连接运行期间，SDK 通过 `EMConnectionListener` 通知应用连接状态、异常登出、Token 生命周期、本地数据库打开、离线消息同步和登录后自动数据同步等状态变化。
 
@@ -14,7 +14,7 @@
 
 - 已完成 SDK 初始化，详见 [快速开始](quickstart.html)。
 - 已获取有效的用户 ID 和用户 Token。
-- 已了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 已了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 连接生命周期
 

@@ -6,7 +6,7 @@
 - 支持通过客户端和 RESTful API 发送图片、语音、视频、文件消息和合并消息时上传的附件（包括图片和视频的缩略图）。
 - 对于永久存储的消息附件，用户可以随时获取这些附件。
 - 关于消息附件存储时间限制，详见 [消息附件存储文档](/product/message_store.html#历史消息存储)。
-- 若使用该接口，需 **联系环信商务开通**。
+- 若使用该接口，需 **联系商务经理开通**。
 
 ## 调用频率上限
 
@@ -83,7 +83,7 @@ curl -X PUT "https://localhost/{org_name}/{app_name}/users/{username}/chatfiles/
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`                | String | 请求 URL。                |
 | `timestamp`          | Long   | HTTP 响应的 Unix 时间戳，单位为毫秒。       |
-| `organization`       | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。          |
+| `organization`       | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。          |
 | `application`        | String | 系统内为应用生成的唯一标识，开发者无需关心。          |
 | `action`             | String | 请求方法。                                   |
 | `duration`           | Long   | 从发送 HTTP 请求到响应的时长, 单位为毫秒。     |
@@ -97,7 +97,7 @@ curl -X PUT "https://localhost/{org_name}/{app_name}/users/{username}/chatfiles/
 
 | HTTP 状态码        | 错误类型 | 错误提示          | 可能原因 | 处理建议 |
 | :----------- | :--- | :------------- | :----------- | :----------- |
-| 403                 | forbidden_op        |                 | 设置消息附件存储的功能未开通。          | 联系环信商务开通该功能。          |
+| 403                 | forbidden_op        |                 | 设置消息附件存储的功能未开通。          | 联系商务经理开通该功能。          |
 | 400                 | illegal_argument   | chatfile_ids size is too large    | 请求中传入的消息附件的文件 ID `chatfile_ids` 超过了上限 100.  | 消息附件的文件 ID 最多可传 100 个。|
 | 400               | illegal_argument   |  lifetime must be either 'forever' or 'default' or 'refresh'。     | 消息附件保存时间 `lifetime` 传入了 `forever`、`default` 或 `refresh` 之外的值。       | 消息附件保存时间 `lifetime` 只能设置为 `forever`、`default` 或 `refresh`，不能传入其他值。          |
 | 401     | unauthorized | Unable to authenticate (OAuth) | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。 |

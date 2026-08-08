@@ -1,6 +1,6 @@
 # 消息格式描述 
 
-目前，环信即时通讯 IM 支持的消息类型 `type` 如下表所示：
+目前，即时通讯 IM 支持的消息类型 `type` 如下表所示：
 
 | 参数   | 类型   |
 | :----- | :----- |
@@ -75,7 +75,7 @@
 
 对于图片消息，通过 REST API 发消息时建议传入 `filename` 参数，否则客户端收到图片消息时无法显示文件名称，而且需保证通过 `url` 参数能下载到对应图片。
 
-若上传图片时，设置了文件访问限制（`restrict-access`），则图片上传后，从[文件上传](/document/server-side/message_upload_file.html)的响应 body 中获取的 `share-secret`，发送图片消息时传入该参数。上传原图，环信服务器会自动为图片生成缩略图。
+若上传图片时，设置了文件访问限制（`restrict-access`），则图片上传后，从[文件上传](/document/server-side/message_upload_file.html)的响应 body 中获取的 `share-secret`，发送图片消息时传入该参数。上传原图，IM 服务器会自动为图片生成缩略图。
 
 图片消息的 body 包含如下字段：
 
@@ -130,14 +130,14 @@
 
 对于视频消息，通过 REST API 发消息时建议传入 `filename` 参数，否则客户端收到视频消息时无法显示文件名称，而且需保证通过 `url` 参数能下载到对应视频。
 
-若上传视频文件时，设置了文件访问限制（`restrict-access`），则文件上传后，从[文件上传](/document/server-side/message_upload_file.html)的响应 body 中获取的 `share-secret`，发送视频消息时传入该参数。环信服务器不会自动为视频文件生成缩略图。若需要视频缩略图，需先调用[文件上传](/document/server-side/message_upload_file.html)接口上传缩略图。然后，再次调用文件上传接口上传视频源文件。
+若上传视频文件时，设置了文件访问限制（`restrict-access`），则文件上传后，从[文件上传](/document/server-side/message_upload_file.html)的响应 body 中获取的 `share-secret`，发送视频消息时传入该参数。IM 服务器不会自动为视频文件生成缩略图。若需要视频缩略图，需先调用[文件上传](/document/server-side/message_upload_file.html)接口上传缩略图。然后，再次调用文件上传接口上传视频源文件。
 
 视频消息的 body 包含如下字段：
 
 | 参数           | 类型   | 描述    |
 | :------------- | :----- | :--------- |
 | `filename`     | String | 视频文件名称，包含文件后缀名。  |
-| `thumb`        | String | 视频缩略图的 URL 地址，格式为 https://{host}/{org_name}/{app_name}/chatfiles/{file_uuid}。其中，`file_uuid` 为视频缩略图上传后，环信服务器返回的缩略图的 UUID。 |
+| `thumb`        | String | 视频缩略图的 URL 地址，格式为 https://{host}/{org_name}/{app_name}/chatfiles/{file_uuid}。其中，`file_uuid` 为视频缩略图上传后，IM 服务器返回的缩略图的 UUID。 |
 | `length`       | Int    | 视频时长。单位为秒。   |
 | `secret`       | String | 视频文件的访问密钥，即成功上传视频文件后，从[文件上传](/document/server-side/message_upload_file.html)的响应 body 中获取的 `share-secret`。如果视频文件上传时设置了文件访问限制（`restrict-access`），则发送消息时该字段为必填。  |
 | `file_length`  | Long   | 否      | 视频文件大小，单位为字节。  |
@@ -225,7 +225,7 @@
 
 ## 离线推送的消息扩展字段
 
-环信即时通讯 IM 支持 APNs 推送和 Android 厂商离线推送，包括华为、荣耀、FCM、小米、魅族、OPPO 和 vivo。使用离线推送时，你可以通过消息扩展字段实现推送相应功能，例如，设置推送模板中的推送标题和内容、设置仅接收提及（`@`）某些用户的推送通知等。
+即时通讯 IM 支持 APNs 推送和 Android 厂商离线推送，包括华为、荣耀、FCM、小米、魅族、OPPO 和 vivo。使用离线推送时，你可以通过消息扩展字段实现推送相应功能，例如，设置推送模板中的推送标题和内容、设置仅接收提及（`@`）某些用户的推送通知等。
 
 ### 推送扩展字段
 

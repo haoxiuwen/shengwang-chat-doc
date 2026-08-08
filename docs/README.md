@@ -23,7 +23,7 @@ products:
     target: '_blank'
 starter:
   - title: "入门指引"
-    desc: "了解接入环信即时通讯 IM SDK、单群聊 UIKit 和 CallKit 的整个流程。"
+    desc: "了解接入即时通讯 IM SDK、单群聊 UIKit 和 CallKit 的整个流程。"
     platform:
       - icon: /guide/sdk.svg
         link: /document/android/beginner_guide.html
@@ -35,7 +35,7 @@ starter:
         link: /callkit/android/beginner_guide.html
         text: CallKit
   - title: "使用 MCP 集成"
-    desc: "环信 MCP Server 基于 MCP（Model Context Protocol）实现，为支持 MCP 的 AI 编程工具提供环信 IM 相关文档查询和源码检索能力。"
+    desc: "MCP Server 基于 MCP（Model Context Protocol）实现，为支持 MCP 的 AI 编程工具提供即时通讯 IM 相关文档查询和源码检索能力。"
     platform:
       - icon: /guide/sdk.svg
         link: /document/android/easemob_mcp_server.html
@@ -245,7 +245,7 @@ projects:
                 text: Flutter
                 link: /document/flutter/message_stream_receive.html    
           - text: 获取消息
-            desc: 从环信消息服务器获取漫游消息，或者从本地获取消息。
+            desc: 从消息服务器获取漫游消息，或者从本地获取消息。
             sdks:
               - icon: /sdk/android.svg
                 text: Android

@@ -13,7 +13,7 @@
 开始前，请确保满足以下条件：
 
 - 已完成 SDK 初始化，并已 [打开当前用户的本地数据库](login.html#登录完成前使用本地数据库)，详见 [快速开始](quickstart.html)。本地消息搜索不要求客户端保持服务器连接。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 根据关键字搜索会话中的用户发送的消息  
 

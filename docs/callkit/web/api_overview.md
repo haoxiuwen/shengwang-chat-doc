@@ -11,7 +11,7 @@
 | `className`       | `string`              | -             | 自定义 CSS 类名。                                      |
 | `style`           | `React.CSSProperties` | -             | 自定义内联样式。                                       |
 | `prefix`          | `string`              | `cui`         | CSS 类名前缀。                                         |
-| `chatClient`      | `ChatSDK.Connection`  | -             | **必须**，环信 IM SDK 实例。                           |
+| `chatClient`      | `ChatSDK.Connection`  | -             | **必须**，即时通讯 IM SDK 实例。                           |
 | `layoutMode`      | `LayoutMode`          | `MULTI_PARTY` | 布局模式：`PREVIEW`、`ONE_TO_ONE` 和 `MULTI_PARTY`。 |
 | `maxVideos`       | `number`              | `16`          | 最大显示视频数量。                                    |
 | `aspectRatio`     | `number`              | `1`           | 视频窗口宽高比。                                       |
@@ -167,7 +167,7 @@ interface GroupInfo {
 | 通话错误类型 | 描述 |
 | :--------- | :----- |
 | `rtc`  | 音视频异常，详见 [声网 RTC 错误码](https://doc.shengwang.cn/doc/rtc/javascript/error-code)。 |
-| `chat`  | 即时通讯 IM 异常，详见 [环信即时通讯 IM 错误码](/document/web/error.html)。  |
+| `chat`  | 即时通讯 IM 异常，详见 [即时通讯 IM 错误码](/document/web/error.html)。  |
 | `callkit`  | `CallErrorCode` 类中包含三种错误类型：<br/> - `CALL_STATE_ERROR`：通话状态错误<br/> - `CALL_PARAM_ERROR`：通话参数错误<br/> - `CALL_SIGNALING_ERROR`：信令错误 |
 
 ## 通话结束原因  

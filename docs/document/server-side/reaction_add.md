@@ -94,7 +94,7 @@ curl -g -X POST 'https://XXXX/app-id/{app_id}/reaction/user/e1'    \
 | HTTP 状态码 | 错误类型    | 错误提示      | 可能原因      | 处理建议        |
 |:---------|:--------------------|:-----------|:----------|:------------|
 | 400      | Bad Request         | this appKey is not open reaction service!   | Reaction 功能未开通。 | 请在环信控制台开通 Reaction 服务。 |
-| 400      | Bad Request         | The quantity has exceeded the limit!  | 一条消息上的 Reaction 数量达到上限。| 每条消息默认可添加 20 个 Reaction。若需提升该上限，需联系环信商务。|
+| 400      | Bad Request         | The quantity has exceeded the limit!  | 一条消息上的 Reaction 数量达到上限。| 每条消息默认可添加 20 个 Reaction。若需提升该上限，需联系商务经理。|
 | 400      | Bad Request                | the user operation is illegal!                      | 不是会话双方。 | 只有会话双方才能操作 Reaction。       |
 | 400      | Bad Request                | the user is already operation this message                      | 同一个用户重复添加相同的 Reaction。 | 同一用户不能重复添加相同的 Reaction。     |
 

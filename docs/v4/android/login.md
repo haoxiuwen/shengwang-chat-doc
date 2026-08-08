@@ -27,7 +27,7 @@ EMClient.getInstance().createAccount(mAccount, mPassword);// 同步方法。
 
 1. **用户 ID + token** 是更加安全的登录方式。
 
-测试环境下，你在[环信控制台](https://console.easemob.com/user/login)创建用户后，环信服务器会自动为这些用户分配用户 Token，详见[查看用户 Token](/product/console/operation_user.html#查看用户-token)。
+测试环境下，你在[环信控制台](https://console.easemob.com/user/login)创建用户后，IM 服务器会自动为这些用户分配用户 Token，详见[查看用户 Token](/product/console/operation_user.html#查看用户-token)。
 
 在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [获取 App Token API](/document/server-side/easemob_app_token.html) 和 [获取用户 Token API](/document/server-side/easemob_user_token.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。SDK 会在 Token 过期时或者其有效期达到 80%（4.15.0 之前为 50%）时分别回调 `onTokenExpired` 和 `onTokenWillExpire` 通知用户更新 Token。你可以采取各种机制更新 Token，例如，每次登录时更新 token。
 
@@ -70,7 +70,7 @@ EMClient.getInstance().login(mAccount, mPassword, new EMCallBack() {
 
 即时通讯 IM 默认自动登录，即 `EMOptions#setAutoLogin` 选项默认为 `true`。自动登录模式下，首次登录成功之后，后续初始化 SDK 时均会自动登录。
 
-自动登录期限默认为 30 天，即设置自动登录后，用户 30 天内可自动登录。若调整改期限，可联系环信商务。
+自动登录期限默认为 30 天，即设置自动登录后，用户 30 天内可自动登录。若调整改期限，可联系商务经理。
 
 不过，自动登录还取决于你设置的用户 token 或密码有效期，例如，用户 token 有效期为 24 小时，则用户在 24 小时后，需获取 token 重新登录。
 
@@ -123,7 +123,7 @@ EMClient.getInstance().logout(true, new EMCallBack() {
 
 ## 多设备登录
 
-除了单端单设备登录，环信即时通讯 IM 支持同一账号在多端的多个设备上登录。多设备登录时，若同端设备数量超过限制，新登录的设备会将之前登录的设备踢下线。
+除了单端单设备登录，即时通讯 IM 支持同一账号在多端的多个设备上登录。多设备登录时，若同端设备数量超过限制，新登录的设备会将之前登录的设备踢下线。
 
 关于多设备登录场景中的设备数量限制、互踢策略以及信息同步，详见[多设备登录文档](multi_device.html)。
 

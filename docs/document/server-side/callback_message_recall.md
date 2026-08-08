@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-成功撤回消息后，环信服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看撤回的消息，进行数据同步。
+成功撤回消息后，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看撤回的消息，进行数据同步。
 
 ## 前提条件
 
@@ -46,7 +46,7 @@
 | :---------------- | :------- | :----------------------------------------------------------- |
 | `callId`          | String   | `callId` 为每个回调请求的唯一标识，格式为 “App Key_该撤回事件消息的 ID”。 |
 | `eventType`       | String   | `chat` 上行消息、`chat_offline` 离线消息。                   |
-| `timestamp`       | long     | 环信 IM 服务器接收到此消息的 Unix 时间戳，单位为 ms。        |
+| `timestamp`       | long     | 即时通讯 IM 服务器接收到此消息的 Unix 时间戳，单位为 ms。        |
 | `chat_type`       | String   | `recall`，表示消息撤回。                                     |
 | `group_id`        | String   | 该参数对于群组聊天或聊天室有效，表示回调消息所在的群组或聊天室。 |
 | `from`            | String   | 消息的发送方。                                               |

@@ -4,11 +4,11 @@
 
 消息话题是群组成员的子集，是支持多人沟通的即时通讯系统。使用消息话题功能前，你需要联系商务开通。
 
-本文介绍如何使用环信即时通讯 IM Android SDK 在实时互动 app 中创建和管理消息话题，并实现消息话题相关功能。如需查看消息相关内容，参见 [消息话题中的消息管理](thread_message.html)。
+本文介绍如何使用即时通讯 IM Android SDK 在实时互动 app 中创建和管理消息话题，并实现消息话题相关功能。如需查看消息相关内容，参见 [消息话题中的消息管理](thread_message.html)。
 
 ## 技术原理
 
-环信即时通讯 IM Android SDK 提供 [EMChatThreadManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_thread_manager.html)、[EMChatThread](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_thread.html)、和 [EMChatThreadChangeListener](https://sdkdocs.easemob.com/apidoc/android/chat3.0/interfacecom_1_1hyphenate_1_1_e_m_chat_thread_change_listener.html) 类，用于管理消息话题，支持你通过调用 API 在项目中实现如下功能：
+即时通讯 IM Android SDK 提供 [EMChatThreadManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_thread_manager.html)、[EMChatThread](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_thread.html)、和 [EMChatThreadChangeListener](https://sdkdocs.easemob.com/apidoc/android/chat3.0/interfacecom_1_1hyphenate_1_1_e_m_chat_thread_change_listener.html) 类，用于管理消息话题，支持你通过调用 API 在项目中实现如下功能：
 
 - 创建、解散消息话题
 - 加入、退出消息话题
@@ -24,13 +24,13 @@
 开始前，请确保满足以下条件：
 
 - 完成 3.9.3 或以上版本 SDK 初始化，详见 [快速开始](quickstart.html)。
-- 了解环信即时通讯 IM API 的 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的 [使用限制](/product/limitation.html)。
 - 了解消息话题和消息话题成员数量限制，详见 [使用限制](/product/limitation.html)。
 - 已联系商务开通消息话题功能。
 
 ## 实现方法
 
-本节介绍如何使用环信即时通讯 IM Android SDK 提供的 API 实现上述功能。
+本节介绍如何使用即时通讯 IM Android SDK 提供的 API 实现上述功能。
 
 ### 创建消息话题
 

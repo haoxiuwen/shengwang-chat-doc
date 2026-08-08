@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-设置或更新群组/聊天室公告后，环信服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看公告信息，进行数据同步。
+设置或更新群组/聊天室公告后，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看公告信息，进行数据同步。
 
 ## 前提条件
 

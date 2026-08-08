@@ -85,7 +85,7 @@ curl -X GET 'https://XXXX/XXXX/XXXX/callbacks/storage/info' \
 | :--- | :--- | :--- |
 | `path` | String | 请求路径。 |
 | `uri` | String | 请求完整 URI。 |
-| `timestamp` | Long | 环信 IM 服务器接收到该请求时的 Unix 时间戳，单位为毫秒。 |
+| `timestamp` | Long | 即时通讯 IM 服务器接收到该请求时的 Unix 时间戳，单位为毫秒。 |
 | `organization` | String | 你在环信控制台注册的组织唯一标识，对应控制台中的 `org_name`。 |
 | `application` | String | 你在环信控制台注册的 App 唯一标识。 |
 | `action` | String | 请求方法。 |
@@ -155,8 +155,8 @@ curl -X POST 'https://XXXX/XXXX/XXXX/callbacks/storage/retry' \
 | :--- | :--- | :--- |
 | `path` | String | 请求路径。 |
 | `uri` | String | 请求完整 URI。 |
-| `timestamp` | Long | 环信 IM 服务器接收到该请求时的 Unix 时间戳，单位为毫秒。 |
-| `organization` | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 一致。 |
+| `timestamp` | Long | 即时通讯 IM 服务器接收到该请求时的 Unix 时间戳，单位为毫秒。 |
+| `organization` | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 一致。 |
 | `application` | String | 你在环信控制台注册的 App 唯一标识。 |
 | `action` | String | 请求方法。 |
 | `data` | String | 补发结果：`success` 表示请求成功，`failure` 表示请求失败。 |

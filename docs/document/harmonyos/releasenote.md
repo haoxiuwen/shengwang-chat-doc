@@ -212,7 +212,7 @@
 #### 新增特性
 
 - 新增 `ChatManager#deleteAllConversationsAndMessages` 方法，用于[清空当前用户的聊天记录](message_delete.html#清空聊天记录)，包括消息和会话，同时可以选择是否清除服务端的聊天记录。
-- 新增 `ChatClient#isConnected` 方法，用于检查 SDK 是否连接到环信服务器。自动登录的场景下，登录状态变为已登录时，可能 SDK 未成功连接至服务端，这种情况下与服务器交互的操作会失败，比如发消息。此时，可调用 `isConnected` 接口判断 SDK 与服务器的连接状态。
+- 新增 `ChatClient#isConnected` 方法，用于检查 SDK 是否连接到IM 服务器。自动登录的场景下，登录状态变为已登录时，可能 SDK 未成功连接至服务端，这种情况下与服务器交互的操作会失败，比如发消息。此时，可调用 `isConnected` 接口判断 SDK 与服务器的连接状态。
 
 #### 修复
 
@@ -249,7 +249,7 @@
 - 聊天室成员禁言回调：
   - 新增聊天室禁言回调 [ChatroomListener#onMuteMapAdded](room_manage.html#监听聊天室事件)，参数 Map 的 key 表示被禁言的用户 ID ，value 表示禁言到期时间戳；
   - 废弃原来的回调 `ChatroomListener#onMutelistAdded`。
-- 新增[拉取服务器漫游消息](message_retrieve.html#从服务器获取指定会话的消息)时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系环信商务开通。
+- 新增[拉取服务器漫游消息](message_retrieve.html#从服务器获取指定会话的消息)时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系商务经理开通。
 
 #### 优化
 
@@ -401,7 +401,7 @@
 
 #### 新增特性
 
-环信即时通讯 HarmonyOS SDK 支持单聊、群组聊天和聊天室聊天场景，实现了以下特性：
+即时通讯 HarmonyOS SDK 支持单聊、群组聊天和聊天室聊天场景，实现了以下特性：
 
 - 支持消息特性：
   - [发送消息](message_send.html)；

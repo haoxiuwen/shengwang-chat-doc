@@ -9,7 +9,7 @@
 
 ## 开通功能
 
-环信即时通讯 IM 支持设置用户在聊天室中的标签，并按标签用户禁言。要使用该 API，需联系环信商务开通。
+即时通讯 IM 支持设置用户在聊天室中的标签，并按标签用户禁言。要使用该 API，需联系商务经理开通。
 
 ## 调用频率上限
 
@@ -92,7 +92,7 @@ curl -X PUT 'https://XXXX/app-id/{app_id}/chatrooms/12XXXX11/tag/mute' \
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
 | `properties`      | JSON | 响应属性。                                                                     |
-| `organization`    | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
+| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [错误码](#错误码) 了解可能的原因。
@@ -105,7 +105,7 @@ curl -X PUT 'https://XXXX/app-id/{app_id}/chatrooms/12XXXX11/tag/mute' \
 | :---------- | :----------------- | :--------- | :------------------------------------ | :----------------------------------- |
 | 401         | unauthorized       | Unable to authenticate (OAuth) | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。                |
 | 404         | resource_not_found | grpID XX does not exist!       | 聊天室不存在。                        | 使用合法的聊天室 ID。                |
-| 403         | forbidden_op       | Group tag mute is disabled     | 聊天室标签禁言功能没有开通。          | 联系环信商务开通聊天室标签禁言功能。 |
+| 403         | forbidden_op       | Group tag mute is disabled     | 聊天室标签禁言功能没有开通。          | 联系商务经理开通聊天室标签禁言功能。 |
 | 404         | resource_not_found | group tag not found            | 聊天室标签不存在。                    | 先为用户设置聊天室标签再进行操作。   |
 | 403 | exceed_limit | tag length exceeds limit! | 标签名称长度超过限制。 | 控制标签名称长度。 |
 

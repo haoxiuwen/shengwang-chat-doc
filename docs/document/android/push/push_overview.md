@@ -12,7 +12,7 @@
 
 ### 前置配置要求
 
-除满足用户离线条件外，使用第三方离线推送服务还需在 [环信控制台](https://console.easemob.com/user/login) 完成推送证书信息的配置。以华为推送为例，需配置 **证书名称** 和 **推送密钥**，并调用客户端 SDK 提供的 API 向环信服务器上传 device token。
+除满足用户离线条件外，使用第三方离线推送服务还需在 [环信控制台](https://console.easemob.com/user/login) 完成推送证书信息的配置。以华为推送为例，需配置 **证书名称** 和 **推送密钥**，并调用客户端 SDK 提供的 API 向IM 服务器上传 device token。
 
 ### 不触发离线推送的场景
 
@@ -30,26 +30,26 @@
 1. 用户 B（消息接收者）检测设备支持的推送渠道，即应用已配置的第三方推送服务类型及其使用条件。
 2. 用户 B 通过已配置的第三方推送 SDK 向第三方推送服务器请求获取推送 token。
 3. 第三方推送服务器向用户 B 返回推送 token。
-4. 用户 B 向环信服务器上传推送证书名称及推送 token。
+4. 用户 B 向IM 服务器上传推送证书名称及推送 token。
 5. 用户 A 向用户 B 发送消息。
-6. 环信服务器检查用户 B 的在线状态。若用户 B 在线，服务器直接将消息投递给用户 B。
-7. 若用户 B 离线，环信服务器判断该用户设备所使用的推送服务类型。
-8. 环信服务器将消息转发至第三方推送服务器。
+6. IM 服务器检查用户 B 的在线状态。若用户 B 在线，服务器直接将消息投递给用户 B。
+7. 若用户 B 离线，IM 服务器判断该用户设备所使用的推送服务类型。
+8. IM 服务器将消息转发至第三方推送服务器。
 9. 第三方推送服务器将消息最终投递至用户 B 的设备。
 
 ## 推送证书与推送 Token
 
-**推送证书**：推送证书是环信服务器判断目标设备使用何种推送通道的唯一依据。在发送推送通知前，需在 [环信控制台](https://console.easemob.com/user/login) 为应用配置推送证书，填写证书名称（或 App Key），并确保该名称与 Android 终端设备上传的证书名称一致。此配置操作必须在登录环信 IM SDK 成功后执行。
+**推送证书**：推送证书是IM 服务器判断目标设备使用何种推送通道的唯一依据。在发送推送通知前，需在 [环信控制台](https://console.easemob.com/user/login) 为应用配置推送证书，填写证书名称（或 App Key），并确保该名称与 Android 终端设备上传的证书名称一致。此配置操作必须在登录即时通讯 IM SDK 成功后执行。
 
 **推送 Token（Device Token）**：推送 token 是第三方推送服务为应用实例生成的唯一标识。以 FCM 推送为例，应用初次启动时，FCM SDK 会为客户端应用实例生成一个注册令牌（registration token）。该 token 用于唯一标识每台设备上的每个应用，FCM 据此将消息准确投递至目标设备，设备再通知应用程序。你可通过调用 `FirebaseMessaging.getInstance().getToken()` 方法获取该 token。此外，若在退出即时通讯 IM 登录时选择不解绑 device token（调用 `logout` 方法时将 `unbindToken` 参数设为 `false`；设为 `true` 则表示解绑 token），用户在推送证书和 token 有效期内仍可收到离线推送通知。
 
-关于如何获取推送 Token 并上传至环信服务器的详细步骤，请参阅各推送服务的集成文档。例如，FCM 推送的相关说明请参考 [FCM 推送集成文档](/document/android/push/push_fcm.html#步骤四-fcm-推送集成)。
+关于如何获取推送 Token 并上传至IM 服务器的详细步骤，请参阅各推送服务的集成文档。例如，FCM 推送的相关说明请参考 [FCM 推送集成文档](/document/android/push/push_fcm.html#步骤四-fcm-推送集成)。
 
 ## 推送高级功能
 
 ### 功能开通
 
-[推送通知方式](push_notification_mode_dnd.html#推送通知方式)、[免打扰模式](push_notification_mode_dnd.html#免打扰模式) 和 [推送模板](push_template.html) 属于推送的高级功能。使用前，你需在 [环信控制台](https://console.easemob.com/user/login)免费开通相关服务。**激活后如需关闭推送高级功能，必须联系环信商务处理，因为该操作会删除高级功能相关的全部配置。**
+[推送通知方式](push_notification_mode_dnd.html#推送通知方式)、[免打扰模式](push_notification_mode_dnd.html#免打扰模式) 和 [推送模板](push_template.html) 属于推送的高级功能。使用前，你需在 [环信控制台](https://console.easemob.com/user/login)免费开通相关服务。**激活后如需关闭推送高级功能，必须联系商务经理处理，因为该操作会删除高级功能相关的全部配置。**
 
 开通步骤如下：
 
@@ -102,8 +102,8 @@
 
 ## 前提条件
 
-1. 已开通环信即时通讯服务，详见 [开启和配置即时通讯服务](/product/console/app_create.html)。
-2. 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+1. 已开通即时通讯服务，详见 [开启和配置即时通讯服务](/product/console/app_create.html)。
+2. 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 3. 若需使用推送模板，须先在 [环信控制台](https://console.easemob.com/user/login) 完成激活。
 4. 各推送服务的适用条件如下：
    - Google FCM：设备启用 Google Play 服务且可连接至 Google 服务器。
@@ -114,7 +114,7 @@
    - VIVO 推送：仅限 VIVO 设备。
    - 荣耀推送：仅限荣耀设备。
 
-SDK 内部将按上述顺序检测设备的推送支持情况。若未配置第三方推送或不满足使用条件，环信 IM SDK 会通过保活机制尽可能维持与环信服务器的长连接，确保消息的及时送达。
+SDK 内部将按上述顺序检测设备的推送支持情况。若未配置第三方推送或不满足使用条件，即时通讯 IM SDK 会通过保活机制尽可能维持与IM 服务器的长连接，确保消息的及时送达。
 
 **如你的应用有海外使用场景，建议开启 FCM 推送。由于各推送服务的适用条件不同，建议尽可能同时集成多家厂商推送服务。**
 

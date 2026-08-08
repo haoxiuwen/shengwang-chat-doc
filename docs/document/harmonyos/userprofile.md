@@ -12,7 +12,7 @@
 
 ## 技术原理
 
-环信即时通讯 IM HarmonyOS SDK 提供一个 `UserInfoManager` 类，支持获取、设置及修改用户属性信息，其中包含如下方法：
+即时通讯 IM HarmonyOS SDK 提供一个 `UserInfoManager` 类，支持获取、设置及修改用户属性信息，其中包含如下方法：
 
 - `updateUserInfo` 设置当前用户的所有属性或单个属性
 - `fetchUserInfoById` 获取指定一个或多个用户的全部用户属性；获取单个用户的单个或多个用户属性。
@@ -22,7 +22,7 @@
 设置用户属性前，请确保满足以下条件：
 
 - 完成 SDK 初始化，详见 [快速开始](quickstart.html)。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 使用限制
 

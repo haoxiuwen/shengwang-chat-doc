@@ -2,11 +2,11 @@
 
 <Toc />
 
-群组是支持多人沟通的即时通讯系统，本文介绍如何使用环信即时通讯 IM SDK 在实时互动 app 中实现群组成员管理相关功能。
+群组是支持多人沟通的即时通讯系统，本文介绍如何使用即时通讯 IM SDK 在实时互动 app 中实现群组成员管理相关功能。
 
 ## 技术原理
 
-环信即时通讯 IM SDK 提供 `Group`、`IGroupManager` 和 `IGroupManagerDelegate` 类用于群组管理，支持你通过调用 API 在项目中实现如下功能：
+即时通讯 IM SDK 提供 `Group`、`IGroupManager` 和 `IGroupManagerDelegate` 类用于群组管理，支持你通过调用 API 在项目中实现如下功能：
 
 - 加入、退出群组
 - 管理群成员的自定义属性
@@ -20,13 +20,13 @@
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，详见 [快速开始](quickstart.html)；
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)；
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)；
 - 了解群成员角色，详见 [群组概述](group_overview.html)；
 - 了解群组和群成员的数量限制，详见 [套餐包详情](https://www.easemob.com/pricing/im)。
 
 ## 实现方法
 
-本节介绍如何使用环信即时通讯 IM SDK 提供的 API 实现上述功能。
+本节介绍如何使用即时通讯 IM SDK 提供的 API 实现上述功能。
 
 ### 加入群组
 
@@ -36,14 +36,14 @@
 
 | 入群方式                   | 公开群       | 私有群          |
 | :------------------------- | :------------------ | :------------------------------------ |
-| 用户申请入群       | 支持 <br/>任何用户均可申请入群，是否需要群主和群管理员审批，取决于群组类型 [GroupStyle](https://doc.easemob.com/apidoc/unity/namespace_agora_chat.html#a78c8dcc8960a647beb75fb8dd1ebfa1c) 的设置。 | 不支持                                                                                             |
-| 群成员邀请用户入群 | 支持 <br/>只能由群主和管理员邀请。    | 支持 <br/>除了群主和群管理员，群成员是否也能邀请其他用户进群取决于群组类型 [GroupStyle](https://doc.easemob.com/apidoc/unity/namespace_agora_chat.html#a78c8dcc8960a647beb75fb8dd1ebfa1c) 的设置。 |
+| 用户申请入群       | 支持 <br/>任何用户均可申请入群，是否需要群主和群管理员审批，取决于群组类型 `GroupStyle` 的设置。 | 不支持                                                                                             |
+| 群成员邀请用户入群 | 支持 <br/>只能由群主和管理员邀请。    | 支持 <br/>除了群主和群管理员，群成员是否也能邀请其他用户进群取决于群组类型 `GroupStyle` 的设置。 |
 
 #### 用户申请入群
 
 只有公开群支持用户申请入群，私有群不支持。用户可获取公开群列表，选择相应的群组 ID，然后调用相应方法加入该群组。
 
-任何用户均可申请入群，是否需要群主和群管理员审批，取决于群组类型 [GroupStyle](https://doc.easemob.com/apidoc/unity/namespace_agora_chat.html#a78c8dcc8960a647beb75fb8dd1ebfa1c) 的设置：
+任何用户均可申请入群，是否需要群主和群管理员审批，取决于群组类型 `GroupStyle` 的设置：
 
 - `GroupStyle` 为 `PublicJoinNeedApproval` 时，群主和群管理员审批后，用户才能加入群组；
 - `GroupStyle` 为 `PublicOpenJoin` 时，用户可直接加入群组，无需群主和群管理员审批。

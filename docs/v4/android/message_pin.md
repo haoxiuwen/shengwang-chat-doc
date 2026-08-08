@@ -2,19 +2,19 @@
 
 消息置顶指将会话中的消息固定在会话顶部，方便会话中的所有用户快速查看重要消息。
 
-- 若使用**群组和聊天室**的消息置顶功能，你需要将 IM SDK 升级至 4.5.0 版本并联系环信商务开通。
-- 若要使用**单聊、群组和聊天室**的消息置顶功能，你需要将 IM SDK 升级至 4.9.0 版本并联系环信商务开通。
+- 若使用**群组和聊天室**的消息置顶功能，你需要将 IM SDK 升级至 4.5.0 版本并联系商务经理开通。
+- 若要使用**单聊、群组和聊天室**的消息置顶功能，你需要将 IM SDK 升级至 4.9.0 版本并联系商务经理开通。
 
 ## 前提条件
 
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，并连接到服务器，详见 [快速开始](quickstart.html)。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 技术原理
 
-环信即时通讯 IM 通过 [EMMessage](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_message.html)、[EMChatManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_manager.html)、[EMMessagePinInfo](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_message_pin_info.html) 和 [EMMessageListener](https://sdkdocs.easemob.com/apidoc/android/chat3.0/interfacecom_1_1hyphenate_1_1_e_m_message_listener.html) 类支持消息置顶，主要方法和类如下：
+即时通讯 IM 通过 [EMMessage](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_message.html)、[EMChatManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_manager.html)、[EMMessagePinInfo](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_message_pin_info.html) 和 [EMMessageListener](https://sdkdocs.easemob.com/apidoc/android/chat3.0/interfacecom_1_1hyphenate_1_1_e_m_message_listener.html) 类支持消息置顶，主要方法和类如下：
 
 - `EMChatManager#asyncPinMessage`：置顶消息。
 - `EMChatManager#asyncUnPinMessage`：取消置顶消息。
@@ -29,7 +29,7 @@
 
 若消息在本地存储，而在服务端因过期而删除，则消息置顶失败。
 
-对于单个会话来说，默认可置顶 20 条消息。你可以联系环信商务提升该上限，最大可调整至 100。
+对于单个会话来说，默认可置顶 20 条消息。你可以联系商务经理提升该上限，最大可调整至 100。
 
 ```java
 EMClient.getInstance().chatManager().asyncPinMessage(message.getMsgId(), new EMCallBack() {

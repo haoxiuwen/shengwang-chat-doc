@@ -63,7 +63,7 @@ curl -X POST 'https://XXXX/app-id/{app_id}/chatgroups'  \
 
 :::tip
 该 API 支持基于自定义群组 ID 创建群组，即调用该 API 时传入 `groupid` 参数。
-1. 使用该功能前，你需**联系环信商务**。功能开通后，你也可以 [基于自定义聊天室 ID 创建聊天室](chatroom_create.html#请求-body-参数)。
+1. 使用该功能前，你需**联系商务经理**。功能开通后，你也可以 [基于自定义聊天室 ID 创建聊天室](chatroom_create.html#请求-body-参数)。
 2. `groupid` 参数最多可传入 64 个字符，只支持小写英文字母 a-z 和数字 0-9。**注意不要使用大写英文字母 A-Z 。**
 :::
 
@@ -104,8 +104,8 @@ curl -X POST 'https://XXXX/app-id/{app_id}/chatgroups'  \
 | `entities`        | JSON Array   | 响应实体。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `organization`    | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `applicationName` | String | 你在环信即时通讯云控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
+| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
+| `applicationName` | String | 你在即时通讯云控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [错误码](#错误码) 了解可能的原因。
 

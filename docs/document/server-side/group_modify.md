@@ -114,7 +114,7 @@ curl -X PUT 'https://XXXX/app-id/{app_id}/chatgroups/6XXXX7'   \
 | `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
 | `entities`        | JSON Array   | 响应实体。                                                                     |
-| `organization`    | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
+| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `properties`      | String | 响应属性。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 | `uri`             | String | 请求 URL。                                                                     |

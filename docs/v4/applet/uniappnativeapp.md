@@ -2,7 +2,7 @@
 
 <Toc />
 
-使用 环信小程序 SDK 在 **`HBuilderX`** 中编译 Android、iOS 应用，可实现一套代码多端同时打包。IM 相关的集成方式同 Web、小程序一样便捷、高效。
+使用小程序 SDK 在 **`HBuilderX`** 中编译 Android、iOS 应用，可实现一套代码多端同时打包。IM 相关的集成方式同 Web、小程序一样便捷、高效。
 
 ## 体验 IM 应用
 

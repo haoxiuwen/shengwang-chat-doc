@@ -1,6 +1,6 @@
 # CallKit 集成指南
 
-本文档详细介绍如何在你的 React 项目中集成和使用环信 CallKit，实现完整的音视频通话功能。
+本文档详细介绍如何在你的 React 项目中集成和使用CallKit，实现完整的音视频通话功能。
 
 <ImageGallery>
   <ImageItem src="/images/callkit/web/1v1_video_caller_invitation.png" title="一对一通话邀请" />
@@ -29,9 +29,9 @@
 - [创建群组](/product/console/operation_group.html#创建群组)，获取群组 ID。将用户加入群组。
 - [开通音视频服务](product_activation.html)。
 
-2. 集成环信即时通讯 IM SDK。
+2. 集成即时通讯 IM SDK。
 
-确保已集成环信 IM SDK 并完成登录。
+确保已集成即时通讯 IM SDK 并完成登录。
 
 ## 集成步骤
 
@@ -127,7 +127,7 @@ CallKit 组件或重要配置的说明如下：
 
 | 组件/属性           | 说明   |
 | :-------------- | :----- |
-| Provider 组件            | - 负责初始化环信 IM SDK 连接，必须包裹在应用的最外层。<br/> - 该组件会自动处理 IM SDK 的初始化和登录。|
+| Provider 组件            | - 负责初始化即时通讯 IM SDK 连接，必须包裹在应用的最外层。<br/> - 该组件会自动处理 IM SDK 的初始化和登录。|
 | initConfig 配置            | 包含应用的 App Key、用户 ID 和登录凭证（Token）。  |
 | CallKit 组件            | - 音视频通话组件，会自动处理内部的初始化逻辑。<br/> - 该组件会在内部自动初始化音视频服务，无需手动调用初始化方法。  |
 | chatClient 属性            | 传入 `rootStore.client`，即 Provider 创建的 IM 连接实例。  |
@@ -197,7 +197,7 @@ const App = () => {
     >
       <CallKit
         ref={callKitRef}
-        chatClient={client} // 环信 IM SDK 实例
+        chatClient={client} // 即时通讯 IM SDK 实例
         enableRingtone={true} // 启用铃声
         resizable={true} // 允许调整大小
         draggable={true} // 允许拖拽
@@ -241,7 +241,7 @@ const App = () => {
     >
       <CallKit
         ref={callKitRef}
-        chatClient={client} // 环信 IM SDK 实例
+        chatClient={client} // 即时通讯 IM SDK 实例
         enableRingtone={true} // 启用铃声
         resizable={true} // 允许调整大小
         draggable={true} // 允许拖拽
@@ -365,7 +365,7 @@ const groupInfoProvider = async (groupIds: string[]) => {
 
 ### 自定义视频分辨率
 
-环信 CallKit 中默认设置的分辨率为 720p。若要修改远端视频在本地显示的分辨率，可以设置 `encoderConfig` 参数。详见 [声网 RTC 文档](https://doc.shengwang.cn/api-ref/rtc/javascript/globals.html#videoencoderconfigurationpreset)。
+CallKit 中默认设置的分辨率为 720p。若要修改远端视频在本地显示的分辨率，可以设置 `encoderConfig` 参数。详见 [声网 RTC 文档](https://doc.shengwang.cn/api-ref/rtc/javascript/globals.html#videoencoderconfigurationpreset)。
 
 ```tsx
 <CallKit encoderConfig="480p_1"/>

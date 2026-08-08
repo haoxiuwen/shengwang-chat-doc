@@ -2,7 +2,7 @@
 
 根据苹果公司发布的 [App Store 提交的隐私更新](https://developer.apple.com/news/?id=r1henawx)，自 2024 年春季开始，上架 App Store 的应用需要同时提供一份 App 的隐私清单文件，就 App 及第三方 SDK 中使用的 **Required Reason APIs** 提供批准原因。因此，所有第三方 SDK 均需包含 **PrivacyInfo.xcprivacy**。
 
-## 环信即时通讯 IM 的适配
+## 即时通讯 IM 的适配
 
 ### iOS SDK V5
 

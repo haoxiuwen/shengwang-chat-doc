@@ -2,11 +2,11 @@
 
 <Toc />
 
-本文介绍环信即时通讯 IM Android SDK 如何在本地导入和插入消息。
+本文介绍即时通讯 IM Android SDK 如何在本地导入和插入消息。
 
 ## 技术原理
 
-环信即时通讯 IM Android SDK 支持提供 [EMChatManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_manager.html) 和 [EMConversation](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_conversation.html) 类支持在本地导入和插入消息，其中包含如下主要方法：
+即时通讯 IM Android SDK 支持提供 [EMChatManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_manager.html) 和 [EMConversation](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_conversation.html) 类支持在本地导入和插入消息，其中包含如下主要方法：
 
 - `EMChatManager#importMessages`：批量导入消息到数据库；
 - `EMConversation#insertMessage`：在本地指定会话中插入一条消息。
@@ -17,7 +17,7 @@
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化并连接到服务器，详见 [快速开始](quickstart.html)。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 实现方法
 

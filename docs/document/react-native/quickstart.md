@@ -2,7 +2,7 @@
 
 <Toc />
 
-本文介绍如何极简集成环信即时通讯 React-Native SDK，在你的 app 中实现发送和接收单聊文本消息。
+本文介绍如何极简集成即时通讯 React-Native SDK，在你的 app 中实现发送和接收单聊文本消息。
 
 ## 实现原理
 
@@ -41,7 +41,7 @@
 
 ### 其他要求
 
-有效的环信即时通讯 IM 开发者账号和 App key，详见 [环信控制台文档](/product/console/app_manage.html#管理应用)。
+有效的即时通讯 IM 开发者账号和 App key，详见 [环信控制台文档](/product/console/app_manage.html#管理应用)。
 
 ## 项目设置
 

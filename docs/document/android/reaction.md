@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-环信即时通讯 IM 提供消息表情回复功能。用户可以在单聊和群聊中对消息添加或删除表情。表情可以直观表达情绪；在群聊场景下，也可以结合不同表情的数量实现轻量投票、反馈收集等互动能力。
+即时通讯 IM 提供消息表情回复功能。用户可以在单聊和群聊中对消息添加或删除表情。表情可以直观表达情绪；在群聊场景下，也可以结合不同表情的数量实现轻量投票、反馈收集等互动能力。
 
 Reaction 场景示例如下，分别展示如何添加 Reaction，群聊中 Reaction 的效果，以及查看 Reaction 列表。
 
@@ -22,7 +22,7 @@ Reaction 场景示例如下，分别展示如何添加 Reaction，群聊中 Reac
 开始前，请确保满足以下条件：
 
 1. 完成 SDK 初始化，详见 [快速开始](quickstart.html)。
-2. 了解环信即时通讯 IM API 的 [使用限制](/product/limitation.html)。
+2. 了解即时通讯 IM API 的 [使用限制](/product/limitation.html)。
 3. 已在 [环信控制台](https://console.easemob.com/user/login) 开通 Reaction 功能。
 
 ## 在消息上添加 Reaction

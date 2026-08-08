@@ -1,6 +1,6 @@
 # 错误码
 
-本文介绍环信即时通讯 Android SDK 中接口调用或回调返回的错误码。开发者可以根据错误码判断失败原因，并参考对应的解决方法进行处理。
+本文介绍即时通讯 Android SDK 中接口调用或回调返回的错误码。开发者可以根据错误码判断失败原因，并参考对应的解决方法进行处理。
 
 Android SDK 的错误码定义在 [`EMError`](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1_e_m_error.html) 类中。例如，注册用户时可通过 `EMError.USER_ALREADY_EXIST` 判断用户是否已存在。
 
@@ -109,7 +109,7 @@ EMClient.getInstance().loginWithToken(userId, token, new EMCallBack() {
 | 506 | `MESSAGE_EXPIRED` | 消息已过期：发送群组消息的已读回执时若超过时间限制 (默认 3 天) 会提示该错误。 | 可在 UI 上进行错误提示，或者联系商务延长发送群组回执的有效时间。 |
 | 507 | `MESSAGE_ILLEGAL_WHITELIST` | 用户未在白名单中：如果群组聊天室开启全员禁言，且用户未在白名单中发送消息时提示该错误。 | 可在 UI 上进行错误提示，或者检查是否已开启群组全员禁言。 |
 | 508 | `MESSAGE_EXTERNAL_LOGIC_BLOCKED` | 发送前回调拦截：发送的消息被用户自己的服务器定义的规则拦截掉时提示该错误。 | 可在 UI 上做提示，或检查发送前回调记录。 |
-| 509 | `MESSAGE_CURRENT_LIMITING` | 单个用户 ID 发送消息超出频率限制。默认情况下，SDK 对单个用户 ID 发送群消息未做频率限制。如果你联系了环信商务设置了该限制，一旦在单聊、群聊或聊天室中单个用户的消息发送频率超过设定的上限，则会提示该错误。 | 可在 UI 上进行提示，或检查消息发送频率设置。 |
+| 509 | `MESSAGE_CURRENT_LIMITING` | 单个用户 ID 发送消息超出频率限制。默认情况下，SDK 对单个用户 ID 发送群消息未做频率限制。如果你联系了商务经理设置了该限制，一旦在单聊、群聊或聊天室中单个用户的消息发送频率超过设定的上限，则会提示该错误。 | 可在 UI 上进行提示，或检查消息发送频率设置。 |
 | 510 | `MESSAGE_SIZE_LIMIT` | 发送消息时消息体大小超过上限。 | 可在 UI 上进行提示，或减小消息体长度（默认不超过 5 KB）。 |
 | 511 | `MESSAGE_EDIT_FAILED` | 消息编辑失败。 | 需结合日志进一步分析。 |
 | 512 | `MESSAGE_STREAM_INTERVAL_TIMEOUT` | 流式消息的相邻消息分片的发送间隔超时：该间隔不能超过 30 秒，超时则返回该错误并终止流式消息。 | 可在 UI 上进行提示，或检查消息分片发送间隔。 |

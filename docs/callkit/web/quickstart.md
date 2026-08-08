@@ -142,7 +142,7 @@ const App: React.FC = () => {
     }
 
     try {
-      // 登录环信 IM
+      // 登录即时通讯 IM
       await rootStore.client.open({
         user: userId.trim(),
         accessToken: accessToken.trim(),

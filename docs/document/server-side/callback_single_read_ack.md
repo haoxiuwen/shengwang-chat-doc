@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-成功发送单聊消息已读回执后，环信服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调已读回执信息，进行数据同步。
+成功发送单聊消息已读回执后，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调已读回执信息，进行数据同步。
 
 ## 前提条件
 
@@ -54,5 +54,5 @@
 | `from`      | String   | 发送已读回执用户 ID。                                        |
 | `to`        | String   | 接收已读回执用户 ID。                                        |
 | `eventType`       | String | `chat`：表示上行消息。                      |
-| `timestamp` | long     | 环信 IM 服务器收到消息已读回执的 Unix 时间戳，单位为 ms。                  |
+| `timestamp` | long     | 即时通讯 IM 服务器收到消息已读回执的 Unix 时间戳，单位为 ms。                  |
 | `msg_id`    | String   | 该回执消息的消息 ID。                                        |

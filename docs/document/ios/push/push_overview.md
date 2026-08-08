@@ -12,7 +12,7 @@
 
 ### 前置配置要求
 
-除满足用户离线条件外，使用第三方离线推送服务还需在 [环信控制台](https://console.easemob.com/user/login) 完成推送证书信息的配置，例如，需配置 APNs 的 **证书名称** 和 **推送密钥**，并调用客户端 SDK 提供的 API 向环信服务器上传 device token。
+除满足用户离线条件外，使用第三方离线推送服务还需在 [环信控制台](https://console.easemob.com/user/login) 完成推送证书信息的配置，例如，需配置 APNs 的 **证书名称** 和 **推送密钥**，并调用客户端 SDK 提供的 API 向IM 服务器上传 device token。
 
 ### 不触发离线推送的场景
 
@@ -29,11 +29,11 @@
 
 1. 用户 B 向 APNs 推送服务注册，获取推送 token。
 2. APNs 返回推送 token。
-3. 用户 B 向环信服务器上传推送证书名称和推送 token。
+3. 用户 B 向IM 服务器上传推送证书名称和推送 token。
 4. 用户 A 向 用户 B 发送消息。
-5. 环信服务器检查用户 B 是否在线。若在线，环信服务器直接将消息发送给用户 B。
-6. 若用户 B 离线，环信服务器判断该用户是否使用了 APNs 推送。
-7. 环信服务器将消息发送给 APNs 推送服务器。
+5. IM 服务器检查用户 B 是否在线。若在线，IM 服务器直接将消息发送给用户 B。
+6. 若用户 B 离线，IM 服务器判断该用户是否使用了 APNs 推送。
+7. IM 服务器将消息发送给 APNs 推送服务器。
 8. APNs 推送服务器将消息发送给用户 B。
 
 ## 推送证书和推送 Token
@@ -42,7 +42,7 @@
 
 **推送 Token**：推送 token（device token）是 APNs 推送提供的推送 token，即初次启动你的应用时，APNs SDK 为客户端应用实例生成的推送 token。该 token 用于标识每台设备上的每个应用，APNs 通过该 token 明确消息是发送给哪个设备的，然后将消息转发给设备，设备再通知应用程序。你可以调用 `registerForRemoteNotifications` 方法获得 token。另外，如果退出即时通讯 IM 登录时不解绑 device token（调用 `logout` 方法时对 `aIsUnbindDeviceToken` 参数传 `NO` 表示不解绑 device token，传 `YES` 表示解绑 token），用户在推送证书有效期和 token 有效期内仍会接收到离线推送通知。
 
-关于如何获取推送 Token 并上传至环信服务器，详见 [APNs 推送服务的集成文档](push_apns.html#步骤三-获取-device-token-并传递给-sdk)。
+关于如何获取推送 Token 并上传至IM 服务器，详见 [APNs 推送服务的集成文档](push_apns.html#步骤三-获取-device-token-并传递给-sdk)。
 
 ## 推送高级功能
 
@@ -102,5 +102,5 @@
 使用 APNs 推送前，确保满足以下条件：
 
 - 完成 SDK 初始化，并连接到服务器，详见 [快速开始](/document/ios/quickstart.html)。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
-- 若使用[推送高级功能](#推送高级功能)，需在[环信即时通讯控制台](https://console.easemob.com/user/login)上激活。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 若使用[推送高级功能](#推送高级功能)，需在[即时通讯控制台](https://console.easemob.com/user/login)上激活。

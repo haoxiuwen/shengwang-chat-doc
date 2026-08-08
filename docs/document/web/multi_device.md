@@ -13,7 +13,7 @@
 - 支持查询当前账号在其他设备上的登录标识；
 - 支持通过初始化参数自定义设备标识、平台和设备名称。
 
-多端登录时，即时通讯 IM 每端默认最多支持 4 个设备同时在线。如需增加支持的设备数量，可以联系环信即时通讯 IM 的商务经理。你可以在环信控制台的 **即时通讯 > 基础功能** > **用户** 页面，在弹出的对话框中设置各端设备的数量：
+多端登录时，即时通讯 IM 每端默认最多支持 4 个设备同时在线。如需增加支持的设备数量，可以联系即时通讯 IM 的商务经理。你可以在环信控制台的 **即时通讯 > 基础功能** > **用户** 页面，在弹出的对话框中设置各端设备的数量：
 
 ![img](/images/common/multidevice_device_count.png)
 
@@ -27,7 +27,7 @@
 
 若一端的登录设备数量达到了上限，最新登录的设备会将该端最早登录的设备踢下线。即时通讯 IM 仅支持同端互踢，不支持各端之间互踢。<br/>多端登录时，是否使用固定的设备 ID 对设备互踢策略存在影响。<br/>多端登录时，`useFixedDeviceId`、`deviceId`、`customOSPlatform` 和 `customDeviceName` 会共同影响设备标识的生成方式：<br/>- （默认）`useFixedDeviceId: true`：SDK 会复用固定设备标识；若使用默认 `deviceId`，同一浏览器环境会复用已缓存的设备标识。<br/>- `useFixedDeviceId: false`：SDK 不复用本地缓存的固定设备标识；若使用默认 `deviceId`，会生成新的随机设备标识。<br/>- 若传入自定义 `deviceId` 且未设置 `customOSPlatform`，SDK 会基于该值构造设备标识，并不一定每次都生成随机设备 ID。<br/>- `customDeviceName` 仅在设置了 `customOSPlatform` 时生效。
 
-环信服务器提供 RESTful 接口 [查询每个账号已登录设备列表](/document/server-side/account_online_device_obtain.html)、[将账号从已登录设备强制下线](/document/server-side/account_offline_forced.html)和将指定账号强制 [从单个设备下线](/document/server-side/account_offline_device_single.html)。
+IM 服务器提供 RESTful 接口 [查询每个账号已登录设备列表](/document/server-side/account_online_device_obtain.html)、[将账号从已登录设备强制下线](/document/server-side/account_offline_forced.html)和将指定账号强制 [从单个设备下线](/document/server-side/account_offline_device_single.html)。
 
 ## 前提条件
 
@@ -79,7 +79,7 @@ const client = ChatClient.init({
 
 ## 设置登录设备的扩展信息
 
-环信即时通讯 IM 支持为登录设备设置自定义扩展信息。在多设备登录场景下，该能力可用于传递当前登录设备的附加标识信息，便于业务侧进行设备识别和管理，例如，若有设备被踢下线，被踢设备能获得该设备的自定义扩展信息。
+即时通讯 IM 支持为登录设备设置自定义扩展信息。在多设备登录场景下，该能力可用于传递当前登录设备的附加标识信息，便于业务侧进行设备识别和管理，例如，若有设备被踢下线，被踢设备能获得该设备的自定义扩展信息。
 
 初始化 SDK 时，你可以通过 `loginExtensionInfo` 参数设置当前登录设备的自定义扩展信息。该参数最大长度为 1024 个字符。
 

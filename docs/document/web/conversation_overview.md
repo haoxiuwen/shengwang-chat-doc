@@ -13,7 +13,7 @@ SDK 会在本地维护会话列表缓存，并可在登录后自动同步服务�
 - 完成 SDK 初始化并连接到服务器，详见 [快速开始](quickstart.html)。
 - SDK 初始化时已注册 `ChatManager`，以便使用 `client.chatManager` 相关方法。
 - 若需要使用会话免打扰相关功能，SDK 初始化时还需注册 `PushManager`。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 会话模型
 

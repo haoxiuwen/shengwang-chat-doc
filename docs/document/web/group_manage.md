@@ -29,7 +29,7 @@
 
 - 已完成 SDK 初始化，详见 [快速开始](quickstart.html)。
 - SDK 初始化时，已注册 `GroupManager`。
-- 已了解环信即时通讯 IM API 的接口调用频率限制，详见 [使用限制](/product/limitation.html)。
+- 已了解即时通讯 IM API 的接口调用频率限制，详见 [使用限制](/product/limitation.html)。
 - 已了解群组数量和群成员数量限制，详见 [使用限制](/product/limitation.html)。
 
 ## 创建群组

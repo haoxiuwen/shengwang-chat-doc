@@ -4,11 +4,11 @@
 
 消息话题中的消息消息类型属于群聊消息类型，与普通群组消息的区别是需要添加 `IsThread` 标记。使用消息话题中的消息功能前，你需要联系商务开通。
 
-本文介绍环信即时通讯 IM windows SDK 如何发送、接收以及撤回消息话题中的消息。
+本文介绍即时通讯 IM windows SDK 如何发送、接收以及撤回消息话题中的消息。
 
 ## 技术原理
 
-环信即时通讯 IM windows SDK 提供 `IChatManager`、`Message` 和 `IChatThreadManager` 类，用于管理消息话题中的消息，支持你通过调用 API 在项目中实现发送、接收、撤回和获取消息话题中的消息。
+即时通讯 IM windows SDK 提供 `IChatManager`、`Message` 和 `IChatThreadManager` 类，用于管理消息话题中的消息，支持你通过调用 API 在项目中实现发送、接收、撤回和获取消息话题中的消息。
 
 消息收发流程如下：
 
@@ -23,12 +23,12 @@
 开始前，请确保满足以下条件：
 
 - 完成 1.0.6 以上版本 SDK 初始化，详见 [快速开始](quickstart.html)。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 - 已联系商务开通消息话题功能。
 
 ## 实现方法
 
-本节介绍如何使用环信即时通讯 IM windows SDK 提供的 API 实现上述功能。
+本节介绍如何使用即时通讯 IM windows SDK 提供的 API 实现上述功能。
 
 ### 发送消息话题中的消息
 

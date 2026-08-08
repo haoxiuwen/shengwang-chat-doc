@@ -2,7 +2,7 @@
 
 ## 项目概述
 
-环信 iOS CallKit 是基于环信即时通讯 IM SDK 和声网 RTC SDK 开发的实时音视频通话框架。该项目使用 Swift 作为开发语言，包含如下模块：
+iOS CallKit 是基于即时通讯 IM SDK 和声网 RTC SDK 开发的实时音视频通话框架。该项目使用 Swift 作为开发语言，包含如下模块：
 
 - `CoreService`：核心协议层以及定义。
   - `Provider`：包含 `CallProfileProtocol.swift` 用户信息协议以及 `Providers.swift` 信息提供者协议。 

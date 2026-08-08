@@ -13,7 +13,7 @@
 
 - 方式二：通过获取会话信息时创建会话：
 
-  调用 [getConversation](https://doc.easemob.com/apidoc/unity/class_agora_chat_1_1_chat_manager.html#abf4395e9ee3bf5bf437fe534f96b9dff) 接口时，若将参数 `createIfNeed` 设为 `true`（默认值），即时通讯 IM 会在会话不存在时自动创建该会话。  
+  调用 `getConversation` 接口时，若将参数 `createIfNeed` 设为 `true`（默认值），即时通讯 IM 会在会话不存在时自动创建该会话。
 
 #### 会话 ID
 
@@ -31,7 +31,7 @@
 
 ## 会话管理
 
-环信即时通讯 IM SDK 提供 [ChatManager](https://doc.easemob.com/apidoc/unity/class_agora_chat_1_1_chat_manager.html) 类和 [Conversation](https://doc.easemob.com/apidoc/unity/class_agora_chat_1_1_conversation.html) 类进行会话和消息管理：
+即时通讯 IM SDK 提供 `ChatManager` 类和 `Conversation` 类进行会话和消息管理：
 
 - 会话管理：[获取会话列表](conversation_list.html#从服务器分页获取会话列表)、[会话已读回执](conversation_receipt.html)、[会话未读数管理](conversation_receipt.html#会话已读回执和消息未读数)、[置顶会话](conversation_pin.html)、[添加会话标记](conversation_mark.html)、[删除会话](conversation_delete.html)。
 
@@ -39,7 +39,7 @@
 
 ## 会话类
 
-环信即时通讯 IM 提供会话类 `Conversation`。该类定义了以下内容：
+即时通讯 IM 提供会话类 `Conversation`。该类定义了以下内容：
 
 | 类/方法  | 描述         |
 | :--------- | :------- | 

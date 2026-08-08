@@ -2,7 +2,7 @@
 
 会话已读回执指接收方进入会话页面，阅读会话中的所有消息后，调用接口向服务器发送会话已读回执，服务器将该回执回调给消息发送方，消息发送方将会收到会话已读回调。在多端多设备登录下，接收方的其他设备也会收到该回调。
 
-目前，单聊和群组聊天支持会话已读回执。本文介绍如何使用环信即时通讯 IM Android SDK 实现会话已读回执功能。
+目前，单聊和群组聊天支持会话已读回执。本文介绍如何使用即时通讯 IM Android SDK 实现会话已读回执功能。
 
 会话已读回执的效果示例，如下图所示：
 
@@ -10,7 +10,7 @@
 
 ## 技术原理
 
-环信即时通讯 IM 通过 [EMChatManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_manager.html)、[EMConversation](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_conversation.html) 和 [EMOptions](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_options.html) 类实现会话已读回执。
+即时通讯 IM 通过 [EMChatManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_manager.html)、[EMConversation](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_conversation.html) 和 [EMOptions](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_options.html) 类实现会话已读回执。
 
  单聊会话已读回执实现的流程如下：
 
@@ -23,7 +23,7 @@
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，并连接到服务器，详见 [快速开始](quickstart.html)。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
  ## 实现方法
 

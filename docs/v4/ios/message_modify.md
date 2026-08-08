@@ -1,10 +1,10 @@
 # 编辑消息
 
-环信即时通讯 IM 提供编辑消息功能，支持对发送成功的消息进行编辑，然后再发送，提高沟通效率和准确性，例如，发送消息后发觉消息内容中包含错别字、遗漏了的关键信息、内容不够完善清晰、甚至临时想更改自己的想法，可以编辑消息后再次发送。
+即时通讯 IM 提供编辑消息功能，支持对发送成功的消息进行编辑，然后再发送，提高沟通效率和准确性，例如，发送消息后发觉消息内容中包含错别字、遗漏了的关键信息、内容不够完善清晰、甚至临时想更改自己的想法，可以编辑消息后再次发送。
 
 ## 功能开通和版本支持
 
-对于单聊、群组和聊天室聊天会话中已经发送成功的消息，SDK 支持对这些消息的内容进行编辑。若使用该功能，**需联系环信商务开通**。
+对于单聊、群组和聊天室聊天会话中已经发送成功的消息，SDK 支持对这些消息的内容进行编辑。若使用该功能，**需联系商务经理开通**。
 
 - SDK 4.13.0 之前的版本仅支持对单聊和群组会话中发送后的文本消息进行编辑。
 - SDK 4.13.0 及之后版本中支持对单聊、群组和聊天室会话中各类消息进行编辑：
@@ -14,7 +14,7 @@
 
 ## 技术原理
 
-环信即时通讯 IM 通过 [EMChatManager](https://sdkdocs.easemob.com/apidoc/ios/chat3.0/protocol_i_e_m_chat_manager-p.html#a1eed319dc3627aff8c44d65502d8c875) 和 [EMChatManagerDelegate](https://sdkdocs.easemob.com/apidoc/ios/chat3.0/protocol_e_m_chat_manager_delegate-p.html) 实现消息编辑。
+即时通讯 IM 通过 [EMChatManager](https://sdkdocs.easemob.com/apidoc/ios/chat3.0/protocol_i_e_m_chat_manager-p.html#a1eed319dc3627aff8c44d65502d8c875) 和 [EMChatManagerDelegate](https://sdkdocs.easemob.com/apidoc/ios/chat3.0/protocol_e_m_chat_manager_delegate-p.html) 实现消息编辑。
 
 ### 消息编辑流程
 
@@ -36,8 +36,8 @@
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，并连接到服务器，详见 [快速开始](quickstart.html) 及 [初始化](initialization.html)文档。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
-- 联系环信商务开通消息编辑功能。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 联系商务经理开通消息编辑功能。
 
 ## 实现方法
 

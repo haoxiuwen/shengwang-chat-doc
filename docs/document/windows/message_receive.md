@@ -1,13 +1,13 @@
 # 接收消息
 
-环信即时通讯 IM SDK 通过 `IChatManagerDelegate` 类实现文本、图片、音频、视频和文件等类型的消息的接收。
+即时通讯 IM SDK 通过 `IChatManagerDelegate` 类实现文本、图片、音频、视频和文件等类型的消息的接收。
 
 ## 前提条件
 
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，详见 [初始化文档](initialization.html)。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 接收文本消息
 

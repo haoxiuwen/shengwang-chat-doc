@@ -33,7 +33,7 @@
 使用在线状态功能前，请确保满足以下条件：
 
 - 完成 SDK 初始化并登录，详见 [快速开始](quickstart.html)。
-- 了解环信即时通讯 IM API 的 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的 [使用限制](/product/limitation.html)。
 - 已在[环信控制台](https://console.easemob.com/user/login)开通在线状态订阅功能。详见 [环信控制台文档](/product/console/basic_user.html#用户离在线状态实时同步)。
 
 ## 订阅指定用户的在线状态

@@ -26,7 +26,7 @@
 | 400 | RequiredPropertyNotFoundException | Entity user requires a property named username | 用户不存在 | 检查并修改请求参数，请使用正确的且存在的用户 ID。 |
 | 400  | IllegalArgumentException | parameters is invalid : XXX | XXX 属性值不合法 | 检查并修改请求参数，在限定范围内使用请求参数。|
 | 404 | 请求路径不存在 | url is invalid | 请求路径错误 | 检查并修改，请使用正确的请求路径。 |
-| 5xx | 服务器内部错误   | 任意      | 服务器在尝试处理请求时发生内部错误| 联系环信技术支持。 |
+| 5xx | 服务器内部错误   | 任意      | 服务器在尝试处理请求时发生内部错误| 联系技术支持。 |
 
 ## 推送模板相关接口的常见错误码
 
@@ -45,7 +45,7 @@
 | :----------- | :--- | :------------- | :----------- | :----------- |
 | 400  | EntityNotFoundException | XXX template is not exist | XXX 模板不存在 | 检查并修改请求参数，使用正确存在的模板名称。 |
 | 404 | 请求路径不存在 | url is invalid | 请求路径错误 | 检查并修改，使用正确的请求路径。 |
-| 5xx | 服务器内部错误   | 任意      | 服务器在尝试处理请求时发生内部错误 | 联系环信技术支持。 |
+| 5xx | 服务器内部错误   | 任意      | 服务器在尝试处理请求时发生内部错误 | 联系技术支持。 |
 
 其他错误，你可以参考 [错误码](error.html) 了解可能的原因。
 

@@ -79,7 +79,7 @@ curl -X DELETE 'https://XXXX/app-id/{app_id}/users/u1/user_channel' \
 | `path`            | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。                              |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | HTTP 响应的 Unix 时间戳，单位为毫秒。                                          |
-| `organization`    | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
+| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `entities`        | JSON Array   | 响应实体。                                                                     |
 | `action`          | String | 请求方法。                                                                     |

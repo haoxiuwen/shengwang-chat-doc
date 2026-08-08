@@ -6,7 +6,7 @@
 
 ## 技术原理
 
-使用环信即时通讯 IM Flutter SDK 可以通过 `EMChatManager` 类单向删除服务端和本地的历史消息，主要方法如下：
+使用即时通讯 IM Flutter SDK 可以通过 `EMChatManager` 类单向删除服务端和本地的历史消息，主要方法如下：
 
 - `EMChatManager#deleteAllMessageAndConversation`：清空当前用户的聊天记录，包括单聊、群聊和聊天室的消息和会话，同时可以选择是否单向清除服务端的聊天记录。
 - `EMChatManager#deleteRemoteMessagesBefore`/`EMChatManager#deleteRemoteMessagesWithIds`：根据消息时间或消息 ID 单向删除服务端的历史消息。
@@ -19,7 +19,7 @@
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，并连接到服务器，详见 [快速开始](quickstart.html)。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 实现方法
 
@@ -51,7 +51,7 @@ try {
 
 :::tip
 1. 若使用该功能，需将 SDK 升级至 4.0.0 或以上版本。
-2. 聊天室漫游消息默认关闭。若要使用该功能需将 SDK 升级至 4.5.0 或以上版本并联系环信商务开通。
+2. 聊天室漫游消息默认关闭。若要使用该功能需将 SDK 升级至 4.5.0 或以上版本并联系商务经理开通。
 :::
 
 ```dart

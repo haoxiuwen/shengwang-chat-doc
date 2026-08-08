@@ -90,8 +90,8 @@ SDK 补充会话展示信息、批量删除会话和群成员读取等能力：
 
 #### 新增功能
 
-- 支持 [服务端消息搜索](/value-added/search/message_search_android.html)，可根据关键词组合、会话 ID、消息类型、时间范围及消息内容或扩展属性进行筛选。该功能需联系环信商务开通后方可使用，详见 [开通说明](/product/console/purchase_value_added.html#消息搜索)。
-  消息搜索默认不支持扩展字段 `ext`，如需支持该字段搜索，请联系环信商务。
+- 支持 [服务端消息搜索](/value-added/search/message_search_android.html)，可根据关键词组合、会话 ID、消息类型、时间范围及消息内容或扩展属性进行筛选。该功能需联系商务经理开通后方可使用，详见 [开通说明](/product/console/purchase_value_added.html#消息搜索)。
+  消息搜索默认不支持扩展字段 `ext`，如需支持该字段搜索，请联系商务经理。
 - 新增异步接口，用于 [更新群组扩展字段](group_attributes.html#更新群扩展字段)。
 - 新增异步接口，用于 [获取服务器端推送配置](/document/android/push/push_display_attribute.html#获取推送通知的显示属性)。
 
@@ -425,7 +425,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 #### 新增特性
 
-- [IM SDK] 新增[拉取服务器漫游消息](message_retrieve.html#从服务器获取指定会话的消息)时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系环信商务开通。 
+- [IM SDK] 新增[拉取服务器漫游消息](message_retrieve.html#从服务器获取指定会话的消息)时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系商务经理开通。 
 - [IM SDK] 聊天室成员禁言回调：
   - 新增聊天室禁言回调 `EMChatRoomChangeListener#onMuteListAdded(java.lang.String, java.util.Map<java.lang.String,java.lang.Long>)`，在回调中使用 `Map<String,Long> muteInfo` 参数表示被禁言的用户 ID 和禁言到期时间戳。
   - 废弃原来的回调 `EMChatRoomChangeListener#onMuteListAdded(java.lang.String, java.util.List<java.lang.String>, long)`。
@@ -621,7 +621,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 #### 优化
 
-- [IM SDK] 添加绑定推送 token 成功的回调，详见 [FCM 推送集成](/document/android/push/push_fcm.html)步骤四中的在环信即时通讯 IM SDK 中启用 FCM 的描述。
+- [IM SDK] 添加绑定推送 token 成功的回调，详见 [FCM 推送集成](/document/android/push/push_fcm.html)步骤四中的在即时通讯 IM SDK 中启用 FCM 的描述。
 - [IM SDK] `onMessageRecalled` 已过时，请用 `onMessageRecalledWithExt` 代替。
 
 #### 修复
@@ -920,7 +920,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 - [IM SDK] 修改 OPPO 推送导致 SDK 偶现 ANR 异常的问题。
 - [IM CallKit] 修复发起语音通话时，若在对方接听前返回桌面，对方无法点击接听或挂断的问题。
 - [IM UIKit] 修复部分机型拍照后的图片旋转问题。
-- [IM SDK] 适配 Android 12，修复依赖环信即时通讯 IM SDK 的 APK 在 Android 12 版本的部分手机上第一次安装后打开时出现异常弹框的问题。
+- [IM SDK] 适配 Android 12，修复依赖即时通讯 IM SDK 的 APK 在 Android 12 版本的部分手机上第一次安装后打开时出现异常弹框的问题。
 - [IM SDK] 修复某些场景下调用 `updateMessage` 方法导致的内存与数据库消息不一致问题。
 
 ## v3.9.7 Dev 2022-9-30
@@ -1338,7 +1338,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 - [IM SDK] 修复部分 HTTP 重复请求的问题；
 - [IM SDK] 移除获取设备 IMEI 信息相关逻辑；
 - [EaseIMKit] 修复动图不发送已读回执（read ack）的问题;
-- [EaseIMKit] 修复群组会话页面不显示昵称（或者环信 ID）的问题；
+- [EaseIMKit] 修复群组会话页面不显示昵称（或者用户 ID）的问题；
 - [EaseIMKit] 修复开启漫游后，获取的历史消息不上屏的问题；
 - [EaseIMKit] 修复聊天页面拦截消息长按事件后，复制功能被拦截的问题；
 - [EaseIMKit] 修复聊天页面“正在输入”状态无法消失的问题；
@@ -1663,7 +1663,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 - 适配 android 9.0
 
 ```
-目前，环信IM SDK和Demo已经全部适配至9.0，编译环境配置如下：
+目前，即时通讯 IM  SDK和Demo已经全部适配至9.0，编译环境配置如下：
  - Android Studio version: 3.2.1
  - project-level/build.gradle version config:
    buildscript {

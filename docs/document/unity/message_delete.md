@@ -6,7 +6,7 @@
 
 ## 技术原理
 
-使用环信即时通讯 IM SDK 可以通过 `ChatManager` 和 `Conversation` 类单向删除服务端和本地的历史消息，主要方法如下：
+使用即时通讯 IM SDK 可以通过 `ChatManager` 和 `Conversation` 类单向删除服务端和本地的历史消息，主要方法如下：
 
 - `ChatManager#DeleteAllMessagesAndConversations`：清空当前用户的聊天记录，包括单聊、群聊和聊天室的消息和会话，同时可以选择是否单向清除服务端的聊天记录。
 - `ChatManager#RemoveMessagesFromServer`：单向删除服务端的历史消息。
@@ -19,7 +19,7 @@
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，并连接到服务器，详见 [快速开始](quickstart.html)。
-- 了解环信即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 实现方法
 
@@ -55,7 +55,7 @@ SDKClient.Instance.ChatManager.DeleteAllMessagesAndConversations(clearServerData
 
 :::tip
 1. 要单向删除服务端单聊和群组聊天的历史消息，需将 SDK 升级至 V1.1.0 或以上版本。
-2. 要单向删除服务端聊天室的历史消息，需将 SDK 升级至 1.3.0 或以上版本并联系环信商务开通。
+2. 要单向删除服务端聊天室的历史消息，需将 SDK 升级至 1.3.0 或以上版本并联系商务经理开通。
 :::
 
 ```csharp

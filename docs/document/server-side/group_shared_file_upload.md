@@ -69,7 +69,7 @@ curl -X POST 'https://XXXX/app-id/{app_id}/chatgroups/66021836783617/share_files
 
 | 字段             | 类型   | 描述                                                       |
 | :--------------- | :----- | :--------------------------------------------------------- |
-| `data.file_url`  | String | 群组共享文件的 URL，在环信即时通讯 IM 服务器上保存的地址。 |
+| `data.file_url`  | String | 群组共享文件的 URL，在即时通讯 IM 服务器上保存的地址。 |
 | `data.group_id`  | String | 群组 ID。                                                  |
 | `data.file_name` | String | 群组共享文件名称。                                         |
 | `data.created`   | Long   | 上传群组共享文件的时间。                                   |
@@ -86,7 +86,7 @@ curl -X POST 'https://XXXX/app-id/{app_id}/chatgroups/66021836783617/share_files
 | `entities`        | JSON Array   | 响应实体。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `organization`    | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
+| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [错误码](#错误码) 了解可能的原因。

@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-在消息上添加或移除表情回复（下文统称 “Reaction”）后，环信服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看表情回复，进行数据同步。
+在消息上添加或移除表情回复（下文统称 “Reaction”）后，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看表情回复，进行数据同步。
 
 ## 前提条件
 
@@ -90,7 +90,7 @@ Reaction 回调请求中，`reactions` 数组包含了消息当前所有的 Reac
 | `to`              | String | 消息的接收方。   |
 | `eventType`       | String | `chat` 表示上行消息、`chat_offline` 表示离线消息。   |
 | `msg_id`          | String | 该回调请求的消息 ID。       |
-| `timestamp`       | long   | 环信 IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒。 |
+| `timestamp`       | long   | 即时通讯 IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒。 |
 | `payload.num`          | Int | 操作次数。       |
 | `payload.channel_type` | String | 会话类型：<br/> - `chat`：单聊。<br/> - `groupchat`：群聊。  |
 | `payload.type`         | String | 固定值 `reaction`。 |

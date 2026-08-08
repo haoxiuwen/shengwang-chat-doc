@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-编辑消息后，环信服务器会按照 [发送后回调规则](callback_postsending.html#回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看编辑后的消息，进行数据同步。
+编辑消息后，IM 服务器会按照 [发送后回调规则](callback_postsending.html#回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看编辑后的消息，进行数据同步。
 
 ## 前提条件
 
@@ -80,7 +80,7 @@
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
-| `timestamp`       | Long     | 环信服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
+| `timestamp`       | Long     | IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
 
 `payload` 为事件内容，其中的字段如下表所示：
   
@@ -150,7 +150,7 @@
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。         |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
-| `timestamp`       | long     | 环信服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
+| `timestamp`       | long     | IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
 
 `payload` 为事件内容，其中的字段如下表所示：
   
@@ -229,7 +229,7 @@
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
-| `timestamp`       | long     | 环信服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
+| `timestamp`       | long     | IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
 
 `payload` 为事件内容，其中的字段如下表所示：
   
@@ -303,7 +303,7 @@
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
-| `timestamp`       | long     | 环信服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
+| `timestamp`       | long     | IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
 
 `payload` 为事件内容，其中的字段如下表所示：
   
@@ -379,7 +379,7 @@
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
-| `timestamp`       | long     | 环信服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
+| `timestamp`       | long     | IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
 
 `payload` 为事件内容，其中的字段如下表所示：
   
@@ -451,7 +451,7 @@
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
-| `timestamp`       | long     | 环信服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
+| `timestamp`       | long     | IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
 
 `payload` 为事件内容，其中的字段如下表所示：
   
@@ -528,7 +528,7 @@
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
-| `timestamp`       | long     | 环信服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
+| `timestamp`       | long     | IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
 
 `payload` 为事件内容，其中的字段如下表所示：
   
@@ -606,7 +606,7 @@
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
-| `timestamp`       | long     | 环信服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
+| `timestamp`       | long     | IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒 ms。        |
 
 `payload` 为事件内容，其中的字段如下表所示：
 

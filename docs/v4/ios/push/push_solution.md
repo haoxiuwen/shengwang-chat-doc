@@ -28,4 +28,4 @@
 
 ![image](/images/android/push/huawei_push_notification_test.png)
 
-5. 若以上均已排查后问题仍存在，请联系环信技术支持进一步排查问题原因。
+5. 若以上均已排查后问题仍存在，请联系技术支持进一步排查问题原因。

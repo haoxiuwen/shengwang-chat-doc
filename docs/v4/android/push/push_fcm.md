@@ -1,6 +1,6 @@
 # 在即时通讯 IM 中集成 FCM
 
-环信即时通讯 IM SDK 中已集成 FCM 推送相关逻辑，你还需要完成以下步骤。
+即时通讯 IM SDK 中已集成 FCM 推送相关逻辑，你还需要完成以下步骤。
 
 ## **FCM 推送集成**
 
@@ -126,7 +126,7 @@ plugins {
 </service>
 ```
 
-3. 在环信即时通讯 IM SDK 中启用 FCM。
+3. 在即时通讯 IM SDK 中启用 FCM。
 
 ```java
 EMOptions options = new EMOptions();
@@ -161,9 +161,9 @@ EMPushHelper.getInstance().setPushListener(new PushListener() {
 });
 ```
 
-4. 环信即时通讯 IM SDK 登录成功后，上传 FCM 的 device token。
+4. 即时通讯 IM SDK 登录成功后，上传 FCM 的 device token。
 
-在应用初始化时，FCM SDK 会为用户的设备上的客户端应用生成唯一的注册 token。由于 FCM 使用该 token 确定要将推送消息发送给哪个设备，因此，环信服务器需要获得客户端应用的注册 token 才能将通知请求发送给 FCM，然后 FCM 验证注册 token，将通知消息发送给 Android 设备。建议该段代码放在成功登录即时通讯 IM 后的主页面。
+在应用初始化时，FCM SDK 会为用户的设备上的客户端应用生成唯一的注册 token。由于 FCM 使用该 token 确定要将推送消息发送给哪个设备，因此，IM 服务器需要获得客户端应用的注册 token 才能将通知请求发送给 FCM，然后 FCM 验证注册 token，将通知消息发送给 Android 设备。建议该段代码放在成功登录即时通讯 IM 后的主页面。
 
 ```java
 // 查看是否支持 FCM
@@ -187,7 +187,7 @@ FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteL
 
 5. 监控 device token 生成。
 
-重写 `FirebaseMessagingService` 中的 `onNewToken` 方法，device token 更新后及时更新到环信即时通讯 IM SDK。
+重写 `FirebaseMessagingService` 中的 `onNewToken` 方法，device token 更新后及时更新到即时通讯 IM SDK。
 
 ```java
 public class MyFCMMSGService extends FirebaseMessagingService {

@@ -1,6 +1,6 @@
 # 管理用户属性
 
-环信即时通讯 IM 自 v3.8.1 开始支持用户属性管理。
+即时通讯 IM 自 v3.8.1 开始支持用户属性管理。
 
 用户属性指实时消息互动用户的信息，如用户昵称、头像、邮箱、电话、性别、签名、生日等。例如，在招聘场景下，利用用户属性功能可以存储性别、邮箱、用户类型（面试者）、职位类型（web 研发）等。
 
@@ -12,7 +12,7 @@
 
 ## 技术原理
 
-环信即时通讯 IM Android SDK 通过 [EMUserInfoManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_user_info_manager.html) 提供用户属性相关功能。
+即时通讯 IM Android SDK 通过 [EMUserInfoManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_user_info_manager.html) 提供用户属性相关功能。
 
 - `updateOwnInfo`：设置或更新当前用户的全部属性。
 - `updateOwnInfoByAttribute`：设置或更新当前用户的单个属性。
@@ -27,7 +27,7 @@
 开始前，请确保满足以下条件：
 
 - 完成 SDK 初始化，详见 [快速开始](quickstart.html)。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 使用限制
 

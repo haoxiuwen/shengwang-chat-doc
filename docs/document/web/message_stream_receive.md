@@ -33,11 +33,11 @@
 
 - 已完成 SDK 初始化，详见 [初始化文档](initialization.html)。
 - 初始化 SDK 时已注册 `ChatManager`，能够通过 `client.chatManager.addEventHandler` 监听流式消息事件。
-- 已了解环信即时通讯 IM 的 [使用限制](/product/limitation.html)。
+- 已了解即时通讯 IM 的 [使用限制](/product/limitation.html)。
 
 ## 技术原理
 
-流式消息由业务服务端生成，并通过环信 IM 服务端按分片方式下发至客户端 SDK。Web SDK 在分片到达时触发 `onStreamMessage` 回调，并根据分片顺序自动合并消息内容。你可结合当前分片信息、累计合并内容和传输状态实时更新界面，直到整条消息完成或异常结束。
+流式消息由业务服务端生成，并通过即时通讯 IM 服务端按分片方式下发至客户端 SDK。Web SDK 在分片到达时触发 `onStreamMessage` 回调，并根据分片顺序自动合并消息内容。你可结合当前分片信息、累计合并内容和传输状态实时更新界面，直到整条消息完成或异常结束。
 
 ![img](/images/server-side/message_stream_flowchart.png)
 

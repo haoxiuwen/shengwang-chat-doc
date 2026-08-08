@@ -9,7 +9,7 @@
 你可以从服务端获取用户发送的历史消息的记录。
 
 - 单次请求获取从指定起始时间开始一小时内的发送的历史消息记录。
-- 你最多可以获取最近 3 天的历史消息记录。若要提升该限制，你需要联系环信商务。
+- 你最多可以获取最近 3 天的历史消息记录。若要提升该限制，你需要联系商务经理。
 - 当平台消息分发量较大时，服务器生成历史消息记录需要一定时间，建议 24 小时后拉取这些记录。若对时效性有较高要求，推荐使用 [发送后回调服务](callback_postsending.html)。
 - 若调用了 REST API [单向删除会话](conversation_delete.html) 或 [单向删除漫游消息](message_delete_roam_single_msgid.html)，不影响通过该接口的获取的历史消息记录。
 
@@ -80,7 +80,7 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatmessages/2018112717'    \
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `organization`    | String | 环信即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
+| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
@@ -93,7 +93,7 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatmessages/2018112717'    \
 |:---------|:-------------------|:--------------------|:---------|:--------------|
 | 400      | illegal_argument | illegal arguments: appkey: XXXX#XXXX, time: xxxxxx | 请求参数 `time` 格式不正确。  | 输入正确的请求参数 `time`:UTC 时间，使用 ISO8601 标准，格式为 yyyyMMddHH。例如 time 为 2018112717，则表示查询 2018 年 11 月 27 日 17 时至 2018 年 11 月 27 日 18 时期间的历史消息。若海外集群为 UTC 时区，需要根据自己所在的时区进行时间转换。 |
 | 400      | illegal_argument | illegal arguments: appkey: XXXX#XXXX, time: xxxxxx, maybe chat message history is expired or unstored" | `time` 对应时间段内的历史文件已过期或者暂未存储。消息的云存储时间取决于产品套餐，详见 [消息存储时长限制](/product/limitation.html)。 | 输入正确的请求参数 `time`。 |
-| 404      | storage_object_not_found | Failed to find chat message history download url for appkey: XXXX#XXXX, time: xxxxxx" | 对应 `time` 对应时间段内不存在历史文件。      | 如果确定设置的时间内有历史消息，请联系 [环信技术支持](mailto:support@easemob.com)。 |
+| 404      | storage_object_not_found | Failed to find chat message history download url for appkey: XXXX#XXXX, time: xxxxxx" | 对应 `time` 对应时间段内不存在历史文件。      | 如果确定设置的时间内有历史消息，请联系 [技术支持人员](mailto:support@easemob.com)。 |
 
 ## 历史消息记录的内容
 
@@ -249,7 +249,7 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatmessages/2018112717'    \
 | `secret`       | String | 视频文件的访问密钥。如果 [文件上传](message_upload_file.html) 时设置了文件访问限制，则该字段存在。     |
 | `length`       | Int    | 视频时长。单位为秒。                          |
 | `size`         | JSON   | 视频缩略图尺寸。单位为像素。<br/> - `width`：视频缩略图的宽度；<br/> - `height`：视频缩略图的高度。    |
-| `thumb`        | String | 视频缩略图的 URL 地址，格式为 https://{host}/{org_name}/{app_name}/chatfiles/{file_uuid}。其中，`file_uuid` 为视频缩略图上传后，环信服务器返回的缩略图的 UUID。 |
+| `thumb`        | String | 视频缩略图的 URL 地址，格式为 https://{host}/{org_name}/{app_name}/chatfiles/{file_uuid}。其中，`file_uuid` 为视频缩略图上传后，IM 服务器返回的缩略图的 UUID。 |
 | `thumb_secret` | String | 缩略图文件访问密钥。如果文件上传时设置了文件访问限制，则该字段存在。          |
 | `type`         | String | 消息类型。视频消息为 `video`。                                        |
 | `url`          | String | 视频文件的 URL 地址。              |

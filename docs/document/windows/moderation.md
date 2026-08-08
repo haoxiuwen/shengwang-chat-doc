@@ -13,7 +13,7 @@
 
 ## 技术原理
 
-环信即时通讯 IM SDK 提供 `ReportMessage` 方法实现举报违规消息功能。
+即时通讯 IM SDK 提供 `ReportMessage` 方法实现举报违规消息功能。
 
 ## 前提条件
 
@@ -21,7 +21,7 @@
 
 - 完成 SDK 初始化，并连接到服务器，详见 [快速开始](quickstart.html)。
 - 已在 [环信控制台开通消息举报功能](/value-added/moderation/moderation_message_report.html#开通服务)。
-- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 实现方法
 

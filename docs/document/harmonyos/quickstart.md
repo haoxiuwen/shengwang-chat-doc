@@ -2,7 +2,7 @@
 
 <Toc />
 
-本文介绍如何快速集成环信即时通讯 IM HarmonyOS SDK 实现单聊。
+本文介绍如何快速集成即时通讯 IM HarmonyOS SDK 实现单聊。
 
 
 ## 实现原理
@@ -15,11 +15,11 @@
 
 - DevEco Studio NEXT Release（5.0.3.900）及以上；
 - HarmonyOS SDK API 12 及以上；
-- 有效的环信即时通讯 IM 开发者账号和 App key，见 [环信控制台](https://console.easemob.com/user/login)。
+- 有效的即时通讯 IM 开发者账号和 App key，见 [环信控制台](https://console.easemob.com/user/login)。
 
 ## 准备开发环境
 
-本节介绍如何创建项目，将环信即时通讯 IM HarmonyOS SDK 集成到你的项目中，并添加相应的设备权限。
+本节介绍如何创建项目，将即时通讯 IM HarmonyOS SDK 集成到你的项目中，并添加相应的设备权限。
 
 ### 1. 创建 HarmonyOS 项目
 
@@ -65,7 +65,7 @@
 
 ### 2. 集成 SDK
 
-打开 [SDK 下载](https://www.easemob.com/download/im#HarmonyOS)页面，获取最新版的环信即时通讯 IM HarmonyOS SDK，得到 `har` 形式的 SDK 文件。
+打开 [SDK 下载](https://www.easemob.com/download/im#HarmonyOS)页面，获取最新版的即时通讯 IM HarmonyOS SDK，得到 `har` 形式的 SDK 文件。
 
 将 SDK 文件，拷贝到 `Harmony` 工程，例如放至 `HelloWorld` 工程下 `entry` 模块下新建的 `libs` 目录中。
 
