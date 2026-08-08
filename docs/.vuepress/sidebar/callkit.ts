@@ -48,7 +48,6 @@ const callKitSidebar = [
   { text: "更新日志", link: "releasenote.html" },
   { text: "常见问题", link: "common_issue.html" },
   { text: "设计指南", link: "design_guide.html" },
-  { text: "历史文档", link: "easecallkit.html" }
 ];
 
 function buildCallKitSidebar() {
