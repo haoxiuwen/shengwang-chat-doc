@@ -13,7 +13,7 @@
 
 - 方式二：通过获取会话信息时创建会话：
 
-  调用 [getConversation](https://doc.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_manager.html#aa18a33432d743061e642f229cc218b83) 接口时，若将参数 `createIfNotExists` 设为 `true`（默认值），即时通讯 IM 会在会话不存在时自动创建该会话。  
+  调用 `getConversation` 接口时，若将参数 `createIfNotExists` 设为 `true`（默认值），即时通讯 IM 会在会话不存在时自动创建该会话。
 
 #### 会话 ID
 
