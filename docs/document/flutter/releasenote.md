@@ -123,7 +123,7 @@
 
 #### 优化
 
-- [IM Demo] 跑通即时通讯 IM Demo 时，无需部署 App Server。Demo 跑通详情，请参见 [Demo 跑通文档](/document/flutter/demo.html)。
+- [IM Demo] 跑通即时通讯 IM Demo 时，无需部署 App Server。
 
 #### 修复
 

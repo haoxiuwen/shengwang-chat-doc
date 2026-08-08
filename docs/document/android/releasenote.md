@@ -356,7 +356,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 #### 优化
 
 - 修改 Token 即将过期事件 [onTokenWillExpire](connection.html#监听连接状态) 的触发时机。SDK 会在 Token 有效期达到 80% 时（之前版本为 50% ）回调即将过期通知。
-- [IM Demo] 跑通即时通讯 IM Demo 时，无需部署 App Server。Demo 跑通详情，请参见 [Demo 跑通文档](/document/android/demo.html#快速跑通-demo-源码)。
+- [IM Demo] 跑通即时通讯 IM Demo 时，无需部署 App Server。
 
 #### 修复
 
@@ -484,7 +484,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 - 修复发送方发送的部分表情与接收方收到的不匹配的问题。
 
-#### [EaseCallKIt](easecallkit.html)
+#### EaseCallKit
 
 - 修复部分手机在拨号时，切换到悬浮窗口后再返回时，通话状态显示错误的问题。
 - 修复切换悬浮窗时，悬浮窗闪烁一次的问题.
@@ -530,7 +530,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 #### CallKit
 
-[添加声网私有化环境接口，对外暴露 RTCEngine](easecallkit.html#私有化部署)。
+添加声网私有化环境接口，对外暴露 RTCEngine。
 
 ## v4.8.1 2024-07-18
 
@@ -869,7 +869,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 #### 优化
 
-- [IM Demo] [优化登录方式，修改为手机号+验证码](demo.html)。
+- [IM Demo] 优化登录方式，修改为手机号+验证码。
 - [IM CallKit] 升级 RTC 版本至 4.1.0 版本。
 
 #### 修复
@@ -1268,7 +1268,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 #### 更新(2021-05-08)：
 
-- [EaseCallkit] 修改加入声网频道的方式，改为使用数字 uid 加入，增加与小程序的互通，`与之前版本不互通`，参见[EaseCallKit 使用指南](easecallkit.html);
+- [EaseCallkit] 修改加入声网频道的方式，改为使用数字 uid 加入，增加与小程序的互通，`与之前版本不互通`。
 
 ```
 **重大变动：**
@@ -1299,7 +1299,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 #### 注意
 
 - **为提供更好的服务，从 3.8.0 开始 SDK 中不再提供音视频功能，而是在 EaseCallKit 中基于声网的 SDK 给出了音视频功能的参考实现。该方案呼叫功能不能与之前版本之间互通，请根据情况选择使用新方案或者继续使用之前的版本**
-- EaseCallKit 除了可以远程库外，也公布了源码，详情请见：[EaseCallKit 使用指南](https://docs-im.easemob.com/im/android/other/easecallkit);
+- EaseCallKit 除了可以远程库外，也公布了源码。
 
 ## v3.7.6 2021-09-17
 

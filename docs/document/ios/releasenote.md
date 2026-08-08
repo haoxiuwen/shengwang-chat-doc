@@ -333,7 +333,7 @@ SDK 依赖的 AOSL Crash 检测库已更换为 `ShengwangInfra_iOS`。如使用�
 #### 优化
 
 - 修改 Token 即将过期事件 [tokenWillExpire](connection.html#监听连接状态) 的触发时机。SDK 会在 Token 有效期达到 80% 时（之前版本为 50% ）回调即将过期通知。
-- [IM Demo] 跑通即时通讯 IM Demo 时，无需部署 App Server。Demo 跑通详情，请参见 [Demo 跑通文档](demo.html#快速跑通-demo-源码)。
+- [IM Demo] 跑通即时通讯 IM Demo 时，无需部署 App Server。
 
 ## v4.14.0 Dev 2025-4-21（开发版）
 
@@ -449,7 +449,7 @@ SDK 依赖的 AOSL Crash 检测库已更换为 `ShengwangInfra_iOS`。如使用�
 - [IM SDK] 修复发送图片消息时指定缩略图尺寸未生效的问题。
 - [IM SDK] 修复未拉取好友时收到好友事件，导致好友列表不能更新的问题。
 
-#### [EaseCallKIt](easecallkit.html)
+#### EaseCallKit
 
 - 升级依赖的 `AgoraRtcEngine` 版本，防止因为旧版本包含 Bitcode 无法上传 App Store。
 
@@ -758,7 +758,7 @@ SDK 依赖的 AOSL Crash 检测库已更换为 `ShengwangInfra_iOS`。如使用�
 
 #### 优化
 
-- [IM Demo] [优化登录方式，修改为手机号+验证码](demo.html)。
+- [IM Demo] 优化登录方式，修改为手机号+验证码。
 - [IM CallKit] 升级 RTC 版本至 4.1.1 版本。
 
 ## v3.9.9 Dev 2022-11-29
@@ -1165,7 +1165,7 @@ EaseIMKit：
 
 EaseCallKit（2021-05-07）：
 
-- 修改加入声网频道的方式，改为使用数字 uid 加入，增加与小程序的互通，`与之前版本不互通`,参见[EaseCallKit 使用指南](easecallkit.html)
+- 修改加入声网频道的方式，改为使用数字 uid 加入，增加与小程序的互通，`与之前版本不互通`。
 
 ## v3.8.0 2021-02-27
 
@@ -1195,7 +1195,7 @@ EaseIMKit：
 
 - **为提供更好的服务，从 3.8.0 开始 SDK 中不再提供音视频功能，而是在 EaseCallKit 中基于声网的 SDK 给出了音视频功能的参考实现。该方案呼叫功能不能与之前版本之间互通，请根据情况选择使用新方案或者继续使用之前的版本**
 - EaseIMKit 除了可以远程库外，也公布了源码，详情请见：[EaseIMKit 使用指南](https://docs-im.easemob.com/im/ios/other/easeimkit);
-- EaseCallKit 初版发布，详情请见[EaseCallKit 使用指南](https://docs-im.easemob.com/im/ios/other/easecallkit)
+- EaseCallKit 初版发布。
 
 ## v3.7.4 2021-02-04
 
