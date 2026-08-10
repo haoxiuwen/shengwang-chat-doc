@@ -18,11 +18,11 @@
 
 ## 主动登录
 
-1. **用户 ID + token** 是更加安全的登录方式。token 可以通过调用 REST API 获取。 详见 [环信用户 token 的获取](/document/server-side/easemob_user_token.html)。
+1. **用户 ID + token** 是更加安全的登录方式。token 可以通过调用 REST API 获取。 详见 [Token 鉴权](/document/server-side/token_authentication.html)。
 
 测试环境下，你在[环信控制台](https://console.easemob.com/user/login)创建用户后，IM 服务器会自动为这些用户分配用户 Token，详见[查看用户 Token](/product/console/operation_user.html#查看用户-token)。
 
-在生产环境中，为了安全考虑，你需要在你的应用服务器集成[获取 App Token API](/document/server-side/easemob_app_token.html) 和[获取用户 Token API](/document/server-side/easemob_user_token.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成[Token 鉴权](token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
 
 使用 token 登录时需要处理 token 过期的问题，比如在每次登录时更新 token 等机制。

@@ -27,7 +27,7 @@
 | 404                        | （未找到）服务器找不到请求的接口。                           |
 | 405                        | （请求方式错误）请按照环信 REST 接口说明，正确的使用接口 GET，POST 等请求方式。 |
 | 408                        | （请求超时）服务器等候请求时发生超时。                       |
-| 409                        | 并发调用[通过用户 ID 获取用户 token 的 API](easemob_user_token.html#通过用户-id-获取用户-token) 时若设置了自动创建用户则报错。也就是说，调用了该 API 时将 `grant_type` 设置为 `inherit`，`autoCreateUser` 设置为 `true`，则会上报该错误。如果获取 token 的用户已注册，并发调用该 API 则不会报错。|
+| 409                        | 并发调用[Token 鉴权](token_authentication.html) 时若设置了自动创建用户则报错。也就是说，调用了该 API 时将 `grant_type` 设置为 `inherit`，`autoCreateUser` 设置为 `true`，则会上报该错误。如果获取 token 的用户已注册，并发调用该 API 则不会报错。|
 | 413                        | （消息附件过大）调用[上传文件](message_upload_file.html)接口上传的消息附件超过了最大限制。  |
 | 415                        | 请求体的类型不支持。                                         |
 | 429                        | （服务不可用）请求接口超过调用频率限制，即接口被限流。或超过社区版限制，如有需要可联系商务。 |
@@ -55,7 +55,7 @@
 
 ## Token 相关错误码
 
-1. 关于调用获取 Token 相关的 REST API 的错误码，详见[获取 App Token](easemob_app_token.html)和[获取用户 Token](easemob_user_token.html)接口的错误码列表。   
+1. 关于调用获取 Token 相关的 REST API 的错误码，详见 [Token 鉴权](token_authentication.html) 中各接口对应的错误码列表。
 
 2. 调用 REST API 过程中，Token 相关的错误码如下表所示：
 

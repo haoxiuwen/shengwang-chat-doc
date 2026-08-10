@@ -60,7 +60,7 @@ Easemob_quickstart<br>
 
 在 [环信控制台](https://console.easemob.com/user/login) 创建用户，获取用户 ID 和用户 Token。详见 [创建用户文档](/product/console/operation_user.html#创建用户)。
 
-在生产环境中，为了保证安全性，你需要在应用服务器中集成 [获取 App Token API](/document/server-side/easemob_app_token.html) 和 [获取用户 Token API](/document/server-side/easemob_user_token.html)，由应用服务器向客户端下发用户 Token，避免在客户端暴露敏感凭据。
+在生产环境中，为了保证安全性，你需要在应用服务器中集成 [Token 鉴权](token_authentication.html)，由应用服务器向客户端下发用户 Token，避免在客户端暴露敏感凭据。
 
 ### 步骤 3：实现用户界面
 

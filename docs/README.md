@@ -1175,7 +1175,7 @@ projects:
         icon: /feature/api-server.svg
         contexts:
           - text: Token 鉴权
-            link: /document/server-side/easemob_app_token.html
+            link: /document/server-side/token_authentication.html
           - text: 回调
             link: /document/server-side/callback_presending.html
           - text: 多设备管理

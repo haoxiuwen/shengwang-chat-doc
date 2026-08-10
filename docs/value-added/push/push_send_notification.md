@@ -49,7 +49,7 @@
 
 Authorization：`Bearer ${YourAppToken}`
 
-为提高项目的安全性，IM 使用 Token（动态密钥）对即将登录即时通讯系统的用户进行鉴权。即时通讯 RESTful API 推荐使用 app token 的鉴权方式，详见 [使用 app token 鉴权](/document/server-side/easemob_app_token.html)。
+为提高项目的安全性，IM 使用 Token（动态密钥）对即将登录即时通讯系统的用户进行鉴权。即时通讯 RESTful API 推荐使用 app token 的鉴权方式，详见 [Token 鉴权](/document/server-side/token_authentication.html)。
 
 ## 同步推送单用户
 

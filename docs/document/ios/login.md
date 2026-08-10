@@ -32,7 +32,7 @@ SDK 通过用户 ID 和 IM Token 登录。调用 `loginWithUsername` 时，需�
 
 测试环境下，你在 [环信控制台](https://console.easemob.com/user/login) 创建用户后，IM 服务器会自动为这些用户分配用户 Token，详见 [创建用户](/product/console/operation_user.html#创建用户)。
 
-生产环境中，建议在你的应用服务器集成 [获取 App Token API](/document/server-side/easemob_app_token.html) 和 [获取用户 Token API](/document/server-side/easemob_user_token.html)，由客户端从你的应用服务器获取用户 Token 后再登录 SDK。
+生产环境中，建议在你的应用服务器集成 [Token 鉴权](token_authentication.html)，由客户端从你的应用服务器获取用户 Token 后再登录 SDK。
 
 ```objectivec
 [[EMClient sharedClient] loginWithUsername:userId

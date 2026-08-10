@@ -595,7 +595,7 @@ npm run dev
    http://localhost:5173?userId=your_user_id&accessToken=your_accessToken
    ```
 
-在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [获取 App Token API](/document/server-side/easemob_app_token.html) 和 [获取用户 Token API](/document/server-side/easemob_user_token.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [Token 鉴权](token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
 3. 输入对方用户 ID，点击 **发起一对一视频通话** 或 **发起一对一语音通话**。
 4. 在浏览器弹出的权限请求中，允许访问摄像头和麦克风。

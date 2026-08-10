@@ -246,7 +246,7 @@ extension MainViewController: CallServiceListener {
 
 调用即时通讯 IM SDK 的 `login` 方法传入用户 ID 和 Token 登录 IM。
 
-在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [获取 App Token API](/document/server-side/easemob_app_token.html) 和 [获取用户 Token API](/document/server-side/easemob_user_token.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [Token 鉴权](token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
 ```swift
             ChatClient.shared().login(withUsername: userId, token: token) { [weak self] userId,error  in

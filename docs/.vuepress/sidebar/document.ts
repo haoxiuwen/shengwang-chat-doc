@@ -342,15 +342,7 @@ const documentV5Sidebar = [
   { text: '服务端 API 概述', link: 'overview.html', only: ['server-side'] },
   { text: 'API 调用频率限制', link: 'limitationapi.html', only: ['server-side'] },
   { type: "separator", only: ['server-side']} as any,
-  { 
-    text: 'Token 鉴权',
-    collapsible: true,
-    children: [
-      { text: 'App Token 鉴权', link: 'easemob_app_token.html' },
-      { text: 'User Token 鉴权', link: 'easemob_user_token.html' },
-    ],
-    only: ['server-side']
-  },
+  { text: '使用 Token 鉴权', link: 'token_authentication.html', only: ['server-side'] },
   { 
     text: '消息管理', 
     collapsible: true,
