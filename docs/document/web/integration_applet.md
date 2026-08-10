@@ -10,9 +10,9 @@
 
 在环信控制台完成以下操作：
 
-1. [注册环信账号](/product/console/account_register.html)。
-2. [创建应用](/product/console/app_create.html)。
-3. 获取应用唯一的 App Key。初始化 SDK 时需要传入该 App Key。
+1. [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
+2. [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
+3. [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 。初始化 SDK 时需要传入该 App ID。
 
 ### 步骤 2：搭建小程序开发环境
 

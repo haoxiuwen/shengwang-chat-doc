@@ -23,58 +23,34 @@ uni-app SDK 支持以下平台：
 
 开始集成前，请准备以下账号、工具和信息：
 
-- [环信账号](/product/console/account_register.html) 及已 [创建的应用](/product/console/app_create.html)；
-- [应用的 App Key](/product/console/app_manage.html#管理应用)；
+- [开发者账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)
+- [应用的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)；
 - DCloud 开发者账号；
 - HBuilderX 最新版本；
-- 项目所属的 [数据中心及对应服务地址](/product/console/app_manage.html#管理应用)；
+- 项目所属的 [数据中心及对应服务地址](/product/data_center.html#数据中心选择与查看)；
 - 目标小程序平台的开发者账号和管理权限。
 
 ## 快速开始
 
 首次接入时，建议按照以下顺序操作：
 
-1. 注册环信账号并 [创建应用](/product/console/app_create.html)，获取 App Key；
+1. 注册声网账号并 [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)，[获取应用的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)；
 2. 安装 HBuilderX，并注册、登录 DCloud 开发者账号；
-3. 确认应用所属的 [数据中心](/product/console/app_manage.html#管理应用)；
+3. 确认应用所属的 [数据中心](/product/data_center.html#数据中心选择与查看)；
 4. 在目标小程序平台配置合法域名；
 5. 安装并引入 `easemob-websdk`；
 6. 创建 SDK 连接实例并配置 App Key 和服务地址；
 7. 运行项目，验证登录和消息收发功能。
 
-## 体验 Demo
-
-可以下载安装以下 Demo，体验 uni-app 构建的移动端原生应用：
-
-- Android：[下载 Demo](https://www.pgyer.com/h4XF)
-- iOS：[下载 Demo](https://www.pgyer.com/9ISC)
-
-Demo 源码：
-
-- [GitHub](https://github.com/easemob/easemob-uikit-uniapp)
-- [Gitee](https://gitee.com/easemob-code/easemob-uikit-uniapp)
-
-Demo 主要包含以下功能：
-
-- 账户注册与登录；
-- 文本、图片、语音、视频、音频、文件、透传和扩展消息的收发；
-- 群组和聊天室；
-- 个人设置；
-- 语音消息发送。
-
-:::tip
-Demo 仅包含部分 IM 功能，完整能力请以 SDK 的实际支持范围为准。
-:::
-
 ## 集成 SDK
 
 ### 步骤 1：准备开发环境
 
-#### 注册环信账号并创建应用
+#### 注册环信账号并创建项目
 
-1. 在环信控制台 [注册账号](/product/console/account_register.html)；
-2. [创建应用](/product/console/app_create.html)；
-3. 获取应用的 App Key，并妥善保存。初始化 SDK 时需要使用该参数。
+1. 在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
+2. [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
+3. [获取应用的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)，并妥善保存。初始化 SDK 时需要使用该参数。
 
 #### 安装 HBuilderX
 

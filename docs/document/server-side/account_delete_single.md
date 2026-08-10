@@ -99,5 +99,5 @@ curl -X DELETE 'https://XXXX/app-id/{app_id}/users/XXXX'    \
 | :---------- | :---------- | :-------------- | :------------- | :--------------- |
 | 400         | management     | User with id null does not exist in app XXX      | 用户不存在。  | 先注册用户或者检查用户名是否正确。  |
 | 401         | unauthorized   | Unable to authenticate (OAuth)    | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。  |
-| 404         | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App key 不存在。  | 检查 `orgName` 和 `appName` 是否正确或[创建应用](/product/console/app_create.html)。 |
+| 404         | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App key 不存在。  | 检查 App ID 是否正确或 [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。 |
 | 404         | service_resource_not_found         | Service resource not found   | 用户不存在。    | 先注册用户或者检查用户名是否正确。  |

@@ -26,8 +26,8 @@ Easemob_quickstart<br>
 
 ## 前提条件
 
-- 有效的 [即时通讯 IM 开发者账号](/product/console/account_register.html#注册账号)；
-- 在环信控制台[创建应用](/product/console/app_create.html) 并 [获取 App Key](/product/console/app_manage.html#管理应用)；
+- 有效的 [即时通讯 IM 开发者账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)；
+- 在声网控制台 [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目) 并 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)；
 - 已安装 [npm](https://www.npmjs.com/get-npm)；
 - SDK 支持 IE 9+、Firefox 10+、Chrome 54+ 和 Safari 6+。
 

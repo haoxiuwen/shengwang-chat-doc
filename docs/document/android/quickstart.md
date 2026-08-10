@@ -15,7 +15,7 @@
 - targetVersion 33 及以上
 - Android SDK API 21 及以上
 - JDK 17 及以上
-- 有效的即时通讯 IM 开发者账号和 App key，见 [环信控制台](https://console.easemob.com/user/login)。
+- 有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 说明。
 
 ## 准备开发环境
 

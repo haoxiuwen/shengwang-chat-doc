@@ -1,7 +1,5 @@
 # 服务端 API 概览
 
-<Toc />
-
 即时通讯通过 REST 平台提供服务端 API，你可以通过你的业务服务器向 IM 的 REST 服务器发送 HTTP 请求，在服务端实现实时通信。
 
 另外，IM Server SDK 提供了用户、消息、群组、聊天室等资源的操作管理能力，详见 [Java Server SDK](apireference_java_2.0.html) 和 [PHP Server SDK](php_server_sdk.html)。
@@ -70,5 +68,5 @@ POST https://{host}/{org_name}/{app_name}/users
 
 要调用即时通讯 RESTful API，请确保满足以下要求：
 
-- 已在 [环信控制台](https://console.easemob.com/user/login) [注册账号](/product/console/account_register.html)，[创建应用](/product/console/app_create.html)。
+- 已在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
 - 已从服务端获取 app token，详见 [Token 鉴权](token_authentication.html)。

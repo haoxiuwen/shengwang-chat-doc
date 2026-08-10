@@ -24,7 +24,7 @@
 
 ## 开发者集成
 
-[注册并创建应用](/product/console/app_create.html)
+在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
 
 ### 搭建 app 开发环境
 

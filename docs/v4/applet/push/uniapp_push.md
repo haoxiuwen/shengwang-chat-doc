@@ -6,7 +6,7 @@
 
 ## 前提条件
 
-1. 在 [环信控制台](https://console.easemob.com/user/login) [注册账号](/product/console/account_register.html)，[创建应用](/product/console/app_create.html)。
+1. 在 [声网控制台](https://console.shengwang.cn/overview)[注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
 2. 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 3. 若使用推送模板，你需要在 [环信控制台](https://console.easemob.com/user/login)的 **功能配置 > 基础功能 > 消息** 页面激活。**激活后，如需关闭推送模板功能，必须联系商务，因为该操作会删除推送模板相关的所有配置。**
 4. 各推送使用的条件：

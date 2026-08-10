@@ -332,7 +332,7 @@
 
 具体集成请参考以下文档：
 
-- 在 [环信控制台](https://console.easemob.com/user/login) [注册账号](/product/console/account_register.html)，[创建应用](/product/console/app_create.html)。
+- 在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
 - [即时通讯 IM Windows 快速入门](quickstart.html)
 - [消息管理 Windows](message_send.html)
 - [群组 Windows](group_manage.html)

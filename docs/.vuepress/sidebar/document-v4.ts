@@ -315,6 +315,7 @@ const documentSidebar = [
   },
   { text: '合规指南', link: 'sdk_compliance.html', only: ['applet']},
   { text: '服务端 API 概述', link: 'overview.html', only: ['server-side'] },
+  { text: '开通服务', link: 'enable_im.html', only: ['server-side'] },
   { text: 'API 调用频率限制', link: 'limitationapi.html', only: ['server-side'] },
   { type: "separator", only: ['server-side']} as any,
   { text: '使用 Token 鉴权', link: 'token_authentication.html', only: ['server-side'] },
