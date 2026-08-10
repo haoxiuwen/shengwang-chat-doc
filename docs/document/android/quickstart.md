@@ -113,7 +113,7 @@ dependencies {
 </manifest>
 ```
 
-关于 App Key 对应的 value 获取，在 [环信控制台](https://console.easemob.com/user/login) 创建应用后，申请 App Key 并进行相关配置。
+关于 App ID 对应的 value 获取，在 [声网控制台](https://console.shengwang.cn/overview) [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目) 后进行相关配置。
 
 ### 4. 防止代码混淆
 
@@ -224,7 +224,7 @@ android {
 | API 名称 | 所属模块/类 | 说明 |
 | :--- | :--- | :--- |
 | [`init`](#_1-sdk-初始化) | `EMClient` | 初始化 Android SDK。 |
-| [`setAppKey`](#_1-sdk-初始化) | `EMOptions` | 设置应用的 App Key。 |
+| [`setAppId`](#_1-sdk-初始化) | `EMOptions` | 设置应用的 App ID。 |
 | [`loginWithToken`](#_3-登录账号) | `EMClient` | 使用用户 ID 和 Token 登录。 |
 | [`createTextSendMessage`](#_4-发送一条单聊消息) | `EMMessage` | 创建文本消息。 |
 | [`sendMessage`](#_4-发送一条单聊消息) | `EMChatManager` | 发送消息。 |

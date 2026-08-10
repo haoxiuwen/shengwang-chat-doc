@@ -61,7 +61,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/users/user1/activate'   \
 | HTTP 状态码 | 错误类型     | 错误提示      | 可能原因       | 处理建议    |
 | :---------- | :---------| :---------------------| :----------| :--------|
 | 401         | unauthorized                       | Unable to authenticate (OAuth)   | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。    |
-| 404         | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App key 不存在。    | 检查 `orgName` 和 `appName` 是否正确或 [创建应用](/product/console/app_create.html)。 |
 | 404         | service_resource_not_found         | Service resource not found   | 用户不存在。  | 先 [注册用户](account_register_open.html)或者检查用户名是否正确。 |
 
 关于其他错误，你可以参考 [响应状态码](error.html) 了解可能的原因。
