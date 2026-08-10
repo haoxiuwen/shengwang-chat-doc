@@ -39,7 +39,6 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatgroups/{groupid}/white/users'   \
 ```json
 {
   "action": "get",
-  "application": "XXXX",
   "uri": "https://XXXX/XXXX/XXXX/chatgroups/12XXXX53/white/users",
   "entities": [],
   "data": [
@@ -51,8 +50,6 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatgroups/{groupid}/white/users'   \
     ],
   "timestamp": 1594724947117,
   "duration": 3,
-  "organization": "XXXX",
-  "applicationName": "XXXX",
   "count": 5
 }
 ```
@@ -70,13 +67,10 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatgroups/{groupid}/white/users'   \
 | 字段          | 类型 | 描述                                                                              |
 | :------------ | :--- | :-------------------------------------------------------------------------------- |
 | `action`          | String | 请求方法。                                                                     |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `uri`             | String | 请求 URL。                                                                     |
 | `entities`        | JSON Array   | 响应实体。    |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 | `count`           | Int | 群组白名单中的用户数量。   |
 
 ## 错误码

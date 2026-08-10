@@ -66,8 +66,6 @@ curl -X PUT 'https://XXXX/app-id/{app_id}/chatgroups/6XXXX7'   \
 ```json
 {
   "action": "put",
-  "application": "XXXXXX",
-  "applicationName": "XXXX",
   "data": {
     "allowinvites": true,
     "invite_need_confirm": true,
@@ -81,7 +79,6 @@ curl -X PUT 'https://XXXX/app-id/{app_id}/chatgroups/6XXXX7'   \
   },
   "duration": 0,
   "entities": [],
-  "organization": "XXXX",
   "properties": {},
   "timestamp": 1666062065529,
   "uri": "https://XXXX/XXXX/XXXX/chatgroups/6XXXX7"
@@ -110,11 +107,8 @@ curl -X PUT 'https://XXXX/app-id/{app_id}/chatgroups/6XXXX7'   \
 | 参数              | 类型   | 描述                                                                           |
 | :---------------- | :----- | :----------------------------------------------------------------------------- |
 | `action`          | String | 请求方法。                                                                     |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
 | `entities`        | JSON Array   | 响应实体。                                                                     |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `properties`      | String | 响应属性。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 | `uri`             | String | 请求 URL。                                                                     |

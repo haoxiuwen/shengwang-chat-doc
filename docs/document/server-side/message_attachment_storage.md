@@ -57,14 +57,11 @@ curl -X PUT "https://localhost/{org_name}/{app_name}/users/{username}/chatfiles/
   "path": "/users/test/chatfiles/lifetime",
   "uri": "https://XXXX/XXXX/XXXX/users/test/chatfiles/lifetime",
   "timestamp": 1731382587142,
-  "organization": "XXXX",
-  "application": "2a8f5b13-XXXX-XXXX-958a-838fd47f1223",
   "action": "put",
   "data": {
       "359f9c50-XXXX-XXXX-92cd-07eff71e8a37": "success"
   },
-  "duration": 102,
-  "applicationName": "XXXX"
+  "duration": 102
 }
 ```
 
@@ -83,11 +80,8 @@ curl -X PUT "https://localhost/{org_name}/{app_name}/users/{username}/chatfiles/
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`                | String | 请求 URL。                |
 | `timestamp`          | Long   | HTTP 响应的 Unix 时间戳，单位为毫秒。       |
-| `organization`       | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。          |
-| `application`        | String | 系统内为应用生成的唯一标识，开发者无需关心。          |
 | `action`             | String | 请求方法。                                   |
 | `duration`           | Long   | 从发送 HTTP 请求到响应的时长, 单位为毫秒。     |
-| `applicationName`    | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。    |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [错误码](#错误码)了解可能的原因。
 

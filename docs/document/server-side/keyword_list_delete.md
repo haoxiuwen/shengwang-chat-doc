@@ -39,7 +39,7 @@ curl -X DELETE 'https://XXXX/app-id/{app_id}/moderation/text/list/{list_id}' \
 
 ```json
 {
-  "status": "OK",
+  "status": "OK"
 }
 ```
 

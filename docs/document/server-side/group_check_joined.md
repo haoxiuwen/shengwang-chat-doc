@@ -40,10 +40,8 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatgroups/XXXX/user/XXXX/is_joined'  
 ```json
 {
     "action": "get",
-    "application": "8bXXXX02",
     "data": false,
     "duration": 0,
-    "organization": "XXXX",
     "timestamp": 1691547476492
 }
 ```
@@ -61,9 +59,7 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatgroups/XXXX/user/XXXX/is_joined'  
 | 字段           | 类型   | 描述      |
 | :------------- | :----- | :-------- |
 | `action`          | String | 请求方法。                                                                     |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 
 ## 错误码

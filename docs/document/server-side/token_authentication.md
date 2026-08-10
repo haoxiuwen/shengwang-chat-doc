@@ -295,7 +295,6 @@ return builder.buildAppToken(appid, appcert, expirePeriod);
    ```shell
     {
           "action": "post",
-          "application": "8be024f0-e978-11e8-b697-5d598d5f8402",
           "path": "/users",
           "uri": "https://a1.agora.com/XXXX/XXXX/users",
           "entities": [
@@ -310,9 +309,7 @@ return builder.buildAppToken(appid, appcert, expirePeriod);
               }
           ],
           "timestamp": 1542795196515,
-          "duration": 0,
-          "organization": "XXXX",
-          "applicationName": "XXXX"
+          "duration": 0
       }
    ```
 
@@ -360,13 +357,13 @@ return builder.buildUserToken(appid, appcert, chatUserId, expirePeriod);
      mode: "production",
      output: {
        filename: "bundle.js",
-       path: path.resolve(__dirname, "./dist"),
+       path: path.resolve(__dirname, "./dist")
      },
      devServer: {
        compress: true,
        port: 9000,
-       https: true,
-     },
+       https: true
+     }
    };
    ```
 
@@ -434,7 +431,7 @@ return builder.buildUserToken(appid, appcert, chatUserId, expirePeriod);
 ```js
 import ChatSDK from "shengwang-chat";
 const chatClient = new ChatSDK.connection({
-  appId: "<Your appId>",
+  appId: "<Your appId>"
 });
 // 登录即时通讯 IM
 let username;
@@ -447,7 +444,7 @@ document.getElementById("login").onclick = function () {
       // 通过用户名和 Token 登录即时通讯
       chatClient.open({
         user: username,
-        accessToken: token,
+        accessToken: token
       });
     });
 };
@@ -486,7 +483,7 @@ chatClient.addEventHandler("AUTHHANDLER", {
   },
   onError: (error) => {
     console.log("on error", error);
-  },
+  }
 });
 // 更新 Token
 function refreshToken(username) {

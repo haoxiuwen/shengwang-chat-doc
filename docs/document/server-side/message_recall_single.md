@@ -72,8 +72,6 @@ curl -i -X POST "https://XXXX/app-id/{app_id}/messages/msg_recall"   \
   "path": "/messages/msg_recall",
   "uri": "https://XXXX/XXXX/XXXX/messages/msg_recall",
   "timestamp": 1657529588473,
-  "organization": "XXXX",
-  "application": "09ebbf8b-XXXX-XXXX-XXXX-d47c3b38e434",
   "action": "post",
   "data": {
     "recalled": "yes",
@@ -82,8 +80,7 @@ curl -i -X POST "https://XXXX/app-id/{app_id}/messages/msg_recall"   \
     "to": "XXXX",
     "msg_id": "1028442084794698104"
   },
-  "duration": 8,
-  "applicationName": "XXXX"
+  "duration": 8
 }
 ```
 
@@ -118,11 +115,8 @@ curl -i -X POST "https://XXXX/app-id/{app_id}/messages/msg_recall"   \
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 

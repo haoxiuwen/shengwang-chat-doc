@@ -48,7 +48,6 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatmessages/2018112717'    \
 ```json
 {
   "action": "get",
-  "application": "8be024f0-XXXX-XXXX-b697-5d598d5f8402",
   "uri": "'https://XXXX/XXXX/XXXX/chatmessages/2018112717",
   "data": [
     {
@@ -56,9 +55,7 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatmessages/2018112717'    \
     }
   ],
   "timestamp": 1543314322601,
-  "duration": 0,
-  "organization": "XXXX",
-  "applicationName": "testapp"
+  "duration": 0
 }
 ```
 
@@ -76,12 +73,9 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatmessages/2018112717'    \
 | 参数              | 类型   | 描述                                                                           |
 | :---------------- | :----- | :----------------------------------------------------------------------------- |
 | `action`          | String | 请求方法。                                                                     |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 

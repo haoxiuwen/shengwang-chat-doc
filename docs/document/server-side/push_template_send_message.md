@@ -55,14 +55,11 @@ curl -X POST 'https://XXXX/app-id/{app_id}/messages/users' \
   "path": "/messages/users",
   "uri": "https://XXXX/XXXX/XXXX/messages/users",
   "timestamp": 1657254052191,
-  "organization": "XXXX",
-  "application": "e82bcc5f-XXXX-XXXX-a7c1-92de917ea2b0",
   "action": "post",
   "data": {
     "user2": "1029457500870543736"
   },
-  "duration": 0,
-  "applicationName": "XXXX"
+  "duration": 0
 }
 ```
 
@@ -109,14 +106,11 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups'
   "path": "/messages/chatgroups",
   "uri": "https://XXXX/XXXX/XXXX/messages/chatgroups",
   "timestamp": 1657254052191,
-  "organization": "XXXX",
-  "application": "e82bcc5f-XXXX-XXXX-a7c1-92de917ea2b0",
   "action": "post",
   "data": {
     "184524748161025": "1029544257947437432"
   },
-  "duration": 0,
-  "applicationName": "XXXX"
+  "duration": 0
 }
 ```
 
