@@ -198,11 +198,7 @@ const documentV5Sidebar = [
         text: '集成介绍',
         collapsible: true,
         children: [
-          { text: '微信小程序', link: 'wechat.html' },
-          { text: 'QQ 小程序', link: 'qq.html' },
-          { text: '百度小程序', link: 'baidu.html' },
-          { text: '抖音小程序', link: 'bytedance.html' },
-          { text: '支付宝小程序', link: 'alipay.html' },
+          { text: '集成小程序 SDK', link: 'integration.html' },
           { text: 'Uniapp 全平台', link: 'uniapp.html' },
         ],
         only: ['applet']
