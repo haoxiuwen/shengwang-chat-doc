@@ -6,7 +6,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key 
+100 次/秒/App ID 
 
 ## 请求 URL
 
@@ -92,7 +92,7 @@ curl -X PUT 'https://XXXX/app-id/{app_id}/moderation/text/list/{list_id}/word' \
 | HTTP 状态码        | 错误类型 | 错误提示          | 可能原因 | 处理建议 |
 | :----------- | :--- | :------------- | :----------- | :----------- |
 | 401     | unauthorized | Unable to authenticate (OAuth) | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。 |
-| 400 | Bad request  | textList id is empty           | 关键词名单 ID 参数 `list_id` 为空，App Key 与 `list_id` 无法对应。 | 请传入正确的关键词名单 ID `list_id`。 |
-| 400 | Bad request | the param can not be empty | 请求 body 中的关键词 ID `id` 为空，App Key 与 `id` 无法对应。 | 请传入正确的关键词 ID `id`。 |
+| 400 | Bad request  | textList id is empty           | 关键词名单 ID 参数 `list_id` 为空。 | 请传入正确的关键词名单 ID `list_id`。 |
+| 400 | Bad request | the param can not be empty | 请求 body 中的关键词 ID `id` 为空。 | 请传入正确的关键词 ID `id`。 |
 
 关于其他错误，你可以参考 [错误码页面](error.html) 了解可能的原因。

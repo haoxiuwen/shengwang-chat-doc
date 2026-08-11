@@ -66,7 +66,7 @@ pod install
 
 你可以在应用程序加载时或使用前初始化 CallKit：
 1. 初始化 IM SDK。CallKit 基于即时通讯 IM 作为信令通道，因此需先初始化 IM SDK。
-   - 填入你的应用的 App Key。
+   - 填入你的应用的 App ID。
    - 设置即时通讯 IM SDK 中的一些选项（`ChatSDKOptions` 类），例如，开启 Console 日志和是否自动登录。建议在正式环境中开启自动登录，可参考 [GitHub](https://github.com/easemob/easemob-demo-ios) 或 [Gitee](https://gitee.com/easemob-code/easemob-demo-ios) 上的 IM Demo 源码。  
 2. 初始化 CallKit。
 
@@ -79,7 +79,7 @@ import EaseCallUIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let option = ChatSDKOptions(appkey: "XXXX#XXX")//首先需要初始化 IM SDK，替换你的 app key
+        let option = ChatSDKOptions(appid: "your app ID")//首先需要初始化 IM SDK，替换你的 app ID
         option.enableConsoleLog = true//开启日志
         option.isAutoLogin = false//此处只是示例项目，真实使用时参考环信Demo源码，自动登录更方便
         ChatClient.shared().initializeSDK(with: option)//初始化SDK

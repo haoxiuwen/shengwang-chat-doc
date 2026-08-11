@@ -114,7 +114,7 @@
 
 | 参数 | 类型 | 说明 |
 | :--- | :--- | :--- |
-| `callId` | String | 回调唯一标识，格式为 `{appkey}_{uuid}`，其中 `uuid` 为随机生成的唯一值。 |
+| `callId` | String | 回调请求的唯一标识。 |
 | `eventType` | String | 回调事件类型：<br/> - `chat` 聊天消息；<br/> - `chat_offline` 离线消息。  |
 | `timestamp` | Long | 即时通讯 IM 服务器接收到该消息时的 Unix 时间戳，单位为毫秒。 |
 | `chat_type` | String | 会话类型：<br/> - `chat` 单聊；<br/> - `groupchat` 群聊，包含群组和聊天室的消息回调，默认全选。|

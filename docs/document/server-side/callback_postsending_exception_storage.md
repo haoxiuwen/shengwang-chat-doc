@@ -18,12 +18,12 @@
 
 ## 查询异常缓存数据
 
-该接口用于查询当前 App Key 下因回调异常进入存储队列的回调数据集合。系统按每 10 分钟生成一个 date key，用于标识对应时间片内的异常回调集合，你可以基于该 date key 进行查询和补发。
+该接口用于查询当前 App ID 下因回调异常进入存储队列的回调数据集合。系统按每 10 分钟生成一个 date key，用于标识对应时间片内的异常回调集合，你可以基于该 date key 进行查询和补发。
 
 ### 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/callbacks/storage/info
+GET https://{host}/app-id/{app_id}/callbacks/storage/info
 ```
 
 关于请求 URL 中各参数的含义，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -31,7 +31,7 @@ GET https://{host}/{org_name}/{app_name}/callbacks/storage/info
 ### 请求示例
 
 ```shell
-curl -X GET 'https://{host}/app-id/{app_id}/callbacks/storage/info' \
+curl -X GET 'https://XXX/app-id/XXX/callbacks/storage/info' \
 -H 'Authorization: Bearer <YourAppToken>'
 ```
 
@@ -44,7 +44,7 @@ curl -X GET 'https://{host}/app-id/{app_id}/callbacks/storage/info' \
 ```json
 {
   "path": "/callbacks",
-  "uri": "https://XXXX/app-id/XXXX/callbacks",
+  "uri": "https://XXXX/XXXX/XXXX/callbacks",
   "timestamp": 1631193031254,
   "action": "post",
   "data": [
@@ -130,7 +130,7 @@ curl -X POST 'https://XXXX/app-id/XXXX/callbacks/storage/retry' \
 ```json
 {
   "path": "/callbacks",
-  "uri": "https://XXXX/app-id/XXXX/callbacks",
+  "uri": "https://XXXX/XXXX/XXXX/callbacks",
   "timestamp": 1631194031721,
   "organization": "XXXX",
   "application": "8dfb1641-XXXX-XXXX-bbe9-d8d45a3be39f",

@@ -78,7 +78,7 @@ interface ConnectionStatus {
   isConnected: boolean;
   status: string;
 }
-const appKey = "org#app"; // 修改成你自己的 appKey
+const appId = "appId"; // 修改成你自己的 app ID
 const App: React.FC = () => {
   // 登录相关状态
   const [userId, setUserId] = useState("");
@@ -248,7 +248,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <Provider initConfig={{ appKey }}>
+    <Provider initConfig={{ appId }}>
       <div className="app-container">
         <div className="main-content">
           <h1>CallKit 快速开始</h1>
@@ -574,9 +574,9 @@ h3 {
 
 :::
 
-### 步骤 4 配置 App Key
+### 步骤 4 配置 App ID
 
-将 `App.tsx` 代码中的 `org#app` 替换成你自己的 App Key。
+将 `App.tsx` 代码中的 `org#app` 替换成你自己的 App ID。
 
 ### 步骤 5 发起首次通话
 
@@ -607,13 +607,13 @@ npm run dev
 运行应用前，你需要授权摄像头、麦克风、悬浮窗等权限。
 
 1. 在浏览器中访问 `http://localhost:5173`。
-2. 输入 App Key、用户 ID 和 accessToken，点击 **登录** 进行登录，登录成功后状态指示器会变绿。
+2. 输入 App ID、用户 ID 和 accessToken，点击 **登录** 进行登录，登录成功后状态指示器会变绿。
 3. 在另一个浏览器标签页或设备上打开同样的页面，使用另一个账号登录。
 4. 在主叫浏览器或设备上输入被叫方的用户 ID，点击对应的通话按钮，即可发起音视频通话。
 
 运行应用过程中的常见问题排查如下：
 
-- 连接失败：检查 App Key 是否正确配置。
+- 连接失败：检查 App ID 是否正确配置。
 - 通话无声音：检查麦克风权限是否已授权。
 - 视频无画面：检查摄像头权限是否已授权。
 - HTTPS 问题：生产环境部署时确保使用 HTTPS 协议。

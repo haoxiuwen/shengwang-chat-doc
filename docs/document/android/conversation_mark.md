@@ -222,7 +222,7 @@ EMClient.getInstance().removeMultiDeviceListener(multiDeviceListener);
 | :--- | :--- | :--- |
 | [`asyncAddConversationMark`](#添加会话标记) | `EMChatManager` | 为一个或多个会话添加指定标记。 |
 | [`asyncRemoveConversationMark`](#移除会话标记) | `EMChatManager` | 从一个或多个会话中移除指定标记。 |
-| [`setAppKey`](#按标记筛选会话列表) | `EMOptions` | 设置应用的 App Key。 |
+| [`setAppId`](#按标记筛选会话列表) | `EMOptions` | 设置应用的 App ID。 |
 | [`setDataSyncType`](#按标记筛选会话列表) | `EMOptions` | 设置登录成功后自动同步的数据类型。 |
 | [`init`](#按标记筛选会话列表) | `EMClient` | 使用指定配置初始化 SDK。 |
 | [`getAllConversationsBySort`](#按标记筛选会话列表) | `EMChatManager` | 获取置顶优先排序的本地会话列表。 |

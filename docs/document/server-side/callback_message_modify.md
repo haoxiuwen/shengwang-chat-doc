@@ -60,7 +60,6 @@
         },
         "type": "edit"
     },
-    "appkey": "easemob-demo#support",
     "from": "wzy1",
     "to": "wzy",
     "msg_id": "1418038921190704764",
@@ -72,11 +71,10 @@
 
 | 字段              | 数据类型 | 描述                                                         |
 | :---------------- | :------- | :----------------------------------------------------------- |
-| `callId`          | String   | `callId` 为每个回调请求的唯一标识。 |
+| `callId`          | String   | 回调请求的唯一标识。 |
 | `eventType`       | String | `chat` 上行消息、`chat_offline` 离线消息。                      |
 | `chat_type`       | String   | `edit`，表示编辑消息。 |
 | `security`        | String   | 签名，格式如下: MD5（callId+secret+timestamp）。Secret 见 [配置环信控制台回调规则](callback_postsending.html#回调规则)。 |
-| `appkey`          | String   | 你在环信控制台注册的应用唯一标识。                         |
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
@@ -130,7 +128,6 @@
         },
         "type": "edit"
     },
-    "appkey": "easemob-demo#support",
     "from": "wzy1",
     "to": "wzy",
     "msg_id": "1415008698962544248",
@@ -142,11 +139,10 @@
 
 | 字段              | 数据类型 | 描述                                                         |
 | :---------------- | :------- | :----------------------------------------------------------- |
-| `callId`          | String   | `callId` 为每个回调请求的唯一标识。 |
+| `callId`          | String   | 回调请求的唯一标识。 |
 | `eventType`       | String | `chat` 上行消息、`chat_offline` 离线消息。                      |
 | `chat_type`       | String   | `edit`，表示编辑消息。 |
 | `security`        | String   | 签名，格式如下: MD5（callId+secret+timestamp）。Secret 见 [配置环信控制台回调规则](callback_postsending.html#回调规则)。 |
-| `appkey`          | String   | 你在环信控制台注册的应用唯一标识。                         |
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。         |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
@@ -209,7 +205,6 @@
         },
         "type": "edit"
     },
-    "appkey": "hx#hxdemo",
     "from": "wzy1",
     "to": "wzy",
     "msg_id": "1414991177169504212",
@@ -221,11 +216,10 @@
 
 | 字段              | 数据类型 | 描述                                                         |
 | :---------------- | :------- | :----------------------------------------------------------- |
-| `callId`          | String   | `callId` 为每个回调请求的唯一标识。 |
+| `callId`          | String   | 回调请求的唯一标识。 |
 | `eventType`       | String | `chat` 上行消息、`chat_offline` 离线消息。                      |
 | `chat_type`       | String   | `edit`，表示编辑消息。 |
 | `security`        | String   | 签名，格式如下: MD5（callId+secret+timestamp）。Secret 见 [配置环信控制台回调规则](callback_postsending.html#回调规则)。 |
-| `appkey`          | String   | 你在环信控制台注册的应用唯一标识。                         |
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
@@ -282,7 +276,6 @@
         },
         "type": "edit"
     },
-    "appkey": "easemob-demo#support",
     "from": "wzy",
     "to": "wzy1",
     "msg_id": "1415000359922828916",
@@ -295,11 +288,10 @@
 
 | 字段              | 数据类型 | 描述                                                         |
 | :---------------- | :------- | :----------------------------------------------------------- |
-| `callId`          | String   | `callId` 为每个回调请求的唯一标识。 |
+| `callId`          | String   | 回调请求的唯一标识。 |
 | `eventType`       | String | `chat` 上行消息、`chat_offline` 离线消息。                      |
 | `chat_type`       | String   | `edit`，表示编辑消息。 |
 | `security`        | String   | 签名，格式如下: MD5（callId+secret+timestamp）。Secret 见 [配置环信控制台回调规则](callback_postsending.html#回调规则)。 |
-| `appkey`          | String   | 你在环信控制台注册的应用唯一标识。                         |
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
@@ -358,7 +350,6 @@
         },
         "type": "edit"
     },
-    "appkey": "easemob-demo#support",
     "from": "wzy1",
     "to": "wzy",
     "msg_id": "1415009227012835056",
@@ -371,11 +362,10 @@
 
 | 字段              | 数据类型 | 描述                                                         |
 | :---------------- | :------- | :----------------------------------------------------------- |
-| `callId`          | String   | `callId` 为每个回调请求的唯一标识。 |
+| `callId`          | String   | 回调请求的唯一标识。 |
 | `eventType`       | String | `chat` 上行消息、`chat_offline` 离线消息。                      |
 | `chat_type`       | String   | `edit`，表示编辑消息。 |
 | `security`        | String   | 签名，格式如下: MD5（callId+secret+timestamp）。Secret 见 [配置环信控制台回调规则](callback_postsending.html#回调规则)。 |
-| `appkey`          | String   | 你在环信控制台注册的应用唯一标识。                         |
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
@@ -430,7 +420,6 @@
         },
         "type": "edit"
     },
-    "appkey": "easemob-demo#support",
     "from": "wzy1",
     "to": "wzy",
     "msg_id": "1415009628512585332",
@@ -443,11 +432,10 @@
 
 | 字段              | 数据类型 | 描述                                                         |
 | :---------------- | :------- | :----------------------------------------------------------- |
-| `callId`          | String   | `callId` 为每个回调请求的唯一标识。 |
+| `callId`          | String   | 回调请求的唯一标识。 |
 | `eventType`       | String | `chat` 上行消息、`chat_offline` 离线消息。                      |
 | `chat_type`       | String   | `edit`，表示编辑消息。 |
 | `security`        | String   | 签名，格式如下: MD5（callId+secret+timestamp）。Secret 见 [配置环信控制台回调规则](callback_postsending.html#回调规则)。 |
-| `appkey`          | String   | 你在环信控制台注册的应用唯一标识。                         |
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
@@ -508,7 +496,6 @@
         },
         "type": "edit"
     },
-    "appkey": "easemob-demo#support",
     "from": "wzy",
     "to": "278265393643526",
     "msg_id": "1415001238604355312",
@@ -520,11 +507,10 @@
 
 | 字段              | 数据类型 | 描述                                                         |
 | :---------------- | :------- | :----------------------------------------------------------- |
-| `callId`          | String   | `callId` 为每个回调请求的唯一标识。 |
+| `callId`          | String   | 回调请求的唯一标识。 |
 | `eventType`       | String | `chat` 上行消息、`chat_offline` 离线消息。                      |
 | `chat_type`       | String   | `edit`，表示编辑消息。 |
 | `security`        | String   | 签名，格式如下: MD5（callId+secret+timestamp）。Secret 见 [配置环信控制台回调规则](callback_postsending.html#回调规则)。 |
-| `appkey`          | String   | 你在环信控制台注册的应用唯一标识。                         |
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |
@@ -585,7 +571,6 @@
         },
         "type": "edit"
     },
-    "appkey": "easemob-demo#support",
     "from": "wzy1",
     "to": "wzy",
     "msg_id": "1415010565809505916",
@@ -598,11 +583,10 @@
 
 | 字段              | 数据类型 | 描述                                                         |
 | :---------------- | :------- | :----------------------------------------------------------- |
-| `callId`          | String   | `callId` 为每个回调请求的唯一标识。 |
+| `callId`          | String   | 回调请求的唯一标识。 |
 | `eventType`       | String | `chat` 上行消息、`chat_offline` 离线消息。                      |
 | `chat_type`       | String   | `edit`，表示编辑消息。 |
 | `security`        | String   | 签名，格式如下: MD5（callId+secret+timestamp）。Secret 见 [配置环信控制台回调规则](callback_postsending.html#回调规则)。 |
-| `appkey`          | String   | 你在环信控制台注册的应用唯一标识。                         |
 | `from`            | String   | 消息发送方的用户 ID。                                     | 
 | `to`              | String   | 消息接收方。<br/> - 单聊为接收方用户 ID；<br/> - 群聊为群组 ID；<br/> - 聊天室聊天为聊天室 ID。   |
 | `msg_id`          | String   | 该消息编辑事件消息的 ID。                                       |

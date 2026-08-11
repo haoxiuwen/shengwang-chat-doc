@@ -35,7 +35,6 @@
 		"action": "user_quit",
 		"type": "QUIT"
 	},
-	"appkey": "XXXX#XXXX",
 	"id": "26195XXXX272578",
 	"type": "CHATROOM",
 	"event": "group_op_event",
@@ -57,7 +56,6 @@
 		"action": "user_offline", 
 		"type": "QUIT" 
 	},
-	"appkey": "XXXX#XXXX",
 	"id": "2839XXXX3548801",
 	"member_count": 0,
 	"type": "CHATROOM",
@@ -72,13 +70,12 @@
 
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
-| `callId`       | String   | `callId` 为每个回调请求的唯一标识，格式为 `App Key_UUID`。 | 
+| `callId`       | String   | 回调请求的唯一标识。 |
 | `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。详见 [配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.member` | JSON | 退出群组/聊天室的用户 ID。        | 
 | `payload.action` | JSON | 该字段只适用于退出聊天室事件，不适用于退出群组事件：<br/> - `user_quit`：主动退出聊天室。<br/> - `user_offline`：因离线退出聊天室。 | 
 | `payload.type` | Array  | 退出方式：`QUIT` 表示主动退出群组或聊天室或者因离线退出聊天室。     |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。  |
 | `id`           | String | 群组/聊天室 ID。                                                 |
 | `type`         | String | 区分群组或聊天室事件：<br/> - `GROUP`：群组 <br/> - `CHATROOM` ：聊天室   |
 | `event`        | String | 对于群组和聊天室，该参数的值固定为 `group_op_event`。接收方可按此字段区分是否是群组/聊天室操作事件。 | 
@@ -111,7 +108,6 @@
 		],
 		"type": "KICK"
 	},
-	"appkey": "XXXX#XXXX",
 	"id": "254636824002561",
 	"type": "GROUP",
 	"event": "group_op_event",
@@ -126,12 +122,11 @@
 
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
-| `callId`       | String   | `callId` 为每个回调请求的唯一标识，格式为 `App Key_UUID`。 | 
+| `callId`       | String   | 回调请求的唯一标识。 |
 | `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.member` | JSON | 被踢出群组/聊天室的用户 ID。        | 
 | `payload.type` | Array  | 退群方式：`KICK` 表示将用户踢出群组/聊天室。     |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。  |
 | `id`           | String | 群组/聊天室 ID。                                                 |
 | `type`         | String | 区分群组或聊天室事件：<br/> - `GROUP`：群组 <br/> - `CHATROOM` ：聊天室   |
 | `event`        | String | 对于群组和聊天室，该参数的值固定为 `group_op_event`。接收方可按此字段区分是否是群组/聊天室操作事件。 | 
@@ -164,7 +159,6 @@
 		],
 		"type": "BLOCK"
 	},
-	"appkey": "XXXX#XXX",
 	"id": "255445981790209",
 	"type": "GROUP",
 	"event": "group_op_event",
@@ -179,12 +173,11 @@
 
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
-| `callId`       | String   | `callId` 为每个回调请求的唯一标识，格式为 `App Key_UUID`。 | 
+| `callId`       | String   | 回调请求的唯一标识。 |
 | `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.member` | JSON | 被加入群组/聊天室黑名单后退出的用户 ID。        | 
 | `payload.type` | Array  | 退群方式：`BLOCK` 表示加入群组/聊天室黑名单后退出群组/聊天室。     |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。  |
 | `id`           | String | 群组/聊天室 ID。                                                 |
 | `type`         | String | 区分群组或聊天室事件：<br/> - `GROUP`：群组 <br/> - `CHATROOM` ：聊天室   |
 | `event`        | String | 对于群组和聊天室，该参数的值固定为 `group_op_event`。接收方可按此字段区分是否是群组/聊天室操作事件。 | 
@@ -220,7 +213,6 @@
         ],
         "type": "DELETE"
     },
-    "appkey": "XXXX#XXX_7dc24fac-3451-421e-a8aa-70ba0587e69d",
 	"event": "group_op_event",
     "timestamp": 1734597600148,
     "type": "GROUP"
@@ -231,7 +223,7 @@
 
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
-| `callId`       | String   | `callId` 为每个回调请求的唯一标识，格式为 `App Key_UUID`。 | 
+| `callId`       | String   | 回调请求的唯一标识。 |
 | `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。| 
 | `id`           | String | 群组/聊天室 ID。                                                 |
 | `operation`    | String | 操作。用户退出群组/聊天室的操作为 `LEAVE`。 |
@@ -239,7 +231,6 @@
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.member` | JSON | 群组/聊天室被解散后退出的用户 ID。        | 
 | `payload.type` | Array  | 退群方式：`DELETE` 表示群组/聊天室被解散后，用户退出群组/聊天室。     |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。  |
 | `event`        | String | 对于群组和聊天室，该参数的值固定为 `group_op_event`。接收方可按此字段区分是否是群组/聊天室操作事件。 | 
 | `timestamp`    | Long   | 操作完成的时间戳。                | 
 | `type`         | String | 区分群组或聊天室事件：<br/> - `GROUP`：群组 <br/> - `CHATROOM` ：聊天室   |

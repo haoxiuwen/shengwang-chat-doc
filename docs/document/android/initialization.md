@@ -14,7 +14,7 @@
 
 ## 初始化 SDK
 
-创建 `EMOptions`，调用 `setAppKey` 设置 App Key，完成其他初始化配置后，将 `Context` 和 `EMOptions` 传入 `EMClient.init`。
+创建 `EMOptions`，调用 `setAppId` 设置 App ID，完成其他初始化配置后，将 `Context` 和 `EMOptions` 传入 `EMClient.init`。
 
 ```java
 EMOptions options = new EMOptions();

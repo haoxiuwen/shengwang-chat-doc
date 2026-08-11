@@ -8,7 +8,7 @@
 
 ## 步骤二 上传推送证书
 
-1. 登录 [环信控制台](https://console.easemob.com/user/login)，在 **应用管理** 页面点击测试版或正式版的应用的 App Key。
+1. 登录 [环信控制台](https://console.easemob.com/user/login)，在 **应用管理** 页面点击测试版或正式版的应用的 App ID。
    
 2. 选择 **增值功能** > **消息推送**。
    
@@ -18,7 +18,7 @@
 
 | 参数       | 类型   | 是否必需 | 描述         |
 | :--------- | :----- | :------- | :---------------- |
-| `证书名称`     | String | 是     | 填写 OPPO App Key。  |
+| `证书名称`     | String | 是     | 填写 OPPO App ID。  |
 | `推送密钥`     | String | 是     | 填写 OPPO Master Secret。Master Secret 需要到 [OPPO 推送平台](https://open.oppomobile.com/) > **配置管理** > **应用配置** 页面查看。|
 | `应用包名`     | String | 是     | 填写 OPPO App package name。   |
 | `Channel ID`     | String |  否    | 填写 Channel ID。   |

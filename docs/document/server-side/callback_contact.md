@@ -38,7 +38,6 @@
         "operation":"add"
         },
     "host":"XXXX",
-    "appkey":"XXXX#XXXX",
     "from":"XXXX#XXXX_XXXX@easemob.com",
     "to":"tst01",
     "eventType":"chat",
@@ -51,15 +50,14 @@
 
 | 字段     | 数据类型 | 含义                                                         |
 | :------- | :------- | :----------------------------------------------------------- |
-| `callId`    | String   | 回调请求的唯一标识，格式为 “App Key_添加好友事件的消息 ID”。 | 
+| `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
 | `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.reason`    | object   | 申请原因                |
 | `payload.operation` | String   | `add`：添加好友。 |
 | `host`            | String   | 服务器名称。          |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。                                |
-| `from`       | String | 发起方，格式为 `App Key_发起方用户 ID@easemob.com`。                                |
+| `from`       | String | 发起方。                                |
 | `to`       | String | 接收方用户 ID。                                |
 | `eventType`       | String   | <br/> - `chat`：上行消息<br/> - `chat_offline`：离线消息。                   |
 | `msg_id`    | String   | 添加好友事件的消息 ID。 | 
@@ -87,7 +85,6 @@
         "operation":"remote_accept"
         },
     "host":"XXXX",
-    "appkey":"XXXX#XXXX",
     "from":"XXXX#XXXX_XXXX@easemob.com",
     "to":"tst01",
     "eventType":"chat",
@@ -100,15 +97,14 @@
 
 | 字段     | 数据类型 | 含义                                                         |
 | :------- | :------- | :----------------------------------------------------------- |
-| `callId`    | String   | 回调请求的唯一标识，格式为 “App Key_同意好友申请事件的消息 ID”。 | 
+| `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
 | `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.roster_ver`    | String   | 好友列表的版本号。  |
 | `payload.operation` | String   | `remote_accept`：同意好友申请事件。发起好友申请的用户会收到该事件。 |
 | `host`            | String   | 服务器名称。          |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。                                |
-| `from`       | String | 发起方，格式为 `App Key_发起方用户 ID@easemob.com`。                                |
+| `from`       | String | 发起方。                                |
 | `to`       | String | 发起好友申请的用户的用户 ID。                                |
 | `eventType`       | String   | <br/> - `chat`：上行消息<br/> - `chat_offline`：离线消息。       |
 | `msg_id`    | String   | 同意好友申请事件的消息 ID。 | 
@@ -132,7 +128,6 @@
         "operation":"accept"
         },
     "host":"XXXX",
-    "appkey":"XXXX#XXXX",
     "from":"XXXX#XXXX_XXXX@easemob.com",
     "to":"tst02",
     "eventType":"chat",
@@ -145,15 +140,14 @@
 
 | 字段     | 数据类型 | 含义                                                         |
 | :------- | :------- | :----------------------------------------------------------- |
-| `callId`    | String   | 回调请求的唯一标识，格式为 “App Key_同意好友申请事件的消息 ID”。 | 
+| `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
 | `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.roster_ver`    | String   | 好友列表的版本号。  |
 | `payload.operation` | String   | `accept`：同意好友申请。接受好友申请的用户会收到该事件。该事件用于单设备或多设备登录场景下的操作结果同步。 |
 | `host`            | String   | 服务器名称。          |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。                                |
-| `from`       | String | 发起方，格式为 `App Key_发起方用户 ID@easemob.com`。                                |
+| `from`       | String | 发起方。                                |
 | `to`       | String | 接受好友申请的用户 ID。                     |
 | `eventType`       | String   | <br/> - `chat`：上行消息<br/> - `chat_offline`：离线消息。       |
 | `msg_id`    | String   | 同意好友申请事件的消息 ID。 | 
@@ -184,7 +178,6 @@
         "operation":"remote_decline"
         },
     "host":"XXXX",
-    "appkey":"XXXX#XXXX",
     "from":"XXXX#XXXX_XXXX@easemob.com",
     "to":"tst",
     "eventType":"chat",
@@ -197,15 +190,14 @@
 
 | 字段     | 数据类型 | 含义                                                         |
 | :------- | :------- | :----------------------------------------------------------- |
-| `callId`    | String   | 回调请求的唯一标识，格式为 “App Key_拒绝好友申请事件的消息 ID”。 | 
+| `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
 | `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.roster_ver`    | String   | 好友列表的版本号。  |
 | `payload.operation` | String   | `remote_decline`：拒绝好友申请。发起好友申请的用户会收到该事件。 |
 | `host`            | String   | 服务器名称。          |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。                                |
-| `from`       | String | 发起方，格式为 `App Key_发起方用户 ID@easemob.com`。                                |
+| `from`       | String | 发起方。                                |
 | `to`       | String | 发起好友申请的用户 ID。                                |
 | `eventType`       | String   | <br/> - `chat`：上行消息<br/> - `chat_offline`：离线消息。       |
 | `msg_id`    | String   | 拒绝好友申请事件的消息 ID。 | 
@@ -228,7 +220,6 @@
         "operation":"decline"
         },
     "host":"XXXX",
-    "appkey":"XXXX#XXXX",
     "from":"XXXX#XXXX_XXXX@easemob.com",
     "to":"tst11",
     "eventType":"chat",
@@ -241,15 +232,14 @@
 
 | 字段     | 数据类型 | 含义                                                         |
 | :------- | :------- | :----------------------------------------------------------- |
-| `callId`    | String   | `callId` 为回调请求的唯一标识，格式为 “App Key_拒绝好友申请事件的消息 ID”。 | 
+| `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
 | `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.roster_ver`    | String   | 好友列表的版本号。  |
 | `payload.operation` | String   | `decline`：拒绝好友申请。拒绝好友申请的用户会收到该事件。该事件用于多设备登录场景下的操作结果同步。 |
 | `host`            | String   | 服务器名称。          |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。                                |
-| `from`       | String | 发起方，格式为 `App Key_发起方用户 ID@easemob.com`。                                |
+| `from`       | String | 发起方。                                |
 | `to`       | String | 拒绝好友申请的用户 ID。                                |
 | `eventType`       | String   | <br/> - `chat`：上行消息<br/> - `chat_offline`：离线消息。       |
 | `msg_id`    | String   | 拒绝好友申请事件的消息 ID。 | 
@@ -275,7 +265,6 @@
         "operation":"remove"
         },
     "host":"XXXX",
-    "appkey":"XXXX#XXXX",
     "from":"XXXX#XXXX_XXXX@easemob.com",
     "to":"tst01",
     "eventType":"chat",
@@ -288,15 +277,14 @@
 
 | 字段     | 数据类型 | 含义                                                         |
 | :------- | :------- | :----------------------------------------------------------- |
-| `callId`    | String   | 回调请求的唯一标识，格式为 “App Key_删除好友事件的消息 ID”。 | 
+| `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
 | `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.roster_ver`    | String   | 好友列表的版本号。  |
 | `payload.operation` | String   | `remove`：删除好友。 |
 | `host`            | String   | 服务器名称。          |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。                                |
-| `from`       | String | 发起方，格式为 `App Key_发起方用户 ID@easemob.com`。                                |
+| `from`       | String | 发起方。                                |
 | `to`       | String | 接收方用户 ID。                                |
 | `eventType`       | String   | <br/> - `chat`：上行消息<br/> - `chat_offline`：离线消息。        |
 | `msg_id`    | String   | 删除好友事件的消息 ID。 | 
@@ -324,7 +312,6 @@
             }
         },
     "host":"XXXX",
-    "appkey":"XXXX#XXXX",
     "from":"XXXX#XXXX_XXXX@easemob.com",
     "to":"tst",
     "eventType":"chat",
@@ -337,7 +324,7 @@
 
 | 字段     | 数据类型 | 含义                                                         |
 | :------- | :------- | :----------------------------------------------------------- |
-| `callId`    | String   | 回调请求的唯一标识，格式为 “App Key_拉黑用户事件的消息 ID”。 | 
+| `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
 | `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
@@ -345,7 +332,6 @@
 | `payload.status`    | object   | 包含 `error_code`。  |
 | `payload.status.error_code`    | String   | 操作失败对应的错误码。 |
 | `host`            | String   | 服务器名称。          |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。                                |
 | `from`       | String | 发起方，格式为 `App Key_发起方用户 ID@easemob.com`。                                |
 | `to`       | String | 接收方用户 ID。                                |
 | `eventType`       | String   | <br/> - `chat`：上行消息<br/> - `chat_offline`：离线消息。       |
@@ -375,7 +361,6 @@
             }
         },
     "host":"XXXX",
-    "appkey":"XXXX#XXXX",
     "from":"XXXX#XXXX_XXXX@easemob.com",
     "to":"tst",
     "eventType":"chat",
@@ -388,7 +373,7 @@
 
 | 字段     | 数据类型 | 含义                                                         |
 | :------- | :------- | :----------------------------------------------------------- |
-| `callId`    | String   | 回调请求的唯一标识，格式为 “App Key_解除拉黑用户事件的消息 ID”。 | 
+| `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
 | `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
@@ -396,7 +381,6 @@
 | `payload.status`    | object   | 包含 `error_code`。  |
 | `payload.status.error_code`    | String   | 操作失败对应的错误码。 |
 | `host`            | String   | 服务器名称。          |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。                                |
 | `from`       | String | 发起方，格式为 `App Key_发起方用户 ID@easemob.com`。                                |
 | `to`       | String | 接收方用户 ID。                                |
 | `eventType`       | String   | <br/> - `chat`：上行消息<br/> - `chat_offline`：离线消息。       |

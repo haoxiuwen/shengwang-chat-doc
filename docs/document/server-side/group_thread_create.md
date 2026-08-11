@@ -9,7 +9,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -92,7 +92,7 @@ curl -X POST https://XXXX/app-id/{app_id}/thread   \
 | 400     | group_error | msg not belong to group . | 消息不属于群。 | 输入合法的消息 ID。 |
 | 400     | group_error | thread not nested. | 不允许在消息话题的消息上创建消息话题。 | 输入合法的消息 ID。 |
 | 401     | unauthorized | Unable to authenticate (OAuth) | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。 |
-| 403     | group_error | thread number has reached limit. | appKey 创建消息话题达到上限。 | 删除废弃的消息话题或者联系商务调整上限。单个 app 下的消息话题总数默认为 10 万。 |
+| 403     | group_error | thread number has reached limit. | appId 创建消息话题达到上限。 | 删除废弃的消息话题或者联系商务调整上限。单个 app 下的消息话题总数默认为 10 万。 |
 | 403     | group_error | user join thread reach limit. | 用户加入的消息话题达到上限。 | 退出不用的消息话题或者联系商务调整上限。单个用户默认最多可以加入 100,000 个消息话题。 |
 | 403     | group_error | msg already create thread.not allow to create. | 消息上已经创建消息话题。 | 传入其他消息 ID 或者查询该消息话题后加入。 |
 | 403     | group_error | thread not open. | 消息话题功能未开通。 | 调用该接口前，你需要联系商务开通消息话题功能。 |

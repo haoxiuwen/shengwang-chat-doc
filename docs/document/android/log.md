@@ -22,10 +22,10 @@ EMClient.getInstance().setDebugMode(true);
 当应用的外部专属存储目录可用且可写时，可以通过以下命令获取本地日志。在下列代码中，你需要进行如下替换：
 
 - `{应用包名}` 替换为应用的包名，例如 `com.hyphenate.chatuidemo`。
-- `{App Key}` 需要替换为应用的环信 App Key。
+- `{App ID}` 需要替换为应用的 App ID。
 
 ```shell
-adb pull /sdcard/Android/data/{应用包名}/{App Key}/core_log
+adb pull /sdcard/Android/data/{应用包名}/{App ID}/core_log
 ```
 
 如果外部专属存储目录不可用，SDK 会将日志写入应用内部的 `files` 目录。该目录通常不能直接通过上述 `adb pull` 命令读取，可在应用内导出日志，或在可调试应用中使用相应的调试方式获取。

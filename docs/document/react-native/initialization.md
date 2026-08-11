@@ -14,7 +14,7 @@
 
 ## 初始化 SDK
 
-初始化时，你需要通过 `EMOptions` 中封装的 `appId` 设置你的 App Key。
+初始化时，你需要通过 `EMOptions` 中封装的 `appId` 设置你的 App ID。
 
 ```typescript
 ChatClient.getInstance()

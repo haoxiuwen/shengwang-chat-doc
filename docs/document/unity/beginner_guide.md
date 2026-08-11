@@ -17,7 +17,7 @@
 | [开通 IM 套餐](/product/pricing_method.html#订阅-升级套餐包)     | 即时通讯 IM 支持免费版、专业版和旗舰版，请参考 [购买指引](/product/pricing_method.html#订阅-升级套餐包) 根据需要订阅套餐包。<br/>除了套餐包，你还可以 [开通和订阅 IM 的增值服务](/product/console/purchase_value_added.html)，包括实时音视频服务、内容审核、消息翻译和即时推送。|
 | [创建用户](/document/unity/login.html#用户注册) <br/><br/>[实现 Token 鉴权](/document/server-side/token_authentication.html)    | - **创建用户**:你可以 [调用 REST API 创建用户](/document/server-side/account_register_authorized_single.html)，也可以在 [声网控制台](https://console.shengwang.cn/overview) 创建用户。详见 [用户注册文档](login.html#用户注册)。<br/> - **获取 Token**：在你的应用服务器集成 [Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，你的应用可以调用自身服务端，从IM 服务器获取 Token。   |
 | [导入 SDK](/document/unity/integration.html)          | 将 SDK [集成到你的项目](/document/unity/integration.html)中。集成方式取决于各客户端。   |
-| [初始化 SDK](/document/unity/initialization.html)         | 使用 IM 的各项功能前，必须先初始化。传入你应用的 App Key 进行 [初始化](/document/unity/initialization.html)。 初始化时，可配置自动登录、加群、退群推送等重要特性。|
+| [初始化 SDK](/document/unity/initialization.html)         | 使用 IM 的各项功能前，必须先初始化。传入你应用的 App ID 进行 [初始化](/document/unity/initialization.html)。 初始化时，可配置自动登录、加群、退群推送等重要特性。|
 | [登录 IM](/document/unity/login.html)       | 使用创建的用户登录 IM，包括 [主动登录](/document/unity/login.html#主动登录) 和 [自动登录](/document/unity/login.html#自动登录)。登录成功后，你可以使用 IM 的功能。 |
 | 集成特性         | 集成主要特性：<br/> - [消息管理](/document/unity/message_send.html) <br/> - [会话管理](/document/unity/conversation_overview.html)<br/> - [群组管理](/document/unity/group_overview.html) <br/> - [聊天室管理](/document/unity/room_overview.html) <br/> - [用户管理](/document/unity/user_relationship.html)|
 

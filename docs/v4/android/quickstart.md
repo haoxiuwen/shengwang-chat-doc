@@ -115,7 +115,7 @@ dependencies {
 </manifest>
 ```
 
-关于 App Key 对应的 value 获取，在 [环信控制台](https://console.easemob.com/user/login) 创建应用后，申请 App Key 并进行相关配置。
+关于获取 App ID，在 [声网控制台](https://console.shengwang.cn/overview) [创建项目](/product/enable_im.html#创建项目并开通)后，即可 [获取 App ID](/product/enable_im.html#_3-获取-app-id)。
 
 ### 4. 防止代码混淆
 

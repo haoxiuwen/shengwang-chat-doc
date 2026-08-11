@@ -10,7 +10,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -91,6 +91,5 @@ curl -X GET 'https://XXXX/app-id/{app_id}/mutes/zs1' \
 | :---------- | :------------------| :-------------------| :-----------| :------------|
 | 400         | required_property_not_found        | Entity user requires a property named username     | 用户不存在。 | 先注册用户或者检查用户名是否正确。 |
 | 401         | unauthorized      | Unable to authenticate (OAuth)   | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。              |
-| 404         | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App key 不存在。    | 检查 App ID 是否正确或 [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。|
 
 关于其他错误，你可以参考 [错误码](error.html) 了解可能的原因。

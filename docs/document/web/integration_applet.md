@@ -85,7 +85,7 @@ const client = ChatClient.init({
 
 | 参数 | 类型 | 是否必需 | 描述 |
 | :--- | :--- | :--- | :--- |
-| `appKey` | String | 是 | 应用唯一标识，格式为 `org#app`。 |
+| `appId` | String | 是 | 应用唯一标识。 |
 | `managers` | Array | 否 | 初始化时注册的功能管理器列表。若需要使用消息和会话能力，需注册 `ChatManager`。 |
 | `serviceConfig.serverUrls.restApiUrl` | String | 是 | REST API 服务地址。小程序中使用固定服务地址时需配置。 |
 | `serviceConfig.serverUrls.wsUrl` | String | 是 | 消息长连接 WebSocket 地址。小程序中使用固定服务地址时需配置。 |

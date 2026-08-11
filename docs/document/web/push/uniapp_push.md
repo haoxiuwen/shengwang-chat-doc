@@ -105,7 +105,7 @@ import websdk from "easemob-websdk/uniApp/Easemob-chat";
 ```javascript
 // 初始化 IM SDK
 const conn = websdk.connection({
-  appKey: 'xxxxx', // 你的环信 app Key
+  appId: 'xxxxx', // 你的应用的 app ID
   isFixedDeviceId: true // 推荐使用固定的设备 ID, SDK 会默认从本地缓存中获取设备ID
 });
 

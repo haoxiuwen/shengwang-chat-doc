@@ -10,7 +10,7 @@
 
 ## 初始化 SDK
 
-初始化时，你需要通过 `appKey` 参数设置你的 App Key。
+初始化时，你需要通过 `appId` 参数设置你的 App ID。
 
 ```swift
 let options = EMOptions(appId: "Your appId")

@@ -108,7 +108,7 @@ await client.login({
 | `getConnectionState` | String | 获取当前连接状态。取值包括 `disconnected`、`connecting`、`connected`、`reconnecting` 和 `reconnectFailed`。 |
 | `getCurrentUserId` | String \| null | 获取当前登录用户 ID。未登录时返回 `null`。 |
 | `getClientResource` | String \| null | 获取当前连接的设备资源标识。未连接或尚未完成登录握手时返回 `null`。 |
-| `getRestContext` | RestContext | 获取当前登录会话的 REST 访问上下文，包括 REST 地址、App Key、用户 ID、Token 和设备资源标识。未登录或上下文不完整时会抛出错误。 |
+| `getRestContext` | RestContext | 获取当前登录会话的 REST 访问上下文，包括 REST 地址、App ID、用户 ID、Token 和设备资源标识。未登录或上下文不完整时会抛出错误。 |
 
 ```typescript
 const state = client.getConnectionState();

@@ -39,7 +39,7 @@ uni-app SDK 支持以下平台：
 3. 确认应用所属的 [数据中心](/product/data_center.html#数据中心选择与查看)；
 4. 在目标小程序平台配置合法域名；
 5. 安装并引入 `easemob-websdk`；
-6. 创建 SDK 连接实例并配置 App Key 和服务地址；
+6. 创建 SDK 连接实例并配置 App ID 和服务地址；
 7. 运行项目，验证登录和消息收发功能。
 
 ## 集成 SDK
@@ -142,7 +142,7 @@ import SDK from "easemob-websdk/uniApp/Easemob-chat";
 1. 从 GitHub 或 Gitee 下载 Demo 源码；
 2. 使用 HBuilderX 打开项目； 
 3. 根据项目说明安装依赖；
-4. 配置 App Key 和服务器地址；
+4. 配置 App ID 和服务器地址；
 5. 运行项目并验证 IM 功能。
    - [GitHub Demo](https://github.com/easemob/easemob-uikit-uniapp)
    - [Gitee Demo](https://gitee.com/easemob-code/easemob-uikit-uniapp)
@@ -170,7 +170,7 @@ const conn = new WebIM.connection({
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| `appKey` | String | 环信应用的唯一标识。**参数名中的 `K` 必须大写**。 |
+| `appId` | String | 环信应用的唯一标识。**参数名中的 `K` 必须大写**。 |
 | `url` | String | WebSocket 服务地址。**应根据应用所属的数据中心进行配置**。 |
 | `apiUrl` | String | REST API 服务地址。**应根据应用所属的数据中心进行配置**。 |
 | `useOwnUploadFun` | Boolean | 是否使用自定义上传方式。启用后，可先将图片等文件上传至自有服务器，再在构建消息时传入文件 URL。 |
@@ -236,7 +236,7 @@ const conn = new WebIM.connection({
 
 完成集成后，建议逐项检查：
 
-- 已获取正确的 App Key；
+- 已获取正确的 App ID；
 - `url` 和 `apiUrl` 与应用所属数据中心一致；
 - 目标小程序平台已配置全部必要的合法域名；
 - 小程序平台的 `isHttpDNS` 已设置为 `false`；

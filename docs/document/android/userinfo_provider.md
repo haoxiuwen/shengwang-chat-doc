@@ -206,7 +206,7 @@ EMClient.getInstance().userInfoManager().getUserInfoWithUserIds(
 
 | API 名称 | 所属模块/类 | 说明 |
 | :--- | :--- | :--- |
-| [`setAppKey`](#开启用户信息自动管理) | `EMOptions` | 设置应用的 App Key。 |
+| [`setAppId`](#开启用户信息自动管理) | `EMOptions` | 设置应用的 App ID。 |
 | [`setEnableUserInfo`](#开启用户信息自动管理) | `EMOptions` | 开启或关闭用户信息自动管理功能。 |
 | [`init`](#开启用户信息自动管理) | `EMClient` | 使用指定配置初始化 SDK。 |
 | [`getUserInfoWithUserId`](#从本地内存读取用户属性) / [`getUserInfoWithUserIds`](#从本地内存读取用户属性) | `EMUserInfoManager` | 从本地内存读取单个或多个用户的属性。 |

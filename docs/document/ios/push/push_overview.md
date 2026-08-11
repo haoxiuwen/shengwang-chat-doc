@@ -51,7 +51,7 @@
 [推送通知方式](push_notification_mode_dnd.html#推送通知方式)、[免打扰模式](push_notification_mode_dnd.html#免打扰模式) 和 [推送模板](push_template.html) 是推送的高级功能。使用前，你需要在 [环信控制台](https://console.easemob.com/user/login) 免费开通。**激活后，如需关闭推送高级功能，必须联系商务，因为该操作会删除高级功能相关的所有配置。**
 
 1. 登录 [环信控制台](https://console.easemob.com/user/login)。
-2. 选择页面上方的 **应用管理**。在应用列表中，单击测试应用或正式版应用的 App Key。
+2. 选择页面上方的 **应用管理**。在应用列表中，单击测试应用或正式版应用的 App ID。
 3. 选择 **增值服务 > 消息推送 > 离线推送**。
 4. 点击 **免费开通**。
 

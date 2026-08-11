@@ -132,7 +132,7 @@ android.enableJetifier=true
 ```xml
 <resources>
     <string name="app_name">CallKitQuickstart</string>
-    <string name="app_key">app_key</string>
+    <string name="app_id">app_ID</string>
     <string name="user_name">your userId</string>
     <string name="token">your token</string>
 </resources>
@@ -381,15 +381,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initCallKit() {
-        val appkey = getString(R.string.app_key)
-        if (appkey.isEmpty()) {
-            showToast("请先设置您的AppKey!")
+        val appId = getString(R.string.app_id)
+        if (appId.isEmpty()) {
+            showToast("请先设置您的appId!")
             return
         }
 
         // 初始化即时通讯 IM  SDK
         val options = ChatOptions().apply {
-            this.appKey = appkey
+            this.appId = appId
             autoLogin = false
         }
         ChatClient.getInstance().init(this, options)
@@ -581,6 +581,6 @@ class MainActivity : AppCompatActivity() {
 4. 在主叫设备上输入被叫方的用户 ID，点击对应的通话按钮，即可发起音视频通话。
 
 运行应用过程中的常见问题排查如下：
-- 连接失败：检查 App Key、用户名、token 是否正确配置。
+- 连接失败：检查 App ID、用户名、token 是否正确配置。
 - 通话无声音：检查麦克风权限是否已授权。
 - 视频无画面：检查摄像头权限是否已授权。

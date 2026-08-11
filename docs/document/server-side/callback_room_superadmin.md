@@ -29,7 +29,6 @@
         ],
         "type": "ADD"
     },
-    "appkey": "XXXX#XXXX",
     "id": "",
     "type": "CHATROOM",
     "event": "group_op_event",
@@ -43,12 +42,11 @@
 
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
-| `callId`       | String | `callId` 为每个回调请求的唯一标识，格式为 `App Key_UUID`。 | 
+| `callId`       | String | 回调请求的唯一标识。 |
 | `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.admin`| JSON   | 添加的聊天室超级管理员的用户 ID。 | 
 | `payload.type` | String | 添加聊天室超级管理员的事件，值为 `ADD`。  | 
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。                                |
 | `id`           | String | 聊天室 ID。                                                 |
 | `type`         | String | 事件类型。此处为 `CHATROOM`（聊天室事件）。     |
 | `event`        | String | 事件名称。该参数的值固定为 `group_op_event`。 |
@@ -77,7 +75,6 @@
         ],
         "type": "REMOVE"
     },
-    "appkey": "easemob-demo#testy",
     "id": "",
     "type": "CHATROOM",
     "event": "group_op_event",
@@ -91,12 +88,11 @@
 
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
-| `callId`       | String | `callId` 为每个回调请求的唯一标识，格式为 `App Key_UUID`。 | 
+| `callId`       | String | 回调请求的唯一标识。 |
 | `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.admin`| JSON   | 移除的聊天室超级管理员的用户 ID。 | 
 | `payload.type` | String | 移除聊天室超级管理员的事件，值为 `REMOVE`。  | 
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。                                |
 | `id`           | String | 聊天室 ID。                                                 |
 | `type`         | String | 事件类型。此处为 `CHATROOM`（聊天室事件）。     |
 | `event`        | String | 事件名称。该参数的值固定为 `group_op_event`。 |

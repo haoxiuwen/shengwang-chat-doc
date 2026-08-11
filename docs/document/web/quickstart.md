@@ -119,7 +119,7 @@ Easemob_quickstart<br>
 
 ### 步骤 4：实现消息收发
 
-`index.js` 的内容如下。本文使用 `import` 方法导入 SDK，并使用 webpack 对 JavaScript 文件进行打包。你需要将代码中的 `<Your app key>` 替换为你在环信控制台获取的 App Key。
+`index.js` 的内容如下。本文使用 `import` 方法导入 SDK，并使用 webpack 对 JavaScript 文件进行打包。你需要将代码中的 `<Your app ID>` 替换为你的应用的 App ID。
 
 ```typescript
 import { ChatClient, ChatManager } from 'easemob-websdk';

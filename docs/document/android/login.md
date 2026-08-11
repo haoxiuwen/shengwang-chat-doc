@@ -402,7 +402,7 @@ EMClient.getInstance()
 | [`isLoggedIn`](#获取登录状态) | `EMClient` | 判断当前用户是否已登录。 |
 | [`isConnected`](#获取登录状态) | `EMClient` | 判断 SDK 是否已连接到 IM 服务器。 |
 | [`logout`](#退出登录) | `EMClient` | 退出当前账号，并按参数决定是否解绑设备推送 Token。 |
-| [`setAppKey`](#多设备登录) | `EMOptions` | 设置应用的 App Key。 |
+| [`setAppId`](#多设备登录) | `EMOptions` | 设置应用的 App ID。 |
 | [`setCustomOSPlatform`](#多设备登录) | `EMOptions` | 设置登录设备的自定义平台编号。 |
 | [`setCustomDeviceName`](#多设备登录) | `EMOptions` | 设置当前设备的自定义名称。 |
 | [`setLoginCustomExt`](#多设备登录) | `EMOptions` | 设置当前设备的登录扩展信息。 |

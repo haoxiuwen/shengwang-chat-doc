@@ -28,7 +28,6 @@
 "type": "channel_ack" 
 },
 "host": "XXXX@hsb-XXXX-msync0",
-"appkey": "XXXX-XXXX#testy",
 "from": "wzy",   
 "to": "wzy1",   
 "msg_id": "1252106597610555348",  
@@ -40,7 +39,7 @@
 
 | 字段          | 数据类型 | 含义                                                         |
 | :------------ | :------- | :----------------------------------------------------------- |
-| `callId`    | String   | `callId` 为每个回调请求的唯一标识，格式为 “App Key_回执消息的消息 ID”。 |
+| `callId`    | String   | 回调请求的唯一标识。 |
 | `eventType` | String   | `chat`：上行消息。                                               |
 | `chat_type` | String    |  会话已读回执。           |
 | `security`  | String   | 签名，格式如下: `MD5（callId+secret+timestamp）`。关于 `Secret`，详见 [环信控制台配置回调规则的描述](/product/console/basic_webhook.html#配置消息回调规则)。 |
@@ -48,7 +47,6 @@
 | `payload.ack_message_id` | String     | 会话中消息的消息 ID。                  |
 | `payload.type` | String | 会话已读回执类型。       |                |
 | `host`      | String   | 服务器名称。                                                 |
-| `appkey`    | String   | 你在环信控制台注册的应用唯一标识。                         |
 | `from` | String          | 发送已读回执的用户。|
 | `to` | String    |  接收已读回执的用户。                 |
 | `msg_id` | String      | 已读回执的消息 ID。 |

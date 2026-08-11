@@ -50,7 +50,7 @@ private val selfUserID = "your_user_id"        // 你的用户 ID
 private val remoteUserID = "target_user_id"    // 对方用户 ID，用于一对一音视频通话
 private val imToken="your_im_token"            // 替换为登录Token
 private val groupID = "your_group_id"          // 群组 ID
-private val imAppkey = "your_org#your_app"     // 你的 App Key
+private val imAppID = "your_app_id"     // 你的 App ID
 ```
 ### 步骤 2 运行应用
 

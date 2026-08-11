@@ -59,7 +59,7 @@ yarn dev
 
 ### 步骤 3 开始通话
 
-1. 填写 App Key、用户 ID 和密码，点击 **登录**，等待登录成功提示。
+1. 填写 App ID、用户 ID 和密码，点击 **登录**，等待登录成功提示。
    
    <img src="/images/callkit/web/project_runthrough1.png" >
 

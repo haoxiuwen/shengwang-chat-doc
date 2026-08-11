@@ -109,7 +109,7 @@ const App = () => {
   return (
     <Provider
       initConfig={{
-        appKey: "your_app_key", // 你的应用 App Key
+        appId: "your_app_ID", // 你的应用 App ID
         userId: "current_user_id", // 当前用户 ID
         token: "user_token", // 用户 token，或使用 password 进行密码登录
       }}
@@ -127,7 +127,7 @@ CallKit 组件或重要配置的说明如下：
 | 组件/属性           | 说明   |
 | :-------------- | :----- |
 | Provider 组件            | - 负责初始化即时通讯 IM SDK 连接，必须包裹在应用的最外层。<br/> - 该组件会自动处理 IM SDK 的初始化和登录。|
-| initConfig 配置            | 包含应用的 App Key、用户 ID 和登录凭证（Token）。  |
+| initConfig 配置            | 包含应用的 App ID、用户 ID 和登录凭证（Token）。  |
 | CallKit 组件            | - 音视频通话组件，会自动处理内部的初始化逻辑。<br/> - 该组件会在内部自动初始化音视频服务，无需手动调用初始化方法。  |
 | chatClient 属性            | 传入 `rootStore.client`，即 Provider 创建的 IM 连接实例。  |
 | 信息提供者            | `userInfoProvider` 和 `groupInfoProvider` 用于获取用户和群组的显示信息。   |
@@ -189,7 +189,7 @@ const App = () => {
   return (
     <Provider
       initConfig={{
-        appKey: "your_app_key", // 你的应用 App Key
+        appId: "your_app_ID", // 你的应用 App ID
         userId: "current_user_id", // 当前用户 ID
         token: "user_token", // 用户 token
       }}
@@ -235,7 +235,7 @@ const App = () => {
   return (
     <Provider
       initConfig={{
-        appKey: "your_app_key", // 你的应用 App Key
+        appId: "your_app_ID", // 你的应用 App ID
       }}
     >
       <CallKit
@@ -282,7 +282,7 @@ const App = () => {
   return (
     <Provider
       initConfig={{
-        appKey: "your appKey",
+        appId: "your appId",
         userId: "userId",
         token: "token",
       }}

@@ -8,7 +8,7 @@
 
 ## 步骤二 上传荣耀推送证书
 
-1. 登录 [环信控制台](https://console.easemob.com/user/login)，在 **应用管理** 页面点击测试版或正式版的应用的 App Key。
+1. 登录 [环信控制台](https://console.easemob.com/user/login)，在 **应用管理** 页面点击测试版或正式版的应用的 App ID。
    
 2. 选择 **增值功能** > **消息推送**。
    

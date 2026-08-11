@@ -14,7 +14,7 @@
 
 ## 初始化 SDK 
 
-初始化时，你需要通过 `EMOptions` 中封装的 `appKey` 设置你的 App Key。
+初始化时，你需要通过 `EMOptions` 中封装的 `appId` 设置你的 App ID。
 
 ```csharp
 var options = Options.InitOptionsWithAppId("YourAppId"); //将该参数设置为你的 App Id

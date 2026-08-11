@@ -36,7 +36,7 @@
 
 ## 推送证书和推送 Token
 
-**推送证书**：推送证书是IM 服务器用于判断目标设备使用哪种推送通道的唯一条件。发送推送通知前需要在 [环信控制台](https://console.easemob.com/user/login)配置 App 的推送证书，需填写证书名称（或者 App Key），确保与 Android 终端设备上传的证书名称一致。该步骤必须在登录即时通讯 IM SDK 成功后进行。
+**推送证书**：推送证书是IM 服务器用于判断目标设备使用哪种推送通道的唯一条件。发送推送通知前需要在 [环信控制台](https://console.easemob.com/user/login)配置 App 的推送证书，需填写证书名称（或者 App ID），确保与 Android 终端设备上传的证书名称一致。该步骤必须在登录即时通讯 IM SDK 成功后进行。
    
 **推送 token（device token）**：推送 token 是第三方推送服务提供的推送 token。以 FCM 推送为例，初次启动你的应用时，FCM SDK 为客户端应用实例生成的注册令牌 (registration token)。该 token 用于标识每台设备上的每个应用，FCM 通过该 token 明确消息是发送给哪个设备的，然后将消息转发给设备，设备再通知应用程序。你可以调用 `FirebaseMessaging.getInstance().getToken()` 方法获得 token。另外，如果退出即时通讯 IM 登录时不解绑 device token（调用 `logout` 方法时对 `unbindToken` 参数传 `false` 时不解绑 device token，传 `true` 表示解绑 token），用户在推送证书有效期和 token 有效期内仍会接收到离线推送通知。
 

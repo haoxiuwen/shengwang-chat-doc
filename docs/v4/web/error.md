@@ -16,10 +16,10 @@ error.type === statusCode.WEBIM_CONNCTION_USER_NOT_ASSIGN_ERROR 其中 `error` �
 | -3     | REQUEST_PARAMETER_ERROR               | 参数错误。     | 检查参数是否正确。 |
 | -4     | REQUEST_ABORT               | 取消请求。|
 | 1      | WEBIM_CONNCTION_OPEN_ERROR                    | 登录失败：获取 token 接口请求失败或 Token 无效。 | 根据 error message 判断是参数错误、已经登录、还是接⼝请求失败导致的登录失败，提示原因。 |
-| 2      | WEBIM_CONNCTION_AUTH_ERROR                     | 登录鉴权失败。     | 检查是否没有使⽤正确 App Key 初始化，或者没有登录，或者登录的 Token ⽆效。|
+| 2      | WEBIM_CONNCTION_AUTH_ERROR                     | 登录鉴权失败。     | 检查是否没有使⽤正确 App ID 初始化，或者没有登录，或者登录的 Token ⽆效。|
 | 16     | WEBIM_CONNCTION_DISCONNECTED                   | WebSocket 断开连接：由于断网等原因 WebSocket 已经断开。      | 提示连接已断开。 |
 | 17     | WEBIM_CONNCTION_AJAX_ERROR                     | 服务请求的通用错误：请求服务器未成功时的默认错误。 | 根据 error message 判断当前操作的错误原因提示失败原因。|
-| 27     | WEBIM_CONNCTION_APPKEY_NOT_ASSIGN_ERROR        | 未设置 App Key：设置的 App Key 错误，登录时会报此错误。 | 设置正确的 App Key。|
+| 27     | WEBIM_CONNCTION_APPID_NOT_ASSIGN_ERROR        | 未设置 App ID：设置的 App ID 错误，登录时会报此错误。 | 设置正确的 App ID。|
 | 28     | WEBIM_CONNCTION_TOKEN_NOT_ASSIGN_ERROR         | 未传 token：调用 API 时没有携带 token，一般没登录时调用 API 会提示这个错误。 | 确保成功登录。 |
 | 31     | WEBIM_CONNCTION_CALLBACK_INNER_ERROR           | 消息发送回调函数内部错误：在接收消息的回调及后续处理的函数中有错误。 | 检查回调函数⾥是否有报错，如 `onTextMessage` 的回调⾥处理消息时有报错。 |
 | 39     | WEBIM_CONNECTION_CLOSED                        | 退出或未登录：未登录或掉线后发送消息。  | 重新登录。|
@@ -66,7 +66,7 @@ error.type === statusCode.WEBIM_CONNCTION_USER_NOT_ASSIGN_ERROR 其中 `error` �
 | 606    | GROUP_MEMBERS_FULL                             | 群组已满：群组成员数量已达到创建群组时设置的最大人数。  | 提示群组⼈数已达上限。| 
 | 607    | GROUP_MEMBERS_LIMIT    | 创建群组时设置的群成员最大数量超过 IM 套餐包中的上限。各版本的即时通讯套餐包支持的群组成员最大数量，详见 [IM 套餐包功能详情](/product/product_package_feature.html)。 | 按照套餐限制⼈数上限。 |
 | 609    | GROUP_MEMBER_ATTRIBUTES_SET_FAILED    | 群成员属性设置失败。 | 提示设置失败，请重试。|
-| 700    | REST_PARAMS_STATUS                             | 用户 token 或 App Key 不存在或不正确导致 API 调用失败。 | 正确设置 App Key。 |
+| 700    | REST_PARAMS_STATUS                             | 用户 token 或 App ID 不存在或不正确导致 API 调用失败。 | 正确设置 App ID。 |
 | 702    | CHATROOM_NOT_JOINED                             | 被操作的人员不在聊天室。  | 提示该⽤户不在当前聊天室。 |
 | 704    | CHATROOM_MEMBERS_FULL                          | 聊天室已满：聊天室已经达到人数上限。  | 提示聊天室⼈数已满。|
 | 705    | CHATROOM_NOT_EXIST                             | 聊天室不存在：尝试对不存在的聊天室进行操作时提示该错误。| 检查聊天室 ID 是否正确。 |

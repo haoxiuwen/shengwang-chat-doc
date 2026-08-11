@@ -17,7 +17,7 @@
 
 | 参数 | 类型   | 描述 |
 | :---------------- | :----- |:------------------------------------------------------------------|
-| `callId`    | String   | 回调请求的唯一标识，格式为 `{App Key}_{发送的消息的ID}`。 | 
+| `callId`    | String   | 回调请求的唯一标识。 |
 | `eventType`       | String | 事件类型：`chat`（上行消息）、`chat_offline`（离线消息）。                    |
 | `timestamp`       | long   | IM 服务器接收到该消息的 Unix 时间戳，单位为毫秒。                           |
 | `chat_type`       | String | 会话类型（默认全选）：<br/> - `chat`：单聊回调；<br/> - `groupchat`：群聊回调包含了群组和聊天室的消息回调；<br/> - `notify`：通知回调包含了消息话题（Thread）和表情回复（Reaction）的回调，需结合 `payload` 中的 `type` 字段确定具体类型。 |
@@ -28,7 +28,6 @@
 | `payload`         | object | 事件内容，与通过 REST API 发送的消息内容一致，查看 [历史消息内容](message_historical.html#历史消息记录的内容)。      |
 | `securityVersion` | String | 安全校验版本，当前为 `1.0.0`。请忽略此参数，以后会改成 Console 后台做设置。                   |
 | `security`        | String | 签名，格式为 `MD5（callId+secret+timestamp）`。 `Secret` 见控制台 [回调规则配置](/product/console/basic_webhook.html#配置消息回调规则)。     |
-| `appkey`          | String | 你在环信控制台注册的应用唯一标识。        |
 | `host`            | String | 服务器名称。              |
 | `content_type`            | String | 消息类型：<br/> - `chat:user:*`：单聊消息  <br/> - `chat:group:*`：群组消息   <br/> - `chat:room:*`：聊天室消息  <br/>  各类消息对应的具体参数值，详见[发送单聊消息](#发送单聊消息)、[发送群组消息](#发送群组消息)和[发送聊天室消息](#发送聊天室消息)章节。   |
 
@@ -360,7 +359,7 @@
 
 ```json
 {
-    "callId":"{appkey}_8924312242322", 
+    "callId":"XXXX#XXXX_8924312242322", 
     "eventType":"chat_offline",
     "timestamp":1600060847294,
     "chat_type":"groupchat", 
@@ -411,7 +410,7 @@
 
 ```json
 {
-    "callId":"{appkey}_8924312242322",
+    "callId":"XXXX#XXXX_8924312242322",
     "eventType":"chat_offline",
     "timestamp":1600060847294,
     "chat_type":"groupchat", 

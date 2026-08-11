@@ -232,7 +232,7 @@ sortedConversations.addAll(unpinnedConversations);
 | :--- | :--- | :--- |
 | [`asyncPinConversation`](#设置或取消置顶会话) | `EMChatManager` | 设置或取消指定会话的置顶状态。 |
 | [`getConversation`](#设置或取消置顶会话) | `EMChatManager` | 获取指定的本地会话对象。 |
-| [`setAppKey`](#获取置顶会话列表) | `EMOptions` | 设置应用的 App Key。 |
+| [`setAppId`](#获取置顶会话列表) | `EMOptions` | 设置应用的 App ID。 |
 | [`setDataSyncType`](#获取置顶会话列表) | `EMOptions` | 设置登录成功后自动同步的数据类型。 |
 | [`init`](#获取置顶会话列表) | `EMClient` | 使用指定配置初始化 SDK。 |
 | [`getAllConversationsBySort`](#获取置顶会话列表) | `EMChatManager` | 获取置顶优先排序的本地会话列表。 |

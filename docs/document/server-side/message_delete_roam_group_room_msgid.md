@@ -14,7 +14,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -69,7 +69,7 @@ curl -X DELETE 'https://XXXX/app-id/{app_id}/rest/message/roaming/group/user/XXX
 
 | HTTP 状态码 | 错误类型     | 错误提示     | 可能原因    | 处理建议   |
 |:---------|:----------|:-----------------------|:--------|:--------------|
-| 400   | service open exception    | this appKey not open message roaming | 消息漫游服务未开通。 | 联系商务开通。 |
+| 400   | service open exception    |  | 消息漫游服务未开通。 | 联系商务开通。 |
 | 400      | param exception         | delete msg list limit can not greater than 50 | 一次删除的消息 ID 数量超过限制（50）。 | 减少一次删除的消息 ID 数量。 |
 
 关于其他错误，你可以参考 [响应状态码](error.html) 了解可能的原因。

@@ -39,7 +39,7 @@
 
 ## 推送证书与推送 Token
 
-**推送证书**：推送证书是IM 服务器判断目标设备使用何种推送通道的唯一依据。在发送推送通知前，需在 [环信控制台](https://console.easemob.com/user/login) 为应用配置推送证书，填写证书名称（或 App Key），并确保该名称与 Android 终端设备上传的证书名称一致。此配置操作必须在登录即时通讯 IM SDK 成功后执行。
+**推送证书**：推送证书是IM 服务器判断目标设备使用何种推送通道的唯一依据。在发送推送通知前，需在 [环信控制台](https://console.easemob.com/user/login) 为应用配置推送证书，填写证书名称（或 App ID），并确保该名称与 Android 终端设备上传的证书名称一致。此配置操作必须在登录即时通讯 IM SDK 成功后执行。
 
 **推送 Token（Device Token）**：推送 token 是第三方推送服务为应用实例生成的唯一标识。以 FCM 推送为例，应用初次启动时，FCM SDK 会为客户端应用实例生成一个注册令牌（registration token）。该 token 用于唯一标识每台设备上的每个应用，FCM 据此将消息准确投递至目标设备，设备再通知应用程序。你可通过调用 `FirebaseMessaging.getInstance().getToken()` 方法获取该 token。此外，若在退出即时通讯 IM 登录时选择不解绑 device token（调用 `logout` 方法时将 `unbindToken` 参数设为 `false`；设为 `true` 则表示解绑 token），用户在推送证书和 token 有效期内仍可收到离线推送通知。
 
@@ -54,7 +54,7 @@
 开通步骤如下：
 
 1. 登录 [环信控制台](https://console.easemob.com/user/login)。
-2. 选择页面上方的 **应用管理**。在应用列表中，单击测试应用或正式版应用的 App Key。
+2. 选择页面上方的 **应用管理**。在应用列表中，单击测试应用或正式版应用的 App ID。
 3. 选择 **增值服务 > 消息推送 > 离线推送**。
 4. 点击 **免费开通**。
 

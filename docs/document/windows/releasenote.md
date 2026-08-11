@@ -224,7 +224,7 @@
 
 #### 优化
 
-调整 `SDKClient#InitWithOptions` 方法，增加返回结果，检查 App Key 格式。
+调整 `SDKClient#InitWithOptions` 方法，增加返回结果，检查 App ID 格式。
 
 #### 修复
 

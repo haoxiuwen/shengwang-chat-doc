@@ -14,7 +14,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -66,6 +66,6 @@ curl -g -X DELETE 'https://XXXX/app-id/{app_id}/reaction/user/wz?msgId=997625372
 | HTTP 状态码        | 错误类型 | 错误提示          | 可能原因                     | 处理建议        |
 | :----------- | :--- | :------------- |:-------------------------|:------------|
 | 400     | Bad Request   | the user operation is illegal!        | 传入的用户 ID 没有操作过该 Reaction。 | 传入正确的用户 ID。 |
-| 400      | Bad Request  | this appKey is not open reaction service!   | Reaction 服务未开通。 | 请在环信控制台开通 Reaction 服务。 |
+| 400      | Bad Request  |   | Reaction 服务未开通。 | 请在环信控制台开通 Reaction 服务。 |
 
 关于其他错误，你可以参考 [响应状态码](error.html) 了解可能的原因。

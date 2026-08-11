@@ -10,7 +10,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -62,6 +62,6 @@ curl -X GET 'https://XXXX/app-id/{app_id}/metadata/user/capacity'    \
 | :----------- | :--- | :------------- | :----------- | :----------- |
 | 401     | unauthorized          | unauthorized        | 鉴权失败。   | 获取应用容量时需要使用 app 级别权限。    |
 | 401     | metadata_error          | auth error        | 鉴权失败。   | 使用正确的 token。     |
-| 403     | FORBIDDEN       | {appkey} user metadata service not allow   | 用户属性功能未开通。  | 联系商务开通用户属性功能。   |
+| 403     | FORBIDDEN       |    | 用户属性功能未开通。  | 联系商务开通用户属性功能。   |
 
 关于其他错误，你可以参考 [响应状态码](error.html) 了解可能的原因。

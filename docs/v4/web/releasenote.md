@@ -712,7 +712,7 @@
 
 ## v3.1.0 2020-04-20
 
-- [多人音视频] joinRoom API 通过 appkey 拼接 URL
+- [多人音视频] joinRoom API 通过 appId 拼接 URL
 
 ## v3.0.10 2020-03-28
 

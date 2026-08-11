@@ -36,12 +36,12 @@ git clone https://github.com/easemob/easemob-callkit-iOS.git
 git clone https://gitee.com/easemob-code/easemob-callkit-iOS.git
 ```
 
-### 步骤 2 设置 App Key
+### 步骤 2 设置 App ID
 
-在 `PublicDefines.swift` 中填写你的应用的 App Key：
+在 `PublicDefines.swift` 中填写你的应用的 App ID：
 
 ```swift
-let AppKey: String = <#AppKey#>
+let AppId: String = <#AppId#>
 ```
 
 ### 步骤 3 安装本地依赖

@@ -7,7 +7,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key 
+100 次/秒/App ID 
 
 ## 请求 URL
 
@@ -61,6 +61,5 @@ curl -X DELETE 'https://XXXX/app-id/{app_id}/moderation/text/list/{list_id}' \
 | :----------- | :--- | :------------- | :----------- | :----------- |
 | 401     | unauthorized | Unable to authenticate (OAuth) | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。 |
 | 400 | Bad request | textList data is empty | 名单不存在 | 检查传入的 `list_id` 参数是否正确。 |
-| 400 | Bad request | appkey is not exist | App Key 不存在。 | 请传入正确的 `org_name` 和 `app_name` 参数。  |
 
 关于其他错误，你可以参考 [错误码页面](error.html) 了解可能的原因。

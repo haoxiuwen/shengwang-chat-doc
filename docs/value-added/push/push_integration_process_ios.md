@@ -68,7 +68,7 @@ pod install
 #### 2. 初始化 EMPush
 
 ```objectivec
-EMPushClientOptions *option = [EMPushClientOptions optionsWithAppkey:@"appkey"];
+EMPushClientOptions *option = [EMPushClientOptions optionsWithAppId:@"appid"];
 option.enableConsoleLog = YES;
 option.isAutoLogin = YES;
 option.apnsCertName = @"apnsname";

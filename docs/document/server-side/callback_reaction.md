@@ -70,7 +70,6 @@ Reaction 回调请求中，`reactions` 数组包含了消息当前所有的 Reac
         "type": "reaction"
     },
     "host": "XXXX",
-    "appkey": "XXXX#XXXX",
     "from": "user1",
     "to": "user2",
     "eventType": "chat",
@@ -85,7 +84,6 @@ Reaction 回调请求中，`reactions` 数组包含了消息当前所有的 Reac
 |:---------------|:-------|:---------------|
 | `chat_type` | String | 固定值为 `notify`。通知回调包含了消息话题（message thread）和表情回复（Reaction）的回调，需要结合 `payload` 中的 `type` 字段确定具体类型。|
 | `host`            | String | 服务器名称。              |
-| `appkey`          | String | 即时通讯服务分配给每个应用的唯一标识，由 `orgname` 和 `appname` 参数的值组成，生成后无法修改。 |
 | `from`            | String | 消息的发送方。     |
 | `to`              | String | 消息的接收方。   |
 | `eventType`       | String | `chat` 表示上行消息、`chat_offline` 表示离线消息。   |

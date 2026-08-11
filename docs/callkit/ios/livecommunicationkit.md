@@ -30,7 +30,7 @@ CallKit 支持 APNs 推送和 VoIP 推送。若开启了 VoIP 功能，则使用
 
 ```swift
     private func setupCallKit() {
-        let options = EMOptions(appkey: appKey)
+        let options = EMOptions(appId: appId)
         #if DEBUG
         options.apnsCertName = "your_APNS_Developer"
         options.pushKitCertName = "yourVoipDev"

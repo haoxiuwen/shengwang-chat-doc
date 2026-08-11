@@ -1148,7 +1148,6 @@ EaseIMKit：
 注意:
 
 - EaseIMKit 除了可以远程库外，也公布了源码，详情请见：[EaseIMKit 使用指南](https://docs-im.easemob.com/im/ios/other/easeimkit);
-- 新版 App（EaseIM App）采用了新的 appkey，不可用之前的账号进行登录，需要重新进行注册。
 
 ## v3.7.2 2020-10-30
 

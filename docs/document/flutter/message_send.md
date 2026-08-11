@@ -254,7 +254,7 @@ import 'package:im_flutter_sdk/im_flutter_sdk.dart';
 // 1) SDK 初始化时关闭"自动上传附件到 Chat 服务器"
 Future<void> initSDK() async {
   EMOptions options = EMOptions(
-    appKey: "your_app_key",  // 替换为你的 App Key
+    appId: "your_app_ID",  // 替换为你的 App ID
     autoLogin: false,
     serverTransfer: false,  // 关闭自动上传附件
   );

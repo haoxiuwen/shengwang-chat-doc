@@ -20,8 +20,8 @@ EMClient.getInstance().setDebugMode(false);
 打开以下目录，获取本地日志。在下列代码中，你需要进行如下替换：
 
 - `{应用包名}` 替换为应用的包名，例如 `com.hyphenate.chatuidemo`。
-- `{App Key}` 需要替换为应用的环信 App Key。
+- `{App ID}` 需要替换为应用的环信 App ID。
 
 ```shell
-adb pull /sdcard/android/data/{应用包名}/{App Key}/core_log
+adb pull /sdcard/android/data/{应用包名}/{App ID}/core_log
 ```

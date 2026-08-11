@@ -90,7 +90,7 @@ pod 'EaseCallUIKit', :path => '../../easemob-callkit-iOS/'
 CallKit 初始化包括如下步骤：
 
 1. 初始化环信即时通讯 IM SDK。CallKit 基于即时通讯 IM 作为信令通道，因此需先初始化 IM SDK。
-   - 填入你的应用的 App Key。
+   - 填入你的应用的 App ID。
    - 设置即时通讯 IM SDK 的 `EMOptions`/`ChatSDKOptions` 类中的一些选项。
    - 如果用户要使用系统的 LiveCommunicationKit，建议设置即时通讯 IM 为自动登录 `isAutoLogin` 为 `true`。
 2. 初始化 CallKit。
@@ -105,7 +105,7 @@ CallKit 初始化包括如下步骤：
 ```swift
     //已经集成了即时通讯 IM SDK 即已经 import HyphenateChat
     private func setupCallKit() {
-        let options = EMOptions(appkey: appKey)
+        let options = EMOptions(appid: appID)
         #if DEBUG
         options.apnsCertName = "Your_APNS_Developer"
         options.pushKitCertName = "YourVoipDev"
@@ -127,7 +127,7 @@ CallKit 初始化包括如下步骤：
 ```swift
     //没有集成即时通讯 IM SDK，只想使用 CallKit
     private func setupCallKit() {
-        let options = ChatSDKOptions(appkey: appKey)
+        let options = ChatSDKOptions(appid: appID)
         #if DEBUG
         options.apnsCertName = "Your_APNS_Developer"
         options.pushKitCertName = "YourVoipDev"

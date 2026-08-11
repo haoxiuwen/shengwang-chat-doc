@@ -68,9 +68,9 @@
 ## 步骤四 在 SDK 初始化时配置应用的推送 Client ID
 
 ```typescript
-// ChatOptions 需要传入 appkey 参数。
+// ChatOptions 需要传入 appId 参数。
 let options = new ChatOptions({
-  appKey: "你的 AppKey"
+  appId: "你的 AppId"
 });
 // 传入 AppGallery Connect 获取到的 ClientID。
 options.setAppIDForPush('Your ClientID');

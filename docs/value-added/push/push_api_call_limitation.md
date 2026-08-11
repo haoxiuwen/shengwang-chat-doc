@@ -8,21 +8,21 @@
 
 | RESTful API 接口 |方法  | 接口 URL| 接口最高调用频率（默认值） |
 | :----------- | :----- | :------------------- | :------------- |
-| [创建推送标签](push_by_tag.html#创建推送标签)  | POST   | /{org_name}/{app_name}/push/label   | 10 次/秒/App Key   |
-| [查询指定的推送标签](push_by_tag.html#查询指定的推送标签)  | GET | /{org_name}/{app_name}/push/label/{labelname}   | 10 次/秒/App Key         |
-| [分页查询推送标签](push_by_tag.html#分页查询推送标签)   | GET   | /{org_name}/{app_name}/push/label  | 10 次/秒/App Key   |
-| [删除指定的推送标签](push_by_tag.html#删除指定的推送标签)   | DELETE   | /{org_name}/{app_name}/push/label/{labelname}    | 10 次/秒/App Key    |
-| [在推送标签下添加用户](push_by_tag.html#在推送标签下添加用户)   | POST   | /{org_name}/{app_name}/push/label/{labelname}/user    | 30 次/秒/App Key    |
-| [查询指定标签下的指定用户](push_by_tag.html#查询指定标签下的指定用户)   | GET   | /{org_name}/{app_name}/push/label/{labelname}/user/{username}    | 30 次/秒/App Key    |
-| [分页查询指定标签下的用户](push_by_tag.html#分页查询指定标签下的用户)  | GET   | /{org_name}/{app_name}/push/label/{labelname}/user    | 30 次/秒/App Key    |
-| [批量移出指定推送标签下的用户](push_by_tag.html#批量移出指定推送标签下的用户)   | DELETE   | /{org_name}/{app_name}/push/label/{labelname}/user    | 30 次/秒/App Key    |
+| [创建推送标签](push_by_tag.html#创建推送标签)  | POST   | /{org_name}/{app_name}/push/label   | 10 次/秒/App ID   |
+| [查询指定的推送标签](push_by_tag.html#查询指定的推送标签)  | GET | /{org_name}/{app_name}/push/label/{labelname}   | 10 次/秒/App ID         |
+| [分页查询推送标签](push_by_tag.html#分页查询推送标签)   | GET   | /{org_name}/{app_name}/push/label  | 10 次/秒/App ID   |
+| [删除指定的推送标签](push_by_tag.html#删除指定的推送标签)   | DELETE   | /{org_name}/{app_name}/push/label/{labelname}    | 10 次/秒/App ID    |
+| [在推送标签下添加用户](push_by_tag.html#在推送标签下添加用户)   | POST   | /{org_name}/{app_name}/push/label/{labelname}/user    | 30 次/秒/App ID    |
+| [查询指定标签下的指定用户](push_by_tag.html#查询指定标签下的指定用户)   | GET   | /{org_name}/{app_name}/push/label/{labelname}/user/{username}    | 30 次/秒/App ID    |
+| [分页查询指定标签下的用户](push_by_tag.html#分页查询指定标签下的用户)  | GET   | /{org_name}/{app_name}/push/label/{labelname}/user    | 30 次/秒/App ID    |
+| [批量移出指定推送标签下的用户](push_by_tag.html#批量移出指定推送标签下的用户)   | DELETE   | /{org_name}/{app_name}/push/label/{labelname}/user    | 30 次/秒/App ID    |
 
 ## 发送推送通知
 
 | RESTful API 接口 |方法  | 接口 URL| 接口最高调用频率（默认值） |
 | :----------- | :----- | :------------------- | :------------- |
-| [同步推送单用户通知](push_send_notification.html#同步推送单用户) | POST  | /{org_name}/{app_name}/push/sync/{target} | 1 次/秒/App Key  |
-| [异步推送单用户通知](push_send_notification.html#异步推送单用户) | POST  | /{org_name}/{app_name}/push/async/{target} | 200 次/秒/App Key  |
-| [异步批量推送多用户通知](push_send_notification.html#异步批量推送多用户) | POST | /{org_name}/{app_name}/push/single | 10 次/秒/App Key |
-| [按标签推送用户群通知](push_send_notification.html#按标签推送用户群) | POST | /{org_name}/{app_name}/push/list/label | 10 次/秒/App Key |
-| [全量推送](push_send_notification.html#全量推送) | POST | /{org_name}/{app_name}/push/task | 1 次/秒/App Key |
+| [同步推送单用户通知](push_send_notification.html#同步推送单用户) | POST  | /{org_name}/{app_name}/push/sync/{target} | 1 次/秒/App ID  |
+| [异步推送单用户通知](push_send_notification.html#异步推送单用户) | POST  | /{org_name}/{app_name}/push/async/{target} | 200 次/秒/App ID  |
+| [异步批量推送多用户通知](push_send_notification.html#异步批量推送多用户) | POST | /{org_name}/{app_name}/push/single | 10 次/秒/App ID |
+| [按标签推送用户群通知](push_send_notification.html#按标签推送用户群) | POST | /{org_name}/{app_name}/push/list/label | 10 次/秒/App ID |
+| [全量推送](push_send_notification.html#全量推送) | POST | /{org_name}/{app_name}/push/task | 1 次/秒/App ID |

@@ -301,7 +301,7 @@ EMClient.getInstance()
 
 | API 名称 | 所属模块/类 | 说明 |
 | :--- | :--- | :--- |
-| [`setAppKey`](#登录后自动同步会话列表) | `EMOptions` | 设置应用的 App Key。 |
+| [`setAppId`](#登录后自动同步会话列表) | `EMOptions` | 设置应用的 App ID。 |
 | [`setDataSyncType`](#登录后自动同步会话列表) | `EMOptions` | 设置登录成功后自动同步的数据类型。 |
 | [`setLoadEmptyConversations`](#获取本地所有或筛选的会话) | `EMOptions` | 设置从本地数据库加载会话时是否包含空会话。 |
 | [`setDeleteMessagesAsExitChatRoom`](#获取本地所有或筛选的会话) | `EMOptions` | 设置退出聊天室时是否删除该聊天室的本地消息。 |

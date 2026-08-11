@@ -9,7 +9,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key 
+100 次/秒/App ID 
 
 ## 请求 URL
 
@@ -62,7 +62,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/moderation/text/list' \
         "id": "1xIXXXXlodF52URYQk7rZmd5s8k",
         "name": "list_1",
         "moderationId": "159XXXXcL0ylUvcBfVAZ0IRQNwW",
-        "appkey": "XXXX#XXXX",
         "category": "DEFAULT",
         "scope": "ALL",
         "tagId": null,
@@ -120,7 +119,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/moderation/text/list' \
 | - `id` | String | 关键词名单 ID。 |
 | - `name` | String  | 关键词名单的名称。 |
 | - `moderationId` | String | 审核 ID。开发者可忽略该参数。|
-| - `appkey` | String | 应用的 App Key。 |
 | - `category` | String | 值为 `DEFAULT`，表示关键词名单。 |
 | - `scope` | String | 关键词名单的生效范围。  |
 | - `tagId` | String | 标签 ID。 |

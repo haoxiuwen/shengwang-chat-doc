@@ -14,10 +14,10 @@
 
 ## 初始化 SDK
 
-初始化时，你需要通过 `EMOptions` 中封装的 `appKey` 属性设置你的 App ID。
+初始化时，你需要通过 `EMOptions` 中封装的 `appId` 属性设置你的 App ID。
 
 ```dart
-EMOptions options = EMOptions.withAppId(appId);
+EMOptions options = EMOptions.withAppId(appId); 
 await EMClient.getInstance.init(options);
 ```
 

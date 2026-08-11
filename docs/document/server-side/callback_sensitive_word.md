@@ -32,7 +32,6 @@
     "security": "36e8e82243ce96e1ac3f530fb815cef8",
     "contentUri": "msync:1218049757197370792",
     "host": "msync@ebs-ali-beijing-msync62",
-    "appkey": "XXXX#XXXX",
     "contentType": "message",
     "timestamp": 1701164109042,
     "chatType": "chat:user:text",
@@ -55,7 +54,6 @@
     "security": "47ce006af8a8f9ad26acf125244093ab",
     "contentUri": "msync:1232040174779635136",
     "host": "msync@ebs-ali-beijing-msync68",
-    "appkey": "XXXX#XXXX",
     "contentType": "message",
     "timestamp": 1704421506954,
     "chatType": "chat:user:text",
@@ -78,7 +76,6 @@
     "security": "e8b50122636487eacb55ada441f8f3cb",
     "contentUri": "msync:1218049329273505228",
     "host": "msync@ebs-ali-beijing-msync71",
-    "appkey": "easemob-demo#restys",
     "contentType": "message",
     "timestamp": 1701164009349,
     "chatType": "chat:user:text",
@@ -90,7 +87,7 @@
 
 | 字段        | 数据类型 | 含义                                                         |
 | :---------- | :------- | :----------------------------------------------------------- |
-| `callId`    | String   | `callId` 为每个回调请求的唯一标识，格式为 `App Key_UUID`。 | 
+| `callId`    | String   | 回调请求的唯一标识。 |
 | `alertReason`  | String   | 敏感词是否合规：<br/> - `through`：表示敏感词为合规内容；<br/> - `intercepted`：表示敏感词为违规词，包含敏感词的消息被拦截。<br/> - `replaced`：表示敏感词为违规词，使用 *** 代替。 | 
 | `contentReceiver`  | String   |  内容接收方的用户 ID。 | 
 | `eventType`  |  String |  事件类型，用于标识为敏感词检测还是其他类型的事件。 | 
@@ -99,7 +96,6 @@
 | `security`  | String   | 签名，格式如下: `MD5（callId+secret+timestamp）`。`secret` 详见 [环信控制台的回调规则配置](/product/console/basic_webhook.html#配置消息回调规则)。  | 
 | `contentUri`  |  String | 消息唯一标识，格式为 msync:msgId。 | 
 | `host`  | String  | 服务器名称。  | 
-| `appkey`  | String  | 即时通讯服务分配给每个应用的唯一标识，由 `orgname` 和 `appname` 参数的值组成。  |  
 | `contentType`  |  String |  内容类型，目前为 `message`，表示为消息。 |  
 | `timestamp`  | Long   | 即时通讯 IM 服务器接收到此消息的 Unix 时间戳，单位为毫秒。 | 
 | `chatType`  | String  | 会话类型，默认全选：<br/> - `chat`：单聊回调；<br/> - `groupchat`：群聊回调包含了群组和聊天室的消息回调；<br/> - `notify`：通知回调包含了 Thread 和 Reaction 的回调，需要结合 payload 中的 `type` 字段确定具体类型。  | 

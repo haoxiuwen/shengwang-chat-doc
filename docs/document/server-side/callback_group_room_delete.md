@@ -23,7 +23,6 @@
 {
 	"callId": "XXXX#XXXX_2e962475-XXXX-XXXX-a90c-d7e2949440f2",
 	"security": "4e5d778c77dXXXXab41ed2528594e449",
-	"appkey": "XXXX#XXXX",
 	"id": "255445981790209",
 	"type": "GROUP",
 	"event": "group_op_event",
@@ -37,9 +36,8 @@
 
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
-| `callId`       | String | 回调请求的唯一标识，格式为 `App Key_UUID`。 | 
+| `callId`       | String | 回调请求的唯一标识。 |
 | `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。  |
 | `id`           | String | 群组/聊天室 ID。                                                 |
 | `type`         | String | 区分群组或聊天室事件：<br/> - `GROUP`：群组 <br/> - `CHATROOM` ：聊天室   |
 | `event`        | String | 对于群组和聊天室，该参数的值固定为 `group_op_event`。接收方可按此字段区分是否是群组/聊天室操作事件。 | 

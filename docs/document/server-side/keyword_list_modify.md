@@ -7,7 +7,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key 
+100 次/秒/App ID 
 
 ## 请求 URL
 
@@ -63,7 +63,6 @@ curl -X PUT 'https://XXXX/app-id/{app_id}/moderation/text/list/1xXXXXVlodF52URYQ
         "id": "1xXXXXVlodF52URYQk7rZmd5s8k",
         "name": "list_1",
         "moderationId": "159XXXXL0ylUvcBfVAZ0IRQNwW",
-        "appkey": "XXXX#XXXX",
         "category": "DEFAULT",
         "scope": "ALL",
         "tagId": null,
@@ -89,7 +88,6 @@ curl -X PUT 'https://XXXX/app-id/{app_id}/moderation/text/list/1xXXXXVlodF52URYQ
 | - `id` | String | 关键词名单 ID。 |
 | - `name` | String  | 关键词名单的名称。 |
 | - `moderationId` | String | 审核 ID。开发者可忽略该参数。 |
-| - `appkey` | String | 应用的 App Key。 |
 | - `scope` | String | 关键词名单的生效范围。  |
 | - `tagId` | String | 用户标签 ID。 |
 | - `fullMatch` | Boolean | 关键词与消息内容是否为精确匹配。 |
@@ -109,7 +107,7 @@ curl -X PUT 'https://XXXX/app-id/{app_id}/moderation/text/list/1xXXXXVlodF52URYQ
 | HTTP 状态码        | 错误类型 | 错误提示          | 可能原因 | 处理建议 |
 | :----------: | :--- | :------------- | :----------- | :----------- |
 | 401     | unauthorized | Unable to authenticate (OAuth) | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。 |
-| 400 | Bad request | textList data is empty | 请求中传入的关键词名单 ID 参数 `list_id` 不存在，App Key 与 `list_id `无法对应。 | 传输正确的 `list_id` 参数。 |
+| 400 | Bad request | textList data is empty | 请求中传入的关键词名单 ID 参数 `list_id` 不存在。 | 传输正确的 `list_id` 参数。 |
 | 400 | Bad request | The textList already exists | 请求中传入的关键词名单名称 `name` 重复。 | 修改 `name` 的值。 |
 | 400 | Bad request | textList id is empty | 请求中传入的关键词名单 ID 参数 `list_id` 为空。 | 请传入正确的 `list_id`。 |
 

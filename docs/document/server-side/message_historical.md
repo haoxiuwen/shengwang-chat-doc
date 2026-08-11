@@ -15,7 +15,7 @@
 
 ### 调用频率上限
 
-10 次/分钟/App Key
+10 次/分钟/App ID
 
 ### 请求 URL
 
@@ -83,13 +83,13 @@ curl -X GET 'https://XXXX/app-id/{app_id}/chatmessages/2018112717'    \
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败，可能提示以下错误码：
 
-| HTTP 状态码 | 错误类型   | 错误提示      | 可能原因    | 处理建议   |
+| HTTP 状态码 | 错误类型   | 可能原因    | 处理建议   |
 |:---------|:-------------------|:--------------------|:---------|:--------------|
-| 400      | illegal_argument | illegal arguments: appkey: XXXX#XXXX, time: xxxxxx | 请求参数 `time` 格式不正确。  | 输入正确的请求参数 `time`:UTC 时间，使用 ISO8601 标准，格式为 yyyyMMddHH。例如 time 为 2018112717，则表示查询 2018 年 11 月 27 日 17 时至 2018 年 11 月 27 日 18 时期间的历史消息。若海外集群为 UTC 时区，需要根据自己所在的时区进行时间转换。 |
-| 400      | illegal_argument | illegal arguments: appkey: XXXX#XXXX, time: xxxxxx, maybe chat message history is expired or unstored" | `time` 对应时间段内的历史文件已过期或者暂未存储。消息的云存储时间取决于产品套餐，详见 [消息存储时长限制](/product/limitation.html)。 | 输入正确的请求参数 `time`。 |
-| 404      | storage_object_not_found | Failed to find chat message history download url for appkey: XXXX#XXXX, time: xxxxxx" | 对应 `time` 对应时间段内不存在历史文件。      | 如果确定设置的时间内有历史消息，请联系 [技术支持人员](mailto:support@easemob.com)。 |
+| 400      | illegal_argument | 请求参数 `time` 格式不正确。  | 输入正确的请求参数 `time`:UTC 时间，使用 ISO8601 标准，格式为 yyyyMMddHH。例如 time 为 2018112717，则表示查询 2018 年 11 月 27 日 17 时至 2018 年 11 月 27 日 18 时期间的历史消息。若海外集群为 UTC 时区，需要根据自己所在的时区进行时间转换。 |
+| 400      | illegal_argument | `time` 对应时间段内的历史文件已过期或者暂未存储。消息的云存储时间取决于产品套餐，详见 [消息存储时长限制](/product/limitation.html)。 | 输入正确的请求参数 `time`。 |
+| 404      | storage_object_not_found | 对应 `time` 对应时间段内不存在历史文件。      | 如果确定设置的时间内有历史消息，请联系 [技术支持人员](mailto:support@easemob.com)。 |
 
-## 历史消息记录的内容
+## 历史消息记录的内容    
 
 查询历史消息记录成功后，你可以访问 URL 下载历史消息记录文件，查看历史消息记录的具体内容。
 
