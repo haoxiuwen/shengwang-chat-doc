@@ -691,8 +691,7 @@ const documentV5Sidebar = [
           { text: '注册用户', 
             collapsible: true,
             children: [
-              { text: '开放注册单用户',  link: 'account_register_open.html' },
-              { text: '授权注册单用户',  link: 'account_register_authorized_single.html' },
+              { text: '注册单个用户',  link: 'account_register_authorized_single.html' },
               { text: '批量授权注册用户',  link: 'account_register_authorized_batch.html' }
             ]
           },  

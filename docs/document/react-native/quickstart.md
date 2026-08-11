@@ -84,7 +84,7 @@ cd ios && pod install && cd ..
 
 在 [环信控制台](https://console.easemob.com/user/login) 创建用户，获取用户 ID 和用户 token 用于登录。详见 [创建用户文档](/product/console/operation_user.html#创建用户)。
 
-在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [Token 鉴权](token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
 ## 实现发送和接收单聊消息
 
@@ -452,4 +452,4 @@ _同时，你可以在下方查看日志，检查注册，登录，发送消息�
 
 ## 更多操作
 
-在生产环境中，为了安全考虑，你需要在你的应用服务器集成[Token 鉴权](token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成[Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。

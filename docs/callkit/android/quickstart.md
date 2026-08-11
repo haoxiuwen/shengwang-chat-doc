@@ -14,10 +14,10 @@
 
 在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
 1. [注册开发者账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
-2. [创建项目](/document/server-side/enable_im.html#创建项目并开通)，[获取 App ID](/document/server-side/enable_im.html#_3-获取-app-id)。
-3. [创建用户](/product/console/operation_user.html#创建用户)，获取用户 ID 和 Token。
+2. [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
+3. [创建用户](/document/ios/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/ios/login.html#获取用户-token)。
 4. [开通音视频服务](product_activation.html)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能实现发起音视频通话。
-   
+
 ## 快速开始
 
 ### 步骤 1： 创建项目
@@ -127,7 +127,7 @@ android.enableJetifier=true
 
 1. 打开 `app/src/main/res/values/strings.xml` 文件，替换为如下内容。
 
-你需要将 **app_key** 替换为你申请的环信 App Key,**user_name** 替换为你的用户名,**token** 替换为你用户名对应的token。
+你需要将 **app_key** 替换为你申请的环信 App ID,**user_name** 替换为你的用户名,**token** 替换为你用户名对应的token。
 
 ```xml
 <resources>

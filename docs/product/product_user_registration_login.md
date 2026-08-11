@@ -4,41 +4,64 @@
 
 ## 用户注册
 
-登录 SDK 前，你需要先创建即时通讯 IM 用户。创建用户前，需先在 [环信控制台](https://console.easemob.com/user/login) 的 **即时通讯 > 基础功能** > **用户** 页面设置用户注册模式。
+即时通讯 IM 提供以下两种方式创建用户：
 
-用户注册模式分为以下两种：
+- 调用 [RESTful API](/document/server-side/account_system.html#注册用户) 注册用户账号，注册后保存到你的服务器或返给客户端。
 
-- **授权注册**：通过 IM 提供的 REST API 注册用户。该方式适用于正式生产环境，注册成功后，你可以将用户账号保存到你的应用服务器或返回给客户端。
-- **开放注册**：允许客户端或 REST API 直接注册用户。该方式一般用于体验 Demo 和测试环境，正式环境不推荐使用。
+- 在[声网控制台](https://console.shengwang.cn/overview)上创建用户。
 
-设置注册模式后，你可以通过以下方式创建用户：
+### 创建用户
 
-1. **调用 REST API 创建用户**
+在[声网控制台](https://console.shengwang.cn/overview)按照如下步骤创建用户：
 
-   - 授权注册：调用 [授权注册单个用户](/document/server-side/account_register_authorized_single.html) 或 [批量授权注册用户](/document/server-side/account_register_authorized_batch.html) 接口创建用户。
-   - 开放注册：开启开放注册后，可通过客户端或 [REST API 开放注册用户](/document/server-side/account_register_open.html) 创建用户。
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
 
-2. **通过环信控制台创建用户**
+2. 点击左侧导航栏的**全部产品**。
 
-   你可以在 [环信控制台](https://console.easemob.com/user/login) 创建正式环境或测试环境下的用户，详见 [创建用户](/product/console/operation_user.html#创建用户)。
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**运营管理**标签页。
+
+5. 在**用户** 页签下，点击**创建IM用户**。
+
+6. 在弹出的对话框中，配置用户相关参数，点击**确定**。
+
+![img](/images/android/user_create.png)
+
+### 获取用户 token
+
+创建用户后，在用户列表点击对应的用户的**操作**一栏中的**更多**，选择**查看Token**。
+
+在弹出的对话框中，可以查看用户 Token，也可以点击**重新生成**，生成用户 token。
+
+![img](/images/android/user_token.png)
 
 ## 用户登录
 
 初始化即时通讯 IM SDK 后，你需要调用登录接口进行登录。只有登录成功后，你才能正常使用 IM 的各种功能，例如消息和会话。
 
-即时通讯 IM 支持用户 ID 和 token 登录。
+目前登录服务器支持主动和自动登录。主动登录有两种方式：
+
+- 用户 ID + 密码
+- 用户 ID + token
 
 | 参数       | 类型   | 是否必需 | 描述          |
 | :--------- | :----- | :------- | :-------------------------------------------- |
-| `username` | String | 是  | 用户 ID，长度不可超过 64 个字节。不可设置为空。支持以下字符集：<br/>- 26 个小写英文字母 a-z；<br/>- 10 个数字 0-9；<br/>- “_”, “-”, “.”。 <br/><Container type="notice" title="注意"><br/>- 请勿使用大写英文字母 A-Z。若你同时使用了大写字母和小写字母，响应中返回的用户 ID 只包含小写字母。<br/>- 用户 ID 为公开信息，请勿使用 UUID、邮箱地址、手机号等敏感信息。</Container> |
-| `token` | String | 是 | token 可以通过调用 REST API 获取，即传入用户 ID （或用户 ID + 密码）和 token 有效期参数获取，详见 [Token 鉴权](/document/server-side/token_authentication.html)。<br/><Container type="notice" title="注意"><br/>- 你可以在调用 REST API 获取 token 时，传入 `ttl` 参数，设置 token 的有效期。此外，你也可以通过 [环信控制台](https://console.easemob.com/user/login/)的 **用户管理** 页面设置 token 的有效期。该参数值以最新设置为准。<br/>- IM 服务器完全信赖用户 token，为避免业务受影响，你需要确保 token 的安全。</Container> |
+| `username` | String | 是  | 用户 ID，长度不可超过 64 个字节。不可设置为空。支持以下字符集：<br/>- 26 个小写英文字母 a-z；<br/>- 26 个大写英文字母 A-Z；<br/>- 10 个数字 0-9；<br/>- “_”, “-”, “.”。 <br/><Container type="notice" title="注意"><br/>- 该参数不区分大小写，因此 `Aa` 和 `aa` 为相同的用户 ID。<br/>- 请确保同一个 app 下，用户 ID 唯一；<br/>- 用户 ID 为公开信息，请勿使用 UUID、邮箱地址、手机号等敏感信息。</Container> |
+| `token` | String | 是 | token 可以通过调用 REST API 获取，即传入用户 ID （或用户 ID + 密码）和 token 有效期参数获取，详见 [使用 token 验证](/docs/sdk/server-side/token_authentication.html)。<br/> |
+| `password` | String | 是 | 用户的登录密码，长度不可超过 64 个字符。|
 
 ## 登录流程
+
+- 用户 ID + 密码
+
+![img](/images/product/login_userid_pwd.png)
+
+- 用户 ID + Token
 
 ![img](/images/product/login_userid_token.png)
 
 :::tip
-1. 关于获取 token，详见 [Token 鉴权](/document/server-side/token_authentication.html)和 [Token 鉴权](/document/server-side/token_authentication.html)。
-2. 获取 token 时，token 有效期 `ttl` 以传入的值为准。若不传该参数，以[环信控制台](https://console.easemob.com/user/login)的 **用户管理** 页面的 token 有效期的设置为准，默认为 60 天。若设置为 `0`，则 token 永久有效。
+关 token 鉴权，详见 [使用 Token 鉴权](/docs/sdk/server-side/token_authentication.html)。
 :::
 

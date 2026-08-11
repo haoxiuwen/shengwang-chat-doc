@@ -103,10 +103,10 @@ curl -X POST 'https://XXXX/app-id/{app_id}/users'    \
 
 | HTTP 状态码 | 错误类型      | 错误提示       | 可能原因       | 处理建议       |
 | :---- | :-------- | :------------ | :----------------- | :----------------- |
-| 400         | illegal_argument                   | username XXX is not legal  | 用户名不合法。   | 查看注册用户名 [规范](account_register_open.html)。 |
-| 400         | illegal_argument                   | USERNAME_TOO_LONG   | 用户长度超过限制。 | 查看注册用户名 [规范](account_register_open.html)。 |
+| 400         | illegal_argument                   | username XXX is not legal  | 用户名不合法。   | 查看注册用户名 [规范](account_register_authorized_single.html)。 |
+| 400         | illegal_argument                   | USERNAME_TOO_LONG   | 用户长度超过限制。 | 查看注册用户名 [规范](account_register_authorized_single.html)。 |
 | 400         | illegal_argument                   | password or pin must provided  | 注册用户请求 body 中没有提供 `password` 参数。| 注册用户请求 body 中提供 `password`。 |
-| 400         | illegal_argument                   | NICKNAME_TOO_LONG    | 注册用户的推送昵称长度超过限制。 | 查看注册用户名 [规范](account_register_open.html)。 |
+| 400         | illegal_argument                   | NICKNAME_TOO_LONG    | 注册用户的推送昵称长度超过限制。 | 查看注册用户名 [规范](account_register_authorized_single.html)。 |
 | 400         | duplicate_unique_property_exists   | Application XXX Entity user requires that property named username be unique, value of XXX exists | 注册用户名已经存在。 | 更换用户名重新注册。   |
 | 400         | illegal_argument                   | username [XXX] is not legal  | 注册用户的 `username` 不合法。| 请按照用户名的规范进行注册用户。 |
 | 400         | illegal_argument                   | USERNAME_TOO_LONG    | 注册用户的 `username` 长度超限。 | 请按照用户名的规范进行注册用户。  |

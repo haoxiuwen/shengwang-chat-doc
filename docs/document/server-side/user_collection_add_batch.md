@@ -94,6 +94,6 @@ curl -X POST https://XXX/XXX/XXX/collections
 
 | HTTP 状态码        | 错误类型 | 错误提示          | 可能原因 | 处理建议 |
 | :----------- | :--- | :------------- | :----------- | :----------- |
-| 400         | illegal_argument  | username XXX is not legal   | 用户 ID 不合法。  | 查看注册用户名[规范](account_register_open.html)。 |
+| 400         | illegal_argument  | username XXX is not legal   | 用户 ID 不合法。  | 查看注册用户名[规范](account_register_authorized_single.html)。 |
 
 关于其他错误，你可以参考 [错误码](error.html) 了解可能的原因。

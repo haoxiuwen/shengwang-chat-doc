@@ -15,11 +15,10 @@
 ## 前提条件
 
 在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
-
-- [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 。
-- [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)，[获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)。
-3. [创建用户](/product/console/operation_user.html#创建用户)，获取用户 ID。
-4. [开通音视频服务](product_activation.html)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能实现发起音视频通话。
+    - [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
+    - [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
+    - [创建用户](/document/web/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/web/login.html#获取用户-token)。
+    - [开通音视频服务](product_activation.html)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能实现发起音视频通话。
 
 ## 快速开始
 
@@ -595,7 +594,7 @@ npm run dev
    http://localhost:5173?userId=your_user_id&accessToken=your_accessToken
    ```
 
-在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [Token 鉴权](token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
 3. 输入对方用户 ID，点击 **发起一对一视频通话** 或 **发起一对一语音通话**。
 4. 在浏览器弹出的权限请求中，允许访问摄像头和麦克风。

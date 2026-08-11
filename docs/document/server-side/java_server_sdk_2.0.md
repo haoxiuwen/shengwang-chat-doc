@@ -287,7 +287,7 @@ try {
 
 2. 增加[一次性获取好友列表](user_friend_list_obtain.html)功能。
 
-3. [注册用户](account_register_open.html)增加推送昵称参数。
+3. [注册用户](account_register_authorized_single.html)增加推送昵称参数。
 
 以上更新内容请到 GroupApi、ContactApi、UserApi 中查看。
 

@@ -91,6 +91,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/users/user1/deactivate'   \
 | :---------- | :------------------| :-------------------| :------------------| :-------------|
 | 401         | unauthorized     | Unable to authenticate (OAuth)   | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。 |
 | 404         | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App key  不存在。    | 检查 App ID 是否正确或 [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。 |
-| 404         | service_resource_not_found         | Service resource not found   | 用户不存在。  | 先[注册用户](account_register_open.html)或者检查用户名是否正确。 |
+| 404         | service_resource_not_found         | Service resource not found   | 用户不存在。  | 先[注册用户](account_register_authorized_single.html)或者检查用户名是否正确。 |
 
 关于其他错误，你可以参考 [响应状态码](error.html) 了解可能的原因。

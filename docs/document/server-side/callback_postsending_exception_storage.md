@@ -31,7 +31,7 @@ GET https://{host}/{org_name}/{app_name}/callbacks/storage/info
 ### 请求示例
 
 ```shell
-curl -X GET 'https://XXXX/XXXX/XXXX/callbacks/storage/info' \
+curl -X GET 'https://{host}/app-id/{app_id}/callbacks/storage/info' \
 -H 'Authorization: Bearer <YourAppToken>'
 ```
 
@@ -44,10 +44,8 @@ curl -X GET 'https://XXXX/XXXX/XXXX/callbacks/storage/info' \
 ```json
 {
   "path": "/callbacks",
-  "uri": "https://XXXX/XXXX/XXXX/callbacks",
+  "uri": "https://XXXX/app-id/XXXX/callbacks",
   "timestamp": 1631193031254,
-  "organization": "XXXX",
-  "application": "8dfb1641-XXXX-XXXX-bbe9-d8d45a3be39f",
   "action": "post",
   "data": [
     {
@@ -61,8 +59,7 @@ curl -X GET 'https://XXXX/XXXX/XXXX/callbacks/storage/info' \
       "retry": 1
     }
   ],
-  "duration": 153,
-  "applicationName": "XXXX"
+  "duration": 153
 }
 ```
 
@@ -86,11 +83,8 @@ curl -X GET 'https://XXXX/XXXX/XXXX/callbacks/storage/info' \
 | `path` | String | 请求路径。 |
 | `uri` | String | 请求完整 URI。 |
 | `timestamp` | Long | 即时通讯 IM 服务器接收到该请求时的 Unix 时间戳，单位为毫秒。 |
-| `organization` | String | 你在环信控制台注册的组织唯一标识，对应控制台中的 `org_name`。 |
-| `application` | String | 你在环信控制台注册的 App 唯一标识。 |
 | `action` | String | 请求方法。 |
 | `duration` | Long | 请求耗时，单位为毫秒。 |
-| `applicationName` | String | 你在环信控制台注册的 App 名称。 |
 
 当 HTTP 状态码非 `200` 时，表示请求失败。你可以参考本文档中的 [错误码](#错误码) 排查原因。
 
@@ -101,7 +95,7 @@ curl -X GET 'https://XXXX/XXXX/XXXX/callbacks/storage/info' \
 ### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/callbacks/storage/retry
+POST https://{host}/app-id/{app_id}/callbacks/storage/retry
 ```
 
 关于请求 URL 中各参数的含义，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -109,7 +103,7 @@ POST https://{host}/{org_name}/{app_name}/callbacks/storage/retry
 ### 请求示例
 
 ```shell
-curl -X POST 'https://XXXX/XXXX/XXXX/callbacks/storage/retry' \
+curl -X POST 'https://XXXX/app-id/XXXX/callbacks/storage/retry' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -H 'Content-Type: application/json' \
 -d '{
@@ -136,7 +130,7 @@ curl -X POST 'https://XXXX/XXXX/XXXX/callbacks/storage/retry' \
 ```json
 {
   "path": "/callbacks",
-  "uri": "https://XXXX/XXXX/XXXX/callbacks",
+  "uri": "https://XXXX/app-id/XXXX/callbacks",
   "timestamp": 1631194031721,
   "organization": "XXXX",
   "application": "8dfb1641-XXXX-XXXX-bbe9-d8d45a3be39f",
@@ -156,12 +150,9 @@ curl -X POST 'https://XXXX/XXXX/XXXX/callbacks/storage/retry' \
 | `path` | String | 请求路径。 |
 | `uri` | String | 请求完整 URI。 |
 | `timestamp` | Long | 即时通讯 IM 服务器接收到该请求时的 Unix 时间戳，单位为毫秒。 |
-| `organization` | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 一致。 |
-| `application` | String | 你在环信控制台注册的 App 唯一标识。 |
 | `action` | String | 请求方法。 |
 | `data` | String | 补发结果：`success` 表示请求成功，`failure` 表示请求失败。 |
 | `duration` | Long | 请求耗时，单位为毫秒。 |
-| `applicationName` | String | App 名称。 |
 
 当 HTTP 状态码非 `200` 时，表示补发请求失败。你可以参考 [错误码](#错误码) 了解可能原因。
 

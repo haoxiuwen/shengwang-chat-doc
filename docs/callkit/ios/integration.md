@@ -18,9 +18,9 @@ CallKit 是一套基于即时通讯 IM（基于 IM 4.16.0 及以上）和声网 
 
 在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
 1. [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
-2. [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)，[获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)。
-3. [创建用户](/product/console/operation_user.html#创建用户)，获取用户 ID 和 [用户 Token](/product/console/operation_user.html#查看用户-token)。
-4. [创建群组](/product/console/operation_group.html#创建群组)，获取群组 ID，将用户加入群组。
+2. [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)。
+3. [创建用户](/document/ios/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/ios/login.html#获取用户-token)。
+4. 创建群组，获取群组 ID。将用户加入群组。
 5. [开通音视频服务](product_activation.html)。
 
 ## 集成步骤
@@ -246,7 +246,7 @@ extension MainViewController: CallServiceListener {
 
 调用即时通讯 IM SDK 的 `login` 方法传入用户 ID 和 Token 登录 IM。
 
-在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [Token 鉴权](token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
 ```swift
             ChatClient.shared().login(withUsername: userId, token: token) { [weak self] userId,error  in

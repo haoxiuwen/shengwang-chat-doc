@@ -1029,7 +1029,7 @@ projects:
             sdks:
               - icon: /sdk/rest.svg
                 text: REST
-                link: /document/server-side/account_register_open.html
+                link: /document/server-side/account_register_authorized_single.html
           - text: 用户属性
             desc: 设置和获取用户属性，例如用户昵称、头像、邮箱、电话、性别、签名、生日等。
             sdks:

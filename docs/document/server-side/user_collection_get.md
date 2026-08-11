@@ -87,7 +87,7 @@ curl -X GET https://XXX/XXX/XXX/users/{username}/collections    \
 
 | HTTP 状态码        | 错误类型 | 错误提示          | 可能原因 | 处理建议 |
 | :----------- | :--- | :------------- | :----------- | :----------- |
-| 400         | illegal_argument  | username XXX is not legal   | 用户 ID 不合法。  | 查看注册用户名[规范](account_register_open.html)。 |
+| 400         | illegal_argument  | username XXX is not legal   | 用户 ID 不合法。  | 查看注册用户名[规范](account_register_authorized_single.html)。 |
 | 400         | illegal_argument  | limit should be less than 200   | 传入的每页查询的收藏数量 `limit` 不能超过 200。  | 将 `limit` 的值控制在 200 以内。 |
 | 400         | illegal_argument  | direction should be desc or asc   | `direction` 参数传错。  | `direction` 参数只能是 `desc` 或者 `asc`。 |
 | 400         |     | user collection not found  | 用户收藏找不到。  | 对 `collection_id` 参数传入存在的用户收藏 ID。        |

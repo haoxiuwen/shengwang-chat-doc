@@ -4,13 +4,13 @@
 
 ## 用户注册
 
-你可以调用 REST API 接口创建用户，也可以在 [环信控制台](https://console.easemob.com/user/login) 创建用户。
+你可以调用 REST API 接口创建用户，也可以在 [声网控制台](https://console.shengwang.cn/overview) 创建用户。
 
 1. 调用 REST 接口创建用户：
 
 - **授权注册**：通过 REST API 注册 IM 用户账号，注册后保存到你的服务器或返给客户端。要使用授权注册，你需要在[环信控制台](https://console.easemob.com/user/login)的**功能配置 > 基础功能** > **用户** 页面，将 **用户注册模式** 设置为 **授权注册**。相关的 REST API 介绍，详见[授权注册单个用户](/document/server-side/account_register_authorized_single.html)和[批量授权注册用户](/document/server-side/account_register_authorized_batch.html)的接口介绍。
 
-- **开放注册**：一般在体验 Demo 和测试环境时使用，正式环境中不推荐使用该方式注册 IM 账号。要使用开放注册，需要在[环信控制台](https://console.easemob.com/user/login)的 **功能配置 > 基础功能** > **用户** 页面，将 **用户注册模式** 设置为 **开放注册**。只有打开该开关，才能使用客户端或 [REST API](/document/server-side/account_register_open.html)开放注册用户。
+- **开放注册**：一般在体验 Demo 和测试环境时使用，正式环境中不推荐使用该方式注册 IM 账号。要使用开放注册，需要在[环信控制台](https://console.easemob.com/user/login)的 **功能配置 > 基础功能** > **用户** 页面，将 **用户注册模式** 设置为 **开放注册**。只有打开该开关，才能使用客户端或 [REST API](/document/server-side/account_register_authorized_single.html)开放注册用户。
 
 2. 通过 [环信控制台](https://console.easemob.com/user/login) 创建用户：
 
@@ -24,7 +24,7 @@
 
 测试环境下，你在[环信控制台](https://console.easemob.com/user/login)创建用户后，IM 服务器会自动为这些用户分配用户 Token，详见[查看用户 Token](/product/console/operation_user.html#查看用户-token)。
 
-在生产环境中，为了安全考虑，你需要在你的应用服务器集成[Token 鉴权](token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。SDK 会在 Token 过期时或者其有效期达到 80%（4.15.0 之前为 50%）时分别回调 `onTokenExpired` 和 `onTokenWillExpire` 通知用户更新 Token。你可以采取各种机制更新 Token，例如，每次登录时更新 token。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成[Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。SDK 会在 Token 过期时或者其有效期达到 80%（4.15.0 之前为 50%）时分别回调 `onTokenExpired` 和 `onTokenWillExpire` 通知用户更新 Token。你可以采取各种机制更新 Token，例如，每次登录时更新 token。
 
 ```javascript
 conn
@@ -39,7 +39,7 @@ conn
     console.log("login fail", reason);
   });
 ```
-2. **用户 ID + 密码** 登录是传统的登录方式。用户名和密码均由你的终端用户自行决定，密码需要符合[密码规则要求](/document/server-side/account_register_open.html)。
+2. **用户 ID + 密码** 登录是传统的登录方式。用户名和密码均由你的终端用户自行决定，密码需要符合[密码规则要求](/document/server-side/account_register_authorized_single.html)。
 
 ```javascript
 conn

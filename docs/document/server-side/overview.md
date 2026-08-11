@@ -43,7 +43,7 @@ POST https://{host}/{org_name}/{app_name}/users
 | :-------------- | :----- | :----------------- | :-------------------- |
 | `Content-Type`  | String | 是                                       | 内容类型。请填 `application/json`。    |
 | `Accept`        | String | 是                                       | 内容类型。请填 `application/json`。    |
-| `Authorization` | String | 是                                       | App 管理权限的鉴权 token，格式为 `Bearer YourAppToken`，其中 `Bearer` 为固定字符，后面为英文空格和获取到的 app token。<br/>即时通讯 REST API 要求 Bearer HTTP 认证。每次发送 HTTP 请求时，都必须在请求头部填入该字段。关于如何获取动态密钥 app token，详见 [Token 鉴权](token_authentication.html)。 |
+| `Authorization` | String | 是                                       | App 管理权限的鉴权 token，格式为 `Bearer YourAppToken`，其中 `Bearer` 为固定字符，后面为英文空格和获取到的 app token。<br/>即时通讯 REST API 要求 Bearer HTTP 认证。每次发送 HTTP 请求时，都必须在请求头部填入该字段。关于如何获取动态密钥 app token，详见 [Token 鉴权](/document/server-side/token_authentication.html)。 |
 
 ### 请求 body
 
@@ -69,4 +69,4 @@ POST https://{host}/{org_name}/{app_name}/users
 要调用即时通讯 RESTful API，请确保满足以下要求：
 
 - 已在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
-- 已从服务端获取 app token，详见 [Token 鉴权](token_authentication.html)。
+- 已从服务端获取 app token，详见 [Token 鉴权](/document/server-side/token_authentication.html)。

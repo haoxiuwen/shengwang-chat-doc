@@ -61,6 +61,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/users/user1/activate'   \
 | HTTP 状态码 | 错误类型     | 错误提示      | 可能原因       | 处理建议    |
 | :---------- | :---------| :---------------------| :----------| :--------|
 | 401         | unauthorized                       | Unable to authenticate (OAuth)   | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。    |
-| 404         | service_resource_not_found         | Service resource not found   | 用户不存在。  | 先 [注册用户](account_register_open.html)或者检查用户名是否正确。 |
+| 404         | service_resource_not_found         | Service resource not found   | 用户不存在。  | 先 [注册用户](account_register_authorized_single.html)或者检查用户名是否正确。 |
 
 关于其他错误，你可以参考 [响应状态码](error.html) 了解可能的原因。

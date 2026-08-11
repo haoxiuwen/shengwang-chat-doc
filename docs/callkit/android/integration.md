@@ -22,11 +22,11 @@ CallKit 是一套基于即时通讯 IM（基于 IM 4.16.0 及以上）和声网 
 在集成 CallKit 之前，你需要完成以下准备工作：
 
 1. 在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
-  - [注册开发者账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
-  - [创建项目](/document/server-side/enable_im.html#创建项目并开通)，[获取 App ID](/document/server-side/enable_im.html#_3-获取-app-id)。
-  - [创建用户](/product/console/operation_user.html#创建用户)，获取用户 ID。
-  - [创建群组](/product/console/operation_group.html#创建群组)，获取群组 ID。将用户加入群组。
-  - [开通音视频服务](product_activation.html)。
+    - [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
+    - [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
+    - [创建用户](/document/android/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/android/login.html#获取用户-token)。
+    - 创建群组，获取群组 ID。将用户加入群组。
+    - [开通音视频服务](product_activation.html)。
 
 2. 集成即时通讯 IM SDK。 
    
@@ -92,7 +92,7 @@ dependencies {
 在应用启动时（通常在 `Application` 或主 `Activity` 中）初始化 CallKit：
 
 1. 初始化 IM SDK。CallKit 基于即时通讯 IM 作为信令通道，因此需先初始化 IM SDK。
-   - 填入你的应用的 App Key。
+   - 填入你的项目的 App ID。
    - 设置即时通讯 IM SDK 中的一些选项（`EMOptions` 类），例如，是否自动登录。
 2. 初始化 CallKit。你可以自定义铃声和通话超时时间。
 
@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
     private fun initCallKit() {
         // 1. 初始化即时通讯 IM SDK
         val options = ChatOptions().apply {
-            appKey = "your_app_key"  // 替换为你的 App Key
+            appId = "your_app_Id"  // 替换为你的 App ID
             autoLogin = false
         }
         ChatClient.getInstance().init(this, options)
