@@ -2,8 +2,6 @@
 
 即时通讯 IM 支持集成 APNs 消息推送服务，为 iOS 开发者提供低延时、高送达率、高并发且不侵犯用户个人数据的离线消息推送服务。
 
-要体验离线推送功能，请在 [环信官网](https://www.easemob.com/download/demo) 下载即时通讯 IM 的 demo。
-
 ## 离线推送流程
 
 ### 触发条件与消息下发机制
@@ -12,7 +10,7 @@
 
 ### 前置配置要求
 
-除满足用户离线条件外，使用第三方离线推送服务还需在 [环信控制台](https://console.easemob.com/user/login) 完成推送证书信息的配置，例如，需配置 APNs 的 **证书名称** 和 **推送密钥**，并调用客户端 SDK 提供的 API 向IM 服务器上传 device token。
+除满足用户离线条件外，使用第三方离线推送服务还需在 [声网控制台](https://console.shengwang.cn/overview) 完成推送证书信息的配置，例如，需配置 APNs 的 **证书名称** 和 **推送密钥**，并调用客户端 SDK 提供的 API 向IM 服务器上传 device token。
 
 ### 不触发离线推送的场景
 
@@ -29,11 +27,11 @@
 
 1. 用户 B 向 APNs 推送服务注册，获取推送 token。
 2. APNs 返回推送 token。
-3. 用户 B 向IM 服务器上传推送证书名称和推送 token。
+3. 用户 B 向声网服务器上传推送证书名称和推送 token。
 4. 用户 A 向 用户 B 发送消息。
-5. IM 服务器检查用户 B 是否在线。若在线，IM 服务器直接将消息发送给用户 B。
-6. 若用户 B 离线，IM 服务器判断该用户是否使用了 APNs 推送。
-7. IM 服务器将消息发送给 APNs 推送服务器。
+5. 声网服务器检查用户 B 是否在线。若在线，声网服务器直接将消息发送给用户 B。
+6. 若用户 B 离线，声网服务器判断该用户是否使用了 APNs 推送。
+7. 声网服务器将消息发送给 APNs 推送服务器。
 8. APNs 推送服务器将消息发送给用户 B。
 
 ## 推送证书和推送 Token
@@ -48,14 +46,21 @@
 
 ### 开通功能
 
-[推送通知方式](push_notification_mode_dnd.html#推送通知方式)、[免打扰模式](push_notification_mode_dnd.html#免打扰模式) 和 [推送模板](push_template.html) 是推送的高级功能。使用前，你需要在 [环信控制台](https://console.easemob.com/user/login) 免费开通。**激活后，如需关闭推送高级功能，必须联系商务，因为该操作会删除高级功能相关的所有配置。**
+如果需要离线推送的高级功能，需在[声网控制台](https://console.shengwang.cn/overview)开启。高级功能包括[推送通知方式](push_notification_mode_dnd.html#推送通知方式)、[免打扰模式](push_notification_mode_dnd.html#免打扰模式)和[推送模板](push_display.html#使用推送模板)。**高级功能开启后，如需关闭必须联系商务，因为该操作会删除所有相关配置。**
 
-1. 登录 [环信控制台](https://console.easemob.com/user/login)。
-2. 选择页面上方的 **应用管理**。在应用列表中，单击测试应用或正式版应用的 App ID。
-3. 选择 **增值服务 > 消息推送 > 离线推送**。
-4. 点击 **免费开通**。
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
 
-![image](/images/android/push/push_advanced_feature_enable.png)
+2. 点击左侧导航栏的**全部产品**。
+
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**功能配置**标签页。
+
+5. 在**推送模板** 页签下，点击**启用**。
+
+6. 在弹出的对话框中，配置用户相关参数，点击**确定**。
+
+![image](/images/android/push/push_android_enable_push.png)
 
 ### 推送通知方式
 
@@ -82,18 +87,18 @@
 
 ### 推送模板
 
-推送模板主要用于服务器提供的默认离线推送配置不满足你的需求时，设置全局范围的推送标题和推送内容。推送模板包括默认推送模板 `default`、`detail` 和自定义推送模板。你可以在 [环信控制台](https://console.easemob.com/user/login) 配置推送模板。
+推送模板主要用于服务器提供的默认离线推送配置不满足你的需求时，设置全局范围的推送标题和推送内容。推送模板包括默认推送模板 `default`、`detail` 和自定义推送模板。你可以在 [声网控制台](https://console.shengwang.cn/overview) 配置推送模板。
 
 推送模板的配置和使用，详见 [相关文档介绍](push_template.html)。
 
 ## 多设备离线推送策略
 
-多设备登录时，可在 [环信控制台](https://console.easemob.com/user/login)的 **证书管理** 页面配置推送策略，该策略配置对所有推送通道生效：
+多设备登录时，可在[声网控制台](https://console.shengwang.cn/overview)的**推送证书**页面配置推送策略，该策略配置对所有推送通道生效：
 
 - 所有设备离线时，才发送推送消息；
 - 任一设备离线时，都发送推送消息。
 
-**多端登录时若有设备被踢下线，即使接入了 IM 离线推送，也收不到离线推送消息。**
+**注意**：多端登录时若有设备被踢下线，即使接入了 IM 离线推送，也收不到离线推送消息。
 
 ![image](/images/android/push/push_multidevice_policy.png)
 
@@ -103,4 +108,4 @@
 
 - 完成 SDK 初始化，并连接到服务器，详见 [快速开始](/document/ios/quickstart.html)。
 - 了解即时通讯 IM API 的使用限制，详见 [使用限制](/product/limitation.html)。
-- 若使用[推送高级功能](#推送高级功能)，需在[即时通讯控制台](https://console.easemob.com/user/login)上激活。
+- 若使用[推送高级功能](#推送高级功能)，需在 [声网控制台](https://console.shengwang.cn/overview) 上激活。

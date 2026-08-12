@@ -13,4 +13,3 @@ EMClient.getInstance().pushManager().setPreferredNotificationLanguage("en", new 
 // 获取设置的离线推送的首选语言。
 EMClient.getInstance().pushManager().getPreferredNotificationLanguage(new EMValueCallBack<String>(){});
 ```
-

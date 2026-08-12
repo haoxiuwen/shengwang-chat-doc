@@ -8,17 +8,25 @@
 
 ## 步骤二 上传推送证书
 
-1. 登录 [环信控制台](https://console.easemob.com/user/login)，在 **应用管理** 页面点击测试版或正式版的应用的 App ID。
-   
-2. 选择 **增值功能** > **消息推送**。
-   
-3. 在 **证书管理** 页面，点击 **添加推送证书**。在 **添加推送证书** 对话框中选择 **OPPO** 页签，配置 OPPO 推送参数。参数相关信息，详见你在 [OPPO 开发者后台](https://open.oppomobile.com/service/oms?service_id=1000004&app_type=app&app_id=30004346) 创建的应用的 `appkey` 和 `mastersecret` 以及程序的 `包名`等信息。
+在[声网控制台](https://console.shengwang.cn/overview)上传 OPPO 推送证书。
+
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
+
+2. 点击左侧导航栏的**全部产品**。
+
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**功能配置**标签页。
+
+5. 在**推送证书** 页签下，点击**添加推送证书**。
+
+6. 在弹出的对话框中，选择**OPPO**页签，配置相关参数，点击**保存**。参数相关信息，详见你在 [OPPO 开发者后台](https://open.oppomobile.com/service/oms?service_id=1000004&app_type=app&app_id=30004346) 创建的应用的 `appkey` 和 `mastersecret` 以及程序的 `包名`等信息。
 
 ![image](/images/android/push/add_oppo_push_certificate.png)
 
 | 参数       | 类型   | 是否必需 | 描述         |
 | :--------- | :----- | :------- | :---------------- |
-| `证书名称`     | String | 是     | 填写 OPPO App ID。  |
+| `证书名称`     | String | 是     | 填写 OPPO App Key。  |
 | `推送密钥`     | String | 是     | 填写 OPPO Master Secret。Master Secret 需要到 [OPPO 推送平台](https://open.oppomobile.com/) > **配置管理** > **应用配置** 页面查看。|
 | `应用包名`     | String | 是     | 填写 OPPO App package name。   |
 | `Channel ID`     | String |  否    | 填写 Channel ID。   |
@@ -27,8 +35,6 @@
 ## 步骤三 集成 OPPO 推送
 
 1. 配置 OPPO 推送 `aar` 包：在 OPPO 推送官网下载推送 SDK 包，将 `aar` 包存放在 `libs` 目录下并 sync。
-   
-   此外，也可以直接使用环信 Android IM Demo 中集成的 OPPO 推送的 `aar` 包。
 
 2. 配置 `AndroidManifest.xml`。
 

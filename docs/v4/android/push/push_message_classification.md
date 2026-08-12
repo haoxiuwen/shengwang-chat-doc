@@ -8,7 +8,7 @@
 
 1. [申请华为消息自分类权益功能](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835)。
 
-2. 证书补充华为配置 category，如下图所示：
+2. 声网证书补充华为配置 category，如下图所示：
 
 ![image](/images/android/push/huawei-notifier-category.png)
 
@@ -34,7 +34,7 @@ OPPO 推送服务将增加区分应用类型的推送频控限制，公信消息
 
 1. [申请小米公私信渠道id](https://dev.mi.com/console/doc/detail?pId=2422#_2)。
 
-2. 环信推送证书补充小米配置 channel ID，如下图所示：
+2. 声网推送证书补充小米配置 channel ID，如下图所示：
 
 ![image](/images/android/push/xiaomi-notifier-channelId.png)
 
@@ -48,7 +48,7 @@ vivo 推送通道区分 “系统消息” 和”运营消息”，消息类别�
 
 1. [二级分类说明和申请](https://dev.vivo.com.cn/documentCenter/doc/359#_Toc64906673)。
 
-2. 环信推送证书补充 vivo 配置 category，如下图所示：
+2. 声网推送证书补充 vivo 配置 category，如下图所示：
 
 :::tip
 vivo 提醒配置使用请确保 category 与**推送类型**为正确对应关系，否则推送失败。
