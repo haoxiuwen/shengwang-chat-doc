@@ -1,8 +1,8 @@
 # Android 推送集成
 
-本文档为IM SDK中关于推送功能的集成说明。
+本文档为即时通讯 IM SDK 中关于推送功能的集成说明。
 
-## 1、Android SDK 集成
+## 1. Android SDK 集成
 
 即时推送与即时通讯 IM 使用相同的 SDK，你可以参考 IM 文档导入和集成 SDK， 然后注册登录。
 
@@ -14,7 +14,7 @@ SDK 导入：[Android SDK 导入](/document/android/quickstart.html#_2-集成-sd
 
 需在手机设置允许弹出推送消息通知栏。
 
-## 2、在线推送集成
+## 2. 在线推送集成
 
 ### 通知消息
 
@@ -55,6 +55,6 @@ public void onNotificationClick(Context context, EMNotificationMessage notificat
 </receiver>
 ```
 
-## 3、离线推送集成
+## 3. 离线推送集成
 
-离线推送需参考即时通讯 IM 的[第三方推送集成](/document/harmonyos/push/push_overview.html)，集成各个厂商的推送（如不需要离线推送，可忽略）。
+离线推送需参考即时通讯 IM 的[第三方推送集成](/document/harmonyos/push/push_overview.html)，集成各个厂商的推送。

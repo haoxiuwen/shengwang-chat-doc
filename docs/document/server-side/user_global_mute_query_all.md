@@ -6,7 +6,8 @@
 
 ## 开通功能
 
-使用用户全局禁言功能前，你需在环信控制台开通。详见 [环信控制台文档](/product/console/basic_user.html#用户全局禁言)。
+- 对于专业版 IM，使用用户全局禁言前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 升级至旗舰版。
+- 对于旗舰版 IM，用户全局禁言功能默认开启。
 
 ## 调用频率上限
 

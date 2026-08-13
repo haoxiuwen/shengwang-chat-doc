@@ -1,175 +1,26 @@
 # iOS 推送集成
 
-本文档为IM SDK中关于推送功能的集成说明。
+本文档为即时通讯 IM SDK 中关于推送功能的集成说明。
 
-## iOS SDK 使用须知
+## 1. iOS SDK 集成
 
-使用 SDK 之前，你需先 [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)，获取项目的唯一标识 App ID。
+即时推送与即时通讯 IM 使用相同的 SDK，你可以导入和集成 SDK， 然后注册登录。
 
-即时推送分为在线推送和远程推送，远程推送时通过 APNS 下发，所以你需要配置应用对应的证书，请参见[APNS 推送配置](/document/ios/push/push_apns.html#上传推送证书)。
+1. [iOS SDK 导入](/document/ios/quickstart.html#_2-集成-sdk)。
 
-## 集成 SDK
+2. [注册登录](/document/ios/login.html#用户注册)。
 
-推送 SDK 支持 pod 方式导入和手动导入两种方式，任选其一即可，下面分别介绍这两种导入方式。
+3. 需在手机设置允许弹出推送消息通知栏。
 
-**注意**
+## 2. 在线推送集成
 
-自 3.8.7 版本开始，SDK 只支持 iOS 10 及以上版本。
-
-### Pod 导入 SDK
-
-推荐使用 CocoaPods 集成环信 SDK。CocoaPods 提供了一个简单的依赖管理系统，避免手动导入产生的错误（首先需要确认已经安装了 Cocoapods，如果没有安装过 Cocoapods，请参考[安装使用指南](https://www.cnblogs.com/wangluochong/p/5567082.html)。
-
-```pod
-sudo gem install cocoapods
-pod setup
-```
-
-在 Xcode 项目的根目录下，新建一个空文件，命名为 `Podfile`，向此文件添加以下行：
-
-```pod
-pod 'HyphenateChat'
-```
-
-在 `Podfile` 目录下，执行以下指令：
-
-```pod
-pod install --repo-update 
-```
-
-执行 `pod install` 后，打开工程目录，找到 `.xcworkspace` 文件运行即可。
-
-### 手动导入
-
-[下载环信 demo](https://www.easemob.com/download/demo)。
-
-开发者最开始集成，如果选择手动导入文件集成的方式，只需要向工程中添 HyphenateChat 就可以，下面会介绍具体的集成方式。
-
-demo 中的 SDK 文件夹为 **Hyphenate SDK**，将 SDK 文件夹拖入到工程中，并勾选截图中标注的三项。
-
-![img](/images/instantpush/push_iossdk_import.png)
-
-### 设置工程属性
-
-在 Xcode 中，向 **General > Embedded Binaries** 中添加依赖库。
-
-:::tip
-将**Do Not Embed** 改成**Embed & Sign**。
-:::
-
-![img](/images/instantpush/push_ios_projectpropertysetting.png)
-
-## SDK 基础功能
-
-即时推送和即时通讯 IM 使用相同的 SDK，使用功能都需要初始化 SDK 并进行登录操作。
-
-### 初始化 SDK
-
-第 1 步：引入相关头文件 `#import `。
-
-第 2 步：在工程的 AppDelegate 中的以下方法中，调用 SDK 对应方法。
-
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    //appId：应用的唯一标识。
-    //apnsCertName：推送证书名（不需要加后缀），详细见下面注释。
-    EMOptions *options = [EMOptions optionsWithAppId:@"Your app ID"];
-    options.apnsCertName = @"EaseIM_APNS_Developer";
-    [[EMClient sharedClient] initializeSDKWithOptions:options];
-
-    return YES;
-}
-
-// APP 进入后台。
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    [[EMClient sharedClient] applicationDidEnterBackground:application];
-}
-
-// APP 将要从后台返回。
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    [[EMClient sharedClient] applicationWillEnterForeground:application];
-}
-```
-
-`apnsCertName` 的参数解释如下：
-`apnsCertName`: iOS 中推送证书名称，请参考 [创建推送证书](/document/ios/push/push_apns.html#创建推送证书) 和 [上传推送证书](/document/ios/push/push_apns.html#上传推送证书)。
-
-### SDK 登录流程
-
-登录：调用 SDK 的登录接口进行的操作。建议使用异步登录方法，防止网络不好的情况下，出现卡 UI 主线程的情况出现。
-
-```objectivec
-[[EMClient sharedClient] loginWithUsername:@"8001" password:@"111111" completion:^(NSString *aUsername, EMError *aError) {
-    if (!aError) {
-        NSLog(@"登录成功");
-    } else {
-        NSLog(@"登录失败的原因---%@", aError.errorDescription);
-    }
-}];
-```
-
-有关更多注册登录等基础功能，请参考[iOS SDK基础功能](https://docs-im.easemob.com/im/ios/sdk/basic)。
-
-## SDK 推送集成
-
-##### 1.注册开启推送通知
-
-```objectivec
-if (NSClassFromString(@"UNUserNotificationCenter")) {
-        //注册推送，用于 iOS 10 及以上版本。
-        [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert completionHandler:^(BOOL granted, NSError *error) {
-            if (granted) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [application registerForRemoteNotifications];
-                });
-            }
-        }];
-        return;
-    }
-    
-    if([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        //iOS 8 至 iOS 10 推送样式设置。
-        UIUserNotificationType notificationTypes = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:notificationTypes categories:nil];
-        [application registerUserNotificationSettings:settings];
-    }
-    
-    if ([application respondsToSelector:@selector(registerForRemoteNotifications)]) {
-        //注册推送，用于 iOS 8 及以上版本。
-        [application registerForRemoteNotifications];
-    } else {
-        //注册推送，用于 iOS 8 之前版本。
-        UIRemoteNotificationType notificationTypes = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert;
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:notificationTypes];
-    }
-```
-
-##### 2.将获得的 deviceToken 传到 SDK
-
-:::tip
-如果是 iOS 13 及以上的系统，请将 SDK 更新至 v3.6.4 或以上版本。
-:::
-
-```objectivec
-// 将获得的 deviceToken 传给 SDK。 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[EMClient sharedClient] bindDeviceToken:deviceToken];
-    });
-}
-```
-
-3.开启即时推送处理
+### 开启即时推送处理
 
 ```objectivec
 [[EMLocalNotificationManager sharedManager] launchWithDelegate:self];
 ```
 
-##### 4.处理代理
+### 处理代理
 
 如果你需要推送相关信息，可以通过实现代理获取，环信提供的代理如下：
 
@@ -236,7 +87,7 @@ if (NSClassFromString(@"UNUserNotificationCenter")) {
 }
 ```
 
-##### 5.进阶
+### 进阶
 
 iOS 的本地通知管理模块 `UNUserNotificationCenter` 是单例，一个 App 中只能有一个实例。如果在启用 SDK 在线推送后，App 又重写了 `[UNUserNotificationCenter currentNotificationCenter].delegate`，会将 SDK 中的 delegate 覆盖，此时，需要在 App 实现的 `UNUserNotificationCenterDelegate` 中调用 SDK 的相关处理，过程如下：
 
@@ -252,4 +103,6 @@ iOS 的本地通知管理模块 `UNUserNotificationCenter` 是单例，一个 Ap
 }
 ```
 
-即时推送和 IM 使用相同的 SDK，可以查看 IMSDK [更多推送功能](https://docs-im.easemob.com/im/ios/apns/offline)。
+## 3. 离线推送集成
+
+关于 APNs 离线推送的集成，详见 [离线推送文档](/document/ios/push/push_overview.html)。

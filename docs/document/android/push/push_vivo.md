@@ -22,7 +22,7 @@
 
 5. 在**推送证书** 页签下，点击**添加推送证书**。
    
-3. 在**添加推送证书**对话框中，选择 **VIVO** 页签，配置 VIVO 推送参数。参数相关信息，详见你在 [VIVO 开发者后台](https://vpush.vivo.com.cn/#/appdetail)创建的应用的 `APP ID`，`APP KEY` 和 `APP SECRET` 以及程序的 `包名`。
+6. 在**添加推送证书**对话框中，选择 **VIVO** 页签，配置 VIVO 推送参数。参数相关信息，详见你在 [VIVO 开发者后台](https://vpush.vivo.com.cn/#/appdetail)创建的应用的 `APP ID`，`APP KEY` 和 `APP SECRET` 以及程序的 `包名`。
 
 ![image](/images/android/push/add_vivo_push_certificate.png)
 
@@ -39,7 +39,7 @@
 ## 步骤三 集成 VIVO 推送 SDK
 
 1. 配置 VIVO 推送 `jar` 包：
- 
+
 在 VIVO 推送官网下载推送 SDK 包，将 `jar` 包放到 libs 目录下并 sync 。
 
 2. 配置 `AndroidManifest.xml` 。
