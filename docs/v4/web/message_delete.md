@@ -44,7 +44,8 @@ conn.deleteAllMessagesAndConversations().then(() => {
 每次最多可删除 20 条消息。多端多设备登录时，删除成功后会触发 `onMultiDeviceEvent#deleteRoaming` 回调。
 
 :::tip
-若使用该功能，需将 SDK 升级至 V4.1.2 或以上版本。
+1. 若使用该功能，需将 SDK 升级至 V4.1.2 或以上版本。
+2. 若要删除聊天室漫游消息，需将 SDK 升级至 4.6.0。
 :::
 
 示例代码如下：
