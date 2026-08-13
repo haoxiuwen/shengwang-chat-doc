@@ -36,11 +36,11 @@
 
 在生产环境中，为了安全考虑，你需要部署 App Server 生成 Token，详见 [Token 鉴权文档](/docs/sdk/server-side/token_authentication.html#搭建-app-server-生成-token)。
 
-## 登录SSS
+## 登录
 
 SDK 通过用户 ID 和 IM Token 登录。调用 `loginWithToken` 时，需传入 `userId` 和 `token`。登录成功后，SDK 会建立到消息服务的长连接。
 
-测试环境下，你在 [环信控制台](https://console.easemob.com/user/login) 创建用户后，IM 服务器会自动为这些用户分配用户 Token，详见 [创建用户](/product/console/operation_user.html#创建用户)。
+测试环境下，你在 [声网控制台](https://console.shengwang.cn/overview) 创建用户后，IM 服务器会自动为这些用户分配用户 Token。
 
 生产环境中，建议在你的应用服务器集成 [Token 鉴权](/document/server-side/token_authentication.html)，由客户端从你的应用服务器获取用户 Token 后再登录 SDK。
 
@@ -388,7 +388,7 @@ EMClient.getInstance()
 
 ### 登录被封禁账号的提示
 
-若用户账号已通过环信控制台或 REST API 被禁用，调用 `EMClient#loginWithToken` 登录时会触发 `EMCallBack#onError`，并返回错误码 `EMError#SERVER_SERVICE_RESTRICTED`（305）。该错误码表示 IM 服务或当前应用功能被限制。应用应结合服务配置和服务端返回的错误信息进行处理，不建议依赖 `"service is disabled"` 等错误文本进行判断。
+若用户账号已通过 [声网控制台](https://console.shengwang.cn/overview) 或 REST API 被禁用，调用 `EMClient#loginWithToken` 登录时会触发 `EMCallBack#onError`，并返回错误码 `EMError#SERVER_SERVICE_RESTRICTED`（305）。该错误码表示 IM 服务或当前应用功能被限制。应用应结合服务配置和服务端返回的错误信息进行处理，不建议依赖 `"service is disabled"` 等错误文本进行判断。
 
 ## 接口列表
 

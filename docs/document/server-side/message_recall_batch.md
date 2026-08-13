@@ -5,14 +5,18 @@
 - 一次可以撤回发送成功的多条消息，包括客户端发送的消息以及通过 RESTful API 发送的消息。**每次最多可撤回 30 条消息。** 
 - 调用该 API 后，服务端的消息（历史消息，离线消息或漫游消息）以及消息发送方和接收方的内存和数据库中的消息均会撤销。
 - 对于附件类型消息，包括图片、音频和视频和文件消息，撤回消息后，消息附件也相应删除。
-- 撤回消息前，需要通过调用 [获取历史消息记录 API](https://doc.easemob.com/document/server-side/message_historical.html) 或 [消息回调](https://doc.easemob.com/document/server-side/callback_overview.html) 获取要撤回的消息 ID。
+- 撤回消息前，需要通过调用 [获取历史消息记录 API](message_historical.html) 或 [消息回调](callback_overview.html) 获取要撤回的消息 ID。
 - 支持设置是否将单聊消息撤回同步给消息发送方的所有在线设备（`sync_device` 参数）。
-- 撤回消息会触发发送后回调，请参见 [回调事件文档](https://doc.easemob.com/document/server-side/callback_message_recall.html)。
+- 撤回消息会触发发送后回调，请参见 [回调事件文档](callback_message_recall.html)。
 - 如果发送消息或撤回消息时单聊/群聊/聊天室的接收方离线，在上线时可感知到消息撤回，原因是服务器有事件通知给客户端 SDK。
+
+## 功能开通
+
+使用该功能前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **即时通讯 IM > 功能配置 > 消息与会话** 页面开通。
 
 #### 设置撤回时长
 
-默认情况下，发送方可撤回发出 2 分钟内的消息。你可以在 [环信控制台](https://console.easemob.com/user/login)的 **功能配置** > **基础功能** > **消息** 页面设置消息撤回时长，该时长不超过 7 天。
+默认情况下，发送方可撤回发出 2 分钟内的消息。你可以联系声网商务设置消息撤回时长，该时长不超过 7 天。
 
 #### 强制撤回
 

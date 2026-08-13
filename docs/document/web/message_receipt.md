@@ -15,13 +15,13 @@
 - 单聊会话支持消息送达回执和消息已读回执。
 - 群聊会话支持消息已读回执，不支持消息送达回执。
 - 聊天室暂不支持消息送达回执和消息已读回执。
-- **群聊消息已读回执需要在 [环信控制台开通该功能](/product/console/basic_message.html#群聊消息已读回执)。**
+- **若使用群聊消息已读回执，你需要在 [声网控制台](https://console.shengwang.cn/overview) 将即时通讯 IM 升级至旗舰版。**
 
 ## 前提条件
 
 - 已完成 [SDK 初始化](initialization.html)，并实现注册账号和登录功能。
 - 已注册并使用 `ChatManager`，通过 `client.chatManager` 调用本文中的消息、回执和事件监听接口。
-- 若需使用群聊消息已读回执，已在 [环信控制台开通该功能](/product/console/basic_message.html#群聊消息已读回执)。
+- 若需使用群聊消息已读回执，已在 [声网控制台](https://console.shengwang.cn/overview) 将即时通讯 IM 升级至旗舰版。
 - 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 
 ## 技术原理
@@ -181,7 +181,7 @@ client.chatManager.addEventHandler('single-message-listener', {
 
 | 使用限制       | 默认       | 说明                                                         |
 | :------- | :------- | :-------------- |
-| 功能开通       | 关闭       | 若要使用该功能，你需要在 [环信控制台](https://console.easemob.com/user/login) 的 **即时通讯** > **基础功能** > **消息** 页签下开通 **群聊消息已读回执**。若未开通，SDK 返回错误码 `505`，Key 为 `SERVICE_NOT_ENABLED`。 |
+| 功能开通       | 关闭       | 若使用群聊消息已读回执，你需要在 [声网控制台](https://console.shengwang.cn/overview) 将即时通讯 IM 升级至旗舰版。若未开通，SDK 返回错误码 `505`，Key 为 `SERVICE_NOT_ENABLED`。 |
 | 使用权限       | 所有群成员 | 默认情况下，所有群成员发送消息时均可请求群消息已读回执。如果调整为仅群主和群管理员可使用，可联系商务修改，此时普通成员发送需要群消息已读回执的消息时，SDK 返回错误码 `603`，Key 为 `GROUP_PERMISSION_DENIED`。    |
 | 已读回执有效期 | 3 天       | 群聊消息已读回执的有效期默认为 3 天。超过有效期后，服务端不再记录该消息的新增已读状态，SDK 返回错误码 `506`，Key 为 `MESSAGE_EXPIRED`。 |
 | 群规模   | 200 人 | 该能力当前最多支持 200 人群组。当群人数超过上限时，群消息可能无法继续产生有效的已读回执统计；服务端返回 `limit send group ack msg` 时，SDK 可能返回错误码 `4`，Key 为 `SERVICE_LIMIT_EXCEEDED`。 |

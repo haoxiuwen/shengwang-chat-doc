@@ -1,12 +1,15 @@
 # 在线状态订阅
 
-<Toc />
+## 功能说明
 
-用户在线状态（即 Presence）包含用户的在线、离线以及自定义状态。使用该功能前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通该服务。详见 [环信控制台文档](/product/console/basic_user.html#用户离在线状态实时同步)。
+用户在线状态（即 Presence）包含用户的在线、离线以及自定义状态。关于用户的在线、离线和自定义状态的定义、变更以及用户的实时感知，详见[用户在线状态管理](/product/product_user_presence.html)。
 
 本文介绍如何在即时通讯应用中发布、订阅和查询用户的在线状态。
 
-关于用户的在线、离线和自定义状态的定义、变更以及用户的实时感知，详见[用户在线状态管理](/product/product_user_presence.html)。
+## 功能开通
+
+- 对于专业版 IM，使用 Presence 前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包** 页面开通该功能。
+- 对于旗舰版 IM，Presence 功能默认开启。
 
 ## 技术原理
 
@@ -38,7 +41,7 @@
 
 1. 完成 `4.0.4 及以上版本` SDK 初始化，详见 [快速开始](quickstart.html)。
 2. 了解即时通讯 IM API 的 [使用限制](/product/limitation.html)。
-3. 已在 [环信控制台](https://console.easemob.com/user/login) 开通在线状态订阅功能。详见 [环信控制台文档](/product/console/basic_user.html#用户离在线状态实时同步)。
+3. 已在 [声网控制台](https://console.shengwang.cn/overview) 开通在线状态订阅功能。
 
 ## 实现方法
 

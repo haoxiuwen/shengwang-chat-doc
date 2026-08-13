@@ -283,7 +283,7 @@ private fun startVoiceCall() {
 
 #### 发起群组通话
 
-- **创建群组**：要发起群组通话，你需要首先创建群组，在群组中添加用户，详见 [即时通讯 IM Android SDK 文档](/document/android/group_manage.html#创建群组) 或 [环信控制台文档](/product/console/operation_group.html#创建群组)。
+- **创建群组**：要发起群组通话，你需要首先创建群组，在群组中添加用户，详见 [即时通讯 IM Android SDK 文档](/document/android/group_manage.html#创建群组)。
 - **发起群组通话**：指定群组 ID 后，CallKit 会自动拉起群成员选择界面，界面显示群组中的所有成员（群主、管理员、普通成员），用户可以选择要邀请的成员，选中人数会实时显示。为了保证通话质量和性能，CallKit 限制群组通话最多支持 **16 人** 同时参与（包括发起者）。若选择的成员数量超过 16 人时，系统会自动提示 “人数超出最大限制16人” 并阻止发起通话。
 - **通话扩展信息**：`ext` 会在 `CallKitListener#onReceivedCall` 中回调给接收方。
 - **通话中邀请他人**：群组通话中，当前用户可以点击通话界面右上角的邀请按钮向其他用户发起邀请。

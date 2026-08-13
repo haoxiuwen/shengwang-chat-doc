@@ -28,7 +28,7 @@
 1. 完成 SDK 初始化，详见 [快速开始](quickstart.html)。
 2. SDK 初始化时，已注册 `ChatManager`。
 3. 了解即时通讯 IM API 的 [使用限制](/product/limitation.html)。
-4. 已在 [环信控制台](https://console.easemob.com/user/login) 开通 Reaction 功能。
+4. 已在 [声网控制台](https://console.shengwang.cn/overview) 开通 Reaction 功能。
 
 ## 在消息上添加 Reaction
 

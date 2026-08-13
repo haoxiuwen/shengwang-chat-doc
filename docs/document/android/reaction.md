@@ -10,7 +10,8 @@ Reaction 场景示例如下，分别展示如何添加 Reaction，群聊中 Reac
 
 ## 功能开通
 
-使用 Reaction 前，需在[环信控制台](https://console.easemob.com/user/login)开通该功能，具体操作请参见[环信控制台文档](/product/console/basic_message.html#消息表情回复)。
+- 对于专业版 IM，使用 Reaction 前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包** 页面开通该功能。
+- 对于旗舰版 IM，Reaction 功能默认开启。
 
 ## 使用限制
 
@@ -23,7 +24,7 @@ Reaction 场景示例如下，分别展示如何添加 Reaction，群聊中 Reac
 
 1. 完成 SDK 初始化，详见 [快速开始](quickstart.html)。
 2. 了解即时通讯 IM API 的 [使用限制](/product/limitation.html)。
-3. 已在 [环信控制台](https://console.easemob.com/user/login) 开通 Reaction 功能。
+3. 已在 [声网控制台](https://console.shengwang.cn/overview) 开通 Reaction 功能。
 
 ## 在消息上添加 Reaction
 

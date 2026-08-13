@@ -8,7 +8,7 @@
 
 ## 功能开通
 
-使用前，需要在 [环信控制台](/product/console/basic_conversation_group_chatroom.html#服务端会话列表) 开通服务端会话列表功能。
+使用前，需要在 [声网控制台](https://console.shengwang.cn/overview) 开通服务端会话列表功能。
 
 ## 前提条件
 

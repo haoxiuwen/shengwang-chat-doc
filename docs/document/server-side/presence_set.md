@@ -10,7 +10,8 @@
 
 ## 功能开通
 
-使用 Presence 功能前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通。详见 [环信控制台文档](/product/console/basic_user.html#用户离在线状态实时同步)。
+- 对于专业版 IM，使用 Presence 前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包** 页面开通该功能。
+- 对于旗舰版 IM，Presence 功能默认开启。
 
 ## 调用频率上限
 
