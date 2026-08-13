@@ -13,7 +13,7 @@
 
 使用该 API 前，你需要开通 Presence 功能和单独开通该 API：
 
-1. 对于专业版 IM，使用 Presence 前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包** 页面开通该功能。对于旗舰版 IM，Presence 功能默认开启。
+1. 对于专业版 IM，使用 Presence 前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包 > 即时通讯 IM** 页面开通该功能。对于旗舰版 IM，Presence 功能默认开启。
 2. 联系商务开通该 API 的使用。
 
 ## 调用频率上限

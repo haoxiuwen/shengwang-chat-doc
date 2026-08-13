@@ -11,7 +11,7 @@
 
 ## 功能开通
 
-- 对于专业版 IM，使用 Reaction 前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包** 页面开通该功能。
+- 对于专业版 IM，使用 Reaction 前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包 > 即时通讯 IM** 页面开通该功能。
 - 对于旗舰版 IM，Reaction 功能默认开启。
 
 ## 技术原理
