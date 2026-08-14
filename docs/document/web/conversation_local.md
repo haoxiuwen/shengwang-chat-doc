@@ -12,7 +12,6 @@
 
 - 已完成 SDK 初始化并登录成功。
 - 初始化 SDK 时已注册 `ChatManager`，能够通过 `client.chatManager` 调用会话与消息相关接口。
-- 如需使用服务端会话列表、会话置顶或会话标记能力，请确认已在控制台 [开通服务端会话列表功能](/product/console/basic_conversation_group_chatroom.html#服务端会话列表)。
 
 ## 本地会话数据来源
 

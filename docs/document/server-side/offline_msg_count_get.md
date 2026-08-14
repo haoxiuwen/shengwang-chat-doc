@@ -7,7 +7,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -76,6 +76,5 @@ curl -X GET 'https://XXXX/app-id/{app_id}/users/user1/offline_msg_count'  \
 | HTTP 状态码 | 错误类型     | 错误提示     | 可能原因   | 处理建议   |
 | :------ | :--------- | :----------- | :--------- | :--------- |
 | 401         | unauthorized                       | Unable to authenticate (OAuth)  | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。  |
-| 404         | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App key 不存在。   | 检查 `orgName` 和 `appName` 是否正确或 [创建应用](/product/console/app_create.html)。 |
 
 关于其他错误，你可以参考 [错误码](error.html) 了解可能的原因。

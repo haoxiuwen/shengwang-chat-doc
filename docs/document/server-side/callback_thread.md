@@ -68,7 +68,6 @@
         "type": "thread"
     },
     "host": "XXXX",
-    "appkey": "XXXX#XXXX",
     "from": "admin",
     "to": "user2",
     "eventType": "chat",
@@ -83,7 +82,6 @@
 | :------------------- | :------- | :-------------------------------- |
 | `chat_type` | String | 固定值为 `notify`。通知回调包含了消息话题（Thread）和表情回复（Reaction） 的回调，需要结合 `payload` 中的 `type` 字段确定具体类型。 |
 | `host`            | String | 服务器名称。              |
-| `appkey`          | String | 即时通讯服务分配给每个应用的唯一标识，由 `orgname` 和 `appname` 参数的值组成，生成后无法修改。 |
 | `from`            | String | 固定为 `admin`。  |
 | `to`              | String | 消息所属的 Thread 的群组 ID。 |
 | `eventType`       | String | 事件类型，固定为 `chat`。     |

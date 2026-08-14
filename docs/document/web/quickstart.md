@@ -26,8 +26,8 @@ Easemob_quickstart<br>
 
 ## 前提条件
 
-- 有效的 [即时通讯 IM 开发者账号](/product/console/account_register.html#注册账号)；
-- 在环信控制台[创建应用](/product/console/app_create.html) 并 [获取 App Key](/product/console/app_manage.html#管理应用)；
+- 有效的 [即时通讯 IM 开发者账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)；
+- 在声网控制台 [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目) 并 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)；
 - 已安装 [npm](https://www.npmjs.com/get-npm)；
 - SDK 支持 IE 9+、Firefox 10+、Chrome 54+ 和 Safari 6+。
 
@@ -58,9 +58,9 @@ Easemob_quickstart<br>
 
 ### 步骤 2：创建用户
 
-在 [环信控制台](https://console.easemob.com/user/login) 创建用户，获取用户 ID 和用户 Token。详见 [创建用户文档](/product/console/operation_user.html#创建用户)。
+在 [声网控制台](https://console.shengwang.cn/overview) 创建用户，获取用户 ID 和用户 Token。详见 [创建用户文档](login.html#用户注册)。
 
-在生产环境中，为了保证安全性，你需要在应用服务器中集成 [获取 App Token API](/document/server-side/easemob_app_token.html) 和 [获取用户 Token API](/document/server-side/easemob_user_token.html)，由应用服务器向客户端下发用户 Token，避免在客户端暴露敏感凭据。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
 ### 步骤 3：实现用户界面
 
@@ -119,7 +119,7 @@ Easemob_quickstart<br>
 
 ### 步骤 4：实现消息收发
 
-`index.js` 的内容如下。本文使用 `import` 方法导入 SDK，并使用 webpack 对 JavaScript 文件进行打包。你需要将代码中的 `<Your app key>` 替换为你在环信控制台获取的 App Key。
+`index.js` 的内容如下。本文使用 `import` 方法导入 SDK，并使用 webpack 对 JavaScript 文件进行打包。你需要将代码中的 `<Your app ID>` 替换为你的应用的 App ID。
 
 ```typescript
 import { ChatClient, ChatManager } from 'easemob-websdk';

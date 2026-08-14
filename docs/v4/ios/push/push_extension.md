@@ -28,7 +28,7 @@ message.chatType = EMChatTypeChat;
 
 ```json
 {
-    "apns": {
+    "aps": {
         "alert": {
             "body": "test"
         }, 

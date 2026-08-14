@@ -30,7 +30,6 @@
         "bodies":[]
     },
     "host":"******",
-    "appkey":"orgname#appname",
     "from":"tst",
     "recall_id":"966475220900644860",
     "to":"170908972023810",
@@ -44,7 +43,7 @@
 
 | 字段              | 数据类型 | 描述                                                         |
 | :---------------- | :------- | :----------------------------------------------------------- |
-| `callId`          | String   | `callId` 为每个回调请求的唯一标识，格式为 “App Key_该撤回事件消息的 ID”。 |
+| `callId`          | String   | 回调请求的唯一标识。 |
 | `eventType`       | String   | `chat` 上行消息、`chat_offline` 离线消息。                   |
 | `timestamp`       | long     | 即时通讯 IM 服务器接收到此消息的 Unix 时间戳，单位为 ms。        |
 | `chat_type`       | String   | `recall`，表示消息撤回。                                     |
@@ -56,5 +55,4 @@
 | `payload`         | object   | - 对于消息撤回行为，`bodies` 和 `ext` 字段为空。<br/> `ack_message_id` 表示原消息 ID。 |
 | `securityVersion` | String   | 安全校验版本，目前为 1.0.0。忽略此参数，以后会改成 Console 后台做设置。 |
 | `security`        | String   | 签名，格式如下: MD5（callId+secret+timestamp）。Secret 见 [Console 后台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。 |
-| `appkey`          | String   | 你在环信控制台注册的应用唯一标识。                           |
 | `host`            | String   | 服务器名称。                                                 |

@@ -1,4 +1,4 @@
-# 发送推送 Token 到IM 服务器
+# 发送推送 Token 到 IM 服务器
 
 即时通讯 IM SDK 通过 `react-native-push-collection` 获取推送 token。本文介绍如何将推送 token 发送到IM 服务器。
 
@@ -14,9 +14,9 @@ yarn add react-native-chat-sdk
 
 ### 步骤二 获取推送证书信息
 
-从[环信控制台](https://console.easemob.com/user/login)获取推送证书信息，配置应用的 App Key（`appKey`）和推送证书名称（`pushId`）信息。
+从[声网控制台](https://console.shengwang.cn/overview)获取推送证书信息，配置应用的 App ID（`appId`）和推送证书名称（`pushId`）信息。
 
-- `appKey`：在[环信控制台](https://console.easemob.com/user/login)的 **应用概览** 页面查看。
+- `appId`：在[声网控制台](https://console.shengwang.cn/overview)的 **总览** 页面查看。
 - `pushId`：推送证书名称。不同厂商的推送证书名称也不同。
 
 ![img](/images/react-native/push/push_get_appkey.png)
@@ -47,12 +47,11 @@ const pushType = React.useMemo(() => {
 
 ### 步骤三 初始化即时通讯 IM SDK
 
-
 ```typescript
 ChatClient.getInstance()
   .init(
     new ChatOptions({
-      appKey: "<your app key>",
+      appId: "<your app ID>",
       pushConfig: new ChatPushConfig({
         deviceId: pushId,
         deviceToken: undefined,
@@ -125,7 +124,7 @@ ChatClient.getInstance()
 
 在该页面，你可以发送消息，接收方若离线会收到推送通知：
 
-1. 在页面上输入 `pushtype` 和 `appkey`，点击 `init action` 按钮, 执行初始化。
+1. 在页面上输入 `pushtype` 和 `appid`，点击 `init action` 按钮, 执行初始化。
    
    初始化日志以及后续日志会在空白位置显示。
 

@@ -12,7 +12,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -100,6 +100,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/metadata/user/get'
 | :----------- | :--- | :------------- | :----------- | :----------- |
 | 400     | BAD_REQUEST  | exceed allowed batch size %s   | 超过允许获取的用户数的用户属性。每次最多可获取 100 个用户的用户属性。  |  减少批量获取用户属性的用户数。   |
 | 401     | metadata_error  | auth error        | 鉴权失败。   |     |
-| 403     | FORBIDDEN       | {appkey} user metadata service not allow   | 用户属性功能未开通。  | 联系商务开通用户属性功能。  |
+| 403     | FORBIDDEN       |    | 用户属性功能未开通。  | 联系商务开通用户属性功能。  |
 
 关于其他错误，你可以参考 [响应状态码](error.html) 了解可能的原因。

@@ -2,17 +2,25 @@
 
 即时通讯 IM SDK 4.0.3 版本中集成了荣耀推送。本节介绍如何集成荣耀厂商的离线推送通道，使消息通过荣耀推送服务推送至离线的用户。
 
-## **步骤一 在 [荣耀开发者服务平台](https://developer.hihonor.com/cn/) 创建应用并申请开通推送服务**
+## 步骤一 在 [荣耀开发者服务平台](https://developer.hihonor.com/cn/) 创建应用并申请开通推送服务
 
 关于如何在 [荣耀开发者服务平台](https://developer.hihonor.com/cn/) 创建应用并申请开通推送服务，详见 [荣耀推送官网说明](https://developer.honor.com/cn/docs/11002/guides/kit-history)。
 
-## **步骤二 上传荣耀推送证书**
+## 步骤二 上传荣耀推送证书
 
-1. 登录 [环信控制台](https://console.easemob.com/user/login)，选择你的应用 > **功能配置** > **增值功能** > **即时推送**。
-   
-2. 在 **证书管理** 页面，点击 **添加推送证书**。在 **添加推送证书** 对话框中选择 **荣耀** 页签，配置荣耀推送参数。
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
 
-![img](/images/console/push_certificate_rongyao.png)
+2. 点击左侧导航栏的**全部产品**。
+
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**功能配置**标签页。
+
+5. 在**推送证书** 页签下，点击**添加推送证书**。
+
+6. 在弹出的对话框中，选择**荣耀**页签，配置相关参数，点击**保存**。
+
+![image](/images/android/push/add_honor_push_template.png)
 
 | 推送证书参数    | 类型   | 是否必需 | 描述           |
 | :-------------- | :----- | :------- | :--------------------------------------- |
@@ -28,7 +36,7 @@
 
 ![image](/images/android/push/view_push_service.png)
 
-## **步骤三 集成荣耀推送 SDK**
+## 步骤三 集成荣耀推送 SDK
 
 本节以荣耀推送 SDK 7.0 版本为例介绍如何在 IM 中集成荣耀推送。关于如何集成荣耀推送 SDK 7.1 或 7.0 以下版本，详见[荣耀官网](https://developer.honor.com/cn/docs/11002/guides/intergrate)。
 
@@ -116,7 +124,7 @@ EMPushHelper.getInstance().setPushListener(new PushListener() {
 });
 ```
 
-## **步骤四 清单文件配置**
+## 步骤四 清单文件配置
 
 在 `AndroidManifest.xml` 文件中，配置荣耀推送 App ID 和注册荣耀推送服务。
 
@@ -158,7 +166,7 @@ public class HONORPushService extends HonorMessageService {
 }
 ```
 
-## **步骤五 将 device token 与 IM 的登录账号绑定**
+## 步骤五 将 device token 与 IM 的登录账号绑定
 
 打开应用，初始化即时通讯 IM SDK 成功且成功登录后，获取一次 device token，将 token 上传至IM 服务器，与 IM 的登录账号绑定。
 
@@ -182,7 +190,7 @@ if (HonorPushClient.getInstance().checkSupportHonorPush(this)){
 }
 ```
 
-## **步骤六 实现通知栏消息点击动作**
+## 步骤六 实现通知栏消息点击动作
 
 通知栏消息点击动作分为以下两类：
 - （默认）点击后打开应用首页；
@@ -192,7 +200,7 @@ if (HonorPushClient.getInstance().checkSupportHonorPush(this)){
 
 1. 设置 `action` 参数。
 
-在环信控制台的**添加推送证书**对话框中设置 `action` 参数。该参数需要与客户端 `AndroidManifest.xml` 文件中注册启动的 `Activity` 类中 `intent-filter` 标签中设置的 `action` 一致。该配置只能实现跳转到无需前置参数的页面。若启动应用自定义页面需要前置参数，你还需要在消息扩展中添加前置参数。
+在声网控制台的**添加推送证书**对话框中设置 `action` 参数。该参数需要与客户端 `AndroidManifest.xml` 文件中注册启动的 `Activity` 类中 `intent-filter` 标签中设置的 `action` 一致。该配置只能实现跳转到无需前置参数的页面。若启动应用自定义页面需要前置参数，你还需要在消息扩展中添加前置参数。
 
 若推送不同的消息时，接收方收到后点击推送通知栏打开不同应用自定义页面，你可以添加相应的消息扩展属性实现。
 
@@ -255,7 +263,7 @@ private void getIntentData(Intent intent) {
 }
 ```
 
-## **步骤七 配置混淆脚本**
+## 步骤七 配置混淆脚本
 
 你编译 APK 前需要配置混淆配置文件，避免混淆荣耀推送 SDK 导致功能异常。
 

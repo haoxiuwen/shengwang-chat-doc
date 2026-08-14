@@ -39,7 +39,7 @@ SDKClient.Instance.Login(username, passwd,
 | 3      | DATABASE_ERROR                        | 数据库操作失败：打开本地数据库失败。 | 需要根据调用的 API 结合日志分析，如果使用 `Conversation#UpdateMessage` 方法更新一条本地不存在的消息，可能返回该错误；在数据库未打开时，调用其他本地数据库操作，也可能返回该错误。 |
 | 4      | EXCEED_SERVICE_LIMIT                  | 超过服务限制：超过当前服务版本的数量限制，例如，创建的用户 ID 数量超过购买服务的限制时提示该错误；设置和获取用户属性的接口，包括[设置当前用户的属性](userprofile.html#设置当前用户的属性)和[获取单个或多个用户的用户属性](userprofile.html#获取用户属性)，超过调用频率限制时，会上报该错误。 | 检查调用的 API，若传入 `limit` 参数，可将该参数控制在上限内，若是限流导致，可以在延后一段时间重新调用。 |
 | 8      | APP_ACTIVE_NUMBER_REACH_LIMITATION    | 应用程序的日活跃用户数量（DAU）或月活跃用户数量（MAU）达到上限。 | 需在[环信控制台](https://console.easemob.com/user/login)对 IM 服务进行升级。 |
-| 100    | INVALID_APP_KEY                       | App Key 不合法：用户的 App Key 格式不正确。可在[环信控制台](https://console.easemob.com/user/login)的 **应用概览** 页面查看 App Key。 | 使用正确的 App Key 进行初始化。 |
+| 100    | INVALID_APP_ID                       | App ID 不合法：用户的 App ID 格式不正确。 | 使用正确的 App ID 进行初始化。 |
 | 101    | INVALID_USER_NAME                     | 用户 ID 不正确：一般情况下，用户 ID 为空时提示该错误，例如，邀请好友时 username 参数为空字符。 | 检查报错 API 中传入的用户 ID 参数是否为空。 |
 | 102    | INVALID_PASSWORD                      | 用户密码不正确：登录时提供的密码为空或不正确。 | 检查调用的 API 中传的密码参数是否正确。 |
 | 103    | INVALID_URL                           | URL 不正确。 | 检查调用 API 时传入的参数是否正确。 |
@@ -56,7 +56,7 @@ SDKClient.Instance.Login(username, passwd,
 | 205    | USER_ILLEGAL_ARGUMENT                 | 用户参数不正确：例如，创建用户或更新用户属性时，用户 ID 为空或无效。 | 检查调用的 API 传入的参数是否正确。 |
 | 206    | USER_LOGIN_ANOTHER_DEVICE             | 用户在其他设备登录：如果未开启多设备登录，则在其他设备登录会将当前登录设备踢下线，用户会在当前设备收到该错误。 | 设备被踢时，会触发回调 `IConnectionDelegate#OnLoggedOtherDevice`。收到该回调时，需重新登录。 |
 | 207    | USER_REMOVED                          | 用户已被注销：当前的登录用户 ID 从[环信控制台](https://console.easemob.com/user/login)删除会收到该错误。 | 账号被注销时，会触发 `IConnectionDelegate#OnRemovedFromServer` 事件。收到该事件时，该账号已不可用，需要回到登录页面。 |
-| 208    | USER_REG_FAILED                       | 用户注册失败：例如，注册用户之前未开启[开放注册功能](/document/server-side/account_register_open.html)等原因。 | 不推荐使用 SDK 注册账号，建议开发者在业务服务器注册账号。 |
+| 208    | USER_REG_FAILED                       | 用户注册失败：例如，注册用户之前未开启[开放注册功能](/document/server-side/account_register_authorized_single.html)等原因。 | 不推荐使用 SDK 注册账号，建议开发者在业务服务器注册账号。 |
 | 210    | USER_PERMISSION_DENIED                | 用户无权限：例如，如果用户被添加到黑名单后，发送消息时会提示该错误。其他报错情况包括用户修改其他用户发出的消息、修改其他用户设置的群成员属性以及普通群成员试图解散消息话题（仅消息话题所在群组的群主和群管理员有权解散消息话题）。 | 检查用户是否有操作权限。 |
 | 213    | USER_BIND_ANOTHER_DEVICE              | 用户已在其他设备登录：在单设备登录场景中，默认情况下，后登录的设备会踢掉当前设备的登录。若设置为先登录的设备优先，则后登录设备登录失败并提示该错误。 | 可修改为多设备登录，或先使用 `SDKClient#KickDevice` 踢掉其他设备再登录。 |
 | 214    | USER_LOGIN_TOO_MANY_DEVICES           | 用户登录设备数超过限制：该错误在多设备自动登录场景中且打开不踢掉其他设备上的登录的开关时超过登录设备数量的限制才会出现。例如，用户最多可同时登录 4 台设备， A（开启了自动登录）、B、C 和 D。最初，用户在这四个设备上均为登录状态，但由于网络连接原因登出了设备 A，然后手动登录了设备 E。这种情况下，设备 A 的网络恢复正常时会自动登录，这时登录失败且提示该错误。 | 可增加同时在线的设备数量，或先使用 `SDKClient#KickDevice` 踢掉其他设备再登录。 |

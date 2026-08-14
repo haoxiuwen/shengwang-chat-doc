@@ -86,7 +86,6 @@
     "os":"ios",
     "ip":"XXXX",
     "host":"XXXX",
-    "appkey":"XXXX#XXXX",
     "user":"XXXX#XXXX_XXXX@easemob.com/ios_6d580737-db3a-d2b5-da18-b6045ffd195b",
     "name":"XXXX",
     "version":"3.8.9.1",
@@ -105,7 +104,6 @@
     "os":"ios",
     "ip":"XXXX",
     "host":"XXXX",
-    "appkey":"XXXX#XXXX",
     "user":"XXXX#XXXX_XXXX@easemob.com/ios_6d580737-db3a-d2b5-da18-b6045ffd195b",
     "name":"XXXX",
     "version":"3.8.9.1",
@@ -124,7 +122,6 @@
     "os":"ios",
     "ip":"223.71.97.198:52709",
     "host":"msync@ebs-ali-beijing-msync40",
-    "appkey":"XXXX#XXXX",
     "user":"XXXX#XXXX_XXXX@easemob.com/ios_a5fa01fd-b5a4-84d5-ebeb-bf10e8950442",
     "name":"XXXX",
     "version":"3.8.9.1",
@@ -137,14 +134,13 @@
 
 | 字段        | 数据类型 | 含义                                                         |
 | :---------- | :------- | :----------------------------------------------------------- |
-| `callId`    | String   | 回调请求的唯一标识，格式为 `App Key_UUID`。              |
+| `callId`    | String   | 回调请求的唯一标识。 |
 | `reason`    | String   | 状态变更原因，取值：`login`（登录）、`logout`（登出）、`replaced`（被踢下线）。 |
 | `security`  | String   | 签名，格式为 `MD5(callId + secret + timestamp)`。`secret` 见 [控制台回调规则配置](/product/console/basic_webhook.html#配置消息回调规则)。 |
 | `os`        | String   | 设备操作系统类型。                                           |
 | `ip`        | String   | 用户登录的 IP 地址。                                         |
 | `host`      | String   | 服务器名称。                                                 |
-| `appkey`    | String   | 环信控制台注册的应用唯一标识。                               |
-| `user`      | String   | 状态变更用户的唯一标识。格式为 `{appkey}_{username}@easemob.com/{os}_{deviceId}`，其中 `@easemob.com` 为固定后缀，`deviceId` 由 SDK 随机生成。 |
+| `user`      | String   | 状态变更用户的唯一标识。格式为 `{appkey}_{username}@easemob.com/{os}_{deviceId}`，其中 `appkey` 为服务端自动生成，`@easemob.com` 为固定后缀，`deviceId` 由 SDK 随机生成。 |
 | `name`      | String   | 状态变更用户的用户名，对应 `user` 字段中的 `{username}` 部分。                                   |
 | `version`   | String   | SDK 版本号。                                                 |
 | `timestamp` | Long     | 请求到达 IM 服务器的 UNIX 时间戳，单位为毫秒。               |

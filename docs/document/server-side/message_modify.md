@@ -23,7 +23,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -135,12 +135,9 @@ curl -X PUT -i 'https://XXXX/app-id/{app_id}/messages/rewrite/123580731883520200
   "path": "/messages/rewrite/1235807318835202004",
   "uri": "https://XXXX/XXXX/XXXX/messages/rewrite/1235807318835202004",
   "timestamp": 1705372388118,
-  "organization": "XXXX",
-  "application": "ff678832-XXXX-XXXX-8130-58ac38cb6c15",
   "action": "put",
   "data": "success",
-  "duration": 49,
-  "applicationName": "XXXX"
+  "duration": 49
 }
 ```
 
@@ -159,11 +156,8 @@ curl -X PUT -i 'https://XXXX/app-id/{app_id}/messages/rewrite/123580731883520200
 | `path`            | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。      |
 | `uri`             | String | 请求 URL。     |
 | `timestamp`       | Long   | HTTP 响应的 Unix 时间戳，单位为毫秒。  |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。     |
 | `duration`        | Int    | 从发送 HTTP 请求到响应的时长，单位为毫秒。 |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 

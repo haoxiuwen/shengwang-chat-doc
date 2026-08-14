@@ -10,11 +10,11 @@
 
 ## 前提条件
 
-已注册有效的即时通讯 IM 开发者账号并创建应用，获取应用的 App Key。详见[环信控制台的相关文档](/product/console/app_create.html)。
+已注册有效的即时通讯 IM 开发者账号并创建项目，获取项目的 App ID。详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 说明。
 
 ## 初始化 SDK
 
-创建 `EMOptions`，调用 `setAppKey` 设置 App Key，完成其他初始化配置后，将 `Context` 和 `EMOptions` 传入 `EMClient.init`。
+创建 `EMOptions`，调用 `setAppId` 设置 App ID，完成其他初始化配置后，将 `Context` 和 `EMOptions` 传入 `EMClient.init`。
 
 ```java
 EMOptions options = new EMOptions();

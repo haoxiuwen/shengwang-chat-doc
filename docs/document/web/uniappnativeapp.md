@@ -14,8 +14,8 @@ uni-app 原生 App 中，SDK 通过平台适配层调用 `uni.request`、`uni.co
 
 - 最新稳定版 HBuilderX；
 - DCloud 开发者账号；
-- 环信账号以及已经创建的应用，参见 [注册并创建应用](/product/console/app_create.html)；
-- 应用的 `appKey`；
+- [开发者账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)以及 [已经创建的项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)；
+- [项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)；
 - 由业务服务端获取的用户 ID 和用户 Token；
 - 用于运行和调试应用的 Android 或 iOS 设备。
 
@@ -77,7 +77,7 @@ const client = ChatClient.init({
 });
 ```
 
-`ChatClient` 是单例。同一个进程中重复调用 `ChatClient.init()` 时必须使用相同配置；如果需要修改 `appKey` 或服务地址，应重启应用后重新初始化。
+`ChatClient` 是单例。同一个进程中重复调用 `ChatClient.init()` 时必须使用相同配置；如果需要修改 `appId` 或服务地址，应重启应用后重新初始化。
 
 ### 数据同步配置
 
@@ -232,7 +232,7 @@ HBuilderX 支持云打包和离线打包两种方式。
 - Android 包名、签名和系统权限；
 - iOS Bundle ID、证书、描述文件和系统权限说明；
 - 相机、麦克风、相册、文件和定位等业务实际使用的权限；
-- 生产环境 `appKey`、REST、消息 WebSocket，以及按需使用的数据同步地址；
+- 生产环境 `appId`、REST、消息 WebSocket，以及按需使用的数据同步地址；
 - Android 与 iOS 网络安全策略允许访问 `https://`、`wss://` 服务；
 - Token 由业务服务端获取，前端包内不包含 App Secret；
 - 真机已验证登录、断网重连、前后台切换、消息收发和附件上传。
@@ -261,7 +261,7 @@ HBuilderX 支持云打包和离线打包两种方式。
 
 #### 为什么初始化后修改地址没有生效？
 
-`ChatClient` 是单例，重复初始化时配置必须一致。修改 `appKey` 或服务地址后，请重启应用并重新初始化。
+`ChatClient` 是单例，重复初始化时配置必须一致。修改 `appId` 或服务地址后，请重启应用并重新初始化。
 
 #### 为什么固定地址模式下会话同步不可用？
 

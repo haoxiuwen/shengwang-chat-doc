@@ -4,20 +4,27 @@
 
 ## 开通功能
 
-[推送通知方式](push_notification_mode_dnd.html#推送通知方式) 和 [免打扰模式](push_notification_mode_dnd.html#免打扰模式) 是推送的高级功能。使用前，你需要在 [环信控制台](https://console.easemob.com/user/login) 免费开通。**激活后，如需关闭推送高级功能，必须联系商务，因为该操作会删除高级功能相关的所有配置。**
+[推送通知方式](push_notification_mode_dnd.html#推送通知方式) 和 [免打扰模式](push_notification_mode_dnd.html#免打扰模式) 是推送的高级功能。使用前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 免费开通。**激活后，如需关闭推送高级功能，必须联系商务，因为该操作会删除高级功能相关的所有配置。**
 
-1. 登录 [环信控制台](https://console.easemob.com/user/login)。
-2. 选择页面上方的 **应用管理**。在应用列表中，单击测试应用或正式版应用的 App Key。
-3. 选择 **增值服务 > 消息推送 > 离线推送**。
-4. 点击 **免费开通**。
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
 
-![image](/images/android/push/push_advanced_feature_enable.png)
+2. 点击左侧导航栏的**全部产品**。
+
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**功能配置**标签页。
+
+5. 在**推送模板** 页签下，点击**启用**。
+
+6. 在弹出的对话框中，配置用户相关参数，点击**确定**。
+
+![image](/images/android/push/push_android_enable_push.png)
 
 ## 推送通知方式
 
-会话的 `disturbType` 属性类型为 `EMPushRemindType`，包含三种类型，如下表所示。该设置适用于 App 全局以及单聊和群聊具体会话。**会话级别的推送通知方式设置优先于全局级别设置**，未设置推送通知方式的会话默认继承全局设置。
+对于推送通知方式，会话的 `disturbType` 属性类型为 `EMPushRemindType`，包含三种类型，如下表所示。该设置适用于 App 全局以及单聊和群聊具体会话。
 
-例如，假设全局推送方式设置为 `EMPushRemindTypeMentionOnly`，而指定会话的推送方式设置为 `EMPushRemindTypeAll`。你会收到来自该会话的所有推送通知，而对于其他会话来说，你只会收到提及你的消息的推送通知。
+**会话级别的推送通知方式设置优先于全局级别设置**，未设置推送通知方式的会话默认继承全局设置。例如，假设全局推送方式设置为 `EMPushRemindTypeMentionOnly`，而指定会话的推送方式设置为 `EMPushRemindTypeAll`。你会收到来自该会话的所有推送通知，而对于其他会话来说，你只会收到提及你的消息的推送通知。
 
 | 推送通知方式 | 描述            | 
 | :---- | :------------- |

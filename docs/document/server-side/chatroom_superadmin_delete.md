@@ -8,7 +8,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -39,15 +39,12 @@ curl -X DELETE 'https://XXXX/app-id/{app_id}/chatrooms/super_admin/XXXX'   \
 ```json
 {
   "action": "delete",
-  "application": "09XXXX34",
-  "applicationName": "XXXX",
   "data": {
     "newSuperAdmin": "XXXX",
     "resource": ""
   },
   "duration": 0,
   "entities": [],
-  "organization": "XXXX",
   "properties": {},
   "timestamp": 1656488154100,
   "uri": "https://XXXX/XXXX/XXXX/chatrooms/super_admin/XXXX"
@@ -69,11 +66,8 @@ curl -X DELETE 'https://XXXX/app-id/{app_id}/chatrooms/super_admin/XXXX'   \
 | 参数              | 类型   | 描述                                                                           |
 | :---------------- | :----- | :----------------------------------------------------------------------------- |
 | `action`          | String | 请求方法。                                                                     |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
 | `entities`        | JSON Array   | 响应实体。                                                                     |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
 | `properties`         | String | 预留参数，开发者不用关注。      |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 | `uri`             | String | 请求 URL。                                                                     |

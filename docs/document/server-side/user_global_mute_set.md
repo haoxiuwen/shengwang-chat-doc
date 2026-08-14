@@ -9,11 +9,12 @@
 
 ## 开通功能
 
-使用用户全局禁言功能前，你需在环信控制台开通。详见 [环信控制台文档](/product/console/basic_user.html#用户全局禁言)。
+- 对于专业版 IM，使用用户全局禁言前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 升级至旗舰版。
+- 对于旗舰版 IM，用户全局禁言功能默认开启。
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -64,14 +65,11 @@ curl -X POST 'https://XXXX/app-id/{app_id}/mutes' \
   "path": "/mutes",
   "uri": "https://XXXX/XXXX/XXXX/mutes",
   "timestamp": 1631609754727,
-  "organization": "XXXX",
-  "application": "357169f0-XXXX-XXXX-9b3a-f1af649cc48d",
   "action": "post",
   "data": {
     "result": "ok"
   },
-  "duration": 74,
-  "applicationName": "XXXX"
+  "duration": 74
 }
 ```
 
@@ -91,11 +89,8 @@ curl -X POST 'https://XXXX/app-id/{app_id}/mutes' \
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [错误码](#错误码) 了解可能的原因。
 
@@ -107,7 +102,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/mutes' \
 | :----- | :---------- | :-------- | :------------------| :------------------------|
 | 400         | required_property_not_found        | Entity user requires a property named username    | 用户不存在。  | 先注册用户或者检查用户名是否正确。 |
 | 401         | unauthorized                       | Unable to authenticate (OAuth)   | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。              |
-| 403 | forbidden_op | user_mute is not used for this app | 未开通全局禁言功能。 | 需要在环信控制台开通该功能。详见 [环信控制台文档](/product/console/basic_user.html#用户全局禁言)。 |
-| 404         | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App key 不存在。 | 检查 `orgName` 和 `appName` 是否正确或[创建应用](/product/console/app_create.html)。 |
+| 403 | forbidden_op | user_mute is not used for this app | 未开通全局禁言功能。 | 你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包 > 即时通讯 IM** 页面开通该功能。 |
 
 关于其他错误，你可以参考 [错误码](error.html) 了解可能的原因。

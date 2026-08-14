@@ -4,11 +4,11 @@
 
 ## 前提条件
 
-有效的即时通讯 IM 开发者账号和 App key，详见 [环信控制台的相关文档](/product/console/app_create.html)。
+有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 说明。
 
 ## 初始化 SDK
 
-初始化时通过传入 `appKey` 来获取 SDK 实例。
+初始化时通过传入 `appId` 来获取 SDK 实例。
 
 ```javascript
 import WebIM from "easemob-websdk";
@@ -26,7 +26,7 @@ const conn = new WebIM.connection({
 
 | 属性       | 类型 | 是否必需   | 描述            |
 | :----------------- | :---------------- | :------ | :-------- |
-| `appKey`    | String         | 是                   | `appkey` 为创建 app 时在环信控制台上注册的 app 唯一识别符。 |
+| `appId`    | String         | 是                   | 应用的唯一识别符。 |
 | `delivery`       | Boolean | 否   | 是否开启已送达回执。<br/> - `true`：开启。<br/> -（默认）`false`：关闭。           |
 | `isFixedDeviceId`       | Boolean | 否   | 是否使用固定的设备标识（`deviceId`）。<br/> -（默认）`true`：SDK 对设备生成一个设备标识并存入本地存储，即对一个浏览器来说，所有 SDK 实例的连接都被认为是同一设备。 <br/> - `false`：每一个 SDK 实例连接时，使用随机字符串作为设备标识，即每个实例采用的不同的设备连接。该参数会影响多端登录互踢的策略，详见 [多设备登录文档](multi_device.html)。   |
 

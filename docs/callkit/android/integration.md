@@ -21,12 +21,12 @@ CallKit 是一套基于即时通讯 IM（基于 IM 4.16.0 及以上）和声网 
 
 在集成 CallKit 之前，你需要完成以下准备工作：
 
-1. 在 [环信控制台](https://console.easemob.com/user/login) 进行如下操作：
-  - [注册环信账号](/product/console/account_register.html#注册账号)。
-  - [创建应用](/product/console/app_create.html)，[获取应用的 App Key](/product/console/app_manage.html#获取应用凭证)，格式为 `orgname#appname`。
-  - [创建用户](/product/console/operation_user.html#创建用户)，获取用户 ID。
-  - [创建群组](/product/console/operation_group.html#创建群组)，获取群组 ID。将用户加入群组。
-  - [开通音视频服务](product_activation.html)。
+1. 在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
+    - [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
+    - [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
+    - [创建用户](/document/android/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/android/login.html#获取用户-token)。
+    - 创建群组，获取群组 ID。将用户加入群组。
+    - [开通音视频服务](product_activation.html)。
 
 2. 集成即时通讯 IM SDK。 
    
@@ -92,7 +92,7 @@ dependencies {
 在应用启动时（通常在 `Application` 或主 `Activity` 中）初始化 CallKit：
 
 1. 初始化 IM SDK。CallKit 基于即时通讯 IM 作为信令通道，因此需先初始化 IM SDK。
-   - 填入你的应用的 App Key。
+   - 填入你的项目的 App ID。
    - 设置即时通讯 IM SDK 中的一些选项（`EMOptions` 类），例如，是否自动登录。
 2. 初始化 CallKit。你可以自定义铃声和通话超时时间。
 
@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
     private fun initCallKit() {
         // 1. 初始化即时通讯 IM SDK
         val options = ChatOptions().apply {
-            appKey = "your_app_key"  // 替换为你的 App Key
+            appId = "your_app_Id"  // 替换为你的 App ID
             autoLogin = false
         }
         ChatClient.getInstance().init(this, options)
@@ -283,7 +283,7 @@ private fun startVoiceCall() {
 
 #### 发起群组通话
 
-- **创建群组**：要发起群组通话，你需要首先创建群组，在群组中添加用户，详见 [即时通讯 IM Android SDK 文档](/document/android/group_manage.html#创建群组) 或 [环信控制台文档](/product/console/operation_group.html#创建群组)。
+- **创建群组**：要发起群组通话，你需要首先创建群组，在群组中添加用户，详见 [即时通讯 IM Android SDK 文档](/document/android/group_manage.html#创建群组)。
 - **发起群组通话**：指定群组 ID 后，CallKit 会自动拉起群成员选择界面，界面显示群组中的所有成员（群主、管理员、普通成员），用户可以选择要邀请的成员，选中人数会实时显示。为了保证通话质量和性能，CallKit 限制群组通话最多支持 **16 人** 同时参与（包括发起者）。若选择的成员数量超过 16 人时，系统会自动提示 “人数超出最大限制16人” 并阻止发起通话。
 - **通话扩展信息**：`ext` 会在 `CallKitListener#onReceivedCall` 中回调给接收方。
 - **通话中邀请他人**：群组通话中，当前用户可以点击通话界面右上角的邀请按钮向其他用户发起邀请。

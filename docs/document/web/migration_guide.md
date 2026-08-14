@@ -26,7 +26,7 @@
 
 | 维度 | 旧 SDK | 新 SDK |
 | :--- | :--- | :--- |
-| 初始化入口 | `new SDK.connection({ appKey })` | `ChatClient.init({ appKey })` |
+| 初始化入口 | `new SDK.connection({ appId })` | `ChatClient.init({ appId })` |
 | API 挂载方式 | API 主要挂载在 `conn` 实例上。 | 按功能拆分到各 Manager，例如 `client.chatManager`、`client.groupManager`。 |
 | Manager 使用方式 | 无需显式注册 Manager。 | 初始化时通过 `managers` 注册，或初始化后通过 `.use()` 注册。 |
 | 消息创建 | `WebIM.message.create({ type, ... })` | `client.chatManager.createXxxMessage(...)` |
@@ -103,7 +103,7 @@ const client = ChatClient.init({ appId: 'org#app' })
 
 | 旧参数 | 新参数 | 说明 |
 | :--- | :--- | :--- |
-| `appKey` | `appKey` | 保持一致。 |
+| `appId` | `appId` | 保持一致。 |
 | `isFixedDeviceId` | `useFixedDeviceId` | 参数重命名。默认 `true`，同一浏览器内复用固定设备标识。 |
 | `delivery` | `enableDeliveryReceipt` | 参数重命名，用于开启送达回执。 |
 | `isHttpDNS` | - | 新 SDK 默认处理，无需显式配置。 |

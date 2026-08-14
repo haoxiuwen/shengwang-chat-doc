@@ -51,15 +51,12 @@ curl -X DELETE 'https://XXXX/app-id/{app_id}/users/u1/user_channel' \
   "path": "/users/user_channel",
   "uri": "https://XXXX/XXXX/XXXX/users/u1/user_channel",
   "timestamp": 1638440544078,
-  "organization": "XXXX",
-  "application": "c3624975-XXXX-XXXX-9da2-ee91ed4c5a76",
   "entities": [],
   "action": "delete",
   "data": {
     "result": "ok"
   },
-  "duration": 3,
-  "applicationName": "XXXX"
+  "duration": 3
 }
 ```
 
@@ -79,12 +76,9 @@ curl -X DELETE 'https://XXXX/app-id/{app_id}/users/u1/user_channel' \
 | `path`            | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。                              |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | HTTP 响应的 Unix 时间戳，单位为毫秒。                                          |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `entities`        | JSON Array   | 响应实体。                                                                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送 HTTP 请求到响应的时长，单位为毫秒。                                     |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 

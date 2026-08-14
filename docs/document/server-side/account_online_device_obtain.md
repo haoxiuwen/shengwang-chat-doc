@@ -6,7 +6,7 @@
 
 ## 调用频率上限
 
-该 API、用户账户管理的其他接口、以及离线推送的相关接口的总调用频率上限为 100 次/秒/App Key，详见 [接口频率限制文档](limitationapi.html#用户体系管理)。
+该 API、用户账户管理的其他接口、以及离线推送的相关接口的总调用频率上限为 100 次/秒/App ID，详见 [接口频率限制文档](limitationapi.html#用户体系管理)。
 
 ## 请求 URL
 
@@ -40,8 +40,6 @@ curl -X GET 'https://XXXX/app-id/{app_id}/users/XXXX/resources' \
     "path": "/users/XXXX/resources",
     "uri": "https://XXXX/XXXX/XXXX/users/XXXX/resources",
     "timestamp": 1692325141777,
-    "organization": "XXXX",
-    "application": "0XXXX4",
     "entities": [],
     "action": "get",
     "data": [
@@ -51,8 +49,7 @@ curl -X GET 'https://XXXX/app-id/{app_id}/users/XXXX/resources' \
             "device_name": "HUAWEI-XXXX"
         }
     ],
-    "duration": 0,
-    "applicationName": "chatdemoui"
+    "duration": 0
 }
 ```
 
@@ -74,11 +71,8 @@ curl -X GET 'https://XXXX/app-id/{app_id}/users/XXXX/resources' \
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [错误码](#错误码) 了解可能的原因。
 
@@ -89,6 +83,6 @@ curl -X GET 'https://XXXX/app-id/{app_id}/users/XXXX/resources' \
 | HTTP 状态码 | 错误类型     | 错误提示          | 可能原因      | 处理建议        |
 | :----- | :--------- | :--------------- | :---------- | :------------- |
 | 401         | unauthorized    | Unable to authenticate (OAuth)     | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。 |
-| 404         | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App key 不存在。    | 检查 `orgName` 和 `appName` 是否正确或[创建应用](/product/console/app_create.html)。 |
+| 404         | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App ID 不存在。    | 检查 App ID 是否正确或 [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。 |
 
 关于其他错误，你可以参考 [错误码](error.html) 了解可能的原因。

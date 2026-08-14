@@ -34,7 +34,6 @@
 		"expire_timestamp": 4638873600000, 
 		"type": "ADD"
 	},
-	"appkey": "XXXX#XXXX",
 	"id": "255445981790209",
 	"type": "GROUP",
 	"event": "group_op_event",
@@ -49,13 +48,12 @@
 
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
-| `callId`       | String   | 回调请求的唯一标识，格式为 `App Key_UUID`。 | 
+| `callId`       | String   | 回调请求的唯一标识。 |
 | `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `paylod`       | Object | 事件内容。                                                     |
 | `payload.member` | Array | 被加入或移出群组/聊天室黑名单的用户 ID。        | 
 | `payload.expire_timestamp` | Long | 用户在黑名单中的过期时间。用户加入黑名单后，系统会自动分配该参数的值。  | 
 | `payload.type` | String  | 事件类型。`ADD` 表示将用户加入群组/聊天室黑名单。     |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。  |
 | `id`           | String | 群组/聊天室 ID。                                                 |
 | `type`         | String | 区分群组或聊天室事件：<br/> - `GROUP`：群组 <br/> - `CHATROOM` ：聊天室   |
 | `event`        | String | 该参数的值固定为 `group_op_event`。接收方可按此字段区分是否是群组/聊天室操作事件。 | 
@@ -85,7 +83,6 @@
 		],
 		"type": "REMOVE"
 	},
-	"appkey": "XXXX#XXXX",
 	"id": "255445981790209",
 	"type": "GROUP",
 	"event": "group_op_event",
@@ -99,12 +96,11 @@
 
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
-| `callId`       | String   | `callId` 为每个回调请求的唯一标识，格式为 `App Key_UUID`。 | 
+| `callId`       | String   | 回调请求的唯一标识。 |
 | `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.member` | Array | 被移出群组/聊天室黑名单的用户 ID。        | 
 | `payload.type` | Array  | 将用户移出群组/聊天室黑名单的事件，值为 `REMOVE`。     |
-| `appkey`       | String | 你在环信控制台注册的应用唯一标识。  |
 | `id`           | String | 群组/聊天室 ID。                                                 |
 | `type`         | String | 区分群组或聊天室事件：<br/> - `GROUP`：群组 <br/> - `CHATROOM` ：聊天室   |
 | `event`        | String | 对于群组和聊天室，该参数的值固定为 `group_op_event`。接收方可按此字段区分是否是群组/聊天室操作事件。 | 

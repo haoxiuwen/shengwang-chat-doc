@@ -2,19 +2,27 @@
 
 即时通讯 IM SDK 中已集成华为 HMS 推送相关逻辑，你还需要完成以下步骤。
 
-## **步骤一 在华为开发者后台创建应用**
+## 步骤一 在华为开发者后台创建应用
 
 在[华为开发者后台](https://id1.cloud.huawei.com/CAS/portal/loginAuth.html)创建应用，开启推送服务，并上传对应的证书指纹。
 
 详见华为官方介绍：[华为 HMS 消息推送服务集成](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-config-agc-0000001050170137#section19884105518498)。
 
-## **步骤二 上传推送证书**
+## 步骤二 上传推送证书
 
-在[环信控制台](https://console.easemob.com/user/login)上传华为推送证书。
+在[声网控制台](https://console.shengwang.cn/overview)上传华为推送证书。
 
-1. 登录 [环信控制台](https://console.easemob.com/user/login)，选择你的应用 > **功能配置** > **增值功能** > **即时推送**。
-   
-2. 在 **证书管理** 页面，点击 **添加推送证书**。在 **添加推送证书** 对话框中选择 **华为** 页签，配置华为推送参数。参数相关信息，详见你在华为开发者后台创建的 [应用信息中的 App ID 和 SecretKey 以及程序的包名](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-config-agc-0000001050170137#section125831926193110)。
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
+
+2. 点击左侧导航栏的**全部产品**。
+
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**功能配置**标签页。
+
+5. 在**推送证书** 页签下，点击**添加推送证书**。
+
+6. 在弹出的对话框中，选择**华为**页签，配置相关参数，点击**保存**。参数相关信息，详见你在华为开发者后台创建的 [应用信息中的 App ID 和 SecretKey 以及程序的包名](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-config-agc-0000001050170137#section125831926193110)。
 
 ![image](/images/android/push/add_huawei_push_certificate.png)
 
@@ -28,7 +36,7 @@
 | Action       | String |  否    | 点击通知后的动作。组件定义的 intent-filter action name。该参数仅对离线推送有效。   |
 | ActivityClass | String | 否     | 角标显示，应用入口类路径。示例：com.easemob.MainActivity。该参数仅对离线推送有效。 |
 
-## **步骤三 集成华为推送 SDK**
+## 步骤三 集成华为推送 SDK
 
 1. 集成 HMS Core SDK，参见 [华为官网集成文档](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-integrating-sdk-0000001050040084)。
 

@@ -1,14 +1,14 @@
 # 使用 Uni-app 离线推送插件
 
-环信 uni-app 原生推送插件集成了第三方离线消息推送服务, 为开发者提供低延时、高送达、高并发、不侵犯用户个人数据的离线消息推送服务。当客户端断开连接或应用进程被关闭等原因导致用户离线时，即时通讯 IM 会通过第三方消息推送服务向该离线用户的设备推送消息通知。
+uni-app 原生推送插件集成了第三方离线消息推送服务, 为开发者提供低延时、高送达、高并发、不侵犯用户个人数据的离线消息推送服务。当客户端断开连接或应用进程被关闭等原因导致用户离线时，即时通讯 IM 会通过第三方消息推送服务向该离线用户的设备推送消息通知。
 
 目前支持的手机厂商推送服务包括：华为、荣耀、小米、OPPO、vivo、魅族、APNs 和 FCM。
 
 ## 前提条件
 
-1. 在 [环信控制台](https://console.easemob.com/user/login) [注册账号](/product/console/account_register.html)，[创建应用](/product/console/app_create.html)。
+1. 已在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
 2. 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
-3. 若使用推送模板，你需要在 [环信控制台](https://console.easemob.com/user/login)的 **即时通讯 > 基础功能 > 消息** 页面激活。**激活后，如需关闭推送模板功能，必须联系商务，因为该操作会删除推送模板相关的所有配置。**
+3. 若使用推送模板，你需要在 [声网控制台](https://console.shengwang.cn/overview) 激活。**激活后，如需关闭推送模板功能，必须联系商务，因为该操作会删除推送模板相关的所有配置。**
 4. 各推送使用的条件：
     - 小米推送：在小米设备上可用；
     - 华为推送：在华为设备上可用；
@@ -23,11 +23,11 @@
 
 ## 实现流程
 
-### 步骤 1： 上传推送证书至环信控制台
+### 步骤 1： 上传推送证书至声网控制台
 
 1. 在第三方推送服务后台注册应用，获取应用信息，开启推送服务。
    
-2. 在[环信控制台](https://console.easemob.com/user/login)配置获取到的应用信息，上传推送证书，实现第三方推送服务与即时通讯 IM 的通信。
+2. 在 [声网控制台](https://console.shengwang.cn/overview) 配置获取到的应用信息，上传推送证书，实现第三方推送服务与即时通讯 IM 的通信。
 
 :::tip
 更多详情，参见 [Android 离线推送](/document/android/push/push_fcm.html)和 [APNs 离线推送](/document/ios/push/push_apns.html)。
@@ -35,7 +35,7 @@
 
 ### 步骤 2 配置 uni-app 应用支持推送插件
 
-1. 新建 uni-app 工程，并引入[环信 uni-app 推送插件](https://downloadsdk.easemob.com/downloads/WEB_SDK/EMPushUniPlugin_V1.1.0.zip)。
+1. 新建 uni-app 工程，并引入[uni-app 推送插件](https://downloadsdk.easemob.com/downloads/WEB_SDK/EMPushUniPlugin_V1.1.0.zip)。
    
 在你的 uni-app 应用根目录下新建 `nativeplugins` 文件夹，然后将下载的插件放置于 `nativeplugins` 文件夹下。如下图所示：
 
@@ -91,10 +91,10 @@
 
 ### 步骤 3 集成 EMPushUniPlugin 插件
 
-1. 安装并引入环信 uni-app SDK。
+1. 安装并引入 uni-app SDK。
 
 ```javascript
-// 安装环信 SDK
+// 安装 IM SDK
 npm install easemob-websdk 
 // 在 App.vue 文件中引入 SDK
 import websdk from "easemob-websdk/uniApp/Easemob-chat";
@@ -105,7 +105,7 @@ import websdk from "easemob-websdk/uniApp/Easemob-chat";
 ```javascript
 // 初始化 IM SDK
 const conn = websdk.connection({
-  appKey: 'xxxxx', // 你的环信 app Key
+  appId: 'xxxxx', // 你的应用的 app ID
   isFixedDeviceId: true // 推荐使用固定的设备 ID, SDK 会默认从本地缓存中获取设备ID
 });
 
@@ -166,7 +166,7 @@ onLaunch(() => {
 
 2. 即时通讯 IM 是否支持多设备离线推送？
 
-你可在 [环信控制台](https://console.easemob.com/user/login) 的 **证书管理** 页面配置多设备推送策略。该策略配置对所有推送通道生效：
+你可在 [声网控制台](https://console.shengwang.cn/overview) 的 **推送证书** 页面配置多设备推送策略。该策略配置对所有推送通道生效：
 
 - 所有设备离线时，才发送推送消息；
 - 任一设备离线时，都发送推送消息。

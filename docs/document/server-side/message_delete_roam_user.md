@@ -9,7 +9,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -59,8 +59,8 @@ curl -X POST 'https://XXXX/app-id/{app_id}/rest/message/roaming/user/XXXX/delete
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败，可能提示以下错误码：
 
-| HTTP 状态码 | 错误类型    | 错误提示       | 可能原因    | 处理建议       |
-|:---------|:-----------|:--------------|:--------------|:----------------------|
-| 400      | service open exception    | this appKey not open message roaming    | 消息漫游服务未开通。 | 联系商务开通。 |
+| HTTP 状态码 | 错误类型    |可能原因    | 处理建议       |
+|:---------|:-----------|:--------------|:----------------------|
+| 400      | service open exception    | 消息漫游服务未开通。 | 联系商务开通。 |
 
 关于其他错误，你可以参考 [响应状态码](error.html) 了解可能的原因。

@@ -112,7 +112,7 @@ const contacts = await client.contactManager.getContacts();
 
 | 功能 | 导入文件 | 使用方式 |
 | :--- | :--- | :--- |
-| SDK 初始化与连接管理 | `import { ChatClient } from "easemob-websdk";` | `ChatClient.init({ appKey: "your appKey" });` |
+| SDK 初始化与连接管理 | `import { ChatClient } from "easemob-websdk";` | `ChatClient.init({ appId: "your appId" });` |
 | 消息和会话管理 | `import { ChatManager } from "easemob-websdk";` 或 `import { ChatManager } from "easemob-websdk/managers/chat";` | 通过 `managers` 参数或 `.use(ChatManager)` 注册后，调用 `client.chatManager`。 |
 | 好友管理 | `import { ContactManager } from "easemob-websdk";` 或 `import { ContactManager } from "easemob-websdk/managers/contact";` | 通过 `managers` 参数或 `.use(ContactManager)` 注册后，调用 `client.contactManager`。 |
 | 群组管理 | `import { GroupManager } from "easemob-websdk";` 或 `import { GroupManager } from "easemob-websdk/managers/group";` | 通过 `managers` 参数或 `.use(GroupManager)` 注册后，调用 `client.groupManager`。 |

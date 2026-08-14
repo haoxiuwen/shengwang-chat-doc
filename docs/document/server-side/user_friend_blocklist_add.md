@@ -15,7 +15,7 @@
 
 ## 调用频率上限  
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -58,14 +58,11 @@ curl -X POST 'https://XXXX/app-id/{app_id}/users/user1/blocks/users'  \
 ```json
 {
   "action": "post",
-  "application": "8bXXXX402",
   "uri": "https://XXXX.com/XXXX/testapp",
   "entities": [],
   "data": ["user2"],
   "timestamp": 1542600372046,
-  "duration": 11,
-  "organization": "XXXX",
-  "applicationName": "testapp"
+  "duration": 11
 }
 ```
 
@@ -82,13 +79,10 @@ curl -X POST 'https://XXXX/app-id/{app_id}/users/user1/blocks/users'  \
 | 字段   | 类型  | 描述                    |
 | :----- | :---- | :---------------------- |
 | `action`             | String | 请求方法。                                   |
-| `application`        | String | 系统内为应用生成的唯一标识，开发者无需关心。          |
 | `uri`                | String | 请求 URL。                |
 | `entities`           | Array | 响应实体。                                                      |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 | `duration`        | String | 请求响应时间，单位为毫秒。                                                     |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [错误码](#错误码) 了解可能的原因。
 

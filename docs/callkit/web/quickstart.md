@@ -14,12 +14,11 @@
 
 ## 前提条件
 
-在 [环信控制台](https://console.easemob.com/user/login) 进行如下操作：
-
-1. [注册环信账号](/product/console/account_register.html#注册账号)。
-2. [创建应用](/product/console/app_create.html)，[获取应用的 App Key](/product/console/app_manage.html#获取应用凭证)，格式为 `orgname#appname`。
-3. [创建用户](/product/console/operation_user.html#创建用户)，获取用户 ID。
-4. [开通音视频服务](product_activation.html)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能实现发起音视频通话。
+在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
+    - [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
+    - [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
+    - [创建用户](/document/web/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/web/login.html#获取用户-token)。
+    - [开通音视频服务](product_activation.html)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能实现发起音视频通话。
 
 ## 快速开始
 
@@ -79,7 +78,7 @@ interface ConnectionStatus {
   isConnected: boolean;
   status: string;
 }
-const appKey = "org#app"; // 修改成你自己的 appKey
+const appId = "appId"; // 修改成你自己的 app ID
 const App: React.FC = () => {
   // 登录相关状态
   const [userId, setUserId] = useState("");
@@ -249,7 +248,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <Provider initConfig={{ appKey }}>
+    <Provider initConfig={{ appId }}>
       <div className="app-container">
         <div className="main-content">
           <h1>CallKit 快速开始</h1>
@@ -575,9 +574,9 @@ h3 {
 
 :::
 
-### 步骤 4 配置 App Key
+### 步骤 4 配置 App ID
 
-将 `App.tsx` 代码中的 `org#app` 替换成你自己的 App Key。
+将 `App.tsx` 代码中的 `org#app` 替换成你自己的 App ID。
 
 ### 步骤 5 发起首次通话
 
@@ -595,7 +594,7 @@ npm run dev
    http://localhost:5173?userId=your_user_id&accessToken=your_accessToken
    ```
 
-在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [获取 App Token API](/document/server-side/easemob_app_token.html) 和 [获取用户 Token API](/document/server-side/easemob_user_token.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
 3. 输入对方用户 ID，点击 **发起一对一视频通话** 或 **发起一对一语音通话**。
 4. 在浏览器弹出的权限请求中，允许访问摄像头和麦克风。
@@ -608,13 +607,13 @@ npm run dev
 运行应用前，你需要授权摄像头、麦克风、悬浮窗等权限。
 
 1. 在浏览器中访问 `http://localhost:5173`。
-2. 输入 App Key、用户 ID 和 accessToken，点击 **登录** 进行登录，登录成功后状态指示器会变绿。
+2. 输入 App ID、用户 ID 和 accessToken，点击 **登录** 进行登录，登录成功后状态指示器会变绿。
 3. 在另一个浏览器标签页或设备上打开同样的页面，使用另一个账号登录。
 4. 在主叫浏览器或设备上输入被叫方的用户 ID，点击对应的通话按钮，即可发起音视频通话。
 
 运行应用过程中的常见问题排查如下：
 
-- 连接失败：检查 App Key 是否正确配置。
+- 连接失败：检查 App ID 是否正确配置。
 - 通话无声音：检查麦克风权限是否已授权。
 - 视频无画面：检查摄像头权限是否已授权。
 - HTTPS 问题：生产环境部署时确保使用 HTTPS 协议。

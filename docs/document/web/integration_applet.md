@@ -10,9 +10,9 @@
 
 在环信控制台完成以下操作：
 
-1. [注册环信账号](/product/console/account_register.html)。
-2. [创建应用](/product/console/app_create.html)。
-3. 获取应用唯一的 App Key。初始化 SDK 时需要传入该 App Key。
+1. [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
+2. [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
+3. [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 。初始化 SDK 时需要传入该 App ID。
 
 ### 步骤 2：搭建小程序开发环境
 
@@ -85,7 +85,7 @@ const client = ChatClient.init({
 
 | 参数 | 类型 | 是否必需 | 描述 |
 | :--- | :--- | :--- | :--- |
-| `appKey` | String | 是 | 应用唯一标识，格式为 `org#app`。 |
+| `appId` | String | 是 | 应用唯一标识。 |
 | `managers` | Array | 否 | 初始化时注册的功能管理器列表。若需要使用消息和会话能力，需注册 `ChatManager`。 |
 | `serviceConfig.serverUrls.restApiUrl` | String | 是 | REST API 服务地址。小程序中使用固定服务地址时需配置。 |
 | `serviceConfig.serverUrls.wsUrl` | String | 是 | 消息长连接 WebSocket 地址。小程序中使用固定服务地址时需配置。 |

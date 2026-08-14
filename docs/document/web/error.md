@@ -44,7 +44,7 @@ try {
 
 | 错误码 | 错误信息 | 描述和可能原因 | 解决办法 |
 | :--- | :--- | :--- | :--- |
-| 100 | `UPLOAD_INVALID_APPKEY` | 上传时使用的 `appKey` 无效。 | 检查 SDK 初始化时传入的 `appKey` 是否正确。 |
+| 100 | `UPLOAD_INVALID_APPID` | 上传时使用的 `appId` 无效。 | 检查 SDK 初始化时传入的 `appId` 是否正确。 |
 | 107 | `INVALID_CONVERSATION` | 会话参数无效。 | 检查 `conversationId` 和 `conversationType` 是否正确，`conversationType` 应使用 Web SDK 支持的取值。 |
 | 110 | `VALIDATION_REQUIRED` / `VALIDATION_INVALID_FORMAT` / `VALIDATION_UNKNOWN` / `COMBINE_INVALID_INPUT` / `UPLOAD_REQUIRED_FIELD_MISSING` | 参数缺失、参数格式非法、合并消息输入不合法，或上传缺少必填字段。 | 对照对应 API 的参数说明补齐必填字段，并检查字段类型、取值范围和格式。 |
 | 111 | `OPERATION_UNSUPPORTED` | 当前操作或当前消息类型不支持该能力。 | 改用 Web SDK 支持的能力，或调整调用场景。 |
@@ -60,7 +60,7 @@ try {
 | 108 | `AUTH_TOKEN_EXPIRED` | 用户 Token 已过期。 | 重新获取用户 Token 后调用 `renewToken` 续期；若连接已断开，重新调用 `login` 登录。 |
 | 200 | `AUTH_ALREADY_LOGIN` | 当前 SDK 实例已登录，重复调用登录接口。 | 避免重复登录；如需切换账号，先调用 `logout` 登出，再使用新用户登录。 |
 | 201 | `AUTH_NOT_LOGIN` | 当前用户未登录，或登录态不可用。 | 先完成登录并确认连接状态正常，再调用相关 API。 |
-| 202 | `AUTH_UNAUTHORIZED` / `CONNECTION_PROVISION_REJECTED` | 鉴权失败。可能是 Token 无效、Token 与用户不匹配、签名错误、用户不存在，或连接鉴权被服务端拒绝。 | 检查 `appKey`、`userId`、Token 和用户状态；必要时重新获取 Token 后登录。 |
+| 202 | `AUTH_UNAUTHORIZED` / `CONNECTION_PROVISION_REJECTED` | 鉴权失败。可能是 Token 无效、Token 与用户不匹配、签名错误、用户不存在，或连接鉴权被服务端拒绝。 | 检查 `appId`、`userId`、Token 和用户状态；必要时重新获取 Token 后登录。 |
 | 206 | `USER_LOGIN_ANOTHER_DEVICE` | 用户在其他设备登录，当前设备被踢下线。多设备互踢策略与服务端多设备配置有关。 | 根据业务提示用户当前账号已在其他设备登录；如需支持多设备同时在线，需确认多设备策略配置。详见 [多设备文档](multi_device.html)。 |
 | 207 | `USER_REMOVED` | 当前登录用户已被删除或注销。 | 提示用户账号不可用，并在服务端或控制台确认账号状态。 |
 | 210 | `AUTH_FORBIDDEN` / `CONTACT_ADD_BLOCKED_BY_USER` | 当前用户无权限执行操作，或被对方拉黑/禁止添加。 | 检查当前账号权限、好友关系、黑名单状态以及相关服务开通状态。 |
@@ -74,7 +74,7 @@ try {
 | 220 | `USER_DEVICE_CHANGED` | 当前登录设备与预期设备不一致，或设备标识发生变化。 | 检查自动登录、多设备策略和设备标识配置；必要时重新登录。 |
 | 300 | `CONNECTION_WEBSOCKET_ERROR` / `CONNECTION_CLOSED_BEFORE_READY` / `CONNECTION_PROVISION_CLOSED` / `MESSAGE_NOT_CONNECTED` | WebSocket 连接失败、连接尚未就绪即关闭，或发送消息时未连接。 | 等待连接成功后重试，并检查网络、连接状态和服务地址配置。 |
 | 301 | `CONNECTION_TIMEOUT` / `CONNECTION_PROVISION_TIMEOUT` / `MESSAGE_ACK_TIMEOUT` / `MESSAGE_ACK_MISSING` / `REST_TIMEOUT` / `UPLOAD_TIMEOUT` | 请求、连接鉴权、消息 ACK、REST 请求或上传超时。 | 检查网络环境后重试；若频繁出现，检查服务配置和客户端超时策略。 |
-| 304 | `CONNECTION_DNSLIST_FAILED` | 获取服务器地址配置失败。 | 检查网络、`appKey`、DNS 配置和服务可用性。 |
+| 304 | `CONNECTION_DNSLIST_FAILED` | 获取服务器地址配置失败。 | 检查网络、`appId`、DNS 配置和服务可用性。 |
 | 305 | `SERVER_SERVING_DISABLED` | 服务被禁用或当前能力不可用。 | 检查是否已开通对应服务；如需使用该能力，请在控制台开通或联系商务。 |
 
 ## 消息

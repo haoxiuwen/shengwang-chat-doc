@@ -12,12 +12,12 @@
 
 ## 前提条件
 
-在 [环信控制台](https://console.easemob.com/user/login) 进行如下操作：
-1. [注册环信账号](/product/console/account_register.html#注册账号)。
-2. [创建应用](/product/console/app_create.html)，[获取应用的 App Key](/product/console/app_manage.html#获取应用凭证)，格式为 `orgname#appname`。
-3. [创建用户](/product/console/operation_user.html#创建用户)，获取用户 ID 和 Token。
+在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
+1. [注册开发者账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
+2. [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
+3. [创建用户](/document/ios/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/ios/login.html#获取用户-token)。
 4. [开通音视频服务](product_activation.html)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能实现发起音视频通话。
-   
+
 ## 快速开始
 
 ### 步骤 1： 创建项目
@@ -127,12 +127,12 @@ android.enableJetifier=true
 
 1. 打开 `app/src/main/res/values/strings.xml` 文件，替换为如下内容。
 
-你需要将 **app_key** 替换为你申请的环信 App Key,**user_name** 替换为你的用户名,**token** 替换为你用户名对应的token。
+你需要将 **app_key** 替换为你申请的环信 App ID,**user_name** 替换为你的用户名,**token** 替换为你用户名对应的token。
 
 ```xml
 <resources>
     <string name="app_name">CallKitQuickstart</string>
-    <string name="app_key">app_key</string>
+    <string name="app_id">app_ID</string>
     <string name="user_name">your userId</string>
     <string name="token">your token</string>
 </resources>
@@ -381,15 +381,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initCallKit() {
-        val appkey = getString(R.string.app_key)
-        if (appkey.isEmpty()) {
-            showToast("请先设置您的AppKey!")
+        val appId = getString(R.string.app_id)
+        if (appId.isEmpty()) {
+            showToast("请先设置您的appId!")
             return
         }
 
         // 初始化即时通讯 IM  SDK
         val options = ChatOptions().apply {
-            this.appKey = appkey
+            this.appId = appId
             autoLogin = false
         }
         ChatClient.getInstance().init(this, options)
@@ -581,6 +581,6 @@ class MainActivity : AppCompatActivity() {
 4. 在主叫设备上输入被叫方的用户 ID，点击对应的通话按钮，即可发起音视频通话。
 
 运行应用过程中的常见问题排查如下：
-- 连接失败：检查 App Key、用户名、token 是否正确配置。
+- 连接失败：检查 App ID、用户名、token 是否正确配置。
 - 通话无声音：检查麦克风权限是否已授权。
 - 视频无画面：检查摄像头权限是否已授权。

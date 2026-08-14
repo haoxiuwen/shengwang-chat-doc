@@ -17,7 +17,7 @@
 - targetVersion 33 及以上
 - Android SDK API 21 及以上
 - JDK 17 及以上
-- 有效的即时通讯 IM 开发者账号和 App key，见 [环信控制台](https://console.easemob.com/user/login)。
+- 有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 说明。
 
 ## 准备开发环境
 
@@ -115,7 +115,7 @@ dependencies {
 </manifest>
 ```
 
-关于 App Key 对应的 value 获取，在 [环信控制台](https://console.easemob.com/user/login) 创建应用后，申请 App Key 并进行相关配置。
+关于获取 App ID，在 [声网控制台](https://console.shengwang.cn/overview) [创建项目](/product/enable_im.html#创建项目并开通)后，即可 [获取 App ID](/product/enable_im.html#_3-获取-app-id)。
 
 ### 4. 防止代码混淆
 
@@ -147,9 +147,9 @@ EMClient.getInstance().init(context, options);
 ```
 ### 2. 创建用户
 
-在 [环信控制台](https://console.easemob.com/user/login) 创建用户，获取用户 ID 和用户 Token。详见 [创建用户文档](/product/console/operation_user.html#创建用户)。
+在 [声网控制台](https://console.shengwang.cn/overview) 创建用户，获取用户 ID 和用户 Token。详见 [创建用户文档](login.html#用户注册)。
 
-在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [获取 App Token API](/document/server-side/easemob_app_token.html) 和 [获取用户 Token API](/document/server-side/easemob_user_token.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
 ### 3. 登录账号
 

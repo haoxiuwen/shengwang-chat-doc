@@ -9,11 +9,12 @@
 
 ## 功能开通
 
-要使用 Reaction 功能，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通。详见 [环信控制台文档](/product/console/basic_message.html#消息表情回复)。
+- 对于专业版 IM，使用 Reaction 前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包 > 即时通讯 IM** 页面开通该功能。
+- 对于旗舰版 IM，Reaction 功能默认开启。
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 

@@ -2,21 +2,29 @@
 
 即时通讯 IM SDK 中已经集成了 VIVO 推送（基于 `vivo_push_v4.0.4.0_504.aar`）相关逻辑，你还需要完成以下步骤。
 
-## **步骤一 在 VIVO 开发者后台创建应用**
+## 步骤一 在 VIVO 开发者后台创建应用
 
 在 [VIVO 开发者后台](https://id.vivo.com.cn/?callback=https://dev.vivo.com.cn#/user/login)创建应用，开启推送服务，并上传对应的证书指纹。
 
 详见 VIVO 官方介绍：[VIVO 推送服务集成](https://dev.vivo.com.cn/documentCenter/doc/281)。
 
-## **步骤二 上传推送证书**
+## 步骤二 上传推送证书
 
-在 [环信控制台](https://console.easemob.com/user/login) 上传推送证书：
+在[声网控制台](https://console.shengwang.cn/overview)上传华为推送证书。
 
-1. 登录 [环信控制台](https://console.easemob.com/user/login)，选择你的应用 > **功能配置** > **增值功能** > **即时推送**。
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
+
+2. 点击左侧导航栏的**全部产品**。
+
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**功能配置**标签页。
+
+5. 在**推送证书** 页签下，点击**添加推送证书**。
    
-2. 在 **证书管理** 页面，点击 **添加推送证书**。在 **添加推送证书** 对话框中选择 **VIVO** 页签，配置 VIVO 推送参数。参数相关信息，详见你在 [VIVO 开发者后台](https://vpush.vivo.com.cn/#/appdetail) 创建的应用的 `APP ID`，`APP KEY` 和 `APP SECRET` 以及程序的 `包名`。
+3. 在**添加推送证书**对话框中，选择 **VIVO** 页签，配置 VIVO 推送参数。参数相关信息，详见你在 [VIVO 开发者后台](https://vpush.vivo.com.cn/#/appdetail)创建的应用的 `APP ID`，`APP KEY` 和 `APP SECRET` 以及程序的 `包名`。
 
-![img](/images/console/push_certificate_vivo.png)
+![image](/images/android/push/add_vivo_push_certificate.png)
 
 | 参数       | 类型   | 是否必需 | 描述         |
 | :--------- | :----- | :------- | :---------------- |
@@ -28,13 +36,11 @@
 | Activity| String | 否     | 点击通知后的动作。 该参数仅对离线推送有效。 |
 | 推送类型     | String |  否    |可选择 **运营消息** 或 **系统消息**。该参数仅对离线推送有效。 |
 
-## **步骤三 集成 VIVO 推送 SDK**
+## 步骤三 集成 VIVO 推送 SDK
 
 1. 配置 VIVO 推送 `jar` 包：
  
 在 VIVO 推送官网下载推送 SDK 包，将 `jar` 包放到 libs 目录下并 sync 。
-
-此外，也可以直接使用环信 Android IM Demo 中集成的 VIVO 推送的 `jar` 包。
 
 2. 配置 `AndroidManifest.xml` 。
 

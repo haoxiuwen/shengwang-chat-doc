@@ -31,7 +31,6 @@
     "messageType": "txt", 
     "messageId": "1F4MX6iSdI7VFnN7Hm0vrcr3Uwr",
     "targetType": "chat", 
-    "appkey": "100220419126072#lydemo", 
     "source": {
        
     },
@@ -49,14 +48,13 @@
 
 | 参数          | 类型   | 描述                                             |
 | :------------ | :----- | :----------------------------------------------- |
-| `callId` | String| 回调的标识。格式为 {appkey}_{uuid}，其中 UUID 为随机生成，作为每条回调的唯一标识。|
+| `callId` | String| 回调请求的唯一标识。 |
 | moderationResult  | String  | 消息处理结果：<br/> - `PASS`：通过，直接下发消息；<br/> - `REJECT`：拒绝下发；<br/> - `EXCHANGE`：替换消息中的违规内容；<br/> - `RECALL`：撤回发送的音频和视频。 |
 | `providerResult` | String | 审核结果：<br/> - `PASS`：消息中不包含违规内容；<br/> - `REVIEWED`：消息中疑似包含违规内容；<br/> - `REJECT`：消息存在违规内容。|
 | `security`       | String | 签名，格式如下: MD5（callId+Secret+timestamp），其中 Secret 详见[环信控制台](https://console.easemob.com/user/login)的回调规则。 |
 | `messageType`       | String | 消息类型：<br/> - `txt`：文本消息；<br/> - `img`：图片消息；<br/> - `audio`：语音消息；<br/> - `video`：视频消息；<br/> - `custom`：自定义消息。   |
 | `messageId`       | String  | 消息 ID。   |
 | `targetType`       | String | 会话类型。<br/> - `chat`：单聊；<br/> - `groupchat`：群聊；<br/> - `chatroom`：聊天室。  |
-| `appkey`       | String | 你的 App Key。   |
 | `riskType`       | String |  风险类型，例如，`无风险`、`涉政`、`仇恨言论`、`色情`、`成人内容`、`暴恐`、`违禁`、`广告`、`二维码` 和 `未知`。   |
 | `eventType`       | String | 事件类型，审核服务为 `moderation`。|
 | `from`      | String | 消息发送方。   |

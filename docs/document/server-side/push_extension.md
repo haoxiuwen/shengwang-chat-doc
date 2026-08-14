@@ -181,7 +181,7 @@
             "vivo_category": "",
             "vivo_click_activity": "",
             "xiaomi_channel_id": "",
-            "xiaomi_click_action": "",
+            "xiaomi_click_action": ""
         },
         "em_harmony_push_ext": {
           "click_action": "com.a.b.shot",

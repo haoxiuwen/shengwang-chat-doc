@@ -36,7 +36,7 @@
 ### 发送行为与相关说明
 
 - 群组中发送的消息均会同步给发送方。
-- 通过 RESTful 接口发送的消息默认不写入会话列表。若需要将此类消息写入会话列表，需在 [环信控制台开通](/product/console/basic_conversation_group_chatroom.html#rest-发消息写会话列表)。
+- 通过 RESTful 接口发送的消息默认不写入会话列表。若需要将此类消息写入会话列表，需联系声网商务开通。
 - 调用该接口会触发发送后回调事件，详见 [回调事件文档](callback_message_send.html#发送群组消息)。
 - 你可以通过消息通用可选参数设置是否将消息同步到发送方的所有在线设备、指定哪些用户在拉取漫游消息时无法获取该消息，以及仅向在线用户投递消息等。详见 [消息通用可选参数](#消息通用可选参数)。
 - [内容审核服务会关注消息 `body` 中指定字段的内容，不同类型的消息审核的字段不同](/value-added/moderation/moderation_mechanism.html)。若在这些字段中传入过多业务信息，可能影响审核效果。因此，建议避免在审核字段中承载业务信息，优先将业务信息放在扩展字段 `ext` 中。
@@ -195,14 +195,11 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups'
   "path": "/messages/chatgroups",
   "uri": "https://XXXX/XXXX/XXXX/messages/chatgroups",
   "timestamp": 1657254052191,
-  "organization": "XXXX",
-  "application": "e82bcc5f-XXXX-XXXX-a7c1-92de917ea2b0",
   "action": "post",
   "data": {
     "184524748161025": "1029544257947437432"
   },
-  "duration": 0,
-  "applicationName": "XXXX"
+  "duration": 0
 }
 ```
 
@@ -234,11 +231,8 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups'
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 
@@ -306,14 +300,11 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
   "path": "/messages/chatgroups",
   "uri": "https://XXXX/XXXX/XXXX/messages/chatgroups",
   "timestamp": 1657254052191,
-  "organization": "XXXX",
-  "application": "e82bcc5f-XXXX-XXXX-a7c1-92de917ea2b0",
   "action": "post",
   "data": {
     "184524748161025": "1029544257947437432"
   },
-  "duration": 0,
-  "applicationName": "XXXX"
+  "duration": 0
 }
 ```
 
@@ -332,11 +323,8 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 
@@ -399,14 +387,11 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
   "path": "/messages/chatgroups",
   "uri": "https://XXXX/XXXX/XXXX/messages/chatgroups",
   "timestamp": 1657254052191,
-  "organization": "XXXX",
-  "application": "e82bcc5f-XXXX-XXXX-a7c1-92de917ea2b0",
   "action": "post",
   "data": {
     "184524748161025": "1029544257947437432"
   },
-  "duration": 0,
-  "applicationName": "XXXX"
+  "duration": 0
 }
 ```
 
@@ -426,11 +411,8 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 
@@ -496,14 +478,11 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
   "path": "/messages/chatgroups",
   "uri": "https://XXXX/XXXX/XXXX/messages/chatgroups",
   "timestamp": 1657254052191,
-  "organization": "XXXX",
-  "application": "e82bcc5f-XXXX-XXXX-a7c1-92de917ea2b0",
   "action": "post",
   "data": {
     "184524748161025": "1029544257947437432"
   },
-  "duration": 0,
-  "applicationName": "XXXX"
+  "duration": 0
 }
 ```
 
@@ -522,11 +501,8 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 
@@ -587,14 +563,11 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
   "path": "/messages/chatgroups",
   "uri": "https://XXXX/XXXX/XXXX/messages/chatgroups",
   "timestamp": 1657254052191,
-  "organization": "XXXX",
-  "application": "e82bcc5f-XXXX-XXXX-a7c1-92de917ea2b0",
   "action": "post",
   "data": {
     "184524748161025": "1029544257947437432"
   },
-  "duration": 0,
-  "applicationName": "XXXX"
+  "duration": 0
 }
 ```
 
@@ -613,11 +586,8 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 
@@ -677,14 +647,11 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups'  \
   "path": "/messages/chatgroups",
   "uri": "https://XXXX/XXXX/XXXX/messages/chatgroups",
   "timestamp": 1657254052191,
-  "organization": "XXXX",
-  "application": "e82bcc5f-XXXX-XXXX-a7c1-92de917ea2b0",
   "action": "post",
   "data": {
     "184524748161025": "1029544257947437432"
   },
-  "duration": 0,
-  "applicationName": "XXXX"
+  "duration": 0
 }
 ```
 
@@ -703,11 +670,8 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups'  \
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 
@@ -763,14 +727,11 @@ curl -X POST -i "https://XXXX/app-id/{app_id}/messages/chatgroups" \
   "path": "/messages/chatgroups",
   "uri": "https://XXXX/XXXX/XXXX/messages/chatgroups",
   "timestamp": 1657254052191,
-  "organization": "XXXX",
-  "application": "e82bcc5f-XXXX-XXXX-a7c1-92de917ea2b0",
   "action": "post",
   "data": {
     "184524748161025": "1029544257947437432"
   },
-  "duration": 0,
-  "applicationName": "XXXX"
+  "duration": 0
 }
 ```
 
@@ -789,11 +750,8 @@ curl -X POST -i "https://XXXX/app-id/{app_id}/messages/chatgroups" \
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 
@@ -853,14 +811,11 @@ curl -X POST -i "https://XXXX/app-id/{app_id}/messages/chatgroups" \
   "path": "/messages/chatgroups",
   "uri": "https://XXXX/XXXX/XXXX/messages/chatgroups",
   "timestamp": 1657254052191,
-  "organization": "XXXX",
-  "application": "e82bcc5f-XXXX-XXXX-a7c1-92de917ea2b0",
   "action": "post",
   "data": {
     "184524748161025": "1029544257947437432"
   },
-  "duration": 0,
-  "applicationName": "XXXX"
+  "duration": 0
 }
 ```
 
@@ -879,11 +834,8 @@ curl -X POST -i "https://XXXX/app-id/{app_id}/messages/chatgroups" \
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 
@@ -960,14 +912,11 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups/users' \
   "path": "/messages/chatgroups",
   "uri": "https://XXXX/XXXX/XXXX/messages/chatgroups",
   "timestamp": 1657254052191,
-  "organization": "XXXX",
-  "application": "e82bcc5f-XXXX-XXXX-a7c1-92de917ea2b0",
   "action": "post",
   "data": {
     "184524748161025": "1029544257947437432"
   },
-  "duration": 0,
-  "applicationName": "XXXX"
+  "duration": 0
 }
 ```
 
@@ -986,11 +935,8 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups/users' \
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 
@@ -1082,7 +1028,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups'
 
 ### 发消息时设置回调路由
 
-回调路由允许你在同一个 App Key 下，将不同消息按回调环境维度分别投递到不同的回调地址。发送消息时，你可以在消息中携带回调环境字段（如 `dev`、`test`、`prod`），IM 服务器收到消息后，根据该字段匹配控制台中配置的 [回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
+回调路由允许你在同一个 App ID 下，将不同消息按回调环境维度分别投递到不同的回调地址。发送消息时，你可以在消息中携带回调环境字段（如 `dev`、`test`、`prod`），IM 服务器收到消息后，根据该字段匹配控制台中配置的 [回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
 
 :::tip
 目前，该功能仅面向国内 1 区和国内 2 区开放。

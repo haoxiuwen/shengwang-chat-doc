@@ -32,8 +32,7 @@
 | 参数       | 类型   | 是否必需 | 描述                                                |
 | :--------- | :----- | :------- | :-------------------------------------------------- |
 | `host`     | String | 是       | 即时通讯 IM 分配的用于访问 RESTful API 的域名。 |
-| `org_name` | String | 是       | 即时通讯 IM 为每个公司（组织）分配的唯一标识。  |
-| `app_name` | String | 是       | 你在环信控制台创建应用时填入的应用名称。  |
+| `app_id`   | String | 是 | 应用的唯一标识。 |
 | `username` | String | 是       | 用户 ID。                                           |
 
 ### 响应参数
@@ -49,7 +48,7 @@
 
 Authorization：`Bearer ${YourAppToken}`
 
-为提高项目的安全性，IM 使用 Token（动态密钥）对即将登录即时通讯系统的用户进行鉴权。即时通讯 RESTful API 推荐使用 app token 的鉴权方式，详见 [使用 app token 鉴权](/document/server-side/easemob_app_token.html)。
+为提高项目的安全性，IM 使用 Token（动态密钥）对即将登录即时通讯系统的用户进行鉴权。即时通讯 RESTful API 推荐使用 app token 的鉴权方式，详见 [Token 鉴权](/document/server-side/token_authentication.html)。
 
 ## 同步推送单用户
 

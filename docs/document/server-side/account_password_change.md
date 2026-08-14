@@ -11,7 +11,7 @@
 
 ## 调用频率上限
 
-该 API、用户账户管理的其他接口、以及离线推送的相关接口的总调用频率上限为 100 次/秒/App Key，详见 [接口频率限制文档](limitationapi.html#用户体系管理)。
+该 API、用户账户管理的其他接口、以及离线推送的相关接口的总调用频率上限为 100 次/秒/App ID，详见 [接口频率限制文档](limitationapi.html#用户体系管理)。
 
 ## 请求 URL
 
@@ -74,6 +74,5 @@ curl -X PUT 'https://XXXX/app-id/{app_id}/users/XXXX/password'   \
 | HTTP 状态码 | 错误类型     | 错误提示   | 可能原因    | 处理建议     |
 | :---------- | :--------------- | :------------- | :------------ | :-----|
 | 401         | unauthorized    | Unable to authenticate (OAuth)    | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。  |
-| 404         | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App key  不存在。   | 检查 `orgName` 和 `appName` 是否正确或 [创建应用](/product/console/app_create.html)。 |
 | 404         | entity_not_found  | User null not found    | 用户不存在。  | 先注册用户或者检查用户名是否正确。    |
 | 400         | illegal_argument  | "newpassword is required"   | 修改用户密码的请求体未提供 `newpassword` 属性。 |   |

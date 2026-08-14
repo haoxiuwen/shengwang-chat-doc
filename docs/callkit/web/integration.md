@@ -21,13 +21,12 @@
 
 在集成 CallKit 之前，你需要完成以下准备工作：
 
-1. 在 [环信控制台](https://console.easemob.com/user/login) 进行如下操作：
-
-- [注册环信账号](/product/console/account_register.html#注册账号)。
-- [创建应用](/product/console/app_create.html)，[获取应用的 App Key](/product/console/app_manage.html#获取应用凭证)，格式为 `orgname#appname`。
-- [创建用户](/product/console/operation_user.html#创建用户)，获取用户 ID。
-- [创建群组](/product/console/operation_group.html#创建群组)，获取群组 ID。将用户加入群组。
-- [开通音视频服务](product_activation.html)。
+1. 在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
+    - [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
+    - [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
+    - [创建用户](/document/web/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/web/login.html#获取用户-token)。
+    - 创建群组，获取群组 ID。将用户加入群组。
+    - [开通音视频服务](product_activation.html)。
 
 2. 集成即时通讯 IM SDK。
 
@@ -110,7 +109,7 @@ const App = () => {
   return (
     <Provider
       initConfig={{
-        appKey: "your_app_key", // 你的应用 App Key
+        appId: "your_app_ID", // 你的应用 App ID
         userId: "current_user_id", // 当前用户 ID
         token: "user_token", // 用户 token，或使用 password 进行密码登录
       }}
@@ -128,7 +127,7 @@ CallKit 组件或重要配置的说明如下：
 | 组件/属性           | 说明   |
 | :-------------- | :----- |
 | Provider 组件            | - 负责初始化即时通讯 IM SDK 连接，必须包裹在应用的最外层。<br/> - 该组件会自动处理 IM SDK 的初始化和登录。|
-| initConfig 配置            | 包含应用的 App Key、用户 ID 和登录凭证（Token）。  |
+| initConfig 配置            | 包含应用的 App ID、用户 ID 和登录凭证（Token）。  |
 | CallKit 组件            | - 音视频通话组件，会自动处理内部的初始化逻辑。<br/> - 该组件会在内部自动初始化音视频服务，无需手动调用初始化方法。  |
 | chatClient 属性            | 传入 `rootStore.client`，即 Provider 创建的 IM 连接实例。  |
 | 信息提供者            | `userInfoProvider` 和 `groupInfoProvider` 用于获取用户和群组的显示信息。   |
@@ -190,7 +189,7 @@ const App = () => {
   return (
     <Provider
       initConfig={{
-        appKey: "your_app_key", // 你的应用 App Key
+        appId: "your_app_ID", // 你的应用 App ID
         userId: "current_user_id", // 当前用户 ID
         token: "user_token", // 用户 token
       }}
@@ -236,7 +235,7 @@ const App = () => {
   return (
     <Provider
       initConfig={{
-        appKey: "your_app_key", // 你的应用 App Key
+        appId: "your_app_ID", // 你的应用 App ID
       }}
     >
       <CallKit
@@ -283,7 +282,7 @@ const App = () => {
   return (
     <Provider
       initConfig={{
-        appKey: "your appKey",
+        appId: "your appId",
         userId: "userId",
         token: "token",
       }}
@@ -301,7 +300,7 @@ const App = () => {
 
 #### 发起群组通话
 
-- **创建群组**：要发起群组通话，你需要首先创建群组，在群组中添加用户，详见 [环信控制台文档](/product/console/operation_group.html#创建群组)。
+- **创建群组**：要发起群组通话，你需要首先创建群组，在群组中添加用户。
 - **发起群组通话**：你可以使用 `startGroupCall` 发起群组通话，指定群组 ID，`callType` 设置为 `video` 为视频通话，`audio` 为音频通话，并设置邀请消息 `msg`。CallKit 会自动拉起群成员选择界面，界面显示群组中的所有成员（群主、管理员、普通成员），用户可以选择要邀请的成员，选中人数会实时显示。为了保证通话质量和性能，CallKit 限制群组通话最多支持 **16 人** 同时参与（包括发起者）。
 - **通话中邀请他人**：群组通话中，当前用户可以点击通话界面右上角的邀请按钮向其他用户发起邀请。
 

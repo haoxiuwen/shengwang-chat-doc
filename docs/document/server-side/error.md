@@ -27,7 +27,7 @@
 | 404                        | （未找到）服务器找不到请求的接口。                           |
 | 405                        | （请求方式错误）请按照环信 REST 接口说明，正确的使用接口 GET，POST 等请求方式。 |
 | 408                        | （请求超时）服务器等候请求时发生超时。                       |
-| 409                        | 并发调用[通过用户 ID 获取用户 token 的 API](easemob_user_token.html#通过用户-id-获取用户-token) 时若设置了自动创建用户则报错。也就是说，调用了该 API 时将 `grant_type` 设置为 `inherit`，`autoCreateUser` 设置为 `true`，则会上报该错误。如果获取 token 的用户已注册，并发调用该 API 则不会报错。|
+| 409                        | 并发调用[Token 鉴权](/document/server-side/token_authentication.html) 时若设置了自动创建用户则报错。也就是说，调用了该 API 时将 `grant_type` 设置为 `inherit`，`autoCreateUser` 设置为 `true`，则会上报该错误。如果获取 token 的用户已注册，并发调用该 API 则不会报错。|
 | 413                        | （消息附件过大）调用[上传文件](message_upload_file.html)接口上传的消息附件超过了最大限制。  |
 | 415                        | 请求体的类型不支持。                                         |
 | 429                        | （服务不可用）请求接口超过调用频率限制，即接口被限流。或超过社区版限制，如有需要可联系商务。 |
@@ -43,7 +43,7 @@
 
 | 功能模块 | 描述    | 错误码    | 
 | :---------- | :---------- | :---------- |
-| 用户体系管理        | 注册/删除用户、获取用户详情、修改用户密码、封禁/解禁用户、全局用户禁言、获取用户在线状态、获取用户离线消息数据、获取指定账号的在线登录设备。 | 关于错误码，详见[用户体系管理](account_register_open.html)中各接口对应的错误码列表。 | 
+| 用户体系管理        | 注册/删除用户、获取用户详情、修改用户密码、封禁/解禁用户、全局用户禁言、获取用户在线状态、获取用户离线消息数据、获取指定账号的在线登录设备。 | 关于错误码，详见[用户体系管理](account_register_authorized_single.html)中各接口对应的错误码列表。 |
 | 用户属性            | 设置/删除/获取用户属性、获取 app 下用户属性总大小。 | 关于错误码，详见[用户属性模块](user_attribute_set.html)中各接口对应的错误码列表。 |
 | 用户关系            | 添加/移除好友、设置好友备注、获取好友列表和导入好友列表。 | 关于错误码，详见[用户关系管理模块](user_friend_add.html)中各接口对应的错误码列表。|
 | 消息                | 消息相关功能，包括发送消息、上传/下载文件、撤回消息、删除漫游消息、修改/导入消息。  | 详见以下 API 对应的错误码列表：<br/> - [发送单聊消息](message_single.html) <br/> - [发送群聊消息](message_group.html) <br/> - [发送聊天室消息](message_chatroom.html)<br/> - [上传和下载文件](message_upload_file.html) <br/> - [撤回消息](message_recall_single.html)<br/> - [单向删除会话](conversation_delete.html)<br/> - [单向删除漫游消息](message_delete_roam_single_msgid.html)<br/> - [编辑消息](message_modify.html) <br/> - [导入消息](message_import_single.html)  |
@@ -55,7 +55,7 @@
 
 ## Token 相关错误码
 
-1. 关于调用获取 Token 相关的 REST API 的错误码，详见[获取 App Token](easemob_app_token.html)和[获取用户 Token](easemob_user_token.html)接口的错误码列表。   
+1. 关于调用获取 Token 相关的 REST API 的错误码，详见 [Token 鉴权](/document/server-side/token_authentication.html) 中各接口对应的错误码列表。
 
 2. 调用 REST API 过程中，Token 相关的错误码如下表所示：
 
@@ -78,15 +78,15 @@
 
 调用 REST API 时，若相关服务未开通，提示 400 或 403 错误码，如下表所示：
 
-| HTTP 状态码 | 错误类型    | 错误提示      | 可能原因      | 
-| :---------- | :---------- | :--------- | :----------- |
-| 403     | group_error | thread not open. | 消息话题功能未开通。 | 请在环信控制台开通消息话题服务。 |
+| HTTP 状态码 | 错误类型    | 错误提示      | 可能原因      |处理建议   | 
+| :---------- | :---------- | :--------- | :----------- | :----------- |
+| 403     | group_error | thread not open. | 消息话题功能未开通。 | 请在声网控制台开通消息话题服务。 |
 | 403      | forbidden_op | message broadcast service is unopened  | 未开通发送聊天室广播消息的功能配置。| 联系商务开通。 |
-| 400      | service open exception  | this appKey not open message roaming   | 消息漫游服务未开通。  | 联系商务开通。  |
+| 400      | service open exception  |    | 消息漫游服务未开通。  | 联系商务开通。  |
 | 400         | service open exception | the app not open presence   | 没有开通 presence 服务。  | 联系商务开通 presence 服务。 |
 | 403      | message_rewrite_error   | The rewrite message feature is not open.   | 消息编辑功能未开通。  |  联系商务开通消息编辑功能。  |
-| 400      | Bad Request         | this appKey is not open reaction service!   | Reaction 功能未开通。 | 请在环信控制台开通 Reaction 服务。 |
-| 403     | FORBIDDEN       | {appkey} user metadata service not allow   | 用户属性功能未开通。  | 联系商务开通用户属性功能。    |
+| 400      | Bad Request         |    | Reaction 功能未开通。 | 请在环信控制台开通 Reaction 服务。 |
+| 403     | FORBIDDEN       | {appId} user metadata service not allow   | 用户属性功能未开通。  | 联系商务开通用户属性功能。    |
 
     
 

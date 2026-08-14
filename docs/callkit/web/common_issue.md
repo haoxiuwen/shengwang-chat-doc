@@ -3,7 +3,7 @@
 ## 1. 发起通话无反应
    
 - 检查 chatClient：chatClient 为 IM SDK 示例， 需确保 SDK 已经初始化并登录。
-- 用户不存在：确保已在环信控制台创建用户。详见 [控制台文档](/product/console/operation_user.html#创建用户)。
+- 用户不存在：确保已在 [声网控制台](https://console.shengwang.cn/overview) 创建用户。
 
 ## 2. 通话无法建立
 

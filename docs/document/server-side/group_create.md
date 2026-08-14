@@ -9,7 +9,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key   
+100 次/秒/App ID   
 
 ## 请求 URL
 
@@ -72,16 +72,13 @@ curl -X POST 'https://XXXX/app-id/{app_id}/chatgroups'  \
 ```json
 {
   "action": "post",
-  "application": "8bXXXX02",
   "uri": "https://XXXX/XXXX/XXXX/chatgroups",
   "entities": [],
   "data": {
     "groupid": "6XXXX7"
   },
   "timestamp": 1542361730243,
-  "duration": 0,
-  "organization": "XXXX",
-  "applicationName": "testapp"
+  "duration": 0
 }
 ```
 
@@ -99,13 +96,10 @@ curl -X POST 'https://XXXX/app-id/{app_id}/chatgroups'  \
 | 参数              | 类型   | 描述                                                                           |
 | :---------------- | :----- | :----------------------------------------------------------------------------- |
 | `action`          | String | 请求方法。                                                                     |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `uri`             | String | 请求 URL。                                                                     |
 | `entities`        | JSON Array   | 响应实体。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `applicationName` | String | 你在即时通讯云控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [错误码](#错误码) 了解可能的原因。
 
@@ -120,7 +114,7 @@ curl -X POST 'https://XXXX/app-id/{app_id}/chatgroups'  \
 | 400     | invalid_parameter | group must contain public field! | 创建群组必须设置 `public` 字段 | 设置 `public` 字段。 |
 | 400     | illegal_argument | group ID XX already exists! | groupId 重复。 | 使用新的群组 ID。 |
 | 401     | unauthorized | Unable to authenticate (OAuth) | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。 |
-| 403     | exceed_limit | appKey:XX#XX has create too many groups! | appKey 的群组数量达到上限。 | 删除不用的群组或联系商务调整上限。关于该上限，详见 详见 [IM 套餐包功能详情](/product/product_package_feature.html)。 |
+| 403     | exceed_limit | appId:XX#XX has create too many groups! | appId 的群组数量达到上限。 | 删除不用的群组或联系商务调整上限。关于该上限，详见 详见 [IM 套餐包功能详情](/product/product_package_feature.html)。 |
 | 403     | exceed_limit | user XX has joined too many groups! | 用户加入的群组数量达到上限。 | 退出不用的群组或在 [环信控制台上调用户可加入群组数上限](/product/console/basic_conversation_group_chatroom.html#单个用户可加入群组数上限)。 |
 | 403     | exceed_limit | members size is greater than max user size ! | 创建群时加入的人数超过最大限制。 | 调整创建群的加群人数。关于该上限，详见 详见 [IM 套餐包功能详情](/product/product_package_feature.html)。|
 | 403     | group_name_violation | XX is violation, please change it. | 群组名称不合法。 | 使用合法的群组名称。 |

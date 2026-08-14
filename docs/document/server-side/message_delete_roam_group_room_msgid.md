@@ -8,13 +8,9 @@
   - 群组或聊天室内其他用户不受影响，仍然可以拉取这些漫游消息和会话。
 - 调用该接口前，可通过 [获取历史消息记录](message_historical.html) 获取要删除的消息 ID。如果客户使用 [消息回调](callback_overview.html) 功能的话，也可以从自己的服务器上获取，因为消息回调给你的服务器时包含消息 ID。
 
-:::tip
-聊天室漫游消息默认关闭，若要使用该功能需联系商务经理开通。
-:::
-
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -69,7 +65,7 @@ curl -X DELETE 'https://XXXX/app-id/{app_id}/rest/message/roaming/group/user/XXX
 
 | HTTP 状态码 | 错误类型     | 错误提示     | 可能原因    | 处理建议   |
 |:---------|:----------|:-----------------------|:--------|:--------------|
-| 400   | service open exception    | this appKey not open message roaming | 消息漫游服务未开通。 | 联系商务开通。 |
+| 400   | service open exception    |  | 消息漫游服务未开通。 | 联系商务开通。 |
 | 400      | param exception         | delete msg list limit can not greater than 50 | 一次删除的消息 ID 数量超过限制（50）。 | 减少一次删除的消息 ID 数量。 |
 
 关于其他错误，你可以参考 [响应状态码](error.html) 了解可能的原因。

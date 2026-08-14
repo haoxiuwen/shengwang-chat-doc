@@ -8,7 +8,7 @@
 
 #### 新增功能
 
-- **SDK 入口统一**：新增 `ChatClient` 统一入口，负责 SDK 初始化、登录登出、连接生命周期、事件分发和 Manager 注册。业务可通过 `ChatClient.init({ appKey, managers })` 初始化 SDK，也可在初始化后通过 `.use()` 按需注册功能模块。
+- **SDK 入口统一**：新增 `ChatClient` 统一入口，负责 SDK 初始化、登录登出、连接生命周期、事件分发和 Manager 注册。业务可通过 `ChatClient.init({ appId, managers })` 初始化 SDK，也可在初始化后通过 `.use()` 按需注册功能模块。
 - **支持模块化 Manager 能力拆分**：消息和会话由 `ChatManager` 管理，好友关系由 `ContactManager` 管理，用户属性由 `UserInfoManager` 管理，群组由 `GroupManager` 管理，聊天室由 `ChatRoomManager` 管理，在线状态由 `PresenceManager` 管理，消息话题由 `ChatThreadManager` 管理，推送由 `PushManager` 管理。
 - **支持类型化消息创建接口**：通过 `createTextMessage`、`createImageMessage`、`createFileMessage`、`createVoiceMessage`、`createVideoMessage`、`createLocationMessage`、`createCmdMessage`、`createCustomMessage` 和 `createCombineMessage` 创建不同类型消息，并通过 `sendMessage` 统一发送。
 - **支持统一的消息已读回执能力**：可通过 `sendMessageReadReceipts` 批量发送单聊或群聊消息已读回执，发送方通过 `onMessageReadReceipts` 接收回执；群聊还支持通过 `getGroupMessageReadUsers` 查询单条群消息已读成员列表，并通过 `getGroupMessageReadReceipts` 批量查询群消息已读数量。
@@ -21,7 +21,7 @@
 
 #### 重要变更
 
-- **初始化方式调整**：SDK 初始化入口由 `new SDK.connection({ appKey })` 调整为 `ChatClient.init({ appKey })`。需要使用的业务模块必须通过 `managers` 参数或 `.use()` 注册，否则对应的 `client.xxxManager` 不会挂载。
+- **初始化方式调整**：SDK 初始化入口由 `new SDK.connection({ appId })` 调整为 `ChatClient.init({ appId })`。需要使用的业务模块必须通过 `managers` 参数或 `.use()` 注册，否则对应的 `client.xxxManager` 不会挂载。
 - **模块职责拆分**：API 不再集中挂载在 `conn` 实例上，而是按业务能力拆分到各 Manager，例如 `client.chatManager`、`client.contactManager`、`client.groupManager` 和 `client.chatRoomManager`。
 - **消息处理调整**：消息创建方式由 `WebIM.message.create({ type, ... })` 调整为按消息类型调用 `client.chatManager.createXxxMessage(...)`；消息发送统一使用 `client.chatManager.sendMessage(message, options?)`。
 - **会话字段统一**：会话定位字段由旧版的 `to`、`chatType` 调整为 `conversationId`、`conversationType`，会话类型取值统一为 `singleChat`、`groupChat` 或 `chatRoom`。
@@ -767,7 +767,7 @@
 
 ## v3.1.0 2020-04-20
 
-- [多人音视频] joinRoom API 通过 appkey 拼接 URL
+- [多人音视频] joinRoom API 通过 appId 拼接 URL
 
 ## v3.0.10 2020-03-28
 

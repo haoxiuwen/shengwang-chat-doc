@@ -32,7 +32,7 @@
 | macOS        | macOS 10.0 或以上  |  Xcode 9.0 或以上，Visual Studio for Mac 2019 或以上   |
 | Windows              | Windows 10 或以上 | Microsoft Visual Studio 2019 或以上            |
 
-- 有效的即时通讯 IM 开发者账号和 App Key，见 [环信控制台](https://console.easemob.com/user/login)。
+- 有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 说明。
 - 如果你的网络环境部署了防火墙，请联系环信技术支持设置白名单。
 
 ## 项目设置
@@ -98,15 +98,15 @@ using AgoraChat.MessageBody;
 在 `InitSDK` 方法中添加以下代码完成 SDK 初始化：
 
 ```csharp
-Options options = Options.InitOptionsWithAppKey("appkey"); //将该参数设置为你的 App Key
+Options options = Options.InitOptionsWithAppId("appId"); //将该参数设置为你的 App ID
 SDKClient.Instance.InitWithOptions(options);
 ```
 
 ### 4. 创建账号
 
-在 [环信控制台](https://console.easemob.com/user/login) 创建用户，获取用户 ID 和用户 token。详见 [创建用户文档](/product/console/operation_user.html#创建用户)。
+在 [声网控制台](https://console.shengwang.cn/overview) 创建用户，获取用户 ID 和用户 Token。详见 [创建用户文档](login.html#用户注册)。
 
-在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [获取 App Token API](/document/server-side/easemob_app_token.html) 和 [获取用户 Token API](/document/server-side/easemob_user_token.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
 ### 5. 登录账号
 

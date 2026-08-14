@@ -8,7 +8,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key 
+100 次/秒/App ID 
 
 ## 请求 URL
 
@@ -85,6 +85,6 @@ curl -X POST https://XXX/XXX/XXX/users/{username}/collections
 
 | HTTP 状态码        | 错误类型 | 错误提示          | 可能原因 | 处理建议 |
 | :----------- | :--- | :------------- | :----------- | :----------- |
-| 400         | illegal_argument  | username XXX is not legal   | 用户 ID 不合法。  | 查看注册用户名[规范](account_register_open.html)。 |
+| 400         | illegal_argument  | username XXX is not legal   | 用户 ID 不合法。  | 查看注册用户名[规范](account_register_authorized_single.html)。 |
 
 关于其他错误，你可以参考 [错误码](error.html) 了解可能的原因。

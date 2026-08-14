@@ -12,18 +12,18 @@
 
 ## 开通服务
 
-如需使用回调异常缓存，请先在控制台开通服务，详见 [环信控制台开通入口](/product/console/basic_webhook.html#回调异常缓存)。
+如需使用回调异常缓存，请先在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包** > **预付费套餐包** 页面开通服务。
 
 开通该服务后，当发送后回调失败且满足异常缓存条件时，系统会按时间片对失败的回调消息进行归档存储，**并按每 10 分钟生成一个 date key，用于标识一个异常回调集合**。你可以先调用 [查询接口](#查询异常缓存数据) 获取可补发的异常回调数据，再根据返回结果调用 [补发接口](#补发异常回调数据) 进行补发，以完成异常场景下的数据补偿处理。
 
 ## 查询异常缓存数据
 
-该接口用于查询当前 App Key 下因回调异常进入存储队列的回调数据集合。系统按每 10 分钟生成一个 date key，用于标识对应时间片内的异常回调集合，你可以基于该 date key 进行查询和补发。
+该接口用于查询当前 App ID 下因回调异常进入存储队列的回调数据集合。系统按每 10 分钟生成一个 date key，用于标识对应时间片内的异常回调集合，你可以基于该 date key 进行查询和补发。
 
 ### 请求 URL
 
 ```http
-GET https://{host}/{org_name}/{app_name}/callbacks/storage/info
+GET https://{host}/app-id/{app_id}/callbacks/storage/info
 ```
 
 关于请求 URL 中各参数的含义，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -31,7 +31,7 @@ GET https://{host}/{org_name}/{app_name}/callbacks/storage/info
 ### 请求示例
 
 ```shell
-curl -X GET 'https://XXXX/XXXX/XXXX/callbacks/storage/info' \
+curl -X GET 'https://XXX/app-id/XXX/callbacks/storage/info' \
 -H 'Authorization: Bearer <YourAppToken>'
 ```
 
@@ -46,8 +46,6 @@ curl -X GET 'https://XXXX/XXXX/XXXX/callbacks/storage/info' \
   "path": "/callbacks",
   "uri": "https://XXXX/XXXX/XXXX/callbacks",
   "timestamp": 1631193031254,
-  "organization": "XXXX",
-  "application": "8dfb1641-XXXX-XXXX-bbe9-d8d45a3be39f",
   "action": "post",
   "data": [
     {
@@ -61,8 +59,7 @@ curl -X GET 'https://XXXX/XXXX/XXXX/callbacks/storage/info' \
       "retry": 1
     }
   ],
-  "duration": 153,
-  "applicationName": "XXXX"
+  "duration": 153
 }
 ```
 
@@ -86,11 +83,8 @@ curl -X GET 'https://XXXX/XXXX/XXXX/callbacks/storage/info' \
 | `path` | String | 请求路径。 |
 | `uri` | String | 请求完整 URI。 |
 | `timestamp` | Long | 即时通讯 IM 服务器接收到该请求时的 Unix 时间戳，单位为毫秒。 |
-| `organization` | String | 你在环信控制台注册的组织唯一标识，对应控制台中的 `org_name`。 |
-| `application` | String | 你在环信控制台注册的 App 唯一标识。 |
 | `action` | String | 请求方法。 |
 | `duration` | Long | 请求耗时，单位为毫秒。 |
-| `applicationName` | String | 你在环信控制台注册的 App 名称。 |
 
 当 HTTP 状态码非 `200` 时，表示请求失败。你可以参考本文档中的 [错误码](#错误码) 排查原因。
 
@@ -101,7 +95,7 @@ curl -X GET 'https://XXXX/XXXX/XXXX/callbacks/storage/info' \
 ### 请求 URL
 
 ```http
-POST https://{host}/{org_name}/{app_name}/callbacks/storage/retry
+POST https://{host}/app-id/{app_id}/callbacks/storage/retry
 ```
 
 关于请求 URL 中各参数的含义，详见 [请求 URL 参数介绍](overview.html#请求-url)。
@@ -109,7 +103,7 @@ POST https://{host}/{org_name}/{app_name}/callbacks/storage/retry
 ### 请求示例
 
 ```shell
-curl -X POST 'https://XXXX/XXXX/XXXX/callbacks/storage/retry' \
+curl -X POST 'https://XXXX/app-id/XXXX/callbacks/storage/retry' \
 -H 'Authorization: Bearer <YourAppToken>' \
 -H 'Content-Type: application/json' \
 -d '{
@@ -156,12 +150,9 @@ curl -X POST 'https://XXXX/XXXX/XXXX/callbacks/storage/retry' \
 | `path` | String | 请求路径。 |
 | `uri` | String | 请求完整 URI。 |
 | `timestamp` | Long | 即时通讯 IM 服务器接收到该请求时的 Unix 时间戳，单位为毫秒。 |
-| `organization` | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 一致。 |
-| `application` | String | 你在环信控制台注册的 App 唯一标识。 |
 | `action` | String | 请求方法。 |
 | `data` | String | 补发结果：`success` 表示请求成功，`failure` 表示请求失败。 |
 | `duration` | Long | 请求耗时，单位为毫秒。 |
-| `applicationName` | String | App 名称。 |
 
 当 HTTP 状态码非 `200` 时，表示补发请求失败。你可以参考 [错误码](#错误码) 了解可能原因。
 

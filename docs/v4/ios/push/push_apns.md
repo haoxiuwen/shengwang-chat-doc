@@ -2,11 +2,11 @@
 
 本页介绍如何在即时通讯 IM 中集成 APNs 并测试推送是否成功集成。
 
-## **创建推送证书**
+## 创建推送证书
 
 按照以下步骤，在苹果开发者平台创建 APNs 推送证书。
 
-### **步骤一 生成 CSR 文件**
+### 步骤一 生成 CSR 文件
 
 1. 生成 Certificate Signing Request(CSR)：
 
@@ -22,9 +22,9 @@
 
 本地生成 CSR 文件 `EMImDemoAPS.certSigningRequest`。
 
-### **步骤二 创建 App ID**
+### 步骤二 创建 App ID
 
-1. 生成 App ID。如果已经有 App ID 可以跳至[步骤三](#步骤三-创建-app-的-aps-证书)。
+1. 生成 App ID。如果已经有 App ID 可以跳至[步骤三](#步骤三-创建-app-的-apns-证书)。
 
 ![image](/images/ios/push/push_ios_5_create_app_id.jpeg)
 
@@ -48,7 +48,7 @@
 
 ![image](/images/ios/push/push_ios_10_register_confirm_appid.jpeg)
 
-### **步骤三 创建 app 的 APNs 证书**
+### 步骤三 创建 app 的 APNs 证书
 
 1. 返回到 App IDs 选择你需要推送的 app。
 
@@ -70,9 +70,9 @@
 
 ![image](/images/ios/push/push_ios_15_download_your_cert.jpeg)
 
-### **步骤四 生成推送证书**
+### 步骤四 生成推送证书
 
-1. 导入证书：双击[步骤三](#步骤三-创建-app-的-aps-证书)下载的文件（**aps_development.cer** 和 **aps.cer**）将其安装到电脑，在 **Keychain Access** 中，可以看到导入的证书。
+1. 导入证书：双击[步骤三](#步骤三-创建-app-的-apns-证书)下载的文件（**aps_development.cer** 和 **aps.cer**）将其安装到电脑，在 **Keychain Access** 中，可以看到导入的证书。
 
 ![image](/images/ios/push/push_ios_16_keychain_access_apple_develop.jpeg)
 
@@ -80,7 +80,7 @@
 
 ![image](/images/ios/push/push_ios_17_keychain_access_export.jpeg)
 
-### **步骤五 生成 Provisioning Profile 文件（PP 文件）**
+### 步骤五 生成 Provisioning Profile 文件（PP 文件）
 
 1. 在 [iOS Developer Center](https://developer.apple.com/cn/)，选择 **Account** > **Certificates, Identifiers & Profiles** > **Profiles**。在 **Provisioning** 页签，点击 **Profiles** 右侧的 **+** 图标。
 
@@ -108,15 +108,23 @@
 
 ![image](/images/ios/push/push_ios_24_generate_pr_download_install.jpeg)
 
-## **上传推送证书**
+## 上传推送证书
 
-在[环信控制台](https://console.easemob.com/user/login)上传 APNs 推送证书。
+在[声网控制台](https://console.shengwang.cn/overview)上传 APNs 推送证书。
 
-1. 登录 [环信控制台](https://console.easemob.com/user/login)，选择你的应用 > **功能配置** > **增值功能** > **即时推送**。
-   
-2. 在 **证书管理** 页面，点击 **添加推送证书**。在 **添加推送证书** 对话框中选择 **苹果**页签，配置 APNs 推送参数。
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
 
-![img](/images/console/push_certificate_apns.png)
+2. 点击左侧导航栏的**全部产品**。
+
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**功能配置**标签页。
+
+5. 在**推送证书**页签下，点击**添加推送证书**。
+
+3. 在弹出的对话框中选择**苹果**页签，配置 APNs 推送参数。
+
+![image](/images/ios/push/push_ios_25_upload_cert.png)
 
 | 参数       | 类型   | 是否必需 | 描述        |
 | :--------- | :----- | :------- | :----------------------- |
@@ -124,21 +132,21 @@
 | 证书名称     | String  | 是 | 消息推送证书名称。详见 APNs 集成文档中 [创建推送证书](/v4/ios/push/push_apns.html#创建推送证书) 的 [步骤四](/v4/ios/push/push_apns.html#步骤四-生成推送证书)  中创建的消息推送证书名称。 |
 | 推送密钥      | String  | 否 | 消息推送证书密钥。填写在 [创建推送证书](/v4/ios/push/push_apns.html#创建推送证书)的 [步骤四](/v4/ios/push/push_apns.html#步骤四-生成推送证书) 中导出消息推送证书文件时设置的证书密钥。该参数仅在使用 p12 证书时需要配置。  |
 | 上传文件     | File  | 是 | 点击 **上传证书** 上传推送证书文件。详见 APNs 集成文档中 [创建推送证书](/v4/ios/push/push_apns.html#创建推送证书)的 [步骤四](/v4/ios/push/push_apns.html#步骤四-生成推送证书) 中获取的消息推送证书文件。  |
-| key id     | String  | 是 | 输入推送证书的 Key ID。该参数仅对 p8 证书有效。  |
-| team id     | String  | 是 | 输入推送证书的 Team ID。该参数仅对 p8 证书有效。  |
+| Key ID     | String  | 是 | 输入推送证书的 Key ID。该参数仅对 p8 证书有效。  |
+| Team ID     | String  | 是 | 输入推送证书的 Team ID。该参数仅对 p8 证书有效。  |
 | 集成环境      | | 是 | 集成环境，包括开发环境和生产环境。 |
 | Bundle ID     | String  | 是 | 绑定 ID。详见 APNs 集成文档中 [创建推送证书](/v4/ios/push/push_apns.html#创建推送证书)的 [步骤二](/v4/ios/push/push_apns.html#步骤二-创建-app-id) 中创建 App ID 时设置的 Bundle ID。<br/> - 上传 VoIP 服务证书时，Bundle ID 末尾需要加 .voip 后缀 `nvyvtp.dabaoiian`，例如，**Bundle ID** 为 **com.example.demo**，上传对应 VoIP 证书时需要填写 **com.example.demo.voip**。|
 | 铃声    | String  | 否 | 接收方收到推送通知时的铃声提醒。该参数仅对离线推送有效：<br/> - 设置的铃声最多为 30 秒。若超过该时间，系统会启用默认铃声 default。<br/> - 铃声文件只支持 aiff、wav 和 caf 格式，例如，铃声文件名为  `test.caf`。<br/> - 如果铃声文件未找到或不填，响铃为系统默认铃声。 |
 
-## **在客户端集成 APNs**
+## 在客户端集成 APNs
 
-### **步骤一 在 app 中开启推送权限**
+### 步骤一 在 app 中开启推送权限
 
 打开 Xcode，选择 **TARGETS** > **Signing & Capabilities** > **Push Notifications** 开启消息推送权限。
 
 ![image](/images/ios/push/push_ios_26_xcode_enable_push_notifi.jpeg)
 
-### **步骤二 将证书名称传递给 SDK**
+### 步骤二 将证书名称传递给 SDK
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -146,7 +154,7 @@
   [application registerForRemoteNotifications];
 
   // 初始化 Options，设置 App ID。
-  EMOptions *options = [EMOptions optionsWithAppId:@"Your app ID"];
+  EMOptions *options = [EMOptions optionsWithAppId:@"Appid"];
 
   // 填写上传证书时设置的名称。
   options.apnsCertName = @"PushCertName";
@@ -158,7 +166,7 @@
   
 ```
 
-### **步骤三 获取 device token 并传递给 SDK**
+### 步骤三 获取 device token 并传递给 SDK
 
 DeviceToken 注册后，iOS 系统会通过以下方式将 DeviceToken 回调给你，你需要把 DeviceToken 传给 SDK。
 
@@ -177,41 +185,41 @@ DeviceToken 注册后，iOS 系统会通过以下方式将 DeviceToken 回调给
   
 ```
 
-## **测试 APNs 推送**
+## 测试 APNs 推送
 
 在即时通讯 IM 中集成并启用 APNs 推送后，可测试推送是否成功集成。
 
-### **前提条件**
+### 前提条件
 
 准备一台使用 iOS 系统的未越狱的设备。
 
 为了确保测试效果可靠，请避免使用模拟器进行测试。
 
-### **测试步骤**
+### 测试步骤
 
 1. 在设备上登录应用，并确认 device token 绑定成功。
    
   可以查看日志或调用 [获取用户详情的 RESTful 接口](/document/server-side/account_detail_obtain_single.html)确认 device token 是否绑定成功。
 
-1. 杀掉应用进程。
+2. 杀掉应用进程。
    
-2. 在[环信控制台](https://console.easemob.com/user/login)发送测试消息。
+3. 在[声网控制台](https://console.shengwang.cn/overview)发送测试消息。
    
-  在左侧导航栏中选择 **运营管理** > **运营操作** > **用户管理**。在 **用户管理** 页面中，在对应用户 ID 的 **操作** 栏中点击 **更多**，然后选择 **发送rest消息**。在弹出的对话框中选择消息类型，输入消息内容，然后点击**发送**。
+ 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。点击左侧导航栏的**全部产品**。在下拉列表中找到**即时通讯 IM** 并点击。 在**即时通讯 IM** 页面，进入**运营管理**标签页。在**用户**页签下，在对应用户 ID 的**操作**栏中点击**更多**，然后选择**发送rest消息**。在弹出的对话框中选择消息类型，输入消息内容，然后点击**发送**。
 
   :::tip
-  在 **证书管理** 页面中证书列表中，在每个证书的**操作**一栏中，点击 **更多** > **测试**，这里是直接调用第三方接口推送，而 **用户管理** 页面中的消息发送测试是先调用即时通讯 IM 的发消息的接口，满足条件后（即用户离线、推送证书有效且绑定了 device token）再调第三方的接口进行推送。
+  在**推送证书**页面中证书列表中，在每个证书的**操作**一栏中，点击 **更多** > **测试**，这里是直接调用第三方接口推送，而**用户**页面中的消息发送测试是先调用即时通讯 IM 的发消息的接口，满足条件后（即用户离线、推送证书有效且绑定了 device token）再调第三方的接口进行推送。
   :::
 
-1. 查看设备是否收到推送通知。
+4. 查看设备是否收到推送通知。
 
-### **故障排除**
+### 故障排除
 
 1. 检查在即时通讯 IM 中是否正确集成或启用了 APNs 推送。
    
-   在左侧导航栏中选择 **运营管理** > **运营操作** > **用户管理**。在 **用户管理** 页面中，在对应用户 ID 的**操作** 栏中选择 **查看IM用户绑定推送证书**。在弹出框中查看是否正确显示了证书名称和 device token。
+   在左侧导航栏中选择**即时通讯 IM** > **运营管理** > **用户**。在**用户**页面中，在对应用户 ID 的**操作**栏中选择**查看IM用户绑定推送证书**。在弹出框中查看是否正确显示了证书名称和 device token。
 
-2. 检查是否在 [环信控制台](https://console.easemob.com/user/login) 上传了正确的 APNs 证书且设置了正确的证书环境。
+2. 检查是否在[声网控制台](https://console.shengwang.cn/overview)上传了正确的 APNs 证书且设置了正确的证书环境。
    
 3. 检查是否在聊天室中推送消息。聊天室不支持离线消息推送。
    

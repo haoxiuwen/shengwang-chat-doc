@@ -13,12 +13,12 @@
 
 使用该 API 前，你需要开通 Presence 功能和单独开通该 API：
 
-1. 开通 Presence 功能：在 [环信控制台](https://console.easemob.com/user/login) 开通。详见 [环信控制台文档](/product/console/basic_user.html#用户离在线状态实时同步)。
+1. 对于专业版 IM，使用 Presence 前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包 > 即时通讯 IM** 页面开通该功能。对于旗舰版 IM，Presence 功能默认开启。
 2. 联系商务开通该 API 的使用。
 
 ## 调用频率上限
 
-100 次/秒/App Key 
+100 次/秒/App ID 
 
 ## 请求 URL
 
@@ -71,7 +71,7 @@ curl -X GET 'https://XXX/XXX/XXX/presence/online/XXX/type/XXX'   \
 | 400         | illegal_argument       | Id cannot be null.       | 群组 ID 为空。 | 保证群组 ID 为非空值。 |
 | 400         | illegal_argument       | Type cannot be null.     | 查询类型为空。    | 保证查询类型为非空值。 |
 | 400         | illegal_argument       | Type must be 0 or 1.     | 查询类型（`query_type`）不为 0 或 1。  | 若查询单个群组的在线成员数量，需保证查询类型为 `1`。若传 `0` 是获取超级社区中社区 server 在线成员数量，与群组不相关。 |
-| 400         | service open exception | this appkey not open rest group online service | 没有开通统计群组在线人数服务。 | 联系商务开通统计群组在线人数服务。 |
+| 400         | service open exception |  | 没有开通统计群组在线人数服务。 | 联系商务开通统计群组在线人数服务。 |
 | 401         | unauthorized           | Unable to authenticate (OAuth)    | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。 |
 
 关于其他错误，你可以参考 [响应状态码](error.html) 了解可能的原因。

@@ -4,16 +4,11 @@
 
 会话置顶用于将重要的单聊、群聊或聊天室会话固定在会话列表靠前位置，方便用户快速找到高频或重点会话。置顶状态会保存到服务端，并同步到当前用户的其他设备和本地会话数据。
 
-## 功能开通
-
-会话置顶属于服务端会话列表功能的一部分。使用前，需要在 [环信控制台](/product/console/basic_conversation_group_chatroom.html#服务端会话列表) 开通服务端会话列表功能。
-
 ## 前提条件
 
 开始前，请确保满足以下条件：
 
 - 已完成 SDK 初始化并成功登录，详见[快速开始](quickstart.html)。
-- 已开通[服务端会话列表功能](/product/console/basic_conversation_group_chatroom.html#服务端会话列表)。
 - 已了解即时通讯 IM API 的使用限制，详见[使用限制](/product/limitation.html)。
 
 ## 设置或取消置顶会话

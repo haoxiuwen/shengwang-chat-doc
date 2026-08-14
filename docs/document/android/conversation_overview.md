@@ -12,7 +12,7 @@ SDK 可在 [登录成功后自动同步服务端会话数据并写入本地](ini
 
 - 已完成 SDK 初始化并成功登录，详见[快速开始](quickstart.html)。
 - 已了解即时通讯 IM API 的使用限制，详见[使用限制](/product/limitation.html)。
-- 如需使用服务端会话列表、会话置顶或会话标记等增值功能，已在环信控制台开通相应功能。
+- 如需使用服务端会话列表、会话置顶或会话标记等功能，已在声网控制台开通服务端会话列表功能。
 
 ## 会话模型
 
@@ -216,7 +216,7 @@ EMClient.getInstance()
 | [`conversationId`](#会话对象) / [`getType`](#会话对象) | `EMConversation` | 获取会话 ID 和会话类型。 |
 | [`getUnreadMsgCount`](#会话对象) / [`getLastMessage`](#会话对象) | `EMConversation` | 获取会话未读数和最近一条消息。 |
 | [`getConversation`](#通过接口创建本地会话) | `EMChatManager` | 查找本地会话，并可按参数在会话不存在时创建。 |
-| [`setAppKey`](#通过服务端同步更新会话列表) | `EMOptions` | 设置应用的 App Key。 |
+| [`setAppId`](#通过服务端同步更新会话列表) | `EMOptions` | 设置应用的 App ID。 |
 | [`setDataSyncType`](#通过服务端同步更新会话列表) | `EMOptions` | 设置登录成功后自动同步的数据类型。 |
 | [`init`](#通过服务端同步更新会话列表) | `EMClient` | 使用指定配置初始化 SDK。 |
 | [`getAllConversationsBySort`](#会话列表与空会话) | `EMChatManager` | 获取置顶优先排序的本地会话列表。 |

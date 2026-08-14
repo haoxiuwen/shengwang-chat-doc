@@ -10,9 +10,13 @@
 - 撤回消息会触发发送后回调，请参见 [回调事件文档](https://doc.easemob.com/document/server-side/callback_message_recall.html)。
 - 如果发送消息或撤回消息时单聊/群聊/聊天室的接收方离线，在上线时可感知到消息撤回，原因是服务器有事件通知给客户端 SDK。
 
+## 功能开通
+
+使用该功能前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **即时通讯 IM > 功能配置 > 消息与会话** 页面开通。
+
 #### 设置撤回时长
 
-默认情况下，发送方可撤回发出 2 分钟内的消息。你可以在 [环信控制台](https://console.easemob.com/user/login)的**功能配置** > **基础功能** > **消息** 页面设置消息撤回时长，该时长不超过 7 天。
+默认情况下，发送方可撤回发出 2 分钟内的消息。你可以联系声网商务设置消息撤回时长，该时长不超过 7 天。
 
 #### 强制撤回
 
@@ -20,7 +24,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -72,8 +76,6 @@ curl -i -X POST "https://XXXX/app-id/{app_id}/messages/msg_recall"   \
   "path": "/messages/msg_recall",
   "uri": "https://XXXX/XXXX/XXXX/messages/msg_recall",
   "timestamp": 1657529588473,
-  "organization": "XXXX",
-  "application": "09ebbf8b-XXXX-XXXX-XXXX-d47c3b38e434",
   "action": "post",
   "data": {
     "recalled": "yes",
@@ -82,8 +84,7 @@ curl -i -X POST "https://XXXX/app-id/{app_id}/messages/msg_recall"   \
     "to": "XXXX",
     "msg_id": "1028442084794698104"
   },
-  "duration": 8,
-  "applicationName": "XXXX"
+  "duration": 8
 }
 ```
 
@@ -118,11 +119,8 @@ curl -i -X POST "https://XXXX/app-id/{app_id}/messages/msg_recall"   \
 | `path`               | String | 请求路径，属于请求 URL 的一部分，开发者无需关注。       |
 | `uri`             | String | 请求 URL。                                                                     |
 | `timestamp`       | Long   | Unix 时间戳，单位为毫秒。                                                      |
-| `organization`    | String | 即时通讯 IM 为每个公司（组织）分配的唯一标识，与请求参数 `org_name` 相同。 |
-| `application`     | String | 应用在系统内的唯一标识。该标识由系统生成，开发者无需关心。                     |
 | `action`          | String | 请求方法。                                                                     |
 | `duration`        | Int    | 从发送请求到响应的时长，单位为毫秒。                                           |
-| `applicationName` | String | 你在环信控制台创建应用时填入的应用名称，与请求参数 `app_name` 相同。 |
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败。你可以参考 [响应状态码](error.html) 了解可能的原因。
 

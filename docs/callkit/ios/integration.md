@@ -16,11 +16,11 @@ CallKit 是一套基于即时通讯 IM（基于 IM 4.16.0 及以上）和声网 
 
 ## 前提条件  
 
-在 [环信控制台](https://console.easemob.com/user/login) 进行如下操作：
-1. [注册环信账号](/product/console/account_register.html#注册账号)。
-2. [创建应用](/product/console/app_create.html)，[获取应用的 App Key](/product/console/app_manage.html#获取应用凭证)，格式为 `orgname#appname`。
-3. [创建用户](/product/console/operation_user.html#创建用户)，获取用户 ID 和 [用户 Token](/product/console/operation_user.html#查看用户-token)。
-4. [创建群组](/product/console/operation_group.html#创建群组)，获取群组 ID，将用户加入群组。
+在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
+1. [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
+2. [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)。
+3. [创建用户](/document/ios/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/ios/login.html#获取用户-token)。
+4. 创建群组，获取群组 ID。将用户加入群组。
 5. [开通音视频服务](product_activation.html)。
 
 ## 集成步骤
@@ -90,7 +90,7 @@ pod 'EaseCallUIKit', :path => '../../easemob-callkit-iOS/'
 CallKit 初始化包括如下步骤：
 
 1. 初始化环信即时通讯 IM SDK。CallKit 基于即时通讯 IM 作为信令通道，因此需先初始化 IM SDK。
-   - 填入你的应用的 App Key。
+   - 填入你的应用的 App ID。
    - 设置即时通讯 IM SDK 的 `EMOptions`/`ChatSDKOptions` 类中的一些选项。
    - 如果用户要使用系统的 LiveCommunicationKit，建议设置即时通讯 IM 为自动登录 `isAutoLogin` 为 `true`。
 2. 初始化 CallKit。
@@ -105,7 +105,7 @@ CallKit 初始化包括如下步骤：
 ```swift
     //已经集成了即时通讯 IM SDK 即已经 import HyphenateChat
     private func setupCallKit() {
-        let options = EMOptions(appkey: appKey)
+        let options = EMOptions(appid: appID)
         #if DEBUG
         options.apnsCertName = "Your_APNS_Developer"
         options.pushKitCertName = "YourVoipDev"
@@ -127,7 +127,7 @@ CallKit 初始化包括如下步骤：
 ```swift
     //没有集成即时通讯 IM SDK，只想使用 CallKit
     private func setupCallKit() {
-        let options = ChatSDKOptions(appkey: appKey)
+        let options = ChatSDKOptions(appid: appID)
         #if DEBUG
         options.apnsCertName = "Your_APNS_Developer"
         options.pushKitCertName = "YourVoipDev"
@@ -246,7 +246,7 @@ extension MainViewController: CallServiceListener {
 
 调用即时通讯 IM SDK 的 `login` 方法传入用户 ID 和 Token 登录 IM。
 
-在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [获取 App Token API](/document/server-side/easemob_app_token.html) 和 [获取用户 Token API](/document/server-side/easemob_user_token.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成 [Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
 ```swift
             ChatClient.shared().login(withUsername: userId, token: token) { [weak self] userId,error  in
@@ -291,7 +291,7 @@ extension MainViewController: CallServiceListener {
 
 #### 发起群组通话
 
-- **创建群组**：要发起群组通话，你需要首先创建群组，在群组中添加用户，详见 [环信控制台文档](/product/console/operation_group.html#创建群组)。
+- **创建群组**：要发起群组通话，你需要首先创建群组，在群组中添加用户。
 - **发起群组通话**：指定群组 ID 后，CallKit 会自动拉起群成员选择界面，界面显示群组中的所有成员（群主、管理员、普通成员），用户可以选择要邀请的成员，选中人数会实时显示。为了保证通话质量和性能，CallKit 限制群组通话最多支持 **16 人** 同时参与（包括发起者）。若选择的成员数量超过 16 人时，系统会自动提示 “人数超出最大限制16人” 并阻止发起通话。
 - **通话中邀请他人**：群组通话中，当前用户可以点击通话界面右上角的邀请按钮向其他用户发起邀请。
 

@@ -10,11 +10,12 @@
 
 ## 功能开通
 
-要使用 Reaction 功能，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通。详见 [环信控制台文档](/product/console/basic_message.html#消息表情回复)。
+- 对于专业版 IM，使用 Reaction 前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包 > 即时通讯 IM** 页面开通该功能。
+- 对于旗舰版 IM，Reaction 功能默认开启。
 
 ## 调用频率上限
 
-100 次/秒/App Key
+100 次/秒/App ID
 
 ## 请求 URL
 
@@ -66,6 +67,6 @@ curl -g -X DELETE 'https://XXXX/app-id/{app_id}/reaction/user/wz?msgId=997625372
 | HTTP 状态码        | 错误类型 | 错误提示          | 可能原因                     | 处理建议        |
 | :----------- | :--- | :------------- |:-------------------------|:------------|
 | 400     | Bad Request   | the user operation is illegal!        | 传入的用户 ID 没有操作过该 Reaction。 | 传入正确的用户 ID。 |
-| 400      | Bad Request  | this appKey is not open reaction service!   | Reaction 服务未开通。 | 请在环信控制台开通 Reaction 服务。 |
+| 400      | Bad Request  |   | Reaction 服务未开通。 | 请在环信控制台开通 Reaction 服务。 |
 
 关于其他错误，你可以参考 [响应状态码](error.html) 了解可能的原因。

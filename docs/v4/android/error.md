@@ -16,7 +16,7 @@ Android 中错误码的类为 [EMError](https://sdkdocs.easemob.com/apidoc/andro
 | 3      |          DATABASE_ERROR         | 数据库操作失败：打开本地数据库失败。 | 需要根据调用的 API 结合日志分析，如果使用 `EMConversation#updateMessage` 方法更新一条本地不存在的消息，可能返回该错误；在数据库未打开时，调用其他本地数据库操作，也可能返回该错误。| 
 | 4      |      EXCEED_SERVICE_LIMIT       | 超过服务限制：超过当前服务版本的数量限制，例如，创建的用户 ID 数量超过购买服务的限制时提示该错误；设置和获取用户属性的接口，包括 [设置当前用户的属性](userprofile.html#设置当前用户的所有属性)、[获取用户的所有属性](userprofile.html#从服务端获取用户的所有属性) 和 [获取用户的指定属性](userprofile.html#从服务端获取用户的指定属性)，超过调用频率限制时，会上报该错误。 | 检查调用的 API，若传入 `limit` 参数，可将该参数控制在限制内，如果是限流导致，可以在延后一段时间重新调用。 |
 | 8      |       APP_ACTIVE_NUMBER_REACH_LIMITATION    | 应用程序的日活跃用户数量（DAU）或月活跃用户数量（MAU）达到上限。  | 需在[环信控制台](https://console.easemob.com/user/login)对 IM 服务进行升级。 |
-| 100    |         INVALID_APP_KEY         | App Key 不合法：用户的 App Key 格式不正确。可在[环信控制台](https://console.easemob.com/user/login)的 **应用概览** 页面查看 App Key。  | 使用正确的 App Key 进行初始化。 |
+| 100    |         INVALID_APP_ID         | App ID 不合法：用户的 App ID 格式不正确。| 使用正确的 App ID 进行初始化。 |
 | 101    |        INVALID_USER_NAME        | 用户 ID 不正确：一般情况下，用户 ID 为空时提示该错误，例如，邀请好友时 username 参数为空字符。 | 检查报错的 API 中传入的用户 ID 参数是否为空。|
 | 102    |        INVALID_PASSWORD         | 用户密码不正确：登录时提供的密码为空或不正确。 | 检查调用的 API 中传入的密码参数是否正确。 |
 | 103    |           INVALID_URL           | URL 不正确。                 | 检查调用 API 时传入的参数是否正确。   |
@@ -33,7 +33,7 @@ Android 中错误码的类为 [EMError](https://sdkdocs.easemob.com/apidoc/andro
 | 205    |      USER_ILLEGAL_ARGUMENT      | 用户参数不正确：例如，创建用户或更新用户属性时，用户 ID 为空或无效。 | 检查调用的 API 传入的参数是否正确。|
 | 206    |    USER_LOGIN_ANOTHER_DEVICE    | 用户在其他设备登录：如果未开启多设备登录，则在其他设备登录会将当前登录设备踢下线，用户会在当前设备收到该错误。 | 设备被踢时，会触发 `EMConnectionListener#onLogout` 事件。收到该事件时，需重新登录。 |
 | 207    |          USER_REMOVED           | 用户已被注销：当前的登录用户 ID 从[环信控制台](https://console.easemob.com/user/login)删除会收到该错误。 | 账号被注销时，会触发 `EMConnectionListener#onLogout`。收到该事件时，该账号已不可用，需要回到登录页面。|
-| 208    |         USER_REG_FAILED         | 用户注册失败：例如，注册用户之前未开启[开放注册功能](/document/server-side/account_register_open.html)等原因。 | 不推荐使用 SDK 注册账号，建议开发者在业务服务器注册账号。 |
+| 208    |         USER_REG_FAILED         | 用户注册失败：例如，注册用户之前未开启[开放注册功能](/document/server-side/account_register_authorized_single.html)等原因。 | 不推荐使用 SDK 注册账号，建议开发者在业务服务器注册账号。 |
 | 209    |    USER_UPDATEINFO_FAILED       | 更新推送配置错误：例如，用户更新推送昵称或设置免打扰配置时失败。  | 检查报错的 API，延迟一段时间后，重新调用。 |
 | 210    |     USER_PERMISSION_DENIED      | 用户无权限：例如，如果用户被添加到黑名单后，发送消息时会提示该错误。其他报错情况包括用户修改其他用户发出的消息、修改其他用户设置的群成员属性以及普通群成员试图解散消息话题（仅消息话题所在群组的群主和群管理员有权解散消息话题）。| 检查用户是否有操作权限。 |
 | 211    |   USER_BINDDEVICETOKEN_FAILED   | 绑定设备 token 失败。  | 检查调用绑定设备推送 token 的接口中传入的 token 是否为空。 |

@@ -52,7 +52,7 @@ options.dnsURL = @"xxxx";//设置服务器端配置的 URL 地址
 
 | API 名称 | 所属模块/类型 | 说明 |
 | :--- | :--- | :--- |
-| [`optionsWithAppkey`](#静态配置-ip-地址-域名) | `EMOptions` | 创建 SDK 配置对象。 |
+| [`optionswithAppId`](#静态配置-ip-地址-域名) | `EMOptions` | 创建 SDK 配置对象。 |
 | [`enableDnsConfig`](#静态配置-ip-地址-域名) | `EMOptions (PrivateDeploy)` | 控制是否使用 DNS 配置；设为 `NO` 时使用静态服务器地址。 |
 | [`chatServer`](#方式一-tcp-连接) | `EMOptions (PrivateDeploy)` | 设置 TCP Chat 服务器地址。 |
 | [`chatPort`](#方式一-tcp-连接) | `EMOptions (PrivateDeploy)` | 设置 TCP Chat 服务器端口。 |

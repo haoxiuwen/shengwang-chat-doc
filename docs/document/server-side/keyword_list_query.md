@@ -7,7 +7,7 @@
 
 ## 调用频率上限
 
-100 次/秒/App Key 
+100 次/秒/App ID 
 
 ## 请求 URL
 
@@ -92,7 +92,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/moderation/text/list/search' \
             "id": "1r14aXXXX2vv3ob5wctsjB970y6",
             "name": "14",
             "moderationId": "159XXXXcL0ylUvcBfVAZ0IRQNwW",
-            "appkey": "XXXX#XXXX",
             "category": "DEFAULT",
             "scope": "ALL",
             "tagId": null,
@@ -141,7 +140,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/moderation/text/list/search' \
             "id": "1r1XXXX8f5zh3Tu9PMKIyu7AwED",
             "name": "8",
             "moderationId": "159XXXXL0ylUvcBfVAZ0IRQNwW",
-            "appkey": "XXXX#XXXX",
             "category": "DEFAULT",
             "scope": "ALL",
             "tagId": null,
@@ -157,7 +155,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/moderation/text/list/search' \
             "id": "1r1XXXXUhZAQwknj7mJWUTlyFYP",
             "name": "9",
             "moderationId": "159XXXXcL0ylUvcBfVAZ0IRQNwW",
-            "appkey": "XXXX#XXXX",
             "category": "DEFAULT",
             "scope": "ALL",
             "tagId": null,
@@ -173,7 +170,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/moderation/text/list/search' \
             "id": "1r14XXXXDxBnH3oMuSzhroY1shB",
             "name": "12",
             "moderationId": "159XXXXcL0ylUvcBfVAZ0IRQNwW",
-            "appkey": "XXXX#XXXX",
             "category": "DEFAULT",
             "scope": "ALL",
             "tagId": null,
@@ -189,7 +185,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/moderation/text/list/search' \
             "id": "1r14XXXXeuqtBfaHcvJaZuandVR",
             "name": "13",
             "moderationId": "159XXXXcL0ylUvcBfVAZ0IRQNwW",
-            "appkey": "XXXX#XXXX",
             "category": "DEFAULT",
             "scope": "ALL",
             "tagId": null,
@@ -205,7 +200,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/moderation/text/list/search' \
             "id": "1xXXXXmhFTjU2LvOooO1IEGpeut",
             "name": "111111",
             "moderationId": "159XXXXcL0ylUvcBfVAZ0IRQNwW",
-            "appkey": "XXXX#XXXX",
             "category": "DEFAULT",
             "scope": "ALL",
             "tagId": null,
@@ -239,7 +233,6 @@ curl -X POST 'https://XXXX/app-id/{app_id}/moderation/text/list/search' \
 | - `id` | String | 关键词名单 ID。 |
 | - `name` | String  | 关键词名单的名称。 |
 | - `moderationId` | String | 审核 ID。开发者可忽略该参数。 |
-| - `appkey` | String | 应用的 App Key。 |
 | - `category` | String | 值为 `DEFAULT`，表示关键词名单。 |
 | - `scope` | String | 关键词名单的生效范围。  |
 | - `tagId` | String | 标签 ID。 |

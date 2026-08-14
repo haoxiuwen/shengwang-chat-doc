@@ -182,6 +182,7 @@ const documentV5Sidebar = [
       { text: '实现群 @ 消息', link: 'group_@.html', only: ['android', 'ios', 'web'] },
       { text: '实现消息引用', link: 'message_quote.html', only: ['android', 'ios', 'web'] },
       { text: '实现输入指示器', link: 'typing_indication.html', only: ['android', 'ios', 'web', 'react-native', 'flutter', 'unity', 'windows'] },
+      { text: '配置服务器域名', link: 'serverconfig.html', only: ['web'] },
       { text: 'uni-app 构建 App 与小程序', link: 'uniappnativeapp.html', only: ['web'] },
       { text: '鸿蒙端消息扩展升级', link: 'message_extension_optimize.html', only: ['harmonyos'] },
       { text: '其他问题', link: 'faq.html', only: ['harmonyos'] },
@@ -198,11 +199,7 @@ const documentV5Sidebar = [
         text: '集成介绍',
         collapsible: true,
         children: [
-          { text: '微信小程序', link: 'wechat.html' },
-          { text: 'QQ 小程序', link: 'qq.html' },
-          { text: '百度小程序', link: 'baidu.html' },
-          { text: '抖音小程序', link: 'bytedance.html' },
-          { text: '支付宝小程序', link: 'alipay.html' },
+          { text: '集成小程序 SDK', link: 'integration.html' },
           { text: 'Uniapp 全平台', link: 'uniapp.html' },
         ],
         only: ['applet']
@@ -340,17 +337,10 @@ const documentV5Sidebar = [
   },
   { text: '合规指南', link: 'sdk_compliance.html', only: ['applet']},
   { text: '服务端 API 概述', link: 'overview.html', only: ['server-side'] },
+  { text: '开通服务', link: 'enable_im.html', only: ['server-side'] },
   { text: 'API 调用频率限制', link: 'limitationapi.html', only: ['server-side'] },
   { type: "separator", only: ['server-side']} as any,
-  { 
-    text: 'Token 鉴权',
-    collapsible: true,
-    children: [
-      { text: 'App Token 鉴权', link: 'easemob_app_token.html' },
-      { text: 'User Token 鉴权', link: 'easemob_user_token.html' },
-    ],
-    only: ['server-side']
-  },
+  { text: '使用 Token 鉴权', link: 'token_authentication.html', only: ['server-side'] },
   { 
     text: '消息管理', 
     collapsible: true,
@@ -702,8 +692,7 @@ const documentV5Sidebar = [
           { text: '注册用户', 
             collapsible: true,
             children: [
-              { text: '开放注册单用户',  link: 'account_register_open.html' },
-              { text: '授权注册单用户',  link: 'account_register_authorized_single.html' },
+              { text: '注册单个用户',  link: 'account_register_authorized_single.html' },
               { text: '批量授权注册用户',  link: 'account_register_authorized_batch.html' }
             ]
           },  

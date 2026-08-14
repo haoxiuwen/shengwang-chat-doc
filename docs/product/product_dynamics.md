@@ -75,25 +75,6 @@
 
 调用发送消息接口时，只需在发消息时在请求体中传入 `env` 参数。单聊、群聊和聊天室的接口均支持该字段，使用方式完全一致，详见 [发送单聊消息时设置回调路由](/document/server-side/message_single.html#发消息时设置回调路由)。
 
-#### 服务端支持查询 RTC 当月用量 API
-
-| 动态名称   | 动态描述 | 发布时间       | 相关文档          |
-| :----- | :------- | :---------------- | :---------------- |
-| 新增查询 RTC 当月用量的 RESTful API    | 该 API 支持查询指定 App Key 在当前自然月内的实时音视频服务（RTC）用量汇总数据，帮助开发者了解当月资源消耗情况及剩余可用量。  | 2026-6-2       | [查询 RTC 当月用量 API](/document/server-side/rtc_usage_query.html)          |
-
-#### 控制台应用上线支持 App Key 保持不变
-
-环信控制台现为测试版应用提供两种正式上线路径，核心区别在于是否变更 App Key 及是否迁移业务数据。具体说明如下：
-
-| 上线方式    | 核心特点     | 适用建议        |
-| :------- | :------- | :------------ |
-| **创建新的正式版应用** | **新 App Key**，功能配置自动同步，数据独立隔离。      | 适用于希望生产环境保持“干净”，或需与测试环境严格物理隔离的场景。 |
-| **原测试版直接升级为正式版**   | **原 App Key 不变**，完整继承全部配置与存量业务数据。 | 适用于测试期业务数据已具备延续性，希望上线后用户与数据无缝衔接的场景。 |
-
-**注意**：两种方式均需在正式上线前确认套餐计费、推送证书、回调地址及 IP 白名单等生产环境配置。
-
-应用创建及上线详情，详见，详见 [应用创建与上线流程](/product/console/app_create_to_launch.html)、[创建应用](/product/console/app_create.html)、以及 [应用上线](/product/console/app_launch.html) 文档。
-
 ## 2026-05
 
 #### IM Server SDK 2.0 发版
@@ -413,7 +394,7 @@ IM Server SDK 2.0 的 v1.0.15 发版。
 
 1. 注册用户时用户 ID 建议统一使用小写字母
 
-为了更好地实现服务端与 SDK 的兼容，调用 [RESTful API](/document/server-side/account_register_open.html)和客户端 API 以及 [在环信控制台创建用户](/product/console/operation_user.html#创建用户)时，建议统一使用小写字母。目前用户 ID 支持以下字符集：
+为了更好地实现服务端与 SDK 的兼容，调用 [RESTful API](/document/server-side/account_register_authorized_single.html)和客户端 API 以及 [在环信控制台创建用户](/product/console/operation_user.html#创建用户)时，建议统一使用小写字母。目前用户 ID 支持以下字符集：
 
 - 26 个小写英文字母 a-z；
 - 10 个数字 0-9；
@@ -486,7 +467,7 @@ IM Server SDK 2.0 的 v1.0.15 发版。
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
-| SDK 4.5.0 开发版发布 | **新增特性**：<br/> - 客户端可[置顶消息](/document/android/message_pin.html)，方便会话中的所有用户快速查看重要消息。<br/> - 客户端的消息编辑回调中可返回[通过 RESTful API 编辑的自定义消息](/document/server-side/message_modify.html)。<br/> - 客户端支持[获取聊天室漫游消息](/document/android/message_retrieve.html#从服务器获取指定会话的消息)。若使用该功能，你需要联系商务开通。<br/> - Android 端 SDK 集成支持[动态加载 .so 库文件](/document/android/quickstart.html#方法三-动态加载-so-库文件)，减少应用安装包的大小。<br/> - iOS 端可[将所有会话的未读消息设为已读](/document/ios/conversation_unread.html#将所有会话的未读消息数清零)，将所有会话的未读消息数清零。<br/>**优化**：<br/> - 优化 token 登录时的错误提示信息，使错误提示更准确。<br/> - 移动端优化[单条转发](/document/android/message_forward.html)功能，附件消息无需重新上传附件即可转发。 | 2024-04-03 | <br/> - [Android 4.5.0 更新日志](/document/android/releasenote.html#v4-5-0-dev-2024-04-03-开发版)<br/> - [iOS 4.5.0 更新日志](/document/ios/releasenote.html#v4-5-0-dev-2024-04-03-开发版)<br/> - [Web 4.6.0 更新日志](/document/web/releasenote.html#v4-6-0-dev-2024-04-02-开发版)<br/> - [小程序 4.6.0 更新日志](/document/applet/releasenote.html#v4-6-0-dev-2024-04-02-开发版)<br/> - [Flutter 4.5.0 更新日志](/document/flutter/releasenote.html#v4-5-0-2024-5-7)。<br/> - [React Native 1.4.0 更新日志](/document/react-native/releasenote.html#v1-4-0-2024-5-7)<br/> - [Unity 1.3.0 更新日志](/document/unity/releasenote.html#v1-3-0-dev-2024-5-7-开发版)<br/> - [Windows 1.3.0 更新日志](/document/windows/releasenote.html#v1-3-0-dev-2024-5-7-开发版)|
+| SDK 4.5.0 开发版发布 | **新增特性**：<br/> - 客户端可[置顶消息](/document/android/message_pin.html)，方便会话中的所有用户快速查看重要消息。<br/> - 客户端的消息编辑回调中可返回[通过 RESTful API 编辑的自定义消息](/document/server-side/message_modify.html)。<br/> - 客户端支持[获取聊天室漫游消息](/document/android/message_retrieve.html#从服务器获取指定会话的消息)。<br/> - Android 端 SDK 集成支持[动态加载 .so 库文件](/document/android/quickstart.html#方法三-动态加载-so-库文件)，减少应用安装包的大小。<br/> - iOS 端可[将所有会话的未读消息设为已读](/document/ios/conversation_unread.html#将所有会话的未读消息数清零)，将所有会话的未读消息数清零。<br/>**优化**：<br/> - 优化 token 登录时的错误提示信息，使错误提示更准确。<br/> - 移动端优化[单条转发](/document/android/message_forward.html)功能，附件消息无需重新上传附件即可转发。 | 2024-04-03 | <br/> - [Android 4.5.0 更新日志](/document/android/releasenote.html#v4-5-0-dev-2024-04-03-开发版)<br/> - [iOS 4.5.0 更新日志](/document/ios/releasenote.html#v4-5-0-dev-2024-04-03-开发版)<br/> - [Web 4.6.0 更新日志](/document/web/releasenote.html#v4-6-0-dev-2024-04-02-开发版)<br/> - [小程序 4.6.0 更新日志](/document/applet/releasenote.html#v4-6-0-dev-2024-04-02-开发版)<br/> - [Flutter 4.5.0 更新日志](/document/flutter/releasenote.html#v4-5-0-2024-5-7)。<br/> - [React Native 1.4.0 更新日志](/document/react-native/releasenote.html#v1-4-0-2024-5-7)<br/> - [Unity 1.3.0 更新日志](/document/unity/releasenote.html#v1-3-0-dev-2024-5-7-开发版)<br/> - [Windows 1.3.0 更新日志](/document/windows/releasenote.html#v1-3-0-dev-2024-5-7-开发版)|
 | REST API |**新增 API**： <br/> 1. [分页获取好友列表](/document/server-side/user_friend_list_paged.html)；<br/> 2. [单向清空漫游消息](/document/server-side/message_delete_roam_single_msgid.html)：[根据时间单向清空单聊会话的漫游消息](/document/server-side/message_delete_roam_single_time.html)；[根据时间单向清空群组或聊天室会话的漫游消息](/document/server-side/message_delete_roam_group_room_time.html)；[清空用户的所有漫游消息](/document/server-side/message_delete_roam_user.html)；<br/> 3. [修改文本或自定义消息](/document/server-side/message_modify.html)；<br/> 4. [转让聊天室](/document/server-side/chatroom_owner_transfer.html)；<br/> 5. [强制指定账号从单设备下线](/document/server-side/account_offline_device_single.html)。| 2024-04 | 关于接口的调用频率限制，详见 [API 调用频率限制](/document/server-side/limitationapi.html)。 |
 
 ## 2024-01

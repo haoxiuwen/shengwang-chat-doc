@@ -4,25 +4,45 @@
 
 ## 用户注册
 
-你可以调用 REST API 接口创建用户，也可以在 [环信控制台](https://console.easemob.com/user/login) 创建用户。
+### 创建用户
 
-1. 调用 REST 接口创建用户：
+即时通讯 IM 提供以下两种方式创建用户：
 
-- **授权注册**：通过 REST API 注册用户账号，注册后保存到你的服务器或返给客户端。要使用授权注册，你需要在[环信控制台](https://console.easemob.com/user/login)的**功能配置 > 基础功能** > **用户** 页面，将 **用户注册模式** 设置为 **授权注册**。相关的 REST API 介绍，详见[授权注册单个用户](/document/server-side/account_register_authorized_single.html)和[批量授权注册用户](/document/server-side/account_register_authorized_batch.html)的接口介绍。
+- 调用 [RESTful API](/docs/sdk/server-side/account_register_authorized_single.html) 注册用户账号，注册后保存到你的服务器或返给客户端。
 
-- **开放注册**：一般在体验 Demo 和测试环境时使用，正式环境中不推荐使用该方式注册环信账号。要使用开放注册，需要在[环信控制台](https://console.easemob.com/user/login)的 **功能配置 > 基础功能** > **用户** 页面，将 **用户注册模式** 设置为 **开放注册**。只有打开该开关，才能使用客户端或 [REST API](/document/server-side/account_register_open.html)开放注册用户。
+- 在[声网控制台](https://console.shengwang.cn/overview)按照如下步骤创建用户：
 
-2. 通过 [环信控制台](https://console.easemob.com/user/login) 创建用户：
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
 
-可以在 [环信控制台](https://console.easemob.com/user/login) 创建正式环境下和测试环境下的用户，详见 [创建用户相关介绍](/product/console/operation_user.html#创建用户)。
+2. 点击左侧导航栏的**全部产品**。
+
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**运营管理**标签页。
+
+5. 在**用户** 页签下，点击**创建IM用户**。
+
+6. 在弹出的对话框中，配置用户相关参数，点击**确定**。
+
+![img](/images/android/user_create.png)
+
+### 获取用户 token
+
+创建用户后，在用户列表点击对应的用户的**操作**一栏中的**更多**，选择**查看Token**。
+
+在弹出的对话框中，可以查看用户 Token，也可以点击**重新生成**，生成用户 token。
+
+![img](/images/android/user_token.png)
+
+在生产环境中，为了安全考虑，你需要部署 App Server 生成 Token，详见 [Token 鉴权文档](/docs/sdk/server-side/token_authentication.html#搭建-app-server-生成-token)。
 
 ## 主动登录
 
-1. **用户 ID + token** 是更加安全的登录方式。token 可以通过调用 REST API 获取。 详见 [环信用户 token 的获取](/document/server-side/easemob_user_token.html)。
+1. **用户 ID + token** 是更加安全的登录方式。token 可以通过调用 REST API 获取。 详见 [Token 鉴权](/document/server-side/token_authentication.html)。
 
 测试环境下，你在[环信控制台](https://console.easemob.com/user/login)创建用户后，IM 服务器会自动为这些用户分配用户 Token，详见[查看用户 Token](/product/console/operation_user.html#查看用户-token)。
 
-在生产环境中，为了安全考虑，你需要在你的应用服务器集成[获取 App Token API](/document/server-side/easemob_app_token.html) 和[获取用户 Token API](/document/server-side/easemob_user_token.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
+在生产环境中，为了安全考虑，你需要在你的应用服务器集成[Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
 
 使用 token 登录时需要处理 token 过期的问题，比如在每次登录时更新 token 等机制。

@@ -4,16 +4,11 @@
 
 会话置顶用于将重要的单聊、群聊或聊天室会话固定在会话列表靠前位置，方便用户快速找到高频或重点会话。置顶状态会保存到服务端，并同步到当前用户的其他设备和本地会话数据。
 
-## 功能开通
-
-会话置顶属于服务端会话列表功能的一部分。使用前，需要在 [环信控制台](/product/console/basic_conversation_group_chatroom.html#服务端会话列表) 开通服务端会话列表功能。
-
 ## 前提条件
 
 开始前，请确保满足以下条件：
 
 - 已完成 SDK 初始化并成功登录，详见[快速开始](quickstart.html)。
-- 已开通[服务端会话列表功能](/product/console/basic_conversation_group_chatroom.html#服务端会话列表)。
 - 已了解即时通讯 IM API 的使用限制，详见[使用限制](/product/limitation.html)。
 
 ## 设置或取消置顶会话
@@ -232,7 +227,7 @@ sortedConversations.addAll(unpinnedConversations);
 | :--- | :--- | :--- |
 | [`asyncPinConversation`](#设置或取消置顶会话) | `EMChatManager` | 设置或取消指定会话的置顶状态。 |
 | [`getConversation`](#设置或取消置顶会话) | `EMChatManager` | 获取指定的本地会话对象。 |
-| [`setAppKey`](#获取置顶会话列表) | `EMOptions` | 设置应用的 App Key。 |
+| [`setAppId`](#获取置顶会话列表) | `EMOptions` | 设置应用的 App ID。 |
 | [`setDataSyncType`](#获取置顶会话列表) | `EMOptions` | 设置登录成功后自动同步的数据类型。 |
 | [`init`](#获取置顶会话列表) | `EMClient` | 使用指定配置初始化 SDK。 |
 | [`getAllConversationsBySort`](#获取置顶会话列表) | `EMChatManager` | 获取置顶优先排序的本地会话列表。 |

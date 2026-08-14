@@ -1,7 +1,5 @@
 # 离线推送概述
 
-<Toc />
-
 即时通讯 IM 支持集成第三方消息推送服务，为开发者提供低延时、高送达、高并发、不侵犯用户个人数据的离线消息推送服务。**即时通讯 IM Web SDK 本身不支持离线推送，只支持对移动端离线推送进行配置。**
 
 ## 离线推送过程
@@ -16,7 +14,7 @@
 
 ## 上传推送证书
 
-除了满足用户离线条件外，要使用第三方离线推送，用户还需在[环信控制台](https://console.easemob.com/user/login)配置推送证书信息，详见 [Android 推送](/v4/android/push/push_fcm.html)和 [APNs 推送](/v4/ios/push/push_apns.html)文档中各厂商证书配置描述。
+除了满足用户离线条件外，要使用第三方离线推送，用户还需在 [声网控制台](https://console.shengwang.cn/overview) 配置推送证书信息，详见 [Android 推送](/v4/android/push/push_fcm.html)和 [APNs 推送](/v4/ios/push/push_apns.html)文档中各厂商证书配置描述。
 
 例如，对于华为推送，需配置**证书名称**和**推送密钥**，并调用客户端 Web SDK 提供的 `uploadPushToken` 方法向IM 服务器上传 device token（Android 或 iOS 平台使用 Web SDK）。
 
@@ -34,14 +32,21 @@ WebIM.conn.uploadPushToken(params);
 
 ### 开通功能
 
-[推送通知方式](push_notification_mode_dnd.html#推送通知方式)、[免打扰模式](push_notification_mode_dnd.html#免打扰模式) 和 [推送模板](push_template.html) 是推送的高级功能。使用前，你需要在 [环信控制台](https://console.easemob.com/user/login) 免费开通。**激活后，如需关闭推送高级功能，必须联系商务，因为该操作会删除高级功能相关的所有配置。**
+[推送通知方式](push_notification_mode_dnd.html#推送通知方式)、[免打扰模式](push_notification_mode_dnd.html#免打扰模式) 和 [推送模板](push_template.html) 是推送的高级功能。使用前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 免费开通。**激活后，如需关闭推送高级功能，必须联系商务，因为该操作会删除高级功能相关的所有配置。**
 
-1. 登录 [环信控制台](https://console.easemob.com/user/login)。
-2. 选择页面上方的 **应用管理**。在弹出的应用列表页面，单击你的应用的 **操作** 栏中的 **管理**。
-3. 选择 **增值服务 > 消息推送 > 离线推送**。
-4. 点击 **免费开通**。
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
 
-![image](/images/android/push/push_advanced_feature_enable.png)
+2. 点击左侧导航栏的**全部产品**。
+
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**功能配置**标签页。
+
+5. 在**推送模板** 页签下，点击**启用**。
+
+6. 在弹出的对话框中，配置用户相关参数，点击**确定**。
+
+![image](/images/android/push/push_android_enable_push.png)
 
 ### 推送通知方式
 
@@ -68,13 +73,13 @@ WebIM.conn.uploadPushToken(params);
 
 ### 推送模板
 
-推送模板主要用于服务器提供的默认离线推送配置不满足你的需求时，设置全局范围的推送标题和推送内容。推送模板包括默认推送模板 `default`、`detail` 和自定义推送模板。你可以在 [环信控制台](https://console.easemob.com/user/login) 配置推送模板。
+推送模板主要用于服务器提供的默认离线推送配置不满足你的需求时，设置全局范围的推送标题和推送内容。推送模板包括默认推送模板 `default`、`detail` 和自定义推送模板。你可以在 [声网控制台](https://console.shengwang.cn/overview) 配置推送模板。
 
 推送模板的配置和使用，详见 [相关文档介绍](push_template.html)。
 
 ## 多设备离线推送策略
 
-多设备登录时，可在 [环信控制台](https://console.easemob.com/user/login)的 **证书管理** 页面配置推送策略，该策略配置对所有推送通道生效：
+多设备登录时，可在 [声网控制台](https://console.shengwang.cn/overview) 的 **推送证书** 页面配置推送策略，该策略配置对所有推送通道生效：
 
 - 所有设备离线时，才发送推送消息；
 - 任一设备离线时，都发送推送消息。

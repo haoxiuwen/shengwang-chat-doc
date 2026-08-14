@@ -1168,7 +1168,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 1. **从 3.8.6.1 开始我们采用 Dev 和 Stable 版本并行的方式，用户可以根据需求选择使用的版本。**
    稳定版（Stable）：基于开发版本，提供稳定的功能，持续修复 Bug，可用于发布应用。
    开发版（Dev）：最新版本，体现最新的功能和特性，不定期发布版本，可用于体验。
-2. **`V3.8.6.1 Dev 仅支持 HTTPS。`如您的项目（Appkey）配置的是 HTTP，请勿升级该版本，否则会导致 HTTP 用户无法正常登录；如不升级该版本则不受任何影响。**
+2. **`V3.8.6.1 Dev 仅支持 HTTPS。`如您的项目（AppId）配置的是 HTTP，请勿升级该版本，否则会导致 HTTP 用户无法正常登录；如不升级该版本则不受任何影响。**
 
 ## v3.8.5 2021-09-10
 
@@ -1238,7 +1238,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 - [IM SDK] 新增增加异常事件上报功能, 需要开启，默认不会上报；
 - [IM SDK] 新增增加针对发送前回调拦截的消息的错误码；
-- [IM SDK] 新增支持多种不同应用(相同 Appkey)使用不同的消息过滤规则；
+- [IM SDK] 新增支持多种不同应用(相同 AppId)使用不同的消息过滤规则；
 
 #### 修复：
 
@@ -1369,7 +1369,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 **注意：**
 
 1. EaseIMKit 除了可以远程库外，也公布了源码，详情请见：[EaseIMKit 使用指南](https://docs-im.easemob.com/im/android/other/easeimkit)；
-2. 新版 App（EaseIM App）采用了新的 Appkey，不可用之前的账号进行登录，需要重新进行注册。
+2. 新版 App（EaseIM App）采用了新的 AppId，不可用之前的账号进行登录，需要重新进行注册。
 
 ## v3.7.2 2020-10-30
 

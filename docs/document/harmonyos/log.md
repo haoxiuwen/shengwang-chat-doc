@@ -21,7 +21,7 @@ ChatLog.setLogLevel(ChatLogLevel.ERROR_LEVEL);
 打开以下目录，获取本地日志。
 
 ```
-hdc file recv /data/app/el2/100/base/{应用包名}/{App Key}/core_log
+hdc file recv /data/app/el2/100/base/{应用包名}/{App ID}/core_log
 ```
 
-获取本地日志，需要将 `{应用包名}` 替换为应用的包名，例如 `com.hyphenate.chatuidemo`；`{App Key}` 需要替换为应用的环信 App Key。
+获取本地日志，需要将 `{应用包名}` 替换为应用的包名，例如 `com.hyphenate.chatuidemo`；`{App ID}` 需要替换为应用的 App ID。

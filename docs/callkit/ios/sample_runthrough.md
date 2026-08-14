@@ -11,9 +11,9 @@
 
 ## 前提条件
 
-在 [环信控制台](https://console.easemob.com/user/login) 进行如下操作：
-1. [注册环信账号](/product/console/account_register.html#注册账号)。
-2. [创建应用](/product/console/app_create.html)，[获取应用的 App Key](/product/console/app_manage.html#获取应用凭证)，格式为 `orgname#appname`。
+在 [声网控制台](https://console.shengwang.cn/overview)  进行如下操作：
+1. [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
+2. [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)，[获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 。
 3. [创建用户](/product/console/operation_user.html#创建用户)，获取用户 ID 和 [用户 Token](/product/console/operation_user.html#查看用户-token)。
 4. [创建群组](/product/console/operation_group.html#创建群组)，获取群组 ID，将用户加入群组。
 5. [开通音视频服务](product_activation.html)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能跑通示例项目。
@@ -36,12 +36,12 @@ git clone https://github.com/easemob/easemob-callkit-iOS.git
 git clone https://gitee.com/easemob-code/easemob-callkit-iOS.git
 ```
 
-### 步骤 2 设置 App Key
+### 步骤 2 设置 App ID
 
-在 `PublicDefines.swift` 中填写你的应用的 App Key：
+在 `PublicDefines.swift` 中填写你的应用的 App ID：
 
 ```swift
-let AppKey: String = <#AppKey#>
+let AppId: String = <#AppId#>
 ```
 
 ### 步骤 3 安装本地依赖

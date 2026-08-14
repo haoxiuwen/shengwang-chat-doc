@@ -223,7 +223,7 @@
 
 ### 用户关系
 
-- 单个 App Key 下的每个用户的好友数量上限与套餐包版本相关，详见 [IM 套餐包功能详情](/product/product_package_feature.html)。
+- 单个 App ID 下的每个用户的好友数量上限与套餐包版本相关，详见 [IM 套餐包功能详情](/product/product_package_feature.html)。
 - 好友备注的长度不能超过 100 个字符。
 - 每个用户的黑名单最多可存 500 个用户。
 
