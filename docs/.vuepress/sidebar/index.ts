@@ -1,7 +1,6 @@
 import { sidebar } from "vuepress-theme-hope";
 import { DOC_SIDEBAR } from "./document-v4";
 import { DOC_V5_SIDEBAR } from "./document";
-import { PRIVATE_IM_SIDEBAR, PRIVATE_MEDIA_SIDEBAR } from "./private";
 import { CALL_KIT_SIDEBAR } from "./callkit";
 import { PUSH_SIDEBAR } from "./push";
 import { TRANSLATION_SIDEBAR } from "./translation";
@@ -129,8 +128,6 @@ export const zhSidebar = sidebar({
   ...DOC_SIDEBAR,
   ...DOC_V5_SIDEBAR,
   ...CALL_KIT_SIDEBAR,
-  "/private/im/": PRIVATE_IM_SIDEBAR,
-  "/private/media/": PRIVATE_MEDIA_SIDEBAR,
   "/value-added/push":PUSH_SIDEBAR,
   "/value-added/translation":TRANSLATION_SIDEBAR,
 });
