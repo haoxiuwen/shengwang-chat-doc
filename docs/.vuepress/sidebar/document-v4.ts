@@ -1011,7 +1011,7 @@ function handleSidebarItem(platform, sidebar) {
       return {...sidebar, children: newchildren }
     }
   } else {
-    if (linkExists(platform, sidebar.link)) {
+    if (sidebar.link && linkExists(platform, sidebar.link)) {
       const newLink = `/v4/${platform}/${sidebar.link}`
       return {...sidebar, link:newLink}
     }
