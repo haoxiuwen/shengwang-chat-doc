@@ -2,9 +2,7 @@
 
 ## 功能说明
 
-即时通讯 IM 支持同一账号在多个设备上登录。使用该功能前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通该服务。详见 [环信控制台文档](/product/console/basic_user.html#多端多设备)。
-
-即时通讯 IM SDK 在登录时会基于初始化参数生成当前设备的登录标识，并将该设备信息发送到服务器。服务器根据多端多设备策略维护当前账号的在线设备状态；当同一账号在其他设备上执行好友、群组、消息话题、会话或漫游消息删除等操作时，SDK 会将这些操作归一化为多设备事件，并通过 `client.addEventHandler` 注册的对应回调通知当前设备。
+即时通讯 IM 支持同一账号在多个设备上登录。即时通讯 IM SDK 在登录时会基于初始化参数生成当前设备的登录标识，并将该设备信息发送到服务器。服务器根据多端多设备策略维护当前账号的在线设备状态；当同一账号在其他设备上执行好友、群组、消息话题、会话或漫游消息删除等操作时，SDK 会将这些操作归一化为多设备事件，并通过 `client.addEventHandler` 注册的对应回调通知当前设备。
 
 多端多设备登录场景下要支持以下功能：
 
@@ -13,9 +11,25 @@
 - 支持查询当前账号在其他设备上的登录标识；
 - 支持通过初始化参数自定义设备标识、平台和设备名称。
 
-多端登录时，即时通讯 IM 每端默认最多支持 4 个设备同时在线。如需增加支持的设备数量，可以联系即时通讯 IM 的商务经理。你可以在环信控制台的 **即时通讯 > 基础功能** > **用户** 页面，在弹出的对话框中设置各端设备的数量：
+## 功能开通
 
-![img](/images/common/multidevice_device_count.png)
+在 [声网控制台](https://console.shengwang.cn/overview) 开通多设备登录的步骤如下：
+
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
+
+2. 点击左侧导航栏的**全部产品**。
+
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**功能配置**标签页。
+
+5. 在**用户与登陆** 页签下开启多端多设备功能。
+
+![img](/images/common/multidevice_activation.png)
+
+:::tip
+多端登录时，即时通讯 IM 每端默认最多支持 4 个设备同时在线。如需增加支持的设备数量，可以联系即时通讯 IM 的商务经理。
+:::
 
 ## 互踢策略
 
@@ -32,7 +46,7 @@ IM 服务器提供 RESTful 接口 [查询每个账号已登录设备列表](/doc
 ## 前提条件
 
 - 开始前，确保将 SDK 初始化并连接到服务器。详见 [快速开始](quickstart.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login) 开通多端多设备功能。详见 [环信控制台文档](/product/console/basic_user.html#多端多设备)。
+- 已在 [声网控制台](https://console.shengwang.cn/overview) 开通多端多设备功能。
 - 若需设置登录设备的自定义名称、自定义平台或登录扩展信息，需要在 SDK 初始化时完成配置。
 
 ## 获取当前用户的其他登录设备的登录 ID 列表
@@ -54,13 +68,11 @@ SDK 支持自定义设置登录设备的平台，例如，若要将小程序平�
 
 你可以按照以下步骤设置登录设备所属的平台：
 
-1. 在环信控制台的 **即时通讯** > **基础功能** > **用户** 页面，在 **多端多设备** 区域，点击 **设置**。在弹出的对话框中点击 **新增自定义平台**，在 **添加自定义平台** 对话框中设置 **设备平台** 和 **设备数量**。
+1. 在 [声网控制台](https://console.shengwang.cn/overview) 的 **用户与登陆** 页面点击 **新增自定义平台**，添加自定义平台：
 
-**设备平台** 的取值范围为 [1,100]，**设备数量** 的取值范围为 [0,4]。
+![img](/images/common/multidevice_device_count.png)
 
-![img](/images/common/multidevice_device_platform.png)
-
-2. 初始化 SDK 时，设置 `customOSPlatform` 参数。如需为该平台设置自定义设备名称，可同时设置 `customDeviceName`。请确保 `customOSPlatform` 的值与控制台中设置的设备平台值一致。
+2. 初始化 SDK 时，设置 `customOSPlatform` 参数。如需为该平台设置自定义设备名称，可同时设置 `customDeviceName`。请确保 `customOSPlatform` 的值与与 [声网控制台](https://console.shengwang.cn/overview) 中设置的设备平台值一致。
 
 ```typescript
 const client = ChatClient.init({
