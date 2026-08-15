@@ -4,14 +4,14 @@
 
 推送模板用于在默认离线推送内容不满足业务需求时，自定义推送通知的标题和内容。例如，服务器提供的默认设置为中文和英文的推送标题和内容，你若需要使用韩语或日语的推送标题和内容，则可以设置对应语言的推送模板。
 
-你可以通过环信控制台或 [服务端 REST API 配置推送模板](/document/server-side/push_template_create.html)，并在发送消息时通过消息扩展字段指定模板名称和模板参数。
+你可以通过[声网控制台](https://console.shengwang.cn/overview) 或 [服务端 REST API 配置推送模板](/document/server-side/push_template_create.html)，并在发送消息时通过消息扩展字段指定模板名称和模板参数。
 
 推送模板包括默认模板 `default`、`detail` 和自定义模板。默认模板适用于通用推送场景；自定义模板适用于需要按业务场景、语言或接收对象展示不同推送内容的场景。
 
 推送模板具有以下特点：
 
 1. 推送模板的优先级高于 [调用 API 设置通知栏的推送内容](push_display_attribute.html)。
-2. 支持通过环信控制台或 [服务端 REST API](/document/server-side/push_template_create.html) 自定义服务端默认推送内容。
+2. 支持通过[声网控制台](https://console.shengwang.cn/overview) 或 [服务端 REST API](/document/server-side/push_template_create.html) 自定义服务端默认推送内容。
 3. 对于群组消息，你可以使用定向模板向某些用户推送与其他用户不同的离线通知。
 4. 接收方可配置推送模板：若发送方在发送消息时使用了推送模板，则推送通知栏中的显示内容以发送方的推送模板为准。
 5. 推送模板使用优先级：
@@ -38,7 +38,7 @@
 
 默认推送模板支持修改推送标题和推送内容，但模板名称不能编辑。
 
-点击**添加推送模板**，配置相关参数，添加自定义推送模板。
+点击**添加模板**，配置相关参数，添加自定义推送模板。
 
 | 推送模板参数       | 类型 |参数描述|
 | :------------------- | :------------------- | :------------------- |
@@ -107,7 +107,7 @@ message.setTo("6006");
 // 设置推送模板。
 JSONObject pushObject = new JSONObject();
 try {
-    // 设置推送模板名称。设置前需在环信控制台或调用 REST 接口创建推送模板。
+    // 设置推送模板名称。设置前需在声网控制台或调用 REST 接口创建推送模板。
    //若为默认模板 `default` 或 `detail`，无需传入模板名称。
    //若为自定义模板，需传入模板名称。
     pushObject.put("name", "test7");
@@ -164,7 +164,7 @@ EMClient.getInstance().chatManager().sendMessage(message);
 EMMessage message = EMMessage.createSendMessage(EMMessage.Type.TXT);
 EMTextMessageBody txtBody = new EMTextMessageBody("消息内容");
 message.setTo("6006");
-// 设置推送模板。设置前需在环信控制台或调用 REST 接口创建推送模板。
+// 设置推送模板。设置前需在声网控制台或调用 REST 接口创建推送模板。
 JSONObject pushObject = new JSONObject();
 JSONArray titleArgs = new JSONArray();
 JSONArray contentArgs = new JSONArray();

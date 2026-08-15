@@ -8,7 +8,7 @@
 
 你可以使用推送模板设置推送标题和内容。推送模板包括默认推送模板 **default**、**detail** 和自定义推送模板。
 
-除了调用 REST API 配置默认推送模板，你也可以在 [环信控制台](https://console.easemob.com/user/login)设置推送模板，详见 [推送模板配置文档](/document/android/push/push_template.html)。
+除了调用 REST API 配置默认推送模板，你也可以在 [声网控制台](https://console.shengwang.cn/overview) 设置推送模板，详见 [推送模板配置文档](/document/android/push/push_template.html)。
 
 ## 推送模板特点
 

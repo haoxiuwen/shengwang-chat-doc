@@ -13,7 +13,7 @@
 
 出于测试目的，声网控制台支持为即时通讯 IM 生成临时 Token。在生产环境中，为了安全考虑，Token 需由你的 App Server 使用 AgoraTools 生成。
 
-关于如何生成和获取临时的 App 权限 Token 和用户权限 Token，详见[获取临时 Token](enable_im.html#_4-获取临时-token)。
+关于如何生成和获取临时的 App 权限 Token 和用户权限 Token，详见[获取临时 Token](/product/enable_im.html#_4-获取临时-token)。
 
 本文介绍如何从你的 App Server 中获取 Token 实现用户鉴权。
 
@@ -31,7 +31,7 @@
 
 - 有效的[声网账号](https://docportal.shengwang.cn/cn/Agora%20Platform/get_appid_token?platform=All%20Platforms#创建声网账号)。
 - 拥有 [App 证书](https://docportal.shengwang.cn/cn/Agora%20Platform/get_appid_token?platform=All%20Platforms=All%20Platforms#获取-App-证书)和已开通即时通讯的[声网项目](https://docportal.shengwang.cn/cn/Agora%20Platform/get_appid_token?platform=All%20Platforms#创建声网账号)。
-- 你的声网项目的 App ID，详见[开启和配置即时通讯服务](enable_im.html#4-获取-app-id)。
+- 你的声网项目的 App ID，详见[开启和配置即时通讯服务](/product/enable_im.html#4-获取-app-id)。
 - [Node.js 和 npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
 
 如果你的网络环境部署了防火墙，为允许你在有网络访问限制的环境中使用即时通讯服务，声网提供防火墙白名单方案。如需使用请[联系技术支持](https://docs.agora.io/cn/Agora%20Platform/ticket?platform=All%20Platforms)，我们的技术服务会提供目标域名及对应的端口。

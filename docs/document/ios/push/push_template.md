@@ -11,7 +11,7 @@
 推送模板具有以下特点：
 
 1. 推送模板的优先级高于 [调用 API 设置通知栏的推送内容](push_display_attribute.html)。
-2. 支持通过环信控制台或 [服务端 REST API](/document/server-side/push_template_create.html) 自定义服务端默认推送内容。
+2. 支持通过声网控制台或 [服务端 REST API](/document/server-side/push_template_create.html) 自定义服务端默认推送内容。
 3. 对于群组消息，你可以使用定向模板向某些用户推送与其他用户不同的离线通知。
 4. 接收方可配置推送模板：若发送方在发送消息时使用了推送模板，则推送通知栏中的显示内容以发送方的推送模板为准。
 5. 推送模板使用优先级：
@@ -45,14 +45,14 @@
 
 推送模板相关的数据结构，详见 [推送扩展字段](/document/server-side/push_extension.html)。下面为在声网控制台设置离线推送模板。
 
-离线推送模板开通后，**模板管理** 页面默认添加两个模板，`default` 和 `detail`。若未配置自定义推送模板，消息推送时自动使用默认模板，创建消息时无需传入模板名称。
+离线推送模板开通后，**推送模板** 页面默认添加两个模板，`default` 和 `detail`。若未配置自定义推送模板，消息推送时自动使用默认模板，创建消息时无需传入模板名称。
 
 - `default`：默认情况下，推送标题为 **您有一条新消息**，推送内容为 **请点击查看**。若调用了 `updatePushDisplayStyle` 方法将 `EMPushDisplayStyle` 设置为 `EMPushDisplayStyleSimpleBanner`，则默认推送模板为 `default`。
 - `detail`：默认情况下，推送标题为 **您有一条新消息**，推送内容为消息内容。若调用了 `updatePushDisplayStyle` 方法将 `EMPushDisplayStyle` 设置为 `EMPushDisplayStyleMessageSummary`，则默认推送模板为 `detail`。
 
 默认推送模板支持修改推送标题和推送内容，但模板名称不能编辑。
 
-点击**添加推送模板**，配置相关参数，添加自定义推送模板。
+点击**添加模板**，配置相关参数，添加自定义推送模板。
 
 | 推送模板参数       | 类型 |参数描述|
 | :------------------- | :------------------- | :------------------- |
@@ -106,7 +106,7 @@
 
 :::tip
 1. 若使用默认模板 **default** 或 **detail**，消息推送时自动使用默认模板，创建消息时无需传入模板名称。
-2. 使用自定义模板时，**推送标题** 和 **推送内容** 参数无论通过哪种方式设置，创建消息时均需通过扩展字段传入。
+2. 使用自定义模板时，**标题** 和 **内容** 参数无论通过哪种方式设置，创建消息时均需通过扩展字段传入。
 :::
 
 ### 使用固定内容的推送模板
@@ -119,7 +119,7 @@
 //下面以文本消息为例，其他类型的消息设置方法相同。
 EMTextMessageBody *body = [[EMTextMessageBody alloc]initWithText:@"test"];
 EMChatMessage *message = [[EMChatMessage alloc]initWithConversationID:@"conversationId" from:@"currentUsername" to:@"conversationId" body:body ext:nil];
-//设置推送模板。设置前需在环信控制台或调用 REST 接口创建推送模板。
+//设置推送模板。设置前需在声网控制台或调用 REST 接口创建推送模板。
 NSDictionary *pushObject = @{
    //设置推送模板名称。
    //若为默认模板 `default` 或 `detail`，无需传入模板名称。若为自定义模板，需传入模板名称。
@@ -171,10 +171,10 @@ message.chatType = EMChatTypeChat;
 //下面以文本消息为例，其他类型的消息设置方法相同。
 EMTextMessageBody *body = [[EMTextMessageBody alloc]initWithText:@"test"];
 EMChatMessage *message = [[EMChatMessage alloc]initWithConversationID:@"conversationId" from:@"currentUsername" to:@"conversationId" body:body ext:nil];
-//设置推送模板。设置前需在环信控制台上创建推送模板。
+//设置推送模板。设置前需在声网控制台上创建推送模板。
 NSDictionary *pushObject = @{
     //设置推送模板名称。若不指定，设置默认推送模板的信息。
-    //设置前需在环信控制台或调用 REST 接口创建推送模板。
+    //设置前需在声网控制台或调用 REST 接口创建推送模板。
     @"name":@"templateName",
     @"title_args":@[@"您",@"消息"],//设置填写模板标题的 value 数组。
     @"content_args":@[@"请",@"查看"]//设置填写模板内容的 value 数组。

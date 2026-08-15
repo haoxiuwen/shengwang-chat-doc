@@ -794,7 +794,7 @@ curl -L -X GET 'https://XXXX/app-id/XXXX/users/XXXX/notification/language' \
 
 ## 使用推送模板
 
-你可以使用推送模板设置推送标题和内容。你可以调用以下 RESTful API 配置默认推送模板 `default` 和自定义推送模板。
+你可以使用推送模板设置推送标题和内容。你可以调用以下 RESTful API 配置默认推送模板 `default`、`detail` 和自定义推送模板。
 
 除此之外，你也可以在[声网控制台](https://console.shengwang.cn/overview)设置推送模板：
 
@@ -802,7 +802,7 @@ curl -L -X GET 'https://XXXX/app-id/XXXX/users/XXXX/notification/language' \
 
 2. 在[声网控制台](https://console.shengwang.cn/overview)设置推送模板。
 
-  展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。点击左侧导航栏的**全部产品**。在下拉列表中找到**即时通讯 IM** 并点击。 在**即时通讯 IM** 页面，进入**功能配置**标签页。在**推送模板**页签下，点击**添加推送模板**，配置相关参数，添加推送模板。
+  展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。点击左侧导航栏的**全部产品**。在下拉列表中找到**即时通讯 IM** 并点击。 在**即时通讯 IM** 页面，进入**功能配置**标签页。在**推送模板**页签下，点击**添加模板**，配置相关参数，添加推送模板。
 
 使用推送模板有以下优势：
 
@@ -817,16 +817,16 @@ curl -L -X GET 'https://XXXX/app-id/XXXX/users/XXXX/notification/language' \
 通知栏中显示的推送标题和内容可通过以下方式设置，优先级为由低到高：
 
 1. 发送消息时使用默认的推送标题和内容：设置推送通知的展示方式 `notification_display_style`。推送标题为“您有一条新消息”，推送内容为“请点击查看”。  
-2. 发送消息时使用默认模板：若有默认模板 `default`，发消息时无需指定。
+2. 发送消息时使用默认模板：若有默认模板 `default` 和 `detail`，发消息时无需指定。
 3. 发送消息时使用扩展字段自定义要显示的推送标题和推送内容，即 `em_push_title` 和 `em_push_content`。
 4. 接收方设置了推送模板。
 5. 发送消息时通过消息扩展字段指定模板名称。
 
 ### 创建离线推送模板
 
-创建离线推送消息模板，包括默认模板 `default` 和自定模板。你可以通过[声网控制台](https://console.shengwang.cn/overview)创建推送模板，详见[控制台文档](enable_and_configure_IM.html#配置推送模板)。
+创建离线推送消息模板，包括默认模板 `default`、`detail` 和自定模板。你可以通过[声网控制台](https://console.shengwang.cn/overview)创建推送模板。
 
-若使用默认模板 **default**，消息推送时自动使用默认模板，创建消息时无需传入模板名称。
+若使用默认模板 **default** 和 **detail**，消息推送时自动使用默认模板，创建消息时无需传入模板名称。
 
 #### HTTP 请求
 
@@ -1090,7 +1090,7 @@ curl -X PUT 'https://XXXX/app-id/XXXX/users/XXXX/notification/template' \
 
 发送消息时，可使用消息扩展参数 `ext.em_push_template.name` 指定推送模板名称。
 
-若使用默认模板 **default**，消息推送时自动使用默认模板，创建消息时无需传入模板名称。
+若使用默认模板 **default** 和 **detail**，消息推送时自动使用默认模板，创建消息时无需传入模板名称。
 
 对于群组消息，你可以使用定向模板将离线通知只发送给特定用户，或向某些用户推送与其他用户不同的离线通知。
 

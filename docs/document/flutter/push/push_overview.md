@@ -31,7 +31,7 @@
 9. 第三方推送服务器将消息发送给用户 B。
 
 :::tip
-1. 开发者通过[环信控制台](https://console.easemob.com/user/login)配置 App 的推送证书，需填写证书名称（或者 App Key）。该步骤须在登录即时通讯 IM SDK 成功后进行。证书名称是IM 服务器用于判断目标设备使用哪种推送通道的唯一条件，因此必须确保与 Android 终端设备上传的证书名称一致。
+1. 开发者通过 [声网控制台](https://console.shengwang.cn/overview) 配置 App 的推送证书，需填写证书名称（或者 App Key）。该步骤须在登录即时通讯 IM SDK 成功后进行。证书名称是IM 服务器用于判断目标设备使用哪种推送通道的唯一条件，因此必须确保与 Android 终端设备上传的证书名称一致。
 2. 关于推送 token，详见[绑定推送信息页面相关描述](push_easemob_console.html#绑定推送信息)。
 :::
 
@@ -54,14 +54,21 @@
 
 ### 开通功能
 
-[推送通知方式](push_notification_mode_dnd.html#推送通知方式)、[免打扰模式](push_notification_mode_dnd.html#免打扰模式) 和 [推送模板](push_template.html) 是推送的高级功能。使用前，你需要在 [环信控制台](https://console.easemob.com/user/login) 免费开通。**激活后，如需关闭推送高级功能，必须联系商务，因为该操作会删除高级功能相关的所有配置。**
+[推送通知方式](push_notification_mode_dnd.html#推送通知方式)、[免打扰模式](push_notification_mode_dnd.html#免打扰模式) 和 [推送模板](push_template.html) 是推送的高级功能。使用前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 免费开通。**激活后，如需关闭推送高级功能，必须联系商务，因为该操作会删除高级功能相关的所有配置。**
 
-1. 登录 [环信控制台](https://console.easemob.com/user/login)。
-2. 选择页面上方的 **应用管理**。在弹出的应用列表页面，单击你的应用的 **操作** 栏中的 **管理**。
-3. 选择 **增值服务 > 消息推送 > 离线推送**。
-4. 点击 **免费开通**。
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
 
-![image](/images/android/push/push_advanced_feature_enable.png)
+2. 点击左侧导航栏的**全部产品**。
+
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**功能配置**标签页。
+
+5. 在**推送模板** 页签下，点击**启用**。
+
+6. 在弹出的对话框中，配置用户相关参数，点击**确定**。
+
+![image](/images/android/push/push_android_enable_push.png)
 
 ### 推送通知方式
 
@@ -88,13 +95,13 @@
 
 ### 推送模板
 
-推送模板主要用于服务器提供的默认离线推送配置不满足你的需求时，设置全局范围的推送标题和推送内容。推送模板包括默认推送模板 `default`、`detail` 和自定义推送模板。你可以在 [环信控制台](https://console.easemob.com/user/login) 配置推送模板。
+推送模板主要用于服务器提供的默认离线推送配置不满足你的需求时，设置全局范围的推送标题和推送内容。推送模板包括默认推送模板 `default`、`detail` 和自定义推送模板。你可以在 [声网控制台](https://console.shengwang.cn/overview) 配置推送模板。
 
 推送模板的配置和使用，详见 [相关文档介绍](push_template.html)。
 
 ## 多设备离线推送策略
 
-多设备登录时，可在 [环信控制台](https://console.easemob.com/user/login)的 **证书管理** 页面配置推送策略，该策略配置对所有推送通道生效：
+多设备登录时，可在 [声网控制台](https://console.shengwang.cn/overview) 的 **推送证书** 页面配置推送策略，该策略配置对所有推送通道生效：
 
 - 所有设备离线时，才发送推送消息；
 - 任一设备离线时，都发送推送消息。
@@ -105,9 +112,9 @@
 
 ## 前提条件 
 
-1. 已开启即时通讯 IM ，详见 [开启和配置即时通讯服务](/product/console/purchase_package.html)。
+1. 已开启即时通讯 IM ，详见 [开启和配置即时通讯服务](/product/enable_im.html#_2-开通即时通讯-im-服务)。
 2. 了解即时通讯 IM 套餐包中的 API 调用频率限制，详见 [使用限制](/product/limitation.html)。
-3. 若使用[推送模板](#推送模板)，需在 [环信控制台](https://console.easemob.com/user/login)上激活。
+3. 若使用[推送模板](#推送模板)，需在 [声网控制台](https://console.shengwang.cn/overview) 上激活。
 4. 各推送使用的条件：
   - APNs：在苹果设备上可用；
   - Google FCM：设备启用了 Google Play 服务且可连接至 Google 服务器；

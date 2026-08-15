@@ -16,40 +16,31 @@
 
 ## 开通功能
 
-[推送模板](push_template.html) 是推送的高级功能。使用前，你需要在 [环信控制台](https://console.easemob.com/user/login) 免费开通。**激活后，如需关闭推送高级功能，必须联系商务，因为该操作会删除高级功能相关的所有配置。**
-
-1. 登录 [环信控制台](https://console.easemob.com/user/login)。
-2. 选择页面上方的 **应用管理**。在弹出的应用列表页面，单击你的应用的 **操作** 栏中的 **管理**。
-3. 选择 **增值服务 > 消息推送 > 离线推送**。
-4. 点击 **免费开通**。
-
-开通后，你可以 [设置推送模板](#设置推送模板)。
-
-![image](/images/android/push/push_advanced_feature_enable.png)
+[推送模板](push_template.html) 是推送的高级功能。使用前，你需要在 [声网控制台](https://console.shengwang.cn/overview)[免费开通推送高级功能](push_overview.html#推送高级功能)。**激活后，如需关闭推送高级功能，必须联系商务，因为该操作会删除高级功能相关的所有配置。**
 
 ## 设置推送模板
 
 你可以通过以下两种方式设置离线推送模板：
 
 - [调用 REST API 配置](/document/server-side/push_template_overview.html)。
-- 在 [环信控制台](https://console.easemob.com/user/login) 设置推送模板。
+- 在 [声网控制台](https://console.shengwang.cn/overview) 设置推送模板。
 
 推送模板相关的数据结构，详见 [推送扩展字段](/document/server-side/push_extension.html)。
 
-本节介绍在环信控制台设置离线推送模板。
+本节介绍在声网控制台设置离线推送模板。
 
 ### 编辑默认推送模板
 
-离线推送模板开通后，**模板管理** 页面默认添加两个模板，`default` 和 `detail`。若未配置自定义推送模板，消息推送时自动使用默认模板，创建消息时无需传入模板名称。
+离线推送模板开通后，**推送模板** 页面默认添加两个模板，`default` 和 `detail`。若未配置自定义推送模板，消息推送时自动使用默认模板，创建消息时无需传入模板名称。
 
 - `default`：默认情况下，推送标题为 **您有一条新消息**，推送内容为 **请点击查看**。若调用了 `updatePushDisplayStyle` 方法将 `PushDisplayStyle` 设置为 `SimpleBanner`，则默认推送模板为 `default`。
  - `detail`：默认情况下，推送标题为 **您有一条新消息**，推送内容为消息内容。若调用了 `updatePushDisplayStyle` 方法将 `PushDisplayStyle` 设置为 `MessageSummary`，则默认推送模板为 `detail`。
   
-![img](/images/console/push_template_default.png)
+![img](/images/product/push/push_template_default.png)
 
-你可以在 **操作** 栏中选择 **更多 > 编辑**，修改默认推送模板的推送标题和推送内容，模板名称不能编辑。
+你可以在 **操作** 栏中选择 **编辑**，修改默认推送模板的推送标题和推送内容，模板名称不能编辑。
 
-![img](/images/console/push_template_default_edit.png)
+![img](/images/product/push/push_template_default_edit.png)
 
 | 参数            | 类型   | 描述   |
 | :-------------- | :----- | :----- | 
@@ -92,9 +83,9 @@
 
 ### 添加自定义推送模板
 
-即时通讯 IM 支持添加自定义推送模板。除了 [调用 RESTful 接口](/document/server-side/push_template_create.html) 创建自定义推送模板，你还可以在 [环信控制台](https://console.easemob.com/user/login) 添加自定义推送模板。**自定义推送模板的级别比默认模板高。**
+即时通讯 IM 支持添加自定义推送模板。除了 [调用 RESTful 接口](/document/server-side/push_template_create.html) 创建自定义推送模板，你还可以在 [声网控制台](https://console.shengwang.cn/overview) 添加自定义推送模板。**自定义推送模板的级别比默认模板高。**
   
-在 **模板管理** 页面，点击 **添加推送模板** 创建自定义推送模板。
+在 **推送模板** 页面，点击 **添加模板** 创建自定义推送模板。
 
 | 参数            | 类型   | 描述   |
 | :-------------- | :----- | :----- |
@@ -103,7 +94,7 @@
 
 **创建消息时需通过使用扩展字段传入模板名称、推送标题和推送内容**，通知栏中的推送标题和内容分别使用模板中的格式。详见 [消息扩展中的默认推送模板的参数](#编辑默认推送模板)。
 
-![img](/images/console/push_template_add.png)
+![img](/images/product/push/push_template_add.png)
 
 ## 发送消息时使用推送模板
 
@@ -111,7 +102,7 @@
 
 :::tip
 1. 若使用默认模板 **default** 或 **detail**，消息推送时自动使用默认模板，创建消息时无需传入模板名称。
-2. 使用自定义模板时，**推送标题** 和 **推送内容** 参数无论通过哪种方式设置，创建消息时均需通过扩展字段传入。
+2. 使用自定义模板时，**标题** 和 **内容** 参数无论通过哪种方式设置，创建消息时均需通过扩展字段传入。
 :::
 
 ### 使用固定内容的推送模板
