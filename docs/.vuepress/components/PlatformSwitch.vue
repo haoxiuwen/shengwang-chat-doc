@@ -118,7 +118,8 @@ const VERSION_CONFIG: VersionConfig = {
 const platform = ref<PlatformKey>('android')
 const version = ref<DocVersion>(VERSION_CONFIG.defaultVersion)
 const platformIcon = computed(() => PLATFORM_ICON_MAP[platform.value].icon)
-const canSwitchVersion = computed(() => isSwitchablePlatform(platform.value))
+const isLegacyPath = (path: string): boolean => path.startsWith('/sdk/') || path.startsWith('/docs/sdk/')
+const canSwitchVersion = computed(() => !isLegacyPath(route.path) && isSwitchablePlatform(platform.value))
 const versionLabel = computed(() =>
   canSwitchVersion.value ? version.value : VERSION_CONFIG.fixedVersionLabel
 )
@@ -131,7 +132,7 @@ const isPlatformKey = (value: string): value is PlatformKey =>
   Object.prototype.hasOwnProperty.call(PLATFORM_ICON_MAP, value)
 
 const parsePlatform = (path: string): PlatformKey | null => {
-  const matched = path.match(/^\/(?:document|v4)\/([^/]+)/)
+  const matched = path.match(/^\/(?:document|v4|sdk)\/([^/]+)/) || path.match(/^\/docs\/sdk\/([^/]+)/)
   if (!matched) return null
   return isPlatformKey(matched[1]) ? matched[1] : null
 }
@@ -198,7 +199,8 @@ const navigateToPlatformDoc = (
   platformName: PlatformKey,
   targetVersion: DocVersion = '5.x'
 ): void => {
-  const documentRoot = targetVersion === '4.x' ? '/v4' : '/document'
+  const legacySdk = route.path.startsWith('/sdk/') || route.path.startsWith('/docs/sdk/')
+  const documentRoot = legacySdk ? '/sdk' : (targetVersion === '4.x' ? '/v4' : '/document')
   const nextPlatformDocRouters = getRoutePaths(router.options.routes)
     .filter((path) => path.indexOf(`${documentRoot}/${platformName}/`) === 0)
     .map(normalizeRoutePath)
@@ -236,7 +238,8 @@ watch(
 const onChange = (nextPlatform: PlatformKey): void => {
   // 小程序仅在 V4 中独立存在。
   if (nextPlatform === 'applet') {
-    router.push(getHomePath('4.x', nextPlatform))
+    if (isLegacyPath(route.path)) navigateToPlatformDoc(nextPlatform)
+    else router.push(getHomePath('4.x', nextPlatform))
     return
   }
 
@@ -260,7 +263,7 @@ const onVersionChange = (nextVersion: DocVersion | string): void => {
 }
 
 const options = computed<PlatformOptionGroup[]>(() => {
-  const isV5 = version.value === '5.x'
+  const isV5 = !isLegacyPath(route.path) && version.value === '5.x'
   return [
     {
       label: '平台',
@@ -348,7 +351,7 @@ const options = computed<PlatformOptionGroup[]>(() => {
         </el-dropdown-menu>
       </template>
     </el-dropdown>
-    <span v-else class="version-fixed">{{ versionLabel }}</span>
+    <span v-else-if="!isLegacyPath(route.path)" class="version-fixed">{{ versionLabel }}</span>
   </div>
 </template>
 

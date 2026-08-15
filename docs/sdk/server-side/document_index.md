@@ -1,5 +1,6 @@
 ---
 title: 文档指引
+permalink: /docs/sdk/server-side/document_index.html
 ---
 
 ## 即时通讯 IM 是什么？

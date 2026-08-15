@@ -23,13 +23,13 @@
             旧版本文档已停止维护，不再更新。如需查阅以下历史文档，请点击对应链接：
             <ul>
               <li>
-                <a href="https://im.shengwang.cn/docs/sdk/android/document_index.html">SDK v1.x</a>。
+                <a href="/docs/sdk/android/document_index.html">SDK v1.x 文档</a>。
               </li>
               <li>
-                <a href="https://im.shengwang.cn/docs/uikit/chatuikit/android/chatuikit_overview.html">UIKit v2.x 文档</a>。
+                <a href="/docs/uikit/chatuikit/android/chatuikit_overview.html">UIKit v2.x 文档</a>。
               </li>
               <li>
-                <a href="https://im.shengwang.cn/docs/sdk/server-side/document_index.html">服务端 API 文档</a>。
+                <a href="/docs/sdk/server-side/document_index.html">服务端 API 文档</a>。
               </li>
             </ul>
           </li>

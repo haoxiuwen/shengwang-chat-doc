@@ -2,8 +2,7 @@ import path from "node:path";
 import fs from "node:fs";
 
 const getSubDirectories = (dir) =>
-  fs
-    .readdirSync(dir)
+  (fs.existsSync(dir) ? fs.readdirSync(dir) : [])
     .filter((item) => fs.statSync(path.join(dir, item)).isDirectory());
 const CHAT_DOC_PATH = path.resolve(__dirname, "../../uikit/chatuikit");
 const CHATROOM_DOC_PATH = path.resolve(__dirname, "../../uikit/chatroomuikit");
@@ -325,6 +324,7 @@ function buildChatUikitSidebar() {
         handleSidebarItem(platform, sidebar, CHAT_DOC_PATH, "chatuikit")
       )
       .filter((s) => s);
+    result[`/docs${key}`] = result[key];
   });
   return result;
 }
@@ -338,6 +338,7 @@ function buildChatroomUikitSidebar() {
         handleSidebarItem(platform, sidebar, CHATROOM_DOC_PATH, "chatroomuikit")
       )
       .filter((s) => s);
+    result[`/docs${key}`] = result[key];
   });
   return result;
 }
@@ -381,7 +382,7 @@ function handleSidebarItem(platform, sidebar, docPath, kitType) {
       return { ...sidebar, children: newchildren };
     }
   } else {
-    if (linkExists(platform, sidebar.link, docPath)) {
+    if (sidebar.link && linkExists(platform, sidebar.link, docPath)) {
       const newLink = `/uikit/${kitType}/${platform}/${sidebar.link}`;
       return { ...sidebar, link: newLink };
     }

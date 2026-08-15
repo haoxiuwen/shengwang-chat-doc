@@ -15,10 +15,6 @@ const PLATFORM_ICON_MAP = {
     icon: "/icon-web.svg",
     activeIcon: "/icon-web-hover.svg",
   },
-  harmonyos: {
-    icon : "/icon-harmonyos.svg",
-    activeIcon: "/icon-harmonyos-hover.svg",
-  },
   windows: {
     icon: "/icon-windows.svg",
     activeIcon: "/icon-windows-hover.svg",
@@ -65,10 +61,6 @@ const options = [
         value: "web",
         label: "Web",
       },
-      {
-        value: "harmonyos",
-        label: "HarmonyOS",
-      },
     ],
   },
   {
@@ -100,8 +92,9 @@ const router = useRouter();
 watch(
   () => route.path,
   () => {
-    if (route.path.indexOf("/uikit") == 0) {
+    if (route.path.indexOf("/uikit") == 0 || route.path.indexOf("/docs/uikit") == 0) {
       const splitRoute = route.path.split("/");
+      if (splitRoute[1] === "docs") splitRoute.splice(1, 1);
       kitType.value = splitRoute[2];
       platform.value = splitRoute[3];
     }
@@ -120,6 +113,7 @@ const onChange = (platform) => {
     .map((item) => item.path);
 
   let newPath = route.path.split("/");
+  if (newPath[1] === "docs") newPath.splice(1, 1);
   newPath[3] = platform;
   const nextPathPath = newPath.join("/");
 
