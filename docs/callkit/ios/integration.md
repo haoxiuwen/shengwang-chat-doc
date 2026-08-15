@@ -21,7 +21,7 @@ CallKit 是一套基于即时通讯 IM（基于 IM 4.16.0 及以上）和声网 
 2. [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)。
 3. [创建用户](/document/ios/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/ios/login.html#获取用户-token)。
 4. 创建群组，获取群组 ID。将用户加入群组。
-5. [开通音视频服务](product_activation.html)。
+5. [开通声网 RTC](product_overview.html#开通声网-rtc)。
 
 ## 集成步骤
 

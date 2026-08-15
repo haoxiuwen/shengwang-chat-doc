@@ -12,6 +12,7 @@ export const zhSidebar = sidebar({
     { text: "产品动态", link: "product_dynamics.html" },
     { text: "产品简介", link: "introduction.html" },
     { type: "separator" } as any,
+    { text: "开通 IM 服务", link: "enable_im.html" },
     { text: "购买指南", 
       collapsible: true,
       children: [

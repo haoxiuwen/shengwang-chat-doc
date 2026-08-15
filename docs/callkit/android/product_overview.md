@@ -65,8 +65,8 @@
 - 群组音视频通话默认最多支持 16 人。
 - 关于声网 RTC 的使用限制，详见 [声网 RTC 关键性能指标](https://doc.shengwang.cn/doc/rtc/android/overview/product-overview#%E5%85%B3%E9%94%AE%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87) 和 [配额限制](https://doc.shengwang.cn/doc/rtc/android/overview/product-overview#%E9%85%8D%E9%A2%9D%E9%99%90%E5%88%B6)。
 
-## 其他参考
+## 开通声网 RTC 
 
-- **开通 CallKit**：详见开通 [实时音视频服务开通指南](product_activation.md)。
-- **购买与计费**：详见 [购买指南](product_purchase.md) 和 [计费说明](/product/pricing_policy.html#实时音视频)。
-- **用量查询**：可调用 [RESTful API](/document/server-side/rtc_usage_query.html) 获取当前自然月内的 RTC 用量汇总数据，帮助开发者了解当月资源消耗情况及剩余可用量。
+使用音视频通话 CallKit 之前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 开通声网 RTC。详见 [开通说明](https://doc.shengwang.cn/doc/console/general/quickstart#开通服务)。
+
+关于声网 RTC 的计费说明，详见 [RTC 计费策略](https://doc.shengwang.cn/doc/rtc/android/billing/billing-strategy) 和 [付费方式](https://doc.shengwang.cn/doc/rtc/android/billing/payment)。
