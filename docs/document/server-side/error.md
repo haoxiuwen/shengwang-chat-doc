@@ -85,7 +85,7 @@
 | 400      | service open exception  |    | 消息漫游服务未开通。  | 联系商务开通。  |
 | 400         | service open exception | the app not open presence   | 没有开通 presence 服务。  | 联系商务开通 presence 服务。 |
 | 403      | message_rewrite_error   | The rewrite message feature is not open.   | 消息编辑功能未开通。  |  联系商务开通消息编辑功能。  |
-| 400      | Bad Request         |    | Reaction 功能未开通。 | 请在环信控制台开通 Reaction 服务。 |
+| 400      | Bad Request         |    | Reaction 功能未开通。 | 请在 [声网控制台](https://console.shengwang.cn/overview) 上的 **套餐包 > 预付费套餐包 > 即时通讯 IM** 开通 Reaction 服务。 |
 | 403     | FORBIDDEN       | {appId} user metadata service not allow   | 用户属性功能未开通。  | 联系商务开通用户属性功能。    |
 
     

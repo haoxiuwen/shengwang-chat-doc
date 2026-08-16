@@ -96,7 +96,7 @@ curl -X POST 'https://XXXX/app-id/{app_id}/chatgroups/66XXXX85/users?need_notify
 | :----------- | :--- | :------------- | :----------- | :----------- |
 | 401     | unauthorized | Unable to authenticate (OAuth) | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。 |
 | 403     | forbidden_op | an not join this group, reason:user: XX already in group: XX\n | 用户已经在群里。 | 不要重复加入。|
-| 403     | exceed_limit | user XX has joined too many groups! | 用户可加入的群组数达到上限。 | 退出不用的群组或在 [环信控制台上调用户可加入群组数上限](/product/console/basic_conversation_group_chatroom.html#单个用户可加入群组数上限)。 |
+| 403     | exceed_limit | user XX has joined too many groups! | 用户可加入的群组数达到上限。 | 退出不用的群组或在 [声网控制台](https://console.shengwang.cn/overview) 上的 **套餐包 > 预付费套餐包 > 即时通讯 IM** 上调单个用户可加入群组数上限。 |
 | 403     | exceed_limit | members size is greater than max user size ! | 加入群成员的人数超过最大限制。每次最多可以添加 100 个用户。 | 调整创建群的加群人数。 |
 | 404     | resource_not_found | grpID XX does not exist! | 群组不存在。 | 使用合法的群 ID。 |
 | 404     | resource_not_found | username XX doesn't exist! | 要添加的用户不存在。 | 使用合法的用户，即 `username` 传入存在的用户 ID。 |

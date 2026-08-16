@@ -2,12 +2,11 @@
 
 ## 功能说明
 
-在群组或聊天室中的成员被加入或移出黑名单时，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则)向你的 App Server 发送回调请求，App Server 可通过该回调查看加入/移出的成员，进行数据同步。
+在群组或聊天室中的成员被加入或移出黑名单时，IM 服务器会按照 [发送后回调规则](callback_postsending.html#回调规则)向你的 App Server 发送回调请求，App Server 可通过该回调查看加入/移出的成员，进行数据同步。
 
 ## 前提条件
 
-- 已开通发送后回调服务。详见 [开通消息回调服务](/product/console/basic_webhook.html#开通服务) 和 [回调说明](/document/server-side/callback_postsending.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login) 设置发送后回调规则。详见 [配置回调规则](/product/console/basic_webhook.html#配置消息回调规则)。
+已在 [声网控制台](https://console.shengwang.cn/overview) 设置发送后回调规则。详见 [配置回调规则](callback_postsending.html#回调规则)。
 
 ## 将成员加入黑名单
 
@@ -16,8 +15,8 @@
 ### 回调时机
 
 - 客户端将 [群组](/document/android/group_members.html#添加成员到黑名单)/[聊天室成员](/document/android/room_members.html#将成员加入聊天室白名单) 加入了黑名单。
-- 调用 RESTful API 将 [群组](/document/server-side/group_member_blocklist_add_single.html)/[聊天室成员](/document/server-side/chatroom_allowlist_add_single.html)  加入了黑名单。
-- 在 [环信控制台](https://console.easemob.com/user/login) 将 [群组](/value-added/moderation/moderation_manual_review.html#群组审核管理) 或 [聊天室成员](/value-added/moderation/moderation_manual_review.html#聊天室审核管理) 添加了黑名单。
+- 调用 RESTful API 将 [群组](/document/server-side/group_member_blocklist_add_single.html)/[聊天室成员](/document/server-side/chatroom_allowlist_add_single.html) 加入了黑名单。
+- 在 [声网控制台](https://console.shengwang.cn/overview) 将群组或聊天室成员添加了黑名单。
 
 ### 回调请求
 
@@ -49,7 +48,7 @@
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
 | `callId`       | String   | 回调请求的唯一标识。 |
-| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `paylod`       | Object | 事件内容。                                                     |
 | `payload.member` | Array | 被加入或移出群组/聊天室黑名单的用户 ID。        | 
 | `payload.expire_timestamp` | Long | 用户在黑名单中的过期时间。用户加入黑名单后，系统会自动分配该参数的值。  | 
@@ -67,7 +66,7 @@
 
 1. 通过客户端将成员移出群组/聊天室黑名单。
 2. 调用 RESTful API 将成员移出 [群组](/document/server-side/group_allowlist_remove.html)/聊天室黑名单。
-3. 在[环信控制台](https://console.easemob.com/user/login)将用户移出群组/聊天室黑名单。
+3. 在 [声网控制台](https://console.shengwang.cn/overview) 将用户移出群组/聊天室黑名单。
 
 ### 回调请求
 
@@ -97,7 +96,7 @@
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
 | `callId`       | String   | 回调请求的唯一标识。 |
-| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.member` | Array | 被移出群组/聊天室黑名单的用户 ID。        | 
 | `payload.type` | Array  | 将用户移出群组/聊天室黑名单的事件，值为 `REMOVE`。     |

@@ -125,7 +125,7 @@ export class PushTemplate {
 // 下面以文本消息为例，其他类型的消息设置方法相同。
 const message = ChatMessage.createTextSendMessage(conversationId, "消息内容");
 if (message) {
-  // 设置推送模板名称。设置前需在环信控制台或调用 REST 接口创建推送模板。
+  // 设置推送模板名称。设置前需在声网控制台或调用 REST 接口创建推送模板。
   // 若为默认模板，无需传入模板名称。
   // 若为自定义模板，需传入模板名称。
   let templateName = "自定义推送模板名称";
@@ -188,7 +188,7 @@ export class PushTemplate {
 // 下面以文本消息为例，其他类型的消息设置方法相同。
 const message = ChatMessage.createTextSendMessage(conversationId, "消息内容");
 if (message) {
-  // 设置推送模板名称。设置前需在环信控制台或调用 REST 接口创建推送模板。
+  // 设置推送模板名称。设置前需在声网控制台或调用 REST 接口创建推送模板。
   // 设置填写模板标题的 value 数组。
   let titleArgs = ["您","消息,"]; 
   // 设置填写模板内容的 value 数组。

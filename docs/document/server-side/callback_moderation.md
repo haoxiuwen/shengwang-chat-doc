@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-消息经 [内容审核服务](/value-added/moderation/moderation_overview.html) 审核后，IM 服务器将依据 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看消息审核的详细信息，并实现数据同步。
+消息经 [内容审核服务](/value-added/moderation/moderation_overview.html) 审核后，IM 服务器将依据 [发送后回调规则](callback_postsending.html#回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看消息审核的详细信息，并实现数据同步。
 
 ## 前提条件
 

@@ -104,7 +104,7 @@ message.setTo("6006");
 // 设置推送模板。
 JSONObject pushObject = new JSONObject();
 try {
-    // 设置推送模板名称。设置前需在环信控制台或调用 REST 接口创建推送模板。
+    // 设置推送模板名称。设置前需在声网控制台或调用 REST 接口创建推送模板。
    //若为默认模板 `default` 或 `detail`，无需传入模板名称。
    //若为自定义模板，需传入模板名称。
     pushObject.put("name", "test7");
@@ -161,7 +161,7 @@ EMClient.getInstance().chatManager().sendMessage(message);
 EMMessage message = EMMessage.createSendMessage(EMMessage.Type.TXT);
 EMTextMessageBody txtBody = new EMTextMessageBody("消息内容");
 message.setTo("6006");
-// 设置推送模板。设置前需在环信控制台或调用 REST 接口创建推送模板。
+// 设置推送模板。设置前需在声网控制台或调用 REST 接口创建推送模板。
 JSONObject pushObject = new JSONObject();
 JSONArray titleArgs = new JSONArray();
 JSONArray contentArgs = new JSONArray();

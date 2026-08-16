@@ -69,7 +69,7 @@ iOS SDK 使用 `sendMessageReadReceipts` 统一发送单聊和群聊消息的已
 
 - 已完成 SDK 初始化并成功登录，详见 [快速开始](quickstart.html)。
 - 已了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
-- 使用群消息已读回执前，已在 [环信控制台](/product/console/basic_message.html#群聊消息已读回执)开通该功能。
+- 使用群消息已读回执前，已在 [声网控制台](https://console.shengwang.cn/overview) 开通该功能。
 
 ## 单聊消息送达回执
 
@@ -130,7 +130,7 @@ options.enableDeliveryAck = YES;
 
 消息接收方在初始化 SDK 时需将 `isNeedReadReceipt` 设置为 `YES`；该属性默认值为 `NO`。该属性对单聊和群聊均有效。
 
-单聊消息已读回执无需额外开通。群聊消息已读回执需先在环信控制台开通功能，再设置该属性。
+单聊消息已读回执无需额外开通。群聊消息已读回执需先在声网控制台开通功能，再设置该属性。
 
 ```objectivec
 // 创建文本消息；单聊时 conversationId 为对端用户 ID。
@@ -295,7 +295,7 @@ NSArray<EMChatMessage *> *messages = @[message];
  - 单聊和群聊消息在发送前都需要将 `isNeedReadReceipt` 设置为 `YES`。
  - `sendMessageReadReceipts` 单次最多传入 50 条消息。所有消息必须属于同一会话，且其 `isNeedReadReceipt` 必须为 `YES`。
  - 调用 `sendMessageReadReceipts` 的客户端不会通过 `onMessageReadReceipts` 收到自己发送的回执；该回调由原消息发送方收到。
- - 群消息已读回执功能需要在环信控制台开通，并受有效期、群规模和查看权限等服务端配置限制。
+ - 群消息已读回执功能需要在声网控制台开通，并受有效期、群规模和查看权限等服务端配置限制。
 
 ## 接口列表
 

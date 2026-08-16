@@ -2,18 +2,17 @@
 
 ## 功能说明
 
-成功创建群组或聊天室后，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看创建的群组/聊天室的信息，进行数据同步。
+成功创建群组或聊天室后，IM 服务器会按照 [发送后回调规则](callback_postsending.html#回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看创建的群组/聊天室的信息，进行数据同步。
 
 ## 前提条件
 
-- 已开通发送后回调服务。详见 [开通消息回调服务](/product/console/basic_webhook.html#开通服务) 和 [回调说明](/document/server-side/callback_postsending.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login) 设置发送后回调规则。详见 [配置回调规则](/product/console/basic_webhook.html#配置消息回调规则)。
+已在 [声网控制台](https://console.shengwang.cn/overview) 设置发送后回调规则。详见 [配置回调规则](callback_postsending.html#回调规则)。
 
 ## 回调时机
 
 - 客户端创建了 [群组](/document/android/group_manage.html#创建群组)/[聊天室](/document/android/room_manage.html#创建聊天室)。
 - 调用 RESTful API 创建了 [群组](/document/server-side/group_create.html)/[聊天室](/document/server-side/chatroom_create.html)。
-- 在[环信控制台](https://console.easemob.com/user/login)上 [创建了群组](/product/console/operation_group.html#创建群组)/[聊天室](/product/console/operation_chatroom.html#创建聊天室)。 
+- 在 [声网控制台](https://console.shengwang.cn/overview) 上创建了群组或聊天室。 
 
 ## 回调请求
 
@@ -65,7 +64,7 @@
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
 | `callId`       | String   | 回调请求的唯一标识。 |
-| `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.role` | JSON | 群组角色。若设置了管理员，显示管理员角色，若未设置，则只显示群组角色：<br/> - 用户 ID：`owner`<br/> - 用户 ID：`admin` | 
 | `payload.member`| Array | 创建群组时拉入群的用户。    | 

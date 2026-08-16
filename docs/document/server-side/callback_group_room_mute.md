@@ -2,20 +2,19 @@
 
 ## 功能说明
 
-成功将群组或聊天室成员添加或移出禁言列表后，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看成员禁言/解除禁言的信息，进行数据同步。
+成功将群组或聊天室成员添加或移出禁言列表后，IM 服务器会按照 [发送后回调规则](callback_postsending.html#回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看成员禁言/解除禁言的信息，进行数据同步。
 
 ## 前提条件
 
-- 已开通发送后回调服务。详见 [开通消息回调服务](/product/console/basic_webhook.html#开通服务) 和 [回调说明](/document/server-side/callback_postsending.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login) 设置发送后回调规则。详见 [配置回调规则](/product/console/basic_webhook.html#配置消息回调规则)。
+已在 [声网控制台](https://console.shengwang.cn/overview) 设置发送后回调规则。详见 [配置回调规则](callback_postsending.html#回调规则)。
 
 ## 将成员加入禁言列表
 
 ### 回调时机
 
-1. 客户端将 [群组](/document/android/group_members.html#禁言指定成员)或[聊天室成员](/document/android/room_members.html#添加成员至聊天室禁言列表) 加入了禁言列表。
+1. 客户端将 [群组](/document/android/group_members.html#禁言指定成员)或 [聊天室成员](/document/android/room_members.html#添加成员至聊天室禁言列表) 加入了禁言列表。
 2. 调用 RESTful API 将 [群组](/document/server-side/group_member_mute.html) 或 [聊天室成员](/document/server-side/chatroom_member_mute.html) 加入了禁言列表。
-3. 在 [环信控制台](https://console.easemob.com/user/login) 将 [群组](/value-added/moderation/moderation_manual_review.html#群组审核管理) 或 [聊天室成员](/value-added/moderation/moderation_manual_review.html#聊天室审核管理) 加入了禁言列表。
+3. 在 [声网控制台](https://console.shengwang.cn/overview) 将群组或聊天室成员加入了禁言列表。
 
 ### 回调请求
 
@@ -46,7 +45,7 @@
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
 | `callId`       | String | 回调请求的唯一标识。 |
-| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.member` | JSON   | 被加入禁言列表的成员的用户 ID。 |
 | `payload.expire_timestamp` | LONG   | 禁言过期时间。将群组或聊天室成员禁言后，系统会自动分配一个禁言过期时间戳。 |
@@ -62,9 +61,9 @@
 
 ### 回调时机
 
-1. 客户端将 [群组](/document/android/group_members.html#解除指定成员禁言)或[聊天室成员](/document/android/room_members.html#将成员移出聊天室禁言列表) 移出了禁言列表。
-2. 调用 RESTful API 将 [群组](/document/server-side/group_member_unmute.html)或[聊天室成员](/document/server-side/chatroom_member_mute.html) 移出了禁言列表。
-3. 在 [环信控制台](https://console.easemob.com/user/login) 将 [群组](/value-added/moderation/moderation_manual_review.html#群组审核管理) 或 [聊天室成员](/value-added/moderation/moderation_manual_review.html#聊天室审核管理) 移出了禁言列表。
+1. 客户端将 [群组](/document/android/group_members.html#解除指定成员禁言) 或 [聊天室成员](/document/android/room_members.html#将成员移出聊天室禁言列表) 移出了禁言列表。
+2. 调用 RESTful API 将 [群组](/document/server-side/group_member_unmute.html) 或 [聊天室成员](/document/server-side/chatroom_member_mute.html) 移出了禁言列表。
+3. 在 [声网控制台](https://console.shengwang.cn/overview) 将群组或聊天室成员移出了禁言列表。
 
 ### 回调请求
 
@@ -94,7 +93,7 @@
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
 | `callId`       | String | 回调请求的唯一标识。 |
-| `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.member` | JSON   | 被移出禁言列表的成员的用户 ID。 | 
 | `payload.type` | String | 将成员移出禁言列表的事件，值为 `REMOVE`。 |
@@ -107,7 +106,7 @@
 
 ## 其他说明
 
-**群组操作的事件以及子事件后续会有更多新增。若业务强依赖这些事件或者子事件，业务中需添加对`operation` 和 `payload.type` 的强判断。**
+**群组操作的事件以及子事件后续会有更多新增。若业务强依赖这些事件或者子事件，业务中需添加对 `operation` 和 `payload.type` 的强判断。**
 
 
 

@@ -25,13 +25,13 @@
 
 ![img](/images/applet/config5.png)
 
-7. 登录环信控制台获取 socket 域名，进入 **应用概览** 页面，即可看到如图的域名展示。
+7. 登录声网控制台获取 socket 域名，进入 **基础信息** 页面，即可看到如图的域名展示。
 
 :::tip
 抖音小程序、QQ 小程序、百度小程序以及 uni-app 全平台的域名配置规则与微信小程序一致，使用微信小程序栏中的域名即可。
 :::
 
-![img](/images/applet/config6.png)
+![img](/images/applet/service_overview.png)
 
 8. 填写域名信息后，点击 **保存并提交** 按钮，完成配置。
 

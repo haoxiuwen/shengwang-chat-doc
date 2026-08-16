@@ -88,7 +88,7 @@ curl -i -X POST "https://XXXX/app-id/{app_id}/messages/msg_recall"   \
 }
 ```
 
-例如，消息撤回服务未在环信控制台开通，返回示例如下：
+例如，消息撤回服务未在声网控制台开通，返回示例如下：
 
 ```json
 {
@@ -137,7 +137,7 @@ curl -i -X POST "https://XXXX/app-id/{app_id}/messages/msg_recall"   \
 | 400      | message_recall_error | can't find msg to | 未找到撤回消息的接收⽅。 | 需传入正确的消息接收方。 |
 | 403        | message_recall_error | exceed recall time limit | 消息撤回超时。 | 消息撤回时长默认为消息发送后的 2 分钟。  |
 | 403      | message_recall_error | not_found msg | 消息因过期在服务端删除或消息已被撤回。 | 若撤回过期的消息，你需要开启强制撤回，即将 `force` 设置为 `true`。这种情况下，会撤回接收方在本地保存的消息，但发送方本地消息仍存在。<br/>若消息已被撤回，则无需重复撤回。        |
-| 403       | forbidden_op         | message recall service is unopened | 消息撤回服务未在环信控制台开通。| 请先在环信控制台开通该服务。 |
+| 403       | forbidden_op         | message recall service is unopened | 消息撤回服务未在声网控制台开通。| 请先在声网控制台开通该服务。 |
 | 500      |                      | internal error | 后端服务出现异常。 |      |
 
 关于其他错误，你可以参考 [响应状态码](error.html) 了解可能的原因。

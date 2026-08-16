@@ -35,11 +35,12 @@
 ![img](/images/android/user_token.png)
 
 在生产环境中，为了安全考虑，你需要部署 App Server 生成 Token，详见 [Token 鉴权文档](/docs/sdk/server-side/token_authentication.html#搭建-app-server-生成-token)。
+
 ## 主动登录
 
 1. **用户 ID + token** 是更加安全的登录方式。
 
-​      使用 token 登录时需要处理 token 过期的问题，比如在每次登录时更新 token 等机制。
+​   使用 token 登录时需要处理 token 过期的问题，比如在每次登录时更新 token 等机制。
 
 ```java
 ChatClient.getInstance().loginWithToken(mAccount, mToken, new CallBack() {
@@ -124,7 +125,7 @@ ChatClient.getInstance().logout(true, new CallBack() {
 1. 如果集成了 FCM 等第三方推送，`logout` 方法中 `unbindToken` 参数需设为 `true`，退出时会解绑设备 token，否则可能会出现退出了，还能收到消息推送通知的现象。
 有时可能会遇到网络问题而解绑失败，app 处理时可以弹出提示框让用户选择，是否继续退出(弹出框提示继续退出能收到消息的风险)，如果用户选择继续退出，传 `false` 再调用 `logout` 方法退出成功。当然也可以失败后还是返回退出成功，然后在后台起个线程不断调用 `logout` 方法直到成功。这样存在风险，即用户杀掉了 app，网络恢复后用户还会继续收到消息。
 
-1. 如果调用异步退出方法，在收到 `onsuccess` 回调后才能去调用 IM 相关方法，例如 `loginWithToken`。
+2. 如果调用异步退出方法，在收到 `onsuccess` 回调后才能去调用 IM 相关方法，例如 `loginWithToken`。
 :::
 
 ## 账号切换

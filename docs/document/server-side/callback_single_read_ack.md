@@ -2,12 +2,11 @@
 
 ## 功能说明
 
-成功发送单聊消息已读回执后，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调已读回执信息，进行数据同步。
+成功发送单聊消息已读回执后，IM 服务器会按照 [发送后回调规则](callback_postsending.html#回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调已读回执信息，进行数据同步。
 
 ## 前提条件
 
-- 已开通发送后回调服务。详见 [开通消息回调服务](/product/console/basic_webhook.html#开通服务) 和 [回调说明](/document/server-side/callback_postsending.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login) 设置发送后回调规则。详见 [配置回调规则](/product/console/basic_webhook.html#配置消息回调规则)。
+已在 [声网控制台](https://console.shengwang.cn/overview) 设置发送后回调规则。详见 [配置回调规则](callback_postsending.html#回调规则)。
 
 ## 回调时机
 
@@ -46,7 +45,7 @@
 | `chat_type` | String   | `read_ack` 已读回执。                                        |
 | `callId`    | String   | 回调请求的唯一标识。 |
 | `channel_channel` | String   | 单聊消息的已读回执，格式为 `App Key_接收已读回执用户 ID@conference.easemob.com`，例如，示例中的 `easemob-demo#wang_277721224642561@conference.easemob.com`。|
-| `security`  | String   | 签名，格式如下: `MD5（callId+secret+timestamp）`。 Secret 见 [Console 后台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。 |
+| `security`  | String   | 签名，格式如下: `MD5（callId+secret+timestamp）`。 [配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。 |
 | `payload`   | object   | 包括：<br/> - `ext`：消息扩展字段<br/> - `ack_message_id`：消息 ID<br/> - `bodies`：消息体内容。 |
 | `host`      | String   | 服务器名称。                                                 |
 | `from`      | String   | 发送已读回执用户 ID。                                        |

@@ -2,12 +2,11 @@
 
 ## 功能说明
 
-在消息上添加或移除表情回复（下文统称 “Reaction”）后，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看表情回复，进行数据同步。
+在消息上添加或移除表情回复（下文统称 “Reaction”）后，IM 服务器会按照 [发送后回调规则](callback_postsending.html#回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看表情回复，进行数据同步。
 
 ## 前提条件
 
-- 已开通发送后回调服务，详见 [开通消息回调服务](/product/console/basic_webhook.html#开通服务) 和 [回调说明](/document/server-side/callback_postsending.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login)设置发送后回调规则，详见 [配置回调规则](/product/console/basic_webhook.html#配置消息回调规则)。
+已在 [声网控制台](https://console.shengwang.cn/overview) 设置发送后回调规则。详见 [配置回调规则](callback_postsending.html#回调规则)。
 
 ## 回调时机
 

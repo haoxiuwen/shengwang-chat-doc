@@ -1,7 +1,5 @@
 # uni-app 全平台方案简介
 
-<Toc />
-
 小程序 SDK 为各端小程序开发提供一套完整的技术解决方案，在各端小程序的开发环境下，集成 IM 相关的功能更加便捷、高效。让您的小程序快速获得安全稳定的 IM 能力，集成简单，使用方便，帮助您快速拓展业务，赢得先机。
 
 :::tip
@@ -11,7 +9,7 @@
 
 ## 体验小程序
 
-点击链接，扫描二维码，即可快速体验环信 Uniapp 编译生成的移动端原生应用：
+点击链接，扫描二维码，即可快速体验声网 Uniapp 编译生成的移动端原生应用：
 
 - 安卓： [https://www.pgyer.com/h4XF](https://www.pgyer.com/h4XF)
 - iOS： [https://www.pgyer.com/9ISC](https://www.pgyer.com/9ISC)
@@ -47,9 +45,9 @@
 
 ### 步骤 3 配置服务器域名
 
-为满足不同客户的业务需求，环信在多地部署了数据中心。不同数据中心的 REST API 请求域名、Socket 访问域名不同。请根据您所在数据中心进行配置。
+为满足不同客户的业务需求，声网在多地部署了数据中心。不同数据中心的 REST API 请求域名、Socket 访问域名不同。请根据您所在数据中心进行配置。
 
-本节以微信为例介绍环信不同数据中心的 REST API 请求域名、WebSocket 访问域名：
+本节以微信为例介绍声网不同数据中心的 REST API 请求域名、WebSocket 访问域名：
 
 | 数据中心      | REST API 请求地址      | WebSocket 访问域名          |
 | ------------- | ------------------ | -------------------------------- |
@@ -62,7 +60,7 @@
 | 美东 1 区     | - https://a41.easemob.com <br/> -  https://a41.easecdn.com       |  - wss://im-api-wechat-41.easemob.com/websocket <br/> - wss://im-api-wechat-41.easecdn.com/websocket   |
 | 德国 2 区 | - https://a71.easemob.com <br/> - https://a71.easecdn.com       |  - wss://im-api-wechat-71.easemob.com/websocket <br/> - wss://im-api-wechat-71.easecdn.com/websocket   |
 
-应用所在数据中心可以在环信控制台的 **应用概览** 页面中查看：
+应用所在数据中心可以在声网控制台的 **即时通讯 IM > 功能配置 > 基础信息** 页面中查看：
 
 ![img](/images/applet/service_overview.png)
 
@@ -147,7 +145,7 @@ const conn = new WebIM.connection({
 
 uni-app 在 **Vue3 模式** 下，HBuilderX 会默认开启 [**摇树优化（tree-shaking）**](https://uniapp.dcloud.net.cn/collocation/manifest.html#treeshaking)。  
 
-该优化会在点击发行至 `网站-PC Web或手机H5` 后出现误删除环信 SDK 中未被显式引用的模块，导致发行后出现登录失败等异常情况。为了避免这些异常情况，你可以采用以下两种解决方案：
+该优化会在点击发行至 `网站-PC Web或手机H5` 后出现误删除声网 SDK 中未被显式引用的模块，导致发行后出现登录失败等异常情况。为了避免这些异常情况，你可以采用以下两种解决方案：
 
 **（推荐）方案一：手动关闭摇树优化**  
 

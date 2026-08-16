@@ -1,12 +1,12 @@
 # 小程序集成指南
 
-本文介绍如何将环信即时通讯 IM SDK 集成到微信、QQ、百度、抖音和支付宝小程序。各平台的集成流程基本一致，主要差异集中在开发工具、服务器域名配置入口、WebSocket 地址和连接限制。
+本文介绍如何将即时通讯 IM SDK 集成到微信、QQ、百度、抖音和支付宝小程序。各平台的集成流程基本一致，主要差异集中在开发工具、服务器域名配置入口、WebSocket 地址和连接限制。
 
 当前 SDK 支持微信、QQ、百度、抖音、支付宝等小程序运行环境。各平台的集成流程基本一致，主要差异集中在开发者工具、服务器合法域名配置入口、WebSocket 地址选择和平台连接限制。
 
 ## 步骤 1：注册 IM 账号
 
-在环信控制台完成以下操作：
+在声网控制台完成以下操作：
 
 1. [注册 IM 账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
 2. [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
@@ -30,7 +30,7 @@
 
 ## 步骤 3：配置服务器域名
 
-小程序发布前，需在对应平台后台配置合法域名。请先在环信控制台的 **应用概览** 页面确认应用所在数据中心，再选择相应的 REST API 和 WebSocket 地址。
+小程序发布前，需在对应平台后台配置合法域名。请先在声网控制台的 **即时通讯 IM** > **功能配置** > **基础信息** 页面确认应用所在数据中心，再选择相应的 REST API 和 WebSocket 地址。
 
 ![应用所在数据中心](/images/applet/service_overview.png)
 
@@ -67,9 +67,9 @@
 
 可以通过以下任一方式获取 SDK：
 
-- 通过环信官网 [下载 SDK](https://www.easemob.com/download/im#applets)。
-- 从环信 [GitHub 仓库](https://github.com/easemob/webim-weixin-xcx/tree/master/src/sdk) 获取 SDK 文件。
-- 从环信 [Gitee 仓库](https://gitee.com/easemob-code/webim-weixin-xcx/tree/master/src/sdk) 获取 SDK 文件。
+- 通过声网文档站 [下载 SDK](https://im.shengwang.cn/)。
+- 从 [GitHub 仓库](https://github.com/easemob/webim-weixin-xcx/tree/master/src/sdk) 获取 SDK 文件。
+- 从 [Gitee 仓库](https://gitee.com/easemob-code/webim-weixin-xcx/tree/master/src/sdk) 获取 SDK 文件。
 
 ## 步骤 5：引入 SDK
 

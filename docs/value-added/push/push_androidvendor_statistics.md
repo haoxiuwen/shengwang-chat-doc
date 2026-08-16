@@ -25,13 +25,13 @@
 
 ![img](/images/instantpush/push_flyme_callbackaddr.png)
 
-您可以在环信控制台的 **应用概览** 页面中查看当前 App Key 的 Rest API 域名地址，仅支持填写 `easemob.com` 类型。
+您可以在声网控制台的 **基础信息** 页面中查看当前 App ID 的 Rest API 域名地址，仅支持填写 `easemob.com` 类型。
 
 ![img](/images/instantpush/push_domain_name.png)
 
 #### 1.4、开启送达回执
 
-魅族平台设置完回执地址后，需要在环信控制台，**即时推送** → **配置证书** → **魅族** 配置中开启推送送达回执，才能获取到魅族通道送达数据。 
+魅族平台设置完回执地址后，需要在声网控制台，**即时通讯 IM** > **功能配置** > **推送证书** > **魅族** 配置中开启推送送达回执，才能获取到魅族通道送达数据。 
 
 ### 2、华为需要进行推送回执配置才能实现相关功能。方法如下：
 
@@ -59,7 +59,7 @@
 
 ![img](/images/instantpush/huawei_report_v1.png)
 
-如果您有多个回执地址，且环信回执地址并非默认选项，则需要指定回执配置ID，详情见 [华为配置推送通知receiptId ](push_notification_config.html#华为推送说明)
+如果您有多个回执地址，且声网回执地址并非默认选项，则需要指定回执配置ID，详情见 [华为配置推送通知receiptId ](push_notification_config.html#华为推送说明)
 
 ![img](/images/instantpush/huawei_receipt_id.png)
 
@@ -83,7 +83,7 @@
 
 根据所在集群设置回调地址（配置 https，注意：华为只支持https地址配置）
 格式为：`https://域名/orgname/appname/push/report/huawei`
-您可以在环信控制台的 **应用概览** 页面中查看当前 Appkey 的 Rest API 域名地址，仅支持填写 `easemob.com` 类型。 
+您可以在声网控制台的 **基础信息** 页面中查看当前 App ID 的 Rest API 域名地址，仅支持填写 `easemob.com` 类型。 
 
 ![img](/images/instantpush/push_domain_name.png)
 

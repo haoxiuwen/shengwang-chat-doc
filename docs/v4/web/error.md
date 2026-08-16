@@ -35,19 +35,19 @@ error.type === statusCode.WEBIM_CONNCTION_USER_NOT_ASSIGN_ERROR 其中 `error` �
 | 204    | USER_NOT_FOUND                     | 用户不存在，如创建群拉人时不存在的用户报错。  | 检查 userId 是否正确。|
 | 205    | MESSAGE_PARAMETER_ERROR                     | 消息参数错误。如撤回消息时未传消息 ID 或者发送消息时未传消息接收方的用户 ID。|确保消息⾥包含消息 ID 和接收方用户 ID，即 `id` 和 `to`。 |
 | 206    | WEBIM_CONNCTION_USER_LOGIN_ANOTHER_DEVICE      | 用户在其他设备登录：如果没有开启多设备登录，则在其他设备登录会将当前登录的设备踢下线，用户会收到此错误。若开启了多设备登录并配置了支持的设备数量，设备间的互踢策略与 `ConnectionParameters#isFixedDeviceId` 参数有关，详见[多设备文档](multi_device.html)。  | 开启多设备功能，详见 [多设备⽂档](https://doc.easemob.com/v4/web/multi_device.html)。 |
-| 207    | WEBIM_CONNCTION_USER_REMOVED                   | 用户已经被注销：如果登录用户的 ID 被管理员从环信控制台删除则会收到此错误。 | 提示⽤户被注销。|
+| 207    | WEBIM_CONNCTION_USER_REMOVED                   | 用户已经被注销：如果登录用户的 ID 被管理员从 [声网控制台](https://console.shengwang.cn/overview) 删除则会收到此错误。 | 提示⽤户被注销。|
 | 208    | WEBIM_USER_ALREADY_LOGIN | 已经登录，又重复登录。 | 不能重复登录。 |
 | 214    | USER_LOGIN_TOO_MANY_DEVICES | 用户登录设备数超过限制。该错误只适用于 uniapp 平台自动登录场景。<br/>该错误在多设备自动登录场景中且打开不踢掉其他设备上的登录的开关时超过登录设备数量的限制才会出现。例如，用户最多可同时登录 4 台设备， A（开启了自动登录）、B、C 和 D。最初，用户在这四个设备上均为登录状态，但由于网络连接原因登出了设备 A，然后手动登录了设备 E。这种情况下，设备 A 的网络恢复正常时会自动登录，这时登录失败且提示该错误。 | 可增加同时在线的设备数量。|
 | 216    | WEBIM_CONNCTION_USER_KICKED_BY_CHANGE_PASSWORD | 用户密码更新：当前登录的用户密码被修改后，当前登录会断开并提示该错误。 |提示密码已经修改，请重新登录。|
-| 217    | WEBIM_CONNCTION_USER_KICKED_BY_OTHER_DEVICE    | 用户被踢下线：开启多设备登录后，如果用户在其他设备上调用 API 或者通过环信控制台踢出当前设备登录的 ID，SDK 会提示该错误。 | 提示被踢下线。|
-| 219    | USER_MUTED_BY_ADMIN   | 用户被全局禁言：在环信控制台禁言了此用户后，该用户发送消息时会提示该错误。   | 提示⽤户已被禁⾔。|
+| 217    | WEBIM_CONNCTION_USER_KICKED_BY_OTHER_DEVICE    | 用户被踢下线：开启多设备登录后，如果用户在其他设备上调用 API 或者通过 [声网控制台](https://console.shengwang.cn/overview) 踢出当前设备登录的 ID，SDK 会提示该错误。 | 提示被踢下线。|
+| 219    | USER_MUTED_BY_ADMIN   | 用户被全局禁言：在 [声网控制台](https://console.shengwang.cn/overview) 禁言了此用户后，该用户发送消息时会提示该错误。   | 提示⽤户已被禁⾔。|
 | 220    | USER_DEVICE_CHANGED | 用户的登录设备与上次不一致。该错误只适用于 uniapp 平台自动登录场景。<br/>该错误在单设备自动登录场景中且打开不踢掉其他设备上的登录的开关时才会出现。例如，用户自动登录设备 A，之后手动登录设备 B。用户再次自动登录设备 A 时登录失败且提示该错误。 |登录失败的设备会收到 `onDisconnected` 事件。您可以在收到该事件时，退出登录, 并回到登录页面。 |
 | 221    | USER_NOT_FRIEND                                | 非好友禁止发消息：开通非好友禁止发消息后，非好友间发消息提示此错误。该功能可在控制台开通。 | 提示⽤户⾮对⽅好友。|
 | 500    | SERVER_BUSY                                    | 服务器忙碌。 | 提示服务忙，请重试。|
 | 501    | MESSAGE_INCLUDE_ILLEGAL_CONTENT                | 消息含有非法内容：如果消息被过滤系统识别为非法消息时返回该错误。 | 提示消息发送失败，包含敏感词等⾮法内容。 |
 | 502    | MESSAGE_EXTERNAL_LOGIC_BLOCKED                 | 消息被拦截：开通反垃圾服务后，消息被拦截报此错误。           | 提示消息发送失败。|
 | 503    | SERVER_UNKNOWN_ERROR                           | 消息发送失败未知错误：服务端返回的错误信息超出 SDK 处理范围。 | 提示消息发送失败。|
-| 504    | MESSAGE_RECALL_TIME_LIMIT                      | 撤回消息时超出限定时间。  | 提示已经超出可撤回的时间，或者在 [环信控制台延长消息可撤回时间](/product/console/basic_message.html#消息撤回)，最多可设置为 7 天。 | 
+| 504    | MESSAGE_RECALL_TIME_LIMIT                      | 撤回消息时超出限定时间。  | 提示已经超出可撤回的时间，或者在 [声网控制台](https://console.shengwang.cn/overview) 延长消息可撤回时间，最多可设置为 7 天。 | 
 | 505    | SERVICE_NOT_ENABLED                            | 服务未开启：要使用的某些功能未开通。   | 根据 error message 开通相应的功能。 |
 | 506    | SERVICE_NOT_ALLOW_MESSAGING                    | 用户未在白名单中：群组或聊天室开启全员禁言时，若用户未在白名单中发送消息时提示该错误。 | 提示当前群组或聊天室已禁⾔。| 
 | 507    | SERVICE_NOT_ALLOW_MESSAGING_MUTE               | 当前用户被禁言：在群组或者聊天室中被禁言后发消息报此错误。  | 提示⽤户已被禁⾔。|
@@ -72,7 +72,7 @@ error.type === statusCode.WEBIM_CONNCTION_USER_NOT_ASSIGN_ERROR 其中 `error` �
 | 705    | CHATROOM_NOT_EXIST                             | 聊天室不存在：尝试对不存在的聊天室进行操作时提示该错误。| 检查聊天室 ID 是否正确。 |
 | 800    | LOCAL_DB_OPERATION_FAILED       | 本地数据库操作失败。| ⽤ miniCore 使⽤本地会话列表时，提示会话列表操作失败。|
 | 999    | SDK_RUNTIME_ERROR                              | Websocket 发送消息错误。  | 提示登录失败，重新登录。|
-| 1100   | PRESENCE_PARAM_EXCEED                          | - 用户在线状态订阅功能 Presence 未开通。<br/> - 参数长度超出限制：调用 Presence 相关方法时参数长度超出限制。 | <br/>使用 Presence 功能前需要在环信控制台开通。 <br/> - 调用[发布自定义在线状态 API](presence.html#发布自定义在线状态) 时设置的在线状态详细信息的长度不能超过 64 字节。|
+| 1100   | PRESENCE_PARAM_EXCEED                          | - 用户在线状态订阅功能 Presence 未开通。<br/> - 参数长度超出限制：调用 Presence 相关方法时参数长度超出限制。 | <br/>使用 Presence 功能前需要在声网控制台开通。 <br/> - 调用[发布自定义在线状态 API](presence.html#发布自定义在线状态) 时设置的在线状态详细信息的长度不能超过 64 字节。|
 | 1101   | REACTION_ALREADY_ADDED                         | Reaction 重复添加。   | 确保同⼀个⽤户不要添加重复的 Reaction。|
 | 1102   | REACTION_CREATING                              | 创建 Reaction 时，其他人正在创建。| 提示其他⼈正在创建 Reaction。|
 | 1103   | REACTION_OPERATION_IS_ILLEGAL                  | 用户对该 Reaction 没有操作权限：没有添加过该 Reaction 的用户进行删除操作，或者单聊消息非发送者和非接收者进行添加 Reaction 操作。 | 确保⽤户正确操作 Reaction。 |

@@ -2,14 +2,13 @@
 
 ## 功能说明
 
-成功发送消息后，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看发送的消息，进行数据同步。
+成功发送消息后，IM 服务器会按照 [发送后回调规则](callback_postsending.html#回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看发送的消息，进行数据同步。
 
 单聊、群组和聊天室消息的回调请求均包含一组公共参数，详见 [公共参数](#公共参数)。不同消息类型的 `payload` 字段结构有所不同，下文将分别介绍。
 
 ## 前提条件
 
-- 已开通发送后回调服务。详见 [开通消息回调服务](/product/console/basic_webhook.html#开通服务) 和 [回调说明](/document/server-side/callback_postsending.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login) 设置发送后回调规则。详见 [配置回调规则](/product/console/basic_webhook.html#配置消息回调规则)。
+已在 [声网控制台](https://console.shengwang.cn/overview) 设置发送后回调规则。详见 [配置回调规则](callback_postsending.html#回调规则)。
 
 ## 公共参数
 
@@ -27,7 +26,7 @@
 | `msg_id`    | String   | 发送的消息 ID。 | 
 | `payload`         | object | 事件内容，与通过 REST API 发送的消息内容一致，查看 [历史消息内容](message_historical.html#历史消息记录的内容)。      |
 | `securityVersion` | String | 安全校验版本，当前为 `1.0.0`。请忽略此参数，以后会改成 Console 后台做设置。                   |
-| `security`        | String | 签名，格式为 `MD5（callId+secret+timestamp）`。 `Secret` 见控制台 [回调规则配置](/product/console/basic_webhook.html#配置消息回调规则)。     |
+| `security`        | String | 签名，格式为 `MD5（callId+secret+timestamp）`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。     |
 | `host`            | String | 服务器名称。              |
 | `content_type`            | String | 消息类型：<br/> - `chat:user:*`：单聊消息  <br/> - `chat:group:*`：群组消息   <br/> - `chat:room:*`：聊天室消息  <br/>  各类消息对应的具体参数值，详见[发送单聊消息](#发送单聊消息)、[发送群组消息](#发送群组消息)和[发送聊天室消息](#发送聊天室消息)章节。   |
 
@@ -35,7 +34,7 @@
 
 - 客户端上在单聊、群组聊天和聊天室中 [发送了消息](/document/android/message_send.html#发送文本消息)。
 - 调用 REST API 在[单聊](/document/server-side/message_single.html#发送文本消息)、[群组聊天](/document/server-side/message_group.html#发送文本消息) 和 [聊天室](/document/server-side/message_chatroom.html#发送文本消息) 中 发送了消息。
-- 在控制台上在[单聊](/product/console/operation_user.html#发送-rest-消息)、[群组聊天](/product/console/operation_group.html#发送-rest-消息) 和 [聊天室](/product/console/operation_chatroom.html#聊天室审核管理) 中 发送了消息。
+- 在 [声网控制台](https://console.shengwang.cn/overview)  上在单聊、群组聊天或聊天室中发送了消息。
 
 ## 发送单聊消息
 
