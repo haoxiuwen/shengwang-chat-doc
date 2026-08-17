@@ -1,4 +1,7 @@
-﻿# Web/小程序 IM SDK 更新日志
+﻿---
+title: Web/小程序 IM SDK 更新日志
+show_search_search: false
+---
 
 ## v5.0.0 Dev
 
@@ -55,6 +58,8 @@
 - `sendMessageReadReceipts` 只表示指定消息已读，不会推进会话级已读位置，也不会直接清零本地会话未读数；如需清零未读数，请调用会话未读数清零接口。
 - 从旧版 Web SDK 升级时，应重点检查初始化入口、Manager 注册、登录参数、消息创建、事件监听、返回值读取和已移除 API。
 
+<HideSection :show="$frontmatter.show_server_search">
+
 ## v4.24.1 Dev 2026-7-10（开发版）
 
 #### 新增功能
@@ -62,6 +67,8 @@
 支持 [服务端消息搜索](/value-added/search/message_search_web.html)，可根据关键词组合、会话 ID、消息类型、时间范围及消息内容或扩展属性进行筛选。该功能需联系商务经理开通后方可使用，详见 [开通说明](/product/console/purchase_value_added.html#消息搜索)。
 
 消息搜索默认不支持扩展字段 `ext`，如需支持该字段搜索，请联系商务经理。
+
+</HideSection>
 
 ## v4.23.0 Dev 2026-6-10（开发版）
 

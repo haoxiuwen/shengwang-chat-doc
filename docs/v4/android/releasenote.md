@@ -1,11 +1,20 @@
+---
+show_server_search: false
+---
+
 # Android IM SDK 更新日志
 
 ## v4.24.0 Dev 2026-7-10（开发版）
 
 #### 新增功能
 
+<HideSection :show="$frontmatter.show_server_search">
+
 - 支持 [服务端消息搜索](/value-added/search/message_search_android.html)，可根据关键词组合、会话 ID、消息类型、时间范围及消息内容或扩展属性进行筛选。该功能需联系商务经理开通后方可使用，详见 [开通说明](/product/console/purchase_value_added.html#消息搜索)。
   消息搜索默认不支持扩展字段 `ext`，如需支持该字段搜索，请联系商务经理。
+
+</HideSection>
+
 - 新增异步接口，用于 [更新群组扩展字段](group_attributes.html#更新群扩展字段)。
 - 新增异步接口，用于 [获取服务器端推送配置](/v4/android/push/push_display_attribute.html#获取推送通知的显示属性)。
 

@@ -1,4 +1,7 @@
-﻿# iOS IM SDK 更新日志
+﻿---
+title: iOS IM SDK 更新日志
+show_search_search: false
+---
 
 ## v5.0.0 Dev
 
@@ -98,11 +101,15 @@ SDK 补充会话列表监听、会话展示信息、批量删除会话和本地�
 
 ## v4.24.0 Dev 2026-7-10（开发版）
 
+<HideSection :show="$frontmatter.show_server_search">
+
 #### 新增功能
 
 支持 [服务端消息搜索](/value-added/search/message_search_ios.html)，可根据关键词组合、会话 ID、消息类型、时间范围及消息内容或扩展属性进行筛选。，详见 [开通说明](/product/console/purchase_value_added.html#消息搜索)。
 
 消息搜索默认不支持扩展字段 `ext`，如需支持该字段搜索，请联系商务经理。
+
+</HideSection>
 
 #### 修复
 
