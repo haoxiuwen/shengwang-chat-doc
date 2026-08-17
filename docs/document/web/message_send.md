@@ -1409,16 +1409,6 @@ await client.chatManager.sendMessage(message, {
 文本、位置、透传和自定义消息通常不涉及附件上传，`onFileUploadProgress` 一般不会被触发。建议在回调中根据最新状态更新页面数据。
 :::
 
-#### 发送消息前的内容审核
-
-- 内容审核关注消息 body
-
-[内容审核服务会关注消息 body 中指定字段的内容，不同类型的消息审核不同的字段](/value-added/moderation/moderation_mechanism.html)，若创建消息时在这些字段中传入了很多业务信息，可能会影响审核效果。因此，创建消息时需要注意内容审核的字段不涉及业务信息，建议业务信息放在扩展字段中。
-
-- 设置发送方收到内容审核替换后的内容
-
-若初始化时打开了 `useReplacedMessageContents` 开关，发送文本消息时如果被内容审核（Moderation）进行了内容替换，发送方会收到替换后的内容。若该开关为关闭状态，则发送方不会收到替换后的内容。
-
 #### 消息大小和存储限制
 
 各类消息的大小和存储限制，详见 [消息限制说明](limitation.html#消息大小)。

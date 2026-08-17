@@ -178,13 +178,6 @@ EMClient.getInstance().loginWithToken(userId, token, new EMCallBack() {
 | 1112 | `TRANSLATE_USAGE_LIMIT` | 翻译用量达到上限。 | 联系商务，进行翻译用量续费。 |
 | 1113 | `TRANSLATE_MESSAGE_FAIL` | 消息翻译失败。 | 需结合 Debug 日志分析翻译失败的原因。 |
 
-## 内容审核
-
-| 错误码 | 错误信息 | 描述和可能原因 | 解决方法 |
-| :--- | :--- | :--- | :--- |
-| 1200 | `MODERATION_FAILED` | 第三方内容审核服务的消息审核结果为“拒绝”。 | 可以从 [声网控制台](https://console.shengwang.cn/overview) 上查看内容审核配置及记录，进行分析。 |
-| 1299 | `THIRD_SERVER_FAILED` | 除第三方内容审核服务的其他服务的消息审核结果为**拒绝**。 | 可以从 [声网控制台](https://console.shengwang.cn/overview) 上查看内容审核配置及记录，进行分析。 |
-
 ## 消息表情回复（Reaction）
 
 | 错误码 | 错误信息 | 描述和可能原因 | 解决方法 |

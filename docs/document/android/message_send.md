@@ -766,16 +766,6 @@ EMClient.getInstance().chatManager().sendMessage(message);
 文本、位置、透传和自定义消息通常不涉及附件上传，`onProgress` 一般不会被触发。SDK 回调不保证在主线程执行，更新 Android UI 时需要切换到主线程。
 :::
 
-#### 发送消息前的内容审核
-
-- 内容审核关注消息 body
-
-[内容审核服务会关注消息 body 中指定字段的内容，不同类型的消息审核不同的字段](/value-added/moderation/moderation_mechanism.html)，若创建消息时在这些字段中传入了很多业务信息，可能会影响审核效果。因此，创建消息时需要注意内容审核的字段不涉及业务信息，建议业务信息放在扩展字段中。
-
-- 设置发送方收到内容审核替换后的内容
-
-默认情况下，内容审核替换后的内容仅下发至接收方。发送方如需同步接收替换内容，需 **联系商务经理开通权限**，并在初始化 SDK 时将 `EMOptions#setUseReplacedMessageContents` 参数设为 `true`。开启后，发送方将在消息被审核替换时收到新内容；若开关关闭（默认状态），则发送方仍保留原始发送内容，不会感知替换结果。
-
 #### 消息大小和存储限制
 
 各类消息的大小和存储限制，详见 [消息限制说明](/product/limitation.html#消息大小)。
@@ -866,7 +856,6 @@ String webhookEnv = message.getWebhookEnv();
 | [`sendMessage`](#发送消息统一流程) | `EMChatManager` | 发送消息。 |
 | [`downloadAndParseCombineMessage`](#发送合并消息) | `EMChatManager` | 下载并解析合并消息附件。 |
 | [`setAutoTransferMessageAttachments`](#上传消息附件至自有服务器) | `EMOptions` | 设置 SDK 是否自动上传和下载消息附件。 |
-| [`setUseReplacedMessageContents`](#发送消息前的内容审核) | `EMOptions` | 设置发送方是否接收内容审核替换后的消息内容。 |
 
 
 

@@ -108,8 +108,6 @@ iOS 的错误码只有当操作出错的时候才会有返回值，否则返回 
 | 1111   |  AgoraChatErrorTranslateServiceNotEnabled  | 翻译服务未启用。使用翻译服务前，应在[声网控制台](https://console.shengwang.cn/overview)开启该服务。  |
 | 1112   |     AgoraChatErrorTranslateUsageLimit      | 翻译用量达到上限。                                           |
 | 1113   |     AgoraChatErrorTranslateServiceFail     | 获取翻译服务失败。          |
-| 1200   |     AgoraChatErrorModerationFailed           | 第三方内容审核服务的消息审核结果为“拒绝”。 |
-| 1299   |     AgoraChatErrorThirdServiceFailed        | 除第三方内容审核服务的其他服务的消息审核结果为“拒绝”。 |
 | 1300   |     AgoraChatErrorReactionReachLimit      | 该消息的 Reaction 数量已达到限制。         |
 | 1301   |   AgoraChatErrorReactionHasBeenOperated    | 用户已添加该 Reaction，不能重复添加。  |
 | 1302   |  AgoraChatErrorReactionOperationIsIllegal  | 用户对该 Reaction 没有操作权限。例如，未添加过该 Reaction 的用户进行删除操作，或者既非单聊消息的发送方也不是非接收方的用户对消息添加 Reaction。 |

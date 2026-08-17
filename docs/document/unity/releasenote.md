@@ -136,7 +136,6 @@
 - 新增 `GroupManager#FetchMyGroupsCount` 方法用于[从服务器获取当前用户已加入的群组数量](group_manage.html#查询当前用户已加入的群组数量)。 
 - 新增错误码 706 `CHATROOM_OWNER_NOT_ALLOW_LEAVE`，表示聊天室所有者不允许离开聊天室。若初始化时，`Options#IsRoomOwnerLeaveAllowed` 参数设置为 `false`，聊天室所有者调用 `LeaveRoom` 方法离开聊天室时会提示该错误。
 - 支持[聊天室漫游消息](message_retrieve.html#从服务器获取指定会话的消息)。
-- 新增 `Options#UseReplacedMessageContents` 开关。开启后，发送消息时如果被内容审核进行了内容替换，发送方可以收到替换后的内容。
 - 新增 `Message#IsContentReplaced` 属性判断文本消息的内容是否在文本审核过程中进行了替换。
 - 新增[置顶消息](message_pin.html)功能。
   - 新增 `ChatManager#PinMessage` 方法，用于置顶消息或取消置顶消息。

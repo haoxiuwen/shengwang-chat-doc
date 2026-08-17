@@ -269,7 +269,6 @@
   - `EMConversation#marks`：获取本地单个会话的所有标记。
   - `EMChatMultiDevicesEvent#CONVERSATION_UPDATE_MARK`：多设备场景下的会话标记事件。当前用户在一台登录设备上更新了会话标记，包括添加和移除会话标记，其他登录设备会收到该事件。
 - 支持[聊天室漫游消息](message_retrieve.html#从服务器获取指定会话的消息)。
-- 新增 `EMChatOptions#useReplacedMessageContents` 开关。开启后，发送消息时如果被内容审核进行了内容替换，发送方可以收到替换后的内容。
 - 新增[置顶消息](message_pin.html)功能。
   - 新增 `EMChatManager#pinMessage` 方法，用于置顶消息。
   - 新增 `EMChatManager#unpinMessage` 方法，用于取消置顶消息。

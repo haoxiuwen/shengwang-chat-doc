@@ -181,13 +181,6 @@ iOS 的错误码只有当操作出错的时候才会有返回值，否则返回 
 | 1112   |     `EMErrorTranslateUsageLimit`      | 翻译用量达到上限。                                           | 联系商务，进行翻译用量续费。 |
 | 1113   |     `EMErrorTranslateServiceFail`     | 翻译消息失败。          | 需结合 Debug 日志分析翻译失败的原因。 |
 
-## 内容审核
-
-| 错误码 | 错误信息      | 描述和可能原因                 | 解决方法    |
-| :----- | :------------ | :--------------------------- | :--------------------------- |
-| 1200   |     `EMErrorModerationFailed`           | 第三方内容审核服务的消息审核结果为“拒绝”。 | 可以从 [声网控制台](https://console.shengwang.cn/overview) 上查看内容审核配置及记录，进行分析。 |
-| 1299   |     `EMErrorThirdServiceFailed`        | 除第三方内容审核服务的其他服务的消息审核结果为“拒绝”。 | 可以从 [声网控制台](https://console.shengwang.cn/overview) 上查看内容审核配置及记录，进行分析。 |
-
 ## 消息表情回复（Reaction）
 
 | 错误码 | 错误信息      | 描述和可能原因                 | 解决方法    |

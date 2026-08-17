@@ -112,8 +112,6 @@ iOS 的错误码只有当操作出错的时候才会有返回值，否则返回 
 | 1111   |  EMErrorTranslateServiceNotEnabled  | 翻译服务未启用。使用翻译服务前，应在 [声网控制台](https://console.shengwang.cn/overview) 开启该服务。  | 在[声网控制台](https://console.shengwang.cn/overview) 开启翻译服务。 |
 | 1112   |     EMErrorTranslateUsageLimit      | 翻译用量达到上限。                                           | 联系商务，进行翻译用量续费。 |
 | 1113   |     EMErrorTranslateServiceFail     | 翻译消息失败。          | 需结合 Debug 日志分析翻译失败的原因。 |
-| 1200   |     EMErrorModerationFailed           | 第三方内容审核服务的消息审核结果为“拒绝”。 | 可以从 [声网控制台](https://console.shengwang.cn/overview) 上查看内容审核配置及记录，进行分析。 |
-| 1299   |     EMErrorThirdServiceFailed        | 除第三方内容审核服务的其他服务的消息审核结果为“拒绝”。 | 可以从 [声网控制台](https://console.shengwang.cn/overview) 上查看内容审核配置及记录，进行分析。 |
 | 1300   |     EMErrorReactionReachLimit      | 该消息的 Reaction 数量已达到限制。         | 可以在 UI 上进行提示，或联系商务增加消息支持的 Reaction 数量上线。 |
 | 1301   |   EMErrorReactionHasBeenOperated    | 用户已添加该 Reaction，不能重复添加。  | 可以按照添加 Reaction 成功的情况处理。 |
 | 1302   |  EMErrorReactionOperationIsIllegal  | 用户对该 Reaction 没有操作权限。例如，未添加过该 Reaction 的用户进行删除操作，或者既非单聊消息的发送方也不是非接收方的用户对消息添加 Reaction。 | 结合日志分析，检查调用的 API 中传入的参数是否正确。 |

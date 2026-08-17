@@ -70,7 +70,6 @@ const documentV5Sidebar = [
       { text: '消息扩展', link: 'message_extension.html' },    
       { text: '置顶消息', link: 'message_pin.html'},         
       { text: '只投在线用户', link: 'message_deliver_only_online.html'},
-      // { text: '消息审核（举报）', link: 'moderation.html', except: ['harmonyos']},
       { text: '获取消息流量统计', link: 'message_traffic_statis.html', only: ['android', 'ios'] },
         ],
     except: ['server-side', 'applet']
@@ -245,7 +244,6 @@ const documentV5Sidebar = [
           { text: '置顶消息', link: 'message_pin.html' }, 
           { text: '翻译消息', link: 'message_translation.html' },
           { text: '只投在线用户', link: 'message_deliver_only_online.html'},  
-          // { text: '消息审核（举报）', link: 'moderation.html'},      
         ],
         only: ['applet']
   },
@@ -827,7 +825,7 @@ const documentV5Sidebar = [
     ],
     only: ['server-side']
   },
-  { 
+  /*{ 
     text: '内容审核',
     collapsible: true,
     children: [
@@ -850,6 +848,7 @@ const documentV5Sidebar = [
     ],
     only: ['server-side']
   },
+  */
   { text: '错误码', link: 'error.html', only: ['server-side']},
   {
     text: '回调',
@@ -927,8 +926,8 @@ const documentV5Sidebar = [
             ]
           },
           { text: '离线推送回调', link: 'callback_offline_push.html' },
-          { text: '内容审核回调', link: 'callback_moderation.html' },
-          { text: '敏感词监测回调', link: 'callback_sensitive_word.html' }
+          // { text: '内容审核回调', link: 'callback_moderation.html' },
+          // { text: '敏感词监测回调', link: 'callback_sensitive_word.html' }
         ]
       },
       { text: '回调异常处理', link: 'callback_postsending_exception_storage.html' }

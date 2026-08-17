@@ -284,28 +284,6 @@ API 限流周期按照 UTC 时间计算，即当日的 00:00:00 至次日的 00:
 | 删除离线推送模板          | DELETE  | /app-id/{app_id}/notification/template/{name} | 10 次/秒/App ID  |     | 
 | 接收方配置模板名称   | PUT  | /app-id/{app_id}/users/{userId}/notification/template | 100 次/秒/App ID。 |     | 
 
-## 内容审核
-
-### 主动文本审核
-
-| RESTful API 接口 |方法  | 接口 URL| 接口最高调用频率（默认值） | 单个叠加包大小|
-| :-------- | :----- | :---------------- | :--------------------- | :--------------------- |
-| 主动文本审核 | POST | /app-id/{app_id}/moderation/txt/check  | 100 次/秒/App ID | 50 次/秒  |
-
-### 关键词名单
-
-| RESTful API 接口 |方法  | 接口 URL| 接口最高调用频率（默认值） | 单个叠加包大小|
-| :-------- | :----- | :---------------- | :--------------------- | :--------------------- |
-| 创建关键词名单 | POST | /app-id/{app_id}/moderation/text/list  | 100 次/秒/App ID | 50 次/秒  |
-| 修改关键词名单 | PUT | /app-id/{app_id}/moderation/text/list/{list_id} | 100 次/秒/App ID | 50 次/秒  |
-| 查询关键词名单列表 | POST | /app-id/{app_id}/moderation/text/list/search | 100 次/秒/App ID | 50 次/秒  |
-| 删除关键词名单 | DELETE | /app-id/{app_id}/moderation/text/list/{list_id} | 100 次/秒/App ID | 50 次/秒  |
-| 添加关键词  | POST | /app-id/{app_id}/moderation/text/list/{list_id}/word/batch | 100 次/秒/App ID | 50 次/秒  |
-| 修改关键词 | PUT | /app-id/{app_id}/moderation/text/list/{list_id}/word | 100 次/秒/App ID | 50 次/秒  |
-| 查询关键词 | POST | /app-id/{app_id}/moderation/text/list/{list_id}/word | 100 次/秒/App ID | 50 次/秒  |
-| 删除单个关键词 | DELETE | /app-id/{app_id}/moderation/text/list/(list_id)/word?wordId={word_id} | 100 次/秒/App ID | 50 次/秒  |
-| 批量删除关键词 | DELETE | /app-id/{app_id}/moderation/text/list/(list_id)/word/batch | 100 次/秒/App ID | 50 次/秒  |
-
 ## 发送后回调
 
 | RESTful API 接口 |方法  | 接口 URL| 接口最高调用频率（默认值） | 单个叠加包大小|

@@ -137,11 +137,8 @@ starter:
         link: /callkit/web/product_overview.html
         text: Web
   - title: "增值服务" 
-    desc: "选择合适的增值服务构建内容审核、实时音视频、消息翻译、即时推送等功能，点击对应按钮了解主要功能介绍。"
+    desc: "选择合适的增值服务构建消息翻译、实时音视频、即时推送等功能，点击对应按钮了解主要功能介绍。"
     platform:
-      - icon: /sdk/check_texts.svg
-        link: /value-added/moderation/moderation_overview.html
-        text: 内容审核
       - icon: /sdk/video.svg
         link: /callkit/android/product_overview.html
         text: 实时音视频
@@ -151,12 +148,6 @@ starter:
       - icon: /sdk/translation.svg
         link: /value-added/translation/message_translation_android.html
         text: 消息翻译
-      - icon: /sdk/check_texts.svg
-        link: /value-added/moderation/moderation_overview.html
-        text: 服务端消息搜索
-      - icon: /sdk/instant.svg
-        link: /value-added/search/message_search_android.html
-        text: 语音转文字    
 projects:
   - title: SDK/服务端功能
     features:

@@ -51,7 +51,6 @@ error.type === statusCode.WEBIM_CONNCTION_USER_NOT_ASSIGN_ERROR 其中 `error` �
 | 505    | SERVICE_NOT_ENABLED                            | 服务未开启：要使用的某些功能未开通。   | 根据 error message 开通相应的功能。 |
 | 506    | SERVICE_NOT_ALLOW_MESSAGING                    | 用户未在白名单中：群组或聊天室开启全员禁言时，若用户未在白名单中发送消息时提示该错误。 | 提示当前群组或聊天室已禁⾔。| 
 | 507    | SERVICE_NOT_ALLOW_MESSAGING_MUTE               | 当前用户被禁言：在群组或者聊天室中被禁言后发消息报此错误。  | 提示⽤户已被禁⾔。|
-| 508    | MESSAGE_MODERATION_BLOCKED                     | 第三方内容审核服务的消息审核结果为“拒绝”时提示该错误。  | 提示消息发送失败，消息内容不合规。|
 | 509    | MESSAGE_CURRENT_LIMITING                       | 单个用户 ID 发送消息超出频率限制。默认情况下，SDK 对单个用户 ID 发送群消息未做频率限制。如果你联系了商务经理设置了该限制，一旦在在单聊、群聊或聊天室中单个用户的消息发送频率超过设定的上限，则会提示该错误。 | 提示⽤户发消息过于频繁。|
 | 510    | MESSAGE_WEBSOCKET_DISCONNECTED                 | 消息发送失败，例如网络断开、重连失败等情况下导致发送失败。  | 提示消息发送失败。|
 | 511    | MESSAGE_SIZE_LIMIT                 | 消息体大小超过限制。关于各端消息体大小的限制，详见[消息概述](message_overview.html#消息类型)。| 提示消息内容过⼤。| 

@@ -100,8 +100,6 @@ HarmonyOS 中错误码的类为 `ChatError`。
 | 1111   |  TRANSLATE_SERVICE_NOT_ENABLE   | 翻译服务未启用。使用翻译服务前，应在[声网控制台](https://console.shengwang.cn/overview)开启该服务。 |
 | 1112   |      TRANSLATE_USAGE_LIMIT      | 翻译用量达到上限。     |
 | 1113   |     TRANSLATE_MESSAGE_FAIL      | 消息翻译失败。 |
-| 1200   |     MODERATION_FAILED           | 第三方内容审核服务的消息审核结果为“拒绝”。 |
-| 1299   |     THIRD_SERVER_FAILED         | 除第三方内容审核服务的其他服务的消息审核结果为“拒绝”。 |
 | 1300   |      REACTION_REACH_LIMIT       | 该消息的 Reaction 数量已达到限制。      |
 | 1301   |   REACTION_HAS_BEEN_OPERATED    | 用户已添加该 Reaction，不能重复添加。                      |
 | 1302   |  REACTION_OPERATION_IS_ILLEGAL  | 用户对该 Reaction 没有操作权限。例如，未添加过该 Reaction 的用户进行删除操作，或者既非单聊消息的发送方也不是接收方的用户对消息添加 Reaction。 |
