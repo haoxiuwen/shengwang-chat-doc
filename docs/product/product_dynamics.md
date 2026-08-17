@@ -1,3 +1,9 @@
+---
+title: 产品文档
+show_mcp_server: false
+show_server_search: false
+---
+
 # 产品动态
 
 ## 2026-08
@@ -14,10 +20,12 @@
 | :----- | :------- | :---------------- | :---------------- |
 | Web/小程序 SDK 5.0.0 开发版发布   | 新增 `ChatClient` 统一入口，负责 [SDK 初始化](/document/web/initialization.html)、[登录登出](/document/web/login.html)、[连接生命周期](/document/web/connection.html)、事件分发和 Manager 注册。<br/> - 支持模块化 Manager 能力拆分。  <br/> - 支持类型化 [消息创建](/document/web/message_send.html) 接口。 <br/> - 支持消息扩展能力，包括 [消息撤回](/document/web/message_recall.html)、[消息编辑](/document/web/message_modify.html)、[消息置顶](/document/web/message_pin.html)、[引用消息](/document/web/message_quote.html)、[Reaction](/document/web/reaction.html)、[历史消息拉取](/document/web/message_retrieve.html)、[服务端消息搜索](/value-added/search/message_search_web.html)、[消息翻译](/value-added/translation/message_translation_web.html)、[合并消息解析](/document/web/message_receive.html#接收合并消息) 和 [流式消息接收](/document/web/message_stream_receive.html)。<br/> - 支持统一的 [消息已读回执](/document/web/message_receipt.html#单聊消息已读回执) 能力。<br/> - 支持 [会话列表本地缓存与自动同步](/document/web/conversation_list.html)。 <br/> - 完善会话管理：支持 [会话置顶](/document/web/conversation_pin.html)、[会话标记](/document/web/conversation_mark.html)、[会话删除](/document/web/conversation_delete.html) 和 [会话未读数清零](/document/web/conversation_unread.html) 能力。 <br/> - 支持 [用户属性订阅](/document/web/userprofile.html#订阅非好友用户的属性变更) 和 [用户信息自动管理](/document/web/userinfo_provider.html) <br/> - 多场景能力统一：支持 [群组](/document/web/group_manage.html)、[聊天室](/document/web/room_manage.html)、[消息话题](/document/web/thread.html)、[在线状态](/document/web/presence.html) 和 [推送通知](/document/web/push/push_overview.html) 相关能力。<br/> - 支持跨平台运行时适配层：可在 Web、微信小程序、uni-app、React Native 和 Electron 等环境中适配请求、上传、WebSocket 和本地存储等基础能力。<br/> - 移除密码 [登录](/document/web/login.html) 。| 2026-8-15    | - [Web/小程序 SDK 5.0.0 更新日志](/document/web/releasenote.html#v5-0-0-dev)   |
 
+<HideSection :show="$frontmatter.show_server_search">
+
 ## 2026-07
 
 :::tip
-目前，服务端消息搜索仅面向国内 2 区开放。
+目前，服务端消息搜索仅面向中国区开放。
 :::
 
 #### IM Android/iOS SDK v4.24.0 发版
@@ -39,14 +47,16 @@
 
 消息搜索为增值服务，要使用该功能，需要在环信控制台开通，详见 [开通说明](/product/console/purchase_value_added.html#消息搜索)。开通后，系统会为你的应用创建搜索索引资源并开始同步消息数据。
 
-目前，仅国内二区集群支持该功能。
+目前，仅中国区集群支持该功能。
 
 **关于扩展字段搜索**： 开通消息搜索服务后，消息扩展字段（`ext`）搜索默认不开启。如需使用该功能，可在开通时一并说明，或后续联系商务单独开通。
+
+</HideSection>
 
 ## 2026-06
 
 :::tip
-目前，[发消息时设置回调路由功能](/document/android/message_send.html#发消息时设置回调路由) 仅面向国内 1 区和国内 2 区开放。
+目前，[发消息时设置回调路由功能](/document/android/message_send.html#发消息时设置回调路由) 仅面向中国区开放。
 :::
 
 #### IM HarmonyOS SDK v1.13.0 发版
@@ -112,6 +122,8 @@ IM Server SDK 2.0 的 v1.0.17 于 2026 年 4 月 3 日发版。
 
 ## 2026-03
 
+<HideSection :show="$frontmatter.show_mcp_server">
+
 #### 环信 MCP Server
 
 环信 MCP Server 基于 MCP（Model Context Protocol）实现，为支持 MCP 的 AI 编程工具提供即时通讯 IM 相关文档查询和源码检索能力，可用于以下场景：
@@ -136,6 +148,8 @@ IM Server SDK 2.0 的 v1.0.17 于 2026 年 4 月 3 日发版。
 - [单群聊 UIKit](/uikit/chatuikit/android/easemob_mcp_server.html)
 - [CallKit](/callkit/android/easemob_mcp_server.html)
 - [聊天室 UIKit](/uikit/chatroomuikit/android/easemob_mcp_server.html)
+
+</HideSection>
 
 #### SDK 发版
 
