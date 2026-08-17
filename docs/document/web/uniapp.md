@@ -62,30 +62,19 @@ uni-app SDK 支持以下平台：
 
 ### 步骤 2：配置服务器域名
 
-#### 确认应用所属的数据中心
-
-环信在多个地区部署了数据中心。不同数据中心对应不同的 REST API 和 WebSocket 服务地址，因此必须根据应用所属的数据中心进行配置。
+声网在多个地区部署了数据中心。不同数据中心对应不同的 REST API 和 WebSocket 服务地址，因此必须根据应用所属的数据中心进行配置。
 
 你可以在声网控制台的 **基础信息** 页面查看应用所属的数据中心，再选择对应的 REST API 和 WebSocket 地址。
 
-![应用概览中的数据中心信息](/images/applet/config6.png)
+![img](/images/applet/config6.png)
 
 :::tip
 请以声网控制台显示的数据中心和实际分配的服务地址为准，不要直接将示例地址用于所有应用。
 :::
 
-#### 配置小程序合法域名
-
 以微信小程序为例，登录 [微信公众平台](https://mp.weixin.qq.com/)，进入 **开发 > 开发设置** 页面，然后配置服务器域名。其他小程序平台的配置方式与微信小程序类似。
 
-根据应用所属的数据中心，从下表选择对应地址：
-
-| 域名类型 | 可配置地址 |
-| :-------------- | :----- |
-| `request`、`uploadFile`、`downloadFile` 合法域名 | 国内 1 区：`https://a1.easemob.com`、`https://a1-v2.easemob.com`<br/>国内 2 区：`https://ngi-a1.easemob.com`<br/>新加坡 1 区：`https://a1-sgp.easemob.com`<br/>新加坡 2 区：`https://a61.easemob.com`<br/>美东 1 区：`https://a41.easemob.com`<br/>德国 2 区：`https://a71.easemob.com`<br/>文件下载：`https://a1-chatfile.easemob.com` |
-| WebSocket 合法域名 | 国内 1 区：`wss://im-api-wechat.easemob.com/websocket`<br/>国内 2 区：`wss://ngi-im-api-wechat.easemob.com/websocket`<br/>支付宝小程序专用：`wss://im-api-alipay.easemob.com/websocket/websocket`<br/>新加坡 1 区：`wss://im-api-wechat-sgp.easemob.com/websocket`<br/>新加坡 2 区：`wss://im-api-wechat-61.easemob.com/websocket`<br/>美东 1 区：`wss://im-api-wechat-41.easemob.com/websocket`<br/>德国 2 区：`wss://im-api-wechat-71.easemob.com/websocket` |
-
-#### 各小程序平台的 WebSocket 连接限制
+各小程序平台的 WebSocket 连接限制如下表所示：
 
 | 平台 | 版本要求与连接限制 |
 | :-------------- | :----- |
@@ -93,7 +82,6 @@ uni-app SDK 支持以下平台：
 | 字节小程序 | 1.0.0 及以上版本支持创建新的 WebSocket 连接；创建新连接时，已有连接不会自动关闭。 |
 | 百度小程序 | 1.9.4 及以上版本支持多个 WebSocket 连接；每次成功调用均会返回新的 `SocketTask`。 |
 | 支付宝小程序 | 一段时间内只能保留一个 WebSocket 连接；如果已有连接，创建新连接时会自动关闭原连接。 |
-
 
 ### 步骤 3：SDK 接入方式
 
@@ -115,11 +103,6 @@ npm init -y
 ```
 
 然后在项目根目录安装 SDK：
-
-// 下面两个示例代码？选择哪个？第二个是 AI 给的。
-```bash 
-npm i easemob-websdk
-```
 
 ```bash
 npm install easemob-websdk
@@ -170,7 +153,7 @@ const conn = new WebIM.connection({
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| `appId` | String | 环信应用的唯一标识。**参数名中的 `K` 必须大写**。 |
+| `appId` | String | 环信应用的唯一标识。 |
 | `url` | String | WebSocket 服务地址。**应根据应用所属的数据中心进行配置**。 |
 | `apiUrl` | String | REST API 服务地址。**应根据应用所属的数据中心进行配置**。 |
 | `useOwnUploadFun` | Boolean | 是否使用自定义上传方式。启用后，可先将图片等文件上传至自有服务器，再在构建消息时传入文件 URL。 |

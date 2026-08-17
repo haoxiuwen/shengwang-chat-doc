@@ -32,11 +32,9 @@
 
 ### 步骤 3：配置服务器域名
 
-#### 确认应用所属的数据中心
-
 小程序发布前，需在对应平台后台配置合法域名。请先在声网控制台的 **基础信息** 页面确认应用所在数据中心，再选择对应的 REST API 和 WebSocket 地址。
 
-![应用所在数据中心](/images/applet/service_overview.png)
+![img](/images/applet/service_overview.png)
 
 :::tip
 文件下载相关域名需按数据中心进行配置：国内 1 区配置 `https://a1-chatfile.easemob.com`，国内 2 区配置 `ngi-chatfile.easemob.com`。<br/>实际需要配置的 `request`、`uploadFile`、`downloadFile` 以及 WebSocket 合法域名，应以应用所在数据中心和服务端实际下发的服务地址为准。若小程序使用文件消息、图片消息、语音消息或视频消息，需确保相关上传、下载域名已在小程序后台完成配置。

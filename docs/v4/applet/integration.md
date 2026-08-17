@@ -34,19 +34,6 @@
 
 ![应用所在数据中心](/images/applet/service_overview.png)
 
-### 按数据中心选择服务地址
-
-| 数据中心 | REST API 请求地址 | 微信、QQ、百度和抖音 WebSocket 地址 | 支付宝 WebSocket 地址 |
-| :--- | :--- | :--- | :--- |
-| 国内 1 区 | `https://a1.easemob.com`<br/>`https://a1-v2.easemob.com` | `wss://im-api-wechat.easemob.com/websocket`<br/>`wss://im-api-wechat.easecdn.com/websocket` | `wss://im-api-alipay.easemob.com/websocket`<br/>`wss://im-api-alipay.easecdn.com/websocket` |
-| 国内 2 区 | `https://ngi-a1.easemob.com` | `wss://ngi-im-api-wechat.easemob.com/websocket` | `wss://ngi-im-api-wechat.easemob.com/websocket` |
-| 国内 VIP 区 | 请咨询商务经理 | 请咨询商务经理 | 请咨询商务经理 |
-| 客服专用 | 请咨询商务经理 | 请咨询商务经理 | 请咨询商务经理 |
-| 新加坡 1 区 | `https://a1-sgp.easemob.com`<br/>`https://a1-sgp.easecdn.com` | `wss://im-api-wechat-sgp.easemob.com/websocket`<br/>`wss://im-api-wechat-sgp.easecdn.com/websocket` | `wss://im-api-alipay-sgp.easemob.com/websocket`<br/>`wss://im-api-alipay-sgp.easecdn.com/websocket` |
-| 新加坡 2 区 | `https://a61.easemob.com`<br/>`https://a61.easecdn.com` | `wss://im-api-wechat-61.easemob.com/websocket`<br/>`wss://im-api-wechat-61.easecdn.com/websocket` | `wss://im-api-alipay-61.easemob.com/websocket`<br/>`wss://im-api-alipay-61.easecdn.com/websocket` |
-| 美东 1 区 | `https://a41.easemob.com`<br/>`https://a41.easecdn.com` | `wss://im-api-wechat-41.easemob.com/websocket`<br/>`wss://im-api-wechat-41.easecdn.com/websocket` | `wss://im-api-alipay-41.easemob.com/websocket`<br/>`wss://im-api-alipay-41.easecdn.com/websocket` |
-| 德国 2 区 | `https://a71.easemob.com`<br/>`https://a71.easecdn.com` | `wss://im-api-wechat-71.easemob.com/websocket`<br/>`wss://im-api-wechat-71.easecdn.com/websocket` | `wss://im-api-alipay-71.easemob.com/websocket`<br/>`wss://im-api-alipay-71.easecdn.com/websocket` |
-
 :::tip
 文件下载相关域名需按数据中心进行配置：国内 1 区配置 `https://a1-chatfile.easemob.com`，国内 2 区配置 `ngi-chatfile.easemob.com`。<br/>实际需要配置的 `request`、`uploadFile`、`downloadFile` 以及 WebSocket 合法域名，应以应用所在数据中心和服务端实际下发的服务地址为准。若小程序使用文件消息、图片消息、语音消息或视频消息，需确保相关上传、下载域名已在小程序后台完成配置。
 :::
