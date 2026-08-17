@@ -115,7 +115,7 @@ dependencies {
 </manifest>
 ```
 
-关于获取 App ID，在 [声网控制台](https://console.shengwang.cn/overview) [创建项目](/product/enable_im.html#创建项目并开通)后，即可 [获取 App ID](/product/enable_im.html#_3-获取-app-id)。
+关于获取 App ID，在 [声网控制台](https://console.shengwang.cn/overview) [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 后，即可 [获取 App ID](/product/enable_im.html#_3-获取-app-id)。
 
 ### 4. 防止代码混淆
 

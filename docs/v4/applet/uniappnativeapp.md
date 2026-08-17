@@ -24,7 +24,7 @@
 
 ## 开发者集成
 
-在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
+在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 。
 
 ### 搭建 app 开发环境
 

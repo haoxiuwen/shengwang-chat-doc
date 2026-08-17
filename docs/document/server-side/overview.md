@@ -68,5 +68,5 @@ POST https://{host}/{org_name}/{app_name}/users
 
 要调用即时通讯 RESTful API，请确保满足以下要求：
 
-- 已在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
+- 已在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 。
 - 已从服务端获取 app token，详见 [Token 鉴权](/document/server-side/token_authentication.html)。

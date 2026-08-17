@@ -514,7 +514,7 @@
 
 具体集成请参考以下文档：
 
-- [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)
+- [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 
 - [即时通讯 IM React-Native 快速开始](quickstart.html)
 - [消息管理 React Native](message_overview.html)
 - [群组](group_overview.html)

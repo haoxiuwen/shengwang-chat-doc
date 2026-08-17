@@ -84,6 +84,6 @@ curl -X POST https://XXXX/app-id/{app_id}/users/batch/status \
 | :-- | :------------ | :--------- | :--------- | :---------- |
 | 400   | illegal_argument      | request body exceeds maximum limit, maximum limit is 100     | 请求 body 中 `usernames` 的用户数量超过 100 个。 | 请调整`usernames` 中传入的用户 ID 数量。 |
 | 401 | unauthorized  | Unable to authenticate (OAuth)   | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。    |
-| 404  | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App ID 不存在。 |  检查 App ID 是否正确或 [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。 |
+| 404  | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App ID 不存在。 |  检查 App ID 是否正确或 [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 。 |
 
 关于其他错误，你可以参考 [错误码](error.html) 了解可能的原因。

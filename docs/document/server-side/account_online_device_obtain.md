@@ -83,6 +83,6 @@ curl -X GET 'https://XXXX/app-id/{app_id}/users/XXXX/resources' \
 | HTTP 状态码 | 错误类型     | 错误提示          | 可能原因      | 处理建议        |
 | :----- | :--------- | :--------------- | :---------- | :------------- |
 | 401         | unauthorized    | Unable to authenticate (OAuth)     | token 不合法，可能过期或 token 错误。 | 使用新的 token 访问。 |
-| 404         | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App ID 不存在。    | 检查 App ID 是否正确或 [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。 |
+| 404         | organization_application_not_found | Could not find application for XXX/XXX from URI: XXX/XXX/users | App ID 不存在。    | 检查 App ID 是否正确或 [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 。 |
 
 关于其他错误，你可以参考 [错误码](error.html) 了解可能的原因。

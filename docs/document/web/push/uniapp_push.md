@@ -6,7 +6,7 @@ uni-app 原生推送插件集成了第三方离线消息推送服务, 为开发�
 
 ## 前提条件
 
-1. 已在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
+1. 已在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 。
 2. 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
 3. 若使用推送模板，你需要在 [声网控制台](https://console.shengwang.cn/overview) 激活。**激活后，如需关闭推送模板功能，必须联系商务，因为该操作会删除推送模板相关的所有配置。**
 4. 各推送使用的条件：

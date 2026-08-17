@@ -32,7 +32,7 @@
 
 ### 步骤 1 注册账号
 
-开发者需要在声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)，[获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)，SDK 初始化时需要配置 App ID。
+开发者需要在声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)，SDK 初始化时需要配置 App ID。
 
 ### 步骤 2 搭建开发环境
 

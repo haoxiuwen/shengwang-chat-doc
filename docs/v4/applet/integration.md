@@ -9,7 +9,7 @@
 在声网控制台完成以下操作：
 
 1. [注册 IM 账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
-2. [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
+2. [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 。
 3. [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)。初始化 SDK 时需要配置该 App ID。
 
 ## 步骤 2：搭建小程序开发环境

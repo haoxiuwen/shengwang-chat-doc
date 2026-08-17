@@ -13,7 +13,7 @@
 ## 前提条件
 
 - 有效的 [即时通讯 IM 开发者账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) ；
-- 在 [声网控制台](https://console.shengwang.cn/overview)[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)，并 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)；
+- 在 [声网控制台](https://console.shengwang.cn/overview)[创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，并 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)；
 - [npm](https://www.npmjs.com/get-npm)；
 - SDK 支持 IE 9+、Firefox 10+、Chrome 54+ 和 Safari 6+。
 
