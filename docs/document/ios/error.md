@@ -70,7 +70,7 @@ iOS 的错误码只有当操作出错的时候才会有返回值，否则返回 
 | 205    |     `EMErrorUserIllegalArgument`      | 用户参数不正确：例如，创建用户或更新用户属性时，用户 ID 为空或无效。 | 检查调用的 API 传入的参数是否正确。 |
 | 206    |   `EMErrorUserLoginOnAnotherDevice`   | 用户在其他设备登录：如果未开启多设备登录，则在其他设备登录会将当前登录设备踢下线，用户会在当前设备收到该错误。 | 设备被踢时，会触发回调 `EMClientDelegate#userAccountDidLoginFromOtherDevice`。收到该回调时，需重新登录。 |
 | 207    |         `EMErrorUserRemoved`          | 用户已被注销：当前的登录用户 ID 从 [声网控制台](https://console.shengwang.cn/overview) 删除会收到该错误。| 账号被注销时，会触发 `EMClientDelegate#userAccountDidRemoveFromServer` 事件,收到该事件时，该账号已不可用，需要回到登录页面。 |
-| 208    |      `EMErrorUserRegisterFailed`      | 用户注册失败：例如，注册用户之前未开启 [开放注册功能](/document/server-side/account_register_authorized_single.html) 等原因。 | 不推荐使用 SDK 注册账号，建议开发者在业务服务器注册账号。 |
+| 208    |      `EMErrorUserRegisterFailed`      | 用户注册失败：例如，注册用户之前未开启开放注册功能等原因。 | 不推荐使用 SDK 注册账号，建议开发者调用 [授权注册 REST API](/document/server-side/account_register_authorized_single.html) 业务服务器注册账号。 |
 | 209    |   `EMErrorUpdateApnsConfigsFailed`    | 更新推送配置错误：例如，用户更新推送昵称或设置免打扰配置时失败。 | 检查报错的 API，延迟一段时间后，重新调用。 |
 | 210    |     `EMErrorUserPermissionDenied`     | 用户无权限：例如，如果用户被添加到黑名单后，发送消息时会提示该错误。其他报错情况包括用户修改其他用户发出的消息、修改其他用户设置的群成员属性以及普通群成员试图解散消息话题（仅消息话题所在群组的群主和群管理员有权解散消息话题）。 | 检查用户是否有操作权限。 |
 | 211    |  `EMErrorUserBindDeviceTokenFailed`   | 绑定设备 token 失败。      | 检查调用绑定设备推送 token 的接口中传入的 token 是否为空。 |
@@ -107,7 +107,7 @@ iOS 的错误码只有当操作出错的时候才会有返回值，否则返回 
 | 407    |      `EMErrorFileExpired`      | 文件已过期：例如，用户下载过期的消息附件或群共享文件时提示该错误。消息附件和群共享文件默认可存储 7 天。 | 要提升文件存储时间上限，请联系商务。|
 | 500    |        `EMErrorMessageInvalid`        | 消息异常：例如，发送消息时，若消息对象或消息 ID 为空或者消息body为空或者消息的发送方 ID 与当前登录 ID 不同则会提示该错误。 | 需要开发者检查消息的构造过程，消息 ID、发送方和消息 body 的设置是否符合要求。 |
 | 501    | `EMErrorMessageIncludeIllegalContent` | 消息含有非法内容：消息被过滤系统识别为非法消息。             | 发送消息被敏感词拦截系统或反垃圾系统拦截。 |
-| 504    |    `EMErrorMessageRecallTimeLimit`    | 消息撤回超时错误：消息撤回超过时间限制时会提示该错误。 | 可在 UI 上进行错误提示，或者 [在声网控制台延长消息可撤回时间](message_recall.html)，最多可设置为 7 天。 |
+| 504    |    `EMErrorMessageRecallTimeLimit`    | 消息撤回超时错误：消息撤回超过时间限制时会提示该错误。 | 可在 UI 上进行错误提示，或者联系声网商务延长消息可撤回时间，，最多可设置为 7 天。 |
 | 505    |       `EMErrorServiceNotEnable`       | 服务未开启：尝试使用某些未开通的功能时提示该错误。 | 需要结合使用的 API 和日志分析，在声网控制台开通相应功能。|
 | 506    |        `EMErrorMessageExpired`        | 消息已过期：发送群组回执时超过了时间限制 (默认 3 天) 。| 可在 UI 上进行错误提示，或者联系商务延长发送群组回执的有效时间。 |
 | 507    |   `EMErrorMessageIllegalWhiteList`    | 用户未在白名单中：群组或聊天室开启全员禁言时，若用户未在白名单中发送消息时提示该错误。 | 可在 UI 上进行错误提示，或者检查是否已开启群组全员禁言。 |

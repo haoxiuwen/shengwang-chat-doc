@@ -11,15 +11,7 @@
 - 对于专业版 IM，使用 Presence 前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包 > 即时通讯 IM** 页面开通该功能。
 - 对于旗舰版 IM，Presence 功能默认开启。
 
-## 技术原理
-
-即时通讯 IM SDK 提供 `ChatPresence`、`ChatPresenceManager` 和 `ChatPresenceEventListener` 类，用于管理在线状态订阅，包含如下核心方法：
-
-- 订阅指定用户的在线状态
-- 取消订阅指定用户的在线状态
-- 发布自定义在线状态
-- 查询被订阅用户列表
-- 获取用户的当前在线状态
+## 订阅流程
 
 订阅用户在线状态的基本工作流程如下：
 

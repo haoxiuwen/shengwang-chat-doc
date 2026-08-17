@@ -10,15 +10,7 @@
 
 ![img](/images/web/web_chats_status_setting.png)
 
-## 技术原理
-
-即时通讯 IM SDK 提供在线状态接口，用于管理在线状态订阅，包含如下核心方法：
-
-- `subscribePresence`：订阅用户的在线状态；
-- `publishPresence`：发布自定义在线状态；
-- `addEventHandler`：添加在线状态监听器；
-- `onPresenceStatusChange`：被订阅用户的在线状态变更时，订阅者收到监听回调；
-- `unsubscribePresence`：无需关注用户的在线状态时，取消订阅。
+## 订阅流程
 
 订阅用户在线状态的基本工作流程如下：
 

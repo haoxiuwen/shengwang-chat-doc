@@ -33,7 +33,7 @@ HarmonyOS 中错误码的类为 `ChatError`。
 | 205    |      USER_ILLEGAL_ARGUMENT      | 用户参数不正确：例如，创建用户或更新用户属性时，用户 ID 为空或无效。 |
 | 206    |    USER_LOGIN_ANOTHER_DEVICE    | 用户在其他设备登录：如果未开启多设备登录，则在其他设备登录会将当前登录设备踢下线，用户会在当前设备收到该错误。 |
 | 207    |          USER_REMOVED           | 用户已被注销：当前的登录用户 ID 从 [声网控制台](https://console.shengwang.cn/overview) 删除会收到该错误。 |
-| 208    |         USER_REG_FAILED         | 用户注册失败：例如，注册用户之前未开启[开放注册功能](/document/server-side/account_register_authorized_single.html)等原因。 |
+| 208    |         USER_REG_FAILED         | 用户注册失败：例如，注册用户之前未开启开放注册功能等原因。 | 不推荐使用 SDK 注册账号，建议开发者调用 [授权注册 REST API](/document/server-side/account_register_authorized_single.html) 业务服务器注册账号。 |
 | 209    |    USER_UPDATEINFO_FAILED       | 更新推送配置错误：例如，用户更新推送昵称或设置免打扰配置时失败。  |
 | 210    |     USER_PERMISSION_DENIED      | 用户无权限：例如，如果用户被添加到黑名单后，发送消息时会提示该错误。其他报错情况包括用户修改其他用户发出的消息、修改其他用户设置的群成员属性以及普通群成员试图解散消息话题（仅消息话题所在群组的群主和群管理员有权解散消息话题）。|
 | 213    |    USER_BIND_ANOTHER_DEVICE     | 用户已在其他设备登录：在单设备登录场景中，默认情况下，后登录的设备会踢掉当前设备的登录。若设置为先登录的设备优先，则后登录设备登录失败并提示该错误。 |

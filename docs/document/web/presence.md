@@ -8,7 +8,8 @@
 
 ## 功能开通
 
-使用该功能前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通该服务。详见 [环信控制台文档](/product/console/basic_user.html#用户离在线状态实时同步)。
+- 对于专业版 IM，使用 Presence 前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包 > 即时通讯 IM** 页面开通该功能。
+- 对于旗舰版 IM，Presence 功能默认开启。
 
 ## 订阅流程
 
@@ -33,7 +34,7 @@
 - 完成 SDK 初始化并登录，详见 [快速开始](quickstart.html)。
 - 已注册 `PresenceManager`，能够通过 `client.presenceManager` 调用在线状态相关接口。
 - 了解即时通讯 IM API 的 [使用限制](/product/limitation.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login) 开通在线状态订阅功能。详见 [环信控制台文档](/product/console/basic_user.html#用户离在线状态实时同步)。
+- 已在 [声网控制台](https://console.shengwang.cn/overview) 开通在线状态订阅功能。
 
 ## 订阅指定用户的在线状态
 

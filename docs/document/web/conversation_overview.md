@@ -145,7 +145,7 @@ SDK 通过 `client.chatManager.addEventHandler` 和 `client.addEventHandler` 提
 - 如需从服务端刷新会话列表或获取空会话，可调用 `refreshSessionList`。
 - 用户进入会话页面时，建议调用 `setCurrentConversation`；离开或切换会话页面时，调用 `resetCurrentConversation`。
 - 会话未读数清零和消息已读回执是不同功能：前者更新当前用户侧的会话未读状态，后者用于通知消息原始发送方消息已读。
-- 通过 RESTful 接口发送的消息默认不创建或写入会话列表。如需将 RESTful 接口发送的消息写入会话列表，需在环信控制台开通对应功能。
+- 通过 RESTful 接口发送的消息默认不创建或写入会话列表。如需将 RESTful 接口发送的消息写入会话列表，需在声网控制台开通对应功能。
 
 ## 接口列表
 

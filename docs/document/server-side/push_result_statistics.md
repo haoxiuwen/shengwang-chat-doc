@@ -1,30 +1,18 @@
 # 查询离线推送结果统计数据
 
-要查询离线推送结果，你需要联系商务经理开通该功能。该功能开通后，离线推送服务会产生推送结果消息。
+## 功能说明
 
-## 离线推送结果查询方式
+离线推送服务会产生推送结果消息。即时通讯 IM 支持查询离线推送结果。
 
-你可以通过以下方式查询离线推送的结果：
+## 功能开通
 
-- 在[环信控制台](https://console.easemob.com/user/login)上查看 IM 消息投递查询：
-  - 在 **应用列表** 中点击目标应用的 **操作** 栏中的 **管理** 按钮，进入 **应用概览** 页面。
-  - 选择 **即时通讯 > 实时查询 > IM消息投递查询**，查看推送结果记录，如下图所示：
+调用该接口前，你需要联系声网商务开通该功能。
 
-![img](/images/server-side/message_delivery_query.png)
-
-- 推送结果回调：[创建发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则)，对于**回调类型**参数选择**离线推送事件**，然后选择**推送成功**、**推送失败**或**推送异常**，即可接收到推送结果消息回调内容。关于离线推送事件，详见[发送后回调事件](/document/server-side/callback_login_logout.html)。
-
-![img](/images/server-side/post_callback_push.png)
-
-- 调用 RESTful API 查询离线推送结果统计。
-
-## 调用 RESTful API 查询离线推送结果统计数据
-
-### 调用频率上限
+## 调用频率上限
 
 10 次/10 秒/App ID
 
-### 请求 URL
+## 请求 URL
 
 ```shell
 GET https://{host}/app-id/{app_id}/push/data/offline-push/begin/{startTime}/end/{endTime}?platform={ALL}
@@ -38,21 +26,21 @@ GET https://{host}/app-id/{app_id}/push/data/offline-push/begin/{startTime}/end/
 
 关于请求 URL 中的参数说明，详见 [请求 URL 参数介绍](overview.html#请求-url)。
 
-### 请求示例
+## 请求示例
 
 ```shell
-将 <YourAppToken> 替换为你在服务端生成的 App Token
+# 将 <YourAppToken> 替换为你在服务端生成的 App Token
 curl -g -X GET 'https://XXXX/app-id/{app_id}/push/data/offline-push/begin/2024-04-01/end/2024-04-02?platform=ALL' \
 -H 'Authorization: Bearer <YourAppToken>
 ```
 
-### 请求 header 参数
+## 请求 header 参数
 
 | 参数            | 类型   | 描述        | 是否必需 |
 | :-------------- | :----- | :------------------- | :------- |
 | `Authorization` | String | App 管理员的鉴权 token，格式为 `Bearer YourAppToken`，其中 `Bearer` 为固定字符，后面为英文空格和获取到的 app token。 | 是       |
 
-### 响应示例
+## 响应示例
 
 ```json
 {
@@ -106,7 +94,7 @@ curl -g -X GET 'https://XXXX/app-id/{app_id}/push/data/offline-push/begin/2024-0
 }
 ```
 
-### 响应 body 字段
+## 响应 body 字段
 
 如果返回的 HTTP 状态码为 `200`，表示请求成功，响应包体中包含以下字段：
 
@@ -120,7 +108,7 @@ curl -g -X GET 'https://XXXX/app-id/{app_id}/push/data/offline-push/begin/2024-0
 
 如果返回的 HTTP 状态码非 200，表示请求失败。你可以参考 [错误码](#错误码) 了解可能的原因。
 
-### 错误码
+## 错误码
 
 如果返回的 HTTP 状态码非 `200`，表示请求失败，可能提示以下错误码：
 

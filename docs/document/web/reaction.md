@@ -14,7 +14,7 @@
 
 ## 功能开通
 
-要使用 Reaction 功能，需在 [环信控制台](https://console.easemob.com/user/login) 开通。具体操作步骤详见 [环信控制台文档](/product/console/basic_message.html#消息表情回复)。
+要使用 Reaction 功能，需在 [声网控制台](https://console.shengwang.cn/overview) 上的 **套餐包 > 预付费套餐包 > 即时通讯 IM** 开通消息表情回复功能。
 
 ## 使用限制
 

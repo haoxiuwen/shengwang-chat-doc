@@ -40,7 +40,7 @@
 
 1. **用户 ID + token** 是更加安全的登录方式。
 
-测试环境下，你在[环信控制台](https://console.easemob.com/user/login)创建用户后，IM 服务器会自动为这些用户分配用户 Token，详见[查看用户 Token](/product/console/operation_user.html#查看用户-token)。
+测试环境下，你在 [声网控制台](https://console.shengwang.cn/overview) 创建用户后，IM 服务器会自动为这些用户分配用户 Token。
 
 在生产环境中，为了安全考虑，你需要在你的应用服务器集成[Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。
 
@@ -70,7 +70,7 @@ SDKClient.Instance.LoginWithToken(username, token, true,
 );
 ```
 
-2. **用户 ID + 密码**登录是传统的登录方式。用户名和密码均由你的终端用户自行决定，密码需要符合[密码规则要求](/document/server-side/account_register_authorized_single.html)。
+1. **用户 ID + 密码**登录是传统的登录方式。用户名和密码均由你的终端用户自行决定，密码需要符合[密码规则要求](/document/server-side/account_register_authorized_single.html)。
 
 ```csharp
 SDKClient.Instance.Login(username, password,
@@ -150,4 +150,4 @@ SDKClient.Instance.Logout(false,
 
 ### 登录被封禁账号的提示
 
-在环信控制台或调用 REST API 封禁用户账号后，若仍使用该账号登录，SDK会返回 "service is disabled"（305 错误）, 可以根据用户这个返回值来进行相应的提示或者处理。
+在声网控制台或调用 REST API 封禁用户账号后，若仍使用该账号登录，SDK会返回 "service is disabled"（305 错误）, 可以根据用户这个返回值来进行相应的提示或者处理。

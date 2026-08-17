@@ -363,7 +363,7 @@ FCM 通道推送通知示例如下：
 | `skipType`        | Int    | 点击跳转类型。<br/> - `1`：打开APP首页；<br/> - `2`：打开链接；<br/> - `3`：自定义；<br/> - `4`：打开 app 内指定页面。 |
 | `skipContent`     | String | 跳转内容。跳转类型为 2 时，跳转内容最大 1000 个字符。跳转类型为 4 时，跳转内容的格式为 “intent:#Intent;component=应用包名/activity类路径;end”。 |
 | `networkType`     | Int    | 网络方式。<br/> - （默认）`-1`：不限；<br/> - `1`：Wi-Fi 下发送。      |
-| `classification`  | Int    | 消息类型。 <br/> - `0`：运营类消息；<br/> - `1`：系统类消息。 在环信控制台的 vivo 推送的**添加推送证书**对话框中也可以配置该消息类型，但这里的优先级高于控制台的配置。 |
+| `classification`  | Int    | 消息类型。 <br/> - `0`：运营类消息；<br/> - `1`：系统类消息。 在声网控制台的 vivo 推送的**添加推送证书**对话框中也可以配置该消息类型，但这里的优先级高于控制台的配置。 |
 | `clientCustomMap` | Object | 客户端自定义键值对。                                         |
 | `requestId`       | String | 用户请求唯一标识，长度限制为 64 字符。                       |
 | `pushMode`        | Int    | 推送模式。<br/> - （默认）`0`：正式推送；<br/> - `1`：测试推送。       |

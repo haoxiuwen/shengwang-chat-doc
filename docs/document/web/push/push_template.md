@@ -10,7 +10,7 @@
 
 推送模板具有以下特点：
 
-1. 支持通过环信控制台或 [服务端 REST API](/document/server-side/push_template_create.html) 自定义服务端默认推送内容。
+1. 支持通过 [声网控制台](https://console.shengwang.cn/overview) 或 [服务端 REST API](/document/server-side/push_template_create.html) 自定义服务端默认推送内容。
 2. 对于群组消息，你可以使用定向模板向某些用户推送与其他用户不同的离线通知。
 3. 接收方可配置推送模板：若发送方在发送消息时使用了推送模板，则推送通知栏中的显示内容以发送方的推送模板为准。
 4. 推送模板使用优先级：
@@ -127,7 +127,7 @@ const message = client.chatManager.createTextMessage({
   content: 'message content',
   ext: {
     em_push_template: {
-      // 设置推送模板名称。设置前需在环信控制台或调用 REST 接口创建推送模板。
+      // 设置推送模板名称。设置前需在声网控制台或调用 REST 接口创建推送模板。
       // 若使用默认模板 `default` 或 `detail`，通常无需传入模板名称。
       // 若使用自定义模板，需传入模板名称。
       name: 'test7',
