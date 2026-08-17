@@ -73,9 +73,6 @@ starter:
       - icon: /sdk/unity.svg
         link: /document/unity/quickstart.html
         text: Unity
-      - icon: /sdk/windows.svg
-        link: /document/windows/quickstart.html
-        text: Windows
   - title: "服务端 API"
     desc: "可通过 RESTful API 构建即时通讯应用，点击“REST”按钮快速实现即时通讯消息收发等功能。"
     platform:
@@ -178,9 +175,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_send.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_send.html
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/message_single.html
@@ -214,9 +208,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_receive.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_receive.html
           - text: 接收流式消息
             desc: 在单聊和群聊场景中，客户端可接收服务端发送的流式消息。
             sdks:
@@ -259,9 +250,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_retrieve.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_retrieve.html
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/message_historical.html
@@ -289,9 +277,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_recall.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_recall.html
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/message_recall_single.html
@@ -319,9 +304,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_modify.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_modify.html
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/message_modify.html       
@@ -349,9 +331,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_receipt.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_receipt.html
           - text: 搜索消息
             desc: 支持搜索本地数据库和服务端的消息。
             sdks:
@@ -373,9 +352,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_search_local.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_search_local.html
               - icon: /sdk/rest.svg
                 text: REST
                 link: /value-added/search/message_search_rest.html  
@@ -403,9 +379,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/reaction.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/reaction.html
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/reaction_add.html 
@@ -433,9 +406,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_forward.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_forward.html
           - text: 导入/插入消息
             desc: 批量导入消息到数据库或在本地会话中插入一条消息。
             sdks:
@@ -457,9 +427,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_import_insert.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_import_insert.html
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/message_import_single.html
@@ -484,9 +451,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_update.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_update.html
           - text: 删除消息
             desc: 单向删除服务端以及本地的历史消息。
             sdks:
@@ -511,9 +475,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_delete.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_delete.html
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/message_delete_roam_single_msgid.html
@@ -541,9 +502,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_target.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_target.html 
           - text: 消息扩展
             desc: 当 SDK 提供的消息类型不满足需求时，你可以通过消息扩展字段传递自定义的内容，从而生成自己需要的消息类型。
             sdks:
@@ -568,9 +526,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_extension.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_extension.html         
           - text: 置顶消息
             desc: 将会话中的消息固定在会话顶部，方便会话中的所有用户快速查看重要消息。
             sdks:
@@ -595,9 +550,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_pin.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_pin.html 
           - text: 消息只投在线
             desc: 只将消息投递给在线用户。若接收方不在线，则无法收到消息。
             sdks:
@@ -622,9 +574,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/message_deliver_only_online.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/message_deliver_only_online.html      
           - text: 会话列表
             desc: 支持从服务端和本地获取会话列表。
             sdks:
@@ -649,9 +598,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/conversation_list.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/conversation_list.html
           - text: 会话未读数
             desc: 支持查看本地所有会话或指定会话的未读消息数，并针对会话的未读消息数清零。
             sdks:
@@ -673,9 +619,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/conversation_unread.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/conversation_unread.html
           - text: 本地会话
             desc: Web SDK 内部使用 IndexedDB 在本地数据库中保存单聊和群聊会话，通过 LocalCache 模块对本地会话数据进行管理。
             sdks:
@@ -706,9 +649,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/conversation_pin.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/conversation_pin.html
           - text: 会话标记
             desc: 对单聊和群聊会话添加标记，支持标记和取消标记会话以及根据标记查询服务器或本地会话。
             sdks:
@@ -733,9 +673,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/conversation_mark.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/conversation_mark.html
           - text: 删除会话
             desc: 单向删除服务端或本地的会话及其历史消息。
             sdks:
@@ -760,9 +697,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/conversation_delete.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/conversation_delete.html  
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/conversation_delete.html
@@ -793,9 +727,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/group_manage.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/group_manage.html  
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/group_create.html   
@@ -823,9 +754,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/group_members.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/group_members.html  
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/group_member_add_single.html
@@ -865,9 +793,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/group_attributes.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/group_attributes.html  
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/group_modify.html     
@@ -895,9 +820,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/room_manage.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/room_manage.html  
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/chatroom_create.html    
@@ -925,9 +847,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/room_members.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/room_members.html 
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/chatroom_member_add_single.html
@@ -955,9 +874,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/room_attributes.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/room_attributes.html 
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/chatroom_announcement_get.html
@@ -982,9 +898,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/thread.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/thread.html 
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/group_thread_create.html
@@ -1009,9 +922,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/thread_message.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/thread_message.html                        
       - title: 用户
         icon: /feature/user.svg
         contexts:
@@ -1045,9 +955,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/userprofile.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/userprofile.html 
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/user_attribute_set.html
@@ -1087,9 +994,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/user_relationship.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/user_relationship.html 
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/user_friend_add.html 
@@ -1117,9 +1021,6 @@ projects:
               - icon: /sdk/unity.svg
                 text: Unity
                 link: /document/unity/presence.html
-              - icon: /sdk/windows.svg
-                text: Windows
-                link: /document/windows/presence.html 
               - icon: /sdk/rest.svg
                 text: REST
                 link: /document/server-side/presence_set.html               

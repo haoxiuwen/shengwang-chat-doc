@@ -263,7 +263,8 @@ const onVersionChange = (nextVersion: DocVersion | string): void => {
 }
 
 const options = computed<PlatformOptionGroup[]>(() => {
-  const isV5 = !isLegacyPath(route.path) && version.value === '5.x'
+  const isLegacy = isLegacyPath(route.path)
+  const isV5 = !isLegacy && version.value === '5.x'
   return [
     {
       label: '平台',
@@ -272,7 +273,7 @@ const options = computed<PlatformOptionGroup[]>(() => {
         { value: 'ios', label: 'iOS' },
         { value: 'web', label: isV5 ? 'Web/小程序' : 'Web' },
         { value: 'harmonyos', label: 'HarmonyOS' },
-        { value: 'windows', label: 'Windows' },
+        ...(isLegacy ? [{ value: 'windows' as PlatformKey, label: 'Windows' }] : []),
       ],
     },
     {

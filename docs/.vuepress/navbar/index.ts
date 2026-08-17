@@ -48,11 +48,11 @@ export const zhNavbar = navbar([
             icon: '/icon-harmonyos.svg',
             link: '/document/harmonyos/beginner_guide.html'
           },
-          {
-            text: 'Windows',
-            icon: '/icon-windows.svg',
-            link: '/document/windows/beginner_guide.html'
-          },
+          // {
+          // text: 'Windows',
+          // icon: '/icon-windows.svg',
+          // link: '/document/windows/beginner_guide.html'
+          // },
         ]
       },
       {
