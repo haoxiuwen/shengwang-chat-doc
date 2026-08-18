@@ -23,7 +23,7 @@ options.setAppId("Your appId");
 EMClient.getInstance().init(getApplicationContext(), options);
 ```
 
-下表列出初始化时常用的 `EMOptions` 方法。`EMOptions` 的全部方法详见 [API 参考](https://doc.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_options.html)。
+下表列出初始化时常用的 `EMOptions` 方法。
 
 | 方法名称 | 描述 |
 | :--- | :--- |

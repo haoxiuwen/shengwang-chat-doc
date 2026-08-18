@@ -31,7 +31,7 @@ ChatClient.getInstance()
   });
 ```
 
-下表列明初始化配置 `ChatOptions` 封装的一些属性。`ChatOptions` 封装的所有属性，详见 [API 参考](https://doc.easemob.com/apidoc/rn/classes/ChatOptions.html)。
+下表列明初始化配置 `ChatOptions` 封装的一些属性。
 
 | 属性           | 描述            |
 | :----------------- | :---------------- |

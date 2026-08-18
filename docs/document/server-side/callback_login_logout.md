@@ -135,7 +135,7 @@
 | :---------- | :------- | :----------------------------------------------------------- |
 | `callId`    | String   | 回调请求的唯一标识。 |
 | `reason`    | String   | 状态变更原因，取值：`login`（登录）、`logout`（登出）、`replaced`（被踢下线）。 |
-| `security`  | String   | 签名，格式为 `MD5(callId + secret + timestamp)`。`secret` 见 [控制台回调规则配置](/product/console/basic_webhook.html#配置消息回调规则)。 |
+| `security`  | String   | 签名，格式为 `MD5(callId + secret + timestamp)`。详见 [配置回调规则](callback_postsending.html#回调规则)。 |
 | `os`        | String   | 设备操作系统类型。                                           |
 | `ip`        | String   | 用户登录的 IP 地址。                                         |
 | `host`      | String   | 服务器名称。                                                 |

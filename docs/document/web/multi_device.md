@@ -72,7 +72,7 @@ SDK 支持自定义设置登录设备的平台，例如，若要将小程序平�
 
 ![img](/images/common/multidevice_device_count.png)
 
-2. 初始化 SDK 时，设置 `customOSPlatform` 参数。如需为该平台设置自定义设备名称，可同时设置 `customDeviceName`。请确保 `customOSPlatform` 的值与与 [声网控制台](https://console.shengwang.cn/overview) 中设置的设备平台值一致。
+2. 初始化 SDK 时，设置 `customOSPlatform` 参数。如需为该平台设置自定义设备名称，可同时设置 `customDeviceName`。请确保 `customOSPlatform` 的值为 `1`，与 [声网控制台](https://console.shengwang.cn/overview) 中设置的设备平台值一致。
 
 ```typescript
 const client = ChatClient.init({
@@ -81,7 +81,7 @@ const client = ChatClient.init({
   useFixedDeviceId: true,
   // 自定义设备标识基值；未传时默认使用 `webim`。
   deviceId: 'webim',
-  // 自定义平台编号，取值范围为 [1,100]。
+  // 自定义平台编号，取值为 1。
   customOSPlatform: 1,
   // 自定义设备名称；仅在设置了 `customOSPlatform` 时生效。
   customDeviceName: '自定义平台1',

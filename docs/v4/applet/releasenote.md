@@ -1,5 +1,6 @@
 ---
 show_server_search: false
+show_callback_route: false
 ---
 
 # 小程序 SDK 更新日志
@@ -18,9 +19,13 @@ show_server_search: false
 
 ## v4.23.0 Dev 2026-6-10（开发版）
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 #### 新增功能
 
 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](message_send.html#发消息时设置回调路由)。目前，该功能仅面向国内 1 区和国内 2 区开放。
+
+</HideSection>
 
 ## v4.22.0 Dev 2026-6-5（开发版）
 
@@ -440,7 +445,7 @@ show_server_search: false
 
 #### 新增特性
 
-- [IM SDK] 新增群组事件回调 [onGroupEvent](https://doc.easemob.com/jsdoc/interfaces/Types.EventHandlerType.EventHandlerType.html#onGroupEvent) 和聊天室事件回调 [onChatroomEvent](https://doc.easemob.com/jsdoc/interfaces/Types.EventHandlerType.EventHandlerType.html#onChatroomEvent)。原回调可继续使用；
+- [IM SDK] 新增群组事件回调 `onGroupEvent` 和聊天室事件回调 `onChatroomEvent`。原回调可继续使用；
 - [IM SDK] 新增群聊消息限流错误码 [MESSAGE_CURRENT_LIMITING](/v4/web/error.html)
 - [IM SDK] 邀请加入群聊回调 `onGroupChange` 返回中新增 群名称 参数值。
 

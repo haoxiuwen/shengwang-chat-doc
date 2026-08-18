@@ -1,8 +1,12 @@
+---
+show_callback_route: false
+---
+
 # 发送消息
 
 即时通讯 IM iOS SDK 通过 `ChatManager` 类和 `EMChatMessage` 类实现文本、图片、音频、视频和文件等类型的消息的发送。
 
-- 对于单聊，即时通讯 IM 默认支持陌生人之间发送消息，即无需添加好友即可聊天。若仅允许好友之间发送单聊消息，你需要 [开启好友关系检查](/product/console/basic_user.html#好友关系检查)。
+- 对于单聊，即时通讯 IM 默认支持陌生人之间发送消息，即无需添加好友即可聊天。若仅允许好友之间发送单聊消息，你需要联系声网商务开启好友关系检查。
 - 对于群组和聊天室，用户每次只能向所属的单个群组和聊天室发送消息。
 - 关于消息发送控制，详见 [单聊](/product/message_single_chat.html#单聊消息发送控制)、[群组聊天](/product/message_group.html#群组消息发送控制) 和 [聊天室](/product/message_chatroom.html#聊天室消息发送控制) 的相关文档。
 
@@ -69,7 +73,7 @@ message.chatType = EMChatTypeGroupChat;
 
 - 原图：发送方本地选择的原始图片文件，通常用于查看或保存原图。
 - 大图：服务端基于原图进行等比压缩后的图片。压缩规则为：若图片短边大于 720 像素，则等比压缩至短边为 720 像素；若短边小于等于 720 像素，则保留原图尺寸，不做放大处理。此类图片通常用于聊天详情页展示。
-- 缩略图：服务端基于原图进行等比压缩后的图片。压缩规则为：默认情况下，若图片短边大于 170 像素，则等比压缩至短边为 170 像素；若短边小于等于 170 像素，则保留原图尺寸，不做放大处理。缩略图的压缩方式和尺寸可在 [控制台进行配置](/product/console/basic_message.html#图片消息缩略图)。此类图片通常用于会话列表、聊天列表等轻量展示场景。
+- 缩略图：服务端基于原图进行等比压缩后的图片。压缩规则为：默认情况下，若图片短边大于 170 像素，则等比压缩至短边为 170 像素；若短边小于等于 170 像素，则保留原图尺寸，不做放大处理。此类图片通常用于会话列表、聊天列表等轻量展示场景。
 
 发送图片消息的流程如下：
 
@@ -317,6 +321,8 @@ message.priority = EMChatRoomMessagePriorityHigh;
 
 各类消息的大小和存储限制，详见 [消息限制说明](limitation.html#消息大小)。
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 ### 发消息时设置回调路由
 
 回调路由允许你在同一个 App ID 下，将不同消息按回调环境维度分别投递到不同的回调地址。发送消息时，你可以在消息中携带回调环境字段（如 `dev`、`test`、`prod`），IM 服务器收到消息后，根据该字段匹配控制台中配置的 [回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
@@ -343,7 +349,7 @@ message.priority = EMChatRoomMessagePriorityHigh;
 
 **工作流程**
 
-1. 在控制台为发送前回调或发送后回调 [配置回调路由](/product/console/basic_webhook.html#配置消息回调规则)。
+1. 在控制台为发送前回调或发送后回调 [回调路由规则](/document/server-side/callback_presending.html#回调规则)。
 2. 客户端发送消息时，设置回调环境值。
 3. IM 服务器收到消息后，根据消息中的回调环境值匹配当前阶段的回调地址。
 4. 命中有效路由后，服务器将回调请求发送到对应地址。
@@ -400,4 +406,6 @@ func sendTextMessage(to userId: String, text: String, webhookEnv: String?) {
 | 携带环境值但未命中有效路由           | **不触发回调**，控制台中的 `default` 兜底配置在此场景下 **不生效**。 |
 | 未携带环境值                         | 自动路由至 `default` 环境对应的回调地址。                    |
 | 同一消息需同时触发发送前与发送后回调 | 两个阶段必须使用 **相同的环境值**。例如，发送前配置 `test -> url1`，发送后配置 `test -> url2`，则消息中携带 `test` 即可同时生效于两阶段。 |
+
+</HideSection>
 

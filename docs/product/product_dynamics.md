@@ -1,7 +1,9 @@
 ---
-title: 产品文档
+title: 产品动态
 show_mcp_server: false
 show_server_search: false
+show_callback_route: false
+show_server_callback_route: false
 ---
 
 # 产品动态
@@ -55,6 +57,8 @@ show_server_search: false
 
 ## 2026-06
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 :::tip
 目前，[发消息时设置回调路由功能](/document/android/message_send.html#发消息时设置回调路由) 仅面向中国区开放。
 :::
@@ -72,6 +76,8 @@ show_server_search: false
 | Android/iOS SDK 4.23.0 开发版发布   | - 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](/document/android/message_send.html#发消息时设置回调路由)。<br/> - 新增 [登录失败相关的连接超时错误码](/document/android/error.html)。 | 2026-6-18     | - [Android SDK 4.23.0 更新日志](/document/android/releasenote.html#v4-23-0-dev-2026-6-10-开发版) <br/> - [iOS SDK 4.23.0 更新日志](/document/ios/releasenote.html#v4-23-0-dev-2026-6-10-开发版) <br/>       |
 | Web/小程序 SDK 4.23.0 开发版发布   | 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](/document/android/message_send.html#发消息时设置回调路由)。  | 2026-6-18    | - [Web SDK 4.23.0 更新日志](/document/web/releasenote.html#v4-23-0-dev-2026-6-10-开发版)<br/> - [小程序 SDK 4.23.0 更新日志](/document/applet/releasenote.html#v4-23-0-dev-2026-6-10-开发版) |
 
+</HideSection>
+
 #### IM 客户端 SDK v4.22.0 发版
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
@@ -79,23 +85,15 @@ show_server_search: false
 | Android/iOS SDK 4.22.0 开发版发布   | - 图片消息分层资源管理，[发送方发消息时可选择上传原图或大图](/document/android/message_send.html#发送图片消息)，[接收方可下载原图、大图和缩略图](/document/android/message_send.html#发送图片消息)。<br/> - [支持登录成功后自动同步好友列表及好友信息](/document/android/user_relationship.html#开启自动同步) <br/> - 支持 [订阅非好友用户的属性变更功能](/document/android/userprofile.html#订阅非好友用户的属性变更)。<br/> - 新增同步数据 WebSocket 服务地址和端口配置接口。 | 2026-6-17     | - [Android SDK 4.22.0 更新日志](/document/android/releasenote.html#v4-22-0-dev-2026-6-5-开发版) <br/> - [iOS SDK 4.22.0 更新日志](/document/ios/releasenote.html#v4-22-0-dev-2026-6-5-开发版) <br/>       |
 | Web/小程序 SDK 4.22.0 开发版发布   | 图片消息分层资源管理，[发送方发消息时可选择上传原图或大图](/document/web/message_send.html#发送图片消息)，[接收方可下载原图、大图和缩略图](/document/web/message_send.html#发送图片消息)。  | 2026-6-17     | - [Web SDK 4.22.0 更新日志](/document/web/releasenote.html#v4-22-0-dev-2026-6-5-开发版)<br/> - [小程序 SDK 4.22.0 更新日志](/document/applet/releasenote.html#v4-22-0-dev-2026-6-5-开发版) |
 
+<HideSection :show="$frontmatter.show_server_callback_route">
+
 #### 服务端支持发消息时设置回调路由
 
 服务端支持在单聊、群组聊天和聊天室中发消息时设置回调路由，使消息可按指定路由触发 [发送后回调](/document/server-side/callback_postsending.html)。
 
 调用发送消息接口时，只需在发消息时在请求体中传入 `env` 参数。单聊、群聊和聊天室的接口均支持该字段，使用方式完全一致，详见 [发送单聊消息时设置回调路由](/document/server-side/message_single.html#发消息时设置回调路由)。
 
-## 2026-05
-
-#### IM Server SDK 2.0 发版
-
-IM Server SDK 2.0 的 v1.0.18 于 2026 年 5 月 22 日发版。
-
-| 新增功能                     | 描述                                                    |
-| :--------------------------- | :----------------------------------------------------------- |
-| 批量移除聊天室成员功能             | 详见 [RoomApi](https://easemob.github.io/easemob-im-server-sdk/com/easemob/im/api/RoomApi.html)。 |
-
-更多详情，请参见 [V1.0.18 更新日志](/document/server-side/java_server_sdk_2.0.html#v1-0-18-2026-05-22)。
+</HideSection>
 
 ## 2026-04
 
@@ -105,20 +103,6 @@ IM Server SDK 2.0 的 v1.0.18 于 2026 年 5 月 22 日发版。
 | :----- | :------- | :---------------- | :---------------- |
 | Android/iOS/Web/小程序 SDK 4.21.0 开发版发布   | [支持语言转文字](/value-added/stt/voice_to_text_android.html)。  | 2026-4-28     | - [Android SDK 4.21.0 更新日志](/document/android/releasenote.html#v4-21-0-dev-2026-4-28-开发版) <br/> - [iOS SDK 4.21.0 更新日志](/document/ios/releasenote.html#v4-21-0-dev-2026-4-28-开发版) <br/> - [Web SDK 4.21.0 更新日志](/document/web/releasenote.html#v4-21-0-dev-2026-4-28-开发版)<br/> - [小程序 SDK 4.21.0 更新日志](/document/applet/releasenote.html#v4-21-0-dev-2026-4-28-开发版)      |
 | React Native SDK 1.15.0 开发版发布   | [支持接收服务端发送的流式消息](/document/harmonyos/message_stream_receive.html)。  | 2026-4-22     | [React Native 1.15.0 更新日志](/document/react-native/releasenote.html#v1-15-0-2026-04-22)  |
-
-#### IM Server SDK 2.0 发版
-
-IM Server SDK 2.0 的 v1.0.17 于 2026 年 4 月 3 日发版。
-
-本次版本新增以下功能：
-
-| 新增功能                     | 描述                                                    |
-| :--------------------------- | :----------------------------------------------------------- |
-| 新增校验好友功能             | - `userContactCheck`：该 API 校验指定用户是否为好友关系<br/> - 详见 [ContactApi.userContactCheck](https://easemob.github.io/easemob-im-server-sdk/com/easemob/im/api/ContactApi.html#userContactCheck(com.easemob.im.api.model.EMUserContactCheck)) |
-| 撤回消息增加扩展参数         | - `recallMessageExtensionInfo`：该参数指定撤回消息时传入扩展信息<br/> - 详见 [EMRecallMessage](https://easemob.github.io/easemob-im-server-sdk/com/easemob/im/api/model/EMRecallMessage.html) |
-| 修改聊天室增加所有者变更参数 | - `newowner`：该参数为修改聊天室接口新增，用于变更聊天室所有者。<br/> - 详见：[EMModifyRoom](https://easemob.github.io/easemob-im-server-sdk/com/easemob/im/api/model/EMModifyRoom.html) |
-
-更多详情，请参见 [V1.0.17 更新日志](/document/server-side/java_server_sdk_2.0.html#v1-0-17-2026-04-03)。
 
 ## 2026-03
 
@@ -325,20 +309,6 @@ IM Server SDK 2.0 的 v1.0.17 于 2026 年 4 月 3 日发版。
 | :----- | :------- | :---------------- | :---------------- |
 | 消息翻译 RESTful API   | 消息翻译支持以下三个 RESTful API：<br/> - 翻译消息内容 <br/> - 获取翻译语言列表 <br/> - 检测文本的源语言 | 2025-7-2       | <br/> - [翻译消息内容](/document/server-side/message_translation_text.html) <br/> - [获取翻译语言列表](/document/server-side/message_translation_language_list.html) <br/> - [检测文本的源语言](/document/server-side/message_translation_detect.html) |
 
-#### Server SDK 2.0 发版
-
-IM Server SDK 2.0 的 v1.0.15 发版。
-
-为帮助你在高并发请求场景下优化性能，`ApiClient` 新增以下两个参数，适用于 Server SDK 使用过程中出现请求延迟较大时的调优需求。
-
-| 新增 API                          | 描述                                                         |
-| :-------------------------------- | :----------------------------------------------------------- |
-| `setDispatcherMaxRequests`        | 设置整个 `OkHttpClient` 实例允许同时处理的最大请求数（包含正在执行与排队中的请求）。详见 [API 介绍](https://easemob.github.io/easemob-im-server-sdk/com/easemob/im/ApiClient.Builder.html#setDispatcherMaxRequests(int))。 |
-| `setDispatcherMaxRequestsPerHost` | 设置每个主机（host）允许同时处理的最大请求数。详见 [API 介绍](https://easemob.github.io/easemob-im-server-sdk/com/easemob/im/ApiClient.Builder.html#setDispatcherMaxRequestsPerHost(int))。 |
-
-更多详情，请参见 [V1.0.15 更新日志](/document/server-side/java_server_sdk_2.0.html#v1-0-15-2025-07-01)。
-
-
 #### SDK 发版
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
@@ -477,7 +447,7 @@ IM Server SDK 2.0 的 v1.0.15 发版。
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
-| SDK 4.6.0 开发版发布  | **新增特性**：<br/> - 客户端[消息撤回时支持携带自定义信息](/document/android/message_recall.html#实现方法)。<br/> - 客户端支持离线期间撤回的消息通知给接收方。<br/> - 移动端支持[自定义筛选获取本地会话列表](/document/android/conversation_list.html#获取本地所有或筛选的会话)。<br/> - 移动端支持[清除内存中的会话](/document/android/conversation_list.html#清除内存中的会话)，并举例说明如何[降低会话占用内存](/document/android/conversation_list.html#降低会话占用内存的实例)。<br/> - Android 端添加绑定推送 token 成功与否的回调。<br/> - Web/小程序端增加接口支持[获取当前用户加入和创建的聊天室](/document/web/room_manage.html#获取当前用户加入的聊天室列表)。<br/> - Web/小程序 端支持 [logger 日志不显示在控制台](/document/web/log.html#输出信息到日志文件)。 <br/>**重大变更** <br/> 1. **Android**：<br/> 从 V4.6.0 版本开始会启用 Kotlin 语言编写的新的 EaseIM App 项目与 EaseIMKIt 项目，老版本的项目将逐渐不再维护，请参考：<br/> - [EaseIMKIt 文档](https://doc.easemob.com/uikit/chatuikit/android/chatuikit_overview.html) <br/> - EaseIM App 项目：[Github](https://github.com/easemob/easemob-demo-android) 或 [Gitee 地址](https://gitee.com/easemob-code/easemob-demo-android)。<br/> 2. **iOS**：<br/>从 V4.6.0 版本开始会启用 Swift 语言编写的新的 `EaseChatUIKit` 与 `EaseChatDemo`，老版本 Demo 和 UIKit 逐渐不再维护，请参考：<br/> - [UIKit 文档](https://doc.easemob.com/uikit/chatuikit/ios/chatuikit_overview.html) <br/> - Demo 源码：[GitHub](https://github.com/easemob/chat-ios/tree/SwiftDemo) 或 [Gitee 地址](https://gitee.com/easemob-code/easemob-demo-ios/tree/SwiftDemo) | 2024-04-30   | <br/> - [Android 4.6.0 更新日志](/document/android/releasenote.html#v4-6-0-dev-2024-04-30-开发版)<br/> - [iOS 4.6.0 更新日志](/document/ios/releasenote.html#v4-6-0-dev-2024-04-30-开发版)<br/> - [Web 4.7.0 更新日志](/document/web/releasenote.html#v4-7-0-dev-2024-04-30-开发版)<br/> - [小程序 4.7.0 更新日志](/document/applet/releasenote.html#v4-7-0-dev-2024-04-30-开发版)。  |
+| SDK 4.6.0 开发版发布  | **新增特性**：<br/> - 客户端[消息撤回时支持携带自定义信息](/document/android/message_recall.html#实现方法)。<br/> - 客户端支持离线期间撤回的消息通知给接收方。<br/> - 移动端支持[自定义筛选获取本地会话列表](/document/android/conversation_list.html#获取本地所有或筛选的会话)。<br/> - 移动端支持[清除内存中的会话](/document/android/conversation_list.html#清除内存中的会话)，并举例说明如何[降低会话占用内存](/document/android/conversation_list.html#降低会话占用内存的实例)。<br/> - Android 端添加绑定推送 token 成功与否的回调。<br/> - Web/小程序端增加接口支持[获取当前用户加入和创建的聊天室](/document/web/room_manage.html#获取当前用户加入的聊天室列表)。<br/> - Web/小程序 端支持 [logger 日志不显示在控制台](/document/web/log.html#输出信息到日志文件)。 <br/>**重大变更** <br/> 1. **Android**：<br/> 从 V4.6.0 版本开始会启用 Kotlin 语言编写的新的 EaseIM App 项目与 EaseIMKIt 项目，老版本的项目将逐渐不再维护，请参考：<br/> - [EaseIMKIt 文档](/uikit/chatuikit/android/chatuikit_overview.html) <br/> - EaseIM App 项目：[Github](https://github.com/easemob/easemob-demo-android) 或 [Gitee 地址](https://gitee.com/easemob-code/easemob-demo-android)。<br/> 2. **iOS**：<br/>从 V4.6.0 版本开始会启用 Swift 语言编写的新的 `EaseChatUIKit` 与 `EaseChatDemo`，老版本 Demo 和 UIKit 逐渐不再维护，请参考：<br/> - [UIKit 文档](/uikit/chatuikit/ios/chatuikit_overview.html) <br/> - Demo 源码：[GitHub](https://github.com/easemob/chat-ios/tree/SwiftDemo) 或 [Gitee 地址](https://gitee.com/easemob-code/easemob-demo-ios/tree/SwiftDemo) | 2024-04-30   | <br/> - [Android 4.6.0 更新日志](/document/android/releasenote.html#v4-6-0-dev-2024-04-30-开发版)<br/> - [iOS 4.6.0 更新日志](/document/ios/releasenote.html#v4-6-0-dev-2024-04-30-开发版)<br/> - [Web 4.7.0 更新日志](/document/web/releasenote.html#v4-7-0-dev-2024-04-30-开发版)<br/> - [小程序 4.7.0 更新日志](/document/applet/releasenote.html#v4-7-0-dev-2024-04-30-开发版)。  |
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |

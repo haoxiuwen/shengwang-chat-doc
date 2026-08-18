@@ -159,14 +159,14 @@ ChatClient.getInstance()
 
 ![img](/images/common/multidevice_device_count.png)
 
-2. 初始化 SDK。确保该方法中的 `customOSType` 参数的值与[声网控制台](https://console.shengwang.cn/overview)的自定义设备平台的值相同。
+2. 初始化 SDK。确保该方法中的 `customOSType` 参数的值为 `1`，与[声网控制台](https://console.shengwang.cn/overview) 的自定义设备平台的值相同。
 
 :::tip
 登录成功后才会将该设置发送到服务器。
 :::
 
 ```typescript
-// customOSType: 自定义设备类型。取值范围 [1,100]。
+// customOSType: 自定义设备平台，取值为 1。
 ChatClient.getInstance()
   .init(
     new ChatOptions({

@@ -36,7 +36,7 @@ EMOptions options = EMOptions.withAppId(
 await EMClient.getInstance.init(options);
 ```
 
-下表列明初始化配置 `EMOptions` 封装的一些属性。`EMOptions` 封装的所有属性，详见 [API 参考](https://doc.easemob.com/apidoc/flutter/im_flutter_sdk/EMOptions-class.html)。
+下表列明初始化配置 `EMOptions` 封装的一些属性。
 
 | 属性           | 描述            |
 | :----------------- | :---------------- |

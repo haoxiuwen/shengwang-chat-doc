@@ -189,13 +189,14 @@ SDKClient.Instance.ChatManager.RemoveChatManagerDelegate(adelegate);
 
 ![img](/images/common/multidevice_device_count.png)
 
-2. 初始化 SDK 时，利用 `Options#CustomOSType` 自定义设置登录设备的平台。确保该方法中的 `platform` 参数的值与[声网控制台](https://console.shengwang.cn/overview)的自定义设备平台的值相同。
+2. 初始化 SDK 时，利用 `Options#CustomOSType` 自定义设置登录设备的平台。确保 `CustomOSType` 参数的值为 `1`，与[声网控制台](https://console.shengwang.cn/overview)的自定义设备平台的值相同。
 
 :::tip
 登录成功后才会将该设置发送到服务器。
 :::
 
 ```csharp
+// CustomOSType 参数的值为 1
 Options options = new Options("YouappId");
 options.CustomOSType = 1;
 SDKClient.Instance.InitWithOptions(options);

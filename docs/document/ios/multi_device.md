@@ -125,15 +125,16 @@ options.customDeviceName = @"Alice 的 iPad";
 
 ![img](/images/common/multidevice_device_count.png)
 
-2. 初始化 SDK 时，调用 `initializeSDKWithOptions` 方法设置 `EMOptions#customOSType` 属性添加自定义平台。确保该属性的值与 [声网控制台](https://console.shengwang.cn/overview) 的自定义设备平台的值相同。
+2. 初始化 SDK 时，调用 `initializeSDKWithOptions` 方法设置 `EMOptions#customOSType` 属性添加自定义平台。确保该属性的值为 `1`，与 [声网控制台](https://console.shengwang.cn/overview) 的自定义设备平台的值相同。
 
 :::tip
 登录成功后才会将该设置发送到服务器。
 :::
 
 ```objectivec
+// customOSType 的值为 1
 EMOptions *options = [EMOptions optionswithAppId:@"your app ID"];
-options.customOSType = 60;
+options.customOSType = 1;
 
 // 使用 options 初始化 SDK 后，再通过异步 Token 登录接口登录。
 ```

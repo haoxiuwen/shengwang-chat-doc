@@ -1,3 +1,7 @@
+---
+show_callback_route: false
+---
+
 # 发送群聊消息
 
 ## 功能说明
@@ -9,7 +13,7 @@
 群聊场景下，各类型消息共用同一 RESTful API，不同消息类型的主要区别在于请求体 `body` 字段的结构。
 
 - 文本、位置、透传和自定义消息：直接构造消息体并调用发送接口。
-- 图片、语音、视频和文件消息：发送附件消息时，不能直接使用业务侧原始附件地址，需先调用 [文件上传](https://doc.easemob.com/document/server-side/message_upload_file.html) 接口上传附件，再使用上传后返回的附件地址及相关字段构造消息体。
+- 图片、语音、视频和文件消息：发送附件消息时，不能直接使用业务侧原始附件地址，需先调用 [文件上传](message_upload_file.html) 接口上传附件，再使用上传后返回的附件地址及相关字段构造消息体。
 - 与 [导入群聊消息](message_import_group.html) 不同，发送附件消息时，**不能直接使用业务侧原始文件地址**。
 
 ### 附件消息发送流程
@@ -1025,6 +1029,8 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups'
 
 ## 可选增强功能
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 ### 发消息时设置回调路由
 
 回调路由允许你在同一个 App ID 下，将不同消息按回调环境维度分别投递到不同的回调地址。发送消息时，你可以在消息中携带回调环境字段（如 `dev`、`test`、`prod`），IM 服务器收到消息后，根据该字段匹配控制台中配置的 [回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
@@ -1034,4 +1040,6 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups'
 :::
 
 关于该功能的详细说明以及请求示例代码，详见 [发送单聊消息中的说明](message_single.html#发消息时设置回调路由)。
+
+</HideSection>
 

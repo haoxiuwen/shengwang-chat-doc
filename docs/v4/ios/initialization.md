@@ -18,7 +18,7 @@ let options = EMOptions(appId: "Your appId")
 EMClient.shared().initializeSDK(with: options)
 ```
 
-下表列明初始化配置 `EMOptions` 封装的一些属性。`EMOptions` 封装的所有属性，详见 [API 参考](https://doc.easemob.com/apidoc/ios/chat3.0/interface_e_m_options.html)。
+下表列明初始化配置 `EMOptions` 封装的一些属性。
 
 | 属性           | 描述            |
 | :----------------- | :---------------- |

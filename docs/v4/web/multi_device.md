@@ -86,13 +86,13 @@ conn.getSelfIdsOnOtherPlatform().then((res) => {
 
 ![img](/images/common/multidevice_device_count.png)
 
-2. 初始化 SDK 时，设置 `customOSPlatform` 参数，可选值为 [1,100]，确保该参数的值与 [声网控制台](https://console.shengwang.cn/overview) 的自定义设备平台的值相同。
+2. 初始化 SDK 时，设置 `customOSPlatform` 参数，确保该参数的值为 `1`，与 [声网控制台](https://console.shengwang.cn/overview) 的自定义设备平台的值相同。
 
 ```javascript
 const conn = new WebIM.connection({
     appId: 'you appId',
     customOSPlatform: 1, // 设置自定义平台
-    customDeviceName: '自定义平台1' // 设置平台名称
+    customDeviceName: '自定义平台1' // 设置设备名称
 })
 ```
 

@@ -160,7 +160,7 @@ EMClient.getInstance().chatManager().sendMessage(message);
 
 ```java
     EMOptions options=new EMOptions();
-    options.setCustomOSPlatform(1);
+    options.setCustomOSPlatform(1); // 取值为 1。
     EMClient.getInstance().init(context,options);
 ```
 

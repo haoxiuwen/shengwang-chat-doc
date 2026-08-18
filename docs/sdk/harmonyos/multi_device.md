@@ -105,7 +105,7 @@ ChatClient.getInstance().addConnectionListener({
 
 即时通讯 IM 支持自定义设置登录设备的平台，例如将手机和平板电脑设置为两个单独的平台，方便用户精细化控制同一平台的登录设备数量及平台间互踢等行为。
 
-初始化 SDK 时，调用 `ChatOptions#setCustomOSPlatform` 方法自定义设置登录设备的平台。
+初始化 SDK 时，调用 `ChatOptions#setCustomOSPlatform` 方法自定义设置登录设备的平台，确保该方法设置的值为 `1`，与 [声网控制台](https://console.shengwang.cn/overview) 的自定义设备平台的值相同。
 
 :::tip
 登录成功后才会将该设置发送到服务器。
@@ -115,7 +115,7 @@ ChatClient.getInstance().addConnectionListener({
 let options = new ChatOptions({
   appId: "Your AppId"
 });
-options.setCustomOSPlatform(1); // 取值范围为 [1,100]
+options.setCustomOSPlatform(1); // 取值为 1
 ChatClient.getInstance().init(this.context, options);
 ```
 

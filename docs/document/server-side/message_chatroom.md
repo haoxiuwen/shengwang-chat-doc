@@ -1,3 +1,7 @@
+---
+show_callback_route: false
+---
+
 # 发送聊天室消息
 
 ## 功能说明
@@ -1005,6 +1009,8 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatrooms' \
 
 ## 可选增强功能
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 ### 发消息时设置回调路由
 
 回调路由允许你在同一个 App ID 下，将不同消息按回调环境维度分别投递到不同的回调地址。发送消息时，你可以在消息中携带回调环境字段（如 `dev`、`test`、`prod`），IM 服务器收到消息后，根据该字段匹配控制台中配置的 [回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
@@ -1014,3 +1020,5 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatrooms' \
 :::
 
 关于该功能的详细说明以及请求示例代码，详见 [发送单聊消息中的说明](message_single.html#发消息时设置回调路由)。
+
+</HideSection>

@@ -1,5 +1,6 @@
 ---
 show_server_search: false
+show_callback_route: false
 ---
 
 # Android IM SDK 更新日志
@@ -33,9 +34,13 @@ show_server_search: false
 
 ## v4.23.0 Dev 2026-6-10（开发版）
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 ####  新增功能
 
 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](message_send.html#发消息时设置回调路由)。目前，该功能仅面向国内 1 区和国内 2 区开放。
+
+</HideSection>
 
 #### 优化
 

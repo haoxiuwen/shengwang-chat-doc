@@ -1,3 +1,7 @@
+---
+show_callback_route: false
+---
+
 # 发送单聊消息
 
 ## 功能说明
@@ -9,7 +13,7 @@
 单聊场景下，各类型消息共用同一 RESTful API，不同消息类型的主要区别在于请求体 `body` 字段的结构。
 
 - 文本、位置、透传和自定义消息：直接构造消息体并调用发送接口。
-- 图片、语音、视频和文件消息：发送附件消息时，不能直接使用业务侧原始附件地址，需先调用 [文件上传](https://doc.easemob.com/document/server-side/message_upload_file.html) 接口上传附件，再使用上传后返回的附件地址及相关字段构造消息体。
+- 图片、语音、视频和文件消息：发送附件消息时，不能直接使用业务侧原始附件地址，需先调用 [文件上传](message_upload_file.html) 接口上传附件，再使用上传后返回的附件地址及相关字段构造消息体。
 - 与 [导入单聊消息](message_import_single.html) 不同，发送附件消息时，**不能直接使用业务侧原始文件地址**。
 
 ### 附件消息发送流程
@@ -906,6 +910,8 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/users' \
 
 ## 可选增强功能
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 ### 发消息时设置回调路由
 
 回调路由允许你在同一个 App ID 下，将不同消息按回调环境维度分别投递到不同的回调地址。发送消息时，你可以在消息中携带回调环境字段（如 `dev`、`test`、`prod`），IM 服务器收到消息后，根据该字段匹配控制台中配置的 [回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
@@ -932,7 +938,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/users' \
 
 **工作流程**
 
-1. 在控制台为发送前回调或发送后回调 [配置回调路由](/product/console/basic_webhook.html#配置消息回调规则)。
+1. 在控制台为发送前回调或发送后回调 [回调路由规则](/document/server-side/callback_presending.html#回调规则)。
 2. 客户端发送消息时，设置回调环境值。
 3. IM 服务器收到消息后，根据消息中的回调环境值匹配当前阶段的回调地址。
 4. 命中有效路由后，服务器将回调请求发送到对应地址。
@@ -975,3 +981,5 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/users' \
 | 携带环境值但未命中有效路由           | **不触发回调**，控制台中的 `default` 兜底配置在此场景下 **不生效**。 |
 | 未携带环境值                         | 自动路由至 `default` 环境对应的回调地址。                    |
 | 同一消息需同时触发发送前与发送后回调 | 两个阶段必须使用 **相同的环境值**。例如，发送前配置 `test -> url1`，发送后配置 `test -> url2`，则消息中携带 `test` 即可同时生效于两阶段。 |
+
+</HideSection>

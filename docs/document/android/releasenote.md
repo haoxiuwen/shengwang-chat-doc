@@ -1,6 +1,7 @@
 ---
 title: Android IM SDK 更新日志
 show_search_search: false
+show_callback_route: false
 ---
 
 # Android IM SDK 更新日志
@@ -97,7 +98,7 @@ SDK 补充会话展示信息、批量删除会话和群成员读取等能力：
 
 <HideSection :show="$frontmatter.show_server_search">
 
-- 支持 [服务端消息搜索](/value-added/search/message_search_android.html)，可根据关键词组合、会话 ID、消息类型、时间范围及消息内容或扩展属性进行筛选。该功能需联系商务经理开通后方可使用，详见 [开通说明](/product/console/purchase_value_added.html#消息搜索)。
+- 支持 [服务端消息搜索](/value-added/search/message_search_android.html)，可根据关键词组合、会话 ID、消息类型、时间范围及消息内容或扩展属性进行筛选。该功能需联系商务经理开通后方可使用。
   消息搜索默认不支持扩展字段 `ext`，如需支持该字段搜索，请联系商务经理。
 </HideSection>
 
@@ -119,9 +120,13 @@ SDK 补充会话展示信息、批量删除会话和群成员读取等能力：
 
 ## v4.23.0 Dev 2026-6-10（开发版）
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 ####  新增功能
 
 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](message_send.html#发消息时设置回调路由)。目前，该功能仅面向国内 1 区和国内 2 区开放。
+
+</HideSection>
 
 #### 优化
 

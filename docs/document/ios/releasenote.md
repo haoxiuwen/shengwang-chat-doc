@@ -1,6 +1,7 @@
 ﻿---
 title: iOS IM SDK 更新日志
 show_search_search: false
+show_callback_route: false
 ---
 
 ## v5.0.0 Dev
@@ -118,9 +119,13 @@ SDK 补充会话列表监听、会话展示信息、批量删除会话和本地�
 
 ## v4.23.0 Dev 2026-6-10（开发版）
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 #### 新增特性
 
 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](message_send.html#发消息时设置回调路由)。目前，该功能仅面向国内 1 区和国内 2 区开放。
+
+</HideSection>
 
 #### 优化
 
@@ -559,7 +564,7 @@ SDK 依赖的 AOSL Crash 检测库已更换为 `ShengwangInfra_iOS`。如使用�
 #### 重大变更
 
 从 V4.6.0 版本开始会启用 Swift 语言编写的新的 `EaseChatUIKit` 与 `EaseChatDemo`，老版本 Demo 和 UIKit 逐渐不再维护，请参考：
-- [UIKit 文档](https://doc.easemob.com/uikit/chatuikit/ios/chatuikit_overview.html)
+- [UIKit 文档](/uikit/chatuikit/ios/chatuikit_overview.html)
 - [GitHub](https://github.com/easemob/chat-ios/tree/SwiftDemo) 或 [Gitee](https://gitee.com/easemob-code/easemob-demo-ios/tree/SwiftDemo) 上的 Demo 源码
 
 ## v4.5.0 Dev 2024-04-03

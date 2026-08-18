@@ -33,7 +33,7 @@ ChatClient.getInstance().init(this.context, {
 });
 ```
 
-下表列明初始化配置 `ChatOptions` 封装的一些方法。`ChatOptions` 封装的所有方法，详见 [API 参考](https://doc.easemob.com/apidoc/harmony/chat3.0/classes/ChatOptions.ChatOptions.html)。
+下表列明初始化配置 `ChatOptions` 封装的一些方法。
 
 | 方法名称           | 描述            |
 | :----------------- | :---------------- |

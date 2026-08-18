@@ -140,13 +140,14 @@ EMClient.getInstance.addConnectionEventHandler(
 
 ![img](/images/common/multidevice_device_count.png)
 
-2. 初始化 SDK 时，调用 `EMOptions#osType` 方法自定义设置登录设备的平台。确保该方法中的 `osType` 参数的值与 [声网控制台](https://console.shengwang.cn/overview) 的自定义设备平台的值相同。
+2. 初始化 SDK 时，调用 `EMOptions#osType` 方法自定义设置登录设备的平台。确保该方法中的 `osType` 参数的值为 `1`，与 [声网控制台](https://console.shengwang.cn/overview) 的自定义设备平台的值相同。
 
 :::tip
 登录成功后才会将该设置发送到服务器。
 :::
 
 ```dart
+// osType 参数的值为 1
 final options = EMOptions(appId: appId, osType: 1);
 EMClient.getInstance.init(options);
 ```

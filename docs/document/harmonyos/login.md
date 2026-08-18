@@ -40,7 +40,7 @@
 
 **用户 ID + token** 是更加安全的登录方式。
 
-测试环境下，你在 [声网控制台](https://console.shengwang.cn/overview) 创建用户后，IM 服务器会自动为这些用户分配用户 Token，详见[查看用户 Token](/product/console/operation_user.html#查看用户-token)。
+测试环境下，你在 [声网控制台](https://console.shengwang.cn/overview) 创建用户后，IM 服务器会自动为这些用户分配用户 Token，详见[查看用户 Token](/product/product_user_registration_login.html#获取用户-token)。
 
 在生产环境中，为了安全考虑，你需要在你的应用服务器集成[Token 鉴权](/document/server-side/token_authentication.html) 实现获取 Token 的业务逻辑，使你的用户从你的应用服务器获取 Token。SDK 会在 Token 过期时或者其有效期达到 80%（1.8.0 之前为 50%）时分别回调 `onTokenExpired` 和 `onTokenWillExpire`。
 
