@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let option = ChatSDKOptions(appid: "your app ID")//首先需要初始化 IM SDK，替换你的 app ID
         option.enableConsoleLog = true//开启日志
-        option.isAutoLogin = false//此处只是示例项目，真实使用时参考环信Demo源码，自动登录更方便
+        option.isAutoLogin = false//此处只是示例项目，真实使用时参考 IM Demo源码，自动登录更方便
         ChatClient.shared().initializeSDK(with: option)//初始化SDK
         CallKitManager.shared.setup()//初始化EaseCallUIKit
         return true

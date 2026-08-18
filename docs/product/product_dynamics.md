@@ -408,13 +408,13 @@ IM Server SDK 2.0 的 v1.0.15 发版。
 
 1. 注册用户时用户 ID 建议统一使用小写字母
 
-为了更好地实现服务端与 SDK 的兼容，调用 [RESTful API](/document/server-side/account_register_authorized_single.html)和客户端 API 以及 [在环信控制台创建用户](/product/console/operation_user.html#创建用户)时，建议统一使用小写字母。目前用户 ID 支持以下字符集：
+为了更好地实现服务端与 SDK 的兼容，调用 [RESTful API](/document/server-side/account_register_authorized_single.html)和客户端 API 以及在 [声网控制台](https://console.shengwang.cn/overview) 创建用户时，建议统一使用小写字母。目前用户 ID 支持以下字符集：
 
 - 26 个小写英文字母 a-z；
 - 10 个数字 0-9；
 - “_”, “-”, “.”。
 
-2. 新增发送后回调事件
+1. 新增发送后回调事件
 
 因解散群组或聊天室导致的用户退出，IM 服务器向你的 App Server 发送的回调请求。详情请参见 [成员离开事件](/document/server-side/callback_group_room_leave.html#因解散群组-聊天室导致的用户退出) 。
 

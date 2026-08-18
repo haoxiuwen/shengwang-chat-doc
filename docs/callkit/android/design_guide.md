@@ -2,7 +2,7 @@
 
 <img src="/images/callkit/design/Cover.png" width="100%" >
 
-环信通话套件人机交互界面工具包基于环信移动端单/群聊人机交互界面工具包进行设计，设计原则、全局样式、小控件样式均复用自环信单/群聊人机交互界面工具包，详见 [单/群聊人机交互界面工具包](/uikit/chatuikit/android/chatuikit_design_guide.html)。
+声网通话套件人机交互界面工具包基于声网移动端单/群聊人机交互界面工具包进行设计，设计原则、全局样式、小控件样式均复用自声网单/群聊人机交互界面工具包，详见 [单/群聊人机交互界面工具包](/uikit/chatuikit/android/chatuikit_design_guide.html)。
 
 ## 总设计原则
 
@@ -355,7 +355,7 @@ Message Bubble(Large Radius)
 
 ### 头像
 
-本项目中的头像(Avatar)组件，复用环信单/群聊人机交互界面工具包的相关组件。依据当前视图需要，显示对应的头像值。
+本项目中的头像(Avatar)组件，复用声网单/群聊人机交互界面工具包的相关组件。依据当前视图需要，显示对应的头像值。
 
 <img src="/images/callkit/design/avatar.png" width="600">
 

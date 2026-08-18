@@ -128,7 +128,7 @@ EMChatMessage *message = [[EMChatMessage alloc] initWithConversationID:toChatUse
 1. 在应用层完成视频文件的选取或录制，并准备视频文件的本地路径、视频时长和缩略图路径。
 2. 调用 `initWithLocalPath` 方法传入视频文件的本地路径、消息的显示名称和视频时长，构建视频消息体。然后，调用 `initWithConversationID` 方法传入会话 ID 和视频消息体，构建视频消息。
 3. 调用 `sendMessage` 方法发送消息。 
-   发送过程中，SDK 会将视频文件上传至环信消息服务器，自动将视频的首帧作为视频缩略图。上传完成后再发送消息。你可以结合消息状态或相关回调感知上传进度以及发送结果。
+   发送过程中，SDK 会将视频文件上传至 IM 消息服务器，自动将视频的首帧作为视频缩略图。上传完成后再发送消息。你可以结合消息状态或相关回调感知上传进度以及发送结果。
 
 ```objectivec
 // `localPath` 为本地资源路径，`displayName` 为视频的显示名称。

@@ -20,7 +20,7 @@
 
 各步骤的说明如下：
 
-1. 先调用 [上传文件](message_upload_file.html) 接口，将图片、语音、视频或文件上传到环信文件服务。
+1. 先调用 [上传文件](message_upload_file.html) 接口，将图片、语音、视频或文件上传到 IM 文件服务。
 2. 从上传结果中获取发送附件消息所需的信息，例如文件地址、`file_uuid` 和 `share-secret`。
 3. 调用 [发送单聊消息](message_single.html) 接口，并在消息体中填入上传后的附件地址和相关字段。
 4. 若上传时将 `restrict-access` 设置为 `true`，则后续下载原件或缩略图时都需要携带上传返回的 `share-secret`；若未开启受限访问，则可直接下载。
@@ -140,7 +140,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/users' \
 
 仅发送给在线用户，消息同步给发送方（设置 `sync_device` 为 true，`routetype` 为 `ROUTE_ONLINE`）。
 
-若仅发送给在线用户，默认不支持漫游存储。发送的消息默认不存储在环信消息服务器，用户无法在其他终端设备获取该消息。如需开通在线消息的漫游存储，需联系商务经理。
+若仅发送给在线用户，默认不支持漫游存储。发送的消息默认不存储在 IM 消息服务器，用户无法在其他终端设备获取该消息。如需开通在线消息的漫游存储，需联系商务经理。
 
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
@@ -325,7 +325,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/users' \
 
 ## 发送语音消息
 
-发送语音消息前，请先调用 [文件上传](message_upload_file.html) 接口上传语音文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始语音地址。
+发送语音消息前，请先调用 [文件上传](message_upload_file.html) 接口上传语音文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始语音地址。
 
 #### 请求 URL
 
@@ -413,7 +413,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/users' \
 
 ## 发送视频消息
 
-发送视频消息前，请先调用 [文件上传](message_upload_file.html) 接口上传视频文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始视频地址。
+发送视频消息前，请先调用 [文件上传](message_upload_file.html) 接口上传视频文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始视频地址。
 
 #### 请求 URL
 

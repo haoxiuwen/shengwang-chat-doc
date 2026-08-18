@@ -446,7 +446,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 #### 注意
 
-当同时集成环信 SDK 4.11.0 和声网 RTM SDK 2.2.0 或 RTC SDK 4.3.0 及以上版本时，由于同时包含 `libaosl.so` 库，编译时可能会出现错误，详见 [Android 快速开始中的集成问题说明](quickstart.html#_5-其他集成问题)。
+当同时集成 IM SDK 4.11.0 和声网 RTM SDK 2.2.0 或 RTC SDK 4.3.0 及以上版本时，由于同时包含 `libaosl.so` 库，编译时可能会出现错误，详见 [Android 快速开始中的集成问题说明](quickstart.html#_5-其他集成问题)。
 
 ## v4.10.3 2024-11-25
 
@@ -1293,7 +1293,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 #### 更新：
 
-- [IM SDK] 3.8.0 及以后版本 SDK 更新名为 com.hyphenate:hyphenate-chat:x.x.x, 只发布 IM 功能，移除环信音视频功能；
+- [IM SDK] 3.8.0 及以后版本 SDK 更新名为 com.hyphenate:hyphenate-chat:x.x.x, 只发布 IM 功能，移除音视频功能；
 - [EaseIM App] 环信 app 依赖声网音视频功能;
 
 #### 修复：
@@ -1647,7 +1647,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 **注意：**
 
-- 针对 oppo 推送，我们把 Demo 包名替换为了：com.hyphenate.chatuidemo.push。如果在环信 Demo 上测试 Oppo 推送，请自行修改 Demo 包名。
+- 针对 oppo 推送，我们把 Demo 包名替换为了：com.hyphenate.chatuidemo.push。如果在IM Demo 上测试 Oppo 推送，请自行修改 Demo 包名。
 
 - `V3.5.4，在华为手机注册推送的时候会出现异常，该 Bug 在V3.5.5及之后的版本中已修复，这里建议未集成的用户或者已是V3.5.4的用户升级到更高的 SDK 版本。`
 

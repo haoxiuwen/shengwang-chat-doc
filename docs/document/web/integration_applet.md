@@ -6,7 +6,7 @@
 
 ## 集成 SDK
 
-### 步骤 1：注册环信账号
+### 步骤 1：注册 IM 账号
 
 在声网控制台完成以下操作：
 
@@ -126,7 +126,7 @@ console.log(client.getCurrentUserId());
 ```
 
 :::tip
-生产环境中，建议由你的应用服务器集成环信用户 Token 获取逻辑，客户端从应用服务器获取用户 Token 后再登录 SDK。不要在小程序客户端保存 App Token 或 App Secret。
+生产环境中，建议由你的应用服务器集成 IM 用户 Token 获取逻辑，客户端从应用服务器获取用户 Token 后再登录 SDK。不要在小程序客户端保存 App Token 或 App Secret。
 :::
 
 ### 步骤 8：监听连接和消息事件

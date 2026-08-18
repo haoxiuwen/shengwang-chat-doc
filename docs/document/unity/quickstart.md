@@ -33,7 +33,7 @@
 | Windows              | Windows 10 或以上 | Microsoft Visual Studio 2019 或以上            |
 
 - 有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 说明。
-- 如果你的网络环境部署了防火墙，请联系环信技术支持设置白名单。
+- 如果你的网络环境部署了防火墙，请联系 IM 技术支持设置白名单。
 
 ## 项目设置
 

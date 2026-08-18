@@ -11,7 +11,7 @@
 
 即时通讯 IM 提供单聊、群聊、聊天室、离线推送、账号鉴权、用户属性和用户关系等服务，以及完善的 SDK API 和 RESTful API。
 
-![环信架构](/images/product/framework.png)
+![即时通讯 IM 架构](/images/product/framework.png)
 
 ## 产品服务
 

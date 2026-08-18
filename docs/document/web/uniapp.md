@@ -2,7 +2,7 @@
 
 ## 概述
 
-环信小程序 SDK 为 uni-app 多端应用提供即时通讯（IM）能力。开发者可以基于一套代码，在 Web、H5、主流小程序以及部分原生 App 平台中集成账户、消息、群组和聊天室等功能。
+IM 小程序 SDK 为 uni-app 多端应用提供即时通讯（IM）能力。开发者可以基于一套代码，在 Web、H5、主流小程序以及部分原生 App 平台中集成账户、消息、群组和聊天室等功能。
 
 本文介绍 uni-app 项目的环境准备、服务器域名配置、SDK 安装与初始化方法，并说明自动登录和 Vue 3 H5 发布时的注意事项。
 
@@ -46,7 +46,7 @@ uni-app SDK 支持以下平台：
 
 ### 步骤 1：准备开发环境
 
-#### 注册环信账号并创建项目
+#### 注册账号并创建项目
 
 1. 在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
 2. [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 。
@@ -153,7 +153,7 @@ const conn = new WebIM.connection({
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| `appId` | String | 环信应用的唯一标识。 |
+| `appId` | String | 应用的唯一标识。 |
 | `url` | String | WebSocket 服务地址。**应根据应用所属的数据中心进行配置**。 |
 | `apiUrl` | String | REST API 服务地址。**应根据应用所属的数据中心进行配置**。 |
 | `useOwnUploadFun` | Boolean | 是否使用自定义上传方式。启用后，可先将图片等文件上传至自有服务器，再在构建消息时传入文件 URL。 |
@@ -186,7 +186,7 @@ const conn = new WebIM.connection({
 
 ## Vue 3 项目发布至 H5 的注意事项
 
-在 Vue 3 模式下，HBuilderX 默认启用 [摇树优化（tree-shaking）](https://uniapp.dcloud.net.cn/collocation/manifest.html#treeshaking)。将项目发行至“网站-PC Web 或手机 H5”时，该优化可能会移除环信 SDK 中未被显式引用的模块，导致发布后的应用出现登录失败等问题。
+在 Vue 3 模式下，HBuilderX 默认启用 [摇树优化（tree-shaking）](https://uniapp.dcloud.net.cn/collocation/manifest.html#treeshaking)。将项目发行至“网站-PC Web 或手机 H5”时，该优化可能会移除 IM SDK 中未被显式引用的模块，导致发布后的应用出现登录失败等问题。
 
 可以使用以下任一方式关闭摇树优化。
 

@@ -197,7 +197,7 @@ EMClient.getInstance().chatManager().sendMessage(message);
 
 ### SDK 依赖的 Crash 上报库冲突
 
-当同时集成环信 SDK 和声网 RTM SDK 2.2.0 或 RTC SDK 4.3.0 及以上版本时，由于同时包含 `libaosl.so` 库，编译时可能会出现以下错误：
+当同时集成 IM SDK 和声网 RTM SDK 2.2.0 或 RTC SDK 4.3.0 及以上版本时，由于同时包含 `libaosl.so` 库，编译时可能会出现以下错误：
 
 ```java
 com.android.builder.merge.DuplicateRelativeFileException: More than one file was found with OS independent path 'lib/x86/libaosl.so'

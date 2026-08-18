@@ -127,7 +127,7 @@ android.enableJetifier=true
 
 1. 打开 `app/src/main/res/values/strings.xml` 文件，替换为如下内容。
 
-你需要将 **app_key** 替换为你申请的环信 App ID,**user_name** 替换为你的用户名,**token** 替换为你用户名对应的token。
+你需要将 **app_key** 替换为你申请的 App ID,**user_name** 替换为你的用户名,**token** 替换为你用户名对应的token。
 
 ```xml
 <resources>

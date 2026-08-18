@@ -4,7 +4,7 @@
 
 ## 下载精简版 SDK
 
-你可以从环信官网 [下载 iOS 端精简版 SDK](https://downloadsdk.easemob.com/downloads/SDK-mini/iOS_IMLite_SDK_4.2.0_1116.zip)。
+你可以 [下载 iOS 端精简版 SDK](https://downloadsdk.easemob.com/downloads/SDK-mini/iOS_IMLite_SDK_4.2.0_1116.zip)。
 
 :::tip
 精简版 SDK 无本地存储，可以升级为标准版 SDK，但标准版不能降级为精简版。

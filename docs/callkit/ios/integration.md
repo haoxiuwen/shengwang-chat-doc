@@ -89,7 +89,7 @@ pod 'EaseCallUIKit', :path => '../../easemob-callkit-iOS/'
 
 CallKit 初始化包括如下步骤：
 
-1. 初始化环信即时通讯 IM SDK。CallKit 基于即时通讯 IM 作为信令通道，因此需先初始化 IM SDK。
+1. 初始化即时通讯 IM SDK。CallKit 基于即时通讯 IM 作为信令通道，因此需先初始化 IM SDK。
    - 填入你的应用的 App ID。
    - 设置即时通讯 IM SDK 的 `EMOptions`/`ChatSDKOptions` 类中的一些选项。
    - 如果用户要使用系统的 LiveCommunicationKit，建议设置即时通讯 IM 为自动登录 `isAutoLogin` 为 `true`。

@@ -78,7 +78,7 @@
    // 需设置 agreePrivacyStatement boolean类型参数，明确是否同意隐私声明：
    // true：若用户未同意隐私声明，而这里设为 `true`，可能存在合规风险，需业务自己承担合规风险。
    // false：不同意隐私声明, 会影响推送功能
-   // 如使用环信自动登录功能 agreePrivacyStatement 需由客户自行本地记录用户授权行为
+   // 如使用 IM 自动登录功能 agreePrivacyStatement 需由客户自行本地记录用户授权行为
    builder.enableVivoPush(agreePrivacyStatement);
    // 将 pushconfig 设置为 ChatOptions
    options.setPushConfig(builder.build());

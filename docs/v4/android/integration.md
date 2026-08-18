@@ -105,7 +105,7 @@ dependencies {
 :::
 
 ```java
-//假设用户已经通过动态下发的方式，将环信 SDK 中的 libcipherdb.so 和 libhyphenate.so 两个 so 库，放到 app 的 /data/data/packagename/files 目录下。
+//假设用户已经通过动态下发的方式，将 IM SDK 中的 libcipherdb.so 和 libhyphenate.so 两个 so 库，放到 app 的 /data/data/packagename/files 目录下。
 String filesPath = mContext.getFilesDir().getAbsolutePath();
 
 EMOptions options = new EMOptions();

@@ -1207,7 +1207,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 #### 更新：
 
-- [IM SDK] 3.8.0 及以后版本 SDK 更新名为 com.hyphenate:hyphenate-chat:x.x.x, 只发布 IM 功能，移除环信音视频功能；
+- [IM SDK] 3.8.0 及以后版本 SDK 更新名为 com.hyphenate:hyphenate-chat:x.x.x, 只发布 IM 功能，移除音视频功能；
 - [EaseIM App] 环信 app 依赖声网音视频功能;
 
 #### 修复：
@@ -1259,7 +1259,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 - [IM SDK] 修复部分 HTTP 重复请求的问题；
 - [IM SDK] 移除获取设备 IMEI 信息相关逻辑；
 - [EaseIMKit] 修复动图不发送已读回执（read ack）的问题;
-- [EaseIMKit] 修复群组会话页面不显示昵称（或者环信 ID）的问题；
+- [EaseIMKit] 修复群组会话页面不显示昵称（或者 IM 用户 ID）的问题；
 - [EaseIMKit] 修复开启漫游后，获取的历史消息不上屏的问题；
 - [EaseIMKit] 修复聊天页面拦截消息长按事件后，复制功能被拦截的问题；
 - [EaseIMKit] 修复聊天页面“正在输入”状态无法消失的问题；

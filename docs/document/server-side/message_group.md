@@ -20,7 +20,7 @@
 
 各步骤的说明如下：
 
-1. 先调用 [上传文件](message_upload_file.html) 接口，将附件上传到环信文件服务。
+1. 先调用 [上传文件](message_upload_file.html) 接口，将附件上传到 IM 文件服务。
 2. 从上传结果中获取发送群聊附件消息所需的信息，例如文件地址、`file_uuid` 和 `share-secret`。
 3. 调用 [发送群聊消息](message_group.html) 接口，并在消息体中引用上传后的附件地址和相关字段。
 4. 若上传时将 `restrict-access` 设置为 `true`，则后续下载原件或缩略图时都需要携带上传返回的 `share-secret`；若未开启受限访问，则可直接下载。
@@ -237,7 +237,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups'
 
 ### 发送图片消息
 
-发送图片消息前，请先调用 [文件上传](message_upload_file.html) 接口上传图片文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始图片地址。
+发送图片消息前，请先调用 [文件上传](message_upload_file.html) 接口上传图片文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始图片地址。
 
 #### 请求 URL
 
@@ -329,7 +329,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 
 ### 发送语音消息
 
-发送语音消息前，请先调用 [文件上传](message_upload_file.html) 接口上传语音文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始语音地址。
+发送语音消息前，请先调用 [文件上传](message_upload_file.html) 接口上传语音文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始语音地址。
 
 #### 请求 URL
 
@@ -417,7 +417,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 
 ### 发送视频消息
 
-发送视频消息前，请先调用 [文件上传](message_upload_file.html) 接口上传视频文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始视频地址。
+发送视频消息前，请先调用 [文件上传](message_upload_file.html) 接口上传视频文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始视频地址。
 
 #### 请求 URL
 
@@ -507,7 +507,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 
 ### 发送文件消息
 
-发送文件消息前，请先调用 [文件上传](message_upload_file.html) 接口上传文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始文件地址。
+发送文件消息前，请先调用 [文件上传](message_upload_file.html) 接口上传文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始文件地址。
 
 #### 请求 URL
 

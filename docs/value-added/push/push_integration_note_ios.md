@@ -22,7 +22,7 @@
 
 ### 处理代理
 
-如果你需要推送相关信息，可以通过实现代理获取，环信提供的代理如下：
+如果你需要推送相关信息，可以通过实现代理获取，声网提供的代理如下：
 
 方式一
 
@@ -80,7 +80,7 @@
 推送通知透传消息获取
 
 ```objectivec
-//当应用收到环信推送透传消息时，此方法会被调用。 
+//当应用收到推送透传消息时，此方法会被调用。 
 - (void)emDidReceivePushSilentMessage:(NSDictionary *)messageDic
 {
     NSLog(@"emDidReceivePushSilentMessage : %@",messageDic);
