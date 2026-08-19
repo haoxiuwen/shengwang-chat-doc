@@ -17,7 +17,7 @@ yarn add react-native-chat-sdk
 从[声网控制台](https://console.shengwang.cn/overview)获取推送证书信息，配置应用的 App ID（`appId`）和推送证书名称（`pushId`）信息。
 
 - `appId`：在[声网控制台](https://console.shengwang.cn/overview)的 **总览** 页面查看。
-- `pushId`：推送证书名称。不同厂商的推送证书名称也不同。
+- `pushId`：推送证书名称。不同厂商的推送证书名称也不同，例如，对于 FCM, 传入推送通知发送方的用户 ID；对于 APNs，传入推送服务的证书名称。
 
 ![img](/images/react-native/push/push_get_appkey.png)
 
@@ -27,8 +27,9 @@ yarn add react-native-chat-sdk
 import { getPlatform, getDeviceType } from "react-native-push-collection";
 import { ChatClient, ChatOptions, ChatPushConfig } from "react-native-chat-sdk";
 
-// 从声网控制台获取推送 ID、pushId
-const pushId = "<your push id from easemob console>";
+// 对于 FCM, 传入推送通知发送方的用户 ID。
+// 对于 APNs，传入推送服务的证书名称。
+const pushId = "<your push id>";
 
 // 设置推送类型
 const pushType = React.useMemo(() => {

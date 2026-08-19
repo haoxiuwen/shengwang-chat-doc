@@ -1,5 +1,9 @@
 # Flutter IM SDK 更新日志
 
+## 4.19.3 2026-6-12
+
+修复 Flutter iOS 上调用 `getUnreadMessageCount` 时将聊天室未读消息一并计算的问题
+
 ## v4.19.2 2026-6-9
 
 - Android 依赖 SDK 升级至 4.19.3.1。

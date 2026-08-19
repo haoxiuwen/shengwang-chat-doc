@@ -18,7 +18,6 @@ export const zhSidebar = sidebar({
       children: [
         { text: "计费策略", link: "pricing_policy.html"},
         { text: "套餐包功能对比", link: "product_package_feature.html"},
-        { text: "购买指引", link: "pricing_method.html" },
       ],
     }, 
     { text: "功能介绍", 
