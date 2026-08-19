@@ -46,7 +46,7 @@ curl -X GET 'https://XXXX/app-id/{app_id}/metadata/user/user1'    \
   "data": {
     "ext": "ext",
     "nickname": "nickname",
-    "avatarurl": "https://www.easemob.com/avatar.png"
+    "avatarurl": "https://www.shengwang.com/avatar.png"
   },
   "duration": 166
 }

@@ -1700,7 +1700,7 @@ IM_DEMO 修改：
 - SDK 满足 apple ATS 的要求(EMOptions 添加 usingHttpsOnly 参数,默认使用 YES)
 - 删除好友逻辑的修改(增加是否删除会话选项)
 - 修复呼叫时对方不在线，不能正确显示通话结束原因的问题
-- 音视频 EMCallOptions 中添加了新接口,增加是否固定分辨率,最大视频帧率,最小视频码率接口.[详情参考 API Doc](https://www.easemob.com/apidoc/ios/chat3.0/index.html)
+- 音视频 EMCallOptions 中添加了新接口,增加是否固定分辨率,最大视频帧率,最小视频码率接口.[详情参考 API Doc](https://im.shengwang.cn/sdkdocs/chat1.x/ios/)
 - 音视频 EMCallOptions 中接口改动 videoKbps → maxVideoKbps
 
 ## v3.2.1 2016-11-12
@@ -1746,7 +1746,7 @@ bug fix:
 1. 提高 SDK 稳定性
 2. 去除依赖库(libcrypto.a,libcurl.a,libssl.a)
 3. 提高从 2.x 版本 SDK 数据库迁移效率
-4. 进一步修改 api 命名的规范性，建议使用新的 api,具体详情可以参考[接口文档](https://www.easemob.com/apidoc/ios/chat3.0/index.html)
+4. 进一步修改 api 命名的规范性，建议使用新的 api,具体详情可以参考[接口文档](https://im.shengwang.cn/sdkdocs/chat1.x/ios/)
 
 bug fix:
 

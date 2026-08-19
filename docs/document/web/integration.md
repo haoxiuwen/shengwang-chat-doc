@@ -126,7 +126,7 @@ const contacts = await client.contactManager.getContacts();
 
 如果项目不使用 npm 包管理工具，也可以下载浏览器脚本文件并在页面中引入。
 
-1. [下载 Web SDK](https://www.easemob.com/download/im#Web)，将 SDK 浏览器脚本文件保存到你的项目中。
+1. [下载 Web SDK](https://im.shengwang.cn/)，将 SDK 浏览器脚本文件保存到你的项目中。
 
 2. 在 `index.html` 文件中引入 SDK 脚本文件。
 

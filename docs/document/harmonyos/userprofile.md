@@ -38,8 +38,8 @@
 
 ```typescript
 let userInfo: UserInfo = {
-  nickname: "easemob",
-  avatarUrl: "https://www.easemob.com",
+  nickname: "shengwang",
+  avatarUrl: "https://www.shengwang.com",
   birth: "2000/10/10",
   signature: "Hello world",
   phone: "16666666666",

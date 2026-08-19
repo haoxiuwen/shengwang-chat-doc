@@ -214,6 +214,7 @@ const documentSidebar = [
     ],
     except: ['applet', 'server-side','electron','linux']
   },
+  { text: 'SDK 下载', link: 'download.html', except: ['server-side'] },
   { text: '合规指南', 
     collapsible: true,
     children: [

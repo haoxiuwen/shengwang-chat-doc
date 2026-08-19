@@ -11,13 +11,13 @@
     "subTitle": "推送",
     "config": {
         "clickAction": {
-            "url": "https://www.easemob.com"
+            "url": "https://www.shengwang.com"
         }
     },
     "easemob": {
         "style": 2,
-        "iconUrl": "https://www.easemob.com/statics/common/images/logo.png?20211109",
-        "bigPicture": "https://www.easemob.com/statics/images/push/case1@2x.png",
+        "iconUrl": "https://www.shengwang.com/statics/common/images/logo.png?20211109",
+        "bigPicture": "https://www.shengwang.com/statics/images/push/case1@2x.png",
         "sound": 1,
         "vibrate": 1
     },
@@ -53,14 +53,14 @@
     "fcmV1": {
         "androidConfig": {
             "androidNotification": {
-                "image": "https://www.easemob.com/statics/common/images/logo.png?20211109"
+                "image": "https://www.shengwang.com/statics/common/images/logo.png?20211109"
             }
         }
     },
     "harmonyOS":{
         "title":"鸿蒙推送",
         "body":"欢迎测试鸿蒙推送",
-        "image":"https://www.easemob.com/statics/common/images/logo.png?20211109"
+        "image":"https://www.shengwang.com/statics/common/images/logo.png?20211109"
     }
     
 }

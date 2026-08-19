@@ -277,7 +277,7 @@ HBuilderX 支持云打包和离线打包两种方式。
 
 ## 参考
 
-- [IM SDK 下载页面](https://www.easemob.com/download/im#uni-app)
+- [IM SDK 下载页面](https://im.shengwang.cn/)
 - [HBuilderX 官网](https://www.dcloud.io/hbuilderx.html)
 - [DCloud 开发者中心](https://dev.dcloud.net.cn/)
 - [uni-app 文档](https://uniapp.dcloud.net.cn/)

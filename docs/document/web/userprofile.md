@@ -33,7 +33,7 @@
 ```typescript
 const profile = await client.userInfoManager.updateOwnInfo({
   nickname: 'easemob',
-  avatarUrl: 'https://www.easemob.com/avatar.png',
+  avatarUrl: 'https://www.shengwang.com/avatar.png',
   birth: '2000-10-10',
   sign: 'hello world',
   phone: '13333333333',

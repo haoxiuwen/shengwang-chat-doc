@@ -65,17 +65,17 @@ curl -X POST 'https://XXXX/app-id/{app_id}/metadata/user/get'
     "user1": {
       "ext": "ext",
       "nickname": "nickname",
-      "avatarurl": "https://www.easemob.com/avatar.png"
+      "avatarurl": "https://www.shengwang.com/avatar.png"
     },
     "user2": {
       "ext": "ext",
       "nickname": "nickname",
-      "avatarurl": "https://www.easemob.com/avatar.png"
+      "avatarurl": "https://www.shengwang.com/avatar.png"
     },
     "user3": {
       "ext": "ext",
       "nickname": "nickname",
-      "avatarurl": "https://www.easemob.com/avatar.png"
+      "avatarurl": "https://www.shengwang.com/avatar.png"
     }
   },
   "duration": 3

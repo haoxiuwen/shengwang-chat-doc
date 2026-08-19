@@ -14,7 +14,7 @@ attributes.set("attribute2", true);
 attributes.set("attribute3", 123);
 attributes.set("attribute4", {
   nickname: 'Nickname',
-  avatarUrl: 'https://www.easemob.com/example.png',
+  avatarUrl: 'https://www.shengwang.com/example.png',
   gender: Gender.MALE
 } as UserInfo);
 message.setExt(attributes);

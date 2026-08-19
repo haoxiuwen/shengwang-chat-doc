@@ -28,8 +28,8 @@
 ```java
 EMUserInfo userInfo = new EMUserInfo();
 userInfo.setUserId(EMClient.getInstance().getCurrentUser());
-userInfo.setNickname("easemob");
-userInfo.setAvatarUrl("https://www.easemob.com");
+userInfo.setNickname("shengwang");
+userInfo.setAvatarUrl("https://www.shengwang.com");
 userInfo.setBirth("2000.10.10");
 userInfo.setSignature("hello world");
 userInfo.setPhoneNumber("13333333333");
