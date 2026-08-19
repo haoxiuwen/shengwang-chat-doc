@@ -40,6 +40,7 @@ export const zhSidebar = sidebar({
              { text: "消息管理", 
                collapsible: true,
                children: [
+                { text: "消息概述", link: "product_message_overview.html" },
                 { text: "单聊消息", link: "message_single_chat.html" },
                 { text: "群组消息", link: "message_group.html" },
                 { text: "聊天室消息", link: "message_chatroom.html" },
