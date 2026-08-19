@@ -531,9 +531,6 @@ function buildDocSidebar() {
   const result = {}
   platformList.forEach(platform => {
     const sidebarItems = documentSidebar.map(sidebar => handleSidebarItem(platform, sidebar)).filter(s => s)
-    // The historical entry pages use /docs/sdk, while VuePress generates all
-    // regular legacy pages under /sdk. Register both route namespaces with the
-    // same sidebar, matching the working UIKit implementation.
     result[`/docs/sdk/${platform}/`] = sidebarItems
     result[`/sdk/${platform}/`] = sidebarItems
   });
@@ -601,9 +598,7 @@ function handleSidebarItem(platform, sidebar) {
     }
   } else {
     if (sidebar.link && linkExists(platform, sidebar.link)) {
-      // VuePress maps docs/sdk source files to /sdk routes. The three entry
-      // pages keep /docs permalinks, while menu targets use the generated route.
-      const newLink = `/sdk/${platform}/${sidebar.link}`
+      const newLink = `/docs/sdk/${platform}/${sidebar.link}`
       return {...sidebar, link:newLink}
     }
   }

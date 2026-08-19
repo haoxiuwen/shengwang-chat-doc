@@ -48,19 +48,34 @@
   watch(pageData, ()=> {
     const pagePath = pageData.value.path
     const isSdkDocPath =
-      (pagePath.indexOf('/document/') == 0 || pagePath.indexOf('/v4/') == 0 || pagePath.indexOf('/sdk/') == 0 || pagePath.indexOf('/docs/sdk/') == 0) &&
+      (
+        pagePath.indexOf('/docs/document/') == 0 ||
+        pagePath.indexOf('/docs/v4/') == 0 ||
+        pagePath.indexOf('/docs/sdk/') == 0 ||
+        pagePath.indexOf('/document/') == 0 ||
+        pagePath.indexOf('/v4/') == 0 ||
+        pagePath.indexOf('/sdk/') == 0
+      ) &&
+      pagePath.indexOf('/docs/document/server-side/') < 0 &&
       pagePath.indexOf('/document/server-side/') < 0
     showPrivateSwitch.value = pagePath.indexOf('/private/') == 0
     showPlatformSwitch.value = isSdkDocPath
     showUIKitSwitch.value = pagePath.indexOf('/uikit/') == 0 || pagePath.indexOf('/docs/uikit/') == 0
-    showCallKitSwitch.value = pagePath.indexOf('/callkit/') == 0
+    showCallKitSwitch.value = pagePath.indexOf('/callkit/') == 0 || pagePath.indexOf('/docs/callkit/') == 0
 
-    if(pagePath.indexOf('/product/') == 0) title.value = ''
-    else if(pagePath.indexOf('/uikit/') == 0) title.value = 'UIKit'
-    else if(pagePath.indexOf('/callkit/') == 0) title.value = 'CallKit'
-    else if(pagePath.indexOf('/document/server-side/') == 0) title.value = ''
-      else if(pagePath.indexOf('/document/') == 0 || pagePath.indexOf('/v4/') == 0 || pagePath.indexOf('/sdk/') == 0 || pagePath.indexOf('/docs/sdk/') == 0) title.value = 'SDK'
-    else if(pagePath.indexOf('/value-added/') == 0) title.value = ''
+    if(pagePath.indexOf('/product/') == 0 || pagePath.indexOf('/docs/product/') == 0) title.value = ''
+    else if(pagePath.indexOf('/uikit/') == 0 || pagePath.indexOf('/docs/uikit/') == 0) title.value = 'UIKit'
+    else if(pagePath.indexOf('/callkit/') == 0 || pagePath.indexOf('/docs/callkit/') == 0) title.value = 'CallKit'
+    else if(pagePath.indexOf('/document/server-side/') == 0 || pagePath.indexOf('/docs/document/server-side/') == 0) title.value = ''
+      else if(
+        pagePath.indexOf('/docs/document/') == 0 ||
+        pagePath.indexOf('/docs/v4/') == 0 ||
+        pagePath.indexOf('/docs/sdk/') == 0 ||
+        pagePath.indexOf('/document/') == 0 ||
+        pagePath.indexOf('/v4/') == 0 ||
+        pagePath.indexOf('/sdk/') == 0
+      ) title.value = 'SDK'
+    else if(pagePath.indexOf('/value-added/') == 0 || pagePath.indexOf('/docs/value-added/') == 0) title.value = ''
     isNull.value = title.value ? false : true
 
     if (typeof window !== 'undefined' && isMounted.value) initSubheading();

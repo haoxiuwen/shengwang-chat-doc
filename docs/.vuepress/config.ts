@@ -31,6 +31,7 @@ const HOME_DESCRIPTION =
 const INNER_PAGE_TITLE_PREFIX = '即时通讯IM开发 '
 const INNER_PAGE_TITLE_SUFFIX = '｜即时通讯 IM 文档'
 const SEO_META_NAMES = new Set(['description', 'keywords'])
+const DOCS_PATH_PREFIXES = ['document', 'callkit', 'product', 'sdk', 'uikit', 'v4', 'value-added']
 
 const sanitizeTitle = (title: string): string =>
   title
@@ -75,6 +76,46 @@ const mergeSeoHead = (
   return [...nextHead, ...preservedHead]
 }
 
+const normalizeSourcePath = (sourcePath?: string | null): string =>
+  (sourcePath || '').replace(/\\/g, '/').replace(/\.md$/u, '')
+
+const withDocsPrefix = (url: string): string => {
+  const matched = url.match(/^\/([^/?#]+)([/?#].*)?$/u)
+  if (!matched || !DOCS_PATH_PREFIXES.includes(matched[1])) return url
+  return `/docs${url}`
+}
+
+const rewriteFrontmatterLinks = (value: unknown): unknown => {
+  if (typeof value === 'string') return withDocsPrefix(value)
+  if (Array.isArray(value)) return value.map(rewriteFrontmatterLinks)
+  if (!value || typeof value !== 'object') return value
+
+  return Object.fromEntries(
+    Object.entries(value).map(([key, item]) => [key, rewriteFrontmatterLinks(item)])
+  )
+}
+
+const getDocsRoutePath = (sourcePath?: string | null): string | null => {
+  const source = normalizeSourcePath(sourcePath)
+  if (!source) return null
+
+  const segments = source.split('/').filter(Boolean)
+  const docsIndex = segments.lastIndexOf('docs')
+  const relativeSegments = docsIndex > -1 ? segments.slice(docsIndex + 1) : segments
+  const firstSegment = relativeSegments[0]
+
+  if (!firstSegment || !DOCS_PATH_PREFIXES.includes(firstSegment)) return null
+
+  const routeSegments = relativeSegments.slice()
+  const lastIndex = routeSegments.length - 1
+  if (routeSegments[lastIndex] === 'README' || routeSegments[lastIndex] === 'index') {
+    routeSegments.pop()
+    return `/docs/${routeSegments.join('/')}/`
+  }
+
+  return `/docs/${routeSegments.join('/')}.html`
+}
+
 export default defineUserConfig({
   base: '/',
   lang: 'zh-CN',
@@ -110,8 +151,29 @@ export default defineUserConfig({
   },
   extendsMarkdown: (md) => {
     containerPlugin(md)
+    md.core.ruler.after('inline', 'docs_path_prefix', (state) => {
+      state.tokens.forEach((blockToken) => {
+        if (!blockToken.children) return
+
+        blockToken.children.forEach((token) => {
+          if (token.type !== 'link_open') return
+
+          const href = token.attrGet('href')
+          if (href) token.attrSet('href', withDocsPrefix(href))
+        })
+      })
+    })
   },
   extendsPage: (page) => {
+    const docsRoutePath = getDocsRoutePath(page.filePathRelative || (page as any).filePath)
+    if (docsRoutePath) {
+      page.path = docsRoutePath
+      page.data.path = docsRoutePath
+    }
+
+    page.frontmatter = rewriteFrontmatterLinks(page.frontmatter) as typeof page.frontmatter
+    page.data.frontmatter = page.frontmatter
+
     const isHomePage = page.path === HOME_PATH
     const pageBaseTitle = sanitizeTitle(page.title) || page.title.trim()
     const title = isHomePage

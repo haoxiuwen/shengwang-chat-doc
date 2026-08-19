@@ -8,7 +8,7 @@ import { LEGACY_SDK_SIDEBAR } from "./legacy-sdk";
 import { CHAT_UIKIT_SIDEBAR, CHATROOM_UIKIT_SIDEBAR } from "./uikit";
 
 export const zhSidebar = sidebar({
-  "/product/": [
+  "/docs/product/": [
     { text: "产品动态", link: "product_dynamics.html" },
     { text: "产品简介", link: "introduction.html" },
     { type: "separator" } as any,
@@ -128,9 +128,15 @@ export const zhSidebar = sidebar({
     { text: "术语表", link: "glossary.html" },
     { type: "separator" } as any,
   ],
+  "/product/": [
+    { text: "产品动态", link: "/docs/product/product_dynamics.html" },
+    { text: "产品简介", link: "/docs/product/introduction.html" },
+  ],
   ...DOC_SIDEBAR,
   ...DOC_V5_SIDEBAR,
   ...CALL_KIT_SIDEBAR,
+  "/docs/value-added/push":PUSH_SIDEBAR,
+  "/docs/value-added/translation":TRANSLATION_SIDEBAR,
   "/value-added/push":PUSH_SIDEBAR,
   "/value-added/translation":TRANSLATION_SIDEBAR,
   ...LEGACY_SDK_SIDEBAR,

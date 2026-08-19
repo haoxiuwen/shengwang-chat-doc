@@ -967,8 +967,9 @@ const documentV5Sidebar = [
 function buildDocV5Sidebar() {
   const result = {}
   platformList.forEach(platform => {
-    const key = `/document/${platform}/`
-    result[key] = documentV5Sidebar.map(sidebar => handleSidebarItem(platform, sidebar)).filter(s => s)
+    const sidebarItems = documentV5Sidebar.map(sidebar => handleSidebarItem(platform, sidebar)).filter(s => s)
+    result[`/docs/document/${platform}/`] = sidebarItems
+    result[`/document/${platform}/`] = sidebarItems
   });
   return result
 }
@@ -1036,7 +1037,7 @@ function handleSidebarItem(platform, sidebar) {
     }
   } else {
     if (sidebar.link && linkExists(platform, sidebar.link)) {
-      const newLink = `/document/${platform}/${sidebar.link}`
+      const newLink = `/docs/document/${platform}/${sidebar.link}`
       return {...sidebar, link:newLink}
     }
   }

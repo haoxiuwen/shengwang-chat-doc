@@ -45,12 +45,13 @@ const callKitSidebar = [
 function buildCallKitSidebar() {
   const result = {};
   callKitPlatformList.forEach((platform) => {
-    const key = `/callkit/${platform}/`;
-    result[key] = callKitSidebar
+    const sidebarItems = callKitSidebar
       .map((sidebar) =>
         handleSidebarItem(platform, sidebar, CALL_DOC_PATH, "callkit")
       )
       .filter((s) => s);
+    result[`/docs/callkit/${platform}/`] = sidebarItems;
+    result[`/callkit/${platform}/`] = sidebarItems;
   });
   return result;
 }
@@ -95,7 +96,7 @@ function handleSidebarItem(platform, sidebar, docPath, kitType) {
     }
   } else {
     if (linkExists(platform, sidebar.link, docPath)) {
-      const newLink = `/${kitType}/${platform}/${sidebar.link}`;
+      const newLink = `/docs/${kitType}/${platform}/${sidebar.link}`;
       return { ...sidebar, link: newLink };
     }
   }

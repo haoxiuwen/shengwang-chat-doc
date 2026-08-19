@@ -302,8 +302,8 @@ function buildChatUikitSidebar() {
         handleSidebarItem(platform, sidebar, CHAT_DOC_PATH, "chatuikit")
       )
       .filter((s) => s);
-    result[`/uikit/chatuikit/${platform}/`] = sidebarItems;
     result[`/docs/uikit/chatuikit/${platform}/`] = sidebarItems;
+    result[`/uikit/chatuikit/${platform}/`] = sidebarItems;
   });
   return result;
 }
@@ -338,7 +338,7 @@ function getDocumentLink(platform: string, link: string, docPath: string, kitTyp
   const content = fs.readFileSync(getDocumentPath(platform, link, docPath), "utf8");
   const permalink = content.match(/^permalink:\s*["']?([^\s"']+)["']?\s*$/m)?.[1];
 
-  return permalink || `/uikit/${kitType}/${platform}/${link}`;
+  return permalink || `/docs/uikit/${kitType}/${platform}/${link}`;
 }
 
 function handleSidebarItem(platform, sidebar, docPath, kitType) {

@@ -941,8 +941,9 @@ const documentSidebar = [
 function buildDocSidebar() {
   const result = {}
   platformList.forEach(platform => {
-    const key = `/v4/${platform}/`
-    result[key] = documentSidebar.map(sidebar => handleSidebarItem(platform, sidebar)).filter(s => s)
+    const sidebarItems = documentSidebar.map(sidebar => handleSidebarItem(platform, sidebar)).filter(s => s)
+    result[`/docs/v4/${platform}/`] = sidebarItems
+    result[`/v4/${platform}/`] = sidebarItems
   });
   return result
 }
@@ -1010,7 +1011,7 @@ function handleSidebarItem(platform, sidebar) {
     }
   } else {
     if (sidebar.link && linkExists(platform, sidebar.link)) {
-      const newLink = `/v4/${platform}/${sidebar.link}`
+      const newLink = `/docs/v4/${platform}/${sidebar.link}`
       return {...sidebar, link:newLink}
     }
   }
