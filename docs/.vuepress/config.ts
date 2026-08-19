@@ -85,13 +85,20 @@ const withDocsPrefix = (url: string): string => {
   return `/docs${url}`
 }
 
-const rewriteFrontmatterLinks = (value: unknown): unknown => {
-  if (typeof value === 'string') return withDocsPrefix(value)
-  if (Array.isArray(value)) return value.map(rewriteFrontmatterLinks)
+const FRONTMATTER_LINK_KEYS = new Set(['link', 'href', 'to'])
+
+const rewriteFrontmatterLinks = (value: unknown, key?: string): unknown => {
+  if (typeof value === 'string') {
+    return key && FRONTMATTER_LINK_KEYS.has(key) ? withDocsPrefix(value) : value
+  }
+  if (Array.isArray(value)) return value.map((item) => rewriteFrontmatterLinks(item))
   if (!value || typeof value !== 'object') return value
 
   return Object.fromEntries(
-    Object.entries(value).map(([key, item]) => [key, rewriteFrontmatterLinks(item)])
+    Object.entries(value).map(([childKey, item]) => [
+      childKey,
+      rewriteFrontmatterLinks(item, childKey),
+    ])
   )
 }
 

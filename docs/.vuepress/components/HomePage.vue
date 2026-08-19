@@ -110,7 +110,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
 import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 import HeroSection from "./CustomHero.vue";
@@ -119,8 +119,17 @@ import DownloadSection from "./DownloadSection.vue";
 import { usePageFrontmatter } from "@vuepress/client";
 const frontmatter = usePageFrontmatter();
 const router = useRouter();
-const starter = frontmatter.value.starter || [];
-const projects = frontmatter.value.projects || [];
+const starter = computed(() =>
+  (frontmatter.value.starter || []).filter((item) => !item.hidden)
+);
+const projects = computed(() =>
+  (frontmatter.value.projects || [])
+    .map((project) => ({
+      ...project,
+      features: (project.features || []).filter((feature) => !feature.hidden),
+    }))
+    .filter((project) => project.features.length > 0)
+);
 const containerRef = ref<HTMLElement | null>(null);
 
 const goTo = (path: string) => {
@@ -138,10 +147,10 @@ interface AnchorLink {
 
 const buildAnchorLink = () => {
   const values: AnchorLink[] = [];
-  starter.forEach((s) => {
+  starter.value.forEach((s) => {
     values.push({ text: s.title });
   });
-  projects.forEach((project) => {
+  projects.value.forEach((project) => {
     const children = [];
     project.features.forEach((feature) => {
       if (feature.title) {
