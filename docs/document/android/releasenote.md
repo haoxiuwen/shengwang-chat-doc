@@ -6,7 +6,7 @@ show_callback_route: false
 
 # Android IM SDK 更新日志
 
-## v5.0.0 Dev
+## v5.0.0 Dev 2026-8-12
 
 该版本于 2026 年 8 月 15 日发布。
 
