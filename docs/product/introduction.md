@@ -1,11 +1,11 @@
 # 产品介绍
 
-即时通讯 IM 为开发者提供高可靠、低时延、高并发、安全、全球化的通信云服务，帮助开发者快速构建端到端通信的场景。IM 提供 SDK 和 RESTful API，支持同时在线人数无上限，聊天室亿级消息并发，全球平均延时小于 200 毫秒，相同区域平均延时小于 100 毫秒。
+即时通讯 IM 是声网子公司环信打造的专业通信云服务，为开发者提供高可靠、低时延、高并发、安全且覆盖全球的通信能力，助力快速构建端到端实时通信场景。IM 提供丰富的 SDK 和 RESTful API，支持同时在线人数无上限，聊天室可承载亿级消息并发，全球平均延时低于 200 毫秒，同区域平均延时更可控制在 100 毫秒以内。
 
 - 支持单聊、群聊、聊天室服务；
 - 提供服务端 RESTful API 和 [回调服务](/document/server-side/callback_overview.html)；
-- 提供多平台 SDK，包括 Android、iOS、Web、HarmonyOS、Windows、Linux、Unity、Flutter、React Native、小程序、uni-app 和 Electron；
-- 提供 Demo 和 UIKit。
+- 提供多平台 SDK，包括 Android、iOS、Web、HarmonyOS、Unity、Flutter、React Native、小程序、uni-app；
+- 提供 [UIKit](/docs/uikit/chatuikit/android/chatuikit_overview.html)。
 
 ## 产品架构
 
