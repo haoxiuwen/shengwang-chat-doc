@@ -15,7 +15,7 @@ uni-app 原生 App 中，SDK 通过平台适配层调用 `uni.request`、`uni.co
 - 最新稳定版 HBuilderX；
 - DCloud 开发者账号；
 - [开发者账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)以及 [已经创建的项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)；
-- [项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)；
+- [项目的 App ID](/product/enable_im.html#_3-获取-app-id)；
 - 由业务服务端获取的用户 ID 和用户 Token；
 - 用于运行和调试应用的 Android 或 iOS 设备。
 

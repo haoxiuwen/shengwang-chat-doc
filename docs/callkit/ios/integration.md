@@ -18,7 +18,7 @@ CallKit 是一套基于即时通讯 IM（基于 IM 4.16.0 及以上）和声网 
 
 在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
 1. [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
-2. [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)。
+2. [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
 3. [创建用户](/document/ios/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/ios/login.html#获取用户-token)。
 4. 创建群组，获取群组 ID。将用户加入群组。
 5. [开通声网 RTC](product_overview.html#开通声网-rtc)。
@@ -139,7 +139,7 @@ CallKit 初始化包括如下步骤：
         //初始化CallKit
         let config = EaseCallUIKit.CallKitConfig()
         config.enableVOIP = true//开启voip功能后会自动开启LiveCommunicationKit，需要在develop.apple.com申请证书时勾选
-        config.enablePIPOn1V1VideoScene = true//开启画中画，同时需要开启应用后台摄像头采集权限，详见[PictureInPicture.md](./PictureInPicture.md)。
+        config.enablePIPOn1V1VideoScene = true//开启画中画，同时需要开启应用后台摄像头采集权限，详见[PictureInPicture.md](picture_in_picture.html)。
         CallKitManager.shared.setup(config)
     }
 ```

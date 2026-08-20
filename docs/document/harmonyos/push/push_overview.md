@@ -91,7 +91,7 @@
 ## 前提条件
 
 - 已开启即时通讯服务，详见 [开启和配置即时通讯服务](/product/enable_im.html#_2-开通即时通讯-im-服务)。
-- 了解即时通讯 IM 的使用限制，详见 [使用限制](limitation.html)。
+- 了解即时通讯 IM 的使用限制，详见 [使用限制](/document/harmonyos/limitation.html)。
 - 确保已经在 [AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) 网站开通开通推送服务。
 - 检查并提醒用户允许接收通知消息，并将设备的推送证书上传到 [声网控制台](https://console.shengwang.cn/overview)。
 - 若使用[推送模板](#推送模板)，需要在 [声网控制台](https://console.shengwang.cn/overview) 上激活。

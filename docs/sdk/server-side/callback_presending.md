@@ -12,7 +12,7 @@
 
 ## 实现步骤
 
-1. [开通回调服务](callback.overview.html#开通回调服务)。
+1. [开通回调服务](callback_overview.html#开通回调服务)。
 2. [配置回调规则](#回调规则)。
 3. 声网服务器向你的应用服务器发送 HTTP/HTTPS POST 请求。
 

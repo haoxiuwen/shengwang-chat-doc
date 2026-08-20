@@ -13,7 +13,7 @@
 
 在 [声网控制台](https://console.shengwang.cn/overview)  进行如下操作：
 1. [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
-2. [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 。
+2. [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id) 。
 3. [创建用户](/product/product_user_registration_login.html#创建用户)，获取用户 ID 和用户 Token。
 4. 创建群组，获取群组 ID，将用户加入群组。
 5. [开通声网 RTC](product_overview.html#开通声网-rtc)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能跑通示例项目。

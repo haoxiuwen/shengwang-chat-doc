@@ -53,7 +53,7 @@ ChatClient.getInstance().pushManager()?.updatePushDisplayStyle(displayStyle).the
 
 :::tip
 - 设置推送模板为推送的高级功能，默认为开启状态。高级功能开启后，如需关闭必须联系商务，因为该操作会删除所有相关配置。
-- 推送模板相关的数据结构，详见[推送扩展字段](/docs/sdk/server-side/push_extension.html)。
+- 推送模板相关的数据结构，详见[推送扩展字段](/sdk/server-side/push_extension.html)。
 :::
 
 **推送通知栏内容设置的使用优先级**
@@ -69,7 +69,7 @@ ChatClient.getInstance().pushManager()?.updatePushDisplayStyle(displayStyle).the
 
 你可以通过以下两种方式设置：
 
-1. [调用 RESTful API 配置](/docs/sdk/server-side/push.html#使用推送模板)。
+1. [调用 RESTful API 配置](/sdk/server-side/push.html#使用推送模板)。
 
 2. 在[声网控制台](https://console.shengwang.cn/overview)设置推送模板。
 

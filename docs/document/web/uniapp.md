@@ -24,7 +24,7 @@ uni-app SDK 支持以下平台：
 开始集成前，请准备以下账号、工具和信息：
 
 - [开发者账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 
-- [应用的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)；
+- [应用的 App ID](/product/enable_im.html#_3-获取-app-id)；
 - DCloud 开发者账号；
 - HBuilderX 最新版本；
 - 项目所属的 [数据中心及对应服务地址](/product/data_center.html#数据中心选择与查看)；
@@ -34,7 +34,7 @@ uni-app SDK 支持以下平台：
 
 首次接入时，建议按照以下顺序操作：
 
-1. 注册声网账号并 [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取应用的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)；
+1. 注册声网账号并 [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取应用的 App ID](/product/enable_im.html#_3-获取-app-id)；
 2. 安装 HBuilderX，并注册、登录 DCloud 开发者账号；
 3. 确认应用所属的 [数据中心](/product/data_center.html#数据中心选择与查看)；
 4. 在目标小程序平台配置合法域名；
@@ -50,7 +50,7 @@ uni-app SDK 支持以下平台：
 
 1. 在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
 2. [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 。
-3. [获取应用的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)，并妥善保存。初始化 SDK 时需要使用该参数。
+3. [获取应用的 App ID](/product/enable_im.html#_3-获取-app-id)，并妥善保存。初始化 SDK 时需要使用该参数。
 
 #### 安装 HBuilderX
 

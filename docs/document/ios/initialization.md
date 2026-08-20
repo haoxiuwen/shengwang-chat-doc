@@ -10,7 +10,7 @@
 
 ## 前提条件
 
-已 [注册即时通讯 IM 账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](/product/enable_im.html创建项目并开通)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
+已 [注册即时通讯 IM 账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](/product/enable_im.html#创建项目)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
 
 ## 初始化 SDK
 
