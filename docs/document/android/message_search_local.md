@@ -1,10 +1,17 @@
+---
+title: 搜索消息
+show_search_search: false
+---
+
 # 搜索消息
 
 本文介绍即时通讯 IM Android SDK 如何按照关键词、搜索范围、消息类型、发送方和时间戳等条件搜索本地消息。本文中的接口仅查询当前用户设备上的本地数据库，不会向服务端发起搜索请求。由于透传消息不会保存到本地数据库，因此无法通过这些接口搜索透传消息。
 
+<HideSection :show="$frontmatter.show_server_search">
 :::tip
 若要搜索服务端的消息，请联系商务开通。详见 [服务端消息搜索文档](/value-added/search/message_search_android.html)。
 :::
+</HideSection>
 
 ## 前提条件
 

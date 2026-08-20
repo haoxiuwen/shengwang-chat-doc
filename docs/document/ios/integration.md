@@ -39,7 +39,7 @@ end
 
 ### 方法二：手动导入 SDK
 
-1. 打开 [SDK 下载页面](https://www.easemob.com/download/im#IOS)，下载并解压最新版即时通讯 IM iOS SDK。
+1. 打开 [SDK 下载页面](https://im.shengwang.cn/)，下载并解压最新版即时通讯 IM iOS SDK。
 2. 将 SDK 包内的 `HyphenateChat.xcframework` 和 `aosl.xcframework` 拖入 Xcode 项目。
 3. 在 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** 中确认两个 xcframework 均已添加，并将其 **Embed** 设置为 **Embed & Sign**。
 

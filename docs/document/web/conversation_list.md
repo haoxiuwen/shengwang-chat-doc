@@ -107,7 +107,6 @@ Web SDK 的会话列表项 `ConversationItem` 中提供 `conversationName` 和 `
 
 - 单聊会话：分别为对端用户的昵称和头像。
 - 群聊会话：分别为群名称和群头像。
-- 聊天室会话：会话列表项通常不会自动补全聊天室名称和头像；如需展示聊天室名称或头像，建议业务侧通过聊天室详情接口获取并自行维护展示信息。
 - 相关用户、好友或群组信息尚未同步、未加载或不可用时，`conversationName` 可能为会话 ID，`conversationAvatar` 可能为 `undefined`。
 
 ```typescript

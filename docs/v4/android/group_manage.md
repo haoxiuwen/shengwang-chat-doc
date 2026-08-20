@@ -23,7 +23,7 @@
 
 - 完成 SDK 初始化，详见 [快速开始](quickstart.html)。
 - 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
-- 了解群组和群成员的数量限制，详见 [套餐包详情](https://www.easemob.com/pricing/im)。
+- 了解群组和群成员的数量限制，详见 [产品套餐包功能对比](/product/product_package_feature.html)。
 
 ## 实现方法
 
@@ -146,7 +146,7 @@ boolean isMsgBlocked = group.isMsgBlocked();
 - 自 4.14.0 版本开始，你可调用 `asyncFetchGroupMembersInfo` 方法获取全部群成员（包括群主和群管理员）的信息，包括群成员的用户 ID、加群时间和成员角色。自 4.20.0 版本起，该方法新增支持获取 [群成员名片](group_namecard.html)。
 
 ```java
-// pageSize：每页期望返回的群成员数量，上限取决于服务端，详见 https://doc.easemob.com/document/server-side/group_member_list_obtain.html#请求-url。
+// pageSize：每页期望返回的群成员数量，上限取决于服务端，详见 https://im.shengwang.cn/document/server-side/group_member_list_obtain.html#请求-url。
 EMClient.getInstance().groupManager().asyncFetchGroupMembersInfo(groupId, null, 50, new EMValueCallBack<EMCursorResult<EMGroupMemberInfo>>() {
             @Override
             public void onSuccess(EMCursorResult<EMGroupMemberInfo> value) {
@@ -179,7 +179,7 @@ EMCursorResult<String> result = null;
 final int pageSize = 20;
 do {
     // 同步方法，会阻塞当前线程。异步方法为 asyncFetchGroupMembers(String, String, int, EMValueCallBack)。
-    // pageSize：每页期望返回的群成员数量，上限取决于服务端，详见 https://doc.easemob.com/document/server-side/group_member_list_obtain.html#请求-url。
+    // pageSize：每页期望返回的群成员数量，上限取决于服务端，详见 https://im.shengwang.cn/document/server-side/group_member_list_obtain.html#请求-url。
      result = EMClient.getInstance().groupManager().fetchGroupMembers(groupId,
              result != null? result.getCursor(): "", pageSize);
      memberList.addAll(result.getData());

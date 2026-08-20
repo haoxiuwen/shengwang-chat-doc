@@ -1,3 +1,7 @@
+---
+show_callback_route: false
+---
+
 # 发送群聊消息
 
 ## 功能说明
@@ -9,7 +13,7 @@
 群聊场景下，各类型消息共用同一 RESTful API，不同消息类型的主要区别在于请求体 `body` 字段的结构。
 
 - 文本、位置、透传和自定义消息：直接构造消息体并调用发送接口。
-- 图片、语音、视频和文件消息：发送附件消息时，不能直接使用业务侧原始附件地址，需先调用 [文件上传](https://doc.easemob.com/document/server-side/message_upload_file.html) 接口上传附件，再使用上传后返回的附件地址及相关字段构造消息体。
+- 图片、语音、视频和文件消息：发送附件消息时，不能直接使用业务侧原始附件地址，需先调用 [文件上传](message_upload_file.html) 接口上传附件，再使用上传后返回的附件地址及相关字段构造消息体。
 - 与 [导入群聊消息](message_import_group.html) 不同，发送附件消息时，**不能直接使用业务侧原始文件地址**。
 
 ### 附件消息发送流程
@@ -20,7 +24,7 @@
 
 各步骤的说明如下：
 
-1. 先调用 [上传文件](message_upload_file.html) 接口，将附件上传到环信文件服务。
+1. 先调用 [上传文件](message_upload_file.html) 接口，将附件上传到 IM 文件服务。
 2. 从上传结果中获取发送群聊附件消息所需的信息，例如文件地址、`file_uuid` 和 `share-secret`。
 3. 调用 [发送群聊消息](message_group.html) 接口，并在消息体中引用上传后的附件地址和相关字段。
 4. 若上传时将 `restrict-access` 设置为 `true`，则后续下载原件或缩略图时都需要携带上传返回的 `share-secret`；若未开启受限访问，则可直接下载。
@@ -39,7 +43,6 @@
 - 通过 RESTful 接口发送的消息默认不写入会话列表。若需要将此类消息写入会话列表，需联系声网商务开通。
 - 调用该接口会触发发送后回调事件，详见 [回调事件文档](callback_message_send.html#发送群组消息)。
 - 你可以通过消息通用可选参数设置是否将消息同步到发送方的所有在线设备、指定哪些用户在拉取漫游消息时无法获取该消息，以及仅向在线用户投递消息等。详见 [消息通用可选参数](#消息通用可选参数)。
-- [内容审核服务会关注消息 `body` 中指定字段的内容，不同类型的消息审核的字段不同](/value-added/moderation/moderation_mechanism.html)。若在这些字段中传入过多业务信息，可能影响审核效果。因此，建议避免在审核字段中承载业务信息，优先将业务信息放在扩展字段 `ext` 中。
 
 ## 调用频率上限
 
@@ -238,7 +241,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups'
 
 ### 发送图片消息
 
-发送图片消息前，请先调用 [文件上传](message_upload_file.html) 接口上传图片文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始图片地址。
+发送图片消息前，请先调用 [文件上传](message_upload_file.html) 接口上传图片文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始图片地址。
 
 #### 请求 URL
 
@@ -330,7 +333,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 
 ### 发送语音消息
 
-发送语音消息前，请先调用 [文件上传](message_upload_file.html) 接口上传语音文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始语音地址。
+发送语音消息前，请先调用 [文件上传](message_upload_file.html) 接口上传语音文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始语音地址。
 
 #### 请求 URL
 
@@ -418,7 +421,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 
 ### 发送视频消息
 
-发送视频消息前，请先调用 [文件上传](message_upload_file.html) 接口上传视频文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始视频地址。
+发送视频消息前，请先调用 [文件上传](message_upload_file.html) 接口上传视频文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始视频地址。
 
 #### 请求 URL
 
@@ -508,7 +511,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups' \
 
 ### 发送文件消息
 
-发送文件消息前，请先调用 [文件上传](message_upload_file.html) 接口上传文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始文件地址。
+发送文件消息前，请先调用 [文件上传](message_upload_file.html) 接口上传文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始文件地址。
 
 #### 请求 URL
 
@@ -1026,6 +1029,8 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups'
 
 ## 可选增强功能
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 ### 发消息时设置回调路由
 
 回调路由允许你在同一个 App ID 下，将不同消息按回调环境维度分别投递到不同的回调地址。发送消息时，你可以在消息中携带回调环境字段（如 `dev`、`test`、`prod`），IM 服务器收到消息后，根据该字段匹配控制台中配置的 [回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
@@ -1035,4 +1040,6 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatgroups'
 :::
 
 关于该功能的详细说明以及请求示例代码，详见 [发送单聊消息中的说明](message_single.html#发消息时设置回调路由)。
+
+</HideSection>
 

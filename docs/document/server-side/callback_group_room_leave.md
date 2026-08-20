@@ -2,12 +2,11 @@
 
 ## 功能描述
 
-在群组或聊天室中的成员退出时，包括主动退出、被踢出以及被加入群组/聊天室黑名单时退出，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看退出的成员，进行数据同步。
+在群组或聊天室中的成员退出时，包括主动退出、被踢出以及被加入群组/聊天室黑名单时退出，IM 服务器会按照 [发送后回调规则](callback_postsending.html#回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看退出的成员，进行数据同步。
 
 ## 前提条件
 
-- 已开通发送后回调服务。详见 [开通消息回调服务](/product/console/basic_webhook.html#开通服务) 和 [回调说明](/document/server-side/callback_postsending.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login) 设置发送后回调规则。详见 [配置回调规则](/product/console/basic_webhook.html#配置消息回调规则)。
+已在 [声网控制台](https://console.shengwang.cn/overview) 设置发送后回调规则。详见 [配置回调规则](callback_postsending.html#回调规则)。
 
 ## 主动退出
 
@@ -71,7 +70,7 @@
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
 | `callId`       | String   | 回调请求的唯一标识。 |
-| `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。详见 [配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.member` | JSON | 退出群组/聊天室的用户 ID。        | 
 | `payload.action` | JSON | 该字段只适用于退出聊天室事件，不适用于退出群组事件：<br/> - `user_quit`：主动退出聊天室。<br/> - `user_offline`：因离线退出聊天室。 | 
@@ -90,7 +89,7 @@
 
 - [通过客户端将用户踢出群组](/document/android/group_manage.html#移出成员)/[聊天室](/document/android/room_manage.html#被移出)。
 - [调用 RESTful API 将用户踢出群组](/document/server-side/group_member_remove_single.html)/[聊天室](/document/server-side/chatroom_member_remove_single.html)。
-- 在 [环信控制台](https://console.easemob.com/user/login) 将用户 [踢出群组](/product/console/operation_group.html#群组审核管理)/[聊天室](/product/console/operation_chatroom.html#聊天室审核管理)。
+- 在 [声网控制台](https://console.shengwang.cn/overview)  将用户移出群组/聊天室。
 
 ### 回调请求
 
@@ -123,7 +122,7 @@
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
 | `callId`       | String   | 回调请求的唯一标识。 |
-| `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.member` | JSON | 被踢出群组/聊天室的用户 ID。        | 
 | `payload.type` | Array  | 退群方式：`KICK` 表示将用户踢出群组/聊天室。     |
@@ -141,7 +140,7 @@
 
 - 通过客户端 [将用户加入群组](/document/android/group_members.html#添加成员到黑名单)/[聊天室黑名单](/document/android/room_members.html#将成员加入聊天室黑名单) 时退出群组/聊天室。
 - 调用 RESTful API [将用户加入群组](/document/server-side/group_member_blocklist_add_single.html)/[聊天室黑名单](/document/server-side/chatroom_member_blocklist_add_single.html) 时退出群组/聊天室。
-- 在[环信控制台](https://console.easemob.com/user/login) [将用户加入群组](/product/console/operation_group.html#群组审核管理)/[聊天室黑名单](/product/console/operation_chatroom.html#聊天室审核管理) 时退出群组/聊天室。
+- 在 [声网控制台](https://console.shengwang.cn/overview) 将用户加入群组/聊天室黑名单时退出群组/聊天室。
 
 ### 回调请求
 
@@ -174,7 +173,7 @@
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
 | `callId`       | String   | 回调请求的唯一标识。 |
-| `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.member` | JSON | 被加入群组/聊天室黑名单后退出的用户 ID。        | 
 | `payload.type` | Array  | 退群方式：`BLOCK` 表示加入群组/聊天室黑名单后退出群组/聊天室。     |
@@ -192,7 +191,7 @@
 
 - 通过客户端 [解散群组](/document/android/group_manage.html#解散群组)/[聊天室](/document/android/room_manage.html#解散聊天室) 时用户退出。
 - 调用 RESTful API [解散群组](/document/server-side/group_delete.html)/[聊天室](/document/server-side/chatroom_delete.html) 时用户退出。
-- 在[环信控制台](https://console.easemob.com/user/login) [解散群组](/product/console/operation_group.html#删除群组)/[聊天室](/product/console/operation_chatroom.html#删除聊天室) 时用户退出。
+- 在 [声网控制台](https://console.shengwang.cn/overview) 删除群组/聊天室时用户退出。
 
 ### 回调请求
 
@@ -224,7 +223,7 @@
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
 | `callId`       | String   | 回调请求的唯一标识。 |
-| `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。| 
+| `security`     | String | 签名，格式如下: `MD5（callId+secret+timestamp）`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。| 
 | `id`           | String | 群组/聊天室 ID。                                                 |
 | `operation`    | String | 操作。用户退出群组/聊天室的操作为 `LEAVE`。 |
 | `operator`     | String | 操作人。                     | 
@@ -237,7 +236,7 @@
 
 ## 其他说明
 
-**群组操作的事件以及子事件后续会有更多新增。若业务强依赖这些事件或者子事件，业务中需添加对`operation` 和 `payload.type` 的强判断。**
+**群组操作的事件以及子事件后续会有更多新增。若业务强依赖这些事件或者子事件，业务中需添加对 `operation` 和 `payload.type` 的强判断。**
 
 
 

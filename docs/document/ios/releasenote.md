@@ -1,6 +1,10 @@
-﻿# iOS IM SDK 更新日志
+﻿---
+title: iOS IM SDK 更新日志
+show_search_search: false
+show_callback_route: false
+---
 
-## v5.0.0 Dev
+## v5.0.0 Dev 2026-8-12
 
 该版本于 2026 年 8 月 15 日发布。
 
@@ -98,11 +102,15 @@ SDK 补充会话列表监听、会话展示信息、批量删除会话和本地�
 
 ## v4.24.0 Dev 2026-7-10（开发版）
 
+<HideSection :show="$frontmatter.show_server_search">
+
 #### 新增功能
 
 支持 [服务端消息搜索](/value-added/search/message_search_ios.html)，可根据关键词组合、会话 ID、消息类型、时间范围及消息内容或扩展属性进行筛选。，详见 [开通说明](/product/console/purchase_value_added.html#消息搜索)。
 
 消息搜索默认不支持扩展字段 `ext`，如需支持该字段搜索，请联系商务经理。
+
+</HideSection>
 
 #### 修复
 
@@ -111,9 +119,13 @@ SDK 补充会话列表监听、会话展示信息、批量删除会话和本地�
 
 ## v4.23.0 Dev 2026-6-10（开发版）
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 #### 新增特性
 
 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](message_send.html#发消息时设置回调路由)。目前，该功能仅面向国内 1 区和国内 2 区开放。
+
+</HideSection>
 
 #### 优化
 
@@ -552,7 +564,7 @@ SDK 依赖的 AOSL Crash 检测库已更换为 `ShengwangInfra_iOS`。如使用�
 #### 重大变更
 
 从 V4.6.0 版本开始会启用 Swift 语言编写的新的 `EaseChatUIKit` 与 `EaseChatDemo`，老版本 Demo 和 UIKit 逐渐不再维护，请参考：
-- [UIKit 文档](https://doc.easemob.com/uikit/chatuikit/ios/chatuikit_overview.html)
+- [UIKit 文档](/uikit/chatuikit/ios/chatuikit_overview.html)
 - [GitHub](https://github.com/easemob/chat-ios/tree/SwiftDemo) 或 [Gitee](https://gitee.com/easemob-code/easemob-demo-ios/tree/SwiftDemo) 上的 Demo 源码
 
 ## v4.5.0 Dev 2024-04-03
@@ -598,7 +610,6 @@ SDK 依赖的 AOSL Crash 检测库已更换为 `ShengwangInfra_iOS`。如使用�
 
 - [IM SDK] 新增 [EMChatManager#deleteAllMessagesAndConversations:completion:](message_delete.html#清空聊天记录) 方法，用于清空当前用户的聊天记录，包括消息和会话，同时可以选择是否清除服务端的聊天记录。
 - [IM SDK] 新增 [EMChatManager#loadMessagesWithKeyword:timestamp:count:fromUser:searchDirection:scope:completion:](message_search_local.html#根据搜索范围搜索所有会话中的消息) 和[EMConversation#loadMessagesWithKeyword:timestamp:count:fromUser:searchDirection:scope:completion:](message_search_local.html#根据搜索范围搜索当前会话中的消息)，可以在根据关键字搜索消息时，选择搜索范围，如只搜索消息内容、只搜索消息扩展信息以及同时搜索消息内容以及扩展信息。
-- [IM SDK] 新增 [EMOptions#useReplacedMessageContents](message_send.html#发送消息前的内容审核) 开关。开启后，发送消息时如果被内容审核进行了内容替换，发送方可以获取替换后的内容。
 - [IM SDK] 新增 [EMOptions#includeSendMessageInMessageListener](message_send.html#发送文本消息) 开关。开启后，在 `messagesDidReceive` 回调里增加发送成功的消息。
 - [IM SDK] 新增 [EMOptions#regardImportMessagesAsRead](message_retrieve.html#从服务器获取指定会话的消息) 开关。开启后，[利用服务端接口](/document/server-side/message_import_single.html)导入的消息，客户端上通过[漫游拉取](message_retrieve.html#从服务器获取指定会话的消息)到后，这些消息为已读状态，会话中未读取的消息数量 `EMConversation#unreadMessagesCount` 不发生变化。若该开关为关闭状态，`EMConversation#unreadMessagesCount` 的数量会增加。
 
@@ -882,7 +893,6 @@ SDK 依赖的 AOSL Crash 检测库已更换为 `ShengwangInfra_iOS`。如使用�
 ##### 新增特性:
 
 - [IM SDK] 新增 [消息 Reaction](reaction.html) 功能，可以对消息进行不同的响应。
-- [IM SDK] 新增 [举报 API](moderation.html) 用于内容审核。
 
 ##### 优化：
 
@@ -1786,7 +1796,7 @@ IM_DEMO 修改：
 - SDK 满足 apple ATS 的要求(EMOptions 添加 usingHttpsOnly 参数,默认使用 YES)
 - 删除好友逻辑的修改(增加是否删除会话选项)
 - 修复呼叫时对方不在线，不能正确显示通话结束原因的问题
-- 音视频 EMCallOptions 中添加了新接口,增加是否固定分辨率,最大视频帧率,最小视频码率接口.[详情参考 API Doc](https://www.easemob.com/apidoc/ios/chat3.0/index.html)
+- 音视频 EMCallOptions 中添加了新接口,增加是否固定分辨率,最大视频帧率,最小视频码率接口.[详情参考 API Doc](https://im.shengwang.cn/sdkdocs/chat1.x/ios/)
 - 音视频 EMCallOptions 中接口改动 videoKbps → maxVideoKbps
 
 ## v3.2.1 2016-11-12
@@ -1832,7 +1842,7 @@ bug fix:
 1. 提高 SDK 稳定性
 2. 去除依赖库(libcrypto.a,libcurl.a,libssl.a)
 3. 提高从 2.x 版本 SDK 数据库迁移效率
-4. 进一步修改 api 命名的规范性，建议使用新的 api,具体详情可以参考[接口文档](https://www.easemob.com/apidoc/ios/chat3.0/index.html)
+4. 进一步修改 api 命名的规范性，建议使用新的 api,具体详情可以参考[接口文档](https://im.shengwang.cn/sdkdocs/chat1.x/ios/)
 
 bug fix:
 

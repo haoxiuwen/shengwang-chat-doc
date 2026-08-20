@@ -6,7 +6,7 @@ Android 设备品牌丰富，各厂商对于点击通知栏后获取消息的方
 
 ## 方案详情
 
-如果 MainActivity 是启动页，环信建议采用 Activity 这种通用方式在点击通知栏后统一获取消息。如果 MainActivity 不是启动页，需要指定跳转到MainActivity 在点击通知栏后统一获取消息。
+如果 MainActivity 是启动页，声网建议采用 Activity 这种通用方式在点击通知栏后统一获取消息。如果 MainActivity 不是启动页，需要指定跳转到MainActivity 在点击通知栏后统一获取消息。
 
 客户端应用通过 `MainActivity` 中的 `onCreate` 方法接收数据。
 
@@ -92,7 +92,7 @@ class MainActivity {
 
 ## 参考
 
-- [环信服务端推送扩展字段说明](/document/server-side/push_extension.html#离线推送相关的扩展字段)
+- [服务端推送扩展字段说明](/document/server-side/push_extension.html#离线推送相关的扩展字段)
 - [Android 解析消息示例](/document/android/push/push_parsing.html)
 - [华为官方说明](https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/andorid-basic-clickaction-0000001087554076)
 - [小米官方说明](https://dev.mi.com/console/doc/detail?pId=68)

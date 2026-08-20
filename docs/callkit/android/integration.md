@@ -23,10 +23,10 @@ CallKit 是一套基于即时通讯 IM（基于 IM 4.16.0 及以上）和声网 
 
 1. 在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
     - [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
-    - [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
+    - [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
     - [创建用户](/document/android/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/android/login.html#获取用户-token)。
     - 创建群组，获取群组 ID。将用户加入群组。
-    - [开通音视频服务](product_activation.html)。
+    - [开通声网 RTC](product_overview.html#开通声网-rtc)。
 
 2. 集成即时通讯 IM SDK。 
    

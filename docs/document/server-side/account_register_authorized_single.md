@@ -6,12 +6,6 @@
 - **推荐使用该模式，因为该模式较为安全**，可防止已获取了注册 URL 和了解注册流程的某些人恶意向服务器大量注册垃圾用户。
 - 注册用户时，需满足用户 ID 和密码的设置要求。
 
-## 设置授权注册
-
-要使用授权注册方式，你需要在环信控制台进行如下配置：
-
-在控制台的 **应用管理** 页面点击目标应用的 **操作** 一栏中的 **管理**，然后选择 **功能配置 > 基础功能** > **用户**，将 **用户注册模式** 设置为**授权注册**。
-
 ## 调用频率上限
 
 该 API、用户账户管理的其他接口、以及离线推送的相关接口的总调用频率上限为 100 次/秒/App ID，详见 [接口频率限制文档](limitationapi.html#用户体系管理)。
@@ -115,4 +109,4 @@ curl -X POST 'https://XXXX/app-id/{app_id}/users'    \
 | 401         | unauthorized                       | token is illegal.    | token 不合法，生成 token 使用信息与请求携带的信息不匹配。 | 使用新的 token 访问。   |
 | 401         | unauthorized                       | Unable to authenticate (OAuth) | token 不合法，可能过期或 token 错误。  | 使用新的 token 访问。    |
 | 401         | unauthorized                       | Open registration doesn't allow, so register user need token| 授权注册模式，注册用户时需要 token。 | 请求时携带 token。 |
-| 429         | resource_limited                   | You have exceeded the limit of the community edition,Please upgrade to the enterprise edition | 注册用户的数量超过当前产品套餐版本的限制。 | 免费套餐包最多支持 100 个注册用户。你可以 [升级至付费套餐包](/product/pricing_method.html#订阅-升级套餐包)。专业版和旗舰版对注册用户数量无限制。 |
+| 429         | resource_limited                   | You have exceeded the limit of the community edition,Please upgrade to the enterprise edition | 注册用户的数量超过当前产品套餐版本的限制。 | 免费套餐包最多支持 100 个注册用户。你可以在 [声网控制台](https://console.shengwang.cn/overview) 升级至付费套餐包。专业版和旗舰版对注册用户数量无限制。 |

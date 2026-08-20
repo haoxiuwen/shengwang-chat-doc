@@ -1,4 +1,11 @@
+---
+show_server_search: false
+show_callback_route: false
+---
+
 # 小程序 SDK 更新日志
+
+<HideSection :show="$frontmatter.show_server_search">
 
 ## v4.24.1 Dev 2026-7-10（开发版）
 
@@ -8,11 +15,17 @@
 
 消息搜索默认不支持扩展字段 `ext`，如需支持该字段搜索，请联系商务经理。
 
+</HideSection>
+
 ## v4.23.0 Dev 2026-6-10（开发版）
+
+<HideSection :show="$frontmatter.show_callback_route">
 
 #### 新增功能
 
 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](message_send.html#发消息时设置回调路由)。目前，该功能仅面向国内 1 区和国内 2 区开放。
+
+</HideSection>
 
 ## v4.22.0 Dev 2026-6-5（开发版）
 
@@ -287,7 +300,6 @@
 - [IM SDK] [聊天室和群组成员进出事件增加成员人数 `memberCount` 字段](room_manage.html#实时更新聊天室成员人数)。
 - [IM SDK] 新增 [deleteAllMessagesAndConversations](message_delete.html#单向清空服务端的聊天记录) 方法, 用于清空当前用户的聊天记录，包括消息和会话。
 - [IM SDK] 新增 [getSelfIdsOnOtherPlatform](multi_device.html#获取当前用户的其他登录设备的登录-id-列表) 方法, 可以获取当前用户其他登录设备的登录 ID 列表，实现对指定设备发送消息。
-- [IM SDK] 新增 [useReplacedMessageContents](message_send.html#发送消息前的内容审核) 开关。开启后，发送消息时如果被内容审核进行了内容替换，发送方可以获取替换后的内容。
 
 #### 优化
 
@@ -433,7 +445,7 @@
 
 #### 新增特性
 
-- [IM SDK] 新增群组事件回调 [onGroupEvent](https://doc.easemob.com/jsdoc/interfaces/Types.EventHandlerType.EventHandlerType.html#onGroupEvent) 和聊天室事件回调 [onChatroomEvent](https://doc.easemob.com/jsdoc/interfaces/Types.EventHandlerType.EventHandlerType.html#onChatroomEvent)。原回调可继续使用；
+- [IM SDK] 新增群组事件回调 `onGroupEvent` 和聊天室事件回调 `onChatroomEvent`。原回调可继续使用；
 - [IM SDK] 新增群聊消息限流错误码 [MESSAGE_CURRENT_LIMITING](/v4/web/error.html)
 - [IM SDK] 邀请加入群聊回调 `onGroupChange` 返回中新增 群名称 参数值。
 
@@ -456,7 +468,6 @@
 
 #### 新增特性:
 
-- [IM SDK] 新增举报 API 用于内容审核；
 - [IM SDK] 新增推送设置 API，支持不同的推送配置；
 - [IM SDK] 增加数据上报功能；
 - [IM SDK] 新增获取加入的群组支持分页 API；

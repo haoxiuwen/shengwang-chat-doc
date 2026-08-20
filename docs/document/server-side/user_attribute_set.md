@@ -40,7 +40,7 @@ PUT https://{host}/app-id/{app_id}/metadata/user/{username}
 curl -X PUT 'https://XXXX/app-id/{app_id}/metadata/user/user1'  \
 -H 'Content-Type: application/x-www-form-urlencoded'  \
 -H 'Authorization: Bearer <YourAppToken>'   \
--d 'avatarurl=https://www.easemob.com/avatar.png&ext=ext&nickname=nickname' 
+-d 'avatarurl=https://www.shengwang.com/avatar.png&ext=ext&nickname=nickname' 
 ```
 
 ## 请求 header 参数
@@ -81,7 +81,7 @@ curl -X PUT 'https://XXXX/app-id/{app_id}/metadata/user/user1'  \
   "data": {
     "ext": "ext",
     "nickname": "nickname",
-    "avatarurl": "https://www.easemob.com/avatar.png"
+    "avatarurl": "https://www.shengwang.com/avatar.png"
   },
   "duration": 166
 }

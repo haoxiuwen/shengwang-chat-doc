@@ -5,11 +5,8 @@ import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import pages from '@temp/pages'
 
-// Legacy SDK/REST pages keep historical pageUri values such as
-// /docs/sdk/android/quickstart.html, while VuePress registers their current
-// route under /sdk/.... If the historical target cannot be found, render the
-// current page instead of passing an empty key to <Content>, which produces a
-// blank document body.
+// If pageUri points to another generated page, render that page's content
+// instead of passing an empty key to <Content>, which produces a blank body.
 const dialogVisible = ref(false)
 const pageData = usePageData()
 const redirectPageKey = ref(pageData.value.key)
@@ -52,6 +49,16 @@ const getCategoryFromPath = () => {
   return result
 }
 const metaCategory = frontmatter.category || getCategoryFromPath()
+const docsPathPrefixes = ['document', 'callkit', 'product', 'sdk', 'uikit', 'v4']
+
+const getRedirectCandidates = (uri: string): string[] => {
+  const candidates = [uri]
+  const matched = uri.match(/^\/([^/]+)\//)
+  if (matched && docsPathPrefixes.includes(matched[1])) {
+    candidates.push(`/docs${uri}`)
+  }
+  return candidates
+}
 
 watch(
   pageData,
@@ -63,13 +70,9 @@ watch(
     const redirectUri = currentPage.frontmatter.pageUri
     if (!redirectUri) return
 
-    // Old files store their target in the production /docs/sdk namespace,
-    // while this VuePress project registers the pages under /sdk.
-    const normalizedRedirectUri = redirectUri
-      .replace(/^\/docs\/sdk\//, '/sdk/')
-      .replace(/^\/docs\/uikit\//, '/uikit/')
+    const redirectCandidates = getRedirectCandidates(redirectUri)
     const redirectPage = pages.find(
-      (item) => item.path === normalizedRedirectUri || item.path === redirectUri
+      (item) => redirectCandidates.includes(item.path)
     )
     if (redirectPage) {
       currentPage.headers = redirectPage.headers

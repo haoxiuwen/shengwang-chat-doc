@@ -8,16 +8,16 @@ import { LEGACY_SDK_SIDEBAR } from "./legacy-sdk";
 import { CHAT_UIKIT_SIDEBAR, CHATROOM_UIKIT_SIDEBAR } from "./uikit";
 
 export const zhSidebar = sidebar({
-  "/product/": [
+  "/docs/product/": [
     { text: "产品动态", link: "product_dynamics.html" },
     { text: "产品简介", link: "introduction.html" },
     { type: "separator" } as any,
+    { text: "开通 IM 服务", link: "enable_im.html" },
     { text: "购买指南", 
       collapsible: true,
       children: [
         { text: "计费策略", link: "pricing_policy.html"},
         { text: "套餐包功能对比", link: "product_package_feature.html"},
-        { text: "购买指引", link: "pricing_method.html" },
       ],
     }, 
     { text: "功能介绍", 
@@ -40,6 +40,7 @@ export const zhSidebar = sidebar({
              { text: "消息管理", 
                collapsible: true,
                children: [
+                { text: "消息概述", link: "product_message_overview.html" },
                 { text: "单聊消息", link: "message_single_chat.html" },
                 { text: "群组消息", link: "message_group.html" },
                 { text: "聊天室消息", link: "message_chatroom.html" },
@@ -127,9 +128,15 @@ export const zhSidebar = sidebar({
     { text: "术语表", link: "glossary.html" },
     { type: "separator" } as any,
   ],
+  "/product/": [
+    { text: "产品动态", link: "/docs/product/product_dynamics.html" },
+    { text: "产品简介", link: "/docs/product/introduction.html" },
+  ],
   ...DOC_SIDEBAR,
   ...DOC_V5_SIDEBAR,
   ...CALL_KIT_SIDEBAR,
+  "/docs/value-added/push":PUSH_SIDEBAR,
+  "/docs/value-added/translation":TRANSLATION_SIDEBAR,
   "/value-added/push":PUSH_SIDEBAR,
   "/value-added/translation":TRANSLATION_SIDEBAR,
   ...LEGACY_SDK_SIDEBAR,

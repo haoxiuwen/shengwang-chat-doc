@@ -6,7 +6,7 @@
 
 ## 前提条件
 
-有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 说明。
+有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/product/enable_im.html#_3-获取-app-id) 说明。
 
 ## 初始化 SDK
 
@@ -18,7 +18,7 @@ let options = EMOptions(appId: "Your appId")
 EMClient.shared().initializeSDK(with: options)
 ```
 
-下表列明初始化配置 `EMOptions` 封装的一些属性。`EMOptions` 封装的所有属性，详见 [API 参考](https://doc.easemob.com/apidoc/ios/chat3.0/interface_e_m_options.html)。
+下表列明初始化配置 `EMOptions` 封装的一些属性。
 
 | 属性           | 描述            |
 | :----------------- | :---------------- |

@@ -13,9 +13,9 @@
 
 在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
 1. [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
-2. [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id) 。
+2. [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id) 。
 3. [创建用户](/document/ios/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/ios/login.html#获取用户-token)。
-4. [开通音视频服务](product_activation.html)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能实现发起音视频通话。
+4. [开通声网 RTC](product_overview.html#开通声网-rtc)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能实现发起音视频通话。
    
 ## 快速开始
 
@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let option = ChatSDKOptions(appid: "your app ID")//首先需要初始化 IM SDK，替换你的 app ID
         option.enableConsoleLog = true//开启日志
-        option.isAutoLogin = false//此处只是示例项目，真实使用时参考环信Demo源码，自动登录更方便
+        option.isAutoLogin = false//此处只是示例项目，真实使用时参考 IM Demo源码，自动登录更方便
         ChatClient.shared().initializeSDK(with: option)//初始化SDK
         CallKitManager.shared.setup()//初始化EaseCallUIKit
         return true

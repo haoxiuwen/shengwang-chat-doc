@@ -2,7 +2,7 @@
 
 ## 概述
 
-环信小程序 SDK 为 uni-app 多端应用提供即时通讯（IM）能力。开发者可以基于一套代码，在 Web、H5、主流小程序以及部分原生 App 平台中集成账户、消息、群组和聊天室等功能。
+IM 小程序 SDK 为 uni-app 多端应用提供即时通讯（IM）能力。开发者可以基于一套代码，在 Web、H5、主流小程序以及部分原生 App 平台中集成账户、消息、群组和聊天室等功能。
 
 本文介绍 uni-app 项目的环境准备、服务器域名配置、SDK 安装与初始化方法，并说明自动登录和 Vue 3 H5 发布时的注意事项。
 
@@ -23,8 +23,8 @@ uni-app SDK 支持以下平台：
 
 开始集成前，请准备以下账号、工具和信息：
 
-- [开发者账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)
-- [应用的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)；
+- [开发者账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 
+- [应用的 App ID](/product/enable_im.html#_3-获取-app-id)；
 - DCloud 开发者账号；
 - HBuilderX 最新版本；
 - 项目所属的 [数据中心及对应服务地址](/product/data_center.html#数据中心选择与查看)；
@@ -34,7 +34,7 @@ uni-app SDK 支持以下平台：
 
 首次接入时，建议按照以下顺序操作：
 
-1. 注册声网账号并 [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)，[获取应用的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)；
+1. 注册声网账号并 [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取应用的 App ID](/product/enable_im.html#_3-获取-app-id)；
 2. 安装 HBuilderX，并注册、登录 DCloud 开发者账号；
 3. 确认应用所属的 [数据中心](/product/data_center.html#数据中心选择与查看)；
 4. 在目标小程序平台配置合法域名；
@@ -46,11 +46,11 @@ uni-app SDK 支持以下平台：
 
 ### 步骤 1：准备开发环境
 
-#### 注册环信账号并创建项目
+#### 注册账号并创建项目
 
 1. 在 [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
-2. [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
-3. [获取应用的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)，并妥善保存。初始化 SDK 时需要使用该参数。
+2. [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 。
+3. [获取应用的 App ID](/product/enable_im.html#_3-获取-app-id)，并妥善保存。初始化 SDK 时需要使用该参数。
 
 #### 安装 HBuilderX
 
@@ -62,30 +62,19 @@ uni-app SDK 支持以下平台：
 
 ### 步骤 2：配置服务器域名
 
-#### 确认应用所属的数据中心
+声网在多个地区部署了数据中心。不同数据中心对应不同的 REST API 和 WebSocket 服务地址，因此必须根据应用所属的数据中心进行配置。
 
-环信在多个地区部署了数据中心。不同数据中心对应不同的 REST API 和 WebSocket 服务地址，因此必须根据应用所属的数据中心进行配置。
+你可以在声网控制台的 **基础信息** 页面查看应用所属的数据中心，再选择对应的 REST API 和 WebSocket 地址。
 
-你可以在环信控制台的 **应用概览** 页面查看应用所属的数据中心，再选择对应的 REST API 和 WebSocket 地址。
-
-![应用概览中的数据中心信息](/images/applet/service_overview.png)
+![img](/images/applet/config6.png)
 
 :::tip
-请以环信控制台显示的数据中心和实际分配的服务地址为准，不要直接将示例地址用于所有应用。
+请以声网控制台显示的数据中心和实际分配的服务地址为准，不要直接将示例地址用于所有应用。
 :::
-
-#### 配置小程序合法域名
 
 以微信小程序为例，登录 [微信公众平台](https://mp.weixin.qq.com/)，进入 **开发 > 开发设置** 页面，然后配置服务器域名。其他小程序平台的配置方式与微信小程序类似。
 
-根据应用所属的数据中心，从下表选择对应地址：
-
-| 域名类型 | 可配置地址 |
-| :-------------- | :----- |
-| `request`、`uploadFile`、`downloadFile` 合法域名 | 国内 1 区：`https://a1.easemob.com`、`https://a1-v2.easemob.com`<br/>国内 2 区：`https://ngi-a1.easemob.com`<br/>新加坡 1 区：`https://a1-sgp.easemob.com`<br/>新加坡 2 区：`https://a61.easemob.com`<br/>美东 1 区：`https://a41.easemob.com`<br/>德国 2 区：`https://a71.easemob.com`<br/>文件下载：`https://a1-chatfile.easemob.com` |
-| WebSocket 合法域名 | 国内 1 区：`wss://im-api-wechat.easemob.com/websocket`<br/>国内 2 区：`wss://ngi-im-api-wechat.easemob.com/websocket`<br/>支付宝小程序专用：`wss://im-api-alipay.easemob.com/websocket/websocket`<br/>新加坡 1 区：`wss://im-api-wechat-sgp.easemob.com/websocket`<br/>新加坡 2 区：`wss://im-api-wechat-61.easemob.com/websocket`<br/>美东 1 区：`wss://im-api-wechat-41.easemob.com/websocket`<br/>德国 2 区：`wss://im-api-wechat-71.easemob.com/websocket` |
-
-#### 各小程序平台的 WebSocket 连接限制
+各小程序平台的 WebSocket 连接限制如下表所示：
 
 | 平台 | 版本要求与连接限制 |
 | :-------------- | :----- |
@@ -93,7 +82,6 @@ uni-app SDK 支持以下平台：
 | 字节小程序 | 1.0.0 及以上版本支持创建新的 WebSocket 连接；创建新连接时，已有连接不会自动关闭。 |
 | 百度小程序 | 1.9.4 及以上版本支持多个 WebSocket 连接；每次成功调用均会返回新的 `SocketTask`。 |
 | 支付宝小程序 | 一段时间内只能保留一个 WebSocket 连接；如果已有连接，创建新连接时会自动关闭原连接。 |
-
 
 ### 步骤 3：SDK 接入方式
 
@@ -115,11 +103,6 @@ npm init -y
 ```
 
 然后在项目根目录安装 SDK：
-
-// 下面两个示例代码？选择哪个？第二个是 AI 给的。
-```bash 
-npm i easemob-websdk
-```
 
 ```bash
 npm install easemob-websdk
@@ -170,7 +153,7 @@ const conn = new WebIM.connection({
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| `appId` | String | 环信应用的唯一标识。**参数名中的 `K` 必须大写**。 |
+| `appId` | String | 应用的唯一标识。 |
 | `url` | String | WebSocket 服务地址。**应根据应用所属的数据中心进行配置**。 |
 | `apiUrl` | String | REST API 服务地址。**应根据应用所属的数据中心进行配置**。 |
 | `useOwnUploadFun` | Boolean | 是否使用自定义上传方式。启用后，可先将图片等文件上传至自有服务器，再在构建消息时传入文件 URL。 |
@@ -203,7 +186,7 @@ const conn = new WebIM.connection({
 
 ## Vue 3 项目发布至 H5 的注意事项
 
-在 Vue 3 模式下，HBuilderX 默认启用 [摇树优化（tree-shaking）](https://uniapp.dcloud.net.cn/collocation/manifest.html#treeshaking)。将项目发行至“网站-PC Web 或手机 H5”时，该优化可能会移除环信 SDK 中未被显式引用的模块，导致发布后的应用出现登录失败等问题。
+在 Vue 3 模式下，HBuilderX 默认启用 [摇树优化（tree-shaking）](https://uniapp.dcloud.net.cn/collocation/manifest.html#treeshaking)。将项目发行至“网站-PC Web 或手机 H5”时，该优化可能会移除 IM SDK 中未被显式引用的模块，导致发布后的应用出现登录失败等问题。
 
 可以使用以下任一方式关闭摇树优化。
 

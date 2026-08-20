@@ -226,7 +226,6 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/stream_message/user' \
 | [会话未读数（客户端）](/document/android/conversation_unread.html)       | 是                                |
 | 会话最后一条消息 | 是                                |
 | [离线推送](/document/server-side/push_settings_set.html)     | 是                                |
-| [内容审核](/value-added/moderation/moderation_overview.html)     | 否                                |
 | [消息翻译](message_translation_text.html)         | 是                                |
 | [发送前回调](/document/server-side/callback_presending.html)         | 否                               |
 | [发送后回调](/document/server-side/callback_postsending.html)         | 否      |

@@ -100,12 +100,13 @@ defineProps<{
   white-space: nowrap;
 
   img {
-    display: none;
+    display: block;
   }
 }
 .link-icon {
   width: 24px;
-  object-fit: auto;
+  height: 24px;
+  object-fit: contain;
   object-position: center;
 }
 .link-label {

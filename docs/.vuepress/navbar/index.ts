@@ -1,24 +1,24 @@
 import { navbar } from 'vuepress-theme-hope'
 
 export const zhNavbar = navbar([
-  { text: '产品介绍', link: '/product/introduction.html' },
+  { text: '产品介绍', link: '/docs/product/introduction.html' },
   {
     text: 'CallKit',
     children: [
       {
         text: 'Android',
         icon: '/icon-Android.svg',
-        link: '/callkit/android/beginner_guide.html'
+        link: '/docs/callkit/android/beginner_guide.html'
       },
       {
         text: 'iOS',
         icon: '/icon-iOS.svg',
-        link: '/callkit/ios/beginner_guide.html'
+        link: '/docs/callkit/ios/beginner_guide.html'
       },
       {
         text: 'Web',
         icon: '/icon-web.svg',
-        link: '/callkit/web/beginner_guide.html'
+        link: '/docs/callkit/web/beginner_guide.html'
       },
     ]
   },
@@ -31,28 +31,28 @@ export const zhNavbar = navbar([
           {
             text: 'Android',
             icon: '/icon-Android.svg',
-            link: '/document/android/beginner_guide.html'
+            link: '/docs/document/android/beginner_guide.html'
           },
           {
             text: 'iOS',
             icon: '/icon-iOS.svg',
-            link: '/document/ios/beginner_guide.html'
+            link: '/docs/document/ios/beginner_guide.html'
           },
           {
             text: 'Web',
             icon: '/icon-web.svg',
-            link: '/document/web/beginner_guide.html'
+            link: '/docs/document/web/beginner_guide.html'
           },
           {
             text: 'HarmonyOS',
             icon: '/icon-harmonyos.svg',
-            link: '/document/harmonyos/beginner_guide.html'
+            link: '/docs/document/harmonyos/beginner_guide.html'
           },
-          {
-            text: 'Windows',
-            icon: '/icon-windows.svg',
-            link: '/document/windows/beginner_guide.html'
-          },
+          // {
+          // text: 'Windows',
+          // icon: '/icon-windows.svg',
+          // link: '/docs/document/windows/beginner_guide.html'
+          // },
         ]
       },
       {
@@ -61,33 +61,33 @@ export const zhNavbar = navbar([
           {
             text: 'React Native',
             icon: '/icon-ReactNative.svg',
-            link: '/document/react-native/beginner_guide.html'
+            link: '/docs/document/react-native/beginner_guide.html'
           },
           {
             text: 'Flutter',
             icon: '/icon-flutter.svg',
-            link: '/document/flutter/beginner_guide.html'
+            link: '/docs/document/flutter/beginner_guide.html'
           },
           {
             text: 'Unity',
             icon: '/icon-unity.svg',
-            link: '/document/unity/beginner_guide.html'
+            link: '/docs/document/unity/beginner_guide.html'
           },
           {
             text: '小程序',
             icon: '/icon-mini-program.svg',
-            link: '/document/web/integration_applet.html'
+            link: '/docs/document/web/integration_applet.html'
           },
           {
             text: 'uni-app',
             icon: '/icon-uni-app.svg',
-            link: '/document/web/uniapp.html'
+            link: '/docs/document/web/uniapp.html'
           },
         ]
       },
     ]
   },
-  { text: '服务端', link: '/document/server-side/overview.html'},
+  { text: '服务端', link: '/docs/document/server-side/overview.html'},
 
  /* {
     text: 'API 参考',
@@ -168,7 +168,7 @@ export const zhNavbar = navbar([
   */
  /*{
     text: '内容审核',
-    link: '/product/moderation_overview.html'
+    link: '/docs/product/moderation_overview.html'
   },
   {
     text: '即时推送',
@@ -178,8 +178,8 @@ export const zhNavbar = navbar([
   {
     text: '增值服务',
       children: [
-        { text: '即时推送', link: '/value-added/push/push_overview.html'},
-        { text: '消息翻译', link: '/value-added/translation/message_translation_android.html'}
+        { text: '即时推送', link: '/docs/value-added/push/push_overview.html'},
+        { text: '消息翻译', link: '/docs/value-added/translation/message_translation_android.html'}
       ]
   },
   // {

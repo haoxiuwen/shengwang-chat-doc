@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-添加/删除好友或者拉黑/解除拉黑用户，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看好友和黑名单相关操作相关信息，进行数据同步。
+添加/删除好友或者拉黑/解除拉黑用户，IM 服务器会按照 [发送后回调规则](callback_postsending.html#回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看好友和黑名单相关操作相关信息，进行数据同步。
 
 本文包含以下好友关系相关回调事件：
 
@@ -15,8 +15,7 @@
 
 ## 前提条件
 
-- 已开通发送后回调服务。详见 [开通消息回调服务](/product/console/basic_webhook.html#开通服务) 和 [回调说明](/document/server-side/callback_postsending.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login) 设置发送后回调规则。详见 [配置回调规则](/product/console/basic_webhook.html#配置消息回调规则)。
+已在 [声网控制台](https://console.shengwang.cn/overview) 设置发送后回调规则。详见 [配置回调规则](callback_postsending.html#回调规则)。
 
 ## 发起好友申请
 
@@ -52,7 +51,7 @@
 | :------- | :------- | :----------------------------------------------------------- |
 | `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
-| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见 [配置回调规则](callback_postsending.html#回调规则)。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.reason`    | object   | 申请原因                |
 | `payload.operation` | String   | `add`：添加好友。 |
@@ -99,7 +98,7 @@
 | :------- | :------- | :----------------------------------------------------------- |
 | `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
-| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.roster_ver`    | String   | 好友列表的版本号。  |
 | `payload.operation` | String   | `remote_accept`：同意好友申请事件。发起好友申请的用户会收到该事件。 |
@@ -142,7 +141,7 @@
 | :------- | :------- | :----------------------------------------------------------- |
 | `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
-| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.roster_ver`    | String   | 好友列表的版本号。  |
 | `payload.operation` | String   | `accept`：同意好友申请。接受好友申请的用户会收到该事件。该事件用于单设备或多设备登录场景下的操作结果同步。 |
@@ -192,7 +191,7 @@
 | :------- | :------- | :----------------------------------------------------------- |
 | `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
-| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.roster_ver`    | String   | 好友列表的版本号。  |
 | `payload.operation` | String   | `remote_decline`：拒绝好友申请。发起好友申请的用户会收到该事件。 |
@@ -234,7 +233,7 @@
 | :------- | :------- | :----------------------------------------------------------- |
 | `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
-| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.roster_ver`    | String   | 好友列表的版本号。  |
 | `payload.operation` | String   | `decline`：拒绝好友申请。拒绝好友申请的用户会收到该事件。该事件用于多设备登录场景下的操作结果同步。 |
@@ -251,7 +250,7 @@
 
 - [客户端删除了好友](/document/android/user_relationship.html#删除好友)。
 - 调用 RESTful API [删除了单个好友](/document/server-side/user_friend_remove.html)。
-- 在 [环信控制台](https://console.easemob.com/user/login)上 [删除了好友](/product/console/operation_user.html#删除用户好友)。
+- 在 [声网控制台](https://console.shengwang.cn/overview) 上删除了好友。
 
 #### 请求示例
 
@@ -279,7 +278,7 @@
 | :------- | :------- | :----------------------------------------------------------- |
 | `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
-| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.roster_ver`    | String   | 好友列表的版本号。  |
 | `payload.operation` | String   | `remove`：删除好友。 |
@@ -296,7 +295,7 @@
 
 1. [通过客户端将用户加入了黑名单](/document/android/user_relationship.html#添加用户到黑名单)。
 2. [调用 RESTful API 将用户加入了黑名单](/document/server-side/user_friend_blocklist_add.html)。
-3. 在 [环信控制台](https://console.easemob.com/user/login) 上 [将用户加入了黑名单](/product/console/operation_user.html#查看用户黑名单)。 
+3. 在 [声网控制台](https://console.shengwang.cn/overview) 上将用户加入了黑名单。 
 
 #### 请求示例
 
@@ -326,7 +325,7 @@
 | :------- | :------- | :----------------------------------------------------------- |
 | `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
-| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.operation` | String   | `ban`：拉黑用户。 |
 | `payload.status`    | object   | 包含 `error_code`。  |
@@ -345,7 +344,7 @@
 
 1. 用户 [通过客户端将好友移除了黑名单](/document/android/user_relationship.html#将用户从黑名单移除)。
 2. [调用 RESTful API 将好友加入了黑名单](/document/server-side/user_friend_blocklist_remove.html)。
-3. 在 [环信控制台](https://console.easemob.com/user/login) 上 [将好友移出黑名单](/product/console/operation_user.html#查看用户黑名单)。 
+3. 在 [声网控制台](https://console.shengwang.cn/overview) 上将好友移出黑名单。 
 
 #### 请求示例
 
@@ -375,7 +374,7 @@
 | :------- | :------- | :----------------------------------------------------------- |
 | `callId`    | String   | 回调请求的唯一标识。 |
 | `chat_type`       | String | `roster`：用户关系事件。 |
-| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.operation` | String   | `allow`：解除拉黑用户。 |
 | `payload.status`    | object   | 包含 `error_code`。  |
@@ -386,4 +385,3 @@
 | `eventType`       | String   | <br/> - `chat`：上行消息<br/> - `chat_offline`：离线消息。       |
 | `msg_id`    | String   | 解除拉黑用户事件的消息 ID。 | 
 | `timestamp`    | Long   | 操作完成的时间戳。                             |
-

@@ -13,8 +13,8 @@
 - Xcode (推荐最新版本)。
 - 安装 iOS 10.0 或以上版本的 iOS 模拟器或 Apple 设备。
 - CocoaPods [1.10.1 或以上版本](https://cocoapods.org/)。
-- 有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 说明。
-- 如果你的网络环境部署了防火墙，请联系环信技术支持设置白名单。
+- 有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/product/enable_im.html#_3-获取-app-id) 说明。
+- 如果你的网络环境部署了防火墙，请联系声网技术支持设置白名单。
 
 ## 1. 准备开发环境
 
@@ -51,7 +51,7 @@ SDK 支持 **CocoaPods 导入**和**手动导入**两种方式。
 
 ### 方法二：手动导入 SDK
 
-1. 打开 [SDK 下载页面](https://www.easemob.com/download/im#IOS)，获取最新版的即时通讯 IM SDK，然后解压。
+1. 打开 [SDK 下载页面](https://im.shengwang.cn/)，获取最新版的即时通讯 IM SDK，然后解压。
 2. 将 SDK 包内的 `HyphenateChat.xcframework`和 `aosl.xcframework` 拖入到你的工程中。
 3. 打开 Xcode，进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**菜单。
 4. 点击 **+ > Add Other… > Add Files** 添加对应动态库，并确保添加的动态库 **Embed** 属性设置为 **Embed & Sign**。
@@ -70,7 +70,7 @@ SDK 支持 **CocoaPods 导入**和**手动导入**两种方式。
 ```objectivec
 (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
-    // appId 替换成你在环信控制台注册应用中的 App ID
+    // appId 替换成你在声网控制台注册应用中的 App ID
     EMOptions *options = [EMOptions optionswithAppId:@"<#appId#>"];
     // apnsCertName是证书名称，可以先传 nil，等后期配置 APNs 推送时在传入证书名称
     options.apnsCertName = nil;

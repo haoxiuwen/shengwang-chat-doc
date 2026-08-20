@@ -13,10 +13,10 @@
 
 在 [声网控制台](https://console.shengwang.cn/overview)  进行如下操作：
 1. [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
-2. [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)，[获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 。
-3. [创建用户](/product/console/operation_user.html#创建用户)，获取用户 ID 和 [用户 Token](/product/console/operation_user.html#查看用户-token)。
-4. [创建群组](/product/console/operation_group.html#创建群组)，获取群组 ID，将用户加入群组。
-5. [开通音视频服务](product_activation.html)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能跑通示例项目。
+2. [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id) 。
+3. [创建用户](/product/product_user_registration_login.html#创建用户)，获取用户 ID 和用户 Token。
+4. 创建群组，获取群组 ID，将用户加入群组。
+5. [开通声网 RTC](product_overview.html#开通声网-rtc)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能跑通示例项目。
 
 ## 操作步骤
 
@@ -54,7 +54,7 @@ pod install
 
 ### 步骤 4 运行项目
 
-1. 登录：在登录界面输入用户 ID 和 [用户 Token](/product/console/operation_user.html#查看用户-token)，然后点击 **Login**。  
+1. 登录：在登录界面输入用户 ID 和 [用户 Token](/product/product_user_registration_login.html#获取用户-token)，然后点击 **Login**。  
 2. 发起通话：
    - 一对一通话：选择 **audio** 或 **video**，输入呼叫用户的用户 ID，点击 **Call**。
    - 群组通话：选择 **group**，输入群组 ID，点击 **Call**。

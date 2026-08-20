@@ -31,10 +31,6 @@ const PLATFORM_ICON_MAP = {
     icon: "/icon-unity.svg",
     activeIcon: "/icon-unity-hover.svg",
   },
-  uniapp: {
-    icon: "/icon-uni-app.svg",
-    activeIcon: "/icon-uni-app-hover.svg",
-  },
   applet: {
     icon: "/icon-mini-program.svg",
     activeIcon: "/icon-mini-program-hover.svg",
@@ -74,10 +70,6 @@ const options = [
         value: "flutter",
         label: "Flutter",
       },
-      {
-        value: "uniapp",
-        label: "Uniapp",
-      },
     ],
   },
 ];
@@ -108,13 +100,13 @@ const onChange = (platform) => {
     .filter(
       (item) =>
         item.hasOwnProperty("name") &&
-        item?.path.indexOf(`/uikit/${kitType.value}/${platform}`) == 0
+        item?.path.indexOf(`/docs/uikit/${kitType.value}/${platform}`) == 0
     )
     .map((item) => item.path);
 
   let newPath = route.path.split("/");
-  if (newPath[1] === "docs") newPath.splice(1, 1);
-  newPath[3] = platform;
+  if (newPath[1] !== "docs") newPath.splice(1, 0, "docs");
+  newPath[4] = platform;
   const nextPathPath = newPath.join("/");
 
   if (nextPlatformDocRouters.indexOf(nextPathPath) > -1) {
@@ -122,12 +114,12 @@ const onChange = (platform) => {
   } else {
     if (kitType.value == "chatuikit") {
       router.push(
-        `/uikit/${kitType.value}/${platform}/chatuikit_overview.html`
+        `/docs/uikit/${kitType.value}/${platform}/chatuikit_overview.html`
       );
     }
     if (kitType.value == "chatroomuikit") {
       router.push(
-        `/uikit/${kitType.value}/${platform}/roomuikit_overview.html`
+        `/docs/uikit/${kitType.value}/${platform}/roomuikit_overview.html`
       );
     }
   }

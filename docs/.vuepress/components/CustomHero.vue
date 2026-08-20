@@ -13,11 +13,11 @@
           <li>
             <strong><a
               class="hero-version-v5"
-              href="/document/android/beginner_guide.html"
+              href="/docs/document/android/beginner_guide.html"
             >v5 全新上线</a></strong>：<strong>V5 文档已就位！</strong>目前为 Android、iOS 及 Web/小程序提供全新集成指南，带来更优性能与体验。更多平台文档即将陆续登场，选择 V5，即刻开启升级之旅。
           </li>
           <li>
-            <a href="/v4/android/quickstart.html">v4.x 持续维护</a>：各端 V4.x 文档仍在正常维护中，现有客户可安心使用。
+            <a href="/docs/v4/android/quickstart.html">v4.x 持续维护</a>：各端 V4.x 文档仍在正常维护中，现有客户可安心使用。
           </li>
           <li>
             旧版本文档已停止维护，不再更新。如需查阅以下历史文档，请点击对应链接：

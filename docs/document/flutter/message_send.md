@@ -2,7 +2,7 @@
 
 即时通讯 IM Flutter SDK 通过 `EMChatManager` 和 `EMMessage` 类实现文本、图片、音频、视频和文件等类型的消息的发送和接收。
 
-- 对于单聊，即时通讯 IM 默认支持陌生人之间发送消息，即无需添加好友即可聊天。若仅允许好友之间发送单聊消息，你需要 [开启好友关系检查](/product/console/basic_user.html#好友关系检查)。
+- 对于单聊，即时通讯 IM 默认支持陌生人之间发送消息，即无需添加好友即可聊天。若仅允许好友之间发送单聊消息，你需要联系声网商务开启好友关系检查。
 - 对于群组和聊天室，用户每次只能向所属的单个群组和聊天室发送消息。
 - 关于消息发送控制，详见 [单聊](/product/message_single_chat.html#单聊消息发送控制)、[群组聊天](/product/message_group.html#群组消息发送控制) 和 [聊天室](/product/message_chatroom.html#聊天室消息发送控制) 的 相关文档。
 
@@ -359,16 +359,6 @@ EMClient.getInstance.chatManager.addMessageEvent(
 /// 移除监听
 EMClient.getInstance.chatManager.removeMessageEvent('UNIQUE_HANDLER_ID');
 ```
-
-### 发送消息前的内容审核
-
-- 内容审核关注消息 body
-
-[内容审核服务会关注消息 body 中指定字段的内容，不同类型的消息审核不同的字段](/value-added/moderation/moderation_mechanism.html)，若创建消息时在这些字段中传入了很多业务信息，可能会影响审核效果。因此，创建消息时需要注意内容审核的字段不涉及业务信息，建议业务信息放在扩展字段中。
-
-- 设置发送方收到内容审核替换后的内容
-
-默认情况下，内容审核替换后的内容仅下发至接收方。发送方如需同步接收替换内容，需 **联系商务经理开通权限**，并在初始化 SDK 时将 `ChatOptions#useReplacedMessageContents` 参数设为 `true`。开启后，发送方将在消息被审核替换时收到新内容；若开关关闭（默认状态），则发送方仍保留原始发送内容，不会感知替换结果。
 
 ### 消息大小和存储限制
 

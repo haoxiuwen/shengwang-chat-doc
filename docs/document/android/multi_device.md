@@ -2,9 +2,7 @@
 
 ## 功能说明
 
-即时通讯 IM 支持同一账号在多个设备上登录。使用该功能前，需要在 [环信控制台](https://console.easemob.com/user/login) 开通多端多设备服务。详见 [环信控制台文档](/product/console/basic_user.html#多端多设备)。
-
-Android SDK 在登录时会为当前设备生成登录资源标识，并将设备相关信息同步到服务器。服务器根据多端多设备策略维护当前账号的在线设备状态。当同一账号在其他设备上执行好友、群组、消息话题、会话或单向删除服务端历史消息等操作时，当前设备可以通过 `EMClient#addMultiDeviceListener` 注册的 `EMMultiDeviceListener` 接收相应的多设备事件。
+即时通讯 IM 支持同一账号在多个设备上登录。Android SDK 在登录时会为当前设备生成登录资源标识，并将设备相关信息同步到服务器。服务器根据多端多设备策略维护当前账号的在线设备状态。当同一账号在其他设备上执行好友、群组、消息话题、会话或单向删除服务端历史消息等操作时，当前设备可以通过 `EMClient#addMultiDeviceListener` 注册的 `EMMultiDeviceListener` 接收相应的多设备事件。
 
 多端多设备登录场景下，Android SDK 支持以下功能：
 
@@ -18,9 +16,25 @@ Android SDK 在登录时会为当前设备生成登录资源标识，并将设�
 - 强制指定账号从所有设备下线；
 - 获取其他设备的好友或者群组操作。
 
-多端登录时，即时通讯 IM 每端默认最多支持 4 个设备同时在线。如需增加支持的设备数量，可以联系即时通讯 IM 的商务经理。你可以在环信控制台的 **功能配置 > 基础功能** > **用户** 页面，在弹出的对话框中设置各端设备的数量：
+## 功能开通
 
-![img](/images/common/multidevice_device_count.png)
+在 [声网控制台](https://console.shengwang.cn/overview) 开通多设备登录的步骤如下：
+
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
+
+2. 点击左侧导航栏的**全部产品**。
+
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**功能配置**标签页。
+
+5. 在**用户与登陆** 页签下开启多端多设备功能。
+
+![img](/images/common/multidevice_activation.png)
+
+:::tip
+多端登录时，即时通讯 IM 每端默认最多支持 4 个设备同时在线。如需增加支持的设备数量，可以联系即时通讯 IM 的商务经理。
+:::
 
 ## 互踢策略
 
@@ -34,7 +48,7 @@ Android SDK 在登录时会为当前设备生成登录资源标识，并将设�
 ## 前提条件
 
 - 开始前，确保将 SDK 初始化，连接到服务器。详见 [快速开始](quickstart.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login) 开通多端多设备功能。详见 [环信控制台文档](/product/console/basic_user.html#多端多设备)。
+- 已在 [声网控制台](https://console.shengwang.cn/overview) 开通多端多设备功能。
 - 设置登录设备的自定义名称和平台需在 SDK 初始化时中完成。
 
 ## 获取当前用户的其他登录设备的登录 ID 列表  
@@ -135,19 +149,18 @@ EMClient.getInstance()
 
 你可以按照以下步骤设置登录设备所属的平台：
 
-1. 在环信控制台的 **即时通讯** > **基础功能** > **用户** 页面，在**多端多设备** 区域，点击 **设置**。在弹出的对话框中点击 **新增自定义平台**，在 **添加自定义平台** 对话框中设置 **设备平台** 和 **设备数量**。
+1. 在 [声网控制台](https://console.shengwang.cn/overview) 的 **用户与登陆** 页面点击 **新增自定义平台**，添加自定义平台：
 
-**设备平台**的取值范围为 [1,100]，**设备数量**的取值范围为 [0,4]。
+![img](/images/common/multidevice_device_count.png)
 
-![img](/images/common/multidevice_device_platform.png)
-
-2. 初始化 SDK 时，调用 `EMOptions#setCustomOSPlatform` 方法自定义设置登录设备的平台。确保该方法中的 `platform` 参数的值与环信控制台的 **添加自定义平台** 对话框中设置的 **设备平台** 的值相同。
+2. 初始化 SDK 时，调用 `EMOptions#setCustomOSPlatform` 方法自定义设置登录设备的平台。确保该方法中的 `platform` 参数的值为 `1`，与 [声网控制台](https://console.shengwang.cn/overview) 的自定义设备平台的值相同。
 
 :::tip
 登录成功后才会将该设置发送到服务器。
 :::
 
 ```java
+//  `platform` 参数的值为 `1`
     EMOptions options=new EMOptions();
     options.setCustomOSPlatform(1);
     EMClient.getInstance().init(context,options);

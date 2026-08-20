@@ -15,6 +15,7 @@ import ImageHotspot from "./components/ImageHotspot.vue";
 import DemoCard from "./components/DemoCard.vue";
 import Step from "./components/Step.vue";
 import FeedBack from "./components/Feedback.vue";
+import HideSection from "./components/HideSection.vue";
 import { embedChatbot } from "./embed";
 
 export default defineClientConfig({
@@ -30,6 +31,7 @@ export default defineClientConfig({
     app.use(InstantSearch);
     app.component("DemoCard", DemoCard);
     app.component("Step", Step);
+    app.component("HideSection", HideSection);
     
     if (typeof window !== "undefined") {
       embedChatbot();

@@ -23,7 +23,7 @@
 
 - 完成 SDK 初始化，详见 [快速开始](quickstart.html)。
 - 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
-- 了解群组和群成员的数量限制，详见 [套餐包详情](https://www.easemob.com/pricing/im)。
+- 了解群组和群成员的数量限制，详见 [产品套餐包功能对比](/product/product_package_feature.html)。
 
 ## 实现方法
 
@@ -147,7 +147,7 @@ NSArray *admins = aGroup.adminList;
 1. 自 4.14.0 版本开始，获取全部群成员（包括群主和群管理员）的信息，包括群成员的用户 ID、群成员角色和入群时间。自 4.20.0 版本起，该方法新增支持获取 [群成员名片](group_namecard.html)。
 
 ```objectivec
-// limit：每页期望返回的群成员数量，上限取决于服务端，详见 https://doc.easemob.com/document/server-side/group_member_list_obtain.html#请求-url。
+// limit：每页期望返回的群成员数量，上限取决于服务端，详见 https://im.shengwang.cn/document/server-side/group_member_list_obtain.html#请求-url。
 NSString* cursor = nil;
 [EMClient.sharedClient.groupManager fetchGroupMemberInfoListFromServerWithGroupId:@"groupId" cursor:cursor limit:20 completion:^(EMCursorResult<EMGroupMemberInfo *> * _Nullable cursorResult, EMError * _Nullable error) {
         for (EMGroupMemberInfo * memberInfo in cursorResult.list) {
@@ -181,7 +181,7 @@ EMGroup *group = [[EMClient sharedClient].groupManager
                                           error:nil];
 NSMutableArray *memberList = [[NSMutableArray alloc]init];
 
-// pageSize：每页期望返回的群成员数量，上限取决于服务端，详见 https://doc.easemob.com/document/server-side/group_member_list_obtain.html#请求-url。
+// pageSize：每页期望返回的群成员数量，上限取决于服务端，详见 https://im.shengwang.cn/document/server-side/group_member_list_obtain.html#请求-url。
 NSInteger pageSize = 50;
 NSString *cursor = nil;
 EMCursorResult *result = [[EMCursorResult alloc]init];

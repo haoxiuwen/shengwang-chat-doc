@@ -1,3 +1,7 @@
+---
+show_callback_route: false
+---
+
 # 发送聊天室消息
 
 ## 功能说明
@@ -19,7 +23,7 @@
 
 各步骤的说明如下：
 
-1. 先调用 [上传文件](message_upload_file.html) 接口，将附件上传到环信文件服务。
+1. 先调用 [上传文件](message_upload_file.html) 接口，将附件上传到 IM 文件服务。
 2. 从上传结果中获取发送聊天室附件消息所需的信息，例如文件地址、`file_uuid` 和 `share-secret`。
 3. 调用 [发送聊天室消息](message_chatroom.html) 接口，并在消息体中引用上传后的附件地址和相关字段。
 4. 如有需要，可继续设置聊天室消息特有的参数，例如消息优先级。
@@ -39,7 +43,6 @@
 - 通过 RESTful 接口发送的消息默认不写入会话列表。若需要将此类消息写入会话列表，需在联系声网商务开通。
 - 调用该接口会触发发送后回调事件，详见 [回调事件文档](callback_message_send.html#发送群组消息)。
 - 你可以通过消息通用可选参数设置哪些用户在拉取漫游消息时无法获取该消息、以及扩展参数等。详见 [消息通用可选参数](#消息通用可选参数)。
-- [内容审核服务会关注消息 `body` 中指定字段的内容，不同类型的消息审核的字段不同](/value-added/moderation/moderation_mechanism.html)。若在这些字段中传入过多业务信息，可能影响审核效果。因此，建议避免在审核字段中承载业务信息，优先将业务信息放在扩展字段 `ext` 中。
 
 ### 聊天室消息优先级
 
@@ -223,7 +226,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatrooms' \
 
 ### 发送图片消息
 
-发送图片消息前，请先调用 [文件上传](message_upload_file.html) 接口上传图片文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始图片地址。
+发送图片消息前，请先调用 [文件上传](message_upload_file.html) 接口上传图片文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始图片地址。
 
 #### 请求 URL
 
@@ -314,7 +317,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatrooms' \
 
 ### 发送语音消息
 
-发送语音消息前，请先调用 [文件上传](message_upload_file.html) 接口上传语音文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始语音地址。
+发送语音消息前，请先调用 [文件上传](message_upload_file.html) 接口上传语音文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始语音地址。
 
 #### 请求 URL
 
@@ -402,7 +405,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatrooms' \
 
 ### 发送视频消息
 
-发送视频消息前，请先调用 [文件上传](message_upload_file.html) 接口上传视频文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始视频地址。
+发送视频消息前，请先调用 [文件上传](message_upload_file.html) 接口上传视频文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始视频地址。
 
 #### 请求 URL
 
@@ -493,7 +496,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatrooms' \
 
 ### 发送文件消息
 
-发送文件消息前，请先调用 [文件上传](message_upload_file.html) 接口上传文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始文件地址。
+发送文件消息前，请先调用 [文件上传](message_upload_file.html) 接口上传文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始文件地址。
 
 #### 请求 URL
 
@@ -1006,6 +1009,8 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatrooms' \
 
 ## 可选增强功能
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 ### 发消息时设置回调路由
 
 回调路由允许你在同一个 App ID 下，将不同消息按回调环境维度分别投递到不同的回调地址。发送消息时，你可以在消息中携带回调环境字段（如 `dev`、`test`、`prod`），IM 服务器收到消息后，根据该字段匹配控制台中配置的 [回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
@@ -1015,3 +1020,5 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/chatrooms' \
 :::
 
 关于该功能的详细说明以及请求示例代码，详见 [发送单聊消息中的说明](message_single.html#发消息时设置回调路由)。
+
+</HideSection>

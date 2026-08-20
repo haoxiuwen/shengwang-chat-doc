@@ -41,7 +41,7 @@
 UserInfo userInfo;
 userInfo.UserId = currentId;
 userInfo.NickName = "easemob";
-userInfo.AvatarUrl = "https://www.easemob.com";
+userInfo.AvatarUrl = "https://www.shengwang.com";
 userInfo.Birth = "2000.10.10";
 userInfo.Signature = "hello world";
 userInfo.PhoneNumber = "13333333333";

@@ -1,11 +1,21 @@
+---
+show_server_search: false
+show_callback_route: false
+---
+
 # Android IM SDK 更新日志
 
 ## v4.24.0 Dev 2026-7-10（开发版）
 
 #### 新增功能
 
+<HideSection :show="$frontmatter.show_server_search">
+
 - 支持 [服务端消息搜索](/value-added/search/message_search_android.html)，可根据关键词组合、会话 ID、消息类型、时间范围及消息内容或扩展属性进行筛选。该功能需联系商务经理开通后方可使用，详见 [开通说明](/product/console/purchase_value_added.html#消息搜索)。
   消息搜索默认不支持扩展字段 `ext`，如需支持该字段搜索，请联系商务经理。
+
+</HideSection>
+
 - 新增异步接口，用于 [更新群组扩展字段](group_attributes.html#更新群扩展字段)。
 - 新增异步接口，用于 [获取服务器端推送配置](/v4/android/push/push_display_attribute.html#获取推送通知的显示属性)。
 
@@ -24,9 +34,13 @@
 
 ## v4.23.0 Dev 2026-6-10（开发版）
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 ####  新增功能
 
 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](message_send.html#发消息时设置回调路由)。目前，该功能仅面向国内 1 区和国内 2 区开放。
+
+</HideSection>
 
 #### 优化
 
@@ -588,7 +602,6 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 - [IM SDK] 新增 [EMChatManager#asyncDeleteAllMsgsAndConversations](message_delete.html#清空聊天记录)方法，用于清空当前用户的聊天记录，包括消息和会话，同时可以选择是否清除服务端的聊天记录。
 - [IM SDK] 新增 [EMChatManager#searchMsgFromDB(java.lang.String, long, int, java.lang.String, EMConversation.EMSearchDirection, EMConversation.EMMessageSearchScope)](message_search_local.html#根据搜索范围搜索所有会话中的消息) 和 [EMConversation#searchMsgFromDB(java.lang.String, long, int, java.lang.String, EMConversation.EMSearchDirection, EMConversation.EMMessageSearchScope)](message_search_local.html#根据搜索范围搜索当前会话中的消息)，可以在根据关键字搜索消息时，选择搜索范围，如只搜索消息内容、只搜索消息扩展信息以及同时搜索消息内容以及扩展信息。
-- [IM SDK] 新增 [EMOptions#setUseReplacedMessageContents](message_send.html#发送消息前的内容审核) 开关。开启后，发送消息时如果被内容审核进行了内容替换，发送方可以获取替换后的内容。
 - [IM SDK] 新增 [EMOptions#setIncludeSendMessageInMessageListener](message_receive.html#接收文本消息) 开关。开启后，在 `EMMessageListener#onMessageReceived` 回调里增加发送成功的消息。
 - [IM SDK] 新增 [EMOptions#setRegardImportedMsgAsRead](message_retrieve.html#从服务器获取指定会话的消息) 开关。开启后，[利用服务端接口](/document/server-side/message_import_single.html)导入的消息，客户端上通过[漫游拉取](message_retrieve.html#从服务器获取指定会话的消息)到后，这些消息为已读状态，会话中未读取的消息数量，即 `EMConversation#getUnreadMsgCount` 的返回值不发生变化。若该开关为关闭状态，`EMConversation#getUnreadMsgCount` 的返回值会增加。
 
@@ -940,8 +953,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 #### 新增特性:
 
-- [IM SDK] 新增 [消息 Reaction](reaction.html) 功能，可以对消息进行不同的响应；
-- [IM SDK] 新增 [举报 API](moderation.html) 用于内容审核。
+[IM SDK] 新增 [消息 Reaction](reaction.html) 功能，可以对消息进行不同的响应；
 
 #### 优化：
 
@@ -1200,7 +1212,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 #### 更新：
 
-- [IM SDK] 3.8.0 及以后版本 SDK 更新名为 com.hyphenate:hyphenate-chat:x.x.x, 只发布 IM 功能，移除环信音视频功能；
+- [IM SDK] 3.8.0 及以后版本 SDK 更新名为 com.hyphenate:hyphenate-chat:x.x.x, 只发布 IM 功能，移除音视频功能；
 - [EaseIM App] 环信 app 依赖声网音视频功能;
 
 #### 修复：
@@ -1252,7 +1264,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 - [IM SDK] 修复部分 HTTP 重复请求的问题；
 - [IM SDK] 移除获取设备 IMEI 信息相关逻辑；
 - [EaseIMKit] 修复动图不发送已读回执（read ack）的问题;
-- [EaseIMKit] 修复群组会话页面不显示昵称（或者环信 ID）的问题；
+- [EaseIMKit] 修复群组会话页面不显示昵称（或者 IM 用户 ID）的问题；
 - [EaseIMKit] 修复开启漫游后，获取的历史消息不上屏的问题；
 - [EaseIMKit] 修复聊天页面拦截消息长按事件后，复制功能被拦截的问题；
 - [EaseIMKit] 修复聊天页面“正在输入”状态无法消失的问题；

@@ -23,7 +23,6 @@
 
 - 完成 SDK 初始化，详见 [快速开始](quickstart.html)。
 - 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
-- 了解群组和群成员的数量限制，详见 [套餐包详情](https://www.easemob.com/pricing/im)。
 
 ## 实现方法
 
@@ -144,7 +143,7 @@ let isMsgBlocked: boolean = group.isMsgBlocked();
 - 获取群成员 ID 列表。
   
 ```typescript
-// pageSize：每页期望返回的群成员数量，上限取决于服务端，详见 https://doc.easemob.com/document/server-side/group_member_list_obtain.html#请求-url。
+// pageSize：每页期望返回的群成员数量，上限取决于服务端，详见 https://im.shengwang.cn/document/server-side/group_member_list_obtain.html#请求-url。
 ChatClient.getInstance().groupManager()?.fetchGroupMembers(groupId, pageSize, cursor).then((res) => {
     // success logic
 });

@@ -29,7 +29,7 @@
 // cursor：首次请求时将 `cursor` 传入 `null` 或空字符串；后续请求传入上一次结果中的游标。当返回的游标为空时，表示已到最后一页。
 EMClient.getInstance()
         .groupManager()
-        // pageSize：每页期望返回的群成员数量，上限取决于服务端，详见 https://doc.easemob.com/document/server-side/group_member_list_obtain.html#请求-url。
+        // pageSize：每页期望返回的群成员数量，上限取决于服务端，详见 https://im.shengwang.cn/docs/document/server-side/group_member_list_obtain.html#请求-url。
         .asyncFetchGroupMembersInfo(
                 groupId,
                 null,

@@ -1,17 +1,15 @@
 # uni-app 全平台方案简介
 
-<Toc />
-
 小程序 SDK 为各端小程序开发提供一套完整的技术解决方案，在各端小程序的开发环境下，集成 IM 相关的功能更加便捷、高效。让您的小程序快速获得安全稳定的 IM 能力，集成简单，使用方便，帮助您快速拓展业务，赢得先机。
 
 :::tip
-- uni-app SDK 目前支持Web、H5、微信、支付宝、QQ、百度小程序、抖音（请使用低于 1.70.0 以下的版本基础库）、uni-app 编译的 原生 Android 以及 iOS。
+- uni-app SDK 目前支持 Web、H5、微信、支付宝、QQ、百度小程序、抖音（请使用低于 1.70.0 以下的版本基础库）、uni-app 编译的 原生 Android 以及 iOS。
 - uni-app SDK 4.11.0 及以上版本支持鸿蒙系统。
 :::
 
 ## 体验小程序
 
-点击链接，扫描二维码，即可快速体验环信 Uniapp 编译生成的移动端原生应用：
+点击链接，扫描二维码，即可快速体验声网 Uniapp 编译生成的移动端原生应用：
 
 - 安卓： [https://www.pgyer.com/h4XF](https://www.pgyer.com/h4XF)
 - iOS： [https://www.pgyer.com/9ISC](https://www.pgyer.com/9ISC)
@@ -32,9 +30,9 @@
 
 ## 开发者集成
 
-### 步骤 1： 注册账号
+### 步骤 1 注册账号
 
-开发者需要在声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)，[获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)，SDK 初始化时需要配置 App ID。
+开发者需要在声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)，SDK 初始化时需要配置 App ID。
 
 ### 步骤 2 搭建开发环境
 
@@ -43,42 +41,24 @@
 
 之后登录 HBuilderx 编辑器。这样，小程序的开发环境准备完毕。
 
-即将开发的平台配置服务
-
 ### 步骤 3 配置服务器域名
 
-为满足不同客户的业务需求，环信在多地部署了数据中心。不同数据中心的 REST API 请求域名、Socket 访问域名不同。请根据您所在数据中心进行配置。
+为满足不同客户的业务需求，声网在多地部署了数据中心。不同数据中心的 REST API 请求域名、Socket 访问域名不同。请根据您所在数据中心进行配置。
 
-本节以微信为例介绍环信不同数据中心的 REST API 请求域名、WebSocket 访问域名：
-
-| 数据中心      | REST API 请求地址      | WebSocket 访问域名          |
-| ------------- | ------------------ | -------------------------------- |
-| 国内 1 区   | https://a1.easemob.com    | - wss://im-api-wechat.easemob.com/websocket <br/> - wss://im-api-wechat.easecdn.com/websocket   |
-| 国内 2 区   | ngi-a1.easemob.com    | wss://ngi-im-api-wechat.easemob.com/websocket  |
-| 国内 VIP 区 | 请咨询商务经理    | 请咨询商务经理     |
-| 客服专用    | 请咨询商务经理    | 请咨询商务经理   |
-| 新加坡 1 区   | - https://a1-sgp.easemob.com <br/> - https://a1-sgp.easecdn.com |  wss://im-api-wechat-sgp.easemob.com/websocket  <br/> - wss://im-api-wechat-sgp.easecdn.com/websocket  |
-| 新加坡 2 区   | - https://a61.easemob.com <br/> - https://a61.easecdn.com |  - wss://im-api-wechat-61.easemob.com/websocket <br/> - wss://im-api-wechat-61.easecdn.com/websocket |
-| 美东 1 区     | - https://a41.easemob.com <br/> -  https://a41.easecdn.com       |  - wss://im-api-wechat-41.easemob.com/websocket <br/> - wss://im-api-wechat-41.easecdn.com/websocket   |
-| 德国 2 区 | - https://a71.easemob.com <br/> - https://a71.easecdn.com       |  - wss://im-api-wechat-71.easemob.com/websocket <br/> - wss://im-api-wechat-71.easecdn.com/websocket   |
-
-应用所在数据中心可以在环信控制台的 **应用概览** 页面中查看：
+应用所在数据中心可以在声网控制台的 **即时通讯 IM > 功能配置 > 基础信息** 页面中查看，再选择对应的 REST API 和 WebSocket 地址。
 
 ![img](/images/applet/service_overview.png)
 
-登录 [微信公众平台](https://mp.weixin.qq.com/)，进入 **开发 > 开发设置** 页面，配置以下服务器地址（其他平台小程序配置与微信一致）：
+以微信小程序为例，登录 [微信公众平台](https://mp.weixin.qq.com/)，进入 **开发 > 开发设置** 页面，然后配置服务器域名。其他小程序平台的配置方式与微信小程序类似。
 
-| 域名类型 | 具体域名   | 
-| :------ | :----- |
-| request 合法域名<br/>uploadFile 合法域名<br/>downloadFile 合法域名  | <br/> - https://a1.easemob.com（国内 1 区）<br/> - https://a1-v2.easemob.com（国内 1 区）<br/> - https://ngi-a1.easemob.com（国内 2 区）<br/> - https://a1-sgp.easemob.com （新加披1 区）<br/> - https://a61.easemob.com （新加坡 2 区）<br/> - https://a41.easemob.com （美东1 区）<br/> - https://a71.easemob.com （德国 2 区）<br/> - https://a1-chatfile.easemob.com （downloadFile）   | 
-| WebSocket 合法域名 | <br/> - wss://im-api-wechat.easemob.com/websocket（国内 1 区）<br/> - wss://ngi-im-api-wechat.easemob.com/websocket（国内 2 区）<br/> - wss://im-api-alipay.easemob.com/websocket/websocket（支付宝小程序专用）<br/> - wss://im-api-wechat-sgp.easemob.com/websocket （新加披1 区）<br/> - wss://im-api-wechat-61.easemob.com/websocket（新加披2 区）<br/> - wss://im-api-wechat-41.easemob.com/websocket （美东1 区）<br/> - wss://im-api-wechat-71.easemob.com/websocket （德国 2 区） | 
+各端小程序 WebSocket 连接数量如下表所示：
 
-#### 各端小程序 WebSocket 连接数量
-
-- QQ、微信小程序： `**1.7.0**` 及以上版本，最多可以同时存在 **5** 个 WebSocket 连接
-- 字节小程序： `**1.0.0**` 及以上版本 （在当前小程序页面已经有一个 WebSocket 连接的情况下，如果再创建一个 WebSocket 连接，会重新创建一个 WebSocket 连接，但是之前创建的 WebSocket 连接并不会自动关闭。）
-- 百度小程序：`**1.9.4**` 及以上版本，支持存在多个 WebSokcet 连接，每次成功调用会返回一个新的 SocketTask
-- 支付宝小程序：支付宝小程序在一段时间内只能保留一个 WebSocket 连接，如果当前已存在 WebSocket 连接，那么会自动关闭该连接，并重新创建一个新的 WebSocket 连接。
+| 平台           | 版本要求与连接限制                                           |
+| :------------- | :----------------------------------------------------------- |
+| QQ、微信小程序 | 1.7.0 及以上版本最多可同时存在 5 个 WebSocket 连接。         |
+| 字节小程序     | 1.0.0 及以上版本支持创建新的 WebSocket 连接；创建新连接时，已有连接不会自动关闭。 |
+| 百度小程序     | 1.9.4 及以上版本支持多个 WebSocket 连接；每次成功调用均会返回新的 `SocketTask`。 |
+| 支付宝小程序   | 一段时间内只能保留一个 WebSocket 连接；如果已有连接，创建新连接时会自动关闭原连接。 |
 
 ### 步骤 4 下载 SDK
 
@@ -103,7 +83,7 @@ npm init -y
 2. 在项目根目录执行命令安装 npm 包：
 
 ```bash 
-npm i easemob-websdk
+npm install easemob-websdk
 ```
 3. 引入 uni-app SDK
 
@@ -147,7 +127,7 @@ const conn = new WebIM.connection({
 
 uni-app 在 **Vue3 模式** 下，HBuilderX 会默认开启 [**摇树优化（tree-shaking）**](https://uniapp.dcloud.net.cn/collocation/manifest.html#treeshaking)。  
 
-该优化会在点击发行至 `网站-PC Web或手机H5` 后出现误删除环信 SDK 中未被显式引用的模块，导致发行后出现登录失败等异常情况。为了避免这些异常情况，你可以采用以下两种解决方案：
+该优化会在点击发行至 `网站-PC Web或手机H5` 后出现误删除声网 SDK 中未被显式引用的模块，导致发行后出现登录失败等异常情况。为了避免这些异常情况，你可以采用以下两种解决方案：
 
 **（推荐）方案一：手动关闭摇树优化**  
 

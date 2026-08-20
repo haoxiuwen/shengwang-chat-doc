@@ -56,7 +56,7 @@ dependencies {
 
 ### 方法二：手动复制 SDK 文件
 
-打开 [SDK 下载页面](https://www.easemob.com/download/im#Android)，获取最新版的即时通讯 IM Android SDK，然后解压。
+打开 [SDK 下载页面](https://im.shengwang.cn/)，获取最新版的即时通讯 IM Android SDK，然后解压。
 
 ![img](@static/images/android/sdk-files.png)
 
@@ -90,7 +90,7 @@ dependencies {
 
 该功能的实现步骤如下：
 
-1. [下载最新版本的 SDK](https://www.easemob.com/download/im#Android) 并解压缩。
+1. [下载最新版本的 SDK](https://im.shengwang.cn/) 并解压缩。
 2. 集成 `hyphenatechat_4.5.0.jar` 到你的项目中。
 3. 将所有架构的 `.so` 文件上传到你的服务器，并确保应用程序可以通过网络下载目标架构的 `.so` 文件。
 4. 应用运行时，会检查 `.so` 文件是否存在。如果未找到，应用会下载该 `.so` 文件并将其保存到你自定义的应用程序的私有目录中。
@@ -105,7 +105,7 @@ dependencies {
 :::
 
 ```java
-//假设用户已经通过动态下发的方式，将环信 SDK 中的 libcipherdb.so 和 libhyphenate.so 两个 so 库，放到 app 的 /data/data/packagename/files 目录下。
+//假设用户已经通过动态下发的方式，将 IM SDK 中的 libcipherdb.so 和 libhyphenate.so 两个 so 库，放到 app 的 /data/data/packagename/files 目录下。
 String filesPath = mContext.getFilesDir().getAbsolutePath();
 
 EMOptions options = new EMOptions();

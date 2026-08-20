@@ -23,8 +23,7 @@
 
 - 完成 SDK 初始化，详见 [初始化](initialization.html)及[快速开始](quickstart.html)；
 - 了解即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)；
-- 了解群成员角色，详见 [群组概述](group_overview.html)；
-- 了解群组和群成员的数量限制，详见 [套餐包详情](https://www.easemob.com/pricing/im)。
+- 了解群成员角色，详见 [群组概述](group_overview.html)。
 
 ## 实现方法
 
@@ -590,7 +589,7 @@ ChatClient.getInstance()
 ```typescript
 const groupId = '<YOUR_GROUP_ID>';
 const cursor = ''; // 开始分页的位置，第一页为空，后续页面请使用第一页返回的结果
-const limit = 200; // 每页期望返回的群成员数量，上限取决于服务端，详见 https://doc.easemob.com/document/server-side/group_member_list_obtain.html#请求-url。
+const limit = 200; // 每页期望返回的群成员数量，上限取决于服务端，详见 https://im.shengwang.cn/document/server-side/group_member_list_obtain.html#请求-url。
 ChatClient.getInstance()
   .groupManager.fetchMemberInfoListFromServer(groupId, cursor, limit)
   .then((result) => {
@@ -608,7 +607,7 @@ ChatClient.getInstance()
 // pageSize：每页期望返回的群成员数量，取值范围为 [1,1000]。
 // cursor：开始分页的位置，第一页为空，后续页面请使用第一页返回的结果
 ChatClient.getInstance()
-// pageSize：每页期望返回的群成员数量，上限取决于服务端，详见 https://doc.easemob.com/document/server-side/group_member_list_obtain.html#请求-url。
+// pageSize：每页期望返回的群成员数量，上限取决于服务端，详见 https://im.shengwang.cn/document/server-side/group_member_list_obtain.html#请求-url。
   .groupManager.fetchMemberListFromServer(groupId, pageSize, cursor)
   .then(() => {
     console.log("get group members success.");

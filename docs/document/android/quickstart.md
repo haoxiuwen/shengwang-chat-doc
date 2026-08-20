@@ -15,7 +15,7 @@
 - targetVersion 33 及以上
 - Android SDK API 21 及以上
 - JDK 17 及以上
-- 有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 说明。
+- 有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/product/enable_im.html#_3-获取-app-id) 说明。
 
 ## 准备开发环境
 
@@ -113,7 +113,7 @@ dependencies {
 </manifest>
 ```
 
-关于 App ID 对应的 value 获取，在 [声网控制台](https://console.shengwang.cn/overview) [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目) 后进行相关配置。
+关于 App ID 对应的 value 获取，在 [声网控制台](https://console.shengwang.cn/overview) [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务)  后进行相关配置。
 
 ### 4. 防止代码混淆
 
@@ -197,7 +197,7 @@ EMClient.getInstance().chatManager().sendMessage(message);
 
 ### SDK 依赖的 Crash 上报库冲突
 
-当同时集成环信 SDK 和声网 RTM SDK 2.2.0 或 RTC SDK 4.3.0 及以上版本时，由于同时包含 `libaosl.so` 库，编译时可能会出现以下错误：
+当同时集成 IM SDK 和声网 RTM SDK 2.2.0 或 RTC SDK 4.3.0 及以上版本时，由于同时包含 `libaosl.so` 库，编译时可能会出现以下错误：
 
 ```java
 com.android.builder.merge.DuplicateRelativeFileException: More than one file was found with OS independent path 'lib/x86/libaosl.so'

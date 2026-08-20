@@ -95,11 +95,10 @@ try {
 | 500 | `MESSAGE_ENCODE_FAILED` / `MESSAGE_DECODE_FAILED` / `STREAM_CHUNK_INVALID` / `STREAM_TIMEOUT_BY_SERVER` / `STREAM_STATE_CONFLICT` / `COMBINE_ENCODE_FAILED` / `COMBINE_PARSE_FAILED` | 消息编解码失败、流式消息分片异常、流式状态冲突，或合并消息构建/解析失败。 | 检查消息体结构、扩展字段、附件信息和合并消息内容是否合法。 |
 | 501 | `MESSAGE_INCLUDE_ILLEGAL_CONTENT` | 消息包含非法或敏感内容，被内容过滤识别为不合规。 | 修改消息内容后重试。 |
 | 502 | `MESSAGE_SEND_TRAFFIC_LIMIT` | 消息发送流量或频率受限。 | 降低发送频率；如限制由服务端策略配置引起，可联系商务或管理员调整。 |
-| 504 | `MESSAGE_RECALL_TIME_LIMIT` | 撤回消息时超出限定时间。 | 提示用户已超过可撤回时间；如需调整撤回时长，可在 [环信控制台配置消息撤回时间](/product/console/basic_message.html#消息撤回)。 |
-| 505 | `SERVICE_NOT_ENABLED` | 相关服务未开通，例如消息撤回、消息漫游、消息搜索、群聊消息已读回执、Reaction、翻译或语音转文字等能力未开通。 | 根据 `error.message` 确认具体能力，在 [环信控制台](https://console.easemob.com/user/login) 开通对应服务后重试。 |
+| 504 | `MESSAGE_RECALL_TIME_LIMIT` | 撤回消息时超出限定时间。 | 提示用户已超过可撤回时间；如需调整撤回时长，可在声网控制台配置消息撤回时间。 |
+| 505 | `SERVICE_NOT_ENABLED` | 相关服务未开通，例如消息撤回、消息漫游、消息搜索、群聊消息已读回执、Reaction、翻译或语音转文字等能力未开通。 | 根据 `error.message` 确认具体能力，在 [声网控制台](https://console.shengwang.cn/overview) 开通对应服务后重试。 |
 | 506 | `MESSAGE_EXPIRED` | 消息已过期，例如超过群聊消息已读回执有效期，或服务端不再记录该消息的相关状态。 | 确认消息是否仍在有效期内；如已过期，不再查询或发送该消息相关回执。 |
 | 507 | `MESSAGE_ILLEGAL_WHITELIST` | 当前用户不在允许发送消息的白名单中，常见于群组或聊天室开启全员禁言后，非白名单用户继续发送消息。 | 检查群组或聊天室白名单/禁言配置，必要时将用户加入白名单或解除禁言。 |
-| 508 | `MESSAGE_EXTERNAL_LOGIC_BLOCKED` | 消息被外部审核或业务逻辑拦截，例如开通反垃圾或第三方内容审核后，消息审核结果为拒绝。 | 根据业务规则修改内容，或联系服务端排查审核/拦截原因。 |
 | 509 | `MESSAGE_CURRENT_LIMITING` | 当前用户发送消息过于频繁，被限流。 | 降低发送频率后重试。 |
 | 510 | `MESSAGE_SIZE_LIMIT` | 消息体大小超过限制。 | 缩短文本、减少扩展字段或拆分消息。关于消息体大小限制，详见 [消息概述](/product/product_message_overview.html#消息类型)。 |
 | 511 | `MESSAGE_EDIT_FAILED` | 消息编辑失败，可能是消息不支持编辑、编辑权限不足、编辑次数超限或服务端拒绝。 | 检查消息类型、消息发送方、编辑次数和服务端返回信息后重试。 |
@@ -191,13 +190,6 @@ try {
 | 1111 | `TRANSLATE_SERVICE_NOT_ENABLED` | 翻译服务未开通。 | 在控制台开通翻译服务后重试。 |
 | 1112 | `TRANSLATE_USAGE_LIMIT` | 翻译服务用量达到上限。 | 等待额度恢复，或联系商务提升配额。 |
 | 1113 | `TRANSLATE_FAILED` | 翻译服务异常或翻译失败。 | 稍后重试；若持续失败，联系技术支持排查。 |
-
-## 内容审核
-
-| 错误码 | 错误信息 | 描述和可能原因 | 解决办法 |
-| :--- | :--- | :--- | :--- |
-| 1200 | `THIRD_MODERATION_FAILED` | 第三方内容审核明确拒绝，消息内容不合规。 | 修改消息内容后重试，或联系审核服务排查。 |
-| 1299 | `THIRD_DEFAULT_FAILED` | 第三方内容审核或外部能力返回了未细分的默认失败。 | 根据服务端返回信息进一步排查。 |
 
 ## 消息表情回复（Reaction）
 

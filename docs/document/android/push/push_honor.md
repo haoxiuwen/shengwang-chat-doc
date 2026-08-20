@@ -110,7 +110,7 @@ if (isSupport) {
 EMPushHelper.getInstance().setPushListener(new PushListener() {
     @Override
     public void onError(EMPushType pushType, long errorCode) {
-        // 返回的 errorCode 仅 9xx 为环信内部错误，可从 EMError 中查询，其他错误请根据 pushType 去相应第三方推送网站查询。
+        // 返回的 errorCode 仅 9xx 为 IM 内部错误，可从 EMError 中查询，其他错误请根据 pushType 去相应第三方推送网站查询。
         EMLog.e("PushClient", "Push client occur a error: " + pushType + " - " + errorCode);
     }
 

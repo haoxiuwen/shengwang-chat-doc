@@ -2,9 +2,7 @@
 
 ## 功能说明
 
-即时通讯 IM 支持同一账号在多个设备上登录。使用该功能前，需要在 [环信控制台](https://console.easemob.com/user/login) 开通多端多设备服务。详见 [环信控制台文档](/product/console/basic_user.html#多端多设备)。
-
-iOS SDK 在登录时会将设备相关信息同步到服务器。服务器根据多端多设备策略维护当前账号的在线设备状态。当同一账号在其他设备上执行好友、群组、消息话题、会话或单向删除服务端历史消息等操作时，当前设备可通过 `addMultiDevicesDelegate` 注册的 `EMMultiDevicesDelegate` 接收相应事件。
+即时通讯 IM 支持同一账号在多个设备上登录。iOS SDK 在登录时会将设备相关信息同步到服务器。服务器根据多端多设备策略维护当前账号的在线设备状态。当同一账号在其他设备上执行好友、群组、消息话题、会话或单向删除服务端历史消息等操作时，当前设备可通过 `addMultiDevicesDelegate` 注册的 `EMMultiDevicesDelegate` 接收相应事件。
 
 多端多设备登录场景下，iOS SDK 支持以下功能：
 
@@ -15,9 +13,25 @@ iOS SDK 在登录时会将设备相关信息同步到服务器。服务器根据
  - 设置登录设备的名称、平台和扩展信息。
  - 将指定账号从单个或所有设备踢下线。
 
-多端登录时，即时通讯 IM 每端默认最多支持 4 个设备同时在线。如需增加支持的设备数量，可以联系即时通讯 IM 的商务经理。你可以在环信控制台的 **即时通讯 > 基础功能** > **用户** 页面设置各端设备的数量：
+## 功能开通
 
-![img](/images/common/multidevice_device_count.png)
+在 [声网控制台](https://console.shengwang.cn/overview) 开通多设备登录的步骤如下：
+
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
+
+2. 点击左侧导航栏的**全部产品**。
+
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
+
+4. 在**即时通讯 IM** 页面，进入**功能配置**标签页。
+
+5. 在**用户与登陆** 页签下开启多端多设备功能。
+
+![img](/images/common/multidevice_activation.png)
+
+:::tip
+多端登录时，即时通讯 IM 每端默认最多支持 4 个设备同时在线。如需增加支持的设备数量，可以联系即时通讯 IM 的商务经理。
+:::
 
 ## 互踢策略
 
@@ -33,7 +47,7 @@ iOS SDK 在登录时会将设备相关信息同步到服务器。服务器根据
 开始前，请确保满足以下条件：
 
  - 完成 iOS SDK 初始化并登录，详见 [快速开始](quickstart.html)。
- - 已在 [环信控制台](https://console.easemob.com/user/login) 开通多端多设备功能。详见 [环信控制台文档](/product/console/basic_user.html#多端多设备)。
+ - 已在 [声网控制台](https://console.shengwang.cn/overview) 开通多端多设备功能。
 
 ## 获取当前用户的其他登录设备的登录 ID 列表
 
@@ -107,21 +121,20 @@ options.customDeviceName = @"Alice 的 iPad";
 
 可通过 `EMOptions#customOSType` 设置当前设备所属的自定义平台，例如将手机和平板电脑设置为单独的平台，方便用户精细化控制同一平台的登录设备数量及平台间互踢等行为。
 
-1. 在环信控制台的 **即时通讯** > **基础功能** > **用户** 页面，在**多端多设备** 区域，点击 **设置**。在弹出的对话框中点击 **新增自定义平台**，在 **添加自定义平台** 对话框中设置 **设备平台** 和 **设备数量**。
+1. 在 [声网控制台](https://console.shengwang.cn/overview) 的 **用户与登陆** 页面点击 **新增自定义平台**，添加自定义平台：
 
-**设备平台**的取值范围为 [1,100]，**设备数量**的取值范围为 [0,4]。
+![img](/images/common/multidevice_device_count.png)
 
-![img](/images/common/multidevice_device_platform.png)
-
-2. 初始化 SDK 时，调用 `initializeSDKWithOptions` 方法设置 `EMOptions#customOSType` 属性添加自定义平台。确保该属性的值与环信控制台的 **新增自定义平台** 对话框中设置的 **设备平台** 的值相同。
+2. 初始化 SDK 时，调用 `initializeSDKWithOptions` 方法设置 `EMOptions#customOSType` 属性添加自定义平台。确保该属性的值为 `1`，与 [声网控制台](https://console.shengwang.cn/overview) 的自定义设备平台的值相同。
 
 :::tip
 登录成功后才会将该设置发送到服务器。
 :::
 
 ```objectivec
+// customOSType 的值为 1
 EMOptions *options = [EMOptions optionswithAppId:@"your app ID"];
-options.customOSType = 60;
+options.customOSType = 1;
 
 // 使用 options 初始化 SDK 后，再通过异步 Token 登录接口登录。
 ```

@@ -1,6 +1,6 @@
 # 跑通 Web 示例项目
 
-本文档基于 `call-demo.tsx` 示例，帮助你快速集成和运行环信 Web CallKit，实现一对一音视频通话和群组音视频通话功能。
+本文档基于 `call-demo.tsx` 示例，帮助你快速集成和运行 Web CallKit，实现一对一音视频通话和群组音视频通话功能。
 
 ## 推荐环境
 
@@ -14,10 +14,10 @@
 
 在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
 1. [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
-2. [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
+2. [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
 3. [创建用户](/document/web/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/web/login.html#获取用户-token)。
 4. 创建群组，获取群组 ID。将用户加入群组。
-5. [开通音视频服务](product_activation.html)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能跑通示例项目。
+5. [开通声网 RTC](product_overview.html#开通声网-rtc)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能跑通示例项目。
 
 ## 操作步骤
 

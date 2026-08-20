@@ -28,7 +28,7 @@ HBuilderx ⇒ 工具 ⇒ 插件安装 ⇒ 安装新插件 ⇒ 前往插件市场
 
 ## 快速使用
 
-小程序模版封装了常用 IM 功能，提供了会话，聊天及好友等基本的 component，旨在帮助开发者快速集成环信 SDK。 同时也集成了第三方 UI 库（Uview-ui），且可按需引入。UI 库详情：[https://www.uviewui.com/components/intro.html](https://www.uviewui.com/components/intro.html)
+小程序模版封装了常用 IM 功能，提供了会话，聊天及好友等基本的 component，旨在帮助开发者快速集成 IM SDK。 同时也集成了第三方 UI 库（Uview-ui），且可按需引入。UI 库详情：[https://www.uviewui.com/components/intro.html](https://www.uviewui.com/components/intro.html)
 
 ## 组件介绍
 

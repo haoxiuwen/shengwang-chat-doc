@@ -1,12 +1,19 @@
-# 搜索消息
+---
+title: 搜索消息
+show_search_search: false
+---
 
 ## 功能说明
 
 调用本文中的消息搜索方法可以搜索本地数据库中除透传消息之外的所有类型的消息，因为透传消息不在本地数据库中存储。
 
+<HideSection :show="$frontmatter.show_server_search">
+
 :::tip
 若要搜索服务端的消息，请联系商务开通。详见 [服务端消息搜索文档](/value-added/search/message_search_android.html)。
 :::
+
+</HideSection>
 
 ## 前提条件
 

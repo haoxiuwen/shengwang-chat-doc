@@ -131,14 +131,14 @@ ChatClient.getInstance()
 
 即时通讯 IM 支持自定义设置登录设备的平台，例如将 Android 手机和 Android 系统的平板电脑设置为两个单独的平台，方便用户精细化控制同一平台的登录设备数量及平台间互踢等行为。
 
-初始化 SDK 时，可利用 `customOSType` 自定义设置登录设备的平台。
+初始化 SDK 时，可利用 `customOSType` 自定义设置登录设备的平台，确保该属性的值为 `1`，与 [声网控制台](https://console.shengwang.cn/overview) 的自定义设备平台的值相同。
 
 :::tip
 登录成功后才会将该设置发送到服务器。
 :::
 
 ```typescript
-// customOSType: 自定义设备类型。取值范围 [1,100]。
+// customOSType: 自定义设备平台，取值为 1。
 ChatClient.getInstance()
   .init(
     ChatOptions.withAppId({

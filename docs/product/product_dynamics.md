@@ -1,3 +1,11 @@
+---
+title: 产品动态
+show_mcp_server: false
+show_server_search: false
+show_callback_route: false
+show_server_callback_route: false
+---
+
 # 产品动态
 
 ## 2026-08
@@ -6,18 +14,20 @@
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
-| Android/iOS SDK 5.0.0 开发版发布   | - 提供统一的数据同步配置和状态回调。应用可 [配置登录后自动同步会话](/document/android/initialization.html#设置登录后自动同步数据)、[好友](/document/android/user_relationship.html#登录后自动同步好友列表)和 [已加入群组](/document/android/group_manage.html#获取当前用户加入的群组列表) 数据，并在本地数据库打开后提前读取本地数据。<br/> - [群组配置](/document/android/group_manage.html#创建群组) 拆分为多个独立属性，并支持创建群组后按需更新指定配置。<br/> - 原有的单条消息回执、会话回执和全局回执开关已调整为批量消息回执和未读数清理接口，覆盖单聊和群聊场景。 <br/> - 支持 [批量删除会话](/document/android/conversation_delete.html#批量删除本地会话) 和 [会话展示信息](/document/android/conversation_list.html#获取会话名称和头像) 等常用管理能力。<br/> - 移除密码登录，不再支持自动登录。 <br/> - 移除客户端注册、公开群列表、聊天室创建和销毁、消息统计等低频 API。 <br/> - | 2026-8-15     | - [Android SDK 5.0.0 更新日志](/document/android/releasenote.html#v5-0-0-dev) <br/> - [iOS SDK 5.0.0 更新日志](/document/ios/releasenote.html#v5-0-0-dev)  |
+| Android/iOS SDK 5.0.0 开发版发布   | - 提供统一的数据同步配置和状态回调。应用可 [配置登录后自动同步会话](/document/android/initialization.html#设置登录后自动同步数据)、[好友](/document/android/user_relationship.html#登录后自动同步好友列表)和 [已加入群组](/document/android/group_manage.html#获取当前用户加入的群组列表) 数据，并在本地数据库打开后提前读取本地数据。<br/> - [群组配置](/document/android/group_manage.html#创建群组) 拆分为多个独立属性，并支持创建群组后按需更新指定配置。<br/> - 原有的单条消息回执、会话回执和全局回执开关已调整为批量消息回执和未读数清理接口，覆盖单聊和群聊场景。 <br/> - 支持 [批量删除会话](/document/android/conversation_delete.html#批量删除本地会话) 和 [会话展示信息](/document/android/conversation_list.html#获取会话名称和头像) 等常用管理能力。<br/> - 移除密码登录，不再支持自动登录。 <br/> - 移除客户端注册、公开群列表、聊天室创建和销毁、消息统计等低频 API。 <br/> - | 2026-8-15     | - [Android SDK 5.0.0 更新日志](/document/android/releasenote.html#v5-0-0-dev-2026-8-12) <br/> - [iOS SDK 5.0.0 更新日志](/document/ios/releasenote.html#v5-0-0-dev-2026-8-12)  |
 
 #### IM Web SDK v5.0.0 发版
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
-| Web/小程序 SDK 5.0.0 开发版发布   | 新增 `ChatClient` 统一入口，负责 [SDK 初始化](/document/web/initialization.html)、[登录登出](/document/web/login.html)、[连接生命周期](/document/web/connection.html)、事件分发和 Manager 注册。<br/> - 支持模块化 Manager 能力拆分。  <br/> - 支持类型化 [消息创建](/document/web/message_send.html) 接口。 <br/> - 支持消息扩展能力，包括 [消息撤回](/document/web/message_recall.html)、[消息编辑](/document/web/message_modify.html)、[消息置顶](/document/web/message_pin.html)、[引用消息](/document/web/message_quote.html)、[Reaction](/document/web/reaction.html)、[历史消息拉取](/document/web/message_retrieve.html)、[服务端消息搜索](/value-added/search/message_search_web.html)、[消息翻译](/value-added/translation/message_translation_web.html)、[合并消息解析](/document/web/message_receive.html#接收合并消息) 和 [流式消息接收](/document/web/message_stream_receive.html)。<br/> - 支持统一的 [消息已读回执](/document/web/message_receipt.html#单聊消息已读回执) 能力。<br/> - 支持 [会话列表本地缓存与自动同步](/document/web/conversation_list.html)。 <br/> - 完善会话管理：支持 [会话置顶](/document/web/conversation_pin.html)、[会话标记](/document/web/conversation_mark.html)、[会话删除](/document/web/conversation_delete.html) 和 [会话未读数清零](/document/web/conversation_unread.html) 能力。 <br/> - 支持 [用户属性订阅](/document/web/userprofile.html#订阅非好友用户的属性变更) 和 [用户信息自动管理](/document/web/userinfo_provider.html) <br/> - 多场景能力统一：支持 [群组](/document/web/group_manage.html)、[聊天室](/document/web/room_manage.html)、[消息话题](/document/web/thread.html)、[在线状态](/document/web/presence.html) 和 [推送通知](/document/web/push/push_overview.html) 相关能力。<br/> - 支持跨平台运行时适配层：可在 Web、微信小程序、uni-app、React Native 和 Electron 等环境中适配请求、上传、WebSocket 和本地存储等基础能力。<br/> - 移除密码 [登录](/document/web/login.html) 。| 2026-8-15    | - [Web/小程序 SDK 5.0.0 更新日志](/document/web/releasenote.html#v5-0-0-dev)   |
+| Web/小程序 SDK 5.0.0 开发版发布   | 新增 `ChatClient` 统一入口，负责 [SDK 初始化](/document/web/initialization.html)、[登录登出](/document/web/login.html)、[连接生命周期](/document/web/connection.html)、事件分发和 Manager 注册。<br/> - 支持模块化 Manager 能力拆分。  <br/> - 支持类型化 [消息创建](/document/web/message_send.html) 接口。 <br/> - 支持消息扩展能力，包括 [消息撤回](/document/web/message_recall.html)、[消息编辑](/document/web/message_modify.html)、[消息置顶](/document/web/message_pin.html)、[引用消息](/document/web/message_quote.html)、[Reaction](/document/web/reaction.html)、[历史消息拉取](/document/web/message_retrieve.html)、[服务端消息搜索](/value-added/search/message_search_web.html)、[消息翻译](/value-added/translation/message_translation_web.html)、[合并消息解析](/document/web/message_receive.html#接收合并消息) 和 [流式消息接收](/document/web/message_stream_receive.html)。<br/> - 支持统一的 [消息已读回执](/document/web/message_receipt.html#单聊消息已读回执) 能力。<br/> - 支持 [会话列表本地缓存与自动同步](/document/web/conversation_list.html)。 <br/> - 完善会话管理：支持 [会话置顶](/document/web/conversation_pin.html)、[会话标记](/document/web/conversation_mark.html)、[会话删除](/document/web/conversation_delete.html) 和 [会话未读数清零](/document/web/conversation_unread.html) 能力。 <br/> - 支持 [用户属性订阅](/document/web/userprofile.html#订阅非好友用户的属性变更) 和 [用户信息自动管理](/document/web/userinfo_provider.html) <br/> - 多场景能力统一：支持 [群组](/document/web/group_manage.html)、[聊天室](/document/web/room_manage.html)、[消息话题](/document/web/thread.html)、[在线状态](/document/web/presence.html) 和 [推送通知](/document/web/push/push_overview.html) 相关能力。<br/> - 支持跨平台运行时适配层：可在 Web、微信小程序、uni-app、React Native 和 Electron 等环境中适配请求、上传、WebSocket 和本地存储等基础能力。<br/> - 移除密码 [登录](/document/web/login.html) 。| 2026-8-15    | - [Web/小程序 SDK 5.0.0 更新日志](/document/web/releasenote.html#v5-0-0-dev-2026-8-12)   |
+
+<HideSection :show="$frontmatter.show_server_search">
 
 ## 2026-07
 
 :::tip
-目前，服务端消息搜索仅面向国内 2 区开放。
+目前，服务端消息搜索仅面向中国区开放。
 :::
 
 #### IM Android/iOS SDK v4.24.0 发版
@@ -39,14 +49,18 @@
 
 消息搜索为增值服务，要使用该功能，需要在环信控制台开通，详见 [开通说明](/product/console/purchase_value_added.html#消息搜索)。开通后，系统会为你的应用创建搜索索引资源并开始同步消息数据。
 
-目前，仅国内二区集群支持该功能。
+目前，仅中国区集群支持该功能。
 
 **关于扩展字段搜索**： 开通消息搜索服务后，消息扩展字段（`ext`）搜索默认不开启。如需使用该功能，可在开通时一并说明，或后续联系商务单独开通。
 
+</HideSection>
+
 ## 2026-06
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 :::tip
-目前，[发消息时设置回调路由功能](/document/android/message_send.html#发消息时设置回调路由) 仅面向国内 1 区和国内 2 区开放。
+目前，[发消息时设置回调路由功能](/document/android/message_send.html#发消息时设置回调路由) 仅面向中国区开放。
 :::
 
 #### IM HarmonyOS SDK v1.13.0 发版
@@ -62,6 +76,8 @@
 | Android/iOS SDK 4.23.0 开发版发布   | - 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](/document/android/message_send.html#发消息时设置回调路由)。<br/> - 新增 [登录失败相关的连接超时错误码](/document/android/error.html)。 | 2026-6-18     | - [Android SDK 4.23.0 更新日志](/document/android/releasenote.html#v4-23-0-dev-2026-6-10-开发版) <br/> - [iOS SDK 4.23.0 更新日志](/document/ios/releasenote.html#v4-23-0-dev-2026-6-10-开发版) <br/>       |
 | Web/小程序 SDK 4.23.0 开发版发布   | 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](/document/android/message_send.html#发消息时设置回调路由)。  | 2026-6-18    | - [Web SDK 4.23.0 更新日志](/document/web/releasenote.html#v4-23-0-dev-2026-6-10-开发版)<br/> - [小程序 SDK 4.23.0 更新日志](/document/applet/releasenote.html#v4-23-0-dev-2026-6-10-开发版) |
 
+</HideSection>
+
 #### IM 客户端 SDK v4.22.0 发版
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
@@ -69,23 +85,15 @@
 | Android/iOS SDK 4.22.0 开发版发布   | - 图片消息分层资源管理，[发送方发消息时可选择上传原图或大图](/document/android/message_send.html#发送图片消息)，[接收方可下载原图、大图和缩略图](/document/android/message_send.html#发送图片消息)。<br/> - [支持登录成功后自动同步好友列表及好友信息](/document/android/user_relationship.html#开启自动同步) <br/> - 支持 [订阅非好友用户的属性变更功能](/document/android/userprofile.html#订阅非好友用户的属性变更)。<br/> - 新增同步数据 WebSocket 服务地址和端口配置接口。 | 2026-6-17     | - [Android SDK 4.22.0 更新日志](/document/android/releasenote.html#v4-22-0-dev-2026-6-5-开发版) <br/> - [iOS SDK 4.22.0 更新日志](/document/ios/releasenote.html#v4-22-0-dev-2026-6-5-开发版) <br/>       |
 | Web/小程序 SDK 4.22.0 开发版发布   | 图片消息分层资源管理，[发送方发消息时可选择上传原图或大图](/document/web/message_send.html#发送图片消息)，[接收方可下载原图、大图和缩略图](/document/web/message_send.html#发送图片消息)。  | 2026-6-17     | - [Web SDK 4.22.0 更新日志](/document/web/releasenote.html#v4-22-0-dev-2026-6-5-开发版)<br/> - [小程序 SDK 4.22.0 更新日志](/document/applet/releasenote.html#v4-22-0-dev-2026-6-5-开发版) |
 
+<HideSection :show="$frontmatter.show_server_callback_route">
+
 #### 服务端支持发消息时设置回调路由
 
 服务端支持在单聊、群组聊天和聊天室中发消息时设置回调路由，使消息可按指定路由触发 [发送后回调](/document/server-side/callback_postsending.html)。
 
 调用发送消息接口时，只需在发消息时在请求体中传入 `env` 参数。单聊、群聊和聊天室的接口均支持该字段，使用方式完全一致，详见 [发送单聊消息时设置回调路由](/document/server-side/message_single.html#发消息时设置回调路由)。
 
-## 2026-05
-
-#### IM Server SDK 2.0 发版
-
-IM Server SDK 2.0 的 v1.0.18 于 2026 年 5 月 22 日发版。
-
-| 新增功能                     | 描述                                                    |
-| :--------------------------- | :----------------------------------------------------------- |
-| 批量移除聊天室成员功能             | 详见 [RoomApi](https://easemob.github.io/easemob-im-server-sdk/com/easemob/im/api/RoomApi.html)。 |
-
-更多详情，请参见 [V1.0.18 更新日志](/document/server-side/java_server_sdk_2.0.html#v1-0-18-2026-05-22)。
+</HideSection>
 
 ## 2026-04
 
@@ -96,21 +104,9 @@ IM Server SDK 2.0 的 v1.0.18 于 2026 年 5 月 22 日发版。
 | Android/iOS/Web/小程序 SDK 4.21.0 开发版发布   | [支持语言转文字](/value-added/stt/voice_to_text_android.html)。  | 2026-4-28     | - [Android SDK 4.21.0 更新日志](/document/android/releasenote.html#v4-21-0-dev-2026-4-28-开发版) <br/> - [iOS SDK 4.21.0 更新日志](/document/ios/releasenote.html#v4-21-0-dev-2026-4-28-开发版) <br/> - [Web SDK 4.21.0 更新日志](/document/web/releasenote.html#v4-21-0-dev-2026-4-28-开发版)<br/> - [小程序 SDK 4.21.0 更新日志](/document/applet/releasenote.html#v4-21-0-dev-2026-4-28-开发版)      |
 | React Native SDK 1.15.0 开发版发布   | [支持接收服务端发送的流式消息](/document/harmonyos/message_stream_receive.html)。  | 2026-4-22     | [React Native 1.15.0 更新日志](/document/react-native/releasenote.html#v1-15-0-2026-04-22)  |
 
-#### IM Server SDK 2.0 发版
-
-IM Server SDK 2.0 的 v1.0.17 于 2026 年 4 月 3 日发版。
-
-本次版本新增以下功能：
-
-| 新增功能                     | 描述                                                    |
-| :--------------------------- | :----------------------------------------------------------- |
-| 新增校验好友功能             | - `userContactCheck`：该 API 校验指定用户是否为好友关系<br/> - 详见 [ContactApi.userContactCheck](https://easemob.github.io/easemob-im-server-sdk/com/easemob/im/api/ContactApi.html#userContactCheck(com.easemob.im.api.model.EMUserContactCheck)) |
-| 撤回消息增加扩展参数         | - `recallMessageExtensionInfo`：该参数指定撤回消息时传入扩展信息<br/> - 详见 [EMRecallMessage](https://easemob.github.io/easemob-im-server-sdk/com/easemob/im/api/model/EMRecallMessage.html) |
-| 修改聊天室增加所有者变更参数 | - `newowner`：该参数为修改聊天室接口新增，用于变更聊天室所有者。<br/> - 详见：[EMModifyRoom](https://easemob.github.io/easemob-im-server-sdk/com/easemob/im/api/model/EMModifyRoom.html) |
-
-更多详情，请参见 [V1.0.17 更新日志](/document/server-side/java_server_sdk_2.0.html#v1-0-17-2026-04-03)。
-
 ## 2026-03
+
+<HideSection :show="$frontmatter.show_mcp_server">
 
 #### 环信 MCP Server
 
@@ -136,6 +132,8 @@ IM Server SDK 2.0 的 v1.0.17 于 2026 年 4 月 3 日发版。
 - [单群聊 UIKit](/uikit/chatuikit/android/easemob_mcp_server.html)
 - [CallKit](/callkit/android/easemob_mcp_server.html)
 - [聊天室 UIKit](/uikit/chatroomuikit/android/easemob_mcp_server.html)
+
+</HideSection>
 
 #### SDK 发版
 
@@ -256,7 +254,7 @@ IM Server SDK 2.0 的 v1.0.17 于 2026 年 4 月 3 日发版。
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
 | Android SDK 4.18.0 开发版发布   | 底层支持安全 DNS 解析 DoH，提高连通性。<br/> - 支持私有部署时设置 IPv6 格式的 REST 地址。  | 2025-10-31      | [Android SDK 4.18.0 更新日志](/document/android/releasenote.html#v4-18-0-dev-2025-10-31-开发版)         |
-| Unity/Windows SDK 1.3.3 发版   | 适配 Android 15 的 16 KB 页面大小。  | 2025-10-31      | [Unity/Windows 1.3.3 更新日志](/document/unity/releasenote.html#版本-1-3-3-2025-10-31)         |
+| Unity SDK 1.3.3 发版   | 适配 Android 15 的 16 KB 页面大小。  | 2025-10-31      | [Unity 1.3.3 更新日志](/document/unity/releasenote.html#版本-1-3-3-2025-10-31)         |
 
 #### UIKit 发版
 
@@ -310,20 +308,6 @@ IM Server SDK 2.0 的 v1.0.17 于 2026 年 4 月 3 日发版。
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
 | 消息翻译 RESTful API   | 消息翻译支持以下三个 RESTful API：<br/> - 翻译消息内容 <br/> - 获取翻译语言列表 <br/> - 检测文本的源语言 | 2025-7-2       | <br/> - [翻译消息内容](/document/server-side/message_translation_text.html) <br/> - [获取翻译语言列表](/document/server-side/message_translation_language_list.html) <br/> - [检测文本的源语言](/document/server-side/message_translation_detect.html) |
-
-#### Server SDK 2.0 发版
-
-IM Server SDK 2.0 的 v1.0.15 发版。
-
-为帮助你在高并发请求场景下优化性能，`ApiClient` 新增以下两个参数，适用于 Server SDK 使用过程中出现请求延迟较大时的调优需求。
-
-| 新增 API                          | 描述                                                         |
-| :-------------------------------- | :----------------------------------------------------------- |
-| `setDispatcherMaxRequests`        | 设置整个 `OkHttpClient` 实例允许同时处理的最大请求数（包含正在执行与排队中的请求）。详见 [API 介绍](https://easemob.github.io/easemob-im-server-sdk/com/easemob/im/ApiClient.Builder.html#setDispatcherMaxRequests(int))。 |
-| `setDispatcherMaxRequestsPerHost` | 设置每个主机（host）允许同时处理的最大请求数。详见 [API 介绍](https://easemob.github.io/easemob-im-server-sdk/com/easemob/im/ApiClient.Builder.html#setDispatcherMaxRequestsPerHost(int))。 |
-
-更多详情，请参见 [V1.0.15 更新日志](/document/server-side/java_server_sdk_2.0.html#v1-0-15-2025-07-01)。
-
 
 #### SDK 发版
 
@@ -394,13 +378,13 @@ IM Server SDK 2.0 的 v1.0.15 发版。
 
 1. 注册用户时用户 ID 建议统一使用小写字母
 
-为了更好地实现服务端与 SDK 的兼容，调用 [RESTful API](/document/server-side/account_register_authorized_single.html)和客户端 API 以及 [在环信控制台创建用户](/product/console/operation_user.html#创建用户)时，建议统一使用小写字母。目前用户 ID 支持以下字符集：
+为了更好地实现服务端与 SDK 的兼容，调用 [RESTful API](/document/server-side/account_register_authorized_single.html)和客户端 API 以及在 [声网控制台](https://console.shengwang.cn/overview) 创建用户时，建议统一使用小写字母。目前用户 ID 支持以下字符集：
 
 - 26 个小写英文字母 a-z；
 - 10 个数字 0-9；
 - “_”, “-”, “.”。
 
-2. 新增发送后回调事件
+1. 新增发送后回调事件
 
 因解散群组或聊天室导致的用户退出，IM 服务器向你的 App Server 发送的回调请求。详情请参见 [成员离开事件](/document/server-side/callback_group_room_leave.html#因解散群组-聊天室导致的用户退出) 。
 
@@ -410,7 +394,7 @@ IM Server SDK 2.0 的 v1.0.15 发版。
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
-| SDK 4.12.0 开发版发布   | **新增特性**：<br/> - 移动端/Web/小程序/Windows/跨平台：用户加入聊天室可获取的信息新增聊天室当前人数、聊天室创建时间戳、当前用户是否在聊天室白名单中以及当前用户被禁言截止时间戳。<br/> - HarmonyOS [新增自定义设备的名称](/document/harmonyos/multi_device.html#设置登录设备的名称)：添加该功能后，在多设备场景下，若有设备被踢下线，被踢设备可知晓被哪个设备挤下线。 <br/> - HarmonyOS [新增自定义设备的平台](/document/harmonyos/multi_device.html#设置登录设备的平台)：例如，将手机和平板电脑设置为两个单独的平台，方便用户精细化控制同一平台的登录设备数量及平台间互踢等行为。 <br/> - HarmonyOS [新增两个错误码](/document/harmonyos/error.html)：`ChatError#GROUP_USER_IN_BLOCKLIST`（613）：该用户在群组黑名单中。群组黑名单中的用户进行某些操作时，例如，加入群组，会提示该错误。`ChatError#CHATROOM_USER_IN_BLOCKLIST`（707）：该用户在聊天室黑名单中。聊天室黑名单中的用户进行某些操作时，例如，加入聊天室，会提示该错误。 <br/> - HarmonyOS 新增拉取服务器漫游消息时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系商务经理开通。<br/> **优化：** <br/> - HarmonyOS 删除服务端会话时会同时删除本地会话。 |  2025-01-11    | <br/> - [Android 4.12.0 更新日志](/document/android/releasenote.html#v4-12-0-2025-1-10)<br/> - [iOS 4.12.0 更新日志](/document/ios/releasenote.html#v4-12-0-2025-1-10)<br/> - [Web 4.12.0 更新日志](/document/web/releasenote.html#v4-12-0-2025-1-10) <br/> - [小程序 4.12.0 更新日志](/document/applet/releasenote.html#v4-12-0-2025-1-10) <br/> - [鸿蒙 1.5.0 更新日志](/document/harmonyos/releasenote.html#v1-5-0-dev-2025-1-10-开发版) <br/> - [Flutter 4.12.0 更新日志](/document/flutter/releasenote.html#v4-12-0-2025-1-17) <br/> - [React Native 1.8.0 更新日志](/document/react-native/releasenote.html#v1-8-0-2025-1-17)<br/> - [Unit 1.3.2 更新日志](/document/unity/releasenote.html#v1-3-2-2025-1-17)<br/> - [Windows 1.3.2 更新日志](/document/windows/releasenote.html#v1-3-2-2025-1-17)|
+| SDK 4.12.0 开发版发布   | **新增特性**：<br/> - 移动端/Web/小程序/跨平台：用户加入聊天室可获取的信息新增聊天室当前人数、聊天室创建时间戳、当前用户是否在聊天室白名单中以及当前用户被禁言截止时间戳。<br/> - HarmonyOS [新增自定义设备的名称](/document/harmonyos/multi_device.html#设置登录设备的名称)：添加该功能后，在多设备场景下，若有设备被踢下线，被踢设备可知晓被哪个设备挤下线。 <br/> - HarmonyOS [新增自定义设备的平台](/document/harmonyos/multi_device.html#设置登录设备的平台)：例如，将手机和平板电脑设置为两个单独的平台，方便用户精细化控制同一平台的登录设备数量及平台间互踢等行为。 <br/> - HarmonyOS [新增两个错误码](/document/harmonyos/error.html)：`ChatError#GROUP_USER_IN_BLOCKLIST`（613）：该用户在群组黑名单中。群组黑名单中的用户进行某些操作时，例如，加入群组，会提示该错误。`ChatError#CHATROOM_USER_IN_BLOCKLIST`（707）：该用户在聊天室黑名单中。聊天室黑名单中的用户进行某些操作时，例如，加入聊天室，会提示该错误。 <br/> - HarmonyOS 新增拉取服务器漫游消息时会读取服务端的消息已读和送达状态。该功能只适用于单聊消息，默认关闭，如果需要，请联系商务经理开通。<br/> **优化：** <br/> - HarmonyOS 删除服务端会话时会同时删除本地会话。 |  2025-01-11    | <br/> - [Android 4.12.0 更新日志](/document/android/releasenote.html#v4-12-0-2025-1-10)<br/> - [iOS 4.12.0 更新日志](/document/ios/releasenote.html#v4-12-0-2025-1-10)<br/> - [Web 4.12.0 更新日志](/document/web/releasenote.html#v4-12-0-2025-1-10) <br/> - [小程序 4.12.0 更新日志](/document/applet/releasenote.html#v4-12-0-2025-1-10) <br/> - [鸿蒙 1.5.0 更新日志](/document/harmonyos/releasenote.html#v1-5-0-dev-2025-1-10-开发版) <br/> - [Flutter 4.12.0 更新日志](/document/flutter/releasenote.html#v4-12-0-2025-1-17) <br/> - [React Native 1.8.0 更新日志](/document/react-native/releasenote.html#v1-8-0-2025-1-17)<br/> - [Unit 1.3.2 更新日志](/document/unity/releasenote.html#v1-3-2-2025-1-17)|
 
 #### UIKit 发版
 
@@ -463,18 +447,18 @@ IM Server SDK 2.0 的 v1.0.15 发版。
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
-| SDK 4.6.0 开发版发布  | **新增特性**：<br/> - 客户端[消息撤回时支持携带自定义信息](/document/android/message_recall.html#实现方法)。<br/> - 客户端支持离线期间撤回的消息通知给接收方。<br/> - 移动端支持[自定义筛选获取本地会话列表](/document/android/conversation_list.html#获取本地所有或筛选的会话)。<br/> - 移动端支持[清除内存中的会话](/document/android/conversation_list.html#清除内存中的会话)，并举例说明如何[降低会话占用内存](/document/android/conversation_list.html#降低会话占用内存的实例)。<br/> - Android 端添加绑定推送 token 成功与否的回调。<br/> - Web/小程序端增加接口支持[获取当前用户加入和创建的聊天室](/document/web/room_manage.html#获取当前用户加入的聊天室列表)。<br/> - Web/小程序 端支持 [logger 日志不显示在控制台](/document/web/log.html#输出信息到日志文件)。 <br/>**重大变更** <br/> 1. **Android**：<br/> 从 V4.6.0 版本开始会启用 Kotlin 语言编写的新的 EaseIM App 项目与 EaseIMKIt 项目，老版本的项目将逐渐不再维护，请参考：<br/> - [EaseIMKIt 文档](https://doc.easemob.com/uikit/chatuikit/android/chatuikit_overview.html) <br/> - EaseIM App 项目：[Github](https://github.com/easemob/easemob-demo-android) 或 [Gitee 地址](https://gitee.com/easemob-code/easemob-demo-android)。<br/> 2. **iOS**：<br/>从 V4.6.0 版本开始会启用 Swift 语言编写的新的 `EaseChatUIKit` 与 `EaseChatDemo`，老版本 Demo 和 UIKit 逐渐不再维护，请参考：<br/> - [UIKit 文档](https://doc.easemob.com/uikit/chatuikit/ios/chatuikit_overview.html) <br/> - Demo 源码：[GitHub](https://github.com/easemob/chat-ios/tree/SwiftDemo) 或 [Gitee 地址](https://gitee.com/easemob-code/easemob-demo-ios/tree/SwiftDemo) | 2024-04-30   | <br/> - [Android 4.6.0 更新日志](/document/android/releasenote.html#v4-6-0-dev-2024-04-30-开发版)<br/> - [iOS 4.6.0 更新日志](/document/ios/releasenote.html#v4-6-0-dev-2024-04-30-开发版)<br/> - [Web 4.7.0 更新日志](/document/web/releasenote.html#v4-7-0-dev-2024-04-30-开发版)<br/> - [小程序 4.7.0 更新日志](/document/applet/releasenote.html#v4-7-0-dev-2024-04-30-开发版)。  |
+| SDK 4.6.0 开发版发布  | **新增特性**：<br/> - 客户端[消息撤回时支持携带自定义信息](/document/android/message_recall.html#实现方法)。<br/> - 客户端支持离线期间撤回的消息通知给接收方。<br/> - 移动端支持[自定义筛选获取本地会话列表](/document/android/conversation_list.html#获取本地所有或筛选的会话)。<br/> - 移动端支持[清除内存中的会话](/document/android/conversation_list.html#清除内存中的会话)，并举例说明如何[降低会话占用内存](/document/android/conversation_list.html#降低会话占用内存的实例)。<br/> - Android 端添加绑定推送 token 成功与否的回调。<br/> - Web/小程序端增加接口支持[获取当前用户加入和创建的聊天室](/document/web/room_manage.html#获取当前用户加入的聊天室列表)。<br/> - Web/小程序 端支持 [logger 日志不显示在控制台](/document/web/log.html#输出信息到日志文件)。 <br/>**重大变更** <br/> 1. **Android**：<br/> 从 V4.6.0 版本开始会启用 Kotlin 语言编写的新的 EaseIM App 项目与 EaseIMKIt 项目，老版本的项目将逐渐不再维护，请参考：<br/> - [EaseIMKIt 文档](/uikit/chatuikit/android/chatuikit_overview.html) <br/> - EaseIM App 项目：[Github](https://github.com/easemob/easemob-demo-android) 或 [Gitee 地址](https://gitee.com/easemob-code/easemob-demo-android)。<br/> 2. **iOS**：<br/>从 V4.6.0 版本开始会启用 Swift 语言编写的新的 `EaseChatUIKit` 与 `EaseChatDemo`，老版本 Demo 和 UIKit 逐渐不再维护，请参考：<br/> - [UIKit 文档](/uikit/chatuikit/ios/chatuikit_overview.html) <br/> - Demo 源码：[GitHub](https://github.com/easemob/chat-ios/tree/SwiftDemo) 或 [Gitee 地址](https://gitee.com/easemob-code/easemob-demo-ios/tree/SwiftDemo) | 2024-04-30   | <br/> - [Android 4.6.0 更新日志](/document/android/releasenote.html#v4-6-0-dev-2024-04-30-开发版)<br/> - [iOS 4.6.0 更新日志](/document/ios/releasenote.html#v4-6-0-dev-2024-04-30-开发版)<br/> - [Web 4.7.0 更新日志](/document/web/releasenote.html#v4-7-0-dev-2024-04-30-开发版)<br/> - [小程序 4.7.0 更新日志](/document/applet/releasenote.html#v4-7-0-dev-2024-04-30-开发版)。  |
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
-| SDK 4.5.0 开发版发布 | **新增特性**：<br/> - 客户端可[置顶消息](/document/android/message_pin.html)，方便会话中的所有用户快速查看重要消息。<br/> - 客户端的消息编辑回调中可返回[通过 RESTful API 编辑的自定义消息](/document/server-side/message_modify.html)。<br/> - 客户端支持[获取聊天室漫游消息](/document/android/message_retrieve.html#从服务器获取指定会话的消息)。<br/> - Android 端 SDK 集成支持[动态加载 .so 库文件](/document/android/quickstart.html#方法三-动态加载-so-库文件)，减少应用安装包的大小。<br/> - iOS 端可[将所有会话的未读消息设为已读](/document/ios/conversation_unread.html#将所有会话的未读消息数清零)，将所有会话的未读消息数清零。<br/>**优化**：<br/> - 优化 token 登录时的错误提示信息，使错误提示更准确。<br/> - 移动端优化[单条转发](/document/android/message_forward.html)功能，附件消息无需重新上传附件即可转发。 | 2024-04-03 | <br/> - [Android 4.5.0 更新日志](/document/android/releasenote.html#v4-5-0-dev-2024-04-03-开发版)<br/> - [iOS 4.5.0 更新日志](/document/ios/releasenote.html#v4-5-0-dev-2024-04-03-开发版)<br/> - [Web 4.6.0 更新日志](/document/web/releasenote.html#v4-6-0-dev-2024-04-02-开发版)<br/> - [小程序 4.6.0 更新日志](/document/applet/releasenote.html#v4-6-0-dev-2024-04-02-开发版)<br/> - [Flutter 4.5.0 更新日志](/document/flutter/releasenote.html#v4-5-0-2024-5-7)。<br/> - [React Native 1.4.0 更新日志](/document/react-native/releasenote.html#v1-4-0-2024-5-7)<br/> - [Unity 1.3.0 更新日志](/document/unity/releasenote.html#v1-3-0-dev-2024-5-7-开发版)<br/> - [Windows 1.3.0 更新日志](/document/windows/releasenote.html#v1-3-0-dev-2024-5-7-开发版)|
+| SDK 4.5.0 开发版发布 | **新增特性**：<br/> - 客户端可[置顶消息](/document/android/message_pin.html)，方便会话中的所有用户快速查看重要消息。<br/> - 客户端的消息编辑回调中可返回[通过 RESTful API 编辑的自定义消息](/document/server-side/message_modify.html)。<br/> - 客户端支持[获取聊天室漫游消息](/document/android/message_retrieve.html#从服务器获取指定会话的消息)。<br/> - Android 端 SDK 集成支持[动态加载 .so 库文件](/document/android/quickstart.html#方法三-动态加载-so-库文件)，减少应用安装包的大小。<br/> - iOS 端可[将所有会话的未读消息设为已读](/document/ios/conversation_unread.html#将所有会话的未读消息数清零)，将所有会话的未读消息数清零。<br/>**优化**：<br/> - 优化 token 登录时的错误提示信息，使错误提示更准确。<br/> - 移动端优化[单条转发](/document/android/message_forward.html)功能，附件消息无需重新上传附件即可转发。 | 2024-04-03 | <br/> - [Android 4.5.0 更新日志](/document/android/releasenote.html#v4-5-0-dev-2024-04-03-开发版)<br/> - [iOS 4.5.0 更新日志](/document/ios/releasenote.html#v4-5-0-dev-2024-04-03-开发版)<br/> - [Web 4.6.0 更新日志](/document/web/releasenote.html#v4-6-0-dev-2024-04-02-开发版)<br/> - [小程序 4.6.0 更新日志](/document/applet/releasenote.html#v4-6-0-dev-2024-04-02-开发版)<br/> - [Flutter 4.5.0 更新日志](/document/flutter/releasenote.html#v4-5-0-2024-5-7)。<br/> - [React Native 1.4.0 更新日志](/document/react-native/releasenote.html#v1-4-0-2024-5-7)<br/> - [Unity 1.3.0 更新日志](/document/unity/releasenote.html#v1-3-0-dev-2024-5-7-开发版)|
 | REST API |**新增 API**： <br/> 1. [分页获取好友列表](/document/server-side/user_friend_list_paged.html)；<br/> 2. [单向清空漫游消息](/document/server-side/message_delete_roam_single_msgid.html)：[根据时间单向清空单聊会话的漫游消息](/document/server-side/message_delete_roam_single_time.html)；[根据时间单向清空群组或聊天室会话的漫游消息](/document/server-side/message_delete_roam_group_room_time.html)；[清空用户的所有漫游消息](/document/server-side/message_delete_roam_user.html)；<br/> 3. [修改文本或自定义消息](/document/server-side/message_modify.html)；<br/> 4. [转让聊天室](/document/server-side/chatroom_owner_transfer.html)；<br/> 5. [强制指定账号从单设备下线](/document/server-side/account_offline_device_single.html)。| 2024-04 | 关于接口的调用频率限制，详见 [API 调用频率限制](/document/server-side/limitationapi.html)。 |
 
 ## 2024-01
 
 | 动态名称   | 动态描述 | 发布时间       | 相关文档          |
 | :----- | :------- | :---------------- | :---------------- |
-| SDK 4.4.0 开发版发布  | **新增特性**：<br/> - 客户端可[清空聊天记录](/document/android/message_delete.html#清空聊天记录)：单个用户包含本地或服务端记录。<br/> - 客户端发送消息时如果被内容审核进行了内容替换，你可以通过[设置开关](/document/android/message_send.html#发送消息前的内容审核)决定发送方是否可以获取替换后的内容。<br/> - 移动端的[本地消息搜索可选择搜索范围](/document/android/message_search_local.html#根据搜索范围搜索当前会话中的消息)，如只搜索消息内容、只搜索消息扩展信息以及同时搜索消息内容以及扩展信息。<br/> - 移动端接收消息的回调支持通过[设置开关](/document/android/message_send.html#发送消息前的内容审核)设置是否返回发送成功的消息。<br/> - [Web 端支持向指定设备发消息](/document/web/multi_device.html#获取当前用户的其他登录设备的登录-id-列表)，例如，电脑端给手机端发消息，登录同一账号的多个设备均会收到消息。<br/> - Web 端聊天室和群组成员进出事件增加成员人数 `memberCount` 字段。<br/>**优化**：<br/> - 移动端群组全员禁言状态存储到本地数据库，下次登录时可以直接从本地获取到。<br/> - 移动端转发合并消息时导致的附件重复上传问题。|  2024-01-30    |  <br/> - [Android 4.4.0 更新日志](/document/android/releasenote.html#v4-4-0-dev-2024-01-30-开发版)<br/> - [iOS 4.4.0 更新日志](/document/ios/releasenote.html#v4-4-0-dev-2024-01-30-开发版)<br/> - [Web 4.5.0 更新日志](/document/web/releasenote.html#v4-5-0-dev-2024-01-30-开发版)<br/> - [小程序 4.5.0 更新日志](/document/applet/releasenote.html#v4-5-0-dev-2024-01-30-开发版)。  |
+| SDK 4.4.0 开发版发布  | **新增特性**：<br/> - 客户端可[清空聊天记录](/document/android/message_delete.html#清空聊天记录)：单个用户包含本地或服务端记录。<br/> - 移动端的[本地消息搜索可选择搜索范围](/document/android/message_search_local.html#根据搜索范围搜索当前会话中的消息)，如只搜索消息内容、只搜索消息扩展信息以及同时搜索消息内容以及扩展信息。<br/> - [Web 端支持向指定设备发消息](/document/web/multi_device.html#获取当前用户的其他登录设备的登录-id-列表)，例如，电脑端给手机端发消息，登录同一账号的多个设备均会收到消息。<br/> - Web 端聊天室和群组成员进出事件增加成员人数 `memberCount` 字段。<br/>**优化**：<br/> - 移动端群组全员禁言状态存储到本地数据库，下次登录时可以直接从本地获取到。<br/> - 移动端转发合并消息时导致的附件重复上传问题。|  2024-01-30    |  <br/> - [Android 4.4.0 更新日志](/document/android/releasenote.html#v4-4-0-dev-2024-01-30-开发版)<br/> - [iOS 4.4.0 更新日志](/document/ios/releasenote.html#v4-4-0-dev-2024-01-30-开发版)<br/> - [Web 4.5.0 更新日志](/document/web/releasenote.html#v4-5-0-dev-2024-01-30-开发版)<br/> - [小程序 4.5.0 更新日志](/document/applet/releasenote.html#v4-5-0-dev-2024-01-30-开发版)。  |
 
 ## 2023-12
 
@@ -488,5 +472,5 @@ IM Server SDK 2.0 的 v1.0.15 发版。
 | :----- | :------- | :---------------- | :---------------- |
 | SDK 4.2.0 开发版发布 | **新增特性**：<br/> - 客户端支持[好友备注功能](/document/android/releasenote.html)。<br/> - 客户端支持聊天室全局广播消息，可根据消息属性判断。<br/> - 移动端可以[从服务器获取当前用户已加入的群组数量](/document/android/group_manage.html#查询当前用户已加入的群组数量)。<br/> - 移动端在申请入群被拒绝时，返回的回调中增加了申请者和拒绝者。<br/> - 移动端在初始化时可配置获取会话列表时是否返回 [空会话](/document/android/conversation_overview.html#空会话)。<br/> **优化** <br/> - 客户端统一 Agora Token 和 EaseMob Token 登录方式，新增 EaseMob Token 即将过期及已过期的回调。<br/> - 移动端优化发消息时重试的逻辑。<br/> - 移动端优化数据库升级逻辑。| 2023-11-17  | <br/> - [Android 4.2.1 更新日志](/document/android/releasenote.html#v4-2-1-dev-2023-11-17)<br/> - [iOS 4.2.0 更新日志](/document/ios/releasenote.html#v4-2-0-dev-2023-11-13)<br/> - [Web 4.3.0 更新日志](/document/web/releasenote.html#v4-3-0-dev-2023-11-17)<br/> - [小程序 4.3.0 更新日志](/document/applet/releasenote.html#v4-3-0-dev-2023-11-17)。<br/> - [Flutter 4.2.0 更新日志](/document/flutter/releasenote.html#v4-2-0-2024-1-4)<br/> - [React Native 1.3.0 更新日志](/document/react-native/releasenote.html#v1-3-0-2024-1-4)  |
 | REST API    | 支持[通过 REST API 向 app 下的所有活跃聊天室发送全局广播消息](/document/server-side/broadcast_to_chatrooms.html) 。活跃聊天室指聊天室至少存在一个成员，而且至少发送过一条消息。| 2023-11-17  | 详见[发送聊天室广播消息](/document/server-side/broadcast_to_chatrooms.html)。  |
-| IM Demo   | 好友详情页面可添加和修改好友备注。 | 2023-11-17       | <br/> - [Android 4.2.1 Demo](https://www.easemob.com/download/demo) <br/> - [iOS 4.2.0 Demo](https://www.easemob.com/download/demo)        |
+| IM Demo   | 好友详情页面可添加和修改好友备注。 | 2023-11-17       | <br/> - Android 4.2.1 Demo <br/> - iOS 4.2.0 Demo        |
 

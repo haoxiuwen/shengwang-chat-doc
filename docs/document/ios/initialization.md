@@ -10,7 +10,7 @@
 
 ## 前提条件
 
-已 [注册即时通讯 IM 账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](/product/enable_im.html创建项目并开通)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
+已 [注册即时通讯 IM 账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](/product/enable_im.html#创建项目)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
 
 ## 初始化 SDK
 
@@ -29,7 +29,7 @@ if let error = EMClient.shared().initializeSDK(with: options) {
 
 `initializeSDK(with:)` 同步返回 `EMError?`：返回 `nil` 表示初始化成功；返回非空错误表示初始化失败。App ID 为空或格式不合法时，会返回参数错误。
 
-下表列出初始化时常用的 `EMOptions` 属性。`EMOptions` 的全部属性详见 [API 参考](https://doc.easemob.com/apidoc/ios/chat3.0/interface_e_m_options.html)。
+下表列出初始化时常用的 `EMOptions` 属性。
 
 | 属性 | 描述 |
 | :--- | :--- |

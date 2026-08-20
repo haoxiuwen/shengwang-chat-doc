@@ -10,7 +10,7 @@
 
 ## 前提条件
 
-已注册有效的即时通讯 IM 开发者账号并创建项目，获取项目的 App ID。详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 说明。
+已注册有效的即时通讯 IM 开发者账号并创建项目，获取项目的 App ID。详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/product/enable_im.html#_3-获取-app-id) 说明。
 
 ## 初始化 SDK
 
@@ -23,7 +23,7 @@ options.setAppId("Your appId");
 EMClient.getInstance().init(getApplicationContext(), options);
 ```
 
-下表列出初始化时常用的 `EMOptions` 方法。`EMOptions` 的全部方法详见 [API 参考](https://doc.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_options.html)。
+下表列出初始化时常用的 `EMOptions` 方法。
 
 | 方法名称 | 描述 |
 | :--- | :--- |

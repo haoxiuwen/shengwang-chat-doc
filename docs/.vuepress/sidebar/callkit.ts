@@ -11,8 +11,7 @@ const callKitPlatformList = getSubDirectories(CALL_DOC_PATH);
 const callKitSidebar = [
   { text: "入门指引", link: "beginner_guide.html" },
   { text: "使用 MCP 集成", link: "easemob_mcp_server.html" },
-  {
-    /*
+  {  /*
       text: 分组标题
       children: 分组导航列表  
         text: 显示的文本
@@ -23,14 +22,7 @@ const callKitSidebar = [
         collapsible: 子菜单是否允许展开/收起，true: 允许; false: 不允许。请参考「子菜单示例」
         children: 子菜单。请参考「子菜单示例」
     */
-    text: "产品介绍",
-    collapsible: true,
-    children: [
-      { text: "产品概述", link: "product_overview.html" },
-      { text: "开通服务", link: "product_activation.html" },
-      { text: "购买指南", link: "product_purchase.html" }
-    ]
-  },
+   text: "产品介绍", link: "product_overview.html" },
   { text: "跑通示例项目", link: "sample_runthrough.html" },
   { text: "快速开始", link: "quickstart.html" },
   { type: "separator" } as any,
@@ -53,12 +45,13 @@ const callKitSidebar = [
 function buildCallKitSidebar() {
   const result = {};
   callKitPlatformList.forEach((platform) => {
-    const key = `/callkit/${platform}/`;
-    result[key] = callKitSidebar
+    const sidebarItems = callKitSidebar
       .map((sidebar) =>
         handleSidebarItem(platform, sidebar, CALL_DOC_PATH, "callkit")
       )
       .filter((s) => s);
+    result[`/docs/callkit/${platform}/`] = sidebarItems;
+    result[`/callkit/${platform}/`] = sidebarItems;
   });
   return result;
 }
@@ -103,7 +96,7 @@ function handleSidebarItem(platform, sidebar, docPath, kitType) {
     }
   } else {
     if (linkExists(platform, sidebar.link, docPath)) {
-      const newLink = `/${kitType}/${platform}/${sidebar.link}`;
+      const newLink = `/docs/${kitType}/${platform}/${sidebar.link}`;
       return { ...sidebar, link: newLink };
     }
   }

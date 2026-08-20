@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 说明。
+有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/product/enable_im.html#_3-获取-app-id) 说明。
 
 ## SDK 初始化
 
@@ -29,6 +29,6 @@ const conn = new WebIM.connection({
 | `deviceId`           | String  | 否  | 设备 ID，为默认随机值。               |
 | `useOwnUploadFun`   | Bool  | 否   | 是否支持通过自己的路径将图片、文件上传到自己的服务器。<br/> -`true`：支持，需要指定路径；<br/> -（默认）`false`：关闭，通过消息服务器上传下载文件。 |
 | `autoReconnectNumMax` | Int  | 否 | 最大重连次数。      |
-| `apiUrl`              | String | 是       | 指定的 REST 服务器。在未开启 DNS 的情况下使用，一般适用于开发者要实现数据隔离、特别注重数据安全的场景。要获取该服务器地址，需在环信控制台的 **应用概览**页面的 **开发配置信息** 区域看域名配置。|
-| `url`                 | String | 是       | 指定的消息服务器。在未开启 DNS 的情况下使用，一般适用于开发者要实现数据隔离、特别注重数据安全的场景。要获取该服务器地址，需在环信控制台的 **应用概览**页面的 **开发配置信息** 区域看域名配置。  |
+| `apiUrl`              | String | 是       | 指定的 REST 服务器。在未开启 DNS 的情况下使用，一般适用于开发者要实现数据隔离、特别注重数据安全的场景。要获取该服务器地址，需在声网控制台的 **即时通讯 IM** > **功能配置** > **基础信息** 查看域名配置。|
+| `url`                 | String | 是       | 指定的消息服务器。在未开启 DNS 的情况下使用，一般适用于开发者要实现数据隔离、特别注重数据安全的场景。要获取该服务器地址，需在声网控制台的 **即时通讯 IM** > **功能配置** > **基础信息** 查看域名配置。  |
 

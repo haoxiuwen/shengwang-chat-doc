@@ -31,8 +31,8 @@
 ```objectivec
 EMUserInfo *userInfo = [[EMUserInfo alloc] init];
 userInfo.userId = [EMClient sharedClient].currentUsername;
-userInfo.nickname = @"easemob";
-userInfo.avatarUrl = @"https://www.easemob.com/avatar.png";
+userInfo.nickname = @"shengwang";
+userInfo.avatarUrl = @"https://www.shengwang.com/avatar.png";
 userInfo.birth = @"2000.10.10";
 userInfo.sign = @"hello world";
 userInfo.phone = @"13333333333";

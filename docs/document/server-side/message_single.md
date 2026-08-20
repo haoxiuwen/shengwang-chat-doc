@@ -1,3 +1,7 @@
+---
+show_callback_route: false
+---
+
 # 发送单聊消息
 
 ## 功能说明
@@ -9,7 +13,7 @@
 单聊场景下，各类型消息共用同一 RESTful API，不同消息类型的主要区别在于请求体 `body` 字段的结构。
 
 - 文本、位置、透传和自定义消息：直接构造消息体并调用发送接口。
-- 图片、语音、视频和文件消息：发送附件消息时，不能直接使用业务侧原始附件地址，需先调用 [文件上传](https://doc.easemob.com/document/server-side/message_upload_file.html) 接口上传附件，再使用上传后返回的附件地址及相关字段构造消息体。
+- 图片、语音、视频和文件消息：发送附件消息时，不能直接使用业务侧原始附件地址，需先调用 [文件上传](message_upload_file.html) 接口上传附件，再使用上传后返回的附件地址及相关字段构造消息体。
 - 与 [导入单聊消息](message_import_single.html) 不同，发送附件消息时，**不能直接使用业务侧原始文件地址**。
 
 ### 附件消息发送流程
@@ -20,7 +24,7 @@
 
 各步骤的说明如下：
 
-1. 先调用 [上传文件](message_upload_file.html) 接口，将图片、语音、视频或文件上传到环信文件服务。
+1. 先调用 [上传文件](message_upload_file.html) 接口，将图片、语音、视频或文件上传到 IM 文件服务。
 2. 从上传结果中获取发送附件消息所需的信息，例如文件地址、`file_uuid` 和 `share-secret`。
 3. 调用 [发送单聊消息](message_single.html) 接口，并在消息体中填入上传后的附件地址和相关字段。
 4. 若上传时将 `restrict-access` 设置为 `true`，则后续下载原件或缩略图时都需要携带上传返回的 `share-secret`；若未开启受限访问，则可直接下载。
@@ -31,7 +35,7 @@
 
 - 接口调用过程中，请求体和扩展字段的总长度不能超过 5 KB。消息的其他限制，详见 [消息限制说明](/product/limitation.html#消息大小)。
 - 该接口不校验传入的发送方和接收方用户 ID。即使传入的用户 ID 不存在，服务器也不会报错，仍会照常发送消息。
-- 该接口默认不会检查发送方和接收方的好友关系。若你在环信控制台开启了 [好友关系检查](/product/console/basic_user.html#好友关系检查)，该接口会检查双方的好友关系。
+- 该接口默认不会检查发送方和接收方的好友关系。若你联系声网商务开启了好友关系检查，该接口会检查双方的好友关系。
 - 该接口不会检查接收方是否在黑名单中，也不会检查发送方是否被禁言。
 
 ### 发送行为与相关说明
@@ -40,7 +44,6 @@
 - 通过 RESTful 接口发送的消息默认不写入会话列表。若需要将此类消息写入会话列表，需联系声网商务开通。
 - 调用该接口会触发发送后回调事件，详见 [回调事件文档](callback_message_send.html#发送单聊消息)。
 - 你可以通过消息通用可选参数设置是否将消息同步到发送方的所有在线设备、指定哪些用户在拉取漫游消息时无法获取该消息，以及仅向在线用户投递消息等。详见 [消息通用可选参数](#消息通用可选参数)。
-- [内容审核服务会关注消息 `body` 中指定字段的内容，不同类型的消息审核的字段不同](/value-added/moderation/moderation_mechanism.html)。若在这些字段中传入过多业务信息，可能影响审核效果。因此，建议避免在审核字段中承载业务信息，优先将业务信息放在扩展字段 `ext` 中。
 
 ## 调用频率上限
 
@@ -141,7 +144,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/users' \
 
 仅发送给在线用户，消息同步给发送方（设置 `sync_device` 为 true，`routetype` 为 `ROUTE_ONLINE`）。
 
-若仅发送给在线用户，默认不支持漫游存储。发送的消息默认不存储在环信消息服务器，用户无法在其他终端设备获取该消息。如需开通在线消息的漫游存储，需联系商务经理。
+若仅发送给在线用户，默认不支持漫游存储。发送的消息默认不存储在 IM 消息服务器，用户无法在其他终端设备获取该消息。如需开通在线消息的漫游存储，需联系商务经理。
 
 ```bash
 # 将 <YourAppToken> 替换为你在服务端生成的 App Token
@@ -326,7 +329,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/users' \
 
 ## 发送语音消息
 
-发送语音消息前，请先调用 [文件上传](message_upload_file.html) 接口上传语音文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始语音地址。
+发送语音消息前，请先调用 [文件上传](message_upload_file.html) 接口上传语音文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始语音地址。
 
 #### 请求 URL
 
@@ -414,7 +417,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/users' \
 
 ## 发送视频消息
 
-发送视频消息前，请先调用 [文件上传](message_upload_file.html) 接口上传视频文件。`body.url` 应为上传后返回的环信文件地址，而不是业务侧原始视频地址。
+发送视频消息前，请先调用 [文件上传](message_upload_file.html) 接口上传视频文件。`body.url` 应为上传后返回的 IM 文件地址，而不是业务侧原始视频地址。
 
 #### 请求 URL
 
@@ -907,6 +910,8 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/users' \
 
 ## 可选增强功能
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 ### 发消息时设置回调路由
 
 回调路由允许你在同一个 App ID 下，将不同消息按回调环境维度分别投递到不同的回调地址。发送消息时，你可以在消息中携带回调环境字段（如 `dev`、`test`、`prod`），IM 服务器收到消息后，根据该字段匹配控制台中配置的 [回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
@@ -933,7 +938,7 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/users' \
 
 **工作流程**
 
-1. 在控制台为发送前回调或发送后回调 [配置回调路由](/product/console/basic_webhook.html#配置消息回调规则)。
+1. 在控制台为发送前回调或发送后回调 [回调路由规则](/document/server-side/callback_presending.html#回调规则)。
 2. 客户端发送消息时，设置回调环境值。
 3. IM 服务器收到消息后，根据消息中的回调环境值匹配当前阶段的回调地址。
 4. 命中有效路由后，服务器将回调请求发送到对应地址。
@@ -976,3 +981,5 @@ curl -X POST -i 'https://XXXX/app-id/{app_id}/messages/users' \
 | 携带环境值但未命中有效路由           | **不触发回调**，控制台中的 `default` 兜底配置在此场景下 **不生效**。 |
 | 未携带环境值                         | 自动路由至 `default` 环境对应的回调地址。                    |
 | 同一消息需同时触发发送前与发送后回调 | 两个阶段必须使用 **相同的环境值**。例如，发送前配置 `test -> url1`，发送后配置 `test -> url2`，则消息中携带 `test` 即可同时生效于两阶段。 |
+
+</HideSection>

@@ -209,7 +209,6 @@
   - `ChatMultiDevicesEvent#CONVERSATION_UPDATE_MARK`：多设备场景下的会话标记事件。当前用户在一台登录设备上更新了会话标记，包括添加和移除会话标记，其他登录设备会收到该事件。
 - 新增[错误码 706](/document/android/error.html)，表示聊天室所有者不允许离开聊天室。若初始化时，`ChatOptions#isChatRoomOwnerLeaveAllowed` 参数设置为 `false`，聊天室所有者调用 `leaveChatRoom` 方法离开聊天室时会提示该错误。
 - 支持[聊天室漫游消息](message_retrieve.html#从服务器获取指定会话的消息)。
-- 新增 `ChatOptions#useReplacedMessageContents` 开关。开启后，发送消息时如果被内容审核进行了内容替换，发送方可以收到替换后的内容。
 - 新增[置顶消息](message_pin.html)功能。
   - 新增 `ChatManager#pinMessage` 方法，用于置顶消息。
   - 新增 `ChatManager#unpinMessage` 方法，用于取消置顶消息。
@@ -515,7 +514,7 @@
 
 具体集成请参考以下文档：
 
-- [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)
+- [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 
 - [即时通讯 IM React-Native 快速开始](quickstart.html)
 - [消息管理 React Native](message_overview.html)
 - [群组](group_overview.html)

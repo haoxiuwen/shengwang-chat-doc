@@ -2,7 +2,7 @@
 
 ## 概述
 
-本文面向 HBuilderX 4.x / 5.x 的 uni-app Vue 3 项目，介绍如何集成当前版本的环信 Web SDK，并构建 Android 和 iOS 原生应用。不同 HBuilderX 补丁版本提供的宿主 API 可能存在差异，最终应以目标版本和真机验证结果为准。
+本文面向 HBuilderX 4.x / 5.x 的 uni-app Vue 3 项目，介绍如何集成当前版本的 IM Web SDK，并构建 Android 和 iOS 原生应用。不同 HBuilderX 补丁版本提供的宿主 API 可能存在差异，最终应以目标版本和真机验证结果为准。
 
 当前 SDK 使用 `ChatClient.init()` 创建客户端，通过 Manager 注册消息、好友、群组等领域能力。
 
@@ -15,7 +15,7 @@ uni-app 原生 App 中，SDK 通过平台适配层调用 `uni.request`、`uni.co
 - 最新稳定版 HBuilderX；
 - DCloud 开发者账号；
 - [开发者账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)以及 [已经创建的项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)；
-- [项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)；
+- [项目的 App ID](/product/enable_im.html#_3-获取-app-id)；
 - 由业务服务端获取的用户 ID 和用户 Token；
 - 用于运行和调试应用的 Android 或 iOS 设备。
 
@@ -277,7 +277,7 @@ HBuilderX 支持云打包和离线打包两种方式。
 
 ## 参考
 
-- [环信 SDK 下载页面](https://www.easemob.com/download/im#uni-app)
+- [IM SDK 下载页面](https://im.shengwang.cn/)
 - [HBuilderX 官网](https://www.dcloud.io/hbuilderx.html)
 - [DCloud 开发者中心](https://dev.dcloud.net.cn/)
 - [uni-app 文档](https://uniapp.dcloud.net.cn/)

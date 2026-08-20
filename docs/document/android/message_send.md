@@ -1,10 +1,15 @@
+---
+title: 发送消息
+show_callback_route: false
+---
+
 # 发送消息
 
 ## 功能说明
 
 即时通讯 IM Android SDK 通过 `EMMessage` 创建消息，并通过 `EMChatManager` 发送消息。SDK 支持文本、图片、GIF、语音、视频、文件、位置、透传、自定义和合并消息，可用于单聊、群聊和聊天室。
 
-- 对于单聊，即时通讯 IM 默认支持陌生人之间发送消息，即无需添加好友即可聊天。若仅允许好友之间发送单聊消息，你需要 [开启好友关系检查](/product/console/basic_user.html#好友关系检查)。
+- 对于单聊，即时通讯 IM 默认支持陌生人之间发送消息，即无需添加好友即可聊天。若仅允许好友之间发送单聊消息，你需要联系声网商务开启好友关系检查。
 - 对于群组和聊天室，用户每次只能向所属的单个群组和聊天室发送消息。
 - 关于消息发送控制，详见 [单聊](/product/message_single_chat.html#单聊消息发送控制)、[群组聊天](/product/message_group.html#群组消息发送控制) 和 [聊天室](/product/message_chatroom.html#聊天室消息发送控制) 的 相关文档。
 
@@ -162,7 +167,7 @@ EMClient.getInstance()
 
 - 原图：发送方本地选择的原始图片文件，通常用于查看或保存原图。
 - 大图：SDK 客户端基于原图进行等比压缩后上传的图片。压缩规则为：若图片短边大于 720 像素，则等比压缩至短边为 720 像素；若短边小于等于 720 像素，则保留原图尺寸，不做放大处理。此类图片通常用于聊天详情页展示。
-- 缩略图：服务端基于原图进行等比压缩后的图片。压缩规则为：默认情况下，若图片短边大于 170 像素，则等比压缩至短边为 170 像素；若短边小于等于 170 像素，则保留原图尺寸，不做放大处理。缩略图的压缩方式和尺寸可在 [控制台进行配置](/product/console/basic_message.html#图片消息缩略图)。此类图片通常用于会话列表、聊天列表等轻量展示场景。
+- 缩略图：服务端基于原图进行等比压缩后的图片。压缩规则为：默认情况下，若图片短边大于 170 像素，则等比压缩至短边为 170 像素；若短边小于等于 170 像素，则保留原图尺寸，不做放大处理。此类图片通常用于会话列表、聊天列表等轻量展示场景。
 
 #### 发送流程
 
@@ -766,23 +771,15 @@ EMClient.getInstance().chatManager().sendMessage(message);
 文本、位置、透传和自定义消息通常不涉及附件上传，`onProgress` 一般不会被触发。SDK 回调不保证在主线程执行，更新 Android UI 时需要切换到主线程。
 :::
 
-#### 发送消息前的内容审核
-
-- 内容审核关注消息 body
-
-[内容审核服务会关注消息 body 中指定字段的内容，不同类型的消息审核不同的字段](/value-added/moderation/moderation_mechanism.html)，若创建消息时在这些字段中传入了很多业务信息，可能会影响审核效果。因此，创建消息时需要注意内容审核的字段不涉及业务信息，建议业务信息放在扩展字段中。
-
-- 设置发送方收到内容审核替换后的内容
-
-默认情况下，内容审核替换后的内容仅下发至接收方。发送方如需同步接收替换内容，需 **联系商务经理开通权限**，并在初始化 SDK 时将 `EMOptions#setUseReplacedMessageContents` 参数设为 `true`。开启后，发送方将在消息被审核替换时收到新内容；若开关关闭（默认状态），则发送方仍保留原始发送内容，不会感知替换结果。
-
 #### 消息大小和存储限制
 
 各类消息的大小和存储限制，详见 [消息限制说明](/product/limitation.html#消息大小)。
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 #### 发消息时设置回调路由
 
-回调路由允许你在同一个 App ID 下，将不同消息按回调环境维度分别投递到不同的回调地址。发送消息时，你可以在消息中携带回调环境字段（如 `dev`、`test`、`prod`），IM 服务器收到消息后，根据该字段匹配控制台中配置的 [回调路由规则](/product/console/basic_webhook.html#配置消息回调规则)，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
+回调路由允许你在同一个 App ID 下，将不同消息按回调环境维度分别投递到不同的回调地址。发送消息时，你可以在消息中携带回调环境字段（如 `dev`、`test`、`prod`），IM 服务器收到消息后，根据该字段匹配控制台中配置的 [回调路由规则](/document/server-side/callback_presending.html#回调规则)，并将当前消息回调至对应的 [发送前回调](/document/server-side/callback_presending.html) 或 [发送后回调](/document/server-side/callback_postsending.html) 地址。
 
 :::tip
 目前，该功能仅面向国内 1 区和国内 2 区开放。
@@ -806,7 +803,7 @@ EMClient.getInstance().chatManager().sendMessage(message);
 
 **工作流程**
 
-1. 在控制台为发送前回调或发送后回调 [配置回调路由](/product/console/basic_webhook.html#配置消息回调规则)。
+1. 在控制台为发送前回调或发送后回调 [回调路由规则](/document/server-side/callback_presending.html#回调规则)。
 2. 客户端发送消息时，设置回调环境值。
 3. IM 服务器收到消息后，根据消息中的回调环境值匹配当前阶段的回调地址。
 4. 命中有效路由后，服务器将回调请求发送到对应地址。
@@ -849,6 +846,8 @@ String webhookEnv = message.getWebhookEnv();
 | 未携带环境值                         | 自动路由至 `default` 环境对应的回调地址。                    |
 | 同一消息需同时触发发送前与发送后回调 | 两个阶段必须使用 **相同的环境值**。例如，发送前配置 `test -> url1`，发送后配置 `test -> url2`，则消息中携带 `test` 即可同时生效于两阶段。 |
 
+</HideSection>
+
 ## 接口列表
 
 | API 名称 | 所属模块/类 | 说明 |
@@ -866,7 +865,6 @@ String webhookEnv = message.getWebhookEnv();
 | [`sendMessage`](#发送消息统一流程) | `EMChatManager` | 发送消息。 |
 | [`downloadAndParseCombineMessage`](#发送合并消息) | `EMChatManager` | 下载并解析合并消息附件。 |
 | [`setAutoTransferMessageAttachments`](#上传消息附件至自有服务器) | `EMOptions` | 设置 SDK 是否自动上传和下载消息附件。 |
-| [`setUseReplacedMessageContents`](#发送消息前的内容审核) | `EMOptions` | 设置发送方是否接收内容审核替换后的消息内容。 |
 
 
 

@@ -32,19 +32,19 @@ HarmonyOS 中错误码的类为 `ChatError`。
 | 204    |         USER_NOT_FOUND          | 用户不存在：例如，登录或获取用户会话列表时，用户 ID 不存在。 |
 | 205    |      USER_ILLEGAL_ARGUMENT      | 用户参数不正确：例如，创建用户或更新用户属性时，用户 ID 为空或无效。 |
 | 206    |    USER_LOGIN_ANOTHER_DEVICE    | 用户在其他设备登录：如果未开启多设备登录，则在其他设备登录会将当前登录设备踢下线，用户会在当前设备收到该错误。 |
-| 207    |          USER_REMOVED           | 用户已被注销：当前的登录用户 ID 从[环信控制台](https://console.easemob.com/user/login)删除会收到该错误。 |
-| 208    |         USER_REG_FAILED         | 用户注册失败：例如，注册用户之前未开启[开放注册功能](/document/server-side/account_register_authorized_single.html)等原因。 |
+| 207    |          USER_REMOVED           | 用户已被注销：当前的登录用户 ID 从 [声网控制台](https://console.shengwang.cn/overview) 删除会收到该错误。 |
+| 208    |         USER_REG_FAILED         | 用户注册失败：例如，注册用户之前未开启开放注册功能等原因。 | 不推荐使用 SDK 注册账号，建议开发者调用 [授权注册 REST API](/document/server-side/account_register_authorized_single.html) 业务服务器注册账号。 |
 | 209    |    USER_UPDATEINFO_FAILED       | 更新推送配置错误：例如，用户更新推送昵称或设置免打扰配置时失败。  |
 | 210    |     USER_PERMISSION_DENIED      | 用户无权限：例如，如果用户被添加到黑名单后，发送消息时会提示该错误。其他报错情况包括用户修改其他用户发出的消息、修改其他用户设置的群成员属性以及普通群成员试图解散消息话题（仅消息话题所在群组的群主和群管理员有权解散消息话题）。|
 | 213    |    USER_BIND_ANOTHER_DEVICE     | 用户已在其他设备登录：在单设备登录场景中，默认情况下，后登录的设备会踢掉当前设备的登录。若设置为先登录的设备优先，则后登录设备登录失败并提示该错误。 |
 | 214    |   USER_LOGIN_TOO_MANY_DEVICES   | 用户登录设备数超过限制：该错误在多设备自动登录场景中且打开不踢掉其他设备上的登录的开关时超过登录设备数量的限制才会出现。例如，用户最多可同时登录 4 台设备， A（开启了自动登录）、B、C 和 D。最初，用户在这四个设备上均为登录状态，但由于网络连接原因登出了设备 A，然后手动登录了设备 E。这种情况下，设备 A 的网络恢复正常时会自动登录，这时登录失败且提示该错误。 |
 | 215    |           USER_MUTED            | 用户在群组或聊天室中被禁言：用户被禁言后发送消息时提示该错误。 |
 | 216    | USER_KICKED_BY_CHANGE_PASSWORD  | 用户密码更新：当前登录的用户密码被修改后，当前登录会断开并提示该错误。 |
-| 217    |   USER_KICKED_BY_OTHER_DEVICE   | 用户被踢下线：开启多设备服务后，如果用户在其他设备上通过调用 API 或者环信控制台将当前设备登录的 ID 强制退出登录，SDK 会提示该错误。 |
+| 217    |   USER_KICKED_BY_OTHER_DEVICE   | 用户被踢下线：开启多设备服务后，如果用户在其他设备上通过调用 API 或者声网控制台将当前设备登录的 ID 强制退出登录，SDK 会提示该错误。 |
 | 218    |   USER_ALREADY_LOGIN_ANOTHER    | 其他用户已登录：用户在同一台设备上退出登录前又使用另一账户登录。   |
 | 219    |       USER_MUTED_BY_ADMIN       | 用户被禁言：用户被全局禁言后发送消息时提示该错误。 |
 | 220    |       USER_DEVICE_CHANGED       | 用户的登录设备与上次不一致。该错误在单设备自动登录场景中且打开不踢掉其他设备上的登录的开关时才会出现。例如，用户自动登录设备 A，之后手动登录设备 B。用户再次自动登录设备 A 时登录失败且提示该错误。 |
-| 221    |       USER_NOT_ON_ROSTER        | 非好友禁止发消息：开通非好友禁止发消息后，非好友间发消息提示此错误。你可以在[环信控制台](https://console.easemob.com/user/login)的 **功能配置 > 基础功能** > **用户** 页面开启好友关系检查功能。|
+| 221    |       USER_NOT_ON_ROSTER        | 非好友禁止发消息：开通非好友禁止发消息后，非好友间发消息提示此错误。你可以联系声网商务开启好友关系检查功能。|
 | 300    |      SERVER_NOT_REACHABLE       | 服务器不可达：例如，发送或撤回消息时，如果 SDK 与消息服务器未保持连接，会返回该错误；操作群组、好友等请求时因网络不稳定导致失败，也会返回该错误。 |
 | 301    |         SERVER_TIMEOUT          | 请求服务超时：如果调用 API 在特定时间内服务器未响应则返回该错误，一般为 30 秒或 60 秒。 |
 | 302    |           SERVER_BUSY           | 服务器忙碌：服务器当前忙碌会返回该错误，建议稍后再尝试请求。 |
@@ -102,11 +102,9 @@ HarmonyOS 中错误码的类为 `ChatError`。
 | 1100   |  PRESENCE_PARAM_LENGTH_EXCEED   | 参数长度超出限制：调用 Presence 相关方法时参数长度超出限制。 |
 | 1101   | PRESENCE_CANNOT_SUBSCRIBE_YOURSELF | 不能订阅你自己的状态。                    |
 | 1110   |     TRANSLATE_PARAM_INVALID     | 翻译参数错误。                        |
-| 1111   |  TRANSLATE_SERVICE_NOT_ENABLE   | 翻译服务未启用。使用翻译服务前，应在[环信控制台](https://console.easemob.com/user/login)开启该服务。 |
+| 1111   |  TRANSLATE_SERVICE_NOT_ENABLE   | 翻译服务未启用。使用翻译服务前，应在 [声网控制台](https://console.shengwang.cn/overview) 开启该服务。 |
 | 1112   |      TRANSLATE_USAGE_LIMIT      | 翻译用量达到上限。     |
 | 1113   |     TRANSLATE_MESSAGE_FAIL      | 消息翻译失败。 |
-| 1200   |     MODERATION_FAILED           | 第三方内容审核服务的消息审核结果为“拒绝”。 |
-| 1299   |     THIRD_SERVER_FAILED         | 除第三方内容审核服务的其他服务的消息审核结果为“拒绝”。 |
 | 1300   |      REACTION_REACH_LIMIT       | 该消息的 Reaction 数量已达到限制。      |
 | 1301   |   REACTION_HAS_BEEN_OPERATED    | 用户已添加该 Reaction，不能重复添加。                      |
 | 1302   |  REACTION_OPERATION_IS_ILLEGAL  | 用户对该 Reaction 没有操作权限。例如，未添加过该 Reaction 的用户进行删除操作，或者既非单聊消息的发送方也不是接收方的用户对消息添加 Reaction。 |

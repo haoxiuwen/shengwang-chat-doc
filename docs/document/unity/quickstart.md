@@ -32,8 +32,8 @@
 | macOS        | macOS 10.0 或以上  |  Xcode 9.0 或以上，Visual Studio for Mac 2019 或以上   |
 | Windows              | Windows 10 或以上 | Microsoft Visual Studio 2019 或以上            |
 
-- 有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id) 说明。
-- 如果你的网络环境部署了防火墙，请联系环信技术支持设置白名单。
+- 有效的即时通讯 IM 开发者账号和 App ID，详见声网控制台 [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号) 和 [获取项目的 App ID](/product/enable_im.html#_3-获取-app-id) 说明。
+- 如果你的网络环境部署了防火墙，请联系 IM 技术支持设置白名单。
 
 ## 项目设置
 
@@ -66,7 +66,7 @@
 
 你可以参考以下步骤集成 SDK：
 
-1. [下载 Unity SDK](https://www.easemob.com/download/im#Unity)。
+1. [下载 Unity SDK](https://im.shengwang.cn/)。
 2. 在 Unity Editor 中，选择 **Assets > Import Package > Custom Package...**，然后选择刚下载的 unitypackage 导入。
 3. 在弹出的 **Import Unity Package** 页面，点击右下角的 **Import**。
 

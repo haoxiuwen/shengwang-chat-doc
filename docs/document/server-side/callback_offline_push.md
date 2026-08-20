@@ -2,18 +2,17 @@
 
 ## 功能说明
 
-即时通讯 IM 通过第三方离线推送服务发送了离线推送通知后，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看推送通知的相关信息以及推送是否成功，进行数据同步。
+即时通讯 IM 通过第三方离线推送服务发送了离线推送通知后，IM 服务器会按照 [发送后回调规则](callback_postsending.html#回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看推送通知的相关信息以及推送是否成功，进行数据同步。
 
 ## 前提条件
 
-- 已开通发送后回调服务。详见 [开通消息回调服务](/product/console/basic_webhook.html#开通服务) 和 [回调说明](/document/server-side/callback_postsending.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login) 设置发送后回调规则。详见 [配置回调规则](/product/console/basic_webhook.html#配置消息回调规则)。
+已在 [声网控制台](https://console.shengwang.cn/overview) 设置发送后回调规则。详见 [配置回调规则](callback_postsending.html#回调规则)。
 
 ## 回调时机
 
 - 客户端上在单聊或群组聊天中 [发送了消息](/document/android/message_send.html)，而接收方当时不在线。
 - 通过 REST API 在 [单聊](/document/server-side/message_single.html) 或 [群组聊天中发送了消息](/document/server-side/message_group.html)，而接收方当时不在线。
-- 通过控制台在 [单聊](/product/console/operation_user.html#发送-rest-消息)、[群组聊天](/value-added/moderation/moderation_manual_review.html#群组审核管理) 中发送了消息，而接收方当时不在线。
+- 通过 [声网控制台](https://console.shengwang.cn/overview) 在单聊、群组聊天中发送了消息，而接收方当时不在线。
 
 ## 回调请求
 

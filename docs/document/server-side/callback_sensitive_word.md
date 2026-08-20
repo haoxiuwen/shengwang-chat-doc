@@ -2,12 +2,11 @@
 
 ## 功能说明
 
-消息内容命中敏感词（涉政词库）后，IM 服务器将根据 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，你可以通过该回调获取消息处理动作的相关信息（如敏感词拦截或替换），便于进行数据同步和后续分析。
+消息内容命中敏感词（涉政词库）后，IM 服务器将根据 [发送后回调规则](callback_postsending.html#回调规则) 向你的 App Server 发送回调请求，你可以通过该回调获取消息处理动作的相关信息（如敏感词拦截或替换），便于进行数据同步和后续分析。
 
 ## 前提条件
 
-- 已开通发送后回调服务，详见 [开通消息回调服务](/product/console/basic_webhook.html#开通服务) 和 [回调说明](/document/server-side/callback_postsending.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login)设置发送后回调规则，详见 [配置回调规则](/product/console/basic_webhook.html#配置消息回调规则)。
+已在 [声网控制台](https://console.shengwang.cn/overview) 设置发送后回调规则。详见 [配置回调规则](callback_postsending.html#回调规则)。
 
 ## 回调时机
 
@@ -93,7 +92,7 @@
 | `eventType`  |  String |  事件类型，用于标识为敏感词检测还是其他类型的事件。 | 
 | `sensitiveWords`  | List   | 敏感词内容。  | 
 | `contentOwner`  |  String | 内容发送方的用户 ID。  | 
-| `security`  | String   | 签名，格式如下: `MD5（callId+secret+timestamp）`。`secret` 详见 [环信控制台的回调规则配置](/product/console/basic_webhook.html#配置消息回调规则)。  | 
+| `security`  | String   | 签名，格式如下: `MD5（callId+secret+timestamp）`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。  | 
 | `contentUri`  |  String | 消息唯一标识，格式为 msync:msgId。 | 
 | `host`  | String  | 服务器名称。  | 
 | `contentType`  |  String |  内容类型，目前为 `message`，表示为消息。 |  

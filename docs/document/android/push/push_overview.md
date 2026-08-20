@@ -10,7 +10,7 @@
 
 ### 前置配置要求
 
-除了满足用户离线条件外，要使用第三方离线推送，你还需在[声网控制台](https://console.shengwang.cn/overview)配置推送证书信息，例如，对于华为推送，需配置**证书名称**和**推送密钥**，并调用客户端 SDK 提供的 API 向声网服务器上传 device token。
+除了满足用户离线条件外，要使用第三方离线推送，你还需在 [声网控制台](https://console.shengwang.cn/overview) 配置推送证书信息，例如，对于华为推送，需配置**证书名称**和**推送密钥**，并调用客户端 SDK 提供的 API 向声网服务器上传 device token。
 
 ### 不触发离线推送的场景
 
@@ -105,8 +105,8 @@
 
 ## 前提条件
 
-1. 已开通即时通讯服务，详见 [开启和配置即时通讯服务](/product/enable_im.html)。
-2. 了解即时通讯 IM 的使用限制，详见 [使用限制](limitation.html)。
+1. 已开通即时通讯服务，详见 [开启和配置即时通讯服务](/product/enable_im.html#_2-开通即时通讯-im-服务)。
+2. 了解即时通讯 IM 的使用限制，详见 [使用限制](/document/android/limitation.html)。
 3. 若使用[推送高级功能](#推送高级功能)，需在[声网控制台](https://console.shengwang.cn/overview)上激活。
 4. 各推送服务的适用条件如下：
    - Google FCM：设备启用 Google Play 服务且可连接至 Google 服务器。

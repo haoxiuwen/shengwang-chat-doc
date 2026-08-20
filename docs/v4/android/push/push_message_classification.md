@@ -22,7 +22,7 @@ OPPO 推送服务将增加区分应用类型的推送频控限制，公信消息
 
 2. [客户端创建私信通道](https://open.oppomobile.com/new/developmentDoc/info?id=11252)。
 
-3. 环信推送证书补充 OPPO 配置 channelId，如下图所示：
+3. 声网推送证书补充 OPPO 配置 channelId，如下图所示：
 
 ![image](/images/android/push/oppo-notifier-channelId.png)
 
@@ -40,7 +40,7 @@ OPPO 推送服务将增加区分应用类型的推送频控限制，公信消息
 
 ## vivo
 
-vivo 推送通道区分 “系统消息” 和”运营消息”，消息类别决定单日单用户推送量上限（环信服务端默认”系统消息”，即 classification = 1）。
+vivo 推送通道区分 “系统消息” 和”运营消息”，消息类别决定单日单用户推送量上限（IM 服务端默认”系统消息”，即 classification = 1）。
 
 [推送消息限制说明](https://dev.vivo.com.cn/documentCenter/doc/695#w1-53292792)，在此基础上进行消息分类优化，新增 “二级分类”功能，根据推送内容界定不同推送分类。
 

@@ -69,7 +69,7 @@
 ## 前提条件
 
 1. 已开启即时通讯服务，详见 [开启和配置即时通讯服务](/docs/sdk/android/enable_im.html)。
-2. 了解即时通讯 IM 的使用限制，详见 [使用限制](limitation.html)。
+2. 了解即时通讯 IM 的使用限制，详见 [使用限制](/sdk/android/limitation.html)。
 3. 若使用[推送高级功能](#离线推送高级功能)，需在[声网控制台](https://console.shengwang.cn/overview)上激活。
 4. 各推送使用的条件：
   - Google FCM：设备启用了 Google Play 服务且可连接至 Google 服务器；

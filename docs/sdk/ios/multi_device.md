@@ -108,7 +108,7 @@ option.customDeviceName = @"XXX的iPad";
 
 即时通讯 IM 支持自定义设置登录设备的平台，例如将手机和平板电脑设置为单独的平台，方便用户精细化控制同一平台的登录设备数量及平台间互踢等行为。
 
-初始化 SDK 时，调用 `initializeSDKWithOptions` 方法设置 `AgoraChatOptions#customOSType` 属性添加自定义平台。
+初始化 SDK 时，调用 `initializeSDKWithOptions` 方法设置 `AgoraChatOptions#customOSType` 属性添加自定义平台，确保该属性的值为 `1`，与 [声网控制台](https://console.shengwang.cn/overview) 的自定义设备平台的值相同。
 
 :::tip
 登录成功后才会将该设置发送到服务器。
@@ -116,8 +116,8 @@ option.customDeviceName = @"XXX的iPad";
 
 ```objectivec
 AgoraChatOptions* option = [AgoraChatOptions optionsWithAppId:@"Appid"];
-`customOSType` 的取值范围为 [1,100]。
-option.customOSType = 60;
+`customOSType` 的取值为 1。
+option.customOSType = 1;
 [AgoraChatClient.sharedClient initializeSDKWithOptions:option];
 ```
 

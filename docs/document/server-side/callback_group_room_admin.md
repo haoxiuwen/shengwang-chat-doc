@@ -2,12 +2,11 @@
 
 ## 功能说明
 
-成功添加或删除群组或聊天室管理员后，IM 服务器会按照 [发送后回调规则](/product/console/basic_webhook.html#配置消息回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看添加/删除的群组/聊天室管理员，进行数据同步。
+成功添加或删除群组或聊天室管理员后，IM 服务器会按照 [发送后回调规则](callback_postsending.html#回调规则) 向你的 App Server 发送回调请求，App Server 可通过该回调查看添加/删除的群组/聊天室管理员，进行数据同步。
 
 ## 前提条件
 
-- 已开通发送后回调服务。详见 [开通消息回调服务](/product/console/basic_webhook.html#开通服务) 和 [回调说明](/document/server-side/callback_postsending.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login) 设置发送后回调规则。详见 [配置回调规则](/product/console/basic_webhook.html#配置消息回调规则)。
+已在 [声网控制台](https://console.shengwang.cn/overview) 设置发送后回调规则。详见 [配置回调规则](callback_postsending.html#回调规则)。
 
 ## 添加管理员
  
@@ -15,7 +14,7 @@
 
 - 客户端添加了 [群组](/document/android/group_members.html#添加群管理员)/[聊天室管理员](/document/android/room_members.html#添加聊天室管理员)。
 - 调用 RESTful API 添加了 [群组](/document/server-side/group_admin_add.html)/[聊天室管理员](/document/server-side/chatroom_admin_add.html)。
-- 在 [环信控制台](https://console.easemob.com/user/login) 上添加了 [群组](/value-added/moderation/moderation_manual_review.html#群组审核管理)/[聊天室管理员](/value-added/moderation/moderation_manual_review.html#聊天室审核管理)。 
+- 在 [声网控制台](https://console.shengwang.cn/overview) 上添加了群组/聊天室管理员。 
 
 ### 回调请求
 
@@ -47,7 +46,7 @@
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
 | `callId`       | String | 回调请求的唯一标识。 |
-| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.admin`| JSON   | 添加为群组/聊天室管理员的用户 ID。 | 
 | `payload.type` | String | 添加群组/聊天室管理员的事件，值为 `ADD`。  | 
@@ -96,7 +95,7 @@
 | 字段名称         | 类型   | 描述                                                         |
 | :------------- | :----- | :----------------------------------------------------------- |
 | `callId`       | String | 回调请求的唯一标识。 |
-| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。详见[配置环信控制台回调规则](/product/console/basic_webhook.html#配置消息回调规则)。|
+| `security`     | String | 签名，格式如下: `MD5(callId+secret+timestamp)`。[配置回调规则](callback_postsending.html#回调规则) 后，IM 服务器会自动为该规则生成 secret，向你的 App Server 发送数据时会基于该 secret 生成该签名，作为你的服务器识别 IM 服务器的依据。若要使用自定义密钥，可联系声网商务。|
 | `payload`       | Object | 事件内容。                                                     |
 | `payload.admin`| JSON   | 被移除的群组/聊天室管理员的用户 ID。 | 
 | `payload.type` | String | 移除群组/聊天室管理员的事件，值为 `REMOVE`。    | 

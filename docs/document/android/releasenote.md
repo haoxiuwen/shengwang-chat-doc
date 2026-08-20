@@ -1,6 +1,12 @@
+---
+title: Android IM SDK 更新日志
+show_search_search: false
+show_callback_route: false
+---
+
 # Android IM SDK 更新日志
 
-## v5.0.0 Dev
+## v5.0.0 Dev 2026-8-12
 
 该版本于 2026 年 8 月 15 日发布。
 
@@ -90,8 +96,12 @@ SDK 补充会话展示信息、批量删除会话和群成员读取等能力：
 
 #### 新增功能
 
-- 支持 [服务端消息搜索](/value-added/search/message_search_android.html)，可根据关键词组合、会话 ID、消息类型、时间范围及消息内容或扩展属性进行筛选。该功能需联系商务经理开通后方可使用，详见 [开通说明](/product/console/purchase_value_added.html#消息搜索)。
+<HideSection :show="$frontmatter.show_server_search">
+
+- 支持 [服务端消息搜索](/value-added/search/message_search_android.html)，可根据关键词组合、会话 ID、消息类型、时间范围及消息内容或扩展属性进行筛选。该功能需联系商务经理开通后方可使用。
   消息搜索默认不支持扩展字段 `ext`，如需支持该字段搜索，请联系商务经理。
+</HideSection>
+
 - 新增异步接口，用于 [更新群组扩展字段](group_attributes.html#更新群扩展字段)。
 - 新增异步接口，用于 [获取服务器端推送配置](/document/android/push/push_display_attribute.html#获取推送通知的显示属性)。
 
@@ -110,9 +120,13 @@ SDK 补充会话展示信息、批量删除会话和群成员读取等能力：
 
 ## v4.23.0 Dev 2026-6-10（开发版）
 
+<HideSection :show="$frontmatter.show_callback_route">
+
 ####  新增功能
 
 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](message_send.html#发消息时设置回调路由)。目前，该功能仅面向国内 1 区和国内 2 区开放。
+
+</HideSection>
 
 #### 优化
 
@@ -437,7 +451,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 #### 注意
 
-当同时集成环信 SDK 4.11.0 和声网 RTM SDK 2.2.0 或 RTC SDK 4.3.0 及以上版本时，由于同时包含 `libaosl.so` 库，编译时可能会出现错误，详见 [Android 快速开始中的集成问题说明](quickstart.html#_5-其他集成问题)。
+当同时集成 IM SDK 4.11.0 和声网 RTM SDK 2.2.0 或 RTC SDK 4.3.0 及以上版本时，由于同时包含 `libaosl.so` 库，编译时可能会出现错误，详见 [Android 快速开始中的集成问题说明](quickstart.html#_5-其他集成问题)。
 
 ## v4.10.3 2024-11-25
 
@@ -674,7 +688,6 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 - [IM SDK] 新增 [EMChatManager#asyncDeleteAllMsgsAndConversations](message_delete.html#清空聊天记录)方法，用于清空当前用户的聊天记录，包括消息和会话，同时可以选择是否清除服务端的聊天记录。
 - [IM SDK] 新增 [EMChatManager#searchMsgFromDB(java.lang.String, long, int, java.lang.String, EMConversation.EMSearchDirection, EMConversation.EMMessageSearchScope)](message_search_local.html#根据搜索范围搜索所有会话中的消息) 和 [EMConversation#searchMsgFromDB(java.lang.String, long, int, java.lang.String, EMConversation.EMSearchDirection, EMConversation.EMMessageSearchScope)](message_search_local.html#根据搜索范围搜索当前会话中的消息)，可以在根据关键字搜索消息时，选择搜索范围，如只搜索消息内容、只搜索消息扩展信息以及同时搜索消息内容以及扩展信息。
-- [IM SDK] 新增 [EMOptions#setUseReplacedMessageContents](message_send.html#发送消息前的内容审核) 开关。开启后，发送消息时如果被内容审核进行了内容替换，发送方可以获取替换后的内容。
 - [IM SDK] 新增 [EMOptions#setIncludeSendMessageInMessageListener](message_receive.html#接收文本消息) 开关。开启后，在 `EMMessageListener#onMessageReceived` 回调里增加发送成功的消息。
 - [IM SDK] 新增 [EMOptions#setRegardImportedMsgAsRead](message_retrieve.html#从服务器获取指定会话的消息) 开关。开启后，[利用服务端接口](/document/server-side/message_import_single.html)导入的消息，客户端上通过[漫游拉取](message_retrieve.html#从服务器获取指定会话的消息)到后，这些消息为已读状态，会话中未读取的消息数量，即 `EMConversation#getUnreadMsgCount` 的返回值不发生变化。若该开关为关闭状态，`EMConversation#getUnreadMsgCount` 的返回值会增加。
 
@@ -1026,8 +1039,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 #### 新增特性:
 
-- [IM SDK] 新增 [消息 Reaction](reaction.html) 功能，可以对消息进行不同的响应；
-- [IM SDK] 新增 [举报 API](moderation.html) 用于内容审核。
+- [IM SDK] 新增 [消息 Reaction](reaction.html) 功能，可以对消息进行不同的响应
 
 #### 优化：
 
@@ -1286,7 +1298,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 #### 更新：
 
-- [IM SDK] 3.8.0 及以后版本 SDK 更新名为 com.hyphenate:hyphenate-chat:x.x.x, 只发布 IM 功能，移除环信音视频功能；
+- [IM SDK] 3.8.0 及以后版本 SDK 更新名为 com.hyphenate:hyphenate-chat:x.x.x, 只发布 IM 功能，移除音视频功能；
 - [EaseIM App] 环信 app 依赖声网音视频功能;
 
 #### 修复：
@@ -1640,7 +1652,7 @@ SDK 依赖的 crash 上报库 AOSL 替换为 `cn.shengwang.infra:aosl:1.3.0`。
 
 **注意：**
 
-- 针对 oppo 推送，我们把 Demo 包名替换为了：com.hyphenate.chatuidemo.push。如果在环信 Demo 上测试 Oppo 推送，请自行修改 Demo 包名。
+- 针对 oppo 推送，我们把 Demo 包名替换为了：com.hyphenate.chatuidemo.push。如果在IM Demo 上测试 Oppo 推送，请自行修改 Demo 包名。
 
 - `V3.5.4，在华为手机注册推送的时候会出现异常，该 Bug 在V3.5.5及之后的版本中已修复，这里建议未集成的用户或者已是V3.5.4的用户升级到更高的 SDK 版本。`
 

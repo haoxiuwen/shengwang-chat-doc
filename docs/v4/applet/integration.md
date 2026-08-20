@@ -1,16 +1,16 @@
 # 小程序集成指南
 
-本文介绍如何将环信即时通讯 IM SDK 集成到微信、QQ、百度、抖音和支付宝小程序。各平台的集成流程基本一致，主要差异集中在开发工具、服务器域名配置入口、WebSocket 地址和连接限制。
+本文介绍如何将即时通讯 IM SDK 集成到微信、QQ、百度、抖音和支付宝小程序。各平台的集成流程基本一致，主要差异集中在开发工具、服务器域名配置入口、WebSocket 地址和连接限制。
 
 当前 SDK 支持微信、QQ、百度、抖音、支付宝等小程序运行环境。各平台的集成流程基本一致，主要差异集中在开发者工具、服务器合法域名配置入口、WebSocket 地址选择和平台连接限制。
 
 ## 步骤 1：注册 IM 账号
 
-在环信控制台完成以下操作：
+在声网控制台完成以下操作：
 
 1. [注册 IM 账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
-2. [创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
-3. [获取项目的 App ID](/document/server-side/enable_im.html#_3-获取-app-id)。初始化 SDK 时需要配置该 App ID。
+2. [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 。
+3. [获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。初始化 SDK 时需要配置该 App ID。
 
 ## 步骤 2：搭建小程序开发环境
 
@@ -30,22 +30,9 @@
 
 ## 步骤 3：配置服务器域名
 
-小程序发布前，需在对应平台后台配置合法域名。请先在环信控制台的 **应用概览** 页面确认应用所在数据中心，再选择相应的 REST API 和 WebSocket 地址。
+小程序发布前，需在对应平台后台配置合法域名。请先在声网控制台的 **即时通讯 IM** > **功能配置** > **基础信息** 页面确认应用所在数据中心，再选择相应的 REST API 和 WebSocket 地址。
 
 ![应用所在数据中心](/images/applet/service_overview.png)
-
-### 按数据中心选择服务地址
-
-| 数据中心 | REST API 请求地址 | 微信、QQ、百度和抖音 WebSocket 地址 | 支付宝 WebSocket 地址 |
-| :--- | :--- | :--- | :--- |
-| 国内 1 区 | `https://a1.easemob.com`<br/>`https://a1-v2.easemob.com` | `wss://im-api-wechat.easemob.com/websocket`<br/>`wss://im-api-wechat.easecdn.com/websocket` | `wss://im-api-alipay.easemob.com/websocket`<br/>`wss://im-api-alipay.easecdn.com/websocket` |
-| 国内 2 区 | `https://ngi-a1.easemob.com` | `wss://ngi-im-api-wechat.easemob.com/websocket` | `wss://ngi-im-api-wechat.easemob.com/websocket` |
-| 国内 VIP 区 | 请咨询商务经理 | 请咨询商务经理 | 请咨询商务经理 |
-| 客服专用 | 请咨询商务经理 | 请咨询商务经理 | 请咨询商务经理 |
-| 新加坡 1 区 | `https://a1-sgp.easemob.com`<br/>`https://a1-sgp.easecdn.com` | `wss://im-api-wechat-sgp.easemob.com/websocket`<br/>`wss://im-api-wechat-sgp.easecdn.com/websocket` | `wss://im-api-alipay-sgp.easemob.com/websocket`<br/>`wss://im-api-alipay-sgp.easecdn.com/websocket` |
-| 新加坡 2 区 | `https://a61.easemob.com`<br/>`https://a61.easecdn.com` | `wss://im-api-wechat-61.easemob.com/websocket`<br/>`wss://im-api-wechat-61.easecdn.com/websocket` | `wss://im-api-alipay-61.easemob.com/websocket`<br/>`wss://im-api-alipay-61.easecdn.com/websocket` |
-| 美东 1 区 | `https://a41.easemob.com`<br/>`https://a41.easecdn.com` | `wss://im-api-wechat-41.easemob.com/websocket`<br/>`wss://im-api-wechat-41.easecdn.com/websocket` | `wss://im-api-alipay-41.easemob.com/websocket`<br/>`wss://im-api-alipay-41.easecdn.com/websocket` |
-| 德国 2 区 | `https://a71.easemob.com`<br/>`https://a71.easecdn.com` | `wss://im-api-wechat-71.easemob.com/websocket`<br/>`wss://im-api-wechat-71.easecdn.com/websocket` | `wss://im-api-alipay-71.easemob.com/websocket`<br/>`wss://im-api-alipay-71.easecdn.com/websocket` |
 
 :::tip
 文件下载相关域名需按数据中心进行配置：国内 1 区配置 `https://a1-chatfile.easemob.com`，国内 2 区配置 `ngi-chatfile.easemob.com`。<br/>实际需要配置的 `request`、`uploadFile`、`downloadFile` 以及 WebSocket 合法域名，应以应用所在数据中心和服务端实际下发的服务地址为准。若小程序使用文件消息、图片消息、语音消息或视频消息，需确保相关上传、下载域名已在小程序后台完成配置。
@@ -67,9 +54,9 @@
 
 可以通过以下任一方式获取 SDK：
 
-- 通过环信官网 [下载 SDK](https://www.easemob.com/download/im#applets)。
-- 从环信 [GitHub 仓库](https://github.com/easemob/webim-weixin-xcx/tree/master/src/sdk) 获取 SDK 文件。
-- 从环信 [Gitee 仓库](https://gitee.com/easemob-code/webim-weixin-xcx/tree/master/src/sdk) 获取 SDK 文件。
+- 通过声网文档站 [下载 SDK](https://im.shengwang.cn/)。
+- 从 [GitHub 仓库](https://github.com/easemob/webim-weixin-xcx/tree/master/src/sdk) 获取 SDK 文件。
+- 从 [Gitee 仓库](https://gitee.com/easemob-code/webim-weixin-xcx/tree/master/src/sdk) 获取 SDK 文件。
 
 ## 步骤 5：引入 SDK
 

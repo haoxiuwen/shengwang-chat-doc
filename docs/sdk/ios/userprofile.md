@@ -25,7 +25,7 @@
 
 设置用户属性前，请确保满足以下条件：
 
-- 完成 SDK 初始化，详见 [初始化文档](intialization.html)；
+- 完成 SDK 初始化，详见 [初始化文档](initialization.html)；
 - 了解即时通讯 IM 的使用限制，详见 [使用限制](limitation.html)。
 
 ## 实现方法

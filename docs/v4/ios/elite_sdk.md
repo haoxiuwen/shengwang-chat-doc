@@ -4,7 +4,7 @@
 
 ## 下载精简版 SDK
 
-你可以从环信官网 [下载 iOS 端精简版 SDK](https://downloadsdk.easemob.com/downloads/SDK-mini/iOS_IMLite_SDK_4.2.0_1116.zip)。
+你可以 [下载 iOS 端精简版 SDK](https://downloadsdk.easemob.com/downloads/SDK-mini/iOS_IMLite_SDK_4.2.0_1116.zip)。
 
 :::tip
 精简版 SDK 无本地存储，可以升级为标准版 SDK，但标准版不能降级为精简版。
@@ -28,7 +28,7 @@
       <td rowspan="16">消息管理</td>
       <td rowspan="8">发送和接收消息</td>
       <td>发送和接收文本消息</td>
-      <td rowspan="8"><p><a href="https://doc.easemob.com/v4/android/message_send.html">发送和接收消息</a></p></td>
+      <td rowspan="8"><p><a href="/v4/android/message_send.html">发送和接收消息</a></p></td>
       <td>✅</td>
       <td>✅</td>
     </tr>
@@ -70,32 +70,32 @@
     <tr>
       <td>管理本地消息</td>
       <td>管理本地消息</td>
-      <td><p><a href="https://doc.easemob.com/v4/ios/message_retrieve.html">获取本地历史消息</a><a href="https://doc.easemob.com/v4/ios/message_retrieve.html"></a></p>
-      <p><a href="https://doc.easemob.com/v4/ios/message_search_local.html">搜索消息</a></p>
-      <p><a href="https://doc.easemob.com/v4/ios/message_import_insert.html">导入和插入消息</a></p>
-      <p><a href="https://doc.easemob.com/v4/ios/message_update.html">更新消息</a></p>
-      <p><a href="https://doc.easemob.com/v4/ios/message_delete.html">删除消息</a></p></td>
+      <td><p><a href="/v4/ios/message_retrieve.html">获取本地历史消息</a><a href="/v4/ios/message_retrieve.html"></a></p>
+      <p><a href="/v4/ios/message_search_local.html">搜索消息</a></p>
+      <p><a href="/v4/ios/message_import_insert.html">导入和插入消息</a></p>
+      <p><a href="/v4/ios/message_update.html">更新消息</a></p>
+      <p><a href="/v4/ios/message_delete.html">删除消息</a></p></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
     <tr>
       <td>管理服务端消息</td>
       <td>管理服务端消息</td>
-      <td><p><a href="https://doc.easemob.com/v4/ios/message_retrieve.html">从服务器分页获取指定会话的历史消息</a></p>
-      <p><a href="https://doc.easemob.com/v4/ios/message_delete.html#单向删除服务端的历史消息">单向删除服务端的历史消息</a></p></td>
+      <td><p><a href="/v4/ios/message_retrieve.html">从服务器分页获取指定会话的历史消息</a></p>
+      <p><a href="/v4/ios/message_delete.html#单向删除服务端的历史消息">单向删除服务端的历史消息</a></p></td>
       <td>✅</td>
       <td>✅</td>
     </tr>
     <tr>
       <td rowspan="2">管理消息回执</td>
       <td>消息送达回执</td>
-      <td><p><a href="https://doc.easemob.com/v4/ios/message_receipt.html">消息送达回执</a></p></td>
+      <td><p><a href="/v4/ios/message_receipt.html">消息送达回执</a></p></td>
       <td>✅</td>
       <td>✅</td>
     </tr>
     <tr>
       <td>消息已读回执</td>
-      <td><p><a href="https://doc.easemob.com/v4/ios/message_receipt.html">消息已读回执</a></p></td>
+      <td><p><a href="/v4/ios/message_receipt.html">消息已读回执</a></p></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
@@ -103,28 +103,28 @@
       <td>撤回消息</td>
       <td><p>撤回消息</p>
       <p>设置消息撤回监听</p></td>
-      <td><p><a href="https://doc.easemob.com/v4/android/message_recall.html">撤回消息</a></p></td>
+      <td><p><a href="/v4/android/message_recall.html">撤回消息</a></p></td>
       <td>✅</td>
       <td>✅</td>
     </tr>
     <tr>
       <td>编辑消息</td>
       <td>单聊会话中已经发送成功的文本消息进行编辑</td>
-      <td><p><a href="https://doc.easemob.com/v4/ios/message_modify.html">编辑消息</a></p></td>
+      <td><p><a href="/v4/ios/message_modify.html">编辑消息</a></p></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
     <tr>
       <td height="71">获取消息流量统计</td>
       <td>获取消息流量统计</td>
-      <td><a href="https://doc.easemob.com/v4/ios/message_traffic_statis.html">获取消息流量统计</a></td>
+      <td><a href="/v4/ios/message_traffic_statis.html">获取消息流量统计</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
     <tr>
       <td height="71">翻译</td>
       <td>消息翻译</td>
-      <td><p><a href="https://doc.easemob.com/v4/ios/message_modify.html">消息翻译</a></p></td>
+      <td><p><a href="/v4/ios/message_modify.html">消息翻译</a></p></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
@@ -132,13 +132,13 @@
       <td rowspan="6">会话管理</td>
       <td rowspan="2">会话列表</td>
       <td>获取本地会话 </td>
-      <td><a href="https://doc.easemob.com/v4/ios/conversation_list.html#获取本地会话">获取本地会话</a></td>
+      <td><a href="/v4/ios/conversation_list.html#获取本地会话">获取本地会话</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
     <tr>
       <td> 从服务器分页获取会话列表</td>
-      <td><p><a href="https://doc.easemob.com/v4/ios/conversation_list.html#从服务器分页获取会话列表">从服务器分页获取会话列表</a></p></td>
+      <td><p><a href="/v4/ios/conversation_list.html#从服务器分页获取会话列表">从服务器分页获取会话列表</a></p></td>
       <td>✅</td>
       <td>✅</td>
     </tr>
@@ -146,27 +146,27 @@
       <td>会话未读数</td>
       <td>获取或清零本地会话的未读数</td>
       <td><p>&nbsp;</p>
-      <p><a href="https://doc.easemob.com/v4/ios/conversation_unread.html">会话未读数</a></p></td>
+      <p><a href="/v4/ios/conversation_unread.html">会话未读数</a></p></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
     <tr>
       <td>置顶会话</td>
       <td>置顶会话</td>
-      <td><a href="https://doc.easemob.com/v4/ios/conversation_pin.html">置顶会话</a></td>
+      <td><a href="/v4/ios/conversation_pin.html">置顶会话</a></td>
       <td>✅</td>
       <td>✅</td>
     </tr>
     <tr>
       <td rowspan="2">删除会话</td>
       <td>单向删除服务端会话及本地会话</td>
-      <td><a href="https://doc.easemob.com/v4/ios/conversation_delete.html#单向删除服务端会话及本地会话">单向删除服务端会话和本地会话及其历史消息</a></td>
+      <td><a href="/v4/ios/conversation_delete.html#单向删除服务端会话及本地会话">单向删除服务端会话和本地会话及其历史消息</a></td>
       <td>✅</td>
       <td>✅</td>
     </tr>
     <tr>
       <td>删除本地会话及历史消息</td>
-      <td><a href="https://doc.easemob.com/v4/ios/conversation_delete.html#删除本地会话及历史消息">删除本地会话及历史消息</a></td>
+      <td><a href="/v4/ios/conversation_delete.html#删除本地会话及历史消息">删除本地会话及历史消息</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
@@ -174,7 +174,7 @@
       <td>管理用户属性</td>
       <td>设置和获取用户属性</td>
       <td>用户属性指实时消息互动用户的信息，如用户昵称、头像、邮箱、电话、性别、签名、生日等</td>
-      <td><a href="https://doc.easemob.com/v4/ios/userprofile.html">管理用户属性</a></td>
+      <td><a href="/v4/ios/userprofile.html">管理用户属性</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
@@ -186,7 +186,7 @@
       <p>从服务器获取好友列表；</p>
       <p>将用户添加到或移除黑名单</p>
       <p>从服务器获取黑名单列表</p></td>
-      <td><a href="https://doc.easemob.com/v4/ios/user_relationship.html">管理用户关系</a></td>
+      <td><a href="/v4/ios/user_relationship.html">管理用户关系</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
@@ -196,7 +196,7 @@
       <td><p>创建、管理群组；</p>
       <p>管理群成员；</p>
       <p>管理群成员属性</p></td>
-      <td><a href="https://doc.easemob.com/v4/ios/group_overview.html">群组管理</a></td>
+      <td><a href="/v4/ios/group_overview.html">群组管理</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
@@ -204,14 +204,14 @@
       <td rowspan="19">聊天室管理</td>
       <td>聊天室为多人聊天，没有固定的成员关系。</td>
       <td><p>聊天室概述</p></td>
-      <td><a href="https://doc.easemob.com/v4/ios/room_overview.html">聊天室概述</a></td>
+      <td><a href="/v4/ios/room_overview.html">聊天室概述</a></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td rowspan="6">创建和管理聊天室</td>
       <td>创建聊天室</td>
-      <td rowspan="6"><a href="https://doc.easemob.com/v4/ios/room_manage.html">创建和管理聊天室</a></td>
+      <td rowspan="6"><a href="/v4/ios/room_manage.html">创建和管理聊天室</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
@@ -243,7 +243,7 @@
     <tr>
       <td rowspan="7">管理聊天室成员</td>
       <td>获取聊天室成员列表</td>
-      <td rowspan="7"><a href="https://doc.easemob.com/v4/ios/room_members.html">管理聊天室成员</a></td>
+      <td rowspan="7"><a href="/v4/ios/room_members.html">管理聊天室成员</a></td>
       <td>✅</td>
       <td>✅</td>
     </tr>
@@ -280,7 +280,7 @@
     <tr>
       <td rowspan="4">管理聊天室基本属性</td>
       <td>获取聊天室公告</td>
-      <td rowspan="4"><a href="https://doc.easemob.com/v4/ios/room_attributes.html">管理聊天室基本属性</a></td>
+      <td rowspan="4"><a href="/v4/ios/room_attributes.html">管理聊天室基本属性</a></td>
       <td>✅</td>
       <td>✅</td>
     </tr>
@@ -302,7 +302,7 @@
     <tr>
       <td>管理聊天室自定义属性</td>
       <td>管理聊天室自定义属性</td>
-      <td><a href="https://doc.easemob.com/v4/ios/room_attributes.html#管理聊天室自定义属性-key-value">管理聊天室自定义属性</a></td>
+      <td><a href="/v4/ios/room_attributes.html#管理聊天室自定义属性-key-value">管理聊天室自定义属性</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
@@ -310,7 +310,7 @@
       <td rowspan="7">进阶功能</td>
       <td>离线推送</td>
       <td>集成第三方消息推送服务</td>
-      <td><a href="https://doc.easemob.com/v4/ios/push/push_overview.html">离线推送</a></td>
+      <td><a href="/v4/ios/push/push_overview.html">离线推送</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
@@ -323,35 +323,35 @@
     </tr>
     <tr>
       <td>多设备管理</td>
-      <td><a href="https://doc.easemob.com/v4/ios/multi_device.html">多设备登录</a></td>
+      <td><a href="/v4/ios/multi_device.html">多设备登录</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
     <tr>
       <td>管理在线状态订阅</td>
       <td>管理在线状态订阅</td>
-      <td><a href="https://doc.easemob.com/v4/ios/presence.html">在线状态订阅</a></td>
+      <td><a href="/v4/ios/presence.html">在线状态订阅</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
     <tr>
       <td>消息表情回复&nbsp;Reaction</td>
       <td>对单聊和群聊中的消息通过表情回复</td>
-      <td><a href="https://doc.easemob.com/v4/ios/reaction.html">消息表情回复</a></td>
+      <td><a href="/v4/ios/reaction.html">消息表情回复</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
     <tr>
       <td>消息话题管理</td>
       <td>消息话题是群组成员的子集</td>
-      <td><a href="https://doc.easemob.com/v4/ios/thread.html">消息话题管理</a></td>
+      <td><a href="/v4/ios/thread.html">消息话题管理</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>
     <tr>
       <td>消息举报</td>
       <td>开发者可以在客户端调用该接口举报违规消息</td>
-      <td><a href="https://doc.easemob.com/v4/ios/moderation.html">消息举报</a></td>
+      <td><a href="/v4/ios/moderation.html">消息举报</a></td>
       <td>❌</td>
       <td>✅</td>
     </tr>

@@ -136,7 +136,6 @@
 - 新增 `GroupManager#FetchMyGroupsCount` 方法用于[从服务器获取当前用户已加入的群组数量](group_manage.html#查询当前用户已加入的群组数量)。 
 - 新增错误码 706 `CHATROOM_OWNER_NOT_ALLOW_LEAVE`，表示聊天室所有者不允许离开聊天室。若初始化时，`Options#IsRoomOwnerLeaveAllowed` 参数设置为 `false`，聊天室所有者调用 `LeaveRoom` 方法离开聊天室时会提示该错误。
 - 支持[聊天室漫游消息](message_retrieve.html#从服务器获取指定会话的消息)。
-- 新增 `Options#UseReplacedMessageContents` 开关。开启后，发送消息时如果被内容审核进行了内容替换，发送方可以收到替换后的内容。
 - 新增 `Message#IsContentReplaced` 属性判断文本消息的内容是否在文本审核过程中进行了替换。
 - 新增[置顶消息](message_pin.html)功能。
   - 新增 `ChatManager#PinMessage` 方法，用于置顶消息或取消置顶消息。
@@ -397,11 +396,11 @@
 - 消息表情回复；
 - 管理消息话题等。
 
-关于详细功能概述，请参见[产品概述](https://doc.easemob.com/product/introduction.html)。
+关于详细功能概述，请参见[产品概述](/product/introduction.html)。
 
 具体集成请参考以下文档：
 
-- [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目](https://doc.shengwang.cn/doc/console/general/quickstart#创建项目)。
+- [声网控制台](https://console.shengwang.cn/overview) [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)，[创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) 。
 - [即时通讯 IM Unity 快速入门](quickstart.html)
 - [消息管理 Unity](message_send.html)
 - [群组 Unity](group_manage.html)

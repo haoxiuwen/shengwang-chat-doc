@@ -1,6 +1,6 @@
 # 快速开始
 
-利用环信 Web CallKit，你可以轻松实现一对一通话和群组通话功能。本文介绍如何快速实现发起音视频通话。
+利用 Web CallKit，你可以轻松实现一对一通话和群组通话功能。本文介绍如何快速实现发起音视频通话。
 
 ## 推荐环境
 
@@ -15,10 +15,10 @@
 ## 前提条件
 
 在 [声网控制台](https://console.shengwang.cn/overview) 进行如下操作：
-    - [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
-    - [创建项目](/product/enable_im.html#创建项目并开通)，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
-    - [创建用户](/document/web/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/web/login.html#获取用户-token)。
-    - [开通音视频服务](product_activation.html)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能实现发起音视频通话。
+- [注册账号](https://doc.shengwang.cn/doc/console/general/quickstart#注册账号)。
+- [创建项目并开通 IM](/product/enable_im.html#_2-开通即时通讯-im-服务) ，[获取项目的 App ID](/product/enable_im.html#_3-获取-app-id)。
+- [创建用户](/document/web/login.html#用户注册)，获取用户 ID 和 [用户 Token](/document/web/login.html#获取用户-token)。
+- [开通声网 RTC](product_overview.html#开通声网-rtc)。为了保障流畅的用户体验，开通服务后，你需等待 15 分钟才能实现发起音视频通话。
 
 ## 快速开始
 

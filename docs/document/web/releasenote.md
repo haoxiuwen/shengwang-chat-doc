@@ -1,6 +1,10 @@
-﻿# Web/小程序 IM SDK 更新日志
+﻿---
+title: Web/小程序 IM SDK 更新日志
+show_search_search: false
+show_callback_route: false
+---
 
-## v5.0.0 Dev
+## v5.0.0 Dev 2026-8-12
 
 该版本于 2026 年 8 月 15 日发布。
 
@@ -51,9 +55,11 @@
 - 未传入 `enableSyncData` 时，SDK 默认登录后同步会话列表；如需同步好友或群组，请显式配置 `enableSyncData` 并注册对应 Manager。
 - 如果使用固定服务地址的私有部署环境，并开启好友或群组等同步能力，请同时配置 `serviceConfig.serverUrls` 中的同步服务地址。
 - 消息送达回执仅支持单聊；消息已读回执仅支持单聊和群聊，聊天室不支持消息送达回执和消息已读回执。
-- 群聊消息已读回执需要在环信控制台开通，并受群规模、有效期和权限配置限制。
+- 群聊消息已读回执需要在声网控制台开通，并受群规模、有效期和权限配置限制。
 - `sendMessageReadReceipts` 只表示指定消息已读，不会推进会话级已读位置，也不会直接清零本地会话未读数；如需清零未读数，请调用会话未读数清零接口。
 - 从旧版 Web SDK 升级时，应重点检查初始化入口、Manager 注册、登录参数、消息创建、事件监听、返回值读取和已移除 API。
+
+<HideSection :show="$frontmatter.show_server_search">
 
 ## v4.24.1 Dev 2026-7-10（开发版）
 
@@ -63,11 +69,17 @@
 
 消息搜索默认不支持扩展字段 `ext`，如需支持该字段搜索，请联系商务经理。
 
+</HideSection>
+
 ## v4.23.0 Dev 2026-6-10（开发版）
+
+<HideSection :show="$frontmatter.show_callback_route">
 
 ####  新增功能
 
 支持 [为消息配置回调路由标识，使消息可按指定路由触发发送前回调和发送后回调](message_send.html#发消息时设置回调路由)。目前，该功能仅面向国内 1 区和国内 2 区开放。
+
+</HideSection>
 
 ## v4.22.0 Dev 2026-6-5（开发版）
 
@@ -260,7 +272,7 @@
 
 #### 新增特性
 
-- [IM SDK] 新增[日志上报](log.html#日志上报)功能, 即将日志会上传到环信的服务器。该功能默认关闭，如有需要, 可联系商务开通。
+- [IM SDK] 新增[日志上报](log.html#日志上报)功能, 即将日志会上传到 IM 服务器。该功能默认关闭，如有需要, 可联系商务开通。
 
 ## v4.8.0 Dev 2024-07-01
 
@@ -326,7 +338,6 @@
 - [IM SDK] [聊天室和群组成员进出事件增加成员人数 `memberCount` 字段](room_manage.html#实时更新聊天室成员人数)。
 - [IM SDK] 新增 [deleteAllMessagesAndConversations](message_delete.html#清空聊天记录) 方法，用于清空当前用户的聊天记录，包括消息和会话。
 - [IM SDK] 新增 [getSelfIdsOnOtherPlatform](multi_device.html#获取当前用户的其他登录设备的登录-id-列表) 方法，可以获取当前用户其他登录设备的登录 ID 列表，实现对指定设备发送消息。
-- [IM SDK] 新增 [useReplacedMessageContents](message_send.html#发送消息前的内容审核) 开关。开启后，发送消息时如果被内容审核进行了内容替换，发送方可以获取替换后的内容。
 
 #### 优化
 
@@ -534,7 +545,7 @@
 
 #### 新增特性
 
-- [IM SDK] 新增群组事件回调 [onGroupEvent](https://doc.easemob.com/jsdoc/interfaces/Types.EventHandlerType.EventHandlerType.html#onGroupEvent) 和聊天室事件回调 [onChatroomEvent](https://doc.easemob.com/jsdoc/interfaces/Types.EventHandlerType.EventHandlerType.html#onChatroomEvent)。原回调可继续使用；
+- [IM SDK] 新增群组事件回调 `onGroupEvent` 和聊天室事件回调 `onChatroomEvent`。原回调可继续使用；
 - [IM SDK] 新增群聊消息限流错误码 [MESSAGE_CURRENT_LIMITING](error.html)
 - [IM SDK] 邀请加入群聊回调 onGroupChange 返回中新增 群名称 参数值。
 
@@ -561,7 +572,6 @@
 #### 新增特性:
 
 - [IM SDK] 新增 [消息 Reaction](reaction.html) 功能，可以对消息进行不同的响应；
-- [IM SDK] 新增 [举报 API](moderation.html) 用于内容审核；
 - [IM SDK] 新增推送设置 API，支持不同的推送配置；
 - [IM SDK] 增加数据上报功能；
 
@@ -1050,7 +1060,7 @@
 
 #### 优化
 
-- [demo] 支持 Windows SDK。可在 [环信官网下载 Web SDK](https://www.easemob.com/download/im#Web)。
+- [demo] 支持 Windows SDK。可 [下载 Web SDK](https://im.shengwang.cn/)。
 - [demo] 新增黑名单功能。
 - [demo] 获取聊天室列表: 支持分页、下拉刷新，新增以下 2 个参数：pagenum 和 pagesize。
 - [demo] 群组增加以下功能：创建群组、修改群组名称、修改群组简介、群组成员管理、加入公开群。

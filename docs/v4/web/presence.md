@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-用户在线状态（即 Presence）包含用户的在线、离线以及自定义状态。关于用户的在线、离线和自定义状态的定义、变更以及用户的实时感知，详见[用户在线状态管理](/product/product_user_presence.html)。
+用户在线状态（即 Presence）包含用户的在线、离线以及自定义状态。关于用户的在线、离线和自定义状态的定义、变更以及用户的实时感知，详见 [用户在线状态管理](/product/product_user_presence.html)。
 
 本文介绍如何在即时通讯应用中发布、订阅和查询用户的在线状态。
 
@@ -11,15 +11,7 @@
 - 对于专业版 IM，使用 Presence 前，你需要在 [声网控制台](https://console.shengwang.cn/overview) 的 **套餐包 > 预付费套餐包 > 即时通讯 IM** 页面开通该功能。
 - 对于旗舰版 IM，Presence 功能默认开启。
 
-## 技术原理
-
-即时通讯 IM SDK 提供在线状态接口，用于管理在线状态订阅，包含如下核心方法：
-
-- `subscribePresence`：订阅用户的在线状态；
-- `publishPresence`：发布自定义在线状态；
-- `addEventHandler`：添加在线状态监听器；
-- `onPresenceStatusChange`：被订阅用户的在线状态变更时，订阅者收到监听回调；
-- `unsubscribePresence`：无需关注用户的在线状态时，取消订阅。
+## 订阅流程
 
 订阅用户在线状态的基本工作流程如下：
 

@@ -40,7 +40,7 @@
 
 SDK 通过用户 ID 和 IM Token 登录。调用 `loginWithUsername` 时，需传入用户 ID 和 Token。登录成功后，SDK 会建立到消息服务的长连接。
 
-测试环境下，你在 [环信控制台](https://console.easemob.com/user/login) 创建用户后，IM 服务器会自动为这些用户分配用户 Token，详见 [创建用户](/product/console/operation_user.html#创建用户)。
+测试环境下，你在 [声网控制台](https://console.shengwang.cn/overview) 创建用户后，IM 服务器会自动为这些用户分配用户 Token，详见 [创建用户](/product/product_user_registration_login.html#创建用户)。
 
 生产环境中，建议在你的应用服务器集成 [Token 鉴权](/document/server-side/token_authentication.html)，由客户端从你的应用服务器获取用户 Token 后再登录 SDK。
 

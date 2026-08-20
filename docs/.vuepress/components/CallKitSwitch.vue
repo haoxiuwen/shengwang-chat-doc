@@ -78,8 +78,9 @@ const router = useRouter();
 watch(
   () => route.path,
   () => {
-    if (route.path.indexOf("/callkit") == 0) {
+    if (route.path.indexOf("/callkit") == 0 || route.path.indexOf("/docs/callkit") == 0) {
       const splitRoute = route.path.split("/");
+      if (splitRoute[1] === "docs") splitRoute.splice(1, 1);
       platform.value = splitRoute[2];
     }
   },
@@ -92,18 +93,19 @@ const onChange = (platform) => {
     .filter(
       (item) =>
         item.hasOwnProperty("name") &&
-        item?.path.indexOf(`/callkit/${platform}`) == 0
+        item?.path.indexOf(`/docs/callkit/${platform}`) == 0
     )
     .map((item) => item.path);
 
   let newPath = route.path.split("/");
-  newPath[2] = platform;
+  if (newPath[1] !== "docs") newPath.splice(1, 0, "docs");
+  newPath[3] = platform;
   const nextPathPath = newPath.join("/");
 
   if (nextPlatformDocRouters.indexOf(nextPathPath) > -1) {
     router.push(nextPathPath);
   } else {
-    router.push(`/callkit/${platform}/product_overview.html`);
+    router.push(`/docs/callkit/${platform}/product_overview.html`);
   }
 };
 </script>

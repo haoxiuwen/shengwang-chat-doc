@@ -61,14 +61,13 @@
 3. 用户主动关闭客户端网络。
 4. 客户端网络完全不可用，例如，进入没有网络信号的隧道或打开移动设备的飞行模式，即时通讯 IM 服务端等待 5 分钟后发现心跳包超时，状态会变成离线。
 5. 用户主动杀掉 App 进程，或者将 App 切后台后进程后被设备的操作系统杀掉，或者 crash 导致进程异常退出。
-6. 用户被从 [单设备](/document/server-side/account_offline_device_single.html) 或 [所有登录设备强制下线](/document/server-side/account_offline_forced.html)。该操作可由 [客户端](/document/android/multi_device.html#强制指定账号从单个设备下线)、[服务端](/document/server-side/account_offline_device_single.html) 或 [环信控制台](/product/console/operation_user.html#强制下线) 发起。
+6. 用户被从 [单设备](/document/server-side/account_offline_device_single.html) 或 [所有登录设备强制下线](/document/server-side/account_offline_forced.html)。该操作可由 [客户端](/document/android/multi_device.html#强制指定账号从单个设备下线)、[服务端](/document/server-side/account_offline_device_single.html) 或 [声网控制台](https://console.shengwang.cn/overview)  发起。
 7. 单设备登录场景下，后登录的设备将之前登录的设备踢下线。
 8. [多设备登录](/document/android/multi_device.html) 时达到了登录设备数量的上限，新登录的设备将之前登录的设备踢下线。多端登录时，IM 每端默认最多支持 4 个设备同时在线。
 
 ## 前提条件
 
-- 已开通发送后回调服务。详见 [开通消息回调服务](/product/console/basic_webhook.html#开通服务) 和 [回调说明](/document/server-side/callback_postsending.html)。
-- 已在 [环信控制台](https://console.easemob.com/user/login) 设置发送后回调规则。详见 [配置回调规则](/product/console/basic_webhook.html#配置消息回调规则)。
+已在 [声网控制台](https://console.shengwang.cn/overview) 设置发送后回调规则。详见 [配置回调规则](callback_postsending.html#回调规则)。
 
 ## 回调请求
 
@@ -136,7 +135,7 @@
 | :---------- | :------- | :----------------------------------------------------------- |
 | `callId`    | String   | 回调请求的唯一标识。 |
 | `reason`    | String   | 状态变更原因，取值：`login`（登录）、`logout`（登出）、`replaced`（被踢下线）。 |
-| `security`  | String   | 签名，格式为 `MD5(callId + secret + timestamp)`。`secret` 见 [控制台回调规则配置](/product/console/basic_webhook.html#配置消息回调规则)。 |
+| `security`  | String   | 签名，格式为 `MD5(callId + secret + timestamp)`。详见 [配置回调规则](callback_postsending.html#回调规则)。 |
 | `os`        | String   | 设备操作系统类型。                                           |
 | `ip`        | String   | 用户登录的 IP 地址。                                         |
 | `host`      | String   | 服务器名称。                                                 |

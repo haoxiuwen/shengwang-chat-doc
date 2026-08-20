@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-创建离线推送消息模板，包括默认模板 **default**、**detail** 和自定义模板。你可以通过 [环信控制台](https://console.easemob.com/user/login) 创建推送模板，详见 [推送模板配置文档](/document/android/push/push_template.html#开通功能)。
+创建离线推送消息模板，包括默认模板 **default**、**detail** 和自定义模板。你可以通过 [声网控制台](https://console.shengwang.cn/overview) 创建推送模板，详见 [推送模板配置文档](/document/android/push/push_template.html#开通功能)。
 
 若使用默认模板 **default** 和 **detail**，消息推送时自动使用默认模板，创建消息时无需传入模板名称。
 
