@@ -8,7 +8,7 @@ show_callback_route: false
 
 该版本于 2026 年 8 月 15 日发布。
 
-本文重点说明功能和行为变化，具体的接口删除、重命名及替代方式请参见 [IM iOS SDK 5.0.0 迁移指南](migration_guide.html)。
+本文重点说明功能和行为变化，具体的接口删除、重命名及替代方式请参见 [IM iOS SDK 4.x 到 5.x 迁移指南](migration_guide.html)。
 
 #### 重要变更
 
