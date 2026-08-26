@@ -131,7 +131,7 @@ ChatClient.getInstance().chatManager().sendMessage(message);
 :::
 
 ```java
-// setCustomOSPlatform 的取值范围为 [1,100]。
+// setCustomOSPlatform 的取值为 1。
     ChatOptions options=new ChatOptions();
     options.setCustomOSPlatform(1);
     ChatClient.getInstance().init(context,options);

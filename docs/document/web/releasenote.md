@@ -4,14 +4,15 @@ show_search_search: false
 show_callback_route: false
 ---
 
-## v5.0.0 Dev 2026-8-12
+## v5.1.0 Dev 2026-8-21
 
 该版本于 2026 年 8 月 15 日发布。
 
-本文重点说明功能和行为变化，具体的接口删除、重命名及替代方式请参见 [IM Web/小程序 SDK 5.0.0.0 迁移指南](migration_guide.html)。
+本文重点说明功能和行为变化，具体的接口删除、重命名及替代方式请参见 [IM Web/小程序 SDK 4.x 到 5.0.0 迁移指南](migration_guide.html)。
 
 #### 新增功能
 
+- **支持 App ID 方式初始化 SDK**：支持通过传入 App ID 进行 SDK 初始化。
 - **SDK 入口统一**：新增 `ChatClient` 统一入口，负责 SDK 初始化、登录登出、连接生命周期、事件分发和 Manager 注册。业务可通过 `ChatClient.init({ appId, managers })` 初始化 SDK，也可在初始化后通过 `.use()` 按需注册功能模块。
 - **支持模块化 Manager 能力拆分**：消息和会话由 `ChatManager` 管理，好友关系由 `ContactManager` 管理，用户属性由 `UserInfoManager` 管理，群组由 `GroupManager` 管理，聊天室由 `ChatRoomManager` 管理，在线状态由 `PresenceManager` 管理，消息话题由 `ChatThreadManager` 管理，推送由 `PushManager` 管理。
 - **支持类型化消息创建接口**：通过 `createTextMessage`、`createImageMessage`、`createFileMessage`、`createVoiceMessage`、`createVideoMessage`、`createLocationMessage`、`createCmdMessage`、`createCustomMessage` 和 `createCombineMessage` 创建不同类型消息，并通过 `sendMessage` 统一发送。
@@ -47,6 +48,7 @@ show_callback_route: false
 - **优化错误处理模型**：SDK 对参数校验、连接、认证、服务端业务错误、附件上传和消息发送等异常提供结构化错误类型，便于业务侧区分重试、提示和兜底策略。
 - **优化跨平台一致性**：通过统一平台适配层处理 Web、小程序、uni-app、React Native 和 Electron 等运行环境差异，降低不同端集成时的代码分叉。
 - **优化 AI 辅助集成体验**：提供 Markdown 文档、TypeScript 类型和 API 注释，便于 IDE、AI 编程工具和集成辅助工具读取和生成代码。
+- 修复小程序环境下的兼容性问题。
 
 #### 注意事项
 
