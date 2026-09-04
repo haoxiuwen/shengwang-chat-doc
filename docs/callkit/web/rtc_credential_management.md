@@ -15,7 +15,7 @@ import type { CallKitRTCProvider, RTCTokenInfo, RTCUidUserIdMap } from 'easemob-
 
 CallKit 以传入的 `chatClient` 为基础工作。未配置 `rtcProvider` 时，UIKit 会通过该 IM SDK 客户端自动获取 RTC 数据；需要使用自有声网项目或业务服务端 Token 时，再按需覆写相应方法。
 
-| 配置项 | 默认 UIKit / IM SDK 模式 | 自定义 `CallKitRTCProvider` 模式 |
+| 项 | 默认 UIKit / IM SDK 模式 | 自定义 `CallKitRTCProvider` 模式 |
 | --- | --- | --- |
 | 适用场景 | 使用 IM SDK 提供的 RTC 凭证与 UID 映射。 | 使用自有声网项目，或由业务服务端签发 RTC Token、维护 UID 映射。 |
 | 组件配置 | `<CallKit chatClient={client} />` | `<CallKit chatClient={client} rtcProvider={rtcProvider} />` |
@@ -106,7 +106,10 @@ POST /api/rtc/user-ids
 import React from 'react';
 import type { CallKitRTCProvider, RTCTokenInfo, RTCUidUserIdMap } from 'easemob-chat-uikit';
 
-function useCallKitRTCProvider(currentUserId: string): CallKitRTCProvider {
+function useCallKitRTCProvider(
+  currentUserId: string,
+  useRTCToken = true,
+): CallKitRTCProvider {
   return React.useMemo(
     () => ({
       async getRTCTokenInfo({ channelName }): Promise<RTCTokenInfo> {
@@ -122,13 +125,17 @@ function useCallKitRTCProvider(currentUserId: string): CallKitRTCProvider {
         }
 
         const data = (await response.json()) as RTCTokenInfo;
-        if (!data.appId || !Number.isFinite(data.rtcUid) || !data.rtcToken) {
+        if (
+          !data.appId ||
+          !Number.isFinite(data.rtcUid) ||
+          (useRTCToken && !data.rtcToken)
+        ) {
           throw new Error('RTC Token 接口返回的数据不完整');
         }
 
         return {
           appId: data.appId,
-          rtcToken: data.rtcToken,
+          rtcToken: data.rtcToken || '',
           rtcUid: data.rtcUid,
         };
       },
@@ -148,7 +155,7 @@ function useCallKitRTCProvider(currentUserId: string): CallKitRTCProvider {
         return (await response.json()) as RTCUidUserIdMap;
       },
     }),
-    [currentUserId],
+    [currentUserId, useRTCToken],
   );
 }
 ```
@@ -336,14 +343,14 @@ function CallKitLayer({ userId }: { userId: string }) {
     }
   };
 
-  const userInfoProvider = async (userIds: string[]) => {
+  const userInfoProvider = React.useCallback(async (userIds: string[]) => {
     // 生产环境中请从业务服务端或本地缓存返回真实昵称和头像。
     return userIds.map(id => ({
       userId: id,
       nickname: id,
       avatarUrl: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(id)}`,
     }));
-  };
+  }, []);
 
   return (
     <>
@@ -400,7 +407,9 @@ POST /api/rtc/user-ids
 => { "10001": "alice", "10002": "bob" }
 ```
 
-如果只需要自定义 Token 获取而继续使用 IM SDK 的 UID 映射，可以从 provider 中删除 `getUserIdsWithRTCUids`；如果声网项目允许不校验 Token，也可以在 `CallKit` 上设置 `useRTCToken={false}`，但此时仍需返回正确的 `appId` 和 `rtcUid`。
+如果只需要自定义 Token 获取而继续使用 IM SDK 的 UID 映射，可以从 provider 中删除 `getUserIdsWithRTCUids`；如果声网项目允许不校验 Token，请将示例中的 `useRTCToken` 常量改为 `false`（该常量同时传给 `useCallKitRTCProvider` 和 `CallKit`），此时仍需返回正确的 `appId` 和 `rtcUid`，`rtcToken` 可以为空。
+
+运行页面后，请先等待 `Provider` 使用 `initConfig` 完成 IM 登录，再点击通话按钮。示例中的 App Key、IM Token 和服务端接口地址均为占位值，生产环境不要将真实凭证硬编码在前端代码中。
 
 ## 常见问题
 
