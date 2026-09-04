@@ -2,7 +2,7 @@
 
 ## 概述
 
-CallKit 默认通过传入的 IM SDK 客户端获取 RTC 入会信息和 RTC UID 映射：
+CallKit 默认通过传入的 IM SDK 客户端获取 RTC 进房信息和 RTC UID 映射：
 
 - `chatClient.getRTCTokenInfo({ channelName })`：获取声网 App ID、RTC Token 和本端 RTC UID；
 - `chatClient.getUserIdsWithRTCUids(rtcUids)`：将远端 RTC UID 映射为 IM `userId`，用于显示用户昵称和头像等业务信息。
@@ -15,7 +15,7 @@ import type { CallKitRTCProvider, RTCTokenInfo, RTCUidUserIdMap } from 'easemob-
 
 CallKit 以传入的 `chatClient` 为基础工作。未配置 `rtcProvider` 时，UIKit 会通过该 IM SDK 客户端自动获取 RTC 数据；需要使用自有声网项目或业务服务端 Token 时，再按需覆写相应方法。
 
-| 项 | 默认 UIKit / IM SDK 模式 | 自定义 `CallKitRTCProvider` 模式 |
+| 配置项 | 默认 UIKit / IM SDK 模式 | 自定义 `CallKitRTCProvider` 模式 |
 | --- | --- | --- |
 | 适用场景 | 使用 IM SDK 提供的 RTC 凭证与 UID 映射。 | 使用自有声网项目，或由业务服务端签发 RTC Token、维护 UID 映射。 |
 | 组件配置 | `<CallKit chatClient={client} />` | `<CallKit chatClient={client} rtcProvider={rtcProvider} />` |
@@ -27,7 +27,7 @@ CallKit 以传入的 `chatClient` 为基础工作。未配置 `rtcProvider` 时�
 
 ## API
 
-`CallKitRTCProvider` 用于接管 CallKit 从 IM SDK 获取的两类 RTC 数据：入会凭证和 RTC UID 映射。CallKit 会在发起通话、接听通话以及远端用户加入频道等实际时机按需调用这些方法。业务侧可以只实现需要自定义的部分，未实现的方法会继续使用 `chatClient` 的对应接口。下面是该 provider 及其返回值的公开类型定义：
+`CallKitRTCProvider` 用于接管 CallKit 从 IM SDK 获取的两类 RTC 数据：加入频道凭证和 RTC UID 映射。CallKit 会在发起通话、接听通话以及远端用户加入频道等实际时机按需调用这些方法。业务侧可以只实现需要自定义的部分，未实现的方法会继续使用 `chatClient` 的对应接口。下面是该 provider 及其返回值的公开类型定义：
 
 ```ts
 interface RTCTokenInfo {
@@ -55,19 +55,20 @@ interface CallKitRTCProvider {
 
 **getRTCTokenInfo**
 
-CallKit 在发起通话或接听后加入频道前调用该方法，并将实际的 `channelName` 传入。业务服务端应按这个频道名和当前 IM 用户签发凭证。
-
-返回值要求如下：
-
-- `appId`：非空字符串，且必须是签发该 `rtcToken` 的声网项目 App ID。
-- `rtcUid`：有限数字，并且必须与 Token 中的 UID 一致。对于同一 IM 用户，建议在业务侧保持稳定的 RTC UID 映射。
-- `rtcToken`：当 `useRTCToken`（默认 `true`）开启时必须为非空字符串；当 `useRTCToken={false}` 时可以为空，CallKit 会以 `null` Token 加入频道。仅在声网项目允许不校验 Token 的场景使用后者。
-
-当前 provider 返回值中不包含 `expiration` 字段，CallKit 也不会依据该字段自动续期。请保证服务端签发的 Token 在预期通话时长内有效；如需 Token 续期，请结合实际 RTC 生命周期和声网 SDK 的续期能力在应用侧设计相应流程。
+- **说明：** 异步返回当前参与者加入指定 `channelName` 所需的声网 `appId`、`rtcToken` 和 `rtcUid`。业务服务端应根据当前 IM 用户和频道签发这些数据。
+- **调用时机：**
+  - 主叫发起通话、发送邀请前调用。
+  - 被叫接受邀请、加入频道前调用；RTC 进房数据无效时会重新获取。
+- **回退逻辑（返回 `null` 时）：** `rtcProvider` 未提供 `getRTCTokenInfo` 方法时，CallKit 才会调用 `chatClient.getRTCTokenInfo({ channelName })`。如果已提供该方法，但运行时返回 `null`、`undefined`、不合法对象或抛出异常，CallKit 会将 加入 RTC 频道所需的数据 视为不可用，不会再回退到 IM SDK；主叫无法发起通话，被叫无法加入频道，并触发通话错误处理。虽然 TypeScript 返回类型是 `Promise<RTCTokenInfo>`，业务实现仍应避免返回空值。
+- **返回值约束：**
+  - 必须返回 `RTCTokenInfo` 对象。`appId` 必须是非空字符串，并且必须与签发 `rtcToken` 的声网项目一致。
+  - `rtcUid` 必须是有限数字，并且必须与 `rtcToken` 中的 UID 一致；同一 IM 用户建议保持稳定的 UID 映射。`channelName` 和 Token 中的频道也必须一致。
+  - `useRTCToken`（默认 `true`）开启时，`rtcToken` 必须是非空字符串；设置 `useRTCToken={false}` 时可以返回空字符串，CallKit 会以 `null` Token 加入频道。仅在声网项目允许不校验 Token 时使用此配置。
+  - 返回值不包含 `expiration` 字段，CallKit 也不会依据该字段自动续期。请保证服务端 Token 在预期通话时长内有效；如需续期，应结合 RTC SDK 的过期回调和业务侧 Token 接口自行实现。
 
 **getUserIdsWithRTCUids**
 
-远端用户进入频道后，CallKit 会按需调用该方法，以便把 RTC 层的 UID 关联到 IM 用户资料。返回值的键是 RTC UID 的字符串形式，值是对应的 IM `userId`：
+- **说明：** 异步批量返回 RTC UID 与 IM `userId` 的映射，用于获取远端用户的昵称、头像等资料。返回值的键是 RTC UID 的字符串形式，值是对应的 IM `userId`：
 
 ```ts
 {
@@ -76,7 +77,9 @@ CallKit 在发起通话或接听后加入频道前调用该方法，并将实际
 }
 ```
 
-接口参数是 UID 数组，服务端可以批量查询和返回映射。缺少映射会导致对应远端用户无法关联到业务用户资料；在一对一通话中，CallKit 会尽力使用邀请中的对端用户 ID 作为兜底，但多人通话应始终返回完整映射。
+- **调用时机：** 远端用户进入频道后，CallKit 在需要将远端 UID 转换为 IM 用户资料时按需调用。CallService 会先查询本地缓存，未命中且 UID 有效时才请求 provider。
+- **回退逻辑（返回 `null` 时）：** `rtcProvider` 未提供 `getUserIdsWithRTCUids` 方法时，CallKit 才会调用 `chatClient.getUserIdsWithRTCUids(rtcUids)`。如果已提供该方法，但运行时返回 `null`、`undefined`、非对象、缺少请求 UID 的映射或抛出异常，CallKit 不会再调用 IM SDK 查询；一对一通话会尽力使用邀请中的对端 IM `userId` 兜底，多人通话没有该兜底，对应远端用户可能只能显示 RTC UID 或无法关联用户资料。
+- **返回值约束：** 必须返回 `RTCUidUserIdMap` 对象。每个请求的 RTC UID 都应使用其规范的字符串形式作为键（例如 `10001` 对应 `'10001'`），值必须是非空的 IM `userId`。多人通话应返回所有请求 UID 的映射；不要返回无法确认归属的用户 ID，也不要把 UID 映射到 Token 中的其他用户。
 
 ## 接入流程
 
