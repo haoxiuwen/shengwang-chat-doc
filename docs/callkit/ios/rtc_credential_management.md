@@ -18,7 +18,36 @@
 两种方式只能选其一。RTC 引擎创建后 **无法切换凭证来源**。如需从默认方式切换至 `CallTokenProvider` 方式，请 **重启 App** 后直接进入 Token Provider 页面，不要在首页先完成 IM 登录。
 :::
 
-## 使用流程
+## API
+
+`CallTokenProvider` 提供以下三个方法用于自定义 RTC 凭证管理。**不实现某个方法或方法返回空值时，CallKit 会降级到 IM SDK 内部逻辑**。
+
+**getAppId()**
+
+- **说明：** 同步返回你的声网 App ID（不是 IM 提供的 App ID）。
+- **调用时机：** 初始化 RTC 引擎时调用，仅调用一次；后续通话重新创建引擎时可能再次调用。
+- **回退逻辑（返回空时）：** 使用 IM SDK 配置中的 App ID（`ChatClient.shared().options.appId`）。
+- **返回值约束：** 必须返回有效的声网 RTC App ID 字符串。该方法必须轻量、同步，并支持重复调用。
+
+**getRTCToken(withChannel: String?) async throws -> CallRTCTokenInfo**
+
+- **说明：** 异步返回 RTC Token、UID 和过期时间。当前 `channelName` 固定传 `nil`，请签发 **对所有频道有效的应用级 Token**。
+- **调用时机：** 登录后、加入 RTC 频道前、Token 即将过期时、App 从后台回到前台等时机。
+- **回退逻辑（返回 `nil` 或抛出异常时）：** 使用 IM SDK 的获取逻辑（调用 `ChatClient.shared().getRTCToken(withChannel:)`）。
+- **返回值约束：**
+  - `uid` 必须大于 0，同一用户应尽量保持稳定。
+  - `expiration` 为 Unix 时间戳（秒）。CallKit 当前不读取该字段来计算续期时间；续期由 RTC SDK 的 Token 过期回调触发。字段取值（包括 `0` 的含义）应与服务端 Token 签发规则保持一致。
+  - `token` 不能为空（除非将 `CallKitConfig.disableRTCTokenValidation` 设为 `true`）。
+
+```swift
+public struct CallRTCTokenInfo: Sendable {
+    public let uid: UInt32
+    public let token: String
+    public let expiration: Int64
+}
+```
+
+## 接入流程
 
 本节介绍从初始化到呼叫的流程。
 
@@ -49,20 +78,7 @@ CallKitManager.shared.addListener(self)
 
 ### 步骤 3：实现 CallTokenProvider 协议
 
-`CallTokenProvider` 提供了三个必须实现的方法，用于自定义 RTC 凭证管理。`CallKit` 会在以下时机自动回调对应方法，你只需向自己的服务端请求数据并返回即可。**不实现该协议或方法返回空值时，CallKit 会降级到 IM SDK 内部逻辑**。
-
-| 方法  | 说明  | 调用时机  | 回退逻辑（返回 `nil` 或空时）   |
-| :-------------- | :----- | :------- | :------------- |
-| `getAppId() -> String`  | 同步返回你的声网 App ID（不是 IM 提供的 App ID），**必须返回有效的非空字符串**。 | 在 RTC 引擎初始化前调用，仅调用一次。 | 使用 IM SDK 配置中的 AppId（`ChatClient.shared().options.appId`）。 |
-| `getRTCToken(withChannel: String?) async throws -> CallRTCTokenInfo` | 异步提供 RTC Token、uid 和过期时间。当前 `channelName` 固定传 `nil`，请签发 **对所有频道有效的应用级 Token**。 | 登录后、进房前、Token 即将过期、App 从后台回到前台等时机。| 使用 IM SDK 内部缓存/获取逻辑（调用 `ChatClient.shared().getRTCToken(withChannel:)`）。 |
-| `getRelations(rtc: [UInt32]) async throws -> [UInt32: String]` | 批量返回声网 UID 与 IM userId 的映射关系，返回字典 `[uid: userId]`。 | 通话中远端用户进房后，需要反查用户信息（头像、昵称等）时调用。 | 缺失的 UID 使用 IM SDK 查询逻辑（调用 `ChatClient.shared().getUserId(byRTCUIds:)`）。 |
-
-**返回值约束：**
-
-- `uid` 必须大于 0，同一用户应尽量保持稳定。
-- `expiration` 为 Unix 时间戳（秒），传 `0` 表示永不过期。有效 Token 会在过期前约 5 分钟自动续期。
-- 除非将 `CallKitConfig.disableRTCTokenValidation` 设为 `true`，否则 `token` 不能为空。
-- 登出 IM 时，请调用 `CallKitManager.shared.cleanUserDefaults()` 清理本地缓存的 Token 和 uid 映射。
+下面给出 `CallTokenProvider` 三个方法的组合实现示例。有关各方法的说明、调用时机、回退逻辑和返回值约束，参见 [API](#api) 章节。
 
 ```Swift
 final class ExampleCallTokenProvider: CallTokenProvider {
@@ -350,4 +366,21 @@ class MyViewController: UIViewController {
     }
 }
 ```
+
+## 常见问题
+
+| 问题 | 解决方法 |
+| :-------------- | :----- |
+| 收到 `App ID is not set` 或 `RTC App ID from CallTokenProvider is empty` 错误 | 如果使用自定义 `CallTokenProvider`，请检查 `getAppId()` 是否返回非空、有效的声网 App ID（应为 Agora 项目的 App ID，不是环信 AppKey）。如果返回空字符串，CallKit 会从 IM SDK 配置中读取 App ID（`ChatClient.shared().options.appId`）；此时请确认 IM SDK 已正确初始化，且 `appId` 已在 `ChatSDKOptions` 中设置。RTC App ID 只在 RTC 引擎创建时读取一次，之后不能改变。 |
+| 收到 `RTC credential source returned an invalid credential` 或其他 Token 相关错误 | 该错误表示 CallKit 未取得有效的 `CallRTCTokenInfo`。请确认 `getRTCToken(withChannel:)` 返回的结果满足以下条件：`uid > 0`、`token` 非空字符串（除非启用了 `disableRTCTokenValidation`）、`expiration >= 0` 且大于当前时间戳。当前 `channelName` 参数固定为 `nil`，请签发**应用级 Token**（对所有频道有效），不要按单个频道签发。如果 Provider 方法抛出异常或返回 `nil`，CallKit 会回退到 IM SDK 获取 Token；回退失败时会报此错误。 |
+| 能发送通话邀请，但无法进入 RTC 频道 | 确认以下条件一致：(1) 生成 Token 时使用的 RTC App ID 与初始化时的一致；(2) **生成 Token 时必须按应用级签发**（`channelName` 为 `nil`，有效对所有频道）；(3) 加入频道时使用的 UID 与生成 Token 时的 UID 一致；(4) Token 未过期（`expiration` 大于当前时间戳）。若混用不同 Agora 项目、不同频道的 Token，或使用已过期的 Token，会导致加入频道失败。 |
+| 配置 `CallTokenProvider` 后仍然请求 IM SDK 的 RTC 接口 | `CallTokenProvider` 各方法独立生效。当以下任一情况发生时，CallKit 会回退到 IM SDK：(1) `getAppId()` 返回空字符串；(2) `getRTCToken(withChannel:)` 抛出异常或返回 `nil`；(3) `getRelations(rtc:)` 返回 `nil` 或返回的字典中缺少目标 UID。请检查所有需要的方法是否均已正确实现。如果使用自定义 RTC App ID，应同时提供由同一 Agora 项目生成的应用级 Token。 |
+| 多人通话中远端用户的昵称或头像未正确显示 | 首先检查 `getRelations(rtc:)` 返回的字典是否包含所有请求的 RTC UID。该字典的键应为 RTC UID（`UInt32`），值应为对应的 IM 用户 ID（`String`）。该方法只负责 RTC UID 到 IM 用户 ID 的映射；昵称、头像等用户资料还需由 `CallUserProfileProvider.fetchUserProfiles()` 正确返回。缺失的 UID 会自动使用 IM SDK 的查询逻辑（`ChatClient.shared().getUserId(byRTCUIds:)`）。注：UID 解析失败会被记录在负缓存中，30 秒内不再重试。 |
+| 通话过程中收到 Token 续期相关的错误或 Token 无法续期 | RTC SDK 在以下两种情况下触发 Token 续期回调：(1) `rtcEngine(_:tokenPrivilegeWillExpire:)` - Token 即将过期时（在过期前约 5 分钟自动触发）；(2) `rtcEngineRequestToken(_:)` - Token 已完全过期，需要重新加入频道。此时 CallKit 会调用 `getRTCToken(withChannel:)` 请求新的 Token。请确认该方法及时返回有效的新 Token（必须是新签发的、过期时间在当前时间戳之后），不要重复返回已过期的 Token 或返回 `nil`。 |
+| 收到 `Failed to renew token` 或加入频道后立即断连 | 这通常是因为 Token 过期。CallKit 在 Token 有效期内会在到期前约 5 分钟自动更新一次（不需要开发者手动处理），但如果 `getRTCToken(withChannel:)` 返回的 Token 已过期或无效，会导致续期失败。请确保服务端生成的 Token 有足够的有效期（建议至少 24 小时）。当 Token 完全过期时（超过 `expiration` 时间戳），RTC SDK 会触发 `rtcEngineRequestToken(_:)` 回调，此时 CallKit 会重新加入频道。 |
+| 更换 RTC App ID 或 Token 后配置未生效，或收到 `RTC App ID changed after the RTC engine was created` 错误 | RTC App ID 只在 RTC 引擎创建时读取，同一个 RTC 引擎生命周期内不能改变。若需更换 App ID 或 Provider，必须先结束当前通话（调用 `hangup()`），等待 RTC 引擎销毁完成，再在下一次通话开始前重新设置新的 `CallTokenProvider` 或新的 App ID。为避免同一次通话中的配置混乱，**严禁在通话过程中更换 Provider**。 |
+| 切换 IM 账号后出现 Token 失效、UID 错误或 `UID changed` 异常 | 请先结束当前通话（调用 `hangup()`）并完成 IM 账号切换（调用 `ChatClient.shared().logout()`），再用新账号发起新通话。同时确认自定义 `CallTokenProvider` 按当前登录用户正确生成 Token 和 UID，不要复用上一个账号的 Token。**关键是 UID 必须在同一次通话中保持一致**，如果 `getRTCToken(withChannel:)` 在通话中途返回不同的 UID，会被检测为异常。登出时调用 `CallKitManager.shared.cleanUserDefaults()` 清理本地缓存的 Token 和 UID 映射。如需完全释放所有资源，调用 `CallKitManager.shared.tearDown()` 而不是 `cleanUserDefaults()`。 |
+| 收到 `RTC credential has expired` 或 `RTC credential request no longer matches the active call` 错误 | 这通常表示以下情况之一：(1) 返回的 Token 已过期（`expiration` 小于当前时间戳）；(2) 在等待 Token 或 UID 映射的过程中，通话状态发生了变化（如用户中途切换、IM 状态改变、通话被中断）；(3) 返回的 UID 值与之前不一致。请确认 `getRTCToken(withChannel:)` 返回的 Token 有效期在当前时间戳之后，并且返回的 UID **始终保持一致**（同一用户，同一通话中 UID 不能改变）。 |
+| 多人通话中某些用户显示为 `uid-N` 占位符，或同一个人出现两个格子 | CallKit 在解析 RTC UID 到 IM 用户 ID 失败时，会使用 `uid-N` 作为临时占位符显示用户。这表示 `getRelations(rtc:)` 未能返回该 UID 对应的用户 ID。请检查：(1) 是否在所有需要的回调中都实现了该方法；(2) 返回的字典中是否包含了所有请求的 UID；(3) UID 解析是否由于网络等原因多次失败（失败会被负缓存 30 秒）。一旦真实的 IM 用户 ID 被解析出来，占位符会被自动替换，同一用户只会显示一个格子。 |
+| Token 未按应用级签发导致频道加入失败 | **重要**：CallKit 固定使用 **应用级 Token**（`channelName` 为 `nil`），而不是频道级 Token。若服务端按频道级签发 Token，即使 UID 和 App ID 正确，仍然无法加入 RTC 频道。请确保服务端在调用 Agora Token Server API 时，对应的请求中 `channelName` 参数为空或不指定，以获取应用级 Token。 |
 

@@ -81,7 +81,7 @@ export const zhNavbar = navbar([
           {
             text: 'uni-app',
             icon: '/icon-uni-app.svg',
-            link: '/docs/document/web/uniapp.html'
+            link: '/docs/document/web/integration.html'
           },
         ]
       },

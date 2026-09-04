@@ -1,447 +1,412 @@
-# Web CallTokenProvider 实现指南
+# Web CallKit：自定义 RTC 凭证接入
 
 ## 概述
 
-默认情况下，CallKit 使用声网提供的 RTC 凭证体系，即登录即时通讯 IM 后，由 IM SDK 自动下发 RTC AppId、Token、UID 以及 UID 和 IM 用户 ID（`userId`）的映射，
+CallKit 默认通过传入的 IM SDK 客户端获取 RTC 入会信息和 RTC UID 映射：
 
-**如果你已有自己的声网 App ID，并希望在自己的应用服务端独立签发 RTC Token、自行维护 IM userId 与 RTC UID 的映射关系**，你可以使用 `CallTokenProvider` 方式接入。
+- `chatClient.getRTCTokenInfo({ channelName })`：获取声网 App ID、RTC Token 和本端 RTC UID；
+- `chatClient.getUserIdsWithRTCUids(rtcUids)`：将远端 RTC UID 映射为 IM `userId`，用于显示用户昵称和头像等业务信息。
 
-你可根据业务场景选择 CallKit 的两种凭证管理方式：
-
-| 项 | 默认方式 | `CallTokenProvider` |
-|:---|:--------|:-------------------|
-| **RTC App ID** | 登录 IM 后从 IM SDK 的 `options.appId` 读取 | 由你的应用服务端通过 `CallTokenProvider.getAppId()` 提供 |
-| **RTC Token / UID** | 登录后向 IM SDK 请求下发 | 由你的应用服务端通过 `CallTokenProvider.getRTCToken()` 签发 |
-| **声网 UID 与 IM 用户 ID（`userId`）的映射** | 依赖 IM SDK 内置映射 | 由你的应用服务端通过 `CallTokenProvider.getRelations()` 维护 |
-
-:::tip
-两种方式只能选其一。RTC 引擎创建后 **无法切换凭证来源**。如需从默认方式切换至 `CallTokenProvider` 方式，请 **重启应用** 后直接进入 Token Provider 页面。
-:::
-
-## 使用流程
-
-本节介绍从初始化到呼叫的完整流程。
-
-### 步骤 1：初始化 IM SDK
-
-使用你的 IM 的 App Key 初始化 IM SDK。
-
-**不要将 RTC App ID 填入 IM Options，它将在后续由 `CallTokenProvider.getAppId()` 单独提供。**
+如果应用使用自有的声网项目，或希望由业务服务端签发 RTC Token、维护 RTC UID 与 IM 用户 ID 的关系，可以为 `CallKit` 传入 `rtcProvider`。`rtcProvider` 的类型为公开导出的 `CallKitRTCProvider`。
 
 ```tsx
-import WebIM from 'easemob-websdk';
-
-const connection = new WebIM.connection({
-  appId: 'YOUR_APP_ID',
-});
-
-await connection.open({
-  user: userId,
-  accessToken: token,
-});
+import type { CallKitRTCProvider, RTCTokenInfo, RTCUidUserIdMap } from 'easemob-chat-uikit';
 ```
 
-### 步骤 2：创建 CallTokenProvider 实现
+CallKit 以传入的 `chatClient` 为基础工作。未配置 `rtcProvider` 时，UIKit 会通过该 IM SDK 客户端自动获取 RTC 数据；需要使用自有声网项目或业务服务端 Token 时，再按需覆写相应方法。
 
-`CallTokenProvider` 提供了三个必须实现的方法，用于自定义 RTC 凭证管理。CallKit 在相应时机调用这些方法，你只需向自己的后端请求数据并返回即可。**未实现该接口或方法返回 null/空值时，CallKit 会降级到 IM SDK 的内部逻辑。**
+| 配置项 | 默认 UIKit / IM SDK 模式 | 自定义 `CallKitRTCProvider` 模式 |
+| --- | --- | --- |
+| 适用场景 | 使用 IM SDK 提供的 RTC 凭证与 UID 映射。 | 使用自有声网项目，或由业务服务端签发 RTC Token、维护 UID 映射。 |
+| 组件配置 | `<CallKit chatClient={client} />` | `<CallKit chatClient={client} rtcProvider={rtcProvider} />` |
+| 入会凭证 | UIKit 调用 `chatClient.getRTCTokenInfo({ channelName })`。 | `rtcProvider.getRTCTokenInfo({ channelName })` 返回 `{ appId, rtcToken, rtcUid }`。 |
+| UID 与 IM 用户 ID 映射 | UIKit 调用 `chatClient.getUserIdsWithRTCUids(rtcUids)`。 | `rtcProvider.getUserIdsWithRTCUids(rtcUids)` 返回 `{ [rtcUid]: userId }`。 |
+| 需要自行维护的数据 | 无。 | 声网 App ID、RTC Token、RTC UID，以及 RTC UID 与 IM `userId` 的映射。 |
 
-| 方法         | 说明             | 调用时机   | 回退逻辑（返回 null/空 或未实现时）    |
-| :----- | :------ | :------- | :--------- |
-| `getAppId(): string      | Promise<string>`         | 同步或异步返回你的声网 App ID（不是 IM 提供的 App ID），**必须返回有效的非空字符串**。 | 在 RTC 引擎初始化前调用，仅调用一次。                        |
-| `getRTCToken(channel?: string): Promise<CallRTCTokenInfo>`   | 异步提供 RTC Token、uid 和过期时间。当前 channel 可按实现约定传入或忽略；建议签发对所有频道有效的应用级 Token（或根据需要签发频道级 Token）。 | 登录后、进房前、Token 即将过期、页面从不可见回到可见等时机。 | 使用 IM SDK 内部的缓存与数据获取机制（例如 IM SDK 提供的获取 Token 的等效方法）。 |
-| `getRelations(rtcUids: number[]): Promise<Record<number, string>>` | 批量返回声网 UID 与 IM userId 的映射关系，返回字典 `{ [uid]: userId }`。 | 通话中远端用户进房后，需要反查用户信息（头像、昵称等）时调用。 | 对缺失的 UID 使用 IM SDK 查询逻辑（例如 IM SDK 的批量 UID->userId 查询接口）。 |
+`CallKitRTCProvider` 的两个方法可独立配置。例如，只提供 `getRTCTokenInfo` 时，Token 由业务服务端获取，而 UID 映射仍由 IM SDK 获取；未提供的方法始终按默认模式回退到 `chatClient`。
 
-```tsx
-import { CallTokenProvider, CallRTCTokenInfo } from '@/module/callkit';
+## API
 
-class MyCallTokenProvider extends CallTokenProvider {
-  private agoraAppId: string;
-  private tokenServerUrl: string;
+`CallKitRTCProvider` 用于接管 CallKit 从 IM SDK 获取的两类 RTC 数据：入会凭证和 RTC UID 映射。CallKit 会在发起通话、接听通话以及远端用户加入频道等实际时机按需调用这些方法。业务侧可以只实现需要自定义的部分，未实现的方法会继续使用 `chatClient` 的对应接口。下面是该 provider 及其返回值的公开类型定义：
 
-  constructor(agoraAppId: string, tokenServerUrl: string) {
-    super();
-    this.agoraAppId = agoraAppId;
-    this.tokenServerUrl = tokenServerUrl;
-  }
+```ts
+interface RTCTokenInfo {
+  appId: string;
+  rtcToken: string;
+  rtcUid: number;
+}
 
-  /**
-   * 同步返回你的声网 App ID
-   * 必须返回有效的非空字符串
-   */
-  getAppId(): string {
-    return this.agoraAppId;
-  }
+type RTCUidUserIdMap = Record<string, string>;
 
-  /**
-   * 异步提供 RTC Token、uid 和过期时间
-   * channelName 当前固定传 '*'，请签发应用级 Token
-   */
-  async getRTCToken(channelName?: string): Promise<CallRTCTokenInfo> {
-    const currentUserId = localStorage.getItem('currentUserId') || '';
-    
-    try {
-      const response = await fetch(`${this.tokenServerUrl}/rtc/token`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          userId: currentUserId,
-          channelName: channelName,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      
-      return {
-        uid: data.uid || 0,
-        token: data.token || '',
-        expiration: data.expiration || 0,
-      };
-    } catch (error) {
-      console.error('Failed to fetch RTC token:', error);
-      throw error;
-    }
-  }
-
-  /**
-   * 批量返回声网 UID 与 IM userId 的映射关系
-   * 返回字典 {uid: userId}
-   */
-  async getRelations(uids: number[]): Promise<Record<number, string>> {
-    try {
-      const response = await fetch(`${this.tokenServerUrl}/rtc/relations`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          uids: uids,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      
-      // 转换为 {uid: userId} 格式，并验证数据
-      const relations: Record<number, string> = {};
-      for (const [uidStr, userId] of Object.entries(data)) {
-        const uid = parseInt(uidStr, 10);
-        if (uid > 0 && userId && typeof userId === 'string' && userId.length > 0) {
-          relations[uid] = userId;
-        }
-      }
-
-      return relations;
-    } catch (error) {
-      console.error('Failed to fetch UID relations:', error);
-      throw error;
-    }
-  }
+interface CallKitRTCProvider {
+  getRTCTokenInfo?: (params: { channelName: string }) => Promise<RTCTokenInfo>;
+  getUserIdsWithRTCUids?: (rtcUids: number[]) => Promise<RTCUidUserIdMap>;
 }
 ```
 
-### 步骤 3：初始化 CallService 时使用 TokenProvider
+两个方法均为可选，可以只替换其中一个数据来源：
 
-```tsx
-import { CallService, CallServiceConfig } from '@/module/callkit';
+| 方法 | 用途 | 未提供时的行为 |
+| --- | --- | --- |
+| `getRTCTokenInfo` | 为当前通话频道返回 RTC 入会凭证。 | 调用 `chatClient.getRTCTokenInfo({ channelName })`。 |
+| `getUserIdsWithRTCUids` | 将远端 RTC UID 批量映射为 IM `userId`。 | 调用 `chatClient.getUserIdsWithRTCUids(rtcUids)`。 |
 
-// 创建 TokenProvider 实例
-const tokenProvider = new MyCallTokenProvider(
-  'YOUR_AGORA_APP_ID',
-  'https://your-server.com'
-);
+当某个 provider 方法已提供时，CallKit 会优先使用它，而不会再调用该方法对应的 IM SDK 接口。`getRTCTokenInfo` 抛出异常、返回空值或返回不合法数据时，通话无法发起或加入频道；`getUserIdsWithRTCUids` 失败时，远端 UID 无法通过 IM SDK 再次查询（仅一对一通话会尝试使用邀请中的对端用户 ID 兜底）。因此请在服务端响应和前端转换处完成必要的校验与错误处理。
 
-// 配置 CallService
-const callServiceConfig: CallServiceConfig = {
-  connection: connection,
-  tokenProvider: tokenProvider, // 🔧 传入自定义 TokenProvider
-  
-  onCallStart: (videos) => {
-    console.log('通话开始', videos);
-  },
-  
-  onCallEnd: (reason, callInfo) => {
-    console.log('通话结束', reason, callInfo);
-  },
-  
-  userInfoProvider: async (userIds) => {
-    // 从服务端获取用户信息
-    const response = await fetch('https://your-server.com/users/info', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userIds }),
-    });
-    return response.json();
-  },
-  
-  onCallError: (error) => {
-    console.error('通话错误:', error);
-  },
-};
+**getRTCTokenInfo**
 
-// 初始化 CallService
-const callService = new CallService(callServiceConfig);
+CallKit 在发起通话或接听后加入频道前调用该方法，并将实际的 `channelName` 传入。业务服务端应按这个频道名和当前 IM 用户签发凭证。
+
+返回值要求如下：
+
+- `appId`：非空字符串，且必须是签发该 `rtcToken` 的声网项目 App ID。
+- `rtcUid`：有限数字，并且必须与 Token 中的 UID 一致。对于同一 IM 用户，建议在业务侧保持稳定的 RTC UID 映射。
+- `rtcToken`：当 `useRTCToken`（默认 `true`）开启时必须为非空字符串；当 `useRTCToken={false}` 时可以为空，CallKit 会以 `null` Token 加入频道。仅在声网项目允许不校验 Token 的场景使用后者。
+
+当前 provider 返回值中不包含 `expiration` 字段，CallKit 也不会依据该字段自动续期。请保证服务端签发的 Token 在预期通话时长内有效；如需 Token 续期，请结合实际 RTC 生命周期和声网 SDK 的续期能力在应用侧设计相应流程。
+
+**getUserIdsWithRTCUids**
+
+远端用户进入频道后，CallKit 会按需调用该方法，以便把 RTC 层的 UID 关联到 IM 用户资料。返回值的键是 RTC UID 的字符串形式，值是对应的 IM `userId`：
+
+```ts
+{
+  '10001': 'alice',
+  '10002': 'bob',
+}
 ```
 
-### 步骤 4：登录 IM 并发起呼叫
+接口参数是 UID 数组，服务端可以批量查询和返回映射。缺少映射会导致对应远端用户无法关联到业务用户资料；在一对一通话中，CallKit 会尽力使用邀请中的对端用户 ID 作为兜底，但多人通话应始终返回完整映射。
 
-IM 登录仍使用 IM 用户 Token，RTC Token **不会在登录时获取***，而是由 CallTokenProvider 在进房或续期时按需回调。
+## 接入流程
+
+### 步骤 1：在服务端提供 RTC 数据接口
+
+不要在浏览器中生成声网 Token，也不要将声网 App Certificate 暴露给前端。建议让前端只请求业务服务端：
+
+```text
+POST /api/rtc/token
+{ "userId": "alice", "channelName": "call_channel" }
+
+=> { "appId": "your-agora-app-id", "rtcToken": "...", "rtcUid": 10001 }
+
+POST /api/rtc/user-ids
+{ "rtcUids": [10001, 10002] }
+
+=> { "10001": "alice", "10002": "bob" }
+```
+
+服务端需要验证当前请求者的身份和通话权限，并确保 Token 中的频道、UID 与返回的 `channelName`、`rtcUid` 一致；UID 映射只返回调用方有权获知的用户数据。
+
+### 步骤 2：创建 CallKitRTCProvider
+
+下面示例假定应用已拥有可信的业务登录态，`currentUserId` 是当前已登录的 IM 用户 ID。接口字段名可按服务端实际响应调整，但最终必须转换为 `RTCTokenInfo` 和 `RTCUidUserIdMap`。
 
 ```tsx
-// IM 登录
-await connection.open({
-  user: userId,
-  accessToken: token,
-});
+import React from 'react';
+import type { CallKitRTCProvider, RTCTokenInfo, RTCUidUserIdMap } from 'easemob-chat-uikit';
 
-// 发起 1v1 视频通话
-await callService.startCall({
-  msg: 'msgId',
-  callId: generateCallId(),
-  channel: generateChannelName(),
-  chatType: 'singleChat',
-  callType: CALL_TYPE.VIDEO_1V1,
-  to: targetUserId,
-});
+function useCallKitRTCProvider(currentUserId: string): CallKitRTCProvider {
+  return React.useMemo(
+    () => ({
+      async getRTCTokenInfo({ channelName }): Promise<RTCTokenInfo> {
+        const response = await fetch('/api/rtc/token', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ userId: currentUserId, channelName }),
+        });
 
-// 或发起群组通话
-await callService.startCall({
-  msg: 'msgId',
-  callId: generateCallId(),
-  channel: generateChannelName(),
-  chatType: 'groupChat',
-  callType: CALL_TYPE.VIDEO_MULTI,
-  to: groupId,
-  members: ['member1', 'member2'],
-  groupId: groupId,
-  groupName: 'Group Name',
+        if (!response.ok) {
+          throw new Error(`获取 RTC Token 失败：${response.status}`);
+        }
+
+        const data = (await response.json()) as RTCTokenInfo;
+        if (!data.appId || !Number.isFinite(data.rtcUid) || !data.rtcToken) {
+          throw new Error('RTC Token 接口返回的数据不完整');
+        }
+
+        return {
+          appId: data.appId,
+          rtcToken: data.rtcToken,
+          rtcUid: data.rtcUid,
+        };
+      },
+
+      async getUserIdsWithRTCUids(rtcUids): Promise<RTCUidUserIdMap> {
+        const response = await fetch('/api/rtc/user-ids', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ rtcUids }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`查询 RTC UID 映射失败：${response.status}`);
+        }
+
+        return (await response.json()) as RTCUidUserIdMap;
+      },
+    }),
+    [currentUserId],
+  );
+}
+```
+
+如果你的 IM 服务仍负责 UID 映射，只需提供 `getRTCTokenInfo`；省略 `getUserIdsWithRTCUids` 后，CallKit 会继续使用 IM SDK 的映射接口。
+
+### 步骤 3：将 provider 传给 CallKit
+
+CallKit 必须使用 `Provider` 创建的 IM 客户端。下面通过公开导出的 `RootContext` 获取该客户端，避免依赖仓库内部模块路径。
+
+```tsx
+import React from 'react';
+import { CallKit, Provider, RootContext } from 'easemob-chat-uikit';
+import type { CallKitRef } from 'easemob-chat-uikit';
+import 'easemob-chat-uikit/style.css';
+
+function CallKitLayer({ currentUserId }: { currentUserId: string }) {
+  const { client } = React.useContext(RootContext);
+  const callKitRef = React.useRef<CallKitRef>(null);
+  const rtcProvider = useCallKitRTCProvider(currentUserId);
+
+  return (
+    <CallKit
+      ref={callKitRef}
+      chatClient={client}
+      rtcProvider={rtcProvider}
+      onCallError={error => {
+        console.error('CallKit 通话失败', error);
+      }}
+    />
+  );
+}
+
+export default function App() {
+  const currentUserId = 'alice';
+
+  return (
+    <Provider
+      initConfig={{
+        appKey: 'your-org#your-app',
+        userId: currentUserId,
+        token: 'your-im-token',
+      }}
+    >
+      <CallKitLayer currentUserId={currentUserId} />
+    </Provider>
+  );
+}
+```
+
+`Provider` 会使用 `initConfig.userId` 和 `initConfig.token` 登录 IM；这份 IM Token 与 RTC Token 是两套独立凭证。CallKit 在需要加入 RTC 频道时才会调用 `rtcProvider`，无需在登录成功后手动预取或初始化 RTC 服务。
+
+### 步骤 4：发起通话
+
+自定义 RTC provider 不改变 CallKit 的通话 API。通过组件 ref 发起一对一通话即可：
+
+```tsx
+await callKitRef.current?.startSingleCall({
+  to: 'bob',
+  callType: 'video',
+  msg: '邀请你进行视频通话',
 });
 ```
 
-## 返回值约束
-
-### getAppId()
-
-- **返回值**：字符串格式的声网 App ID
-- **必须返回有效的非空字符串**
-- **调用时机**：在 RTC 引擎初始化前调用，仅调用一次
-- **返回 null/undefined 时的回退逻辑**：使用 IM SDK 配置中的 AppId
-
-### getRTCToken()
-
-- **uid**：必须大于 0，同一用户应尽量保持稳定
-- **expiration**：为 Unix 时间戳（秒），传 0 表示永不过期
-- **token**：除非将 `CallServiceConfig.useRTCToken` 设为 `false`，否则 token 不能为空
-
-**调用时机**：
-
-- 登录后、进房前
-- Token 即将过期时（提前约 5 分钟自动续期）
-- App 从后台回到前台时
-
-**返回 null 时的回退逻辑**：使用 IM SDK 内部缓存/获取逻辑
-
-### getRelations()
-
-- **返回格式**：`{ 123456: "userA", 234567: "userB" }`
-- **uid**：必须是数字类型，值必须大于 0
-- **userId**：必须是非空字符串
-
-**调用时机**：通话中远端用户进房后，需要反查用户信息（头像、昵称等）时调用
-
-**返回 null/undefined 或缺失的 UID 时的回退逻辑**：使用 IM SDK 查询逻辑
+发起方会使用新建的频道名调用 `getRTCTokenInfo`；被叫方接受邀请并加入同一频道前也会调用该方法。因此，服务端必须能够针对任意有效频道为每位参与者返回相匹配的 App ID、Token 和 UID。
 
 ## 完整示例代码
 
+下面的 `App.tsx` 将服务端 RTC 接口、`CallKitRTCProvider`、UIKit `Provider` 和一对一通话按钮组合在一起。将接口地址、App Key、IM Token 和用户 ID 替换为实际值即可使用；IM Token 与 RTC Token 仍由各自的服务端流程签发。
+
 ```tsx
-import React, { useEffect, useState } from 'react';
-import WebIM from 'easemob-websdk';
-import { CallService, CallServiceConfig, CALL_TYPE, CallTokenProvider, CallRTCTokenInfo } from '@/module/callkit';
+import React from 'react';
+import {
+  CallKit,
+  Provider,
+  RootContext,
+} from 'easemob-chat-uikit';
+import type {
+  CallKitRef,
+  CallKitRTCProvider,
+  RTCTokenInfo,
+  RTCUidUserIdMap,
+} from 'easemob-chat-uikit';
+import 'easemob-chat-uikit/style.css';
 
-// 自定义 TokenProvider
-class MyCallTokenProvider extends CallTokenProvider {
-  private agoraAppId: string;
-  private tokenServerUrl: string;
+const appKey = 'your-org#your-app';
+const currentUserId = 'alice';
+const imToken = 'your-im-token';
 
-  constructor(agoraAppId: string, tokenServerUrl: string) {
-    super();
-    this.agoraAppId = agoraAppId;
-    this.tokenServerUrl = tokenServerUrl;
-  }
+type TokenResponse = {
+  appId?: unknown;
+  rtcToken?: unknown;
+  rtcUid?: unknown;
+};
 
-  getAppId(): string {
-    return this.agoraAppId;
-  }
-
-  async getRTCToken(channelName?: string): Promise<CallRTCTokenInfo> {
-    const currentUserId = localStorage.getItem('currentUserId') || '';
-    const response = await fetch(`${this.tokenServerUrl}/rtc/token`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userId: currentUserId, channelName }),
-    });
-    const data = await response.json();
-    return {
-      uid: data.uid || 0,
-      token: data.token || '',
-      expiration: data.expiration || 0,
-    };
-  }
-
-  async getRelations(uids: number[]): Promise<Record<number, string>> {
-    const response = await fetch(`${this.tokenServerUrl}/rtc/relations`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ uids }),
-    });
-    return response.json();
-  }
-}
-
-// 用户信息提供者
-async function fetchUserProfiles(userIds: string[]) {
-  const response = await fetch('https://your-server.com/users/info', {
+async function postJson<T>(url: string, body: unknown): Promise<T> {
+  const response = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ userIds }),
+    credentials: 'include',
+    body: JSON.stringify(body),
   });
-  return response.json();
+
+  if (!response.ok) {
+    throw new Error(`${url} 请求失败：${response.status}`);
+  }
+  return (await response.json()) as T;
 }
 
-const App = () => {
-  const [connection, setConnection] = useState<any>(null);
-  const [callService, setCallService] = useState<CallService | null>(null);
-  const [userId, setUserId] = useState('');
-  const [password, setPassword] = useState('');
-  const [appKey, setAppKey] = useState('');
+function useCallKitRTCProvider(
+  userId: string,
+  useRTCToken = true,
+): CallKitRTCProvider {
+  return React.useMemo(
+    () => ({
+      async getRTCTokenInfo({ channelName }): Promise<RTCTokenInfo> {
+        const data = await postJson<TokenResponse>('/api/rtc/token', {
+          userId,
+          channelName,
+        });
 
-  // 初始化和登录
-  const handleLogin = async () => {
-    try {
-      // 创建连接
-      const conn = new WebIM.connection({
-        appKey: appKey,
-      });
+        if (
+          typeof data.appId !== 'string' ||
+          data.appId.trim() === '' ||
+          typeof data.rtcUid !== 'number' ||
+          !Number.isFinite(data.rtcUid) ||
+          (useRTCToken &&
+            (typeof data.rtcToken !== 'string' || data.rtcToken.trim() === ''))
+        ) {
+          throw new Error('RTC Token 接口返回的数据不完整或格式错误');
+        }
 
-      // 登录
-      await conn.open({
-        user: userId,
-        accessToken: password,
-      });
+        return {
+          appId: data.appId,
+          rtcToken: typeof data.rtcToken === 'string' ? data.rtcToken : '',
+          rtcUid: data.rtcUid,
+        };
+      },
 
-      setConnection(conn);
-      localStorage.setItem('currentUserId', userId);
+      async getUserIdsWithRTCUids(rtcUids: number[]): Promise<RTCUidUserIdMap> {
+        const data = await postJson<unknown>('/api/rtc/user-ids', { rtcUids });
+        if (!data || typeof data !== 'object' || Array.isArray(data)) {
+          throw new Error('RTC UID 映射接口返回的数据格式错误');
+        }
 
-      // 创建 TokenProvider
-      const tokenProvider = new MyCallTokenProvider(
-        'YOUR_AGORA_APP_ID',
-        'https://your-server.com'
-      );
+        const result: RTCUidUserIdMap = {};
+        for (const [rtcUid, mappedUserId] of Object.entries(data)) {
+          if (
+            rtcUids.includes(Number(rtcUid)) &&
+            typeof mappedUserId === 'string' &&
+            mappedUserId.trim() !== ''
+          ) {
+            result[rtcUid] = mappedUserId;
+          }
+        }
+        return result;
+      },
+    }),
+    [userId, useRTCToken],
+  );
+}
 
-      // 配置 CallService
-      const config: CallServiceConfig = {
-        connection: conn,
-        tokenProvider,
-        userInfoProvider: fetchUserProfiles,
-        onCallStart: (videos) => console.log('Call started', videos),
-        onCallEnd: (reason, info) => console.log('Call ended', reason, info),
-        onCallError: (error) => console.error('Call error', error),
-      };
+function CallKitLayer({ userId }: { userId: string }) {
+  const { client } = React.useContext(RootContext);
+  const callKitRef = React.useRef<CallKitRef>(null);
+  const useRTCToken = true;
+  const rtcProvider = useCallKitRTCProvider(userId, useRTCToken);
+  const [peerUserId, setPeerUserId] = React.useState('bob');
 
-      // 初始化 CallService
-      const service = new CallService(config);
-      setCallService(service);
-
-      alert('Login successful!');
-    } catch (error) {
-      console.error('Login failed:', error);
-      alert('Login failed: ' + (error as Error).message);
-    }
-  };
-
-  // 发起通话
-  const handleCall = async (targetUserId: string, callType: CALL_TYPE) => {
-    if (!callService) {
-      alert('CallService not initialized');
+  const startCall = async (callType: 'video' | 'audio') => {
+    const to = peerUserId.trim();
+    if (!to) {
+      window.alert('请输入对方用户 ID');
       return;
     }
 
     try {
-      await callService.startCall({
-        msg: `Call from ${userId}`,
-        callId: `call_${Date.now()}`,
-        channel: `channel_${Date.now()}`,
-        chatType: 'singleChat',
+      await callKitRef.current?.startSingleCall({
+        to,
         callType,
-        to: targetUserId,
+        msg: callType === 'video' ? '邀请你进行视频通话' : '邀请你进行语音通话',
       });
     } catch (error) {
-      console.error('Failed to start call:', error);
-      alert('Failed to start call: ' + (error as Error).message);
+      console.error('发起通话失败', error);
     }
   };
 
+  const userInfoProvider = async (userIds: string[]) => {
+    // 生产环境中请从业务服务端或本地缓存返回真实昵称和头像。
+    return userIds.map(id => ({
+      userId: id,
+      nickname: id,
+      avatarUrl: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(id)}`,
+    }));
+  };
+
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Web CallKit - TokenProvider Demo</h1>
+    <>
+      <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
+        <input
+          value={peerUserId}
+          onChange={event => setPeerUserId(event.target.value)}
+          placeholder="对方用户 ID"
+        />
+        <button onClick={() => void startCall('video')}>视频通话</button>
+        <button onClick={() => void startCall('audio')}>语音通话</button>
+      </div>
 
-      {!connection ? (
-        <div>
-          <h2>登录</h2>
-          <input
-            type="text"
-            placeholder="User ID"
-            value={userId}
-            onChange={(e) => setUserId(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password / Token"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="App Key"
-            value={appKey}
-            onChange={(e) => setAppKey(e.target.value)}
-          />
-          <button onClick={handleLogin}>Login</button>
-        </div>
-      ) : (
-        <div>
-          <h2>已登录: {userId}</h2>
-          <h3>发起通话</h3>
-          <input type="text" id="targetUserId" placeholder="Target User ID" />
-          <button
-            onClick={() => {
-              const target = (document.getElementById('targetUserId') as HTMLInputElement).value;
-              handleCall(target, CALL_TYPE.AUDIO_1V1);
-            }}
-          >
-            Audio Call
-          </button>
-          <button
-            onClick={() => {
-              const target = (document.getElementById('targetUserId') as HTMLInputElement).value;
-              handleCall(target, CALL_TYPE.VIDEO_1V1);
-            }}
-          >
-            Video Call
-          </button>
-        </div>
-      )}
-    </div>
+      <CallKit
+        ref={callKitRef}
+        chatClient={client}
+        rtcProvider={rtcProvider}
+        useRTCToken={useRTCToken}
+        userInfoProvider={userInfoProvider}
+        enableRingtone
+        onCallError={error => console.error('CallKit 通话失败', error)}
+        onEndCallWithReason={(reason, callInfo) => {
+          console.log('通话结束', { reason, callInfo });
+        }}
+      />
+    </>
   );
-};
+}
 
-export default App;
+export default function App() {
+  return (
+    <Provider
+      initConfig={{
+        appKey,
+        userId: currentUserId,
+        token: imToken,
+      }}
+    >
+      <CallKitLayer userId={currentUserId} />
+    </Provider>
+  );
+}
 ```
+
+示例中的服务端接口应按以下约定返回数据：
+
+```text
+POST /api/rtc/token
+{ "userId": "alice", "channelName": "由 CallKit 传入的频道名" }
+=> { "appId": "your-agora-app-id", "rtcToken": "...", "rtcUid": 10001 }
+
+POST /api/rtc/user-ids
+{ "rtcUids": [10001, 10002] }
+=> { "10001": "alice", "10002": "bob" }
+```
+
+如果只需要自定义 Token 获取而继续使用 IM SDK 的 UID 映射，可以从 provider 中删除 `getUserIdsWithRTCUids`；如果声网项目允许不校验 Token，也可以在 `CallKit` 上设置 `useRTCToken={false}`，但此时仍需返回正确的 `appId` 和 `rtcUid`。
+
+## 常见问题
+
+| 现象 | 排查方向 |
+| --- | --- |
+| 收到 `Valid RTC token info is unavailable` 错误 | 检查 `getRTCTokenInfo` 是否成功返回非空 `appId`、有限数字 `rtcUid`，以及在 `useRTCToken` 为 `true` 时返回非空 `rtcToken`。 |
+| 能发送通话邀请但无法进入频道 | 确认 Token 的 App ID、频道名和 UID 与返回数据一致，并检查 Token 是否已过期。 |
+| 多人通话中远端用户只有 UID，昵称或头像没有正确显示 | 实现 `getUserIdsWithRTCUids`，并确保返回对象以 UID 的字符串作为键、IM `userId` 作为值。 |
+| 配置了 provider 后仍然请求 IM SDK 的 RTC 接口 | 确认传给 `CallKit` 的 `rtcProvider` 中包含对应方法；只配置一个方法时，另一个方法仍会按设计回退到 IM SDK。 |
