@@ -1,4 +1,4 @@
-# RTCConfigProvider 
+# 自定义 RTC 凭证接入
 
 ## 概述
 
